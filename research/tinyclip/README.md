@@ -71,4 +71,25 @@ The converted model is small enough to warrant further work, but a fixed candida
 
 The UECFoodPix result supplies an independent cuisine check and contradicts the apparent perfect precision of the earlier Food-101 cutoff: 6 of 40 retained names were incompatible with the visible mask labels. Exact category agreement is an imperfect proxy for whether a suggestion would be useful to a person, but this result does not support app integration. The limited taxonomy and single-dish top prompt also fail to describe many mixed plates. The next candidate needs a stronger image representation and evaluation across meals, nonfood images, and physical-device behavior before it can replace the current unknown result.
 
+## Stronger 22M candidate — October 3, 2026
+
+The [official TinyCLIP model zoo](https://github.com/microsoft/Cream/tree/main/TinyCLIP) reports 53.7% ImageNet zero-shot accuracy for auto-pruned ViT-22M/32 + Text-10M, compared with 41.1% for the 8M candidate. This is a **research-only** check; neither checkpoint is bundled. The 22M checkpoint is 114,214,705 bytes and has SHA-256 `fadfe0486c7eb64208d2cfe4dec08120b284a37a11dc2c63cb5dfbac0ed4f018`. The 22M image encoder has 22,024,993 parameters before any Core ML conversion or compression. Check the checkpoint's redistribution rights and all required notices before any product use; this experiment does not establish a final licensing determination.
+
+For reproducibility, clone `https://github.com/microsoft/Cream.git` at `4a13c4091e78f9abd2160e7e01c02e48c1cf8fb9`, expose `TinyCLIP/src` as `PYTHONPATH`, and put the official `TinyCLIP-auto-ViT-22M-32-Text-10M-LAION400M.pt` release checkpoint in `$MEALMIRROR_MODEL_LAB`. The scripts load the checkpoint with PyTorch's `weights_only=True`, reconstruct the pruned towers with the upstream code, and use the same UECFoodPix test IDs, category prompts, mask threshold, and 20 previously selected reject prompts as the 8M experiment. In addition to the earlier environment, install compatible `torchvision`, `ftfy`, and `timm`. Then run:
+
+```sh
+MEALMIRROR_MODEL_LAB="$MEALMIRROR_MODEL_LAB" PYTHONPATH="/path/to/Cream/TinyCLIP/src" "$MEALMIRROR_MODEL_LAB/.venv/bin/python" research/tinyclip/benchmark_tinyclip22_uec.py
+MEALMIRROR_MODEL_LAB="$MEALMIRROR_MODEL_LAB" PYTHONPATH="/path/to/Cream/TinyCLIP/src" "$MEALMIRROR_MODEL_LAB/.venv/bin/python" research/tinyclip/benchmark_tinyclip22_nonfood.py
+```
+
+| Measure | 22M result | Limit |
+| --- | ---: | --- |
+| UECFoodPix top name compatible with visible mask category | 387/1,000 | One Japanese/mixed-dish research dataset and a fixed 100-name taxonomy |
+| Score gap ≥0.04 | 89 compatible / 103 food names | Threshold already explored with the 8M candidate; not an independent calibration |
+| Score gap ≥0.05 | 60 compatible / 64 food names | Only 6.4% of photos received a food name; four still disagreed |
+| Oxford flowers with 20 reject prompts | 0 food tops / 102 photos | Reject prompts were selected after prior flower failures |
+| Oxford pets with 20 reject prompts | 0 food tops / 111 photos | Reject prompts were selected after prior pet failures |
+
+Two of the four UEC mismatches above the 0.05 gap were semantically close to the mask (salmon meuniere versus grilled salmon, and pork cutlet on rice versus sirloin cutlet). The other two were croquette versus takoyaki and fish-shaped bean-jam pancake versus toast/potage. Category agreement is an imperfect human-usefulness measure, but a strict threshold that removes all observed mismatches in this already-inspected dataset keeps only 27 of 1,000 photos at gap 0.065. Selecting that threshold now would overfit this dataset. The stronger model is therefore **not approved for app integration**. Its uncompressed checkpoint is over the current 25 MB Challenge limit by itself, and no compressed Core ML package, clean ZIP, or physical-device run was measured.
+
 For the Simulator runtime probe, `coremlc compile` produced an iOS 17-compatible `.mlmodelc`. The Swift playground's generated Xcode project produced duplicate Core ML build tasks when a raw `.mlpackage` was placed inside the package. An isolated probe copied the compiled directory as a generic `.coremlasset` resource, restored the `.mlmodelc` extension in temporary storage, and loaded it through `MLModel` plus `VNCoreMLRequest`. This workaround has **not** been incorporated into the candidate or verified from a clean Challenge ZIP.
