@@ -202,7 +202,7 @@ public enum MealIngredientCatalog {
         var usedIDs = Set<String>()
         return rules.compactMap { rule in
             let candidates = rule.keywords + rule.keywords.map(localizedKeyword)
-            guard candidates.contains(where: { matches($0.lowercased(with: locale), in: input) }),
+            guard candidates.contains(where: { matchesIncludedFood($0.lowercased(with: locale), in: input) }),
                   !shouldSuppress(rule.component.id, in: input, locale: locale, localizedKeyword: localizedKeyword),
                   usedIDs.insert(rule.component.id).inserted else {
                 return nil
@@ -219,8 +219,8 @@ public enum MealIngredientCatalog {
     ) -> Bool {
         let sweetPotato = ["sweet potato", localizedKeyword("sweet potato")]
         let biryani = ["biryani", localizedKeyword("biryani")]
-        return (componentID == "potato" && sweetPotato.contains { matches($0.lowercased(with: locale), in: input) })
-            || (componentID == "rice" && biryani.contains { matches($0.lowercased(with: locale), in: input) })
+        return (componentID == "potato" && sweetPotato.contains { matchesIncludedFood($0.lowercased(with: locale), in: input) })
+            || (componentID == "rice" && biryani.contains { matchesIncludedFood($0.lowercased(with: locale), in: input) })
     }
 
     private static func matches(_ keyword: String, in input: String) -> Bool {
@@ -231,6 +231,32 @@ public enum MealIngredientCatalog {
         let escapedKeyword = NSRegularExpression.escapedPattern(for: keyword)
         let pattern = "(?<![\\p{L}\\p{N}])\(escapedKeyword)(?![\\p{L}\\p{N}])"
         return input.range(of: pattern, options: .regularExpression) != nil
+    }
+
+    private static func matchesIncludedFood(_ keyword: String, in input: String) -> Bool {
+        guard !keyword.isEmpty else { return false }
+        if usesContinuousWordScript(keyword) {
+            return matches(keyword, in: input)
+        }
+
+        let escapedKeyword = NSRegularExpression.escapedPattern(for: keyword)
+        let pattern = "(?<![\\p{L}\\p{N}])\(escapedKeyword)(?![\\p{L}\\p{N}])"
+        guard let expression = try? NSRegularExpression(pattern: pattern) else { return false }
+        let text = input as NSString
+        let fullRange = NSRange(location: 0, length: text.length)
+        return expression.matches(in: input, range: fullRange).contains { match in
+            let prefix = text.substring(to: match.range.location)
+            let suffix = text.substring(from: NSMaxRange(match.range))
+            // A direct exclusion is not a food the person reported eating.
+            // Keep this narrow: "no rice" is clear, while a distant "no"
+            // elsewhere in a recipe should not hide an ingredient.
+            let explicitExclusion = prefix.range(
+                of: #"(?:^|[\s,;])(?:no|without|not|skip|hold|omit|exclude|minus)\s+(?:(?:any|the|extra)\s+)?$"#,
+                options: .regularExpression
+            ) != nil
+            let freeSuffix = suffix.range(of: #"^(?:-|\s+)free\b"#, options: .regularExpression) != nil
+            return !explicitExclusion && !freeSuffix
+        }
     }
 
     private static func usesContinuousWordScript(_ value: String) -> Bool {
