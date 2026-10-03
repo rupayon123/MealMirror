@@ -162,7 +162,7 @@ private struct HomeView: View {
                         MealPlateGraphic(showsPen: false)
                             .frame(width: 300, height: 300)
                     }
-                    .workbenchSurface(inset: 24)
+                    .kitchenBubble(inset: 24)
 
                     HStack(alignment: .top, spacing: 16) {
                         sourceDock
@@ -215,7 +215,7 @@ private struct HomeView: View {
     private var compactHero: some View {
         if dynamicTypeSize.isAccessibilitySize {
             compactHeroCopy
-                .workbenchSurface(inset: 18)
+                .kitchenBubble(inset: 18)
         } else {
             ViewThatFits(in: .horizontal) {
                 HStack(alignment: .center, spacing: 16) {
@@ -230,7 +230,7 @@ private struct HomeView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
-            .workbenchSurface(inset: 18)
+            .kitchenBubble(inset: 18)
         }
     }
 

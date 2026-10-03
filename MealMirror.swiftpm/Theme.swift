@@ -467,7 +467,60 @@ private struct TicketEdge: View {
     }
 }
 
+private struct KitchenBubbleShape: Shape {
+    let tailOnTrailing: Bool
+
+    func path(in rect: CGRect) -> Path {
+        let left = rect.minX + 2
+        let right = rect.maxX - 2
+        let top = rect.minY + 2
+        let bottom = rect.maxY - 16
+        let radius = min(10, (right - left) / 8, (bottom - top) / 8)
+        let center = tailOnTrailing ? right - 43 : left + 43
+        let tailLeft = center - 14
+        let tailRight = center + 14
+
+        return Path { path in
+            path.move(to: CGPoint(x: left + radius, y: top))
+            path.addLine(to: CGPoint(x: right - radius, y: top))
+            path.addQuadCurve(to: CGPoint(x: right, y: top + radius), control: CGPoint(x: right, y: top))
+            path.addLine(to: CGPoint(x: right, y: bottom - radius))
+            path.addQuadCurve(to: CGPoint(x: right - radius, y: bottom), control: CGPoint(x: right, y: bottom))
+            path.addLine(to: CGPoint(x: tailRight, y: bottom))
+            path.addLine(to: CGPoint(x: center, y: rect.maxY - 2))
+            path.addLine(to: CGPoint(x: tailLeft, y: bottom))
+            path.addLine(to: CGPoint(x: left + radius, y: bottom))
+            path.addQuadCurve(to: CGPoint(x: left, y: bottom - radius), control: CGPoint(x: left, y: bottom))
+            path.addLine(to: CGPoint(x: left, y: top + radius))
+            path.addQuadCurve(to: CGPoint(x: left + radius, y: top), control: CGPoint(x: left, y: top))
+            path.closeSubpath()
+        }
+    }
+}
+
+private struct KitchenBubbleSurface: ViewModifier {
+    let inset: CGFloat
+
+    func body(content: Content) -> some View {
+        // SwiftUI mirrors Shape paths for right-to-left layout automatically.
+        let shape = KitchenBubbleShape(tailOnTrailing: false)
+        content
+            .padding(.horizontal, inset)
+            .padding(.top, inset)
+            .padding(.bottom, inset + 14)
+            .background {
+                shape.fill(CarbInTheme.surface)
+                    .shadow(color: CarbInTheme.ink.opacity(0.16), radius: 0, x: 0, y: 4)
+            }
+            .overlay { shape.stroke(CarbInTheme.line, lineWidth: 3) }
+    }
+}
+
 extension View {
+    func kitchenBubble(inset: CGFloat = 18) -> some View {
+        modifier(KitchenBubbleSurface(inset: inset))
+    }
+
     func workbenchSurface(inset: CGFloat = 18) -> some View {
         self.padding(inset)
             .background {
