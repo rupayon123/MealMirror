@@ -387,6 +387,20 @@ struct FoodOrbitRing: View {
     }
 }
 
+struct KitchenLoadingArtwork: View {
+    let diameter: CGFloat
+
+    var body: some View {
+        ZStack {
+            FoodOrbitRing(diameter: diameter)
+            MealMirrorBadge()
+                .frame(width: diameter * 0.76, height: diameter * 0.76)
+        }
+        .frame(width: diameter, height: diameter)
+        .accessibilityHidden(true)
+    }
+}
+
 struct PixelCornerFrame: View {
     var color: Color = CarbInTheme.tomato
     var inset: CGFloat = 10

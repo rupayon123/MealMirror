@@ -514,22 +514,25 @@ private struct AddMealView: View {
         }
         .overlay {
             if isAnalyzing {
-                VStack(spacing: 17) {
-                    ZStack {
-                        FoodOrbitRing(diameter: 286)
-                        MealMirrorBadge()
-                            .frame(width: 218, height: 218)
+                GeometryReader { geometry in
+                    let diameter = min(dynamicTypeSize.isAccessibilitySize ? 210 : 286, geometry.size.width - 48)
+                    ScrollView {
+                        VStack(spacing: 17) {
+                            KitchenLoadingArtwork(diameter: diameter)
+                            Text(localization.text("Inspecting on this device…"))
+                                .font(CarbInTheme.display(.title2, size: 24))
+                                .multilineTextAlignment(.center)
+                                .foregroundStyle(CarbInTheme.actionInk)
+                            Text(localization.text("A clearer view of your meal"))
+                                .font(.subheadline.weight(.bold))
+                                .multilineTextAlignment(.center)
+                                .foregroundStyle(CarbInTheme.actionInk)
+                        }
+                        .padding(20)
+                        .frame(maxWidth: .infinity)
+                        .frame(minHeight: geometry.size.height)
                     }
-                    .frame(width: 286, height: 286)
-                    Text(localization.text("Inspecting on this device…"))
-                        .font(CarbInTheme.display(.title2, size: 24))
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(CarbInTheme.actionInk)
-                    Text(localization.text("A clearer view of your meal"))
-                        .font(.subheadline.weight(.bold))
-                        .foregroundStyle(CarbInTheme.actionInk)
                 }
-                .padding(20)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(CarbInTheme.loadingCanvas.ignoresSafeArea())
                 .transition(reduceMotion ? .identity : .opacity)

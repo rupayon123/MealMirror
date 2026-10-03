@@ -40,45 +40,50 @@ struct CarbInRootView: View {
 
 private struct LaunchExperienceView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @EnvironmentObject private var localization: LocalizationStore
     @State private var markVisible = false
 
     let onReady: () -> Void
 
     var body: some View {
-        VStack(spacing: 18) {
-            ZStack {
-                FoodOrbitRing(diameter: 286)
-                MealMirrorBadge()
-                    .frame(width: 218, height: 218)
-            }
-                .frame(width: 286, height: 286)
-                .offset(y: reduceMotion || markVisible ? 0 : 16)
-                .opacity(reduceMotion || markVisible ? 1 : 0)
-                .accessibilityHidden(true)
+        GeometryReader { geometry in
+            let diameter = min(dynamicTypeSize.isAccessibilitySize ? 210 : 286, geometry.size.width - 48)
+            ScrollView {
+                VStack(spacing: 18) {
+                    KitchenLoadingArtwork(diameter: diameter)
+                        .offset(y: reduceMotion || markVisible ? 0 : 16)
+                        .opacity(reduceMotion || markVisible ? 1 : 0)
 
-            VStack(spacing: 5) {
-                Text("MealMirror")
-                    .font(CarbInTheme.brand(.largeTitle, size: 30))
-                    .foregroundStyle(CarbInTheme.actionInk)
-                Text(localization.text("A clearer view of your meal"))
-                    .font(CarbInTheme.display(.headline, size: 16))
-                    .foregroundStyle(CarbInTheme.actionInk.opacity(0.92))
-            }
+                    VStack(spacing: 5) {
+                        Text("MealMirror")
+                            .font(CarbInTheme.brand(.largeTitle, size: 30))
+                            .foregroundStyle(CarbInTheme.actionInk)
+                        Text(localization.text("A clearer view of your meal"))
+                            .font(CarbInTheme.display(.headline, size: 16))
+                            .foregroundStyle(CarbInTheme.actionInk.opacity(0.92))
+                    }
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
 
-            VStack(spacing: 10) {
-                Text(localization.text("Preparing MealMirror"))
-                    .font(CarbInTheme.display(.headline, size: 17))
-                    .foregroundStyle(CarbInTheme.ink)
-                PixelDivider()
+                    VStack(spacing: 10) {
+                        Text(localization.text("Preparing MealMirror"))
+                            .font(CarbInTheme.display(.headline, size: 17))
+                            .foregroundStyle(CarbInTheme.ink)
+                        PixelDivider()
+                    }
+                    .frame(maxWidth: 300)
+                    .padding(14)
+                    .background(CarbInTheme.surface, in: RoundedRectangle(cornerRadius: 9, style: .continuous))
+                    .overlay { RoundedRectangle(cornerRadius: 9, style: .continuous).stroke(CarbInTheme.line, lineWidth: 3) }
+                    .shadow(color: CarbInTheme.line.opacity(0.55), radius: 0, x: 0, y: 4)
+                }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 20)
+                .frame(maxWidth: .infinity)
+                .frame(minHeight: geometry.size.height)
             }
-            .frame(maxWidth: 300)
-            .padding(14)
-            .background(CarbInTheme.surface, in: RoundedRectangle(cornerRadius: 9, style: .continuous))
-            .overlay { RoundedRectangle(cornerRadius: 9, style: .continuous).stroke(CarbInTheme.line, lineWidth: 3) }
-            .shadow(color: CarbInTheme.line.opacity(0.55), radius: 0, x: 0, y: 4)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(CarbInTheme.loadingCanvas)
         .accessibilityElement(children: .combine)
         .accessibilityLabel("MealMirror. \(localization.text("A clearer view of your meal")). \(localization.text("Preparing MealMirror"))")
