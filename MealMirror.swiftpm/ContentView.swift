@@ -42,6 +42,7 @@ struct ContentView: View {
                 onHistory: { navigation.open(.privacy) },
                 onSettings: { navigation.open(.settings) }
             )
+            .navigationTitle(localization.text("Close"))
             .navigationDestination(for: AppRoute.self) { route in
                 switch route {
                 case .addMeal:
@@ -694,9 +695,9 @@ private struct AddMealView: View {
                     .accessibilityHidden(true)
             }
 
-            Text(LocalizedStringKey(inputSource == .demo ? "This Practice meal starts with a prepared description. Editing it switches back to your own meal." : "Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next."))
-                .font(CarbInTheme.reading(.footnote, size: 13))
-                .foregroundStyle(CarbInTheme.mutedInk)
+            if !dynamicTypeSize.isAccessibilitySize {
+                descriptionHelp
+            }
 
             TextEditor(text: $mealDescription)
                 .font(CarbInTheme.reading(.body, size: 17))
@@ -714,6 +715,10 @@ private struct AddMealView: View {
                 .accessibilityHint("Describe ingredients and any details the photo does not show.")
                 .accessibilityIdentifier("carbin.meal.description")
 
+            if dynamicTypeSize.isAccessibilitySize {
+                descriptionHelp
+            }
+
             if mealDescription.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 Label("Choose a photo or name one food to continue.", systemImage: "info.circle")
                     .font(CarbInTheme.reading(.footnote, size: 13))
@@ -723,6 +728,12 @@ private struct AddMealView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .workbenchSurface()
+    }
+
+    private var descriptionHelp: some View {
+        Text(LocalizedStringKey(inputSource == .demo ? "This Practice meal starts with a prepared description. Editing it switches back to your own meal." : "Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next."))
+            .font(CarbInTheme.reading(.footnote, size: 13))
+            .foregroundStyle(CarbInTheme.mutedInk)
     }
 
     private var photoWorkbench: some View {
