@@ -184,13 +184,8 @@ private struct HomeView: View {
                         historyTicket
                     }
                 } else {
-                    if dynamicTypeSize.isAccessibilitySize {
-                        sourceDock
-                        compactHero
-                    } else {
-                        compactHero
-                        sourceDock
-                    }
+                    sourceDock
+                    compactHero
                     historyTicket
                 }
 
