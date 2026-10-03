@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject private var localization: LocalizationStore
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     let onHowItWorks: () -> Void
     let onPrivacyPolicy: () -> Void
@@ -18,30 +19,19 @@ struct SettingsView: View {
                         .font(CarbInTheme.display(.largeTitle, size: 30))
                         .foregroundStyle(CarbInTheme.ink)
 
-                HStack(spacing: 14) {
-                    MealMirrorBadge(showsStars: false)
-                        .frame(width: 54, height: 54)
-                        .accessibilityHidden(true)
-                    VStack(alignment: .leading, spacing: 1) {
-                        Text("MealMirror")
-                            .font(CarbInTheme.brand(.title3, size: 19))
-                        Text(localization.text("A clearer view of your meal"))
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(CarbInTheme.tomato)
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .mealTicket()
+                    brandCard
 
                     sectionHeading("Learn")
                     actionRow("How MealMirror works", symbol: "questionmark.circle", identifier: "carbin.settings.how", action: onHowItWorks)
                     actionRow("Replay the welcome guide", symbol: "arrow.counterclockwise", identifier: "carbin.settings.replayOnboarding", action: onReplayOnboarding)
 
-                    sectionHeading("Preferences")
-                    LanguagePickerMenu(
-                        accessibilityIdentifier: "carbin.settings.language",
-                        showsCurrentLanguage: true
-                    )
+                    if localization.availableLanguages.count > 1 {
+                        sectionHeading("Language")
+                        LanguagePickerMenu(
+                            accessibilityIdentifier: "carbin.settings.language",
+                            showsCurrentLanguage: true
+                        )
+                    }
 
                     sectionHeading("Legal and safety")
                     actionRow("Local data and deletion", symbol: "externaldrive.badge.xmark", identifier: "carbin.settings.history", action: onLocalPrivacy)
@@ -75,6 +65,45 @@ struct SettingsView: View {
             .padding(.top, 5)
     }
 
+    private var brandCard: some View {
+        Group {
+            if dynamicTypeSize.isAccessibilitySize {
+                HStack(spacing: 12) {
+                    MealMirrorBadge(showsStars: false)
+                        .frame(width: 54, height: 54)
+                        .accessibilityHidden(true)
+                    Text("MealMirror")
+                        .font(CarbInTheme.brand(.headline, size: 17))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
+                }
+            } else {
+                HStack(spacing: 14) {
+                    MealMirrorBadge(showsStars: false)
+                        .frame(width: 54, height: 54)
+                        .accessibilityHidden(true)
+                    brandCopy
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .mealTicket()
+    }
+
+    private var brandCopy: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text("MealMirror")
+                .font(CarbInTheme.brand(.title3, size: 19))
+                .lineLimit(1)
+                .minimumScaleFactor(0.55)
+            Text(localization.text("A clearer view of your meal"))
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(CarbInTheme.tomato)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
     private func actionRow(
         _ title: LocalizedStringKey,
         symbol: String,
@@ -82,22 +111,30 @@ struct SettingsView: View {
         action: @escaping () -> Void
     ) -> some View {
         Button(action: action) {
-            HStack(spacing: 14) {
-                Image(systemName: symbol)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(CarbInTheme.basil)
-                    .frame(width: 44, height: 44)
-                    .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
-                    .accessibilityHidden(true)
-                Text(title)
-                    .font(CarbInTheme.display(.headline, size: 17))
-                    .foregroundStyle(CarbInTheme.ink)
-                    .fixedSize(horizontal: false, vertical: true)
-                Spacer(minLength: 5)
-                Image(systemName: "chevron.forward")
-                    .font(.headline)
-                    .foregroundStyle(CarbInTheme.ink)
-                    .accessibilityHidden(true)
+            Group {
+                if dynamicTypeSize.isAccessibilitySize {
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack {
+                            rowIcon(symbol)
+                            Spacer(minLength: 5)
+                            rowChevron
+                        }
+                        Text(title)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(CarbInTheme.ink)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                } else {
+                    HStack(spacing: 14) {
+                        rowIcon(symbol)
+                        Text(title)
+                            .font(CarbInTheme.display(.headline, size: 17))
+                            .foregroundStyle(CarbInTheme.ink)
+                            .fixedSize(horizontal: false, vertical: true)
+                        Spacer(minLength: 5)
+                        rowChevron
+                    }
+                }
             }
             .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
             .contentShape(Rectangle())
@@ -105,6 +142,22 @@ struct SettingsView: View {
         .buttonStyle(.plain)
         .workbenchSurface(inset: 14)
         .accessibilityIdentifier(identifier)
+    }
+
+    private func rowIcon(_ symbol: String) -> some View {
+        Image(systemName: symbol)
+            .font(.title3.weight(.semibold))
+            .foregroundStyle(CarbInTheme.basil)
+            .frame(width: 44, height: 44)
+            .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
+            .accessibilityHidden(true)
+    }
+
+    private var rowChevron: some View {
+        Image(systemName: "chevron.forward")
+            .font(.headline)
+            .foregroundStyle(CarbInTheme.ink)
+            .accessibilityHidden(true)
     }
 
     private var versionLabel: String {
@@ -129,7 +182,7 @@ struct PrivacyPolicyView: View {
             PolicySection(
                 symbol: "internaldrive.fill",
                 title: "Saved review data",
-                body: "If you choose Save, MealMirror stores the user-entered meal description, reviewed carbohydrate range, date, and a random identifier in a protected local file. The file is excluded from device backups. Only the welcome-guide preference is stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved."
+                body: "If you choose Save, MealMirror stores the user-entered meal description, reviewed carbohydrate range, date, and a random identifier in a protected local file. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved."
             )
             PolicySection(
                 symbol: "network.slash",
