@@ -107,6 +107,14 @@ struct MealAnalysisEngine {
 }
 
 enum MealPhotoPreparation {
+    static func downsampledImageAsync(from data: Data, maxPixelSize: Int = 1_800) async -> UIImage? {
+        await withCheckedContinuation { continuation in
+            DispatchQueue.global(qos: .userInitiated).async {
+                continuation.resume(returning: downsampledImage(from: data, maxPixelSize: maxPixelSize))
+            }
+        }
+    }
+
     static func downsampledImage(from data: Data, maxPixelSize: Int = 1_800) -> UIImage? {
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else { return nil }
         let options: CFDictionary = [
@@ -122,6 +130,14 @@ enum MealPhotoPreparation {
 
     static func downsampledImage(from image: UIImage, maxPixelSize: CGFloat = 1_800) -> UIImage {
         image.preparingThumbnail(of: CGSize(width: maxPixelSize, height: maxPixelSize)) ?? image
+    }
+
+    static func downsampledImageAsync(from image: UIImage, maxPixelSize: CGFloat = 1_800) async -> UIImage {
+        await withCheckedContinuation { continuation in
+            DispatchQueue.global(qos: .userInitiated).async {
+                continuation.resume(returning: downsampledImage(from: image, maxPixelSize: maxPixelSize))
+            }
+        }
     }
 }
 

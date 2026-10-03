@@ -562,7 +562,7 @@ private struct AddMealView: View {
             Task {
                 do {
                     guard let data = try await newItem.loadTransferable(type: Data.self),
-                          let image = MealPhotoPreparation.downsampledImage(from: data) else {
+                          let image = await MealPhotoPreparation.downsampledImageAsync(from: data) else {
                         guard photoLoadToken == token else { return }
                         isPreparingPhoto = false
                         photoLoadError = "MealMirror could not prepare that photo. Choose another image or use the camera."
@@ -618,7 +618,15 @@ private struct AddMealView: View {
             CameraCapture(
                 onCapture: { image in
                     showCamera = false
-                    usePersonalPhoto(MealPhotoPreparation.downsampledImage(from: image))
+                    let token = UUID()
+                    photoLoadToken = token
+                    isPreparingPhoto = true
+                    Task { @MainActor in
+                        let prepared = await MealPhotoPreparation.downsampledImageAsync(from: image)
+                        guard photoLoadToken == token else { return }
+                        isPreparingPhoto = false
+                        usePersonalPhoto(prepared)
+                    }
                 },
                 onCancel: {
                     showCamera = false
