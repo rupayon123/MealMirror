@@ -235,6 +235,7 @@ private struct PolicyScroll<Content: View>: View {
     let introduction: String
     @ViewBuilder let content: Content
     @EnvironmentObject private var localization: LocalizationStore
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     init(
         eyebrow: String,
@@ -257,9 +258,11 @@ private struct PolicyScroll<Content: View>: View {
                         .font(.caption.weight(.bold))
                         .tracking(localization.language.supportsDecorativeTracking ? 1 : 0)
                         .foregroundStyle(CarbInTheme.tomato)
-                    Text(LocalizedStringKey(title))
-                        .font(.system(.largeTitle, design: .rounded).weight(.bold))
-                        .foregroundStyle(CarbInTheme.ink)
+                    if !dynamicTypeSize.isAccessibilitySize {
+                        Text(LocalizedStringKey(title))
+                            .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                            .foregroundStyle(CarbInTheme.ink)
+                    }
                     Text(LocalizedStringKey(introduction))
                         .font(CarbInTheme.reading(.body, size: 17))
                         .foregroundStyle(CarbInTheme.mutedInk)
