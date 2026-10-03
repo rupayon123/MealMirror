@@ -34,6 +34,14 @@ HF_HOME="$MEALMIRROR_MODEL_LAB/hf-cache" "$MEALMIRROR_MODEL_LAB/.venv/bin/python
 HF_HOME="$MEALMIRROR_MODEL_LAB/hf-cache" "$MEALMIRROR_MODEL_LAB/.venv/bin/python" research/tinyclip/benchmark_reject_prompts.py
 ```
 
+For an independent cuisine check, download the official [UECFoodPix research dataset](https://mm.cs.uec.ac.jp/uecfoodpix/) to `$MEALMIRROR_MODEL_LAB/UECFOODPIX.tar` and verify its 740,782,080-byte size and SHA-256 `5a9fe296879d9f853dcca258d367dc0f18f1c9468c311e00cfbe5e1ad704580b`. The provider permits non-commercial research only; do not bundle or redistribute its photos or masks. Its test split has 1,000 photos with pixel-level food labels. Run:
+
+```sh
+MEALMIRROR_MODEL_LAB="$MEALMIRROR_MODEL_LAB" "$MEALMIRROR_MODEL_LAB/.venv/bin/python" research/tinyclip/benchmark_uecfoodpix.py
+```
+
+The script uses the official 100 named meal categories as prompts plus the previously chosen 20 nonfood prompts, and keeps the earlier Food-101 score-gap cutoff of 0.04 without retuning. A top name counts as compatible if its category occupies at least 1% of the image mask; this is a conservative category agreement check, not ingredient or nutrition validation.
+
 The conversion uses [Apple Core ML Tools](https://apple.github.io/coremltools/docs-guides/source/convert-a-torchvision-model-from-pytorch.html) and [8-bit post-training weight compression](https://apple.github.io/coremltools/docs/source/coremltools.optimize.coreml.post_training_quantization.html). Core ML Tools 9.0 warned that the installed PyTorch 2.14.1 was newer than its tested version; successful conversion and three output comparisons do not prove cross-version or iPhone behavior.
 
 ## October 3, 2026 result
@@ -54,9 +62,13 @@ The conversion uses [Apple Core ML Tools](https://apple.github.io/coremltools/do
 | Flowers and pets, food-only prompts, gap ≥0.04 | 5/213 false food suggestions | 102 higher-resolution flower photos and 111 pet photos; several dogs became “hot dog” |
 | Flowers and pets, 20 added nonfood prompts | 0/213 food labels ranked first | Same selected images and hand-chosen reject prompts; not an independent, broad nonfood validation |
 | iOS 26.5 Simulator Core ML probe | 512-value output; 225 ms load, 132 ms inference | One bundled synthetic photo and one simulator run; no physical-device timing |
+| UECFoodPix test split, 100 dish prompts + 20 reject prompts | 303/1,000 top names compatible with a visible mask category | Different dataset, with many Japanese and mixed dishes; fixed prompt taxonomy |
+| UECFoodPix at prechosen gap ≥0.04 | 40/1,000 food names retained; 34 compatible, 6 incompatible | Independent cutoff check; too many incompatible suggestions for a trusted photo path |
 
 The first 100 real validation photos came from the [ETH Zurich Food-101 dataset](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/) through its Hugging Face mirror. The deterministic offsets in `benchmark_food101.py` sample beignets, pizza, carrot cake, chocolate mousse, frozen yogurt, scallops, onion rings, lobster roll sandwich, filet mignon, and sushi. A direct download of the three validation Parquet shards then enabled the balanced 505-photo check. The [CIFAR-10 author's dataset](https://cave.cs.toronto.edu/kriz/cifar.html) supplied nonfood negatives. The three bundled examples all ranked their matching prompt first, which is too narrow to establish real-world quality.
 
 The converted model is small enough to warrant further work, but a fixed candidate list still excludes unknown meals. The exploratory gap cutoff retains only about 14% of Food-101 photos. A three-versus-two per-class split retained 22/202 holdout photos at the 0.04 cutoff, all correctly labeled, but this is still one dataset and too few accepted examples to establish general precision. The higher-resolution pet and flower failures show why a food-only prompt bank is unsafe; the nonfood prompts were added after inspecting those failures, so their zero false-food count is exploratory. The three bundled examples have labels outside Food-101 and would require additional prompts and validation. Before app integration, evaluate culturally varied mixed dishes, realistic nonfood photos from new sources, independent abstention calibration, on-device latency, VoiceOver/correction flow, prompt vocabulary and licensing, and final packaged size. A correct-looking top label cannot validate ingredients, portion, or carbohydrate content.
+
+The UECFoodPix result supplies an independent cuisine check and contradicts the apparent perfect precision of the earlier Food-101 cutoff: 6 of 40 retained names were incompatible with the visible mask labels. Exact category agreement is an imperfect proxy for whether a suggestion would be useful to a person, but this result does not support app integration. The limited taxonomy and single-dish top prompt also fail to describe many mixed plates. The next candidate needs a stronger image representation and evaluation across meals, nonfood images, and physical-device behavior before it can replace the current unknown result.
 
 For the Simulator runtime probe, `coremlc compile` produced an iOS 17-compatible `.mlmodelc`. The Swift playground's generated Xcode project produced duplicate Core ML build tasks when a raw `.mlpackage` was placed inside the package. An isolated probe copied the compiled directory as a generic `.coremlasset` resource, restored the `.mlmodelc` extension in temporary storage, and loaded it through `MLModel` plus `VNCoreMLRequest`. This workaround has **not** been incorporated into the candidate or verified from a clean Challenge ZIP.

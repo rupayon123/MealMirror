@@ -20,6 +20,10 @@ RxFood's clinician page also describes high/low-GI and fibre/whole-grain summari
 
 These public listings change over time. Recheck current features before publishing a comparison or submitting an application.
 
+## Open-source on-device reference
+
+[NutriLens](https://github.com/bhatt-aditya03/NutriLens) is an iOS Core ML demonstration focused on 30 Indian dishes. Its maintainer reports a 5.9 MB MobileNetV2 model, live camera classification, and 86.4% validation accuracy on its own 5,191-image dataset. The README explicitly says there is no separate held-out test set, the 40% confidence cutoff was chosen empirically, foods outside the 30 classes can be misclassified, and nutrition values are approximate rather than suitable for clinical use. These are useful engineering references, not a head-to-head result or evidence that MealMirror should reuse its weights or per-100g nutrition values. MealMirror's differentiator must be proved on diverse meals and uncertainty handling, including dishes outside a fixed class list.
+
 ## Product decisions for MealMirror
 
 1. **Make the first step a photo.** Photo-only entry is implemented. Continue with an on-device path that helps identify possible foods, then invites the person to confirm foods and portions a photo cannot establish.
