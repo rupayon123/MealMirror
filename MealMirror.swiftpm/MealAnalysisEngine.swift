@@ -128,6 +128,11 @@ enum VisionPhotoInspector {
 
         return await withCheckedContinuation { continuation in
             let gate = VisionContinuationGate(continuation: continuation)
+            // Keep the meal flow usable if Vision never calls back. The gate
+            // ignores a late result after this fallback has resumed the task.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 12) {
+                gate.resume(with: .unavailable)
+            }
             DispatchQueue.global(qos: .userInitiated).async {
                 let request = VNClassifyImageRequest { request, error in
                     guard error == nil else {

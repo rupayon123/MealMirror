@@ -1,0 +1,61 @@
+{
+  "biryani-demo" : {
+    "cpu" : [
+      "outdoor:0.4885783",
+      "night_sky:0.48656023",
+      "sky:0.48656023",
+      "celestial_body:0.17743441",
+      "moon:0.17743383",
+      "people:0.035739392",
+      "adult:0.035733994",
+      "material:0.0154672945"
+    ],
+    "default" : [
+      "error: internalError(\"Error Domain=NSOSStatusErrorDomain Code=-1 \\\"Failed to create espresso context.\\\" UserInfo={NSLocalizedDescription=Failed to create espresso context.}\")"
+    ]
+  },
+  "breakfast-demo" : {
+    "cpu" : [
+      "outdoor:0.49286494",
+      "night_sky:0.4908868",
+      "sky:0.4908868",
+      "celestial_body:0.17781419",
+      "moon:0.17781359",
+      "people:0.03532122",
+      "adult:0.035315532",
+      "material:0.015511661"
+    ],
+    "default" : [
+      "outdoor:0.49286494",
+      "night_sky:0.4908868",
+      "sky:0.4908868",
+      "celestial_body:0.17781419",
+      "moon:0.17781359",
+      "people:0.03532122",
+      "adult:0.035315532",
+      "material:0.015511661"
+    ]
+  },
+  "grain-bowl-demo" : {
+    "cpu" : [
+      "outdoor:0.49286494",
+      "night_sky:0.4908868",
+      "sky:0.4908868",
+      "celestial_body:0.17781419",
+      "moon:0.17781359",
+      "people:0.03532122",
+      "adult:0.035315532",
+      "material:0.015511661"
+    ],
+    "default" : [
+      "outdoor:0.49286494",
+      "night_sky:0.4908868",
+      "sky:0.4908868",
+      "celestial_body:0.17781419",
+      "moon:0.17781359",
+      "people:0.03532122",
+      "adult:0.035315532",
+      "material:0.015511661"
+    ]
+  }
+}
