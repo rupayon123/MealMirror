@@ -894,7 +894,7 @@ private struct EstimateView: View {
                 estimateAction
             }
         }
-        .navigationTitle("Your estimate")
+        .navigationTitle(LocalizedStringKey(analysis.source == .demo ? "Practice meal review" : "Your estimate"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(CarbInTheme.canvas, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -948,11 +948,14 @@ private struct EstimateView: View {
                 .monospacedDigit()
                 .foregroundStyle(CarbInTheme.basil)
                 .minimumScaleFactor(0.72)
-                .accessibilityLabel(Text(localization.text(
-                    "Estimated carbohydrate range: %lld to %lld grams",
-                    arguments: Int64(range.low),
-                    Int64(range.high)
-                )))
+                .accessibilityLabel(Text(
+                    (analysis.source == .demo ? localization.text("Practice meal") + ". " : "")
+                    + localization.text(
+                        "Estimated carbohydrate range: %lld to %lld grams",
+                        arguments: Int64(range.low),
+                        Int64(range.high)
+                    )
+                ))
             PixelDivider(color: CarbInTheme.butter)
             Text("Keep the full range visible while you verify portions, ingredients, and labels. This is not dose advice.")
                 .font(.footnote)
@@ -1889,13 +1892,16 @@ private struct MealChoiceCard: View {
             }
         }
         .buttonStyle(.plain)
-        .accessibilityLabel(localization.text(
-            "%@, %@ carbohydrate range%@",
-            arguments: localization.text(meal.name),
-            meal.analysis(description: meal.prompt, referenceItemPresent: false).overallRange.map(localization.carbohydrateRange) ?? localization.text("Review needed"),
-            isSelected ? localization.text(", selected") : ""
-        ))
-        .accessibilityHint("Double tap to use this bundled Practice meal.")
+        .accessibilityLabel(
+            localization.text("Practice meal") + ". "
+            + localization.text(
+                "%@, %@ carbohydrate range%@",
+                arguments: localization.text(meal.name),
+                meal.analysis(description: meal.prompt, referenceItemPresent: false).overallRange.map(localization.carbohydrateRange) ?? localization.text("Review needed"),
+                isSelected ? localization.text(", selected") : ""
+            )
+        )
+        .accessibilityHint("Use a bundled Practice meal to learn the review controls. Practice values are examples, not an analysis of your meal.")
         .accessibilityIdentifier("carbin.practice.\(meal.id)")
     }
 
