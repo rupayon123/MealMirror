@@ -1,6 +1,6 @@
 # MealMirror
 
-MealMirror is a short, offline SwiftUI experience for reviewing meal carbohydrates. Its aim is to make the first step approachable for a newly diagnosed child or adult while preserving the joy and choice of everyday food. The warm kitchen theme uses the user's supplied pot emblem, Marker Felt display type, native reading type, and hand-drawn dialogue panels.
+MealMirror is a short, offline SwiftUI experience for reviewing meal carbohydrates. Its aim is to make the first step approachable for a newly diagnosed child or adult while preserving the joy and choice of everyday food. The Pixel Kitchen theme uses the user's selected MM pot emblem, Pixelify Sans for short Latin-script headings, Nunito for Latin-script reading text, native fonts for other scripts, and kitchen dialogue panels.
 
 The product direction begins with a photo, then asks the person to confirm anything a photo cannot establish. Photo-only entry works, but iOS 26.5 Simulator's general Vision classifier returned the same unrelated scene labels for three distinct meal photos. MealMirror marks that known result as an unavailable inspection and shows no reliable range. A separate macOS Vision run recognized the biryani image; physical iPhone/iPad behavior remains unverified.
 
@@ -10,7 +10,7 @@ Open this `MealMirror.swiftpm` package in Xcode 26 or later, choose an iPhone or
 
 ## Three-minute Practice walkthrough
 
-1. Open **Try a practice meal**.
+1. Tap **Start a meal review** on Home, then scroll to **Optional Practice**.
 2. Choose the bundled biryani, grain-bowl, or breakfast Practice meal and tap **Build my local review**.
 3. Inspect the example items and carbohydrate range. Adjust or exclude anything that does not fit.
 4. Read the review trail and final check; save only if a local note is useful.

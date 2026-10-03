@@ -47,16 +47,47 @@ with plist_path.open("wb") as stream:
     plistlib.dump(info, stream, sort_keys=False)
 PY
 
-rm -f "$output_path"
+temporary_archive="$temporary_dir/$output_name"
 (
     cd "$temporary_dir"
-    /usr/bin/zip -q -r "$output_path" MealMirror.swiftpm
+    /usr/bin/zip -q -r "$temporary_archive" MealMirror.swiftpm
 )
 
-archive_bytes="$(/usr/bin/stat -f%z "$output_path")"
+archive_bytes="$(/usr/bin/stat -f%z "$temporary_archive")"
 if (( archive_bytes > 26214400 )); then
     echo "Archive is larger than Apple's currently published 25 MB limit." >&2
     exit 1
 fi
 
+python3 - "$temporary_archive" <<'PY'
+import json
+import stat
+import sys
+import zipfile
+
+with zipfile.ZipFile(sys.argv[1]) as archive:
+    names = archive.namelist()
+    if len(names) != len(set(names)):
+        raise SystemExit("Archive contains duplicate paths.")
+    if "MealMirror.swiftpm/Package.swift" not in names:
+        raise SystemExit("Archive is missing the Swift package.")
+    for entry in archive.infolist():
+        name = entry.filename
+        if not name.startswith("MealMirror.swiftpm/") or ".." in name.split("/"):
+            raise SystemExit(f"Unexpected archive path: {name}")
+        if stat.S_ISLNK(entry.external_attr >> 16):
+            raise SystemExit(f"Archive contains a symbolic link: {name}")
+        if any(part in {".git", "xcuserdata", ".DS_Store"} for part in name.split("/")):
+            raise SystemExit(f"Archive contains development state: {name}")
+        if ".lproj" in name and "Resources/en.lproj/" not in name:
+            raise SystemExit(f"Archive contains a non-English localization: {name}")
+    catalog = json.loads(archive.read("MealMirror.swiftpm/Resources/app_strings.json"))
+    if set(catalog) != {"en"}:
+        raise SystemExit("Archive contains non-English catalog entries.")
+    bad_member = archive.testzip()
+    if bad_member is not None:
+        raise SystemExit(f"Archive integrity check failed: {bad_member}")
+PY
+
+mv -f "$temporary_archive" "$output_path"
 echo "Created $output_path ($archive_bytes bytes)."
