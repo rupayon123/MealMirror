@@ -1,0 +1,16 @@
+{
+  "distances" : {
+    "biryani-demo|biryani-demo" : 0,
+    "biryani-demo|breakfast-demo" : 0.0017806018004193902,
+    "biryani-demo|grain-bowl-demo" : 0.0017806018004193902,
+    "breakfast-demo|biryani-demo" : 0.0017806018004193902,
+    "breakfast-demo|breakfast-demo" : 0,
+    "breakfast-demo|grain-bowl-demo" : 0,
+    "grain-bowl-demo|biryani-demo" : 0.0017806018004193902,
+    "grain-bowl-demo|breakfast-demo" : 0,
+    "grain-bowl-demo|grain-bowl-demo" : 0
+  },
+  "failures" : {
+
+  }
+}

@@ -16,6 +16,12 @@ CPU returned `outdoor`, `night_sky`, `sky`, `celestial_body`, and `moon` for eac
 
 Keep the existing unavailable result for this known Simulator pattern. This experiment cannot establish behavior on a physical iPhone or any other OS release. Do not treat these labels as food or derive carbohydrate grams from them.
 
+## Feature-print fallback check — October 3, 2026
+
+Apple's [`VNGenerateImageFeaturePrintRequest`](https://developer.apple.com/documentation/vision/vngenerateimagefeatureprintrequest) offers image-similarity features without bundling a separate model. The isolated [`FeaturePrintProbe.swift`](FeaturePrintProbe.swift) ran in a copied MealMirror package on the same iPhone 17 / iOS 26.5 Simulator. It compared the three different bundled Practice images with Apple's [`computeDistance`](https://developer.apple.com/documentation/vision/vnfeatureprintobservation/computedistance(_:to:)) API. The normal Challenge candidate was unchanged.
+
+With the request's default compute choice, all three images failed with `Failed to create espresso context`. With a supported CPU device selected for the request's main stage, all three produced prints, but the breakfast and grain-bowl prints had distance **zero**; each was only about 0.00178 from biryani. The [captured CPU result](ios26-feature-print-cpu-results.json) is from that simulator run. These distinct images should not be treated as interchangeable nearest neighbors, so feature prints are **not** a viable rescue for this Simulator's broken Vision path. This does not assess feature prints on a physical iPhone or establish whether a curated food-reference library could recognize arbitrary meals. No food names, portions, carbohydrate amounts, or doses were inferred from this probe.
+
 ## Bounded fallback check
 
 The candidate's `VisionPhotoInspector` now resumes its inspection as unavailable after 12 seconds if Vision does not answer. To exercise that path without changing the candidate, a second copied package inserted `Thread.sleep(forTimeInterval: 30)` at the start of the background classification closure. Its root `.task` called `VisionPhotoInspector.inspect` with the bundled biryani image and saved the elapsed time and status to Documents. The [captured result](ios26-timeout-results.json) was `unavailable` after 12.25 seconds on the same iPhone 17 Simulator. This verifies the fallback under a deliberate stall; it does not measure real Vision latency or a physical device.
