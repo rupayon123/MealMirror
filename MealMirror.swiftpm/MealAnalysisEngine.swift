@@ -28,6 +28,14 @@ struct MealAnalysisEngine {
                 locale: language.locale,
                 localizedKeyword: { catalog.text($0, language: language) }
             )
+            .map { matched in
+                var candidate = matched
+                // A food word can be part of a negation or a different recipe
+                // (for example, "no rice" or "apple pie"). A text match alone
+                // must never create a carbohydrate total for a real meal.
+                candidate.isIncluded = false
+                return candidate
+            }
             let describedIDs = Set(describedComponents.map(\.id))
             let visualLabels: [String] = if case let .inspected(labels) = visionStatus {
                 labels
@@ -78,7 +86,7 @@ struct MealAnalysisEngine {
                     methodNote = "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value."
                 }
             } else {
-                methodNote = "Local ingredient matches from the meal details you entered. Adjust portions and add an item before saving."
+                methodNote = "Add the foods you recognize to build an inspectable carbohydrate range."
             }
             return MealAnalysis(
                 title: hasVisualMatches ? "Possible foods to check" : (components.isEmpty ? "Add a little more detail" : "Your meal review"),
@@ -92,7 +100,7 @@ struct MealAnalysisEngine {
                     ? "A photo can miss hidden ingredients and cannot reliably establish a mixed dish, recipe, or serving size. Confirm each item and portion; check a trusted label or reference when available."
                     : components.isEmpty
                     ? "Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal."
-                    : "Recipe, portion size, sauces, and product labels can change this range. Confirm or adjust every listed item."
+                    : "Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method."
             )
         }
     }

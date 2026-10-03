@@ -858,7 +858,9 @@ private struct EstimateView: View {
                 StepRail(current: 2)
                 SectionHeading(
                     eyebrow: "CHECK THE RANGE",
-                    title: analysis.isReadyForReview ? "A range worth checking" : "A little more detail will help",
+                    title: analysis.isReadyForReview
+                        ? "A range worth checking"
+                        : (analysis.components.isEmpty ? "A little more detail will help" : "Possible foods to check"),
                     detail: analysis.isReadyForReview
                         ? "The range stays visible and editable, so you can review what it is based on."
                         : analysis.methodNote
@@ -885,7 +887,9 @@ private struct EstimateView: View {
 
                 if analysis.isReadyForReview {
                     confirmationToggle
+                }
 
+                if !analysis.components.isEmpty {
                     Button {
                         showIngredientEditor = true
                     } label: {
@@ -939,7 +943,9 @@ private struct EstimateView: View {
                     Label("No reliable range yet", systemImage: "questionmark.circle")
                         .font(CarbInTheme.display(.title3, size: 19))
                         .foregroundStyle(CarbInTheme.tomato)
-                    Text("Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.")
+                    Text(LocalizedStringKey(analysis.components.isEmpty
+                        ? "Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal."
+                        : "Add the foods you recognize to build an inspectable carbohydrate range."))
                         .font(.subheadline)
                         .foregroundStyle(CarbInTheme.mutedInk)
                         .fixedSize(horizontal: false, vertical: true)
@@ -1063,7 +1069,7 @@ private struct EstimateView: View {
                 Text("Confirm the parts you recognize before you keep a local record.")
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(CarbInTheme.ink)
-                Text("Add the foods you recognize to build an inspectable carbohydrate range.")
+                Text("Recipe, portion size, sauces, and product labels can change this range. Confirm or adjust every listed item.")
                     .font(.footnote)
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
@@ -1084,6 +1090,12 @@ private struct EstimateView: View {
                 .buttonStyle(PrimaryActionStyle(isEnabled: hasConfirmedMealParts))
                 .disabled(!hasConfirmedMealParts)
                 .accessibilityIdentifier("carbin.estimate.review")
+            } else if !analysis.components.isEmpty {
+                Button(action: { showIngredientEditor = true }) {
+                    Label("Adjust ingredients", systemImage: "slider.horizontal.3")
+                }
+                .buttonStyle(PrimaryActionStyle())
+                .accessibilityIdentifier("carbin.estimate.reviewCandidates")
             } else {
                 Button(action: { dismiss() }) {
                     Label("Go back and add detail", systemImage: "chevron.backward")
@@ -1122,13 +1134,13 @@ private struct EstimateView: View {
     }
 
     private var rangeHeading: some View {
-        Text("What shaped the range")
+        Text(LocalizedStringKey(analysis.isReadyForReview ? "What shaped the range" : "Possible foods to check"))
             .font(CarbInTheme.display(.headline, size: 16))
             .foregroundStyle(CarbInTheme.ink)
     }
 
     private var rangeStatus: some View {
-        Text(LocalizedStringKey(analysis.isReadyForReview ? "Adjust if needed" : "Add more detail"))
+        Text(LocalizedStringKey(analysis.isReadyForReview || !analysis.components.isEmpty ? "Adjust if needed" : "Add more detail"))
             .font(.caption)
             .foregroundStyle(CarbInTheme.mutedInk)
     }
