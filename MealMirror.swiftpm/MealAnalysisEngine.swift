@@ -137,9 +137,9 @@ enum VisionPhotoInspector {
         return await withCheckedContinuation { continuation in
             let gate = VisionContinuationGate(continuation: continuation)
             // Keep the meal flow usable if Vision never calls back. The gate
-            // ignores a late result after this fallback has resumed the task.
+            // ignores a late result and cancels any still-running request.
             DispatchQueue.main.asyncAfter(deadline: .now() + 12) {
-                gate.resume(with: .unavailable)
+                gate.cancelAndResume()
             }
             DispatchQueue.global(qos: .userInitiated).async {
                 let request = VNClassifyImageRequest { request, error in
@@ -194,6 +194,7 @@ enum VisionPhotoInspector {
                         }
                     gate.resume(with: .inspected(labels: labels))
                 }
+                guard gate.register(request) else { return }
 #if targetEnvironment(simulator)
                 // Ask Vision which devices support this request, then prefer
                 // its CPU path in Simulator when one is available.
@@ -228,6 +229,7 @@ enum VisionPhotoInspector {
 private final class VisionContinuationGate: @unchecked Sendable {
     private let lock = NSLock()
     private var continuation: CheckedContinuation<VisionStatus, Never>?
+    private var request: VNRequest?
 
     init(continuation: CheckedContinuation<VisionStatus, Never>) {
         self.continuation = continuation
@@ -237,8 +239,29 @@ private final class VisionContinuationGate: @unchecked Sendable {
         lock.lock()
         let currentContinuation = continuation
         continuation = nil
+        request = nil
         lock.unlock()
         currentContinuation?.resume(returning: result)
+    }
+
+    func register(_ newRequest: VNRequest) -> Bool {
+        lock.lock()
+        let isPending = continuation != nil
+        if isPending { request = newRequest }
+        lock.unlock()
+        if !isPending { newRequest.cancel() }
+        return isPending
+    }
+
+    func cancelAndResume() {
+        lock.lock()
+        let currentContinuation = continuation
+        let currentRequest = request
+        continuation = nil
+        request = nil
+        lock.unlock()
+        currentRequest?.cancel()
+        currentContinuation?.resume(returning: .unavailable)
     }
 }
 
