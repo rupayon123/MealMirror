@@ -72,7 +72,11 @@ struct MealAnalysisEngine {
             if hasVisualMatches {
                 methodNote = "On-device Vision suggested possible food names. Photo suggestions start excluded. Add only foods you recognize; the photo does not determine portions or carbohydrate values."
             } else if components.isEmpty {
-                methodNote = "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value."
+                if case .unavailable = visionStatus {
+                    methodNote = "Photo selected; inspection unavailable"
+                } else {
+                    methodNote = "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value."
+                }
             } else {
                 methodNote = "Local ingredient matches from the meal details you entered. Adjust portions and add an item before saving."
             }
@@ -140,6 +144,17 @@ enum VisionPhotoInspector {
                     let observations = (request.results ?? [])
                         .compactMap { $0 as? VNClassificationObservation }
                         .filter { $0.confidence >= 0.08 }
+#if targetEnvironment(simulator)
+                    // iOS 26.5 Simulator returned this same scene sequence for
+                    // three different bundled meal photos. Its GPU request also
+                    // failed to create an Espresso context. Do not present this
+                    // known broken result as a successful photo inspection.
+                    let brokenSimulatorLabels = ["outdoor", "night_sky", "sky", "celestial_body", "moon"]
+                    if Array(observations.prefix(5).map(\.identifier)) == brokenSimulatorLabels {
+                        gate.resume(with: .unavailable)
+                        return
+                    }
+#endif
                     var seen = Set<String>()
                     let labels = observations.compactMap { observation -> String? in
                         let label = observation.identifier

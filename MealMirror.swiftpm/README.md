@@ -2,7 +2,7 @@
 
 MealMirror is a short, offline SwiftUI experience for reviewing meal carbohydrates. Its aim is to make the first step approachable for a newly diagnosed child or adult while preserving the joy and choice of everyday food. The warm kitchen theme uses the user's supplied pot emblem, Marker Felt display type, native reading type, and hand-drawn dialogue panels.
 
-The product direction begins with a photo, then asks the person to confirm anything a photo cannot establish. Photo-only entry works, but the iPhone 17 / iOS 26.5 simulator did not recognize the synthetic biryani image. Its general Vision classifier returned unrelated scene labels; MealMirror now hides labels that do not match a local food reference and shows no reliable range. Physical-device behavior remains unverified.
+The product direction begins with a photo, then asks the person to confirm anything a photo cannot establish. Photo-only entry works, but iOS 26.5 Simulator's general Vision classifier returned the same unrelated scene labels for three distinct meal photos. MealMirror marks that known result as an unavailable inspection and shows no reliable range. A separate macOS Vision run recognized the biryani image; physical iPhone/iPad behavior remains unverified.
 
 ## Open and run
 

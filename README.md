@@ -2,7 +2,7 @@
 
 MealMirror is a SwiftUI project for making meal review feel simpler after a Type 1 diabetes diagnosis. The product's direction is food-positive and photo-first: someone can start with the meal in front of them, keep the foods they enjoy, and review what is known or uncertain with the people who support them.
 
-This is a work in progress, not a medical device, treatment guide, or submission-ready Challenge entry. Photo-only entry now works, but the tested iOS 26.5 simulator did not recognize the synthetic biryani photo: Apple's general Vision classifier returned unrelated scene labels, which MealMirror now filters out. The app showed no reliable range and offered a trusted-value or description path. Physical-device photo behavior remains unverified. See [`PLAN.md`](PLAN.md) for evidence and remaining work.
+This is a work in progress, not a medical device, treatment guide, or submission-ready Challenge entry. Photo-only entry works, but iOS 26.5 Simulator's Vision classifier returned the same unrelated scene labels for three different meal photos. MealMirror treats that known bad result as an unavailable inspection and shows no carbohydrate range. The person can describe the meal or enter a value from a trusted source. A separate macOS Vision run recognized the biryani photo; physical iPhone/iPad behavior remains unverified. See [`PLAN.md`](PLAN.md) for evidence and remaining work.
 
 ## Open and run
 
