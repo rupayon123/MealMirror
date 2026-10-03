@@ -150,8 +150,22 @@ enum VisionPhotoInspector {
             return .unavailable
         }
 
+        let cancellation = VisionCancellationLatch()
+        return await withTaskCancellationHandler {
+            await performInspection(image: image, cgImage: cgImage, cancellation: cancellation)
+        } onCancel: {
+            cancellation.cancel()
+        }
+    }
+
+    private static func performInspection(
+        image: UIImage,
+        cgImage: CGImage,
+        cancellation: VisionCancellationLatch
+    ) async -> VisionStatus {
         return await withCheckedContinuation { continuation in
             let gate = VisionContinuationGate(continuation: continuation)
+            guard cancellation.register(gate) else { return }
             // Keep the meal flow usable if Vision never calls back. The gate
             // ignores a late result and cancels any still-running request.
             DispatchQueue.main.asyncAfter(deadline: .now() + 12) {
@@ -239,6 +253,30 @@ enum VisionPhotoInspector {
                 }
             }
         }
+    }
+}
+
+private final class VisionCancellationLatch: @unchecked Sendable {
+    private let lock = NSLock()
+    private var gate: VisionContinuationGate?
+    private var isCancelled = false
+
+    func register(_ newGate: VisionContinuationGate) -> Bool {
+        lock.lock()
+        let shouldStart = !isCancelled
+        if shouldStart { gate = newGate }
+        lock.unlock()
+        if !shouldStart { newGate.cancelAndResume() }
+        return shouldStart
+    }
+
+    func cancel() {
+        lock.lock()
+        isCancelled = true
+        let currentGate = gate
+        gate = nil
+        lock.unlock()
+        currentGate?.cancelAndResume()
     }
 }
 

@@ -28,6 +28,12 @@ The candidate's `VisionPhotoInspector` now resumes its inspection as unavailable
 
 The current candidate also calls `VNRequest.cancel()` when that 12-second fallback fires. A locked gate prevents a late Vision callback from resuming the same continuation twice and cancels a request registered after the timeout. The clean iOS Simulator build verifies this integration compiles; the earlier delayed-request probe did not exercise cancellation, so resource savings and exact cancellation timing remain unmeasured.
 
+## User-initiated cancellation check — October 3, 2026
+
+Leaving the meal screen or selecting a Practice meal cancels its analysis `Task`. The candidate now passes that cancellation to the in-flight Vision request through a locked latch, so the waiting task can finish promptly instead of awaiting the 12-second fallback. The latch handles cancellation both before and after the request registers; the existing continuation gate prevents a second completion from a late Vision callback.
+
+An isolated copied package added a two-second `Thread.sleep` immediately after `gate.register(request)` in `VisionPhotoInspector`, then called [`CancellationProbe.swift`](CancellationProbe.swift) from the copied app root. The probe loaded the bundled biryani image, started inspection, waited 100 ms, canceled the task, and measured how long awaiting its result took. On an iPhone 17 / iOS 26.5 Simulator it returned `unavailable` about 0.000033 seconds after cancellation while the artificial two-second worker pause was still in progress; the [captured result](ios26-cancellation-results.json) records the timing. The deliberate pause and probe are absent from the Challenge candidate. This verifies prompt continuation release under an in-flight stall, not physical-device Vision speed or how soon Apple's underlying compute resources stop.
+
 ## Food-label gate and deeper clue scan — October 3, 2026
 
 On macOS 26.4 with Xcode 26.6, `VNClassifyImageRequest` returned a broad `food` label for all three bundled Practice photos (confidence 0.93 for biryani, 0.84 for the grain bowl, 0.63 for breakfast). Biryani itself scored 0.92. Quinoa appeared tenth for the grain bowl at 0.18, beyond the app's previous five-label cutoff. These are synthetic Practice images and a macOS result, not iPhone validation. Apple's [Vision classification documentation](https://developer.apple.com/documentation/vision/vnclassifyimagerequest) describes these outputs as labels with confidence values, not nutrition measurements.
