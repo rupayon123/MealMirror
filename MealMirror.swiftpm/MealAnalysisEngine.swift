@@ -156,7 +156,6 @@ enum VisionPhotoInspector {
 
                     let observations = (request.results ?? [])
                         .compactMap { $0 as? VNClassificationObservation }
-                        .filter { $0.confidence >= 0.08 }
 #if targetEnvironment(simulator)
                     // iOS 26.5 Simulator returned this same scene sequence for
                     // three different bundled meal photos. Its GPU request also
@@ -168,19 +167,32 @@ enum VisionPhotoInspector {
                         return
                     }
 #endif
-                    var seen = Set<String>()
-                    let labels = observations.compactMap { observation -> String? in
-                        let label = observation.identifier
-                            .split(separator: ",")
-                            .last
-                            .map(String.init)?
-                            .replacingOccurrences(of: "_", with: " ")
-                            .trimmingCharacters(in: .whitespacesAndNewlines)
-                        guard let label, !label.isEmpty,
-                              seen.insert(label.lowercased()).inserted else { return nil }
-                        return label
+                    // A scene label such as "apple" can describe an object or
+                    // brand instead of a meal. Require Vision's broad food
+                    // label before offering any ingredient clues. A clue
+                    // still starts excluded from every carbohydrate total.
+                    guard observations.contains(where: {
+                        $0.identifier == "food" && $0.confidence >= 0.10
+                    }) else {
+                        gate.resume(with: .inspected(labels: []))
+                        return
                     }
-                    gate.resume(with: .inspected(labels: Array(labels.prefix(5))))
+                    var seen = Set<String>()
+                    let labels = observations
+                        .filter { $0.confidence >= 0.08 }
+                        .prefix(12)
+                        .compactMap { observation -> String? in
+                            let label = observation.identifier
+                                .split(separator: ",")
+                                .last
+                                .map(String.init)?
+                                .replacingOccurrences(of: "_", with: " ")
+                                .trimmingCharacters(in: .whitespacesAndNewlines)
+                            guard let label, !label.isEmpty,
+                                  seen.insert(label.lowercased()).inserted else { return nil }
+                            return label
+                        }
+                    gate.resume(with: .inspected(labels: labels))
                 }
 #if targetEnvironment(simulator)
                 // Ask Vision which devices support this request, then prefer
