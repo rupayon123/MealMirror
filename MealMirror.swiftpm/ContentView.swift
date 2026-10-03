@@ -2208,6 +2208,7 @@ private struct ConfidenceTrail: View {
     let referenceItemPresent: Bool
     let visionStatus: VisionStatus
     let source: MealInputSource
+    @EnvironmentObject private var localization: LocalizationStore
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
@@ -2249,10 +2250,18 @@ private struct ConfidenceTrail: View {
         case let .inspected(labels):
             labels.isEmpty
                 ? "Inspected locally; no clear food clues found"
-                : "Possible food clues: \(labels.joined(separator: ", ")); suggestions only"
+                : localizedPhotoClues(labels)
         case .unavailable:
             "Photo selected; inspection unavailable"
         }
+    }
+
+    private func localizedPhotoClues(_ labels: [String]) -> String {
+        let names = labels.joined(separator: ", ")
+        let isolatedNames = localization.language.isRightToLeft ? "\u{2068}\(names)\u{2069}" : names
+        return localization.text("Photo inspected on this device. Visual cues: %@.", arguments: isolatedNames)
+            + " "
+            + localization.text("Add the foods you recognize to build an inspectable carbohydrate range.")
     }
 
     private var trailTitle: some View {
