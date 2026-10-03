@@ -1,0 +1,2 @@
+"CFBundleDisplayName" = "MealMirror";
+"NSCameraUsageDescription" = "MealMirror utilise l’appareil photo pour photographier le repas que vous choisissez et analyser cette photo sur cet appareil. MealMirror ne télécharge ni n’enregistre la photo.";

@@ -1,0 +1,219 @@
+@preconcurrency import Vision
+import Foundation
+import ImageIO
+import UIKit
+import MealCore
+
+struct MealAnalysisEngine {
+    func analyze(
+        source: MealInputSource,
+        demoMeal: DemoMeal,
+        description: String,
+        referenceItemPresent: Bool,
+        image: UIImage?,
+        language: AppLanguage
+    ) async -> MealAnalysis {
+        switch source {
+        case .demo:
+            return demoMeal.analysis(description: description, referenceItemPresent: referenceItemPresent)
+        case .manual, .personalPhoto:
+            let visionStatus: VisionStatus = if source == .personalPhoto {
+                await VisionPhotoInspector.inspect(image)
+            } else {
+                .notRun
+            }
+            let catalog = LocalizationCatalog.shared
+            let describedComponents = MealIngredientCatalog.components(
+                matching: description,
+                locale: language.locale,
+                localizedKeyword: { catalog.text($0, language: language) }
+            )
+            let describedIDs = Set(describedComponents.map(\.id))
+            let visualLabels: [String] = if case let .inspected(labels) = visionStatus {
+                labels
+            } else {
+                []
+            }
+            let visualMatches = MealIngredientCatalog.components(
+                matching: visualLabels.joined(separator: " "),
+                locale: language.locale,
+                localizedKeyword: { catalog.text($0, language: language) }
+            )
+            .filter { !describedIDs.contains($0.id) }
+            .map { component in
+                MealComponent(
+                    id: component.id,
+                    name: component.name,
+                    detail: component.detail,
+                    carbohydrates: component.baselineCarbohydrates,
+                    symbol: component.symbol,
+                    signal: "Possible photo match",
+                    nameTreatment: component.nameTreatment,
+                    detailTreatment: component.detailTreatment,
+                    signalTreatment: .localizedCatalog,
+                    portion: component.portion,
+                    isIncluded: false
+                )
+            }
+            // Vision's general-purpose classifier can return unrelated scene
+            // labels for a meal photo. Keep those raw labels out of the review
+            // trail; show only food names that mapped to a local food reference.
+            let reviewVisionStatus: VisionStatus = switch visionStatus {
+            case .notRun:
+                .notRun
+            case .unavailable:
+                .unavailable
+            case .inspected:
+                .inspected(labels: visualMatches.map(\.name))
+            }
+            let components = describedComponents + visualMatches
+            let hasVisualMatches = !visualMatches.isEmpty
+            let methodNote: String
+            if hasVisualMatches {
+                methodNote = "On-device Vision suggested possible food names. Photo suggestions start excluded. Add only foods you recognize; the photo does not determine portions or carbohydrate values."
+            } else if components.isEmpty {
+                methodNote = "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value."
+            } else {
+                methodNote = "Local ingredient matches from the meal details you entered. Adjust portions and add an item before saving."
+            }
+            return MealAnalysis(
+                title: hasVisualMatches ? "Possible foods to check" : (components.isEmpty ? "Add a little more detail" : "Your meal review"),
+                description: description,
+                source: source,
+                components: components,
+                referenceItemPresent: referenceItemPresent,
+                visionStatus: reviewVisionStatus,
+                methodNote: methodNote,
+                uncertaintyNote: hasVisualMatches
+                    ? "A photo can miss hidden ingredients and cannot reliably establish a mixed dish, recipe, or serving size. Confirm each item and portion; check a trusted label or reference when available."
+                    : components.isEmpty
+                    ? "Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal."
+                    : "Recipe, portion size, sauces, and product labels can change this range. Confirm or adjust every listed item."
+            )
+        }
+    }
+}
+
+enum MealPhotoPreparation {
+    static func downsampledImage(from data: Data, maxPixelSize: Int = 1_800) -> UIImage? {
+        guard let source = CGImageSourceCreateWithData(data as CFData, nil) else { return nil }
+        let options: CFDictionary = [
+            kCGImageSourceCreateThumbnailFromImageAlways: true,
+            kCGImageSourceCreateThumbnailWithTransform: true,
+            kCGImageSourceThumbnailMaxPixelSize: maxPixelSize,
+            kCGImageSourceShouldCacheImmediately: true
+        ] as CFDictionary
+
+        guard let cgImage = CGImageSourceCreateThumbnailAtIndex(source, 0, options) else { return nil }
+        return UIImage(cgImage: cgImage)
+    }
+
+    static func downsampledImage(from image: UIImage, maxPixelSize: CGFloat = 1_800) -> UIImage {
+        image.preparingThumbnail(of: CGSize(width: maxPixelSize, height: maxPixelSize)) ?? image
+    }
+}
+
+enum VisionPhotoInspector {
+    static func inspect(_ image: UIImage?) async -> VisionStatus {
+        guard let image, let cgImage = image.cgImage else {
+            #if DEBUG
+            print("[MealMirror Vision] Image did not provide a CGImage.")
+            #endif
+            return .unavailable
+        }
+
+        return await withCheckedContinuation { continuation in
+            let gate = VisionContinuationGate(continuation: continuation)
+            DispatchQueue.global(qos: .userInitiated).async {
+                let request = VNClassifyImageRequest { request, error in
+                    guard error == nil else {
+                        #if DEBUG
+                        if let error {
+                            let nsError = error as NSError
+                            print("[MealMirror Vision] Request callback failed: \(nsError.domain) (\(nsError.code)): \(error.localizedDescription)")
+                        }
+                        #endif
+                        gate.resume(with: .unavailable)
+                        return
+                    }
+
+                    let observations = (request.results ?? [])
+                        .compactMap { $0 as? VNClassificationObservation }
+                        .filter { $0.confidence >= 0.08 }
+                    var seen = Set<String>()
+                    let labels = observations.compactMap { observation -> String? in
+                        let label = observation.identifier
+                            .split(separator: ",")
+                            .last
+                            .map(String.init)?
+                            .replacingOccurrences(of: "_", with: " ")
+                            .trimmingCharacters(in: .whitespacesAndNewlines)
+                        guard let label, !label.isEmpty,
+                              seen.insert(label.lowercased()).inserted else { return nil }
+                        return label
+                    }
+                    gate.resume(with: .inspected(labels: Array(labels.prefix(5))))
+                }
+#if targetEnvironment(simulator)
+                // Ask Vision which devices support this request, then prefer
+                // its CPU path in Simulator when one is available.
+                if let supportedDevices = try? request.supportedComputeStageDevices,
+                   let cpuDevice = supportedDevices[.main]?.first(where: {
+                    if case .cpu = $0 { true } else { false }
+                }) {
+                    request.setComputeDevice(cpuDevice, for: .main)
+                }
+#endif
+
+                let handler = VNImageRequestHandler(
+                    cgImage: cgImage,
+                    orientation: image.imageOrientation.cgImagePropertyOrientation,
+                    options: [:]
+                )
+
+                do {
+                    try handler.perform([request])
+                } catch {
+                    #if DEBUG
+                    let nsError = error as NSError
+                    print("[MealMirror Vision] Request execution failed: \(nsError.domain) (\(nsError.code)): \(error.localizedDescription)")
+                    #endif
+                    gate.resume(with: .unavailable)
+                }
+            }
+        }
+    }
+}
+
+private final class VisionContinuationGate: @unchecked Sendable {
+    private let lock = NSLock()
+    private var continuation: CheckedContinuation<VisionStatus, Never>?
+
+    init(continuation: CheckedContinuation<VisionStatus, Never>) {
+        self.continuation = continuation
+    }
+
+    func resume(with result: VisionStatus) {
+        lock.lock()
+        let currentContinuation = continuation
+        continuation = nil
+        lock.unlock()
+        currentContinuation?.resume(returning: result)
+    }
+}
+
+private extension UIImage.Orientation {
+    var cgImagePropertyOrientation: CGImagePropertyOrientation {
+        switch self {
+        case .up: .up
+        case .upMirrored: .upMirrored
+        case .down: .down
+        case .downMirrored: .downMirrored
+        case .left: .left
+        case .leftMirrored: .leftMirrored
+        case .right: .right
+        case .rightMirrored: .rightMirrored
+        @unknown default: .up
+        }
+    }
+}

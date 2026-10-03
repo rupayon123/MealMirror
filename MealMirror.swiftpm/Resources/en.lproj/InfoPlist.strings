@@ -1,0 +1,2 @@
+"CFBundleDisplayName" = "MealMirror";
+"NSCameraUsageDescription" = "MealMirror uses the camera only when you choose to photograph a meal. Apple Vision inspects the photo on this device; it is not uploaded or saved.";
