@@ -618,6 +618,7 @@ private struct AddMealView: View {
 
             if selectedPhoto != nil {
                 Button {
+                    invalidatePendingPhotoLoad()
                     selectedPhoto = nil
                     photoPickerItem = nil
                     inputSource = .manual
@@ -751,6 +752,8 @@ private struct AddMealView: View {
     private func usePersonalPhoto(_ image: UIImage) {
         let isUntouchedDemoPrompt = inputSource == .demo
             && (mealDescription == selectedMeal.prompt || mealDescription == localization.text(selectedMeal.prompt))
+        invalidatePendingPhotoLoad()
+        photoPickerItem = nil
         selectedPhoto = image
         inputSource = .personalPhoto
         if isUntouchedDemoPrompt {
@@ -761,8 +764,7 @@ private struct AddMealView: View {
     private func selectDemo(_ meal: DemoMeal) {
         analysisTask?.cancel()
         isAnalyzing = false
-        photoLoadToken = UUID()
-        isPreparingPhoto = false
+        invalidatePendingPhotoLoad()
         photoPickerItem = nil
         photoLoadError = nil
         onSelectMeal(meal)
@@ -770,6 +772,11 @@ private struct AddMealView: View {
             description: localization.text(meal.prompt),
             referenceItemPresent: referenceItemPresent
         ))
+    }
+
+    private func invalidatePendingPhotoLoad() {
+        photoLoadToken = UUID()
+        isPreparingPhoto = false
     }
 
     @ViewBuilder
