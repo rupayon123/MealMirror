@@ -51,7 +51,7 @@ for line in lines {
             String(label.name.split(separator: ",").last ?? "")
                 .replacingOccurrences(of: "_", with: " ")
         }
-    let mapped = MealIngredientCatalog.components(matching: names.joined(separator: " "))
+    let mapped = MealIngredientCatalog.components(matchingLabels: names)
     if showDetails {
         let row = Detail(image: record.image, clueIDs: mapped.map(\.id))
         print(String(decoding: try JSONEncoder().encode(row), as: UTF8.self))

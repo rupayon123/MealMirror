@@ -43,7 +43,7 @@ struct MealAnalysisEngine {
                 []
             }
             let visualMatches = MealIngredientCatalog.components(
-                matching: visualLabels.joined(separator: " "),
+                matchingLabels: visualLabels,
                 locale: language.locale,
                 localizedKeyword: { catalog.text($0, language: language) }
             )

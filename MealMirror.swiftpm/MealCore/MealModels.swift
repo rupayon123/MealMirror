@@ -211,6 +211,30 @@ public enum MealIngredientCatalog {
         }
     }
 
+    public static func components(
+        matchingLabels labels: [String],
+        locale: Locale = Locale(identifier: "en"),
+        localizedKeyword: (String) -> String = { $0 }
+    ) -> [MealComponent] {
+        var seenIDs = Set<String>()
+        var matches: [MealComponent] = []
+        for label in labels {
+            // Vision emits independent labels. Joining them can invent a food
+            // phrase, such as "whole orange" from "whole" and "orange".
+            for component in components(
+                matching: label,
+                locale: locale,
+                localizedKeyword: localizedKeyword
+            ) where seenIDs.insert(component.id).inserted {
+                matches.append(component)
+            }
+        }
+        return matches.filter { component in
+            !(component.id == "rice" && seenIDs.contains("biryani-rice"))
+                && !(component.id == "potato" && seenIDs.contains("sweet-potato"))
+        }
+    }
+
     private static func shouldSuppress(
         _ componentID: String,
         in input: String,
