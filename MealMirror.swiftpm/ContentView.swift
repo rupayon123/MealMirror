@@ -1001,10 +1001,14 @@ private struct EstimateView: View {
                         rangeWorkbench
                         mealPreview
                     }
-                    ingredientLedger
+                    if !analysis.components.isEmpty {
+                        ingredientLedger
+                    }
                 } else {
                     rangeWorkbench
-                    ingredientLedger
+                    if !analysis.components.isEmpty {
+                        ingredientLedger
+                    }
                     if analysis.source != .manual { mealPreview }
                 }
                 reviewTrail
