@@ -4,7 +4,9 @@
 
 Food should still feel like part of life after a Type 1 diabetes diagnosis. MealMirror should make it easier for a child, adult, or caregiver to begin with the meal in front of them, keep foods from every cuisine and occasion on the table, and understand what is known and what is still uncertain. It should never shame a food choice or imply that a photograph can reveal a hidden recipe or exact serving.
 
-The long-term direction is: take a meal photo, confirm the foods and portions that the person recognizes, then review a transparent carbohydrate estimate. Keep that experience local and useful without internet access. Make the first step feel as simple as taking the picture, while asking for only the extra information a picture cannot provide. A diagnosis should not turn food into a list of forbidden things; support family recipes, cultural foods, restaurant meals, snacks, and celebrations with calm language and no shame.
+The product target is that someone can start with a photo of any meal they want to eat: a family recipe, a mixed home-cooked dish, a school lunch, a restaurant plate, a snack, or a celebration meal from any culture. The first step should be as simple as taking the picture, and photo processing should work on the device without internet. The app should offer only useful, confirmable clues, make correction easy, and ask for extra context only when the image cannot provide it. A diagnosis should not turn food into a list of forbidden things.
+
+MealMirror has not reached this target yet. The current Vision classifier missed the tested biryani photo. Treat wide, offline recognition as a primary product blocker, not as copy the app may claim it already fulfills. A photo can suggest food names, but it cannot establish a hidden recipe, ingredients, serving size, or exact carbohydrate amount.
 
 ## Two delivery tracks
 
@@ -31,6 +33,8 @@ Keep the following as a separate roadmap, not a claim that the Challenge package
 
 - No account, internet, or prior health data is needed to begin.
 - The first useful action is choosing or taking a meal photo; typing remains optional context, not a gate to starting.
+- The recognition target includes varied real meals, not only foods represented by one fixed image-classification taxonomy. No cuisine or recipe is blocked because the model lacks its label.
+- Before claiming broad recognition, evaluate a lawful, consented, culturally varied set of real home-cooked and restaurant photos offline, including mixed dishes and unfamiliar meals. Report coverage and uncertainty; keep an honest unknown result when evidence is weak.
 - The app makes possible food names easy to confirm or dismiss. Unknown or culturally specific meals have a clear manual path; no unmatched photo is presented as a confident carb count.
 - A photo never establishes ingredients, recipe, portion size, or carbohydrate grams. Estimates state their source, keep uncertainty visible, and remain editable.
 - A complete guided Practice path works offline and fits a short judging session.
@@ -60,19 +64,18 @@ Keep the following as a separate roadmap, not a claim that the Challenge package
 - The trusted-item recovery was exercised with synthetic “Test food” and 42 g input. It appears as a user-entered value; this was a flow check, not nutrition validation. No value was inferred from the image, and no dose was calculated.
 - Removed the how-it-works screen's taps to USDA, NIDDK, and ADA web pages. The instructions and bundled examples remain local; the core flow does not need an internet connection.
 - Physical-device photo behavior remains unverified. The user's iPhone 16 Pro was unavailable during the previous device inventory; no connected iPhone/iPad hardware result is claimed.
-- Apple now documents multimodal image prompting for Foundation Models, but the installed Xcode 26.6 / iOS 26.5 SDK interface in this workspace does not expose the documented image `Attachment` API. Do not claim Foundation Models image analysis is integrated until the final compatible SDK/API can be compiled and tested. The current photo path uses Vision.
+- [Apple's Foundation Models image-attachment documentation](https://developer.apple.com/documentation/foundationmodels/attachment) currently marks `Attachment` as beta; the installed Xcode 26.6 / iOS 26.5 SDK interface does not expose the documented API. The current photo path uses Vision. Revisit a compatible, non-beta Apple image API with the next supported toolchain, and verify offline behavior and device compatibility before relying on it.
 - The shared theme overhaul is still in its separate mockup-review stage. Do not change the visual tokens or logo here. A simulator screenshot also shows the fixed photo action footer letting “Remove selected photo” ghost through underneath; send that finding through the visual review before applying theme changes.
-- The bundled local food catalog is illustrative and finite. It does not provide validated values for any meal from anywhere, and current image classification does not recognize arbitrary recipes, reliably measure portions, or calculate nutrition. Expand only with an honest uncertainty model and broad, representative evaluation—not a marketing claim.
-- This folder has no Git metadata or remote yet. The user authorized a public `rupayon123/MealMirror` repository; create and push it after reviewing the initial snapshot, then verify the remote head.
+- The bundled local food catalog is illustrative and finite. It does not provide validated values for any meal from anywhere, and current image classification does not recognize arbitrary recipes, reliably measure portions, or calculate nutrition. The [Food-101 research dataset](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/) has 101 dish categories, so a classifier limited to that taxonomy would not satisfy MealMirror's any-meal goal by itself. Expand only with an honest uncertainty model and broad, representative evaluation—not a marketing claim.
+- The authorized public repository is live at [github.com/rupayon123/MealMirror](https://github.com/rupayon123/MealMirror). Initial commit `bc29b4b` is on `main`; the remote head and clean worktree were verified on October 3, 2026. Keep publishing reviewed, buildable progress for the user's testing.
 - `COMPETITIVE-REVIEW.md` now includes RxFood's public claims and offline limitation. No hands-on or head-to-head nutrition accuracy study has been performed.
 
 ## Ordered work
 
-1. Preserve the user's approved theme/logo and wait for the separate mockup approval before app-wide visual edits; route the footer overlap finding back into that review.
-2. Keep the photo-only path, safe empty-result state, and trusted-entry recovery clear. Never display arbitrary classifier labels as food; keep suggestions unchecked and require the person to confirm foods and portions.
-3. Investigate a food-specific on-device model only when its provenance, license, supported hardware, offline behavior, size, and real-photo performance can be verified within the Challenge package. Revisit Apple's multimodal Foundation Models image API when a compatible non-beta SDK is available.
-4. Walk through welcome, camera, library, photo-only, unknown meal, Practice, edit, review trail, local history, Settings, and recovery states at phone and larger type sizes. Inspect screenshots and accessibility labels.
-5. Reconcile branding and AI/asset disclosure, remove stale copy, check localization and safety wording, and refresh the English-only archive.
-6. Inspect archive root structure, English resources, local assets, user-state exclusion, integrity, and archive size. Keep simulator and physical-device evidence distinct.
-7. Review source and docs, create the authorized public GitHub repository, push `main`, and verify the published commit and run/package instructions.
-8. Recheck the official 2027 rules when Apple publishes them. Keep eligibility, essays, ownership review, and final submission as applicant-owned steps.
+1. Resolve the broad offline photo-recognition blocker. Compare Apple-supported on-device options and properly licensed food models against real, culturally varied meal photos; check whether each fits the current package and device constraints before integrating it.
+2. Preserve photo-only entry, user confirmation, safe unknown results, and clear trusted-value recovery. Never display arbitrary classifier labels as food or present photo-only nutrition values as reliable.
+3. Preserve the user's approved theme/logo and wait for the separate mockup approval before app-wide visual edits; carry the photo-footer overlap into that review.
+4. Walk through welcome, camera, library, photo-only, unfamiliar meals, Practice, edit, review trail, local history, Settings, and recovery at phone and larger text sizes. Inspect screenshots and accessibility behavior.
+5. Reconcile branding and AI/asset disclosure, review translations and safety wording, then refresh the English-only archive.
+6. Keep the public repository, buildable source, delivery plan, and downloadable candidate aligned. Push reviewed progress and verify each remote head.
+7. Recheck the official 2027 rules when Apple publishes them. Keep eligibility, essays, ownership review, and final submission as applicant-owned steps.
