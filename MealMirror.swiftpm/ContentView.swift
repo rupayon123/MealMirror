@@ -169,8 +169,13 @@ private struct HomeView: View {
                         historyTicket
                     }
                 } else {
-                    compactHero
-                    sourceDock
+                    if dynamicTypeSize.isAccessibilitySize {
+                        sourceDock
+                        compactHero
+                    } else {
+                        compactHero
+                        sourceDock
+                    }
                     historyTicket
                 }
 
@@ -254,9 +259,11 @@ private struct HomeView: View {
             Text("Start with your meal")
                 .font(CarbInTheme.display(.title3, size: 19))
                 .foregroundStyle(CarbInTheme.ink)
-            Text("Start with a photo or a few words. Add context when a picture leaves questions.")
-                .font(.subheadline)
-                .foregroundStyle(CarbInTheme.mutedInk)
+            if !dynamicTypeSize.isAccessibilitySize {
+                Text("Start with a photo or a few words. Add context when a picture leaves questions.")
+                    .font(.subheadline)
+                    .foregroundStyle(CarbInTheme.mutedInk)
+            }
 
             Button(action: onStart) {
                 Label("Estimate a meal", systemImage: "text.alignleft")
@@ -265,22 +272,36 @@ private struct HomeView: View {
             .accessibilityHint("Start with a photo or a few words. Add context when a picture leaves questions.")
             .accessibilityIdentifier("carbin.home.estimate")
 
-            HStack(spacing: 10) {
-                Button(action: onStart) {
-                    Label("Camera", systemImage: "camera")
+            if dynamicTypeSize.isAccessibilitySize {
+                VStack(spacing: 10) {
+                    cameraButton
+                    libraryButton
                 }
-                .buttonStyle(CompactActionStyle())
-                .accessibilityIdentifier("carbin.home.camera")
-
-                Button(action: onStart) {
-                    Label("Library", systemImage: "photo.on.rectangle")
+            } else {
+                HStack(spacing: 10) {
+                    cameraButton
+                    libraryButton
                 }
-                .buttonStyle(CompactActionStyle())
-                .accessibilityIdentifier("carbin.home.library")
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .mealTicket()
+    }
+
+    private var cameraButton: some View {
+        Button(action: onStart) {
+            Label("Camera", systemImage: "camera")
+        }
+        .buttonStyle(CompactActionStyle())
+        .accessibilityIdentifier("carbin.home.camera")
+    }
+
+    private var libraryButton: some View {
+        Button(action: onStart) {
+            Label("Library", systemImage: "photo.on.rectangle")
+        }
+        .buttonStyle(CompactActionStyle())
+        .accessibilityIdentifier("carbin.home.library")
     }
 
     private var historyTicket: some View {
@@ -332,7 +353,13 @@ private struct AppHeader: View {
 
     var body: some View {
         Group {
-            if dynamicTypeSize.isAccessibilitySize || layoutDirection == .rightToLeft {
+            if dynamicTypeSize.isAccessibilitySize {
+                HStack(alignment: .center, spacing: 12) {
+                    brand
+                    Spacer(minLength: 8)
+                    settingsButton
+                }
+            } else if layoutDirection == .rightToLeft {
                 VStack(alignment: .leading, spacing: 12) {
                     brand
                     settingsButton
@@ -356,11 +383,17 @@ private struct AppHeader: View {
 
             VStack(alignment: .leading, spacing: 0) {
                 Text("MealMirror")
-                    .font(CarbInTheme.brand(.title2, size: 22))
+                    .font(dynamicTypeSize.isAccessibilitySize
+                        ? CarbInTheme.brand(.headline, size: 16)
+                        : CarbInTheme.brand(.title2, size: 22))
                     .foregroundStyle(CarbInTheme.ink)
-                Text(localization.text("A clearer view of your meal"))
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(CarbInTheme.tomato)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
+                if !dynamicTypeSize.isAccessibilitySize {
+                    Text(localization.text("A clearer view of your meal"))
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(CarbInTheme.tomato)
+                }
             }
         }
     }
@@ -377,7 +410,7 @@ private struct AppHeader: View {
                 }
         }
         .foregroundStyle(CarbInTheme.moss)
-        .accessibilityLabel("Settings, privacy, and safety")
+        .accessibilityLabel(localization.text("Settings, language, privacy, and safety"))
         .accessibilityIdentifier("carbin.home.settings")
     }
 }
