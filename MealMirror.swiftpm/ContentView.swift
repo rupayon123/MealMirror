@@ -4,6 +4,12 @@ import UIKit
 import MealCore
 import NavigationCore
 
+private enum InitialPhotoSource {
+    case none
+    case camera
+    case library
+}
+
 struct ContentView: View {
     let startsWithPractice: Bool
     let onReplayOnboarding: () -> Void
@@ -20,6 +26,7 @@ struct ContentView: View {
     @State private var selectedPhoto: UIImage?
     @State private var inputSource: MealInputSource = .manual
     @State private var analysis = MealAnalysis.empty()
+    @State private var initialPhotoSource: InitialPhotoSource = .none
     @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.colorScheme) private var colorScheme
     @State private var didApplyInitialPractice = false
@@ -27,7 +34,9 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $navigation.path) {
             HomeView(
-                onStart: beginMealReview,
+                onStart: { beginMealReview(photoSource: .none) },
+                onCamera: { beginMealReview(photoSource: .camera) },
+                onLibrary: { beginMealReview(photoSource: .library) },
                 onHowItWorks: { navigation.open(.howItWorks) },
                 onHistory: { navigation.open(.privacy) },
                 onSettings: { navigation.open(.settings) }
@@ -41,6 +50,8 @@ struct ContentView: View {
                         referenceItemPresent: $referenceItemPresent,
                         selectedPhoto: $selectedPhoto,
                         inputSource: $inputSource,
+                        initialPhotoSource: initialPhotoSource,
+                        onInitialPhotoSourceConsumed: { initialPhotoSource = .none },
                         onSelectMeal: selectMeal,
                         onAnalyze: { newAnalysis in
                             analysis = newAnalysis
@@ -110,12 +121,14 @@ struct ContentView: View {
         inputSource = .demo
     }
 
-    private func beginMealReview() {
+    private func beginMealReview(photoSource: InitialPhotoSource) {
         clearMealDraft()
+        initialPhotoSource = photoSource
         navigation.beginMealReview()
     }
 
     private func clearMealDraft() {
+        initialPhotoSource = .none
         selectedMeal = DemoMeal.library[0]
         mealDescription = ""
         referenceItemPresent = false
@@ -141,6 +154,8 @@ struct ContentView: View {
 
 private struct HomeView: View {
     let onStart: () -> Void
+    let onCamera: () -> Void
+    let onLibrary: () -> Void
     let onHowItWorks: () -> Void
     let onHistory: () -> Void
     let onSettings: () -> Void
@@ -289,15 +304,18 @@ private struct HomeView: View {
     }
 
     private var cameraButton: some View {
-        Button(action: onStart) {
+        Button(action: onCamera) {
             Label("Camera", systemImage: "camera")
         }
         .buttonStyle(CompactActionStyle())
+        .disabled(!CameraAccess.isAvailable)
+        .opacity(CameraAccess.isAvailable ? 1 : 0.5)
+        .accessibilityHint(Text(LocalizedStringKey(CameraAccess.isAvailable ? "Opens the camera after you grant access." : "Camera is available when this app is run on an iPhone or iPad with a camera.")))
         .accessibilityIdentifier("carbin.home.camera")
     }
 
     private var libraryButton: some View {
-        Button(action: onStart) {
+        Button(action: onLibrary) {
             Label("Library", systemImage: "photo.on.rectangle")
         }
         .buttonStyle(CompactActionStyle())
@@ -422,6 +440,8 @@ private struct AddMealView: View {
     @Binding var selectedPhoto: UIImage?
     @Binding var inputSource: MealInputSource
 
+    let initialPhotoSource: InitialPhotoSource
+    let onInitialPhotoSourceConsumed: () -> Void
     let onSelectMeal: (DemoMeal) -> Void
     let onAnalyze: (MealAnalysis) -> Void
 
@@ -431,6 +451,7 @@ private struct AddMealView: View {
     @State private var photoLoadError: String?
     @State private var photoLoadToken = UUID()
     @State private var showCamera = false
+    @State private var showPhotoPicker = false
     @State private var cameraError: String?
     @State private var analysisTask: Task<Void, Never>?
     @FocusState private var isMealDescriptionFocused: Bool
@@ -510,6 +531,7 @@ private struct AddMealView: View {
             }
         }
         .navigationTitle("Add a meal")
+        .photosPicker(isPresented: $showPhotoPicker, selection: $photoPickerItem, matching: .images)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(CarbInTheme.canvas, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -597,6 +619,21 @@ private struct AddMealView: View {
         }
         .onDisappear {
             analysisTask?.cancel()
+        }
+        .task {
+            let source = initialPhotoSource
+            guard source != .none else { return }
+            onInitialPhotoSourceConsumed()
+            try? await Task.sleep(for: .milliseconds(350))
+            guard !Task.isCancelled else { return }
+            switch source {
+            case .camera:
+                openCamera()
+            case .library:
+                showPhotoPicker = true
+            case .none:
+                break
+            }
         }
     }
 
@@ -838,15 +875,7 @@ private struct AddMealView: View {
 
     @ViewBuilder
     private func mealPhotoActions(hasSelectedPhoto: Bool) -> some View {
-        Button {
-            Task { @MainActor in
-                if await CameraAccess.requestAuthorization() {
-                    showCamera = true
-                } else {
-                    cameraError = "Camera access is off. You can allow it in Settings, or choose a photo without giving MealMirror access to your whole library."
-                }
-            }
-        } label: {
+        Button(action: openCamera) {
             Label("Camera", systemImage: "camera")
         }
         .buttonStyle(CompactActionStyle())
@@ -865,6 +894,16 @@ private struct AddMealView: View {
         .buttonStyle(CompactActionStyle())
         .accessibilityLabel(Text(LocalizedStringKey(selectedPhoto == nil ? "Choose a meal photo from your library" : "A meal photo has been chosen")))
         .accessibilityIdentifier("carbin.meal.library")
+    }
+
+    private func openCamera() {
+        Task { @MainActor in
+            if await CameraAccess.requestAuthorization() {
+                showCamera = true
+            } else {
+                cameraError = "Camera access is off. You can allow it in Settings, or choose a photo without giving MealMirror access to your whole library."
+            }
+        }
     }
 }
 
