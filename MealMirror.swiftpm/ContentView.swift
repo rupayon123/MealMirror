@@ -846,6 +846,7 @@ private struct EstimateView: View {
     @State private var showReviewTrail = false
     @Environment(\.dismiss) private var dismiss
     @Environment(\.locale) private var locale
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @ScaledMetric(relativeTo: .body) private var estimateActionClearance = 104
@@ -862,18 +863,17 @@ private struct EstimateView: View {
                         : analysis.methodNote
                 )
 
-                ViewThatFits(in: .horizontal) {
+                if horizontalSizeClass == .regular && analysis.source != .manual {
                     HStack(alignment: .top, spacing: 18) {
                         rangeWorkbench
-                        if analysis.source != .manual { mealPreview }
+                        mealPreview
                     }
-                    VStack(alignment: .leading, spacing: 18) {
-                        rangeWorkbench
-                        if analysis.source != .manual { mealPreview }
-                    }
+                    ingredientLedger
+                } else {
+                    rangeWorkbench
+                    ingredientLedger
+                    if analysis.source != .manual { mealPreview }
                 }
-
-                ingredientLedger
                 reviewTrail
 
                 SafetyRail(
@@ -932,19 +932,7 @@ private struct EstimateView: View {
     private var rangeWorkbench: some View {
         Group {
             if let range = analysis.overallRange {
-                ViewThatFits(in: .horizontal) {
-                    HStack(alignment: .center, spacing: 22) {
-                        rangeCopy(range)
-                        MealPlateGraphic(showsPen: false)
-                            .frame(width: 142, height: 142)
-                    }
-                    VStack(alignment: .leading, spacing: 18) {
-                        rangeCopy(range)
-                        MealPlateGraphic(showsPen: false)
-                            .frame(width: 150, height: 150)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                    }
-                }
+                rangeCopy(range)
             } else {
                 VStack(alignment: .leading, spacing: 10) {
                     Label("No reliable range yet", systemImage: "questionmark.circle")
@@ -963,6 +951,14 @@ private struct EstimateView: View {
 
     private func rangeCopy(_ range: CarbRange) -> some View {
         VStack(alignment: .leading, spacing: 10) {
+            if analysis.source == .demo {
+                Text("Practice meal")
+                    .font(.caption.weight(.black))
+                    .foregroundStyle(CarbInTheme.basil)
+                    .padding(.horizontal, 9)
+                    .padding(.vertical, 6)
+                    .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+            }
             Text("Starting carbohydrate range")
                 .font(CarbInTheme.display(.headline, size: 16))
                 .foregroundStyle(CarbInTheme.ink)
@@ -1302,15 +1298,18 @@ private struct IngredientEditorSheet: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                Section {
+            ZStack {
+                CountertopBackdrop()
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
                     Text("Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method.")
                         .font(.footnote)
                         .foregroundStyle(CarbInTheme.mutedInk)
-                        .listRowBackground(CarbInTheme.elevatedSurface)
-                }
+                        .workbenchSurface()
 
-                Section("Meal items") {
+                    Text("Meal items")
+                        .font(CarbInTheme.display(.title3, size: 19))
+                        .foregroundStyle(CarbInTheme.ink)
                     ForEach(analysis.components.indices, id: \.self) { index in
                         let component = analysis.components[index]
                         VStack(alignment: .leading, spacing: 10) {
@@ -1338,24 +1337,25 @@ private struct IngredientEditorSheet: View {
                                 .accessibilityHint("Changes the local carbohydrate range for this ingredient.")
                             }
                         }
-                        .padding(.vertical, 4)
-                        .listRowBackground(CarbInTheme.surface)
+                        .workbenchSurface()
                     }
-                }
 
-                Section {
                     Button {
                         showManualEntry = true
                     } label: {
                         Label("Add a verified carbohydrate item", systemImage: "plus.circle")
+                            .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                     }
                     .foregroundStyle(CarbInTheme.moss)
+                    .workbenchSurface()
                     .accessibilityHint("Add a carbohydrate amount from packaging or your own trusted reference.")
                     .accessibilityIdentifier("carbin.ingredient.addVerified")
+                    }
+                    .frame(maxWidth: 720, alignment: .leading)
+                    .padding(20)
+                    .frame(maxWidth: .infinity)
                 }
             }
-            .scrollContentBackground(.hidden)
-            .background(CarbInTheme.canvas)
             .navigationTitle("Adjust ingredients")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -1387,8 +1387,13 @@ private struct ManualCarbEntrySheet: View {
 
     var body: some View {
         NavigationStack {
-            Form {
-                Section("Add a verified item") {
+            ZStack {
+                CountertopBackdrop()
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
+                    Text("Add a verified item")
+                        .font(CarbInTheme.display(.title3, size: 19))
+                        .foregroundStyle(CarbInTheme.ink)
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Item name")
                             .font(.subheadline.weight(.semibold))
@@ -1397,6 +1402,7 @@ private struct ManualCarbEntrySheet: View {
                             .accessibilityLabel("Item name")
                             .accessibilityIdentifier("carbin.ingredient.name")
                     }
+                    .workbenchSurface()
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Carbohydrates in whole grams")
                             .font(.subheadline.weight(.semibold))
@@ -1405,18 +1411,22 @@ private struct ManualCarbEntrySheet: View {
                             .accessibilityLabel("Carbohydrates in whole grams")
                             .accessibilityIdentifier("carbin.ingredient.grams")
                     }
+                    .workbenchSurface()
 
                     if !grams.isEmpty && !isValidGrams {
                         Label("Enter a whole number from 0 to 500.", systemImage: "exclamationmark.circle")
                             .font(.footnote)
                             .foregroundStyle(CarbInTheme.terracotta)
                     }
-                }
 
-                Section {
                     Text("Use a package label or another trusted source. This field records carbohydrates only; it never calculates insulin.")
                         .font(.footnote)
                         .foregroundStyle(CarbInTheme.mutedInk)
+                        .workbenchSurface()
+                    }
+                    .frame(maxWidth: 720, alignment: .leading)
+                    .padding(20)
+                    .frame(maxWidth: .infinity)
                 }
             }
             .navigationTitle("Add item")

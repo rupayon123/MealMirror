@@ -10,8 +10,14 @@ struct SettingsView: View {
     let onReplayOnboarding: () -> Void
 
     var body: some View {
-        Form {
-            Section {
+        ZStack {
+            CountertopBackdrop()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    Text("Settings")
+                        .font(CarbInTheme.display(.largeTitle, size: 30))
+                        .foregroundStyle(CarbInTheme.ink)
+
                 HStack(spacing: 14) {
                     MealMirrorBadge(showsStars: false)
                         .frame(width: 54, height: 54)
@@ -24,57 +30,81 @@ struct SettingsView: View {
                             .foregroundStyle(CarbInTheme.tomato)
                     }
                 }
-                .padding(.vertical, 4)
-            }
-            .listRowBackground(CarbInTheme.ticket)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .mealTicket()
 
-            Section("Learn") {
-                Button(action: onHowItWorks) {
-                    Label("How MealMirror works", systemImage: "questionmark.circle")
-                }
-                .accessibilityIdentifier("carbin.settings.how")
-                Button(action: onReplayOnboarding) {
-                    Label("Replay the welcome guide", systemImage: "arrow.counterclockwise")
-                }
-                .accessibilityIdentifier("carbin.settings.replayOnboarding")
-            }
+                    sectionHeading("Learn")
+                    actionRow("How MealMirror works", symbol: "questionmark.circle", identifier: "carbin.settings.how", action: onHowItWorks)
+                    actionRow("Replay the welcome guide", symbol: "arrow.counterclockwise", identifier: "carbin.settings.replayOnboarding", action: onReplayOnboarding)
 
-            Section("Preferences") {
-                LanguagePickerMenu(
-                    accessibilityIdentifier: "carbin.settings.language",
-                    showsCurrentLanguage: true
-                )
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                .listRowBackground(Color.clear)
-            }
+                    sectionHeading("Preferences")
+                    LanguagePickerMenu(
+                        accessibilityIdentifier: "carbin.settings.language",
+                        showsCurrentLanguage: true
+                    )
 
-            Section("Legal and safety") {
-                Button(action: onLocalPrivacy) {
-                    Label("Local data and deletion", systemImage: "externaldrive.badge.xmark")
-                }
-                .accessibilityIdentifier("carbin.settings.history")
-                Button(action: onPrivacyPolicy) {
-                    Label("Privacy Policy", systemImage: "hand.raised.fill")
-                }
-                .accessibilityIdentifier("carbin.settings.legal.privacy")
-                Button(action: onMedicalSafety) {
-                    Label("Medical Safety", systemImage: "cross.case.fill")
-                }
-                .accessibilityIdentifier("carbin.settings.legal.medical")
-            }
+                    sectionHeading("Legal and safety")
+                    actionRow("Local data and deletion", symbol: "externaldrive.badge.xmark", identifier: "carbin.settings.history", action: onLocalPrivacy)
+                    actionRow("Privacy Policy", symbol: "hand.raised.fill", identifier: "carbin.settings.legal.privacy", action: onPrivacyPolicy)
+                    actionRow("Medical Safety", symbol: "cross.case.fill", identifier: "carbin.settings.legal.medical", action: onMedicalSafety)
 
-            Section("About") {
-                LabeledContent("App") { Text("MealMirror") }
-                LabeledContent("Meaning") { Text("A clearer view of your meal") }
-                LabeledContent("Version") { Text(versionLabel).monospacedDigit() }
+                    sectionHeading("About")
+                    VStack(alignment: .leading, spacing: 12) {
+                        LabeledContent("App") { Text("MealMirror") }
+                        LabeledContent("Meaning") { Text("A clearer view of your meal") }
+                        LabeledContent("Version") { Text(versionLabel).monospacedDigit() }
+                    }
+                    .foregroundStyle(CarbInTheme.ink)
+                    .workbenchSurface()
+                }
+                .frame(maxWidth: 720, alignment: .leading)
+                .padding(20)
+                .frame(maxWidth: .infinity)
             }
         }
-        .scrollContentBackground(.hidden)
-        .background(CarbInTheme.canvas)
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(CarbInTheme.canvas, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
+    }
+
+    private func sectionHeading(_ title: LocalizedStringKey) -> some View {
+        Text(title)
+            .font(CarbInTheme.display(.title3, size: 19))
+            .foregroundStyle(CarbInTheme.ink)
+            .padding(.top, 5)
+    }
+
+    private func actionRow(
+        _ title: LocalizedStringKey,
+        symbol: String,
+        identifier: String,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            HStack(spacing: 14) {
+                Image(systemName: symbol)
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(CarbInTheme.basil)
+                    .frame(width: 44, height: 44)
+                    .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
+                    .accessibilityHidden(true)
+                Text(title)
+                    .font(CarbInTheme.display(.headline, size: 17))
+                    .foregroundStyle(CarbInTheme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 5)
+                Image(systemName: "chevron.forward")
+                    .font(.headline)
+                    .foregroundStyle(CarbInTheme.ink)
+                    .accessibilityHidden(true)
+            }
+            .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .workbenchSurface(inset: 14)
+        .accessibilityIdentifier(identifier)
     }
 
     private var versionLabel: String {
