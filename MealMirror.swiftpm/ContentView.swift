@@ -21,6 +21,7 @@ struct ContentView: View {
     @State private var inputSource: MealInputSource = .manual
     @State private var analysis = MealAnalysis.empty()
     @EnvironmentObject private var localization: LocalizationStore
+    @Environment(\.colorScheme) private var colorScheme
     @State private var didApplyInitialPractice = false
 
     var body: some View {
@@ -80,6 +81,7 @@ struct ContentView: View {
         .tint(CarbInTheme.moss)
         .toolbarBackground(CarbInTheme.canvas, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(colorScheme, for: .navigationBar)
         .onChange(of: localization.language) { oldLanguage, _ in
             guard inputSource == .demo else { return }
             let oldPrompt = LocalizationCatalog.shared.text(selectedMeal.prompt, language: oldLanguage)
@@ -718,7 +720,7 @@ private struct AddMealView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
         .frame(maxWidth: .infinity)
-        .background(CarbInTheme.canvas.opacity(0.97))
+        .background(CarbInTheme.canvas)
         .overlay(alignment: .top) { Rectangle().fill(CarbInTheme.line.opacity(0.45)).frame(height: 1) }
     }
 
@@ -1064,7 +1066,7 @@ private struct EstimateView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
         .frame(maxWidth: .infinity)
-        .background(CarbInTheme.canvas.opacity(0.97))
+        .background(CarbInTheme.canvas)
         .overlay(alignment: .top) { Rectangle().fill(CarbInTheme.line.opacity(0.45)).frame(height: 1) }
     }
 
@@ -1210,7 +1212,7 @@ private struct ReviewView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
         .frame(maxWidth: .infinity)
-        .background(CarbInTheme.canvas.opacity(0.97))
+        .background(CarbInTheme.canvas)
         .overlay(alignment: .top) { Rectangle().fill(CarbInTheme.line.opacity(0.45)).frame(height: 1) }
     }
 
