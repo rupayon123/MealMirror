@@ -966,6 +966,7 @@ private struct AddMealView: View {
         PhotosPicker(selection: $photoPickerItem, matching: .images) {
             Label {
                 Text(LocalizedStringKey(hasSelectedPhoto ? "Chosen" : "Library"))
+                    .fixedSize(horizontal: true, vertical: false)
             } icon: {
                 Image(systemName: hasSelectedPhoto ? "checkmark" : "photo.on.rectangle")
             }
