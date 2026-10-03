@@ -839,6 +839,24 @@ private struct AddMealView: View {
                     }
                 }
                 VStack(spacing: 12) {
+                    HStack(alignment: .top, spacing: 12) {
+                        ForEach(DemoMeal.library.prefix(2)) { meal in
+                            MealChoiceCard(
+                                meal: meal,
+                                isSelected: inputSource == .demo && selectedMeal.id == meal.id,
+                                action: { selectDemo(meal) }
+                            )
+                        }
+                    }
+                    ForEach(DemoMeal.library.dropFirst(2)) { meal in
+                        MealChoiceCard(
+                            meal: meal,
+                            isSelected: inputSource == .demo && selectedMeal.id == meal.id,
+                            action: { selectDemo(meal) }
+                        )
+                    }
+                }
+                VStack(spacing: 12) {
                     ForEach(DemoMeal.library) { meal in
                         MealChoiceCard(
                             meal: meal,
@@ -848,10 +866,12 @@ private struct AddMealView: View {
                     }
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .center)
             .accessibilityElement(children: .contain)
             .accessibilityLabel("Practice meal choices")
             .accessibilityIdentifier("carbin.practice.list")
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .mealTicket(inset: 14)
     }
 
@@ -2317,10 +2337,11 @@ private struct ComponentRow: View {
     @Environment(\.locale) private var locale
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.layoutDirection) private var layoutDirection
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     var body: some View {
         Group {
-            if dynamicTypeSize.isAccessibilitySize || layoutDirection == .rightToLeft {
+            if dynamicTypeSize.isAccessibilitySize || (layoutDirection == .rightToLeft && horizontalSizeClass != .regular) {
                 VStack(alignment: .leading, spacing: 10) {
                     HStack(spacing: 10) {
                         componentIcon
