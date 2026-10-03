@@ -15,9 +15,11 @@ struct SettingsView: View {
             CountertopBackdrop()
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
-                    Text("Settings")
-                        .font(CarbInTheme.display(.largeTitle, size: 30))
-                        .foregroundStyle(CarbInTheme.ink)
+                    if !dynamicTypeSize.isAccessibilitySize {
+                        Text("Settings")
+                            .font(CarbInTheme.display(.largeTitle, size: 30))
+                            .foregroundStyle(CarbInTheme.ink)
+                    }
 
                     brandCard
 
