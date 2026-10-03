@@ -141,7 +141,10 @@ final class LocalizationStore: ObservableObject {
     static let preferenceKey = "mealmirror.language"
 
     @Published var language: AppLanguage {
-        didSet { defaults.set(language.rawValue, forKey: Self.preferenceKey) }
+        didSet {
+            defaults.set(language.rawValue, forKey: Self.preferenceKey)
+            CarbInTheme.selectedLanguage = language
+        }
     }
 
     private let defaults: UserDefaults
@@ -157,6 +160,7 @@ final class LocalizationStore: ObservableObject {
         } else {
             self.language = AppLanguage.bestMatch(preferredLanguages: Locale.preferredLanguages, available: available)
         }
+        CarbInTheme.selectedLanguage = language
     }
 
     var availableLanguages: [AppLanguage] { catalog.availableLanguages }

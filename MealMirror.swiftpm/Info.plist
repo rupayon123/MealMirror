@@ -35,6 +35,10 @@
     </array>
     <key>CFBundleName</key>
     <string>$(PRODUCT_NAME)</string>
+    <key>UIAppFonts</key>
+    <array>
+        <string>PixelifySans.ttf</string>
+    </array>
     <key>CFBundlePackageType</key>
     <string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
     <key>CFBundleShortVersionString</key>

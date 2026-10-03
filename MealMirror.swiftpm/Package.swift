@@ -37,12 +37,14 @@ let package = Package(
                 "NavigationCore",
                 "OnboardingCore",
                 "README.md",
+                "Fonts/PixelifySans-OFL.txt",
             ],
             resources: [
                 .copy("Assets/biryani-demo.png"),
                 .copy("Assets/grain-bowl-demo.png"),
                 .copy("Assets/breakfast-demo.png"),
                 .process("Assets/Brand.xcassets"),
+                .process("Fonts/PixelifySans.ttf"),
                 .process("Resources")
             ]
         ),

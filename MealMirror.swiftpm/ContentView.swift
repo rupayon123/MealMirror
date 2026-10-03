@@ -349,11 +349,8 @@ private struct AppHeader: View {
 
     private var brand: some View {
         HStack(spacing: 12) {
-            Image("LaunchMark")
-                .resizable()
-                .scaledToFit()
+            MealMirrorBadge(showsStars: false)
                 .frame(width: 60, height: 60)
-                .clipShape(RoundedRectangle(cornerRadius: 9, style: .continuous))
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 0) {
@@ -405,6 +402,7 @@ private struct AddMealView: View {
     @FocusState private var isMealDescriptionFocused: Bool
     @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         ScreenScroll(maxWidth: 1080) {
@@ -450,6 +448,31 @@ private struct AddMealView: View {
                 EmptyView()
             } else {
                 analyzeAction
+            }
+        }
+        .overlay {
+            if isAnalyzing {
+                VStack(spacing: 17) {
+                    ZStack {
+                        FoodOrbitRing(diameter: 286)
+                        MealMirrorBadge()
+                            .frame(width: 218, height: 218)
+                    }
+                    .frame(width: 286, height: 286)
+                    Text(localization.text("Inspecting on this device…"))
+                        .font(CarbInTheme.display(.title2, size: 24))
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(CarbInTheme.actionInk)
+                    Text(localization.text("A clearer view of your meal"))
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(CarbInTheme.actionInk)
+                }
+                .padding(20)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(CarbInTheme.loadingCanvas.ignoresSafeArea())
+                .transition(reduceMotion ? .identity : .opacity)
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(localization.text("Analysis in progress"))
             }
         }
         .navigationTitle("Add a meal")
@@ -1240,9 +1263,9 @@ private struct ReviewView: View {
     private var reviewStatusIcon: some View {
         Image(systemName: saved ? "checkmark.seal.fill" : "doc.text.magnifyingglass")
             .font(CarbInTheme.display(.title2, size: 22))
-            .foregroundStyle(saved ? CarbInTheme.surface : CarbInTheme.tomato)
+            .foregroundStyle(saved ? CarbInTheme.actionInk : CarbInTheme.tomato)
             .frame(width: 52, height: 52)
-            .background(saved ? CarbInTheme.basil : CarbInTheme.tomatoSoft.opacity(0.35))
+            .background(saved ? CarbInTheme.basilAction : CarbInTheme.tomatoSoft.opacity(0.35))
             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
             .rotationEffect(saved ? .degrees(-4) : .zero)
             .accessibilityHidden(true)

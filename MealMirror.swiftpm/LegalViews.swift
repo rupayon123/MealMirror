@@ -13,11 +13,8 @@ struct SettingsView: View {
         Form {
             Section {
                 HStack(spacing: 14) {
-                    Image("LaunchMark")
-                        .resizable()
-                        .scaledToFit()
+                    MealMirrorBadge(showsStars: false)
                         .frame(width: 54, height: 54)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .accessibilityHidden(true)
                     VStack(alignment: .leading, spacing: 1) {
                         Text("MealMirror")
