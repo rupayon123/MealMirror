@@ -190,8 +190,8 @@ private struct OnboardingView: View {
                 symbol: "fork.knife.circle.fill",
                 eyebrow: "WELCOME",
                 title: "Meet MealMirror",
-                detail: "Describe a meal or choose a photo. MealMirror offers local food clues and a carbohydrate range for you to review. Try a bundled meal to see the full experience.",
-                safety: "Photo clues can be wrong and cannot measure portions. MealMirror does not calculate insulin or treatment actions. Your meal stays on this device."
+                detail: "Describe a meal or choose a photo, then review a carbohydrate range. Optional Practice meals are also available.",
+                safety: "MealMirror estimates carbohydrates for you to review. It does not recommend insulin doses, corrections, or treatment decisions."
             )
         ]
     }
@@ -256,12 +256,14 @@ private struct OnboardingView: View {
         }
     }
 
-    private var languageMenu: some View {
-        HStack {
-            Spacer()
-            LanguagePickerMenu(accessibilityIdentifier: "carbin.onboarding.language")
+    @ViewBuilder private var languageMenu: some View {
+        if localization.availableLanguages.count > 1 {
+            HStack {
+                Spacer()
+                LanguagePickerMenu(accessibilityIdentifier: "carbin.onboarding.language")
+            }
+            .padding(.horizontal, 20)
         }
-        .padding(.horizontal, 20)
     }
 
     private func onboardingPage(_ item: OnboardingPage) -> some View {
@@ -309,7 +311,7 @@ private struct OnboardingView: View {
                 .fixedSize(horizontal: false, vertical: true)
 
             Text(localization.text(item.detail))
-                .font(.body)
+                .font(CarbInTheme.reading(.body, size: 17))
                 .foregroundStyle(CarbInTheme.mutedInk)
                 .fixedSize(horizontal: false, vertical: true)
 
@@ -319,6 +321,12 @@ private struct OnboardingView: View {
                     detail: LocalizedStringKey(safety),
                     symbol: item.id == 3 ? "lock.fill" : "exclamationmark.shield.fill"
                 )
+                Text(localization.text("A photo cannot reveal every ingredient or portion. Confirm the foods, adjust portions, and prefer a package label or trusted reference when available."))
+                    .font(CarbInTheme.reading(.footnote, size: 13))
+                    .foregroundStyle(CarbInTheme.mutedInk)
+                Text(localization.text("Your meal stays on this device"))
+                    .font(CarbInTheme.reading(.footnote, size: 13, weight: .bold))
+                    .foregroundStyle(CarbInTheme.basil)
             }
         }
         .mealTicket(inset: 20)

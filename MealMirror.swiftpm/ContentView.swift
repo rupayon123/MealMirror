@@ -27,6 +27,7 @@ struct ContentView: View {
     @State private var inputSource: MealInputSource = .manual
     @State private var analysis = MealAnalysis.empty()
     @State private var initialPhotoSource: InitialPhotoSource = .none
+    @State private var initialDescriptionMode = false
     @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.colorScheme) private var colorScheme
     @State private var didApplyInitialPractice = false
@@ -36,7 +37,7 @@ struct ContentView: View {
             HomeView(
                 onStart: { beginMealReview(photoSource: .none) },
                 onCamera: { beginMealReview(photoSource: .camera) },
-                onLibrary: { beginMealReview(photoSource: .library) },
+                onDescribe: { beginMealReview(photoSource: .none, prefersDescription: true) },
                 onHowItWorks: { navigation.open(.howItWorks) },
                 onHistory: { navigation.open(.privacy) },
                 onSettings: { navigation.open(.settings) }
@@ -51,6 +52,7 @@ struct ContentView: View {
                         selectedPhoto: $selectedPhoto,
                         inputSource: $inputSource,
                         initialPhotoSource: initialPhotoSource,
+                        startsWithDescription: initialDescriptionMode,
                         onInitialPhotoSourceConsumed: { initialPhotoSource = .none },
                         onSelectMeal: selectMeal,
                         onAnalyze: { newAnalysis in
@@ -121,14 +123,16 @@ struct ContentView: View {
         inputSource = .demo
     }
 
-    private func beginMealReview(photoSource: InitialPhotoSource) {
+    private func beginMealReview(photoSource: InitialPhotoSource, prefersDescription: Bool = false) {
         clearMealDraft()
         initialPhotoSource = photoSource
+        initialDescriptionMode = prefersDescription
         navigation.beginMealReview()
     }
 
     private func clearMealDraft() {
         initialPhotoSource = .none
+        initialDescriptionMode = false
         selectedMeal = DemoMeal.library[0]
         mealDescription = ""
         referenceItemPresent = false
@@ -155,7 +159,7 @@ struct ContentView: View {
 private struct HomeView: View {
     let onStart: () -> Void
     let onCamera: () -> Void
-    let onLibrary: () -> Void
+    let onDescribe: () -> Void
     let onHowItWorks: () -> Void
     let onHistory: () -> Void
     let onSettings: () -> Void
@@ -163,40 +167,32 @@ private struct HomeView: View {
     @State private var reviews = LocalReviewStore.load()
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.layoutDirection) private var layoutDirection
     @EnvironmentObject private var localization: LocalizationStore
 
     var body: some View {
         ScreenScroll(maxWidth: 1080) {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: 18) {
                 AppHeader(onSettings: onSettings)
-
-                if horizontalSizeClass == .regular && !dynamicTypeSize.isAccessibilitySize {
-                    HStack(alignment: .center, spacing: 32) {
-                        heroCopy
-                        MealPlateGraphic(showsPen: false)
-                            .frame(width: 300, height: 300)
-                    }
-                    .kitchenBubble(inset: 24)
-
+                if dynamicTypeSize.isAccessibilitySize {
+                    quickActions
+                    homeHero
+                    historyTicket
+                    howItWorksTicket
+                } else if horizontalSizeClass == .regular {
+                    homeHero
                     HStack(alignment: .top, spacing: 16) {
-                        sourceDock
-                        historyTicket
+                        quickActions
+                        VStack(spacing: 14) {
+                            historyTicket
+                            howItWorksTicket
+                        }
                     }
                 } else {
-                    sourceDock
-                    compactHero
+                    homeHero
+                    quickActions
                     historyTicket
+                    howItWorksTicket
                 }
-
-                Button(action: onHowItWorks) {
-                    Label(
-                        "See how it works",
-                        systemImage: layoutDirection == .rightToLeft ? "arrow.left" : "arrow.right"
-                    )
-                }
-                .buttonStyle(SecondaryActionStyle())
-                .accessibilityIdentifier("carbin.home.how")
 
                 SafetyRail(
                     title: "A clear boundary",
@@ -204,149 +200,155 @@ private struct HomeView: View {
                 )
             }
         }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            if !dynamicTypeSize.isAccessibilitySize {
+                Button(action: onStart) {
+                    Label("Start a meal review", systemImage: "plus")
+                }
+                .buttonStyle(PrimaryActionStyle())
+                .accessibilityIdentifier("carbin.home.estimate")
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .frame(maxWidth: .infinity)
+                .background(CarbInTheme.canvas)
+                .overlay(alignment: .top) {
+                    CarbInTheme.line.frame(height: 3)
+                }
+            }
+        }
         .toolbar(.hidden, for: .navigationBar)
         .onAppear { reviews = LocalReviewStore.load() }
     }
 
-    private var heroCopy: some View {
-        VStack(alignment: .leading, spacing: 13) {
-            Text("What’s on your plate?")
-                .font(CarbInTheme.display(.largeTitle, size: 30))
-                .foregroundStyle(CarbInTheme.ink)
-                .fixedSize(horizontal: false, vertical: true)
-            PixelDivider()
-            Text("Understand the meal in front of you.")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(CarbInTheme.basil)
-            Text("MealMirror helps you make a more informed carbohydrate estimate—starting with the meal in front of you, and ending with your own confirmation.")
-                .font(.body)
-                .foregroundStyle(CarbInTheme.mutedInk)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-        .frame(maxWidth: 560, alignment: .leading)
-    }
-
-    @ViewBuilder
-    private var compactHero: some View {
-        if dynamicTypeSize.isAccessibilitySize {
-            compactHeroCopy
-                .kitchenBubble(inset: 18)
-        } else {
-            ViewThatFits(in: .horizontal) {
-                HStack(alignment: .center, spacing: 16) {
-                    compactHeroCopy
-                    MealPlateGraphic(showsPen: false)
-                        .frame(width: 148, height: 148)
-                }
-                VStack(alignment: .leading, spacing: 14) {
-                    compactHeroCopy
-                    MealPlateGraphic(showsPen: false)
-                        .frame(width: 232, height: 232)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                }
-            }
-            .kitchenBubble(inset: 18)
-        }
-    }
-
-    private var compactHeroCopy: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("What’s on your plate?")
-                .font(CarbInTheme.display(.title1, size: 26))
-                .foregroundStyle(CarbInTheme.ink)
-                .fixedSize(horizontal: false, vertical: true)
-            PixelDivider()
-            Text("Understand the meal in front of you.")
-                .font(.subheadline.weight(.bold))
-                .foregroundStyle(CarbInTheme.basil)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
-
-    private var sourceDock: some View {
-        VStack(alignment: .leading, spacing: 13) {
-            Text("Start with your meal")
-                .font(CarbInTheme.display(.title3, size: 19))
-                .foregroundStyle(CarbInTheme.ink)
+    private var homeHero: some View {
+        VStack(spacing: 10) {
             if !dynamicTypeSize.isAccessibilitySize {
-                Text("Start with a photo or a few words. Add context when a picture leaves questions.")
-                    .font(.subheadline)
-                    .foregroundStyle(CarbInTheme.mutedInk)
+                MealMirrorBadge()
+                    .frame(width: horizontalSizeClass == .regular ? 250 : 205,
+                           height: horizontalSizeClass == .regular ? 250 : 205)
+                    .padding(.top, 6)
             }
 
-            Button(action: onStart) {
-                Label("Estimate a meal", systemImage: "text.alignleft")
-            }
-            .buttonStyle(PrimaryActionStyle())
-            .accessibilityHint("Start with a photo or a few words. Add context when a picture leaves questions.")
-            .accessibilityIdentifier("carbin.home.estimate")
-
-            if dynamicTypeSize.isAccessibilitySize {
-                VStack(spacing: 10) {
-                    cameraButton
-                    libraryButton
+            VStack(alignment: .leading, spacing: 6) {
+                Text("What’s on your plate?")
+                    .font(CarbInTheme.display(.title1, size: 25))
+                    .foregroundStyle(CarbInTheme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                if !dynamicTypeSize.isAccessibilitySize {
+                    Text("Start with a photo or a few words. Add context when a picture leaves questions.")
+                        .font(CarbInTheme.reading(.body, size: 16, weight: .semibold))
+                        .foregroundStyle(CarbInTheme.mutedInk)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .kitchenBubble(inset: 14)
+        }
+        .padding(14)
+        .background { CheckerboardSurface() }
+        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .stroke(CarbInTheme.line, lineWidth: 3)
+        }
+        .shadow(color: CarbInTheme.line.opacity(0.38), radius: 0, x: 4, y: 5)
+    }
+
+    private var quickActions: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if dynamicTypeSize.isAccessibilitySize {
+                Button(action: onStart) {
+                    Label("Start a meal review", systemImage: "plus")
+                }
+                .buttonStyle(PrimaryActionStyle())
+                .accessibilityIdentifier("carbin.home.estimate")
+                quickAction("Camera", symbol: "camera", enabled: CameraAccess.isAvailable, action: onCamera)
+                    .accessibilityIdentifier("carbin.home.camera")
+                quickAction("Description", symbol: "pencil", enabled: true, action: onDescribe)
+                    .accessibilityIdentifier("carbin.home.describe")
             } else {
                 HStack(spacing: 10) {
-                    cameraButton
-                    libraryButton
+                    quickAction("Camera", symbol: "camera", enabled: CameraAccess.isAvailable, action: onCamera)
+                        .accessibilityIdentifier("carbin.home.camera")
+                    quickAction("Description", symbol: "pencil", enabled: true, action: onDescribe)
+                        .accessibilityIdentifier("carbin.home.describe")
                 }
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .mealTicket()
+        .frame(maxWidth: .infinity)
     }
 
-    private var cameraButton: some View {
-        Button(action: onCamera) {
-            Label("Camera", systemImage: "camera")
+    private func quickAction(_ title: LocalizedStringKey, symbol: String, enabled: Bool, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            VStack(spacing: 8) {
+                Image(systemName: symbol)
+                    .font(.title2.weight(.bold))
+                    .foregroundStyle(CarbInTheme.tomato)
+                    .accessibilityHidden(true)
+                Text(title)
+                    .font(CarbInTheme.display(.headline, size: 17))
+                    .foregroundStyle(CarbInTheme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .frame(maxWidth: .infinity, minHeight: 78)
         }
-        .buttonStyle(CompactActionStyle())
-        .disabled(!CameraAccess.isAvailable)
-        .opacity(CameraAccess.isAvailable ? 1 : 0.5)
-        .accessibilityHint(Text(LocalizedStringKey(CameraAccess.isAvailable ? "Opens the camera after you grant access." : "Camera is available when this app is run on an iPhone or iPad with a camera.")))
-        .accessibilityIdentifier("carbin.home.camera")
+        .buttonStyle(.plain)
+        .workbenchSurface(inset: 12)
+        .disabled(!enabled)
+        .opacity(enabled ? 1 : 0.58)
     }
 
-    private var libraryButton: some View {
-        Button(action: onLibrary) {
-            Label("Library", systemImage: "photo.on.rectangle")
+    private var howItWorksTicket: some View {
+        Button(action: onHowItWorks) {
+            HStack(spacing: 12) {
+                Image(systemName: "info.circle")
+                    .font(.title2.weight(.bold))
+                    .foregroundStyle(CarbInTheme.basil)
+                    .frame(width: 44, height: 44)
+                    .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 6))
+                    .accessibilityHidden(true)
+                Text("How it works")
+                    .font(CarbInTheme.display(.headline, size: 18))
+                    .foregroundStyle(CarbInTheme.ink)
+                Spacer(minLength: 4)
+                Image(systemName: "chevron.forward")
+                    .foregroundStyle(CarbInTheme.ink)
+                    .accessibilityHidden(true)
+            }
+            .frame(minHeight: 54)
         }
-        .buttonStyle(CompactActionStyle())
-        .accessibilityIdentifier("carbin.home.library")
+        .buttonStyle(.plain)
+        .workbenchSurface(inset: 14)
+        .accessibilityIdentifier("carbin.home.how")
     }
 
     private var historyTicket: some View {
         Button(action: onHistory) {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Image(systemName: "tray.full.fill")
-                        .foregroundStyle(CarbInTheme.tomato)
-                        .accessibilityHidden(true)
-                    Text("Local review history")
-                        .font(CarbInTheme.display(.headline, size: 17))
-                        .foregroundStyle(CarbInTheme.ink)
-                    Spacer()
-                    Image(systemName: "chevron.forward")
-                        .foregroundStyle(CarbInTheme.basil)
-                        .accessibilityHidden(true)
-                }
-
-                Text(historySummary)
-                    .font(.subheadline)
-                    .foregroundStyle(CarbInTheme.mutedInk)
-                    .multilineTextAlignment(.leading)
-                    .fixedSize(horizontal: false, vertical: true)
-
-                Label("Private by design", systemImage: "lock.fill")
-                    .font(.caption.weight(.bold))
+            HStack(spacing: 12) {
+                Image(systemName: "tray.full.fill")
+                    .font(.title2.weight(.bold))
                     .foregroundStyle(CarbInTheme.basil)
+                    .frame(width: 44, height: 44)
+                    .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 6))
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Local review history")
+                        .font(CarbInTheme.display(.headline, size: 18))
+                        .foregroundStyle(CarbInTheme.ink)
+                    Text(historySummary)
+                        .font(CarbInTheme.reading(.subheadline, size: 14, weight: .semibold))
+                        .foregroundStyle(CarbInTheme.mutedInk)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 4)
+                Image(systemName: "chevron.forward")
+                    .foregroundStyle(CarbInTheme.ink)
+                    .accessibilityHidden(true)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity, minHeight: 54, alignment: .leading)
         }
         .buttonStyle(.plain)
-        .mealTicket()
+        .workbenchSurface(inset: 14)
         .accessibilityIdentifier("carbin.home.history")
     }
 
@@ -436,12 +438,14 @@ private struct AddMealView: View {
     @Binding var inputSource: MealInputSource
 
     let initialPhotoSource: InitialPhotoSource
+    let startsWithDescription: Bool
     let onInitialPhotoSourceConsumed: () -> Void
     let onSelectMeal: (DemoMeal) -> Void
     let onAnalyze: (MealAnalysis) -> Void
 
     @State private var photoPickerItem: PhotosPickerItem?
     @State private var isAnalyzing = false
+    @State private var showsPhotoInput = true
     @State private var isPreparingPhoto = false
     @State private var photoLoadError: String?
     @State private var photoLoadToken = UUID()
@@ -452,25 +456,32 @@ private struct AddMealView: View {
     @FocusState private var isMealDescriptionFocused: Bool
     @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         ScreenScroll(maxWidth: 1080) {
             VStack(alignment: .leading, spacing: 24) {
                 StepRail(current: 1)
-                SectionHeading(
-                    eyebrow: "MEAL DETAILS",
-                    title: "Start with your meal",
-                    detail: "Start with a photo or a few words. Add context when a picture leaves questions."
-                )
+                if !dynamicTypeSize.isAccessibilitySize {
+                    SectionHeading(
+                        eyebrow: "Description",
+                        title: "Start with your meal",
+                        detail: "Start with a photo or a few words. Add context when a picture leaves questions."
+                    )
+                }
 
-                ViewThatFits(in: .horizontal) {
+                if horizontalSizeClass == .regular && !dynamicTypeSize.isAccessibilitySize {
                     HStack(alignment: .top, spacing: 18) {
                         photoWorkbench
                         descriptionWorkbench
                     }
-                    VStack(alignment: .leading, spacing: 18) {
+                } else {
+                    inputTabs
+                    if showsPhotoInput {
                         photoWorkbench
+                        if selectedPhoto != nil { descriptionWorkbench }
+                    } else {
                         descriptionWorkbench
                     }
                 }
@@ -480,7 +491,7 @@ private struct AddMealView: View {
 
                 if inputSource == .personalPhoto {
                     Label("Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review.", systemImage: "cpu")
-                        .font(.footnote)
+                        .font(CarbInTheme.reading(.footnote, size: 13))
                         .foregroundStyle(CarbInTheme.mutedInk)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -525,7 +536,7 @@ private struct AddMealView: View {
                 .accessibilityLabel(localization.text("Analysis in progress"))
             }
         }
-        .navigationTitle("Add a meal")
+        .kitchenNavigationTitle("Add a meal")
         .photosPicker(isPresented: $showPhotoPicker, selection: $photoPickerItem, matching: .images)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(CarbInTheme.canvas, for: .navigationBar)
@@ -569,6 +580,9 @@ private struct AddMealView: View {
             if newDescription != practicePrompt && newDescription != selectedMeal.prompt {
                 inputSource = .manual
             }
+        }
+        .onChange(of: inputSource) { _, newSource in
+            if newSource == .demo { showsPhotoInput = false }
         }
         .alert("Couldn’t use that photo", isPresented: Binding(
             get: { photoLoadError != nil },
@@ -616,6 +630,7 @@ private struct AddMealView: View {
             analysisTask?.cancel()
         }
         .task {
+            showsPhotoInput = !startsWithDescription
             let source = initialPhotoSource
             guard source != .none else { return }
             onInitialPhotoSourceConsumed()
@@ -632,6 +647,41 @@ private struct AddMealView: View {
         }
     }
 
+    private var inputTabs: some View {
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(spacing: 5))
+            : AnyLayout(HStackLayout(spacing: 5))
+        return layout {
+            inputTab("Description", isSelected: !showsPhotoInput) { showsPhotoInput = false }
+            inputTab("Photo (context only)", isSelected: showsPhotoInput) { showsPhotoInput = true }
+        }
+        .padding(4)
+        .background(CarbInTheme.inset, in: RoundedRectangle(cornerRadius: 8))
+        .overlay {
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(CarbInTheme.line, lineWidth: 2)
+        }
+        .animation(reduceMotion ? nil : .easeInOut(duration: 0.18), value: showsPhotoInput)
+    }
+
+    private func inputTab(_ title: LocalizedStringKey, isSelected: Bool, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Text(title)
+                .font(CarbInTheme.display(.headline, size: 16))
+                .foregroundStyle(CarbInTheme.ink)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, minHeight: 44)
+        }
+        .buttonStyle(.plain)
+        .padding(.horizontal, 4)
+        .background(isSelected ? CarbInTheme.surface : Color.clear, in: RoundedRectangle(cornerRadius: 6))
+        .overlay {
+            RoundedRectangle(cornerRadius: 6)
+                .stroke(isSelected ? CarbInTheme.line : Color.clear, lineWidth: 2)
+        }
+        .accessibilityAddTraits(isSelected ? [.isSelected] : [])
+    }
+
     private var descriptionWorkbench: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .firstTextBaseline) {
@@ -645,11 +695,11 @@ private struct AddMealView: View {
             }
 
             Text(LocalizedStringKey(inputSource == .demo ? "This Practice meal starts with a prepared description. Editing it switches back to your own meal." : "Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next."))
-                .font(.footnote)
+                .font(CarbInTheme.reading(.footnote, size: 13))
                 .foregroundStyle(CarbInTheme.mutedInk)
 
             TextEditor(text: $mealDescription)
-                .font(.body)
+                .font(CarbInTheme.reading(.body, size: 17))
                 .foregroundStyle(CarbInTheme.ink)
                 .focused($isMealDescriptionFocused)
                 .frame(minHeight: 150)
@@ -666,7 +716,7 @@ private struct AddMealView: View {
 
             if mealDescription.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 Label("Choose a photo or name one food to continue.", systemImage: "info.circle")
-                    .font(.footnote)
+                    .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -681,7 +731,7 @@ private struct AddMealView: View {
                 .font(CarbInTheme.display(.title3, size: 19))
                 .foregroundStyle(CarbInTheme.ink)
             Text("The camera and on-device inspection never upload the photo.")
-                .font(.footnote)
+                .font(CarbInTheme.reading(.footnote, size: 13))
                 .foregroundStyle(CarbInTheme.mutedInk)
 
             ViewThatFits(in: .horizontal) {
@@ -722,7 +772,7 @@ private struct AddMealView: View {
 
             if !CameraAccess.isAvailable {
                 Label("Camera capture becomes available on a physical iPhone or iPad with a camera.", systemImage: "iphone")
-                    .font(.footnote)
+                    .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -745,7 +795,7 @@ private struct AddMealView: View {
                     .font(CarbInTheme.display(.headline, size: 16))
                     .foregroundStyle(CarbInTheme.ink)
                 Text("Recorded for your own portion review. It does not change the carbohydrate range.")
-                    .font(.footnote)
+                    .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
             }
         }
@@ -760,7 +810,7 @@ private struct AddMealView: View {
                 .font(CarbInTheme.display(.headline, size: 16))
                 .foregroundStyle(CarbInTheme.tomato)
             Text("Use a bundled Practice meal to learn the review controls. Practice values are examples, not an analysis of your meal.")
-                .font(.footnote)
+                .font(CarbInTheme.reading(.footnote, size: 13))
                 .foregroundStyle(CarbInTheme.mutedInk)
                 .fixedSize(horizontal: false, vertical: true)
 
@@ -923,15 +973,17 @@ private struct EstimateView: View {
         ScreenScroll(maxWidth: 1080) {
             VStack(alignment: .leading, spacing: 22) {
                 StepRail(current: 2)
-                SectionHeading(
-                    eyebrow: "CHECK THE RANGE",
-                    title: analysis.isReadyForReview
-                        ? "A range worth checking"
-                        : (analysis.components.isEmpty ? "A little more detail will help" : "Possible foods to check"),
-                    detail: analysis.isReadyForReview
-                        ? "The range stays visible and editable, so you can review what it is based on."
-                        : analysis.methodNote
-                )
+                if !dynamicTypeSize.isAccessibilitySize {
+                    SectionHeading(
+                        eyebrow: "Your estimate",
+                        title: analysis.isReadyForReview
+                            ? "A range worth checking"
+                            : (analysis.components.isEmpty ? "A little more detail will help" : "Possible foods to check"),
+                        detail: analysis.isReadyForReview
+                            ? "The range stays visible and editable, so you can review what it is based on."
+                            : analysis.methodNote
+                    )
+                }
 
                 if horizontalSizeClass == .regular && analysis.source != .manual {
                     HStack(alignment: .top, spacing: 18) {
@@ -989,7 +1041,7 @@ private struct EstimateView: View {
                 estimateAction
             }
         }
-        .navigationTitle(LocalizedStringKey(analysis.source == .demo ? "Practice meal review" : "Your estimate"))
+        .kitchenNavigationTitle("Your estimate")
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(CarbInTheme.canvas, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -1013,34 +1065,32 @@ private struct EstimateView: View {
                     Text(LocalizedStringKey(analysis.components.isEmpty
                         ? "Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal."
                         : "Add the foods you recognize to build an inspectable carbohydrate range."))
-                        .font(.subheadline)
+                        .font(CarbInTheme.reading(.subheadline, size: 15))
                         .foregroundStyle(CarbInTheme.mutedInk)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .workbenchSurface()
+        .workbenchSurface(fill: analysis.overallRange == nil ? CarbInTheme.tomatoSoft : CarbInTheme.basilSoft)
     }
 
     private func rangeCopy(_ range: CarbRange) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             if analysis.source == .demo {
                 Text("Practice meal")
-                    .font(.caption.weight(.black))
+                    .font(CarbInTheme.display(.caption1, size: 12))
                     .foregroundStyle(CarbInTheme.basil)
                     .padding(.horizontal, 9)
                     .padding(.vertical, 6)
                     .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
             }
-            Text("Starting carbohydrate range")
-                .font(CarbInTheme.display(.headline, size: 16))
-                .foregroundStyle(CarbInTheme.ink)
             Text(localization.carbohydrateRange(range))
-                .font(.system(size: rangeFontSize, weight: .black, design: .rounded))
+                .font(CarbInTheme.display(.largeTitle, size: rangeFontSize))
                 .monospacedDigit()
                 .foregroundStyle(CarbInTheme.basil)
-                .minimumScaleFactor(0.72)
+                .lineLimit(1)
+                .minimumScaleFactor(0.25)
                 .accessibilityLabel(Text(
                     (analysis.source == .demo ? localization.text("Practice meal") + ". " : "")
                     + localization.text(
@@ -1049,9 +1099,12 @@ private struct EstimateView: View {
                         Int64(range.high)
                     )
                 ))
+            Text("Starting carbohydrate range")
+                .font(CarbInTheme.display(.headline, size: 16))
+                .foregroundStyle(CarbInTheme.ink)
             PixelDivider(color: CarbInTheme.butter)
             Text("Keep the full range visible while you verify portions, ingredients, and labels. This is not dose advice.")
-                .font(.footnote)
+                .font(CarbInTheme.reading(.footnote, size: 13))
                 .foregroundStyle(CarbInTheme.mutedInk)
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -1112,11 +1165,11 @@ private struct EstimateView: View {
                     source: analysis.source
                 )
                 Text(LocalizedStringKey(analysis.methodNote))
-                    .font(.footnote)
+                    .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
                 Text(localizedVisionDetail)
-                    .font(.footnote)
+                    .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -1137,7 +1190,7 @@ private struct EstimateView: View {
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(CarbInTheme.ink)
                 Text("Recipe, portion size, sauces, and product labels can change this range. Confirm or adjust every listed item.")
-                    .font(.footnote)
+                    .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -1228,7 +1281,7 @@ private struct ReviewView: View {
             VStack(alignment: .leading, spacing: 24) {
                 StepRail(current: 3)
                 SectionHeading(
-                    eyebrow: "FINAL REVIEW",
+                    eyebrow: "Review",
                     title: saved ? "Saved privately." : "Your check, your call.",
                     detail: saved ? savedDetail : "Confirm the parts you recognize before you keep a local record.",
                     detailTreatment: saved ? .formattedLocalized : .localizedCatalog
@@ -1249,7 +1302,7 @@ private struct ReviewView: View {
                 reviewAction
             }
         }
-        .navigationTitle("Review")
+        .kitchenNavigationTitle("Review")
         .navigationBarTitleDisplayMode(.inline)
         .alert("Couldn’t save this review", isPresented: $showSaveError) {
             Button("OK", role: .cancel) {}
@@ -1383,7 +1436,7 @@ private struct IngredientEditorSheet: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
                     Text("Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method.")
-                        .font(.footnote)
+                        .font(CarbInTheme.reading(.footnote, size: 13))
                         .foregroundStyle(CarbInTheme.mutedInk)
                         .workbenchSurface()
 
@@ -1398,7 +1451,7 @@ private struct IngredientEditorSheet: View {
                             }
                                 .tint(CarbInTheme.moss)
                             Text(display(component.detail, treatment: component.detailTreatment))
-                                .font(.footnote)
+                                .font(CarbInTheme.reading(.footnote, size: 13))
                                 .foregroundStyle(CarbInTheme.mutedInk)
 
                             if component.isIncluded {
@@ -1436,7 +1489,7 @@ private struct IngredientEditorSheet: View {
                     .frame(maxWidth: .infinity)
                 }
             }
-            .navigationTitle("Adjust ingredients")
+            .kitchenNavigationTitle("Adjust ingredients")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
@@ -1495,12 +1548,12 @@ private struct ManualCarbEntrySheet: View {
 
                     if !grams.isEmpty && !isValidGrams {
                         Label("Enter a whole number from 0 to 500.", systemImage: "exclamationmark.circle")
-                            .font(.footnote)
+                            .font(CarbInTheme.reading(.footnote, size: 13))
                             .foregroundStyle(CarbInTheme.terracotta)
                     }
 
                     Text("Use a package label or another trusted source. This field records carbohydrates only; it never calculates insulin.")
-                        .font(.footnote)
+                        .font(CarbInTheme.reading(.footnote, size: 13))
                         .foregroundStyle(CarbInTheme.mutedInk)
                         .workbenchSurface()
                     }
@@ -1509,7 +1562,7 @@ private struct ManualCarbEntrySheet: View {
                     .frame(maxWidth: .infinity)
                 }
             }
-            .navigationTitle("Add item")
+            .kitchenNavigationTitle("Add item")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -1578,7 +1631,7 @@ private struct HowItWorksView: View {
                         .font(CarbInTheme.display(.headline, size: 16))
                         .foregroundStyle(CarbInTheme.ink)
                     Text("Apple Vision can inspect a chosen photo locally, while your description drives the ingredient review. MealMirror shows an estimate and its uncertainty; confirm every value with a trusted source and your clinician-approved care plan.")
-                        .font(.footnote)
+                        .font(CarbInTheme.reading(.footnote, size: 13))
                         .foregroundStyle(CarbInTheme.mutedInk)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -1590,7 +1643,7 @@ private struct HowItWorksView: View {
                         .foregroundStyle(CarbInTheme.ink)
 
                     Text("Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method.")
-                        .font(.footnote)
+                        .font(CarbInTheme.reading(.footnote, size: 13))
                         .foregroundStyle(CarbInTheme.mutedInk)
                         .fixedSize(horizontal: false, vertical: true)
 
@@ -1608,7 +1661,7 @@ private struct HowItWorksView: View {
                 .buttonStyle(SecondaryActionStyle())
             }
         }
-        .navigationTitle("How it works")
+        .kitchenNavigationTitle("How it works")
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -1629,24 +1682,15 @@ private struct PrivacyView: View {
     var body: some View {
         ScreenScroll {
             VStack(alignment: .leading, spacing: 24) {
-                SectionHeading(
-                    eyebrow: "PRIVACY",
-                    title: "Your meal stays close.",
-                    detail: "MealMirror was built to be inspectable offline, including its privacy choices."
-                )
-
-                VStack(spacing: 0) {
-                    PrivacyRow(symbol: "wifi.slash", title: "No developer server", detail: "MealMirror makes no requests to a developer-operated server.")
-                    PrivacyRow(symbol: "person.crop.circle.badge.xmark", title: "No account", detail: "There is no sign-in and no user profile to create.")
-                    PrivacyRow(symbol: "icloud.slash", title: "Backup-excluded local storage", detail: "Reviews are saved in a device-protected local file that MealMirror excludes from backups.")
-                    PrivacyRow(symbol: "photo.on.rectangle.angled", title: "Photos stay out of history", detail: "A chosen image is inspected only for the active review; saved history stores no photo.")
-                }
-                .mealTicket()
-
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: 6) {
                     Text("Local review history")
-                        .font(CarbInTheme.display(.headline, size: 17))
+                        .font(CarbInTheme.display(.largeTitle, size: 30))
                         .foregroundStyle(CarbInTheme.ink)
+                    Text("Your meal stays close.")
+                        .font(CarbInTheme.reading(.body, size: 17, weight: .semibold))
+                        .foregroundStyle(CarbInTheme.mutedInk)
+                }
+                VStack(alignment: .leading, spacing: 12) {
                     if reviewLoadFailed {
                         Label("Review needed", systemImage: "exclamationmark.triangle.fill")
                             .font(.subheadline.weight(.semibold))
@@ -1656,13 +1700,13 @@ private struct PrivacyView: View {
                         Text(savedCount == 1
                              ? localization.text("1 local review is saved on this device.")
                              : localization.text("%lld local reviews are saved on this device.", arguments: Int64(savedCount)))
-                            .font(.subheadline)
+                            .font(CarbInTheme.reading(.subheadline, size: 15))
                             .foregroundStyle(CarbInTheme.mutedInk)
                     }
 
                     if reviews.isEmpty, !reviewLoadFailed {
                         Label("No saved reviews yet", systemImage: "tray")
-                            .font(.subheadline)
+                            .font(CarbInTheme.reading(.subheadline, size: 15))
                             .foregroundStyle(CarbInTheme.mutedInk)
                             .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
                     } else {
@@ -1692,9 +1736,22 @@ private struct PrivacyView: View {
                     .accessibilityIdentifier("carbin.history.deleteAll")
                 }
                 .mirrorCard()
+
+                Text("Privacy")
+                    .font(CarbInTheme.display(.title2, size: 22))
+                    .foregroundStyle(CarbInTheme.ink)
+
+                VStack(spacing: 0) {
+                    PrivacyRow(symbol: "wifi.slash", title: "No developer server", detail: "MealMirror makes no requests to a developer-operated server.")
+                    PrivacyRow(symbol: "person.crop.circle.badge.xmark", title: "No account", detail: "There is no sign-in and no user profile to create.")
+                    PrivacyRow(symbol: "icloud.slash", title: "Backup-excluded local storage", detail: "Reviews are saved in a device-protected local file that MealMirror excludes from backups.")
+                    PrivacyRow(symbol: "photo.on.rectangle.angled", title: "Photos stay out of history", detail: "A chosen image is inspected only for the active review; saved history stores no photo.")
+                }
+                .mealTicket()
+
             }
         }
-        .navigationTitle("Privacy")
+        .kitchenNavigationTitle("Local review history")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear { refreshHistory() }
         .sheet(item: $selectedReview) { review in
@@ -1883,7 +1940,7 @@ private struct SavedReviewDetailView: View {
                     .accessibilityIdentifier("carbin.history.detail.delete")
                 }
             }
-            .navigationTitle("Saved review")
+            .kitchenNavigationTitle("Saved review")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -1953,16 +2010,15 @@ private struct SectionHeading: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(LocalizedStringKey(eyebrow))
-                .font(.caption.weight(.bold))
-                .tracking(localization.language.supportsDecorativeTracking ? 0.7 : 0)
-                .foregroundStyle(CarbInTheme.tomato)
-            PixelDivider()
+                .font(CarbInTheme.display(.caption1, size: 13))
+                .tracking(localization.language.supportsDecorativeTracking ? 0.8 : 0)
+                .foregroundStyle(CarbInTheme.ink)
             Text(MealTextResolver.resolve(title, treatment: titleTreatment, localize: { localization.text($0) }))
-                .font(CarbInTheme.display(.title1, size: 26))
+                .font(CarbInTheme.display(.title1, size: 29))
                 .foregroundStyle(CarbInTheme.ink)
                 .fixedSize(horizontal: false, vertical: true)
             Text(MealTextResolver.resolve(detail, treatment: detailTreatment, localize: { localization.text($0) }))
-                .font(.body)
+                .font(CarbInTheme.reading(.body, size: 17))
                 .foregroundStyle(CarbInTheme.mutedInk)
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -2332,7 +2388,7 @@ private struct ReviewFact: View {
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(CarbInTheme.mutedInk)
                 Text(MealTextResolver.resolve(value, treatment: valueTreatment, localize: { localization.text($0) }))
-                    .font(.subheadline)
+                    .font(CarbInTheme.reading(.subheadline, size: 15))
                     .foregroundStyle(CarbInTheme.ink)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -2391,7 +2447,7 @@ private struct HowItWorksStep: View {
                 .font(CarbInTheme.display(.headline, size: 16))
                 .foregroundStyle(CarbInTheme.ink)
             Text(localization.text(detail))
-                .font(.subheadline)
+                .font(CarbInTheme.reading(.subheadline, size: 15))
                 .foregroundStyle(CarbInTheme.mutedInk)
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -2417,7 +2473,7 @@ private struct PrivacyRow: View {
                     .font(CarbInTheme.display(.headline, size: 16))
                     .foregroundStyle(CarbInTheme.ink)
                 Text(localization.text(detail))
-                    .font(.subheadline)
+                    .font(CarbInTheme.reading(.subheadline, size: 15))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
             }

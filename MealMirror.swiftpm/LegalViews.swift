@@ -52,7 +52,7 @@ struct SettingsView: View {
                 .frame(maxWidth: .infinity)
             }
         }
-        .navigationTitle("Settings")
+        .kitchenNavigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(CarbInTheme.canvas, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -205,7 +205,7 @@ struct PrivacyPolicyView: View {
                 body: "This Challenge candidate has no online policy or support service. Its privacy practices are described here for this version and may change in a later release."
             )
         }
-        .navigationTitle("Privacy Policy")
+        .kitchenNavigationTitle("Privacy Policy")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -222,7 +222,7 @@ struct MedicalSafetyView: View {
             PolicySection(symbol: "cross.case.fill", title: "Use qualified guidance", body: "Confirm carbohydrate information and all treatment decisions with your clinician-established plan or an appropriately authorized calculator. If you may be experiencing an emergency, contact local emergency services.")
             PolicySection(symbol: "lock.shield.fill", title: "Insulin calculations unavailable", body: "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution.")
         }
-        .navigationTitle("Medical Safety")
+        .kitchenNavigationTitle("Medical Safety")
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -259,7 +259,7 @@ private struct PolicyScroll<Content: View>: View {
                         .font(.system(.largeTitle, design: .rounded).weight(.bold))
                         .foregroundStyle(CarbInTheme.ink)
                     Text(LocalizedStringKey(introduction))
-                        .font(.body)
+                        .font(CarbInTheme.reading(.body, size: 17))
                         .foregroundStyle(CarbInTheme.mutedInk)
                         .fixedSize(horizontal: false, vertical: true)
                     content
@@ -295,7 +295,7 @@ private struct PolicySection: View {
             .font(CarbInTheme.display(.headline, size: 16))
             .foregroundStyle(CarbInTheme.ink)
             Text(LocalizedStringKey(text))
-                .font(.subheadline)
+                .font(CarbInTheme.reading(.subheadline, size: 15))
                 .foregroundStyle(CarbInTheme.mutedInk)
                 .fixedSize(horizontal: false, vertical: true)
         }

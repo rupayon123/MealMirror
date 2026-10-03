@@ -38,6 +38,7 @@ let package = Package(
                 "OnboardingCore",
                 "README.md",
                 "Fonts/PixelifySans-OFL.txt",
+                "Fonts/Nunito-OFL.txt",
             ],
             resources: [
                 .copy("Assets/biryani-demo.png"),
@@ -45,6 +46,7 @@ let package = Package(
                 .copy("Assets/breakfast-demo.png"),
                 .process("Assets/Brand.xcassets"),
                 .process("Fonts/PixelifySans.ttf"),
+                .process("Fonts/Nunito.ttf"),
                 .process("Resources")
             ]
         ),

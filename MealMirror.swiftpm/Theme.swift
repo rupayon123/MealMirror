@@ -43,6 +43,20 @@ enum CarbInTheme {
         return Font(UIFontMetrics(forTextStyle: style).scaledFont(for: nativeFace))
     }
 
+    @MainActor static func reading(_ style: UIFont.TextStyle, size: CGFloat, weight: UIFont.Weight = .regular) -> Font {
+        let usesNunito: Bool
+        switch selectedLanguage {
+        case .english, .french, .filipino, .spanish, .portuguese, .hungarian:
+            usesNunito = true
+        default:
+            usesNunito = false
+        }
+        let nunitoName = weight >= .bold ? "Nunito-Bold" : (weight >= .semibold ? "Nunito-SemiBold" : "Nunito-Regular")
+        let face = (usesNunito ? UIFont(name: nunitoName, size: size) : nil)
+            ?? UIFont.systemFont(ofSize: size, weight: weight)
+        return Font(UIFontMetrics(forTextStyle: style).scaledFont(for: face))
+    }
+
     private static func rgb(_ value: UInt32) -> (CGFloat, CGFloat, CGFloat) {
         (CGFloat((value >> 16) & 0xFF) / 255, CGFloat((value >> 8) & 0xFF) / 255, CGFloat(value & 0xFF) / 255)
     }
@@ -69,22 +83,37 @@ enum CarbInTheme {
 struct CountertopBackdrop: View {
     var body: some View {
         Canvas { context, size in
-            let spacing: CGFloat = 32
-            let tile: CGFloat = 3
-            var x: CGFloat = 16
-            while x < size.width {
-                var y: CGFloat = 12
-                while y < size.height {
-                    let alternate = Int(x / spacing + y / spacing).isMultiple(of: 2)
-                    let rect = CGRect(x: x, y: y, width: alternate ? tile : 1.5, height: alternate ? tile : 1.5)
-                    context.fill(Path(rect), with: .color(CarbInTheme.line.opacity(alternate ? 0.11 : 0.05)))
-                    y += spacing
+            let spacing: CGFloat = 22
+            for x in stride(from: CGFloat(11), through: size.width, by: spacing) {
+                for y in stride(from: CGFloat(11), through: size.height, by: spacing) {
+                    context.fill(
+                        Path(ellipseIn: CGRect(x: x - 1.1, y: y - 1.1, width: 2.2, height: 2.2)),
+                        with: .color(CarbInTheme.butter.opacity(0.35))
+                    )
                 }
-                x += spacing
             }
         }
         .background(CarbInTheme.canvas)
         .ignoresSafeArea()
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+}
+
+struct CheckerboardSurface: View {
+    var body: some View {
+        Canvas { context, size in
+            let tile: CGFloat = 23
+            for column in 0...Int(ceil(size.width / tile)) {
+                for row in 0...Int(ceil(size.height / tile)) where (column + row).isMultiple(of: 2) {
+                    context.fill(
+                        Path(CGRect(x: CGFloat(column) * tile, y: CGFloat(row) * tile, width: tile, height: tile)),
+                        with: .color(CarbInTheme.butter.opacity(0.22))
+                    )
+                }
+            }
+        }
+        .background(CarbInTheme.ticket)
         .allowsHitTesting(false)
         .accessibilityHidden(true)
     }
@@ -117,8 +146,8 @@ struct PrimaryActionStyle: ButtonStyle {
 struct SecondaryActionStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.headline.weight(.semibold))
-            .foregroundStyle(CarbInTheme.basil)
+            .font(CarbInTheme.display(.headline, size: 17))
+            .foregroundStyle(CarbInTheme.ink)
             .frame(maxWidth: .infinity)
             .frame(minHeight: 52)
             .padding(.horizontal, 18)
@@ -129,7 +158,7 @@ struct SecondaryActionStyle: ButtonStyle {
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 9, style: .continuous)
-                    .stroke(CarbInTheme.basil, lineWidth: 2)
+                    .stroke(CarbInTheme.line, lineWidth: 3)
             }
             .offset(y: configuration.isPressed ? 2 : 0)
             .opacity(configuration.isPressed ? 0.74 : 1)
@@ -412,49 +441,21 @@ struct StepRail: View {
     @EnvironmentObject private var localization: LocalizationStore
 
     var body: some View {
-        ViewThatFits(in: .horizontal) {
-            HStack(spacing: 6) {
-                stage(1, title: "Description", showsTitle: true)
-                connector(active: current > 1)
-                stage(2, title: "Your estimate", showsTitle: true)
-                connector(active: current > 2)
-                stage(3, title: "Review", showsTitle: true)
+        HStack(spacing: 6) {
+            ForEach(1...3, id: \.self) { step in
+                Rectangle()
+                    .fill(step < current ? CarbInTheme.basilAction :
+                          (step == current ? CarbInTheme.tomatoAction : CarbInTheme.inset))
+                    .frame(maxWidth: .infinity, minHeight: 7, maxHeight: 7)
+                    .overlay { Rectangle().stroke(CarbInTheme.line.opacity(0.6), lineWidth: 1) }
             }
-            HStack(spacing: 8) {
-                stage(1, title: "Description", showsTitle: false)
-                connector(active: current > 1)
-                stage(2, title: "Your estimate", showsTitle: false)
-                connector(active: current > 2)
-                stage(3, title: "Review", showsTitle: false)
-            }
+            Text(verbatim: "\(current)/3")
+                .font(CarbInTheme.brand(.caption1, size: 13))
+                .foregroundStyle(CarbInTheme.ink)
+                .fixedSize()
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(localization.text(["STEP 1 OF 3", "STEP 2 OF 3", "STEP 3 OF 3"][max(0, min(current - 1, 2))]))
-    }
-
-    private func stage(_ number: Int, title: String, showsTitle: Bool) -> some View {
-        HStack(spacing: 7) {
-            Text(verbatim: "\(number)")
-                .font(.system(.caption2, design: .monospaced).weight(.black))
-                .foregroundStyle(number <= current ? CarbInTheme.surface : CarbInTheme.mutedInk)
-                .frame(width: 25, height: 25)
-                .background(number <= current ? CarbInTheme.tomato : CarbInTheme.inset)
-                .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
-            if showsTitle {
-                Text(localization.text(title))
-                    .font(.caption.weight(number == current ? .bold : .medium))
-                    .foregroundStyle(number == current ? CarbInTheme.ink : CarbInTheme.mutedInk)
-                    .lineLimit(1)
-                    .fixedSize(horizontal: true, vertical: false)
-            }
-        }
-    }
-
-    private func connector(active: Bool) -> some View {
-        Rectangle()
-            .fill(active ? CarbInTheme.tomato : CarbInTheme.line.opacity(0.45))
-            .frame(maxWidth: 34, minHeight: 2, maxHeight: 2)
-            .accessibilityHidden(true)
     }
 }
 
@@ -494,7 +495,8 @@ private struct TicketEdge: View {
         HStack(spacing: 0) {
             ForEach(0..<42, id: \.self) { index in
                 Rectangle()
-                    .fill(index.isMultiple(of: 2) ? CarbInTheme.tomato : CarbInTheme.butter)
+                    .fill(index % 3 == 0 ? CarbInTheme.tomatoAction :
+                          (index % 3 == 1 ? CarbInTheme.butter : CarbInTheme.basilAction))
                     .frame(maxWidth: .infinity, minHeight: 4, maxHeight: 4)
             }
         }
@@ -555,16 +557,32 @@ private struct KitchenBubbleSurface: ViewModifier {
 }
 
 extension View {
+    func kitchenNavigationTitle(_ title: LocalizedStringKey) -> some View {
+        navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text(title)
+                        .font(CarbInTheme.display(.headline, size: 18))
+                        .foregroundStyle(CarbInTheme.ink)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.8)
+                }
+            }
+            .toolbarBackground(CarbInTheme.canvas, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+    }
+
     func kitchenBubble(inset: CGFloat = 18) -> some View {
         modifier(KitchenBubbleSurface(inset: inset))
     }
 
-    func workbenchSurface(inset: CGFloat = 18) -> some View {
+    func workbenchSurface(inset: CGFloat = 18, fill: Color = CarbInTheme.surface) -> some View {
         self.padding(inset)
             .background {
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .fill(CarbInTheme.surface)
-                    .shadow(color: CarbInTheme.ink.opacity(0.16), radius: 0, x: 0, y: 4)
+                    .fill(fill)
+                    .shadow(color: CarbInTheme.line.opacity(0.48), radius: 0, x: 4, y: 5)
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
@@ -574,12 +592,15 @@ extension View {
 
     func mealTicket(inset: CGFloat = 18) -> some View {
         self.padding(inset)
-            .background(CarbInTheme.ticket, in: RoundedRectangle(cornerRadius: 9, style: .continuous))
+            .background {
+                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                    .fill(CarbInTheme.surface)
+                    .shadow(color: CarbInTheme.line.opacity(0.48), radius: 0, x: 4, y: 5)
+            }
             .overlay(alignment: .top) { TicketEdge() }
-            .overlay(alignment: .bottom) { TicketEdge() }
             .overlay {
                 RoundedRectangle(cornerRadius: 9, style: .continuous)
-                    .stroke(CarbInTheme.ink.opacity(0.86), lineWidth: 2)
+                    .stroke(CarbInTheme.line, lineWidth: 3)
             }
     }
 
