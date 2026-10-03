@@ -344,7 +344,7 @@ private struct OnboardingView: View {
             }
         } label: {
             Label(
-                localization.text("Try a practice meal"),
+                localization.text("Practice meal review"),
                 systemImage: continueSymbol
             )
         }
