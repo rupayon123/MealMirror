@@ -10,7 +10,7 @@ struct CarbInRootView: View {
     var body: some View {
         ZStack {
             Group {
-                if isPreparing { CarbInTheme.tomato } else { CarbInTheme.canvas }
+                if isPreparing { CarbInTheme.loadingCanvas } else { CarbInTheme.canvas }
             }
             .ignoresSafeArea()
 
@@ -42,21 +42,17 @@ private struct LaunchExperienceView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @EnvironmentObject private var localization: LocalizationStore
     @State private var markVisible = false
-    @State private var progress = 0
 
     let onReady: () -> Void
 
     var body: some View {
-        VStack(spacing: 22) {
-            Image("LaunchMark")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 244, height: 244)
-                .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .stroke(CarbInTheme.surface.opacity(0.80), lineWidth: 3)
-                }
+        VStack(spacing: 18) {
+            ZStack {
+                FoodOrbitRing(diameter: 286)
+                MealMirrorBadge()
+                    .frame(width: 218, height: 218)
+            }
+                .frame(width: 286, height: 286)
                 .offset(y: reduceMotion || markVisible ? 0 : 16)
                 .opacity(reduceMotion || markVisible ? 1 : 0)
                 .accessibilityHidden(true)
@@ -64,41 +60,38 @@ private struct LaunchExperienceView: View {
             VStack(spacing: 5) {
                 Text("MealMirror")
                     .font(CarbInTheme.display(.largeTitle, size: 30))
-                    .foregroundStyle(CarbInTheme.surface)
+                    .foregroundStyle(CarbInTheme.actionInk)
                 Text(localization.text("A clearer view of your meal"))
                     .font(CarbInTheme.display(.headline, size: 16))
-                    .foregroundStyle(CarbInTheme.surface.opacity(0.88))
+                    .foregroundStyle(CarbInTheme.actionInk.opacity(0.92))
             }
 
-            HStack(spacing: 7) {
-                ForEach(0..<3, id: \.self) { index in
-                    Rectangle()
-                        .fill(index < progress ? CarbInTheme.butter : CarbInTheme.surface.opacity(0.35))
-                        .frame(width: index == 1 ? 36 : 22, height: 7)
-                }
+            VStack(spacing: 10) {
+                Text(localization.text("Preparing MealMirror"))
+                    .font(CarbInTheme.display(.headline, size: 17))
+                    .foregroundStyle(CarbInTheme.ink)
+                PixelDivider()
             }
-                .accessibilityLabel(localization.text("Preparing MealMirror"))
+            .frame(maxWidth: 300)
+            .padding(14)
+            .background(CarbInTheme.surface, in: RoundedRectangle(cornerRadius: 9, style: .continuous))
+            .overlay { RoundedRectangle(cornerRadius: 9, style: .continuous).stroke(CarbInTheme.line, lineWidth: 3) }
+            .shadow(color: CarbInTheme.line.opacity(0.55), radius: 0, x: 0, y: 4)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(CarbInTheme.tomato)
+        .background(CarbInTheme.loadingCanvas)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(localization.text("MealMirror, A clearer view of your meal. Preparing the local app."))
         .accessibilityIdentifier("carbin.launch")
         .task {
             if reduceMotion {
                 markVisible = true
-                progress = 3
                 try? await Task.sleep(for: .milliseconds(180))
             } else {
                 withAnimation(.easeOut(duration: 0.24)) {
                     markVisible = true
                 }
-                for step in 1...3 {
-                    try? await Task.sleep(for: .milliseconds(220))
-                    guard !Task.isCancelled else { return }
-                    withAnimation(.easeOut(duration: 0.18)) { progress = step }
-                }
-                try? await Task.sleep(for: .milliseconds(180))
+                try? await Task.sleep(for: .milliseconds(650))
             }
             guard !Task.isCancelled else { return }
             onReady()

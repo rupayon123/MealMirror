@@ -2,24 +2,44 @@ import SwiftUI
 import UIKit
 
 enum CarbInTheme {
-    // Pixel Pantry: the warmth and clear block shapes of a cooking game,
-    // grounded by roomy native controls and high-contrast reading surfaces.
-    static let canvas = adaptive(light: (1.0, 0.953, 0.843), dark: (0.075, 0.071, 0.082))
-    static let surface = adaptive(light: (1.0, 0.988, 0.949), dark: (0.145, 0.133, 0.145))
-    static let ticket = adaptive(light: (1.0, 0.969, 0.890), dark: (0.180, 0.157, 0.157))
-    static let inset = adaptive(light: (0.949, 0.875, 0.737), dark: (0.102, 0.106, 0.122))
-    static let ink = adaptive(light: (0.176, 0.122, 0.141), dark: (0.988, 0.965, 0.914))
-    static let mutedInk = adaptive(light: (0.345, 0.251, 0.239), dark: (0.804, 0.741, 0.706))
-    static let basil = adaptive(light: (0.125, 0.333, 0.420), dark: (0.498, 0.812, 0.831))
-    static let basilSoft = adaptive(light: (0.773, 0.914, 0.910), dark: (0.125, 0.251, 0.267))
-    static let tomato = adaptive(light: (0.753, 0.149, 0.231), dark: (1.0, 0.482, 0.569))
-    static let tomatoSoft = adaptive(light: (0.980, 0.757, 0.631), dark: (0.345, 0.133, 0.106))
-    static let butter = adaptive(light: (0.596, 0.333, 0.039), dark: (1.0, 0.788, 0.369))
-    static let navy = adaptive(light: (0.090, 0.290, 0.345), dark: (0.537, 0.812, 0.843))
-    static let line = adaptive(light: (0.478, 0.333, 0.271), dark: (0.365, 0.325, 0.341))
-    static func display(_ style: UIFont.TextStyle, size: CGFloat) -> Font {
-        let retroFace = UIFont(name: "MarkerFelt-Wide", size: size) ?? UIFont.systemFont(ofSize: size, weight: .black)
+    // Pixel Kitchen keeps playful display lettering on Latin scripts and lets
+    // iOS shape the other supported scripts with their native system fonts.
+    static let canvas = adaptive(light: rgb(0xFFF6D8), dark: rgb(0x211B27))
+    static let loadingCanvas = adaptive(light: rgb(0xEC5C55), dark: rgb(0x663C51))
+    static let surface = adaptive(light: rgb(0xFFFCF1), dark: rgb(0x332B39))
+    static let ticket = adaptive(light: rgb(0xFFF2BB), dark: rgb(0x352D3B))
+    static let inset = adaptive(light: rgb(0xFFE9A5), dark: rgb(0x443545))
+    static let ink = adaptive(light: rgb(0x32202C), dark: rgb(0xFFF1DB))
+    static let mutedInk = adaptive(light: rgb(0x6A4C50), dark: rgb(0xDBC9D1))
+    static let basil = adaptive(light: rgb(0x17663C), dark: rgb(0xB9E8B0))
+    static let basilAction = adaptive(light: rgb(0x237B49), dark: rgb(0x2A7A4E))
+    static let basilSoft = adaptive(light: rgb(0xD9F4D6), dark: rgb(0x2A4A3B))
+    static let tomato = adaptive(light: rgb(0xBA303D), dark: rgb(0xFFADB0))
+    static let tomatoAction = adaptive(light: rgb(0xCD3D48), dark: rgb(0xC04B58))
+    static let tomatoSoft = adaptive(light: rgb(0xFFEBDF), dark: rgb(0x493037))
+    static let butter = adaptive(light: rgb(0xFFCA4C), dark: rgb(0xF4C35C))
+    static let navy = adaptive(light: rgb(0x1C617D), dark: rgb(0x9BD3EC))
+    static let line = adaptive(light: rgb(0x4B2A35), dark: rgb(0xB69BAD))
+    static let actionInk = Color(red: 1, green: 0.973, blue: 0.914)
+
+    @MainActor static var selectedLanguage: AppLanguage = .english
+
+    @MainActor static func display(_ style: UIFont.TextStyle, size: CGFloat) -> Font {
+        let usesPixelFace: Bool
+        switch selectedLanguage {
+        case .english, .french, .filipino, .spanish, .portuguese, .hungarian:
+            usesPixelFace = true
+        default:
+            usesPixelFace = false
+        }
+        let retroFace = usesPixelFace
+            ? (UIFont(name: "PixelifySans-Regular_Bold", size: size) ?? UIFont.systemFont(ofSize: size, weight: .black))
+            : UIFont.systemFont(ofSize: size, weight: .bold)
         return Font(UIFontMetrics(forTextStyle: style).scaledFont(for: retroFace))
+    }
+
+    private static func rgb(_ value: UInt32) -> (CGFloat, CGFloat, CGFloat) {
+        (CGFloat((value >> 16) & 0xFF) / 255, CGFloat((value >> 8) & 0xFF) / 255, CGFloat(value & 0xFF) / 255)
     }
 
     // Compatibility names used by the existing feature code.
@@ -71,18 +91,18 @@ struct PrimaryActionStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(CarbInTheme.display(.headline, size: 17))
-            .foregroundStyle(isEnabled ? CarbInTheme.surface : CarbInTheme.mutedInk)
+            .foregroundStyle(isEnabled ? CarbInTheme.actionInk : CarbInTheme.mutedInk)
             .frame(maxWidth: .infinity)
             .frame(minHeight: 54)
             .padding(.horizontal, 18)
             .background {
                 RoundedRectangle(cornerRadius: 9, style: .continuous)
-                    .fill(isEnabled ? CarbInTheme.tomato : CarbInTheme.inset)
+                    .fill(isEnabled ? CarbInTheme.tomatoAction : CarbInTheme.inset)
                     .shadow(color: CarbInTheme.ink.opacity(isEnabled ? 0.35 : 0.16), radius: 0, x: 0, y: configuration.isPressed ? 1 : 4)
             }
             .overlay {
                 RoundedRectangle(cornerRadius: 9, style: .continuous)
-                    .stroke(CarbInTheme.ink.opacity(0.85), lineWidth: 2)
+                    .stroke(CarbInTheme.line, lineWidth: 3)
             }
             .offset(y: configuration.isPressed ? 3 : 0)
             .opacity(configuration.isPressed ? 0.92 : 1)
@@ -136,13 +156,162 @@ struct MealPlateGraphic: View {
     var showsPen = false
 
     var body: some View {
-        Image("LaunchMark")
-            .resizable()
-            .interpolation(.none)
-            .scaledToFit()
-            .overlay { Rectangle().stroke(CarbInTheme.ink.opacity(0.65), lineWidth: 1.5) }
-            .shadow(color: CarbInTheme.ink.opacity(0.20), radius: 0, x: 0, y: 3)
+        MealMirrorBadge()
             .accessibilityHidden(true)
+    }
+}
+
+struct MealMirrorBadge: View {
+    var showsStars = true
+
+    var body: some View {
+        GeometryReader { geometry in
+            let side = min(geometry.size.width, geometry.size.height)
+            ZStack {
+                Canvas { context, size in
+                    let pixel = max(7, side / 14)
+                    for row in 0...Int(ceil(size.height / pixel)) {
+                        for column in 0...Int(ceil(size.width / pixel)) {
+                            let color = (row + column).isMultiple(of: 2)
+                                ? Color(red: 1, green: 0.88, blue: 0.48)
+                                : Color(red: 1, green: 0.77, blue: 0.28)
+                            context.fill(
+                                Path(CGRect(x: CGFloat(column) * pixel, y: CGFloat(row) * pixel, width: pixel, height: pixel)),
+                                with: .color(color)
+                            )
+                        }
+                    }
+                }
+                .clipShape(Circle())
+                .overlay { Circle().stroke(CarbInTheme.line, lineWidth: max(2, side * 0.025)) }
+                .shadow(color: CarbInTheme.ink.opacity(0.26), radius: 0, x: 0, y: max(2, side * 0.025))
+                .frame(width: side * 0.94, height: side * 0.94)
+
+                Image("CurryMarkCutout")
+                    .resizable()
+                    .interpolation(.none)
+                    .scaledToFit()
+                    .frame(width: side, height: side)
+
+                if showsStars && side >= 100 {
+                    PixelStar()
+                        .frame(width: side * 0.075, height: side * 0.075)
+                        .offset(x: -side * 0.42, y: -side * 0.35)
+                    PixelStar()
+                        .frame(width: side * 0.055, height: side * 0.055)
+                        .offset(x: side * 0.42, y: -side * 0.25)
+                }
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+        }
+        .accessibilityHidden(true)
+    }
+}
+
+private struct PixelStar: View {
+    var body: some View {
+        GeometryReader { geometry in
+            let unit = geometry.size.width / 5
+            ZStack {
+                Rectangle().fill(CarbInTheme.line)
+                    .frame(width: unit * 1.8, height: geometry.size.height)
+                Rectangle().fill(CarbInTheme.line)
+                    .frame(width: geometry.size.width, height: unit * 1.8)
+                Rectangle().fill(CarbInTheme.surface)
+                    .frame(width: unit, height: geometry.size.height)
+                Rectangle().fill(CarbInTheme.surface)
+                    .frame(width: geometry.size.width, height: unit)
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+        }
+        .accessibilityHidden(true)
+    }
+}
+
+private enum PixelFoodKind: Int, CaseIterable {
+    case tomato, carrot, broccoli, rice, egg, fish
+
+    var rows: [String] {
+        switch self {
+        case .tomato:
+            ["...ggg...", "..gGGGg..", ".xrrrrrx.", "xrrRrrrRx", "rrrrrrrrr", "rrrrrrrrr", ".rrrrrrr.", "..rrrrr..", "...xxx..."]
+        case .carrot:
+            ["ggg......", ".gGg.....", "..xxx....", "...oox...", "...ooox..", "....ooox.", ".....ooox", "......oox", ".......xx"]
+        case .broccoli:
+            ["..ggggg..", ".gGgGgGg.", "ggggggggg", ".ggggggg.", "..ggggg..", "...xxx...", "...bbb...", "...bbb...", "....x...."]
+        case .rice:
+            [".........", "..wwwww..", ".wwwwwww.", "wwwwwwwww", "xwwwwwwwx", ".xxxxxxx.", "..bbbbb..", "...bbb...", "....x...."]
+        case .egg:
+            [".........", "..wwwww..", ".wwwwwww.", "wwwyyywww", "wwyyyyyww", "wwwyyywww", ".wwwwwww.", "..wwwww..", "........."]
+        case .fish:
+            ["....uuu..", "..uuuuuu.", "xuuuUuuux", "xuuwwuuux", "xuuuUuuux", "..uuuuuu.", "....uuu..", "......x..", "........."]
+        }
+    }
+}
+
+private struct PixelFoodGlyph: View {
+    let kind: PixelFoodKind
+
+    var body: some View {
+        Canvas { context, size in
+            let rows = kind.rows
+            let pixel = min(size.width, size.height) / 9
+            for (y, row) in rows.enumerated() {
+                for (x, symbol) in row.enumerated() where symbol != "." {
+                    context.fill(
+                        Path(CGRect(x: CGFloat(x) * pixel, y: CGFloat(y) * pixel, width: pixel, height: pixel)),
+                        with: .color(color(for: symbol))
+                    )
+                }
+            }
+        }
+        .accessibilityHidden(true)
+    }
+
+    private func color(for symbol: Character) -> Color {
+        switch symbol {
+        case "x": Color(red: 0.18, green: 0.10, blue: 0.15)
+        case "g": Color(red: 0.07, green: 0.55, blue: 0.24)
+        case "G": Color(red: 0.28, green: 0.77, blue: 0.38)
+        case "r": Color(red: 0.88, green: 0.22, blue: 0.27)
+        case "R": Color(red: 1, green: 0.48, blue: 0.43)
+        case "o": Color(red: 1, green: 0.49, blue: 0.12)
+        case "w": Color(red: 1, green: 0.97, blue: 0.82)
+        case "y": Color(red: 1, green: 0.70, blue: 0.17)
+        case "b": Color(red: 0.58, green: 0.32, blue: 0.18)
+        case "u": Color(red: 0.19, green: 0.50, blue: 0.69)
+        default: Color(red: 0.42, green: 0.75, blue: 0.89)
+        }
+    }
+}
+
+struct FoodOrbitRing: View {
+    var diameter: CGFloat = 286
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var isRotating = false
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(CarbInTheme.actionInk.opacity(0.85), style: StrokeStyle(lineWidth: 3, dash: [8, 9]))
+                .frame(width: diameter - 26, height: diameter - 26)
+
+            ForEach(PixelFoodKind.allCases, id: \.rawValue) { food in
+                let angle = Double(food.rawValue) * 2 * Double.pi / Double(PixelFoodKind.allCases.count)
+                PixelFoodGlyph(kind: food)
+                    .frame(width: 34, height: 34)
+                    .padding(3)
+                    .background(CarbInTheme.surface, in: Circle())
+                    .overlay { Circle().stroke(CarbInTheme.line, lineWidth: 2) }
+                    .offset(x: CGFloat(cos(angle)) * (diameter / 2 - 13), y: CGFloat(sin(angle)) * (diameter / 2 - 13))
+            }
+        }
+        .frame(width: diameter, height: diameter)
+        .rotationEffect(.degrees(isRotating && !reduceMotion ? 360 : 0))
+        .animation(reduceMotion ? nil : .linear(duration: 14).repeatForever(autoreverses: false), value: isRotating)
+        .onAppear { isRotating = !reduceMotion }
+        .onChange(of: reduceMotion) { _, newValue in isRotating = !newValue }
+        .accessibilityHidden(true)
     }
 }
 
@@ -297,13 +466,13 @@ extension View {
     func workbenchSurface(inset: CGFloat = 18) -> some View {
         self.padding(inset)
             .background {
-                RoundedRectangle(cornerRadius: 13, style: .continuous)
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
                     .fill(CarbInTheme.surface)
                     .shadow(color: CarbInTheme.ink.opacity(0.16), radius: 0, x: 0, y: 4)
             }
             .overlay {
-                RoundedRectangle(cornerRadius: 13, style: .continuous)
-                    .stroke(CarbInTheme.basil.opacity(0.78), lineWidth: 2.5)
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .stroke(CarbInTheme.line, lineWidth: 3)
             }
     }
 
