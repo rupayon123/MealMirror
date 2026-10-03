@@ -170,9 +170,14 @@ final class LocalizationStore: ObservableObject {
     }
 
     func carbohydrateRange(_ range: CarbRange) -> String {
-        range.display(
+        let localizedFormat = catalog.text("%lld–%lld g", language: language)
+        // Keep the low-to-high numeric run in order inside right-to-left text.
+        let displayFormat = language.isRightToLeft
+            ? localizedFormat.replacingOccurrences(of: "%lld–%lld", with: "\u{2066}%lld–%lld\u{2069}")
+            : localizedFormat
+        return range.display(
             locale: language.locale,
-            format: catalog.text("%lld–%lld g", language: language)
+            format: displayFormat
         )
     }
 }
