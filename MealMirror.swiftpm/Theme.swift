@@ -168,6 +168,8 @@ struct MealPlateGraphic: View {
 
 struct MealMirrorBadge: View {
     var showsStars = true
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var steamIsBright = false
 
     var body: some View {
         GeometryReader { geometry in
@@ -198,6 +200,18 @@ struct MealMirrorBadge: View {
                     .scaledToFit()
                     .frame(width: side, height: side)
 
+                if side >= 120 {
+                    SteamPixelHighlight()
+                        .frame(width: side, height: side)
+                        .opacity(reduceMotion ? 0.5 : (steamIsBright ? 0.72 : 0.25))
+                        .animation(
+                            reduceMotion ? nil : .easeInOut(duration: 2.8).repeatForever(autoreverses: true),
+                            value: steamIsBright
+                        )
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                }
+
                 if showsStars && side >= 100 {
                     PixelStar()
                         .frame(width: side * 0.075, height: side * 0.075)
@@ -210,6 +224,30 @@ struct MealMirrorBadge: View {
             .frame(width: geometry.size.width, height: geometry.size.height)
         }
         .accessibilityHidden(true)
+        .onAppear { steamIsBright = !reduceMotion }
+        .onChange(of: reduceMotion) { _, newValue in steamIsBright = !newValue }
+    }
+}
+
+private struct SteamPixelHighlight: View {
+    // These small glints sit inside the three steam wisps of CurryMarkCutout.
+    // Keeping them square preserves the original pixel art at large badge sizes.
+    private let pixels: [(CGFloat, CGFloat, CGFloat)] = [
+        (0.357, 0.102, 0.013), (0.370, 0.153, 0.011),
+        (0.495, 0.040, 0.014), (0.485, 0.121, 0.011),
+        (0.628, 0.126, 0.013), (0.615, 0.188, 0.011)
+    ]
+
+    var body: some View {
+        Canvas { context, size in
+            let side = min(size.width, size.height)
+            for (x, y, width) in pixels {
+                context.fill(
+                    Path(CGRect(x: x * side, y: y * side, width: width * side, height: width * side)),
+                    with: .color(.white)
+                )
+            }
+        }
     }
 }
 
