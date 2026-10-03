@@ -326,6 +326,7 @@ private struct HomeView: View {
 private struct AppHeader: View {
     let onSettings: () -> Void
 
+    @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.layoutDirection) private var layoutDirection
 
@@ -355,9 +356,9 @@ private struct AppHeader: View {
 
             VStack(alignment: .leading, spacing: 0) {
                 Text("MealMirror")
-                    .font(CarbInTheme.display(.title2, size: 22))
+                    .font(CarbInTheme.brand(.title2, size: 22))
                     .foregroundStyle(CarbInTheme.ink)
-                Text("A clearer view of your meal")
+                Text(localization.text("A clearer view of your meal"))
                     .font(.caption.weight(.bold))
                     .foregroundStyle(CarbInTheme.tomato)
             }

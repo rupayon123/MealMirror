@@ -24,6 +24,12 @@ enum CarbInTheme {
 
     @MainActor static var selectedLanguage: AppLanguage = .english
 
+    @MainActor static func brand(_ style: UIFont.TextStyle, size: CGFloat) -> Font {
+        let face = UIFont(name: "PixelifySans-Regular_Bold", size: size)
+            ?? UIFont.systemFont(ofSize: size, weight: .black)
+        return Font(UIFontMetrics(forTextStyle: style).scaledFont(for: face))
+    }
+
     @MainActor static func display(_ style: UIFont.TextStyle, size: CGFloat) -> Font {
         let usesPixelFace: Bool
         switch selectedLanguage {
@@ -32,10 +38,9 @@ enum CarbInTheme {
         default:
             usesPixelFace = false
         }
-        let retroFace = usesPixelFace
-            ? (UIFont(name: "PixelifySans-Regular_Bold", size: size) ?? UIFont.systemFont(ofSize: size, weight: .black))
-            : UIFont.systemFont(ofSize: size, weight: .bold)
-        return Font(UIFontMetrics(forTextStyle: style).scaledFont(for: retroFace))
+        if usesPixelFace { return brand(style, size: size) }
+        let nativeFace = UIFont.systemFont(ofSize: size, weight: .bold)
+        return Font(UIFontMetrics(forTextStyle: style).scaledFont(for: nativeFace))
     }
 
     private static func rgb(_ value: UInt32) -> (CGFloat, CGFloat, CGFloat) {

@@ -59,7 +59,7 @@ private struct LaunchExperienceView: View {
 
             VStack(spacing: 5) {
                 Text("MealMirror")
-                    .font(CarbInTheme.display(.largeTitle, size: 30))
+                    .font(CarbInTheme.brand(.largeTitle, size: 30))
                     .foregroundStyle(CarbInTheme.actionInk)
                 Text(localization.text("A clearer view of your meal"))
                     .font(CarbInTheme.display(.headline, size: 16))
@@ -81,7 +81,7 @@ private struct LaunchExperienceView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(CarbInTheme.loadingCanvas)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel(localization.text("MealMirror, A clearer view of your meal. Preparing the local app."))
+        .accessibilityLabel("MealMirror. \(localization.text("A clearer view of your meal")). \(localization.text("Preparing MealMirror"))")
         .accessibilityIdentifier("carbin.launch")
         .task {
             if reduceMotion {

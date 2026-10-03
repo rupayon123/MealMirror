@@ -24,8 +24,8 @@ struct SettingsView: View {
                         .accessibilityHidden(true)
                     VStack(alignment: .leading, spacing: 1) {
                         Text("MealMirror")
-                            .font(CarbInTheme.display(.title3, size: 19))
-                        Text("A clearer view of your meal")
+                            .font(CarbInTheme.brand(.title3, size: 19))
+                        Text(localization.text("A clearer view of your meal"))
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(CarbInTheme.tomato)
                     }
@@ -51,7 +51,7 @@ struct SettingsView: View {
                     sectionHeading("About")
                     VStack(alignment: .leading, spacing: 12) {
                         LabeledContent("App") { Text("MealMirror") }
-                        LabeledContent("Meaning") { Text("A clearer view of your meal") }
+                        LabeledContent("Meaning") { Text(localization.text("A clearer view of your meal")) }
                         LabeledContent("Version") { Text(versionLabel).monospacedDigit() }
                     }
                     .foregroundStyle(CarbInTheme.ink)
