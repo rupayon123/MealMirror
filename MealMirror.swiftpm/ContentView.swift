@@ -262,15 +262,15 @@ private struct HomeView: View {
                 }
                 .buttonStyle(PrimaryActionStyle())
                 .accessibilityIdentifier("carbin.home.estimate")
-                quickAction("Camera", symbol: "camera", enabled: CameraAccess.isAvailable, action: onCamera)
+                quickAction("Camera", icon: .camera, enabled: CameraAccess.isAvailable, action: onCamera)
                     .accessibilityIdentifier("carbin.home.camera")
-                quickAction("Library", symbol: "photo.on.rectangle", enabled: true, action: onLibrary)
+                quickAction("Library", icon: .photos, enabled: true, action: onLibrary)
                     .accessibilityIdentifier("carbin.home.library")
             } else {
                 HStack(spacing: 10) {
-                    quickAction("Camera", symbol: "camera", enabled: CameraAccess.isAvailable, action: onCamera)
+                    quickAction("Camera", icon: .camera, enabled: CameraAccess.isAvailable, action: onCamera)
                         .accessibilityIdentifier("carbin.home.camera")
-                    quickAction("Library", symbol: "photo.on.rectangle", enabled: true, action: onLibrary)
+                    quickAction("Library", icon: .photos, enabled: true, action: onLibrary)
                         .accessibilityIdentifier("carbin.home.library")
                 }
             }
@@ -278,13 +278,10 @@ private struct HomeView: View {
         .frame(maxWidth: .infinity)
     }
 
-    private func quickAction(_ title: LocalizedStringKey, symbol: String, enabled: Bool, action: @escaping () -> Void) -> some View {
+    private func quickAction(_ title: LocalizedStringKey, icon: PixelKitchenIconKind, enabled: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             VStack(spacing: 8) {
-                Image(systemName: symbol)
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(CarbInTheme.tomato)
-                    .accessibilityHidden(true)
+                PixelKitchenIconBadge(kind: icon)
                 Text(title)
                     .font(CarbInTheme.display(.headline, size: 17))
                     .foregroundStyle(CarbInTheme.ink)
@@ -301,11 +298,8 @@ private struct HomeView: View {
     private var howItWorksTicket: some View {
         Button(action: onHowItWorks) {
             HStack(spacing: 12) {
-                Image(systemName: "info.circle")
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(CarbInTheme.basil)
+                PixelKitchenIconBadge(kind: .info)
                     .frame(width: 44, height: 44)
-                    .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 6))
                     .accessibilityHidden(true)
                 Text("How it works")
                     .font(CarbInTheme.display(.headline, size: 18))
@@ -325,11 +319,8 @@ private struct HomeView: View {
     private var historyTicket: some View {
         Button(action: onHistory) {
             HStack(spacing: 12) {
-                Image(systemName: "tray.full.fill")
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(CarbInTheme.basil)
+                PixelKitchenIconBadge(kind: .history)
                     .frame(width: 44, height: 44)
-                    .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 6))
                     .accessibilityHidden(true)
                 VStack(alignment: .leading, spacing: 3) {
                     Text("Local review history")
@@ -398,14 +389,8 @@ private struct AppHeader: View {
 
     private var settingsButton: some View {
         Button(action: onSettings) {
-            Image(systemName: "gearshape.fill")
-                .font(.body.weight(.semibold))
+            PixelKitchenIconBadge(kind: .settings)
                 .frame(width: 44, height: 44)
-                .background(CarbInTheme.ticket, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .stroke(CarbInTheme.line.opacity(0.8), lineWidth: 1)
-                }
         }
         .foregroundStyle(CarbInTheme.moss)
         .accessibilityLabel(localization.text("Settings, language, privacy, and safety"))
