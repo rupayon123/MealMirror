@@ -185,7 +185,7 @@
 "Meal description" = "Ételleírás";
 "Meal description review" = "Az étkezés leírásának ellenőrzése";
 "Meal items" = "Ételelemek";
-"Meal source" = "Meal source";
+"Meal source" = "Az étkezés forrása";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror nem talált szénhidráttartalmú ételt a leírásodban.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror nem tudta elkészíteni azt a fényképet. Válassz másik képet, vagy használd a kamerát.";

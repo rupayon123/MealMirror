@@ -185,7 +185,7 @@
 "Meal description" = "식사 설명";
 "Meal description review" = "식사 설명 검토";
 "Meal items" = "식사 항목";
-"Meal source" = "Meal source";
+"Meal source" = "식사 입력 출처";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror이 아직 설명에서 탄수화물이 포함된 항목을 찾지 못했습니다.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror이 해당 사진을 준비하지 못했습니다. 다른 이미지를 선택하거나 카메라를 사용하세요.";

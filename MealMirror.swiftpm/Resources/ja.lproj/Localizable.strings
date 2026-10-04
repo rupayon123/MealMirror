@@ -185,7 +185,7 @@
 "Meal description" = "食事の説明";
 "Meal description review" = "食事内容の確認";
 "Meal items" = "食事項目";
-"Meal source" = "Meal source";
+"Meal source" = "食事の入力元";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror は、説明の中に炭水化物を含む項目をまだ見つけられませんでした。";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror は、その写真を準備できませんでした。別の画像を選択するか、カメラを使用してください。";

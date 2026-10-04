@@ -185,7 +185,7 @@
 "Meal description" = "餐点描述";
 "Meal description review" = "餐食描述核对";
 "Meal items" = "餐点项目";
-"Meal source" = "Meal source";
+"Meal source" = "餐食来源";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror 在您的描述中找不到含碳水化合物的项目。";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror 无法准备该照片。请选择另一张图片或使用相机。";

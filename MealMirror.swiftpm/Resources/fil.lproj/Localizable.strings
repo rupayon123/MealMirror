@@ -185,7 +185,7 @@
 "Meal description" = "Paglalarawan ng pagkain";
 "Meal description review" = "Pagsusuri sa paglalarawan ng pagkain";
 "Meal items" = "Mga item ng pagkain";
-"Meal source" = "Meal source";
+"Meal source" = "Pinagmulan ng pagkain";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "Hindi mahanap ng MealMirror ang isang item na may carbohydrate sa iyong paglalarawan hanggang ngayon.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "Hindi maihanda ng MealMirror ang larawang iyon. Pumili ng ibang imahe o gamitin ang kamera.";

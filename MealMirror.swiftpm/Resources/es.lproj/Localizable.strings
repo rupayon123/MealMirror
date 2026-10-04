@@ -185,7 +185,7 @@
 "Meal description" = "Descripción de la comida";
 "Meal description review" = "Revisión de la descripción de la comida";
 "Meal items" = "Elementos de la comida";
-"Meal source" = "Meal source";
+"Meal source" = "Origen de la comida";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror no pudo encontrar un artículo que contenga carbohidratos en su descripción aún.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror no pudo preparar esa foto. Elija otra imagen o use la cámara.";

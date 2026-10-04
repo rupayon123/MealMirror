@@ -185,7 +185,7 @@
 "Meal description" = "餐膳描述";
 "Meal description review" = "餐點描述核對";
 "Meal items" = "餐膳項目";
-"Meal source" = "Meal source";
+"Meal source" = "餐點來源";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror 在你的描述中找不到含碳水化合物的項目。";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror 無法準備該照片。請選擇其他圖片或使用相機。";

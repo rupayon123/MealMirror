@@ -185,7 +185,7 @@
 "Meal description" = "Description du repas";
 "Meal description review" = "Vérification de la description du repas";
 "Meal items" = "Articles du repas";
-"Meal source" = "Meal source";
+"Meal source" = "Origine du repas";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror n'a pas pu trouver un élément contenant des glucides dans votre description.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror n'a pas pu préparer cette photo. Choisissez une autre image ou utilisez l'appareil photo.";
