@@ -1702,9 +1702,9 @@ private struct HowItWorksView: View {
                 )
 
                 VStack(spacing: 0) {
-                    HowItWorksStep(number: "01", symbol: "camera.viewfinder", title: "Show the meal", detail: "Take a photo or choose one from your library, then describe the foods you can identify. You can record a familiar reference object for your own review; it does not alter the carbohydrate range.")
-                    HowItWorksStep(number: "02", symbol: "cpu", title: "Check possible food clues", detail: "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values.")
-                    HowItWorksStep(number: "03", symbol: "checkmark.circle", title: "Keep your judgment", detail: "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.")
+                    HowItWorksStep(number: "01", icon: .camera, title: "Show the meal", detail: "Take a photo or choose one from your library, then describe the foods you can identify. You can record a familiar reference object for your own review; it does not alter the carbohydrate range.")
+                    HowItWorksStep(number: "02", icon: .review, title: "Check possible food clues", detail: "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values.")
+                    HowItWorksStep(number: "03", icon: .check, title: "Keep your judgment", detail: "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.")
                 }
                 .mealTicket()
 
@@ -1738,7 +1738,7 @@ private struct HowItWorksView: View {
                 .accessibilityIdentifier("carbin.methodology.sources")
 
                 Button(action: onReplayOnboarding) {
-                    Label("Replay the welcome guide", systemImage: "arrow.counterclockwise")
+                    PixelKitchenActionLabel(title: "Replay the welcome guide", kind: .replay)
                 }
                 .buttonStyle(SecondaryActionStyle())
             }
@@ -2557,7 +2557,7 @@ private struct ReviewFact: View {
 
 private struct HowItWorksStep: View {
     let number: String
-    let symbol: String
+    let icon: PixelKitchenIconKind
     let title: String
     let detail: String
     @EnvironmentObject private var localization: LocalizationStore
@@ -2591,12 +2591,7 @@ private struct HowItWorksStep: View {
                 .foregroundStyle(CarbInTheme.canvas)
                 .frame(width: 34, height: 24)
                 .background(CarbInTheme.terracotta)
-            Image(systemName: symbol)
-                .font(.body.weight(.semibold))
-                .foregroundStyle(CarbInTheme.moss)
-                .frame(width: 42, height: 42)
-                .background(CarbInTheme.mossSoft, in: RoundedRectangle(cornerRadius: 8))
-                .accessibilityHidden(true)
+            PixelKitchenIconBadge(kind: icon, size: 42)
         }
     }
 
