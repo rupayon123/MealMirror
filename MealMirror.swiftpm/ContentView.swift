@@ -1976,6 +1976,35 @@ private struct SavedReviewDetailView: View {
                     }
                     .mirrorCard()
 
+                    if review.items.isEmpty {
+                        Text("This older saved review contains only the total range. Its individual sources were not saved.")
+                            .font(.subheadline)
+                            .foregroundStyle(CarbInTheme.mutedInk)
+                            .mirrorCard()
+                    } else {
+                        VStack(alignment: .leading, spacing: 14) {
+                            Text("What makes up this range")
+                                .font(.headline)
+                                .foregroundStyle(CarbInTheme.ink)
+                            ForEach(review.items) { item in
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(MealTextResolver.resolve(item.name, treatment: item.nameTreatment, localize: { localization.text($0) }))
+                                        .font(.subheadline.weight(.semibold))
+                                    Text(localization.carbohydrateRange(item.carbohydrates))
+                                        .font(.subheadline.monospacedDigit())
+                                    Text(MealTextResolver.resolve(item.source, treatment: item.sourceTreatment, localize: { localization.text($0) }))
+                                        .font(.caption)
+                                        .foregroundStyle(CarbInTheme.mutedInk)
+                                }
+                                .accessibilityElement(children: .combine)
+                            }
+                            Text("These saved values came from your review. A photo did not measure ingredients, portions, or carbohydrate grams. Do not use this record to calculate insulin.")
+                                .font(.caption)
+                                .foregroundStyle(CarbInTheme.mutedInk)
+                        }
+                        .mirrorCard()
+                    }
+
                     Button(role: .destructive) {
                         showDeleteConfirmation = true
                     } label: {

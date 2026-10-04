@@ -1,0 +1,23 @@
+feature,area,priority,original,clone,notes
+Photo-first meal entry,core,must,yes,partial,MealMirror captures/selects a photo but broad recognition is unproved
+Food candidates from photo,core,must,yes,partial,Vision suggestions start excluded; device accuracy still unverified
+Approximate portion from photo,core,should,yes,no,Do not infer portion without validated model and reference
+Estimated carbohydrate review,core,must,yes,partial,Local references and user values need clinical review; not photo-derived
+Edit or remove individual foods,core,must,yes,yes,MealMirror permits review correction; regression walkthrough open
+Delete whole meal,core,should,yes,yes,MealMirror local history delete exists; regression walkthrough open
+Text meal entry,core,should,yes,yes,MealMirror description/manual value path exists
+Recent meal reuse,core,could,yes,no,Potential offline speed improvement after core trust work
+SMS meal logging,service,could,yes,skip,External messaging conflicts with offline Challenge slice
+Dexcom glucose overlay,connected,should,yes,skip,Future connected product; not functional in offline Challenge
+Libre glucose overlay,connected,should,unverified,skip,Requested future integration; not a claimed RxFood feature
+Insulin and exercise timeline,connected,could,yes,skip,Future clinical/privacy workstream
+Macro and micronutrient insights,insights,could,yes,no,Requires validated nutrition source and portion accuracy
+GI fibre and whole-grain report,insights,could,yes,no,Clinician-facing claims; requires dietitian review
+Food substitutions and recipes,learning,could,yes,no,Can build original optional offline education after core flow
+Expert and AI companion,service,could,yes,skip,Requires experts/network; no fabricated medical advice
+Clinician report/portal,service,could,yes,skip,Licensed service and clinical workflow outside Challenge
+Offline no-account core loop,differentiator,must,limited,partial,MealMirror code is local; exact package airplane-mode device run open
+Source trail for every carbohydrate number,differentiator,must,unverified,partial,Review shows source but saved history retains only range
+Uncertain photo result with useful recovery,differentiator,must,unverified,partial,Unknown and manual path exist; usability evidence open
+Accessible short child/caregiver flow,differentiator,must,unverified,partial,Need fresh multi-device visual and user checks
+Personalized insulin dose,treatment,should,no,skip,Clinical protocol validation and applicable review required before real dose output

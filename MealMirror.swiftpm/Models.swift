@@ -142,25 +142,48 @@ struct DemoMeal: Identifiable, Hashable {
     ]
 }
 
+struct SavedReviewItem: Codable, Hashable, Identifiable {
+    let id: UUID
+    let name: String
+    let nameTreatment: MealTextTreatment
+    let source: String
+    let sourceTreatment: MealTextTreatment
+    let portion: PortionAdjustment
+    let carbohydrates: CarbRange
+
+    init(_ component: MealComponent) {
+        id = UUID()
+        name = component.name
+        nameTreatment = component.nameTreatment
+        source = component.signal
+        sourceTreatment = component.signalTreatment
+        portion = component.portion
+        carbohydrates = component.carbohydrates
+    }
+}
+
 struct SavedReview: Codable, Hashable, Identifiable {
     let id: UUID
     let mealName: String
     let mealNameTreatment: MealTextTreatment
     let range: CarbRange
     let createdAt: Date
+    let items: [SavedReviewItem]
 
     init(
         id: UUID,
         mealName: String,
         mealNameTreatment: MealTextTreatment,
         range: CarbRange,
-        createdAt: Date
+        createdAt: Date,
+        items: [SavedReviewItem] = []
     ) {
         self.id = id
         self.mealName = mealName
         self.mealNameTreatment = mealNameTreatment
         self.range = range
         self.createdAt = createdAt
+        self.items = items
     }
 
     private enum CodingKeys: String, CodingKey {
@@ -169,6 +192,7 @@ struct SavedReview: Codable, Hashable, Identifiable {
         case mealNameTreatment
         case range
         case createdAt
+        case items
     }
 
     init(from decoder: Decoder) throws {
@@ -179,6 +203,7 @@ struct SavedReview: Codable, Hashable, Identifiable {
             ?? .localizedCatalog
         range = try container.decode(CarbRange.self, forKey: .range)
         createdAt = try container.decode(Date.self, forKey: .createdAt)
+        items = try container.decodeIfPresent([SavedReviewItem].self, forKey: .items) ?? []
     }
 }
 
@@ -221,7 +246,8 @@ enum LocalReviewStore {
                 mealName: mealName,
                 mealNameTreatment: mealNameTreatment,
                 range: range,
-                createdAt: Date()
+                createdAt: Date(),
+                items: analysis.includedComponents.map(SavedReviewItem.init)
             ),
             at: 0
         )
