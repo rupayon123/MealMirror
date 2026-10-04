@@ -152,7 +152,7 @@
 "How it works" = "仕組み";
 "Hungarian" = "ハンガリー語";
 "I added a reference item" = "参照項目を追加しました";
-"If you choose Save, MealMirror stores the user-entered meal description, reviewed carbohydrate range, date, and a random identifier in a protected local file. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "保存を選択すると、MealMirrorはユーザーが入力した食事の説明、確認済みの炭水化物量の範囲、日付、およびランダムな識別子を保護されたローカルファイルに保存します。そのファイルはデバイスのバックアップから除外されます。言語およびオンボーディングの設定はアプリの設定に保存されます。インスリン比率およびインスリン単位の計算は保存されません。";
+"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "含まれる成分";
 "Inspect it locally" = "ローカルで確認する";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";

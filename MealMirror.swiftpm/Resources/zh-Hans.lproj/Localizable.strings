@@ -152,7 +152,7 @@
 "How it works" = "它是如何工作的";
 "Hungarian" = "匈牙利语";
 "I added a reference item" = "我添加了一个参考项目";
-"If you choose Save, MealMirror stores the user-entered meal description, reviewed carbohydrate range, date, and a random identifier in a protected local file. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "如果您选择保存，MealMirror 会在受保护的本地文件中存储用户输入的餐点描述、已审核的碳水化合物范围、日期以及随机标识符。该文件不包含在设备备份中。语言和入门偏好存储在应用偏好设置中。胰岛素比率和胰岛素单位计算不会被保存。";
+"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "包含的组件";
 "Inspect it locally" = "本地检查它";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";

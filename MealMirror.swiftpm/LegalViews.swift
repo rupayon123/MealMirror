@@ -184,7 +184,7 @@ struct PrivacyPolicyView: View {
             PolicySection(
                 symbol: "internaldrive.fill",
                 title: "Saved review data",
-                body: "If you choose Save, MealMirror stores the user-entered meal description, reviewed carbohydrate range, date, and a random identifier in a protected local file. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved."
+                body: "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved."
             )
             PolicySection(
                 symbol: "network.slash",
