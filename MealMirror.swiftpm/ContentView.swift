@@ -1400,13 +1400,13 @@ private struct ReviewView: View {
         Group {
             if saved {
                 Button(action: onStartAnother) {
-                    Label("Estimate another meal", systemImage: "arrow.counterclockwise.circle.fill")
+                    PixelKitchenActionLabel(title: "Estimate another meal", kind: .replay)
                 }
                 .buttonStyle(PrimaryActionStyle())
                 .accessibilityIdentifier("carbin.review.another")
             } else {
                 Button(action: saveReview) {
-                    Label("Save this local review", systemImage: "lock.fill")
+                    PixelKitchenActionLabel(title: "Save this local review", kind: .save)
                 }
                 .buttonStyle(PrimaryActionStyle())
                 .accessibilityIdentifier("carbin.review.save")
@@ -1965,13 +1965,13 @@ private struct SavedReviewRow: View {
     @ViewBuilder
     private var rowActions: some View {
         Button(action: onOpen) {
-            Label("View details", systemImage: "doc.text.magnifyingglass")
+            PixelKitchenActionLabel(title: "View details", kind: .details)
         }
         .buttonStyle(CompactActionStyle())
         .accessibilityIdentifier("carbin.history.open.\(index)")
 
         Button(role: .destructive, action: onDelete) {
-            Label("Delete review", systemImage: "trash")
+            PixelKitchenActionLabel(title: "Delete review", kind: .delete)
                 .frame(maxWidth: .infinity, minHeight: 44)
                 .contentShape(Rectangle())
         }
