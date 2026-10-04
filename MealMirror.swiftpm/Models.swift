@@ -15,7 +15,7 @@ enum MealInputSource: String, Codable, Hashable {
     }
 }
 
-enum VisionStatus: Hashable {
+enum VisionStatus: Hashable, Sendable {
     case notRun
     case inspected(labels: [String])
     case unavailable
@@ -39,6 +39,12 @@ enum VisionStatus: Hashable {
     }
 }
 
+enum LabelTextStatus: Hashable, Sendable {
+    case notRun
+    case read(lines: [String])
+    case unavailable
+}
+
 struct MealAnalysis: Hashable {
     var title: String
     var description: String
@@ -46,6 +52,7 @@ struct MealAnalysis: Hashable {
     var components: [MealComponent]
     var referenceItemPresent: Bool
     var visionStatus: VisionStatus
+    var labelTextStatus: LabelTextStatus
     var methodNote: String
     var uncertaintyNote: String
 
@@ -79,6 +86,7 @@ struct MealAnalysis: Hashable {
             components: [],
             referenceItemPresent: false,
             visionStatus: .notRun,
+            labelTextStatus: .notRun,
             methodNote: "Add the foods you recognize to build an inspectable carbohydrate range.",
             uncertaintyNote: "No meal details have been entered yet."
         )
@@ -102,6 +110,7 @@ struct DemoMeal: Identifiable, Hashable {
             components: components,
             referenceItemPresent: referenceItemPresent,
             visionStatus: .notRun,
+            labelTextStatus: .notRun,
             methodNote: "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal.",
             uncertaintyNote: uncertaintyNote
         )

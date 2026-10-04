@@ -10,6 +10,17 @@ private enum InitialPhotoSource {
     case library
 }
 
+private enum MealPhotoRole {
+    case food
+    case label
+}
+
+private struct MealPhoto: Identifiable {
+    let id = UUID()
+    let image: UIImage
+    let role: MealPhotoRole
+}
+
 struct ContentView: View {
     let startsWithLibrary: Bool
     let onReplayOnboarding: () -> Void
@@ -23,7 +34,7 @@ struct ContentView: View {
     @State private var selectedMeal = DemoMeal.library[0]
     @State private var mealDescription = ""
     @State private var referenceItemPresent = false
-    @State private var selectedPhoto: UIImage?
+    @State private var mealPhotos: [MealPhoto] = []
     @State private var inputSource: MealInputSource = .manual
     @State private var analysis = MealAnalysis.empty()
     @State private var initialPhotoSource: InitialPhotoSource = .none
@@ -50,7 +61,7 @@ struct ContentView: View {
                         selectedMeal: $selectedMeal,
                         mealDescription: $mealDescription,
                         referenceItemPresent: $referenceItemPresent,
-                        selectedPhoto: $selectedPhoto,
+                        mealPhotos: $mealPhotos,
                         inputSource: $inputSource,
                         initialPhotoSource: initialPhotoSource,
                         startsWithDescription: initialDescriptionMode,
@@ -65,7 +76,8 @@ struct ContentView: View {
                     EstimateView(
                         analysis: $analysis,
                         fallbackMeal: selectedMeal,
-                        selectedPhoto: selectedPhoto,
+                        selectedPhoto: mealPhotos.first(where: { $0.role == .food })?.image,
+                        labelImage: mealPhotos.first(where: { $0.role == .label })?.image,
                         onReview: { navigation.showFinalReview() }
                     )
                 case .review:
@@ -119,7 +131,7 @@ struct ContentView: View {
     private func selectMeal(_ meal: DemoMeal) {
         selectedMeal = meal
         mealDescription = localization.text(meal.prompt)
-        selectedPhoto = nil
+        mealPhotos = []
         inputSource = .demo
     }
 
@@ -136,7 +148,7 @@ struct ContentView: View {
         selectedMeal = DemoMeal.library[0]
         mealDescription = ""
         referenceItemPresent = false
-        selectedPhoto = nil
+        mealPhotos = []
         inputSource = .manual
         analysis = .empty()
     }
@@ -402,7 +414,7 @@ private struct AddMealView: View {
     @Binding var selectedMeal: DemoMeal
     @Binding var mealDescription: String
     @Binding var referenceItemPresent: Bool
-    @Binding var selectedPhoto: UIImage?
+    @Binding var mealPhotos: [MealPhoto]
     @Binding var inputSource: MealInputSource
 
     let initialPhotoSource: InitialPhotoSource
@@ -411,7 +423,8 @@ private struct AddMealView: View {
     let onSelectMeal: (DemoMeal) -> Void
     let onAnalyze: (MealAnalysis) -> Void
 
-    @State private var photoPickerItem: PhotosPickerItem?
+    @State private var foodPickerItems: [PhotosPickerItem] = []
+    @State private var labelPickerItems: [PhotosPickerItem] = []
     @State private var isAnalyzing = false
     @State private var showsPhotoInput = true
     @State private var isPreparingPhoto = false
@@ -419,6 +432,7 @@ private struct AddMealView: View {
     @State private var photoLoadToken = UUID()
     @State private var showCamera = false
     @State private var showPhotoPicker = false
+    @State private var cameraRole: MealPhotoRole = .food
     @State private var cameraError: String?
     @State private var analysisTask: Task<Void, Never>?
     @State private var analysisRunID = UUID()
@@ -427,6 +441,11 @@ private struct AddMealView: View {
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    private var foodPhotos: [MealPhoto] { mealPhotos.filter { $0.role == .food } }
+    private var labelPhoto: MealPhoto? { mealPhotos.first { $0.role == .label } }
+    private var selectedPhoto: UIImage? { foodPhotos.first?.image }
+    private var remainingFoodSlots: Int { max(0, 3 - foodPhotos.count) }
 
     var body: some View {
         ScreenScroll(maxWidth: 1080) {
@@ -509,7 +528,13 @@ private struct AddMealView: View {
             }
         }
         .kitchenNavigationTitle("Add a meal")
-        .photosPicker(isPresented: $showPhotoPicker, selection: $photoPickerItem, matching: .images)
+        .photosPicker(
+            isPresented: $showPhotoPicker,
+            selection: $foodPickerItems,
+            maxSelectionCount: max(1, remainingFoodSlots),
+            selectionBehavior: .ordered,
+            matching: .images
+        )
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(CarbInTheme.canvas, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -522,30 +547,13 @@ private struct AddMealView: View {
                 .accessibilityIdentifier("carbin.meal.keyboard.done")
             }
         }
-        .onChange(of: photoPickerItem) { _, newItem in
-            guard let newItem else { return }
-            cancelPendingAnalysis()
-            let token = UUID()
-            photoLoadToken = token
-            isPreparingPhoto = true
-            Task {
-                do {
-                    guard let data = try await newItem.loadTransferable(type: Data.self),
-                          let image = await MealPhotoPreparation.downsampledImageAsync(from: data) else {
-                        guard photoLoadToken == token else { return }
-                        isPreparingPhoto = false
-                        photoLoadError = "MealMirror could not prepare that photo. Choose another image or use the camera."
-                        return
-                    }
-                    guard photoLoadToken == token else { return }
-                    isPreparingPhoto = false
-                    usePersonalPhoto(image)
-                } catch {
-                    guard photoLoadToken == token else { return }
-                    isPreparingPhoto = false
-                    photoLoadError = "That photo could not be loaded. Choose it again, select a different image, or use the camera."
-                }
-            }
+        .onChange(of: foodPickerItems) { _, items in
+            guard !items.isEmpty else { return }
+            loadSelectedPhotos(items, role: .food)
+        }
+        .onChange(of: labelPickerItems) { _, items in
+            guard !items.isEmpty else { return }
+            loadSelectedPhotos(items, role: .label)
         }
         .onChange(of: mealDescription) { _, newDescription in
             guard inputSource == .demo else { return }
@@ -592,14 +600,17 @@ private struct AddMealView: View {
                     photoLoadToken = token
                     isPreparingPhoto = true
                     Task { @MainActor in
-                        let prepared = await MealPhotoPreparation.downsampledImageAsync(from: image)
+                        let prepared = await MealPhotoPreparation.downsampledImageAsync(
+                            from: image,
+                            maxPixelSize: cameraRole == .label ? 2_400 : 1_800
+                        )
                         guard photoLoadToken == token else { return }
                         isPreparingPhoto = false
                         guard let prepared else {
                             photoLoadError = "MealMirror could not prepare that photo. Choose another image or use the camera."
                             return
                         }
-                        usePersonalPhoto(prepared)
+                        appendPersonalPhotos([prepared], role: cameraRole)
                     }
                 },
                 onCancel: {
@@ -624,7 +635,7 @@ private struct AddMealView: View {
             guard !Task.isCancelled else { return }
             switch source {
             case .camera:
-                openCamera()
+                openCamera(for: .food)
             case .library:
                 showPhotoPicker = true
             case .none:
@@ -723,27 +734,28 @@ private struct AddMealView: View {
 
     private var photoWorkbench: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Use your meal photo")
+            Text("Meal photos")
                 .font(CarbInTheme.display(.title3, size: 19))
                 .foregroundStyle(CarbInTheme.ink)
-            Text("The camera and on-device inspection never upload the photo.")
+            Text("Add up to three food views and one nutrition label. Photos stay on this device.")
                 .font(CarbInTheme.reading(.footnote, size: 13))
                 .foregroundStyle(CarbInTheme.mutedInk)
+                .fixedSize(horizontal: false, vertical: true)
 
             ViewThatFits(in: .horizontal) {
-                HStack(spacing: 10) { mealPhotoActions(hasSelectedPhoto: selectedPhoto != nil) }
-                VStack(spacing: 8) { mealPhotoActions(hasSelectedPhoto: selectedPhoto != nil) }
+                HStack(spacing: 10) { mealPhotoActions }
+                VStack(spacing: 8) { mealPhotoActions }
             }
 
-            if selectedPhoto != nil || inputSource == .demo {
+            if inputSource == .demo {
                 PhotoPreview(
                     meal: selectedMeal,
-                    selectedPhoto: selectedPhoto,
+                    selectedPhoto: nil,
                     source: inputSource,
                     aspectRatio: 1.6,
                     emptyState: .mealEntry
                 )
-            } else {
+            } else if mealPhotos.isEmpty {
                 Label {
                     Text("No photo selected")
                 } icon: {
@@ -754,22 +766,56 @@ private struct AddMealView: View {
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .frame(maxWidth: .infinity, minHeight: 70, alignment: .center)
                     .insetControlGroup(inset: 10)
+            } else {
+                ScrollView(.horizontal) {
+                    HStack(alignment: .top, spacing: 10) {
+                        ForEach(mealPhotos, id: \.id) { (photo: MealPhoto) in
+                            VStack(alignment: .leading, spacing: 5) {
+                                Image(uiImage: photo.image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 136, height: 104)
+                                    .clipped()
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                                Text(photo.role == .food ? "Food view" : "Nutrition label")
+                                    .font(CarbInTheme.reading(.footnote, size: 12))
+                                    .foregroundStyle(CarbInTheme.ink)
+                                Button {
+                                    removePhoto(photo.id)
+                                } label: {
+                                    Label("Remove photo", systemImage: "xmark.circle")
+                                        .frame(minHeight: 44, alignment: .leading)
+                                }
+                                .foregroundStyle(CarbInTheme.tomato)
+                                .accessibilityIdentifier("carbin.meal.removePhoto.\(photo.id)")
+                            }
+                            .frame(width: 136, alignment: .leading)
+                            .accessibilityElement(children: .contain)
+                            .accessibilityLabel(photo.role == .food ? "Food photo" : "Nutrition label photo")
+                        }
+                    }
+                    .padding(.vertical, 2)
+                }
+                .scrollIndicators(.hidden)
             }
 
-            if selectedPhoto != nil {
-                Button {
-                    cancelPendingAnalysis()
-                    invalidatePendingPhotoLoad()
-                    selectedPhoto = nil
-                    photoPickerItem = nil
-                    inputSource = .manual
-                } label: {
-                    Label("Remove selected photo", systemImage: "xmark.circle")
-                        .frame(minWidth: 44, minHeight: 44, alignment: .leading)
-                        .contentShape(Rectangle())
+            if labelPhoto == nil {
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 10) { labelPhotoActions }
+                    VStack(spacing: 8) { labelPhotoActions }
                 }
-                .foregroundStyle(CarbInTheme.tomato)
-                .accessibilityIdentifier("carbin.meal.removePhoto")
+            } else {
+                Text("Label text will be shown for your review. It will not set carbohydrate grams automatically.")
+                    .font(CarbInTheme.reading(.footnote, size: 13))
+                    .foregroundStyle(CarbInTheme.mutedInk)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            if labelPhoto != nil && foodPhotos.isEmpty {
+                Text("Add a meal photo too. The label can help you check a value, but it does not show the whole meal.")
+                    .font(CarbInTheme.reading(.footnote, size: 13))
+                    .foregroundStyle(CarbInTheme.tomato)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
             if !CameraAccess.isAvailable {
@@ -887,6 +933,7 @@ private struct AddMealView: View {
         !isAnalyzing
             && !isPreparingPhoto
             && (selectedPhoto != nil || !mealDescription.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            && (labelPhoto == nil || selectedPhoto != nil)
     }
 
     private func analyze() {
@@ -900,7 +947,8 @@ private struct AddMealView: View {
                 demoMeal: selectedMeal,
                 description: mealDescription,
                 referenceItemPresent: referenceItemPresent,
-                image: selectedPhoto,
+                foodImages: foodPhotos.map(\.image),
+                labelImage: labelPhoto?.image,
                 language: localization.language
             )
             guard !Task.isCancelled, analysisRunID == runID else { return }
@@ -910,23 +958,65 @@ private struct AddMealView: View {
         }
     }
 
-    private func usePersonalPhoto(_ image: UIImage) {
+    private func appendPersonalPhotos(_ images: [UIImage], role: MealPhotoRole) {
+        guard !images.isEmpty else { return }
         cancelPendingAnalysis()
         let isUntouchedDemoPrompt = inputSource == .demo
             && (mealDescription == selectedMeal.prompt || mealDescription == localization.text(selectedMeal.prompt))
         invalidatePendingPhotoLoad()
-        photoPickerItem = nil
-        selectedPhoto = image
+        foodPickerItems = []
+        labelPickerItems = []
+        let available = role == .food ? remainingFoodSlots : (labelPhoto == nil ? 1 : 0)
+        mealPhotos.append(contentsOf: images.prefix(available).map { MealPhoto(image: $0, role: role) })
         inputSource = .personalPhoto
         if isUntouchedDemoPrompt {
             mealDescription = ""
         }
     }
 
+    private func removePhoto(_ id: UUID) {
+        cancelPendingAnalysis()
+        invalidatePendingPhotoLoad()
+        mealPhotos.removeAll { $0.id == id }
+        if mealPhotos.isEmpty { inputSource = .manual }
+    }
+
+    private func loadSelectedPhotos(_ items: [PhotosPickerItem], role: MealPhotoRole) {
+        cancelPendingAnalysis()
+        let token = UUID()
+        photoLoadToken = token
+        isPreparingPhoto = true
+        Task { @MainActor in
+            do {
+                var prepared: [UIImage] = []
+                for item in items {
+                    guard let data = try await item.loadTransferable(type: Data.self),
+                          let image = await MealPhotoPreparation.downsampledImageAsync(
+                            from: data,
+                            maxPixelSize: role == .label ? 2_400 : 1_800
+                          ) else {
+                        guard photoLoadToken == token else { return }
+                        isPreparingPhoto = false
+                        photoLoadError = "MealMirror could not prepare that photo. Choose another image or use the camera."
+                        return
+                    }
+                    prepared.append(image)
+                }
+                guard photoLoadToken == token else { return }
+                appendPersonalPhotos(prepared, role: role)
+            } catch {
+                guard photoLoadToken == token else { return }
+                isPreparingPhoto = false
+                photoLoadError = "That photo could not be loaded. Choose it again, select a different image, or use the camera."
+            }
+        }
+    }
+
     private func selectDemo(_ meal: DemoMeal) {
         cancelPendingAnalysis()
         invalidatePendingPhotoLoad()
-        photoPickerItem = nil
+        foodPickerItems = []
+        labelPickerItems = []
         photoLoadError = nil
         onSelectMeal(meal)
         onAnalyze(meal.analysis(
@@ -948,8 +1038,9 @@ private struct AddMealView: View {
     }
 
     @ViewBuilder
-    private func mealPhotoActions(hasSelectedPhoto: Bool) -> some View {
-        Button(action: openCamera) {
+    private var mealPhotoActions: some View {
+        let hasFoodPhotos = !foodPhotos.isEmpty
+        Button { openCamera(for: .food) } label: {
             Label {
                 Text("Camera")
                     .fixedSize(horizontal: false, vertical: true)
@@ -959,28 +1050,51 @@ private struct AddMealView: View {
             }
         }
         .buttonStyle(CompactActionStyle())
-        .disabled(!CameraAccess.isAvailable)
-        .opacity(CameraAccess.isAvailable ? 1 : 0.5)
+        .disabled(!CameraAccess.isAvailable || remainingFoodSlots == 0)
+        .opacity(CameraAccess.isAvailable && remainingFoodSlots > 0 ? 1 : 0.5)
         .accessibilityHint(Text(LocalizedStringKey(CameraAccess.isAvailable ? "Opens the camera after you grant access." : "Camera is available when this app is run on an iPhone or iPad with a camera.")))
         .accessibilityIdentifier("carbin.meal.camera")
 
-        PhotosPicker(selection: $photoPickerItem, matching: .images) {
+        PhotosPicker(
+            selection: $foodPickerItems,
+            maxSelectionCount: max(1, remainingFoodSlots),
+            selectionBehavior: .ordered,
+            matching: .images
+        ) {
             Label {
-                Text(LocalizedStringKey(hasSelectedPhoto ? "Chosen" : "Library"))
+                Text(LocalizedStringKey(hasFoodPhotos ? "Add food photos" : "Library"))
                     .fixedSize(horizontal: false, vertical: true)
             } icon: {
-                PixelKitchenIcon(kind: hasSelectedPhoto ? .check : .photos)
+                PixelKitchenIcon(kind: .photos)
                     .frame(width: 24, height: 24)
             }
         }
         .buttonStyle(CompactActionStyle())
-        .accessibilityLabel(Text(LocalizedStringKey(selectedPhoto == nil ? "Choose a meal photo from your library" : "A meal photo has been chosen")))
+        .disabled(remainingFoodSlots == 0)
+        .accessibilityLabel(Text(LocalizedStringKey("Choose a meal photo from your library")))
         .accessibilityIdentifier("carbin.meal.library")
     }
 
-    private func openCamera() {
+    @ViewBuilder
+    private var labelPhotoActions: some View {
+        Button { openCamera(for: .label) } label: {
+            Label("Label camera", systemImage: "camera.viewfinder")
+        }
+        .buttonStyle(CompactActionStyle())
+        .disabled(!CameraAccess.isAvailable)
+        .accessibilityIdentifier("carbin.meal.labelCamera")
+
+        PhotosPicker(selection: $labelPickerItems, maxSelectionCount: 1, matching: .images) {
+            Label("Add label photo", systemImage: "text.viewfinder")
+        }
+        .buttonStyle(CompactActionStyle())
+        .accessibilityIdentifier("carbin.meal.labelLibrary")
+    }
+
+    private func openCamera(for role: MealPhotoRole) {
         Task { @MainActor in
             if await CameraAccess.requestAuthorization() {
+                cameraRole = role
                 showCamera = true
             } else {
                 cameraError = "Camera access is off. You can allow it in Settings, or choose a photo without giving MealMirror access to your whole library."
@@ -993,6 +1107,7 @@ private struct EstimateView: View {
     @Binding var analysis: MealAnalysis
     let fallbackMeal: DemoMeal
     let selectedPhoto: UIImage?
+    let labelImage: UIImage?
     let onReview: () -> Void
 
     @State private var showIngredientEditor = false
@@ -1036,6 +1151,7 @@ private struct EstimateView: View {
                     }
                     if analysis.source != .manual { mealPreview }
                 }
+                if labelImage != nil { labelEvidence }
                 reviewTrail
 
                 SafetyRail(
@@ -1175,6 +1291,61 @@ private struct EstimateView: View {
         }
         .frame(maxWidth: .infinity)
         .workbenchSurface(inset: 10)
+    }
+
+    @ViewBuilder
+    private var labelEvidence: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Label("Nutrition label text", systemImage: "text.viewfinder")
+                .font(CarbInTheme.display(.headline, size: 16))
+                .foregroundStyle(CarbInTheme.ink)
+            Text("Label text is a transcription, not a verified carbohydrate amount. Check the photo and serving size yourself.")
+                .font(CarbInTheme.reading(.footnote, size: 13))
+                .foregroundStyle(CarbInTheme.mutedInk)
+                .fixedSize(horizontal: false, vertical: true)
+            if let labelImage {
+                Image(uiImage: labelImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: 250, maxHeight: 250)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .accessibilityLabel("Selected nutrition label photo")
+            }
+            switch analysis.labelTextStatus {
+            case .notRun:
+                EmptyView()
+            case let .read(lines):
+                if lines.isEmpty {
+                    Text("No readable label text found. You can still enter a value after checking the label yourself.")
+                        .foregroundStyle(CarbInTheme.mutedInk)
+                } else {
+                    DisclosureGroup("Read label text") {
+                        VStack(alignment: .leading, spacing: 5) {
+                            ForEach(Array(lines.enumerated()), id: \.offset) { _, line in
+                                Text(line)
+                                    .font(CarbInTheme.reading(.body, size: 15))
+                                    .foregroundStyle(CarbInTheme.ink)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                        }
+                        .padding(.top, 8)
+                    }
+                    .accessibilityIdentifier("carbin.estimate.labelText")
+                }
+            case .unavailable:
+                Text("Label text could not be read. You can still use the photo and enter a checked value.")
+                    .foregroundStyle(CarbInTheme.mutedInk)
+            }
+            Button {
+                showIngredientEditor = true
+            } label: {
+                Label("Add amount from label", systemImage: "plus.circle")
+            }
+            .buttonStyle(SecondaryActionStyle())
+            .accessibilityIdentifier("carbin.estimate.addFromLabel")
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .mealTicket()
     }
 
     private var ingredientLedger: some View {
@@ -1458,7 +1629,7 @@ private struct ReviewView: View {
     private var savedDetail: String {
         switch analysis.source {
         case .personalPhoto:
-            localization.text("Only this compact review was saved on this device. Your selected photo was not copied into history.")
+            localization.text("Only this compact review was saved on this device. Your selected photos were not copied into history.")
         case .demo:
             localization.text("Only this compact review was saved on this device. The Practice image was not copied into history.")
         case .manual:
@@ -1831,7 +2002,7 @@ private struct PrivacyView: View {
                     PrivacyRow(symbol: "wifi.slash", title: "No developer server", detail: "MealMirror makes no requests to a developer-operated server.")
                     PrivacyRow(symbol: "person.crop.circle.badge.xmark", title: "No account", detail: "There is no sign-in and no user profile to create.")
                     PrivacyRow(symbol: "icloud.slash", title: "Backup-excluded local storage", detail: "Reviews are saved in a device-protected local file that MealMirror excludes from backups.")
-                    PrivacyRow(symbol: "photo.on.rectangle.angled", title: "Photos stay out of history", detail: "A chosen image is inspected only for the active review; saved history stores no photo.")
+                    PrivacyRow(symbol: "photo.on.rectangle.angled", title: "Photos stay out of history", detail: "Chosen meal and label photos are inspected only for the active review; saved history stores no photos or recognized label text.")
                 }
                 .mealTicket()
 

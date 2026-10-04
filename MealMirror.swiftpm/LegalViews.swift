@@ -167,19 +167,19 @@ struct SettingsView: View {
 struct PrivacyPolicyView: View {
     var body: some View {
         PolicyScroll(
-            eyebrow: "CHALLENGE CANDIDATE · UPDATED OCTOBER 2, 2026",
+            eyebrow: "CHALLENGE CANDIDATE · UPDATED OCTOBER 4, 2026",
             title: "Privacy Policy",
             introduction: "MealMirror is designed to review meal carbohydrates without an account or a developer-operated server. This policy describes the data handled by this version of the app."
         ) {
             PolicySection(
                 symbol: "camera.fill",
                 title: "Camera and selected photos",
-                body: "MealMirror processes only the photo you capture or explicitly select for the active meal review. Apple Vision inspection runs on this device. MealMirror does not upload the photo or save it in review history. Apple’s system photo picker may retrieve an item you selected from iCloud Photos on Apple’s behalf."
+                body: "MealMirror processes only the meal and nutrition-label photos you capture or explicitly select for the active review. Apple Vision food inspection and label text recognition run on this device. MealMirror does not upload or save these photos in review history. Apple’s system photo picker may retrieve an item you selected from iCloud Photos on Apple’s behalf."
             )
             PolicySection(
                 symbol: "internaldrive.fill",
                 title: "Saved review data",
-                body: "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved."
+                body: "If you choose Save, MealMirror stores whether the review began with Practice, a description, or selected photos; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. Photos and recognized label text are not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved."
             )
             PolicySection(
                 symbol: "network.slash",

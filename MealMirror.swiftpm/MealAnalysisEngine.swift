@@ -11,15 +11,21 @@ struct MealAnalysisEngine {
         demoMeal: DemoMeal,
         description: String,
         referenceItemPresent: Bool,
-        image: UIImage?,
+        foodImages: [UIImage],
+        labelImage: UIImage?,
         language: AppLanguage
     ) async -> MealAnalysis {
         switch source {
         case .demo:
             return demoMeal.analysis(description: description, referenceItemPresent: referenceItemPresent)
         case .manual, .personalPhoto:
-            let visionStatus: VisionStatus = if source == .personalPhoto {
-                await VisionPhotoInspector.inspect(image)
+            let visionStatus: VisionStatus = if source == .personalPhoto && !foodImages.isEmpty {
+                await VisionPhotoInspector.inspect(foodImages)
+            } else {
+                .notRun
+            }
+            let labelTextStatus: LabelTextStatus = if source == .personalPhoto, let labelImage {
+                await VisionLabelInspector.inspect(labelImage)
             } else {
                 .notRun
             }
@@ -97,6 +103,7 @@ struct MealAnalysisEngine {
                 components: components,
                 referenceItemPresent: referenceItemPresent,
                 visionStatus: reviewVisionStatus,
+                labelTextStatus: labelTextStatus,
                 methodNote: methodNote,
                 uncertaintyNote: hasVisualMatches
                     ? "A photo can miss hidden ingredients and cannot reliably establish a mixed dish, recipe, or serving size. Confirm each item and portion; check a trusted label or reference when available."
@@ -173,6 +180,32 @@ enum MealPhotoPreparation {
 }
 
 enum VisionPhotoInspector {
+    static func inspect(_ images: [UIImage]) async -> VisionStatus {
+        guard !images.isEmpty else { return .notRun }
+        let boxedImages = images.map(SendablePhoto.init)
+        return await withTaskGroup(of: VisionStatus.self) { group in
+            for boxedImage in boxedImages {
+                group.addTask { await inspect(boxedImage.image) }
+            }
+
+            var labels: [String] = []
+            var seen = Set<String>()
+            var hadUnavailableView = false
+            for await result in group {
+                switch result {
+                case let .inspected(viewLabels):
+                    for label in viewLabels where seen.insert(label.lowercased()).inserted {
+                        labels.append(label)
+                    }
+                case .unavailable, .notRun:
+                    hadUnavailableView = true
+                }
+            }
+            // A partial inspection must not be presented as a complete meal scan.
+            return hadUnavailableView ? .unavailable : .inspected(labels: labels)
+        }
+    }
+
     static func inspect(_ image: UIImage?) async -> VisionStatus {
         guard let image, let cgImage = image.cgImage else {
             #if DEBUG
@@ -181,7 +214,7 @@ enum VisionPhotoInspector {
             return .unavailable
         }
 
-        let cancellation = VisionCancellationLatch()
+        let cancellation = VisionCancellationLatch<VisionStatus>()
         return await withTaskCancellationHandler {
             await performInspection(image: image, cgImage: cgImage, cancellation: cancellation)
         } onCancel: {
@@ -192,10 +225,10 @@ enum VisionPhotoInspector {
     private static func performInspection(
         image: UIImage,
         cgImage: CGImage,
-        cancellation: VisionCancellationLatch
+        cancellation: VisionCancellationLatch<VisionStatus>
     ) async -> VisionStatus {
         return await withCheckedContinuation { continuation in
-            let gate = VisionContinuationGate(continuation: continuation)
+            let gate = VisionContinuationGate(continuation: continuation, fallback: .unavailable)
             guard cancellation.register(gate) else { return }
             // Keep the meal flow usable if Vision never calls back. The gate
             // ignores a late result and cancels any still-running request.
@@ -287,12 +320,61 @@ enum VisionPhotoInspector {
     }
 }
 
-private final class VisionCancellationLatch: @unchecked Sendable {
+private struct SendablePhoto: @unchecked Sendable {
+    let image: UIImage
+}
+
+enum VisionLabelInspector {
+    static func inspect(_ image: UIImage) async -> LabelTextStatus {
+        guard let cgImage = image.cgImage else { return .unavailable }
+        let cancellation = VisionCancellationLatch<LabelTextStatus>()
+        return await withTaskCancellationHandler {
+            await withCheckedContinuation { continuation in
+                let gate = VisionContinuationGate(continuation: continuation, fallback: .unavailable)
+                guard cancellation.register(gate) else { return }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 12) {
+                    gate.cancelAndResume()
+                }
+                DispatchQueue.global(qos: .userInitiated).async {
+                    let request = VNRecognizeTextRequest { request, error in
+                        guard error == nil else {
+                            gate.resume(with: .unavailable)
+                            return
+                        }
+                        let lines = (request.results ?? [])
+                            .compactMap { $0 as? VNRecognizedTextObservation }
+                            .compactMap { $0.topCandidates(1).first?.string.trimmingCharacters(in: .whitespacesAndNewlines) }
+                            .filter { !$0.isEmpty }
+                        gate.resume(with: .read(lines: Array(lines.prefix(24))))
+                    }
+                    request.recognitionLevel = .accurate
+                    request.automaticallyDetectsLanguage = true
+                    request.usesLanguageCorrection = false
+                    guard gate.register(request) else { return }
+                    let handler = VNImageRequestHandler(
+                        cgImage: cgImage,
+                        orientation: image.imageOrientation.cgImagePropertyOrientation,
+                        options: [:]
+                    )
+                    do {
+                        try handler.perform([request])
+                    } catch {
+                        gate.resume(with: .unavailable)
+                    }
+                }
+            }
+        } onCancel: {
+            cancellation.cancel()
+        }
+    }
+}
+
+private final class VisionCancellationLatch<Result: Sendable>: @unchecked Sendable {
     private let lock = NSLock()
-    private var gate: VisionContinuationGate?
+    private var gate: VisionContinuationGate<Result>?
     private var isCancelled = false
 
-    func register(_ newGate: VisionContinuationGate) -> Bool {
+    func register(_ newGate: VisionContinuationGate<Result>) -> Bool {
         lock.lock()
         let shouldStart = !isCancelled
         if shouldStart { gate = newGate }
@@ -311,16 +393,18 @@ private final class VisionCancellationLatch: @unchecked Sendable {
     }
 }
 
-private final class VisionContinuationGate: @unchecked Sendable {
+private final class VisionContinuationGate<Result: Sendable>: @unchecked Sendable {
     private let lock = NSLock()
-    private var continuation: CheckedContinuation<VisionStatus, Never>?
+    private var continuation: CheckedContinuation<Result, Never>?
     private var request: VNRequest?
+    private let fallback: Result
 
-    init(continuation: CheckedContinuation<VisionStatus, Never>) {
+    init(continuation: CheckedContinuation<Result, Never>, fallback: Result) {
         self.continuation = continuation
+        self.fallback = fallback
     }
 
-    func resume(with result: VisionStatus) {
+    func resume(with result: Result) {
         lock.lock()
         let currentContinuation = continuation
         continuation = nil
@@ -346,7 +430,7 @@ private final class VisionContinuationGate: @unchecked Sendable {
         request = nil
         lock.unlock()
         currentRequest?.cancel()
-        currentContinuation?.resume(returning: .unavailable)
+        currentContinuation?.resume(returning: fallback)
     }
 }
 
