@@ -61,6 +61,16 @@ struct MealAnalysis: Hashable {
         overallRange != nil
     }
 
+    var currentUncertaintyNote: String {
+        let included = includedComponents
+        if !included.isEmpty && included.allSatisfy({ !$0.allowsPortionAdjustment }) {
+            // A trusted amount added after an unknown photo should no longer
+            // tell the person to add that same amount again.
+            return "Keep the full range visible while you verify portions, ingredients, and labels. This is not dose advice."
+        }
+        return uncertaintyNote
+    }
+
     static func empty() -> MealAnalysis {
         MealAnalysis(
             title: "Your meal review",

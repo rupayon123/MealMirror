@@ -104,6 +104,7 @@ public struct MealComponent: Identifiable, Hashable, Sendable {
     public let nameTreatment: MealTextTreatment
     public let detailTreatment: MealTextTreatment
     public let signalTreatment: MealTextTreatment
+    public let allowsPortionAdjustment: Bool
     public var portion: PortionAdjustment
     public var isIncluded: Bool
 
@@ -117,6 +118,7 @@ public struct MealComponent: Identifiable, Hashable, Sendable {
         nameTreatment: MealTextTreatment = .localizedCatalog,
         detailTreatment: MealTextTreatment = .localizedCatalog,
         signalTreatment: MealTextTreatment = .localizedCatalog,
+        allowsPortionAdjustment: Bool = true,
         portion: PortionAdjustment = .usual,
         isIncluded: Bool = true
     ) {
@@ -129,12 +131,15 @@ public struct MealComponent: Identifiable, Hashable, Sendable {
         self.nameTreatment = nameTreatment
         self.detailTreatment = detailTreatment
         self.signalTreatment = signalTreatment
+        self.allowsPortionAdjustment = allowsPortionAdjustment
         self.portion = portion
         self.isIncluded = isIncluded
     }
 
     public var carbohydrates: CarbRange {
-        baselineCarbohydrates.adjusted(for: portion)
+        allowsPortionAdjustment
+            ? baselineCarbohydrates.adjusted(for: portion)
+            : baselineCarbohydrates
     }
 }
 

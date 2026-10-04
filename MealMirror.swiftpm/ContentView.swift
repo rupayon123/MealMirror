@@ -1036,7 +1036,7 @@ private struct EstimateView: View {
 
                 SafetyRail(
                     title: "A clear boundary",
-                    detail: LocalizedStringKey(analysis.uncertaintyNote),
+                    detail: LocalizedStringKey(analysis.currentUncertaintyNote),
                     symbol: "exclamationmark.triangle.fill"
                 )
 
@@ -1470,6 +1470,7 @@ private struct IngredientEditorSheet: View {
     @Binding var analysis: MealAnalysis
     @Environment(\.dismiss) private var dismiss
     @State private var showManualEntry = false
+    @State private var editingManualComponent: MealComponent?
     @EnvironmentObject private var localization: LocalizationStore
 
     var body: some View {
@@ -1497,7 +1498,16 @@ private struct IngredientEditorSheet: View {
                                 .font(CarbInTheme.reading(.footnote, size: 13))
                                 .foregroundStyle(CarbInTheme.mutedInk)
 
-                            if component.isIncluded {
+                            if !component.allowsPortionAdjustment {
+                                Button {
+                                    editingManualComponent = component
+                                } label: {
+                                    Label("Adjust if needed", systemImage: "pencil")
+                                        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                                }
+                                .foregroundStyle(CarbInTheme.moss)
+                                .accessibilityIdentifier("carbin.ingredient.edit.\(component.id)")
+                            } else if component.isIncluded {
                                 Picker(
                                     localization.text(
                                         "Portion for %@",
@@ -1545,6 +1555,12 @@ private struct IngredientEditorSheet: View {
                     analysis.components.append(component)
                 }
             }
+            .sheet(item: $editingManualComponent) { component in
+                ManualCarbEntrySheet(initialComponent: component) { updated in
+                    guard let index = analysis.components.firstIndex(where: { $0.id == updated.id }) else { return }
+                    analysis.components[index] = updated
+                }
+            }
         }
     }
 
@@ -1554,12 +1570,20 @@ private struct IngredientEditorSheet: View {
 }
 
 private struct ManualCarbEntrySheet: View {
-    let onAdd: (MealComponent) -> Void
+    let initialComponent: MealComponent?
+    let onSave: (MealComponent) -> Void
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.locale) private var locale
-    @State private var name = ""
-    @State private var grams = ""
+    @State private var name: String
+    @State private var grams: String
+
+    init(initialComponent: MealComponent? = nil, onSave: @escaping (MealComponent) -> Void) {
+        self.initialComponent = initialComponent
+        self.onSave = onSave
+        _name = State(initialValue: initialComponent?.name ?? "")
+        _grams = State(initialValue: initialComponent.map { String($0.baselineCarbohydrates.low) } ?? "")
+    }
 
     var body: some View {
         NavigationStack {
@@ -1567,7 +1591,7 @@ private struct ManualCarbEntrySheet: View {
                 CountertopBackdrop()
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
-                    Text("Add a carbohydrate item")
+                    Text(initialComponent == nil ? "Add a carbohydrate item" : "Adjust ingredients")
                         .font(CarbInTheme.display(.title3, size: 19))
                         .foregroundStyle(CarbInTheme.ink)
                     VStack(alignment: .leading, spacing: 6) {
@@ -1605,33 +1629,41 @@ private struct ManualCarbEntrySheet: View {
                     .frame(maxWidth: .infinity)
                 }
             }
-            .kitchenNavigationTitle("Add item")
+            .kitchenNavigationTitle(initialComponent == nil ? "Add item" : "Adjust ingredients")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Add") { addItem() }
+                    Button(initialComponent == nil ? "Add" : "Done") { saveItem() }
                         .disabled(!canAdd)
-                        .accessibilityHint(Text(LocalizedStringKey(canAdd ? "Adds the amount you entered to the review." : "Enter an item name and a whole carbohydrate amount from 0 to 500 grams first.")))
-                        .accessibilityIdentifier("carbin.ingredient.confirm")
+                        .accessibilityHint(Text(LocalizedStringKey(!canAdd
+                            ? "Enter an item name and a whole carbohydrate amount from 0 to 500 grams first."
+                            : initialComponent == nil
+                            ? "Adds the amount you entered to the review."
+                            : "Changes the local carbohydrate range for this ingredient.")))
+                        .accessibilityIdentifier(initialComponent == nil
+                            ? "carbin.ingredient.confirm"
+                            : "carbin.ingredient.saveEdit")
                 }
             }
         }
     }
 
-    private func addItem() {
+    private func saveItem() {
         guard let value = parsedGrams else { return }
-        onAdd(
+        onSave(
             MealComponent(
-                id: UUID().uuidString,
+                id: initialComponent?.id ?? UUID().uuidString,
                 name: name.trimmingCharacters(in: .whitespacesAndNewlines),
                 detail: "Amount you entered",
                 carbohydrates: CarbRange(low: value, high: value),
                 symbol: "checkmark.seal.fill",
                 signal: "Your entry",
-                nameTreatment: .verbatimUser
+                nameTreatment: .verbatimUser,
+                allowsPortionAdjustment: false,
+                isIncluded: initialComponent?.isIncluded ?? true
             )
         )
         dismiss()
