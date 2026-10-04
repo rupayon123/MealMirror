@@ -1239,7 +1239,9 @@ private struct EstimateView: View {
             }
         }
         .tint(CarbInTheme.basil)
-        .accessibilityHint("Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method.")
+        .accessibilityHint(analysis.components.allSatisfy(\.allowsPortionAdjustment)
+            ? "Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method."
+            : "Confirm the parts you recognize before you keep a local record.")
         .accessibilityIdentifier("carbin.estimate.confirmParts")
         .insetControlGroup()
     }
@@ -1486,10 +1488,12 @@ private struct IngredientEditorSheet: View {
                 CountertopBackdrop()
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
-                    Text("Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method.")
-                        .font(CarbInTheme.reading(.footnote, size: 13))
-                        .foregroundStyle(CarbInTheme.mutedInk)
-                        .workbenchSurface()
+                    if !analysis.components.isEmpty && analysis.components.allSatisfy(\.allowsPortionAdjustment) {
+                        Text("Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method.")
+                            .font(CarbInTheme.reading(.footnote, size: 13))
+                            .foregroundStyle(CarbInTheme.mutedInk)
+                            .workbenchSurface()
+                    }
 
                     Text("Meal items")
                         .font(CarbInTheme.display(.title3, size: 19))
