@@ -1224,13 +1224,17 @@ private struct EstimateView: View {
                     SectionHeading(
                         eyebrow: "Your estimate",
                         title: analysis.isReadyForReview
-                            ? (hasSingleAmount ? "A single amount to check" : "A range worth checking")
-                            : (analysis.components.isEmpty ? "A little more detail will help" : "Possible foods to check"),
+                            ? (hasSingleAmount
+                                ? (analysis.overallRange.map(localization.carbohydrateRange) ?? "")
+                                : "A range worth checking")
+                            : "A little more detail will help",
                         detail: analysis.isReadyForReview
                             ? (hasSingleAmount
-                               ? "The amount stays visible and editable, so you can check its source and serving size."
+                               ? localization.text("Use a package label or another trusted source. This field records carbohydrates only; it never calculates insulin.")
                                : "The range stays visible and editable, so you can review what it is based on.")
-                            : analysis.methodNote
+                            : analysis.methodNote,
+                        titleTreatment: analysis.isReadyForReview && hasSingleAmount ? .formattedLocalized : .localizedCatalog,
+                        detailTreatment: analysis.isReadyForReview && hasSingleAmount ? .formattedLocalized : .localizedCatalog
                     )
                 }
 
@@ -1361,13 +1365,15 @@ private struct EstimateView: View {
                             Int64(range.high)
                          ))
                 ))
-            Text(range.low == range.high ? "Carbohydrate amount to check" : "Starting carbohydrate range")
-                .font(CarbInTheme.display(.headline, size: 16))
-                .foregroundStyle(CarbInTheme.ink)
+            if range.low != range.high {
+                Text(localization.text("Starting carbohydrate range"))
+                    .font(CarbInTheme.display(.headline, size: 16))
+                    .foregroundStyle(CarbInTheme.ink)
+            }
             PixelDivider(color: CarbInTheme.butter)
-            Text(range.low == range.high
-                 ? "Check the amount against the serving size and your trusted source. This is not dose advice."
-                 : "Keep the full range visible while you verify portions, ingredients, and labels. This is not dose advice.")
+            Text(localization.text(range.low == range.high
+                 ? "Use a package label or another trusted source. This field records carbohydrates only; it never calculates insulin."
+                 : "Keep the full range visible while you verify portions, ingredients, and labels. This is not dose advice."))
                 .font(CarbInTheme.reading(.footnote, size: 13))
                 .foregroundStyle(CarbInTheme.mutedInk)
                 .fixedSize(horizontal: false, vertical: true)
@@ -1514,8 +1520,8 @@ private struct EstimateView: View {
                     .font(CarbInTheme.reading(.subheadline, size: 15, weight: .bold))
                     .foregroundStyle(CarbInTheme.ink)
                 Text(hasSingleAmount
-                     ? "Check the serving size and each listed item before you keep this amount."
-                     : "Recipe, portion size, sauces, and product labels can change this range. Confirm or adjust every listed item.")
+                     ? localization.text("Use a package label or another trusted source. This field records carbohydrates only; it never calculates insulin.")
+                     : localization.text("Recipe, portion size, sauces, and product labels can change this range. Confirm or adjust every listed item."))
                     .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
@@ -1585,12 +1591,12 @@ private struct EstimateView: View {
         }
     }
 
-    private var rangeHeading: some View {
-        Text(LocalizedStringKey(analysis.isReadyForReview
-            ? (hasSingleAmount ? "Source of this amount" : "What shaped the range")
-            : "Possible foods to check"))
-            .font(CarbInTheme.display(.headline, size: 16))
-            .foregroundStyle(CarbInTheme.ink)
+    @ViewBuilder private var rangeHeading: some View {
+        if analysis.isReadyForReview && !hasSingleAmount {
+            Text(localization.text("What shaped the range"))
+                .font(CarbInTheme.display(.headline, size: 16))
+                .foregroundStyle(CarbInTheme.ink)
+        }
     }
 
     private var hasSingleAmount: Bool {
@@ -2339,9 +2345,11 @@ private struct SavedReviewDetailView: View {
                             .mirrorCard()
                     } else {
                         VStack(alignment: .leading, spacing: 14) {
-                            Text(localization.text(review.range.low == review.range.high ? "Source of this amount" : "What shaped the range"))
-                                .font(CarbInTheme.display(.headline, size: 17))
-                                .foregroundStyle(CarbInTheme.ink)
+                            if review.range.low != review.range.high {
+                                Text(localization.text("What shaped the range"))
+                                    .font(CarbInTheme.display(.headline, size: 17))
+                                    .foregroundStyle(CarbInTheme.ink)
+                            }
                             ForEach(review.items) { item in
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(MealTextResolver.resolve(item.name, treatment: item.nameTreatment, localize: { localization.text($0) }))

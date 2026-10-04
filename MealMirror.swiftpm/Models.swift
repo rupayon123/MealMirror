@@ -73,7 +73,7 @@ struct MealAnalysis: Hashable {
         if !included.isEmpty && included.allSatisfy({ !$0.allowsPortionAdjustment }) {
             // A trusted amount added after an unknown photo should no longer
             // tell the person to add that same amount again.
-            return "Check the amount against the serving size and your trusted source. This is not dose advice."
+            return "Use a package label or another trusted source. This field records carbohydrates only; it never calculates insulin."
         }
         return uncertaintyNote
     }
