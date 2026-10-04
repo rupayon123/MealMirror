@@ -212,7 +212,7 @@ struct MedicalSafetyView: View {
         PolicyScroll(
             eyebrow: "READ BEFORE USE",
             title: "Medical Safety",
-            introduction: "Insulin decisions can cause severe harm. MealMirror’s Challenge build stops at a reviewed carbohydrate range."
+            introduction: "MealMirror estimates carbohydrates for you to review. It does not recommend insulin doses, corrections, or treatment decisions."
         ) {
             PolicySection(symbol: "scope", title: "What MealMirror does", body: "MealMirror organizes user-described meal items, shows inspectable local reference ranges, preserves uncertainty, and lets you replace an estimate with a trusted label value.")
             PolicySection(symbol: "hand.raised.fill", title: "What MealMirror does not do", body: "MealMirror does not determine an insulin-to-carbohydrate ratio, display insulin units, calculate a correction, consider glucose or insulin on board, connect to a pump, or recommend treatment.")

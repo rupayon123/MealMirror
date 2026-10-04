@@ -597,21 +597,34 @@ private struct KitchenBubbleSurface: ViewModifier {
     }
 }
 
-extension View {
-    func kitchenNavigationTitle(_ title: LocalizedStringKey) -> some View {
-        navigationTitle(title)
+private struct KitchenNavigationTitle: ViewModifier {
+    let title: LocalizedStringKey
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+
+    func body(content: Content) -> some View {
+        content.navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text(title)
-                        .font(CarbInTheme.display(.headline, size: 18))
+                        // Every screen also has a full-size heading in its body.
+                        // Keep the compact navigation cue readable at AX sizes.
+                        .font(dynamicTypeSize.isAccessibilitySize
+                            ? .system(size: 18, weight: .bold)
+                            : CarbInTheme.display(.headline, size: 18))
                         .foregroundStyle(CarbInTheme.ink)
-                        .lineLimit(2)
+                        .lineLimit(dynamicTypeSize.isAccessibilitySize ? 1 : 2)
                         .minimumScaleFactor(0.8)
                 }
             }
             .toolbarBackground(CarbInTheme.canvas, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
+    }
+}
+
+extension View {
+    func kitchenNavigationTitle(_ title: LocalizedStringKey) -> some View {
+        modifier(KitchenNavigationTitle(title: title))
     }
 
     func kitchenBubble(inset: CGFloat = 18) -> some View {

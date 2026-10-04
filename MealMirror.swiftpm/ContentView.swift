@@ -1060,7 +1060,7 @@ private struct EstimateView: View {
                     Button {
                         showIngredientEditor = true
                     } label: {
-                        Label("Add a carbohydrate item", systemImage: "plus.circle")
+                        Label("Add item", systemImage: "plus.circle")
                     }
                     .buttonStyle(SecondaryActionStyle())
                     .accessibilityHint("Add a carbohydrate amount from packaging or another trusted source.")
@@ -1126,7 +1126,7 @@ private struct EstimateView: View {
                     .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
             }
             Text(localization.carbohydrateRange(range))
-                .font(CarbInTheme.display(.largeTitle, size: 48))
+                .font(CarbInTheme.display(.largeTitle, size: dynamicTypeSize.isAccessibilitySize ? 36 : 48))
                 .monospacedDigit()
                 .foregroundStyle(CarbInTheme.basil)
                 .lineLimit(2)
@@ -1540,7 +1540,7 @@ private struct IngredientEditorSheet: View {
                     Button {
                         showManualEntry = true
                     } label: {
-                        Label("Add a carbohydrate item", systemImage: "plus.circle")
+                        Label("Add item", systemImage: "plus.circle")
                             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                     }
                     .foregroundStyle(CarbInTheme.moss)
@@ -1602,7 +1602,7 @@ private struct ManualCarbEntrySheet: View {
                 CountertopBackdrop()
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
-                    Text(initialComponent == nil ? "Add a carbohydrate item" : "Adjust ingredients")
+                    Text(initialComponent == nil ? "Add item" : "Adjust ingredients")
                         .font(CarbInTheme.display(.title3, size: 19))
                         .foregroundStyle(CarbInTheme.ink)
                     VStack(alignment: .leading, spacing: 6) {
@@ -1811,7 +1811,7 @@ private struct PrivacyView: View {
                     Button(role: .destructive) {
                         showDeleteAllConfirmation = true
                     } label: {
-                        Text("Delete all saved reviews")
+                        PixelKitchenActionLabel(title: "Delete all saved reviews", kind: .delete)
                             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                             .contentShape(Rectangle())
                     }
@@ -2018,7 +2018,7 @@ private struct SavedReviewDetailView: View {
 
                     VStack(alignment: .leading, spacing: 14) {
                         LabeledContent("Meal source") {
-                            Text(localization.text(review.source?.title ?? "Source not recorded"))
+                            Text(localization.text(review.source?.title ?? "Not recorded"))
                                 .multilineTextAlignment(.trailing)
                         }
                         LabeledContent("Carbohydrate range") {
@@ -2075,7 +2075,7 @@ private struct SavedReviewDetailView: View {
                     Button(role: .destructive) {
                         showDeleteConfirmation = true
                     } label: {
-                        Label("Delete this review", systemImage: "trash")
+                        PixelKitchenActionLabel(title: "Delete this review", kind: .delete)
                             .frame(maxWidth: .infinity, minHeight: 52)
                             .contentShape(Rectangle())
                     }
@@ -2105,7 +2105,7 @@ private struct SavedReviewDetailView: View {
         switch review.referenceItemPresent {
         case .some(true): "Recorded only; it does not change this range"
         case .some(false): "No reference item recorded"
-        case .none: "Reference note not recorded in this older review"
+        case .none: "Not recorded"
         }
     }
 }
