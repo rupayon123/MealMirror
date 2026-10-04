@@ -24,22 +24,22 @@
 "About ½ cup" = "Aproximadamente ½ taza";
 "About ¾ cup" = "Aproximadamente ¾ taza";
 "Add" = "Agregar";
+"Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
 "Add a carbohydrate amount from packaging or another trusted source." = "Agrega una cantidad de carbohidratos según el empaque u otra fuente confiable.";
 "Add a carbohydrate amount from packaging or your own trusted reference." = "Agrega una cantidad de carbohidratos según el empaque o tu propia referencia confiable.";
+"Add a carbohydrate item" = "Add a carbohydrate item";
 "Add a description, with or without a photo." = "Añade una descripción, con o sin foto.";
 "Add a little more detail" = "Agrega un poco más de detalle";
 "Add a meal" = "Agrega una comida";
-"Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Añade una cantidad de carbohidratos verificada a partir de la etiqueta de un envase o de una fuente confiable, vuelve atrás y describe la comida con más detalle, o elige una comida de práctica opcional.";
-"Add a verified carbohydrate item" = "Agregue un elemento de carbohidratos verificado";
-"Add a verified item" = "Agregue un elemento verificado";
 "Add item" = "Agregar elemento";
 "Add more detail" = "Agregar más detalle";
 "Add the foods you recognize to build an inspectable carbohydrate range." = "Añade los alimentos que reconoces para crear un rango de carbohidratos que puedas revisar.";
 "Added to the review" = "Agregado a la revisión";
-"Adds this verified carbohydrate amount to the review." = "Agrega esta cantidad de carbohidratos verificada a la revisión.";
+"Adds the amount you entered to the review." = "Adds the amount you entered to the review.";
 "Adjust if needed" = "Ajustar si es necesario";
 "Adjust ingredients" = "Ajustar ingredientes";
-"Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation." = "Ajuste las porciones, elimine un desajuste, agregue un elemento de carbohidratos verificado y decida si guardar una nota local. No hay recomendación de dosis.";
+"Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.";
+"Amount you entered" = "Amount you entered";
 "Analysis in progress" = "Análisis en progreso";
 "App" = "Aplicación";
 "App language" = "Idioma de la aplicación";
@@ -85,6 +85,7 @@
 "Chickpeas" = "Garbanzos";
 "Children and supported use" = "Niños y uso apoyado";
 "Choose a meal photo from your library" = "Elija una foto de comida de su biblioteca";
+"Choose a photo or name one food to continue." = "Elige una foto o nombra un alimento para continuar.";
 "Choose the language used throughout MealMirror." = "Elija el idioma que se utilizará en todo MealMirror.";
 "Chosen" = "Elegido";
 "Close" = "Cerrar";
@@ -152,7 +153,7 @@
 "How it works" = "Cómo funciona";
 "Hungarian" = "Húngaro";
 "I added a reference item" = "Agregué un artículo de referencia";
-"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
+"If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "Componentes incluidos";
 "Inspect it locally" = "Inspeccionarlo localmente";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";
@@ -184,6 +185,7 @@
 "Meal description" = "Descripción de la comida";
 "Meal description review" = "Revisión de la descripción de la comida";
 "Meal items" = "Elementos de la comida";
+"Meal source" = "Meal source";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror no pudo encontrar un artículo que contenga carbohidratos en su descripción aún.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror no pudo preparar esa foto. Elija otra imagen o use la cámara.";
@@ -207,7 +209,7 @@
 "Meet MealMirror" = "Conozca MealMirror";
 "Milk" = "Leche";
 "Naan" = "Naan";
-"Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next." = "Indica los alimentos que contienen carbohidratos y los detalles de las porciones. Después podrás ajustar el resultado y añadir un valor verificado de una etiqueta.";
+"Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source." = "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source.";
 "No account" = "Sin cuenta";
 "No clear food clues found in this photo." = "No clear food clues found in this photo.";
 "No collection by the developer" = "Sin colección por el desarrollador";
@@ -230,6 +232,7 @@
 "Not provided" = "No proporcionado";
 "Not recorded" = "No registrado";
 "Not run for this Practice meal" = "No se realizó para esta comida de práctica";
+"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "Aún no hay alimentos coincidentes en la lista local. Añade solo alimentos que reconozcas o una cantidad fiable de carbohidratos.";
 "OK" = "OK";
 "ON DEVICE" = "EN EL DISPOSITIVO";
 "Oats" = "Avena";
@@ -253,6 +256,7 @@
 "Photo (context only)" = "Foto (solo como contexto)";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "Foto inspeccionada en este dispositivo. Agrega lo que reconozcas antes de confiar en el rango.";
 "Photo inspected on this device. Visual cues: %@." = "Foto inspeccionada en este dispositivo. Indicadores visuales: %@.";
+"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "No se pudo inspeccionar la foto. La imagen no aportó alimentos ni cantidades de carbohidratos.";
 "Photo inspection was unavailable. The range still comes only from the meal details you entered." = "La inspección de fotos no estuvo disponible. El rango todavía proviene únicamente de los detalles de la comida que ingresaste.";
 "Photo preparation in progress" = "Preparación de foto en curso";
 "Photo selected; inspection unavailable" = "Foto seleccionada; inspección no disponible";
@@ -293,6 +297,7 @@
 "Recorded only; it does not alter this carbohydrate range" = "Solo registrado; no altera este rango de carbohidratos";
 "Recorded only; it does not change this range" = "Solo registrado; no cambia este rango";
 "Reference note" = "Nota de referencia";
+"Reference note not recorded in this older review" = "Reference note not recorded in this older review";
 "Remove selected photo" = "Quitar la foto seleccionada";
 "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal." = "Datos de práctica incluidos y reutilizables. Este rango enseña el flujo de revisión y no valida una comida real.";
 "Replay the welcome guide" = "Reproduzca la guía de bienvenida";
@@ -331,8 +336,10 @@
 "Small side bowl" = "Tazón lateral pequeño";
 "Small side serving" = "Porción lateral pequeña";
 "Smaller" = "Más pequeño";
+"Source not recorded" = "Source not recorded";
 "Spanish" = "Español";
 "Start a meal review" = "Iniciar la revisión de una comida";
+"Start with a photo or a few words. Add context when a picture leaves questions." = "Empieza con una foto del plato o unas palabras. Añade detalles si la foto deja dudas.";
 "Start with your meal" = "Comenzar con tu comida";
 "Starting carbohydrate range" = "Rango inicial de carbohidratos";
 "Sweet potato" = "Batata";
@@ -353,6 +360,7 @@
 "This Practice meal starts with a prepared description. Editing it switches back to your own meal." = "Esta comida de práctica comienza con una descripción preparada. Si la editas, volverás a tu propia comida.";
 "This compact record contains no photo and can be deleted at any time." = "Este registro compacto no contiene ninguna foto y se puede eliminar en cualquier momento.";
 "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on." = "Esta estimación no es un calculador de dosis. Utilice el enfoque y el plan de cuidado que usted y su equipo de diabetes hayan acordado.";
+"This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it." = "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it.";
 "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution." = "Esta versión pública no incluye aritmética de unidades de insulina. Cualquier versión clínica futura requeriría una revisión calificada por separado y la evidencia regulatoria y de mercado aplicable antes de su distribución.";
 "This removes only the selected local review. It cannot be undone." = "Esto elimina solo la revisión local seleccionada. No se puede deshacer.";
 "This removes only this local record. It cannot be undone." = "Esto elimina solo este registro local. No se puede deshacer.";
@@ -374,7 +382,7 @@
 "Use your meal photo" = "Use la foto de su comida";
 "Usual" = "Habitual";
 "Vegetables and sauce" = "Verduras y salsa";
-"Verified amount you entered" = "Cantidad verificada que ingresó";
+"Verified amount you entered" = "Amount you entered";
 "Version" = "Versión";
 "View details" = "Ver detalles";
 "Visible main portion" = "Porción principal visible";
@@ -395,6 +403,7 @@
 "Your care plan" = "Tu plan de cuidado";
 "Your check, your call." = "Tu cheque, tu decisión.";
 "Your description" = "Tu descripción";
+"Your entry" = "Your entry";
 "Your estimate" = "Tu estimación";
 "Your meal review" = "Revisión de tu comida";
 "Your meal starts empty" = "Tu comida comienza vacía";
@@ -402,7 +411,7 @@
 "Your meal stays on this device" = "Tu comida permanece en este dispositivo";
 "Your on-device photo" = "Tu foto en el dispositivo";
 "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server." = "Tu foto será inspeccionada en el dispositivo con Apple Vision. El rango de carbohidratos proviene de los ingredientes locales que nombres, nunca de un servidor.";
-"Your verified entry" = "Tu entrada verificada";
+"Your verified entry" = "Your entry";
 "apple" = "manzana";
 "bagel" = "bagel";
 "banana" = "plátano";
@@ -467,7 +476,3 @@
 "简体中文" = "Chino simplificado";
 "粵語（繁體）" = "Cantonés (tradicional)";
 "한국어" = "Coreano";
-"Start with a photo or a few words. Add context when a picture leaves questions." = "Empieza con una foto del plato o unas palabras. Añade detalles si la foto deja dudas.";
-"Choose a photo or name one food to continue." = "Elige una foto o nombra un alimento para continuar.";
-"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "Aún no hay alimentos coincidentes en la lista local. Añade solo alimentos que reconozcas o una cantidad fiable de carbohidratos.";
-"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "No se pudo inspeccionar la foto. La imagen no aportó alimentos ni cantidades de carbohidratos.";

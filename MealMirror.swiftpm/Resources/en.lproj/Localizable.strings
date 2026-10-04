@@ -24,22 +24,22 @@
 "About ½ cup" = "About ½ cup";
 "About ¾ cup" = "About ¾ cup";
 "Add" = "Add";
+"Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
 "Add a carbohydrate amount from packaging or another trusted source." = "Add a carbohydrate amount from packaging or another trusted source.";
 "Add a carbohydrate amount from packaging or your own trusted reference." = "Add a carbohydrate amount from packaging or your own trusted reference.";
+"Add a carbohydrate item" = "Add a carbohydrate item";
 "Add a description, with or without a photo." = "Add a description, with or without a photo.";
 "Add a little more detail" = "Add a little more detail";
 "Add a meal" = "Add a meal";
-"Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
-"Add a verified carbohydrate item" = "Add a verified carbohydrate item";
-"Add a verified item" = "Add a verified item";
 "Add item" = "Add item";
 "Add more detail" = "Add more detail";
 "Add the foods you recognize to build an inspectable carbohydrate range." = "Add the foods you recognize to build an inspectable carbohydrate range.";
 "Added to the review" = "Added to the review";
-"Adds this verified carbohydrate amount to the review." = "Adds this verified carbohydrate amount to the review.";
+"Adds the amount you entered to the review." = "Adds the amount you entered to the review.";
 "Adjust if needed" = "Adjust if needed";
 "Adjust ingredients" = "Adjust ingredients";
-"Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation.";
+"Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.";
+"Amount you entered" = "Amount you entered";
 "Analysis in progress" = "Analysis in progress";
 "App" = "App";
 "App language" = "App language";
@@ -85,6 +85,7 @@
 "Chickpeas" = "Chickpeas";
 "Children and supported use" = "Children and supported use";
 "Choose a meal photo from your library" = "Choose a meal photo from your library";
+"Choose a photo or name one food to continue." = "Choose a photo or name one food to continue.";
 "Choose the language used throughout MealMirror." = "Choose the language used throughout MealMirror.";
 "Chosen" = "Chosen";
 "Close" = "Close";
@@ -152,7 +153,7 @@
 "How it works" = "How it works";
 "Hungarian" = "Hungarian";
 "I added a reference item" = "I added a reference item";
-"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
+"If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "Included components";
 "Inspect it locally" = "Inspect it locally";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";
@@ -184,6 +185,7 @@
 "Meal description" = "Meal description";
 "Meal description review" = "Meal description review";
 "Meal items" = "Meal items";
+"Meal source" = "Meal source";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror could not find a carbohydrate-containing item in your description yet.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror could not prepare that photo. Choose another image or use the camera.";
@@ -207,7 +209,7 @@
 "Meet MealMirror" = "Meet MealMirror";
 "Milk" = "Milk";
 "Naan" = "Naan";
-"Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next." = "Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next.";
+"Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source." = "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source.";
 "No account" = "No account";
 "No clear food clues found in this photo." = "No clear food clues found in this photo.";
 "No collection by the developer" = "No collection by the developer";
@@ -230,6 +232,7 @@
 "Not provided" = "Not provided";
 "Not recorded" = "Not recorded";
 "Not run for this Practice meal" = "Not run for this Practice meal";
+"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value.";
 "OK" = "OK";
 "ON DEVICE" = "ON DEVICE";
 "Oats" = "Oats";
@@ -253,6 +256,7 @@
 "Photo (context only)" = "Photo (context only)";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "Photo inspected on this device. Add what you recognize before relying on the range.";
 "Photo inspected on this device. Visual cues: %@." = "Possible visual clues: %@. Confirm only foods you recognize.";
+"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "Photo inspection was unavailable. No food or carbohydrate value came from the image.";
 "Photo inspection was unavailable. The range still comes only from the meal details you entered." = "Photo inspection was unavailable. The range still comes only from the meal details you entered.";
 "Photo preparation in progress" = "Photo preparation in progress";
 "Photo selected; inspection unavailable" = "Photo selected; inspection unavailable";
@@ -293,6 +297,7 @@
 "Recorded only; it does not alter this carbohydrate range" = "Recorded only; it does not alter this carbohydrate range";
 "Recorded only; it does not change this range" = "Recorded only; it does not change this range";
 "Reference note" = "Reference note";
+"Reference note not recorded in this older review" = "Reference note not recorded in this older review";
 "Remove selected photo" = "Remove selected photo";
 "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal." = "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal.";
 "Replay the welcome guide" = "Replay the welcome guide";
@@ -331,8 +336,10 @@
 "Small side bowl" = "Small side bowl";
 "Small side serving" = "Small side serving";
 "Smaller" = "Smaller";
+"Source not recorded" = "Source not recorded";
 "Spanish" = "Spanish";
 "Start a meal review" = "Start a meal review";
+"Start with a photo or a few words. Add context when a picture leaves questions." = "Start with a photo or a few words. Add context when a picture leaves questions.";
 "Start with your meal" = "Start with your meal";
 "Starting carbohydrate range" = "Starting carbohydrate range";
 "Sweet potato" = "Sweet potato";
@@ -353,6 +360,7 @@
 "This Practice meal starts with a prepared description. Editing it switches back to your own meal." = "This Practice meal starts with a prepared description. Editing it switches back to your own meal.";
 "This compact record contains no photo and can be deleted at any time." = "This compact record contains no photo and can be deleted at any time.";
 "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on." = "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on.";
+"This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it." = "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it.";
 "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution." = "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution.";
 "This removes only the selected local review. It cannot be undone." = "This removes only the selected local review. It cannot be undone.";
 "This removes only this local record. It cannot be undone." = "This removes only this local record. It cannot be undone.";
@@ -374,7 +382,7 @@
 "Use your meal photo" = "Use your meal photo";
 "Usual" = "Usual";
 "Vegetables and sauce" = "Vegetables and sauce";
-"Verified amount you entered" = "Verified amount you entered";
+"Verified amount you entered" = "Amount you entered";
 "Version" = "Version";
 "View details" = "View details";
 "Visible main portion" = "Visible main portion";
@@ -395,6 +403,7 @@
 "Your care plan" = "Your care plan";
 "Your check, your call." = "Your check, your call.";
 "Your description" = "Your description";
+"Your entry" = "Your entry";
 "Your estimate" = "Your estimate";
 "Your meal review" = "Your meal review";
 "Your meal starts empty" = "Your meal starts empty";
@@ -402,7 +411,7 @@
 "Your meal stays on this device" = "Your meal stays on this device";
 "Your on-device photo" = "Your on-device photo";
 "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server." = "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server.";
-"Your verified entry" = "Your verified entry";
+"Your verified entry" = "Your entry";
 "apple" = "apple";
 "bagel" = "bagel";
 "banana" = "banana";
@@ -467,7 +476,3 @@
 "简体中文" = "简体中文";
 "粵語（繁體）" = "粵語（繁體）";
 "한국어" = "한국어";
-"Start with a photo or a few words. Add context when a picture leaves questions." = "Start with a photo or a few words. Add context when a picture leaves questions.";
-"Choose a photo or name one food to continue." = "Choose a photo or name one food to continue.";
-"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value.";
-"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "Photo inspection was unavailable. No food or carbohydrate value came from the image.";

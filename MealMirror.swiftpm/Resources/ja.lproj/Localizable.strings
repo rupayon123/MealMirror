@@ -24,22 +24,22 @@
 "About ½ cup" = "約½カップ";
 "About ¾ cup" = "約¾カップ";
 "Add" = "加える";
+"Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
 "Add a carbohydrate amount from packaging or another trusted source." = "パッケージまたは他の信頼できる情報源から炭水化物の量を加えてください。";
 "Add a carbohydrate amount from packaging or your own trusted reference." = "パッケージまたは自身の信頼できる参照から炭水化物の量を加えてください。";
+"Add a carbohydrate item" = "Add a carbohydrate item";
 "Add a description, with or without a photo." = "写真の有無にかかわらず、説明を追加してください。";
 "Add a little more detail" = "少し詳しく追加する";
 "Add a meal" = "食事を追加する";
-"Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "パッケージラベルまたは信頼できる情報源で確認した炭水化物量を追加するか、戻って食事をさらに詳しく説明するか、任意の練習用食事を選んでください。";
-"Add a verified carbohydrate item" = "確認済みの炭水化物アイテムを追加";
-"Add a verified item" = "確認済みのアイテムを追加";
 "Add item" = "アイテムを追加";
 "Add more detail" = "詳細を追加";
 "Add the foods you recognize to build an inspectable carbohydrate range." = "認識できる食べ物を追加して、確認可能な炭水化物の範囲を作成してください。";
 "Added to the review" = "レビューに追加されました";
-"Adds this verified carbohydrate amount to the review." = "この確認済み炭水化物量をレビューに追加します。";
+"Adds the amount you entered to the review." = "Adds the amount you entered to the review.";
 "Adjust if needed" = "必要に応じて調整";
 "Adjust ingredients" = "材料を調整";
-"Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation." = "分量を調整し、不一致を削除し、確認済み炭水化物アイテムを追加し、ローカルメモを保存するかどうかを決定します。投与量の推奨はありません。";
+"Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.";
+"Amount you entered" = "Amount you entered";
 "Analysis in progress" = "分析中";
 "App" = "アプリ";
 "App language" = "アプリの言語";
@@ -85,6 +85,7 @@
 "Chickpeas" = "ヒヨコマメ（複数形）";
 "Children and supported use" = "子供およびサポート付き使用";
 "Choose a meal photo from your library" = "ライブラリから食事の写真を選択";
+"Choose a photo or name one food to continue." = "続けるには、写真を選ぶか食べ物を1つ入力してください。";
 "Choose the language used throughout MealMirror." = "MealMirror全体で使用する言語を選択";
 "Chosen" = "選択済み";
 "Close" = "閉じる";
@@ -152,7 +153,7 @@
 "How it works" = "仕組み";
 "Hungarian" = "ハンガリー語";
 "I added a reference item" = "参照項目を追加しました";
-"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
+"If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "含まれる成分";
 "Inspect it locally" = "ローカルで確認する";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";
@@ -184,6 +185,7 @@
 "Meal description" = "食事の説明";
 "Meal description review" = "食事内容の確認";
 "Meal items" = "食事項目";
+"Meal source" = "Meal source";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror は、説明の中に炭水化物を含む項目をまだ見つけられませんでした。";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror は、その写真を準備できませんでした。別の画像を選択するか、カメラを使用してください。";
@@ -207,7 +209,7 @@
 "Meet MealMirror" = "MealMirrorに会う";
 "Milk" = "牛乳";
 "Naan" = "ナン";
-"Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next." = "炭水化物を含む食品と分量の詳細を入力してください。次に、結果を調整し、ラベルで確認した値を追加できます。";
+"Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source." = "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source.";
 "No account" = "アカウントなし";
 "No clear food clues found in this photo." = "No clear food clues found in this photo.";
 "No collection by the developer" = "開発者による収集なし";
@@ -230,6 +232,7 @@
 "Not provided" = "提供されていません";
 "Not recorded" = "記録されていません";
 "Not run for this Practice meal" = "この練習用食事では未実行";
+"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "ローカルリストに一致する食べ物がまだありません。分かる食べ物、または信頼できる炭水化物量だけを追加してください。";
 "OK" = "OK";
 "ON DEVICE" = "デバイス上";
 "Oats" = "オーツ";
@@ -253,6 +256,7 @@
 "Photo (context only)" = "写真（参考用のみ）";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "このデバイスで写真を検査しました。範囲を参考にする前に、認識できるものを追加してください。";
 "Photo inspected on this device. Visual cues: %@." = "このデバイスで写真を検査しました。視覚的手掛かり: %@.";
+"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "写真を確認できませんでした。画像から食べ物や炭水化物量は取得していません。";
 "Photo inspection was unavailable. The range still comes only from the meal details you entered." = "写真検査は利用できませんでした。範囲は依然として入力された食事の詳細のみに基づきます。";
 "Photo preparation in progress" = "写真の準備中";
 "Photo selected; inspection unavailable" = "写真が選択されました；検査不可";
@@ -293,6 +297,7 @@
 "Recorded only; it does not alter this carbohydrate range" = "記録のみです；この炭水化物範囲を変更するものではありません";
 "Recorded only; it does not change this range" = "記録のみです；この範囲を変更するものではありません";
 "Reference note" = "参考注記";
+"Reference note not recorded in this older review" = "Reference note not recorded in this older review";
 "Remove selected photo" = "選択した写真を削除";
 "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal." = "繰り返し使える内蔵の練習データです。この範囲は確認手順を学ぶためのもので、実際の食事を検証するものではありません。";
 "Replay the welcome guide" = "ウェルカムガイドを再生";
@@ -331,8 +336,10 @@
 "Small side bowl" = "小さい副菜用ボウル";
 "Small side serving" = "小さい副菜の盛り付け";
 "Smaller" = "さらに小さい";
+"Source not recorded" = "Source not recorded";
 "Spanish" = "スペイン語";
 "Start a meal review" = "食事の確認を開始";
+"Start with a photo or a few words. Add context when a picture leaves questions." = "食事の写真または短い言葉から始めましょう。写真だけでは分からないことを補足できます。";
 "Start with your meal" = "食事から始める";
 "Starting carbohydrate range" = "開始炭水化物範囲";
 "Sweet potato" = "さつまいも";
@@ -353,6 +360,7 @@
 "This Practice meal starts with a prepared description. Editing it switches back to your own meal." = "この練習用食事には、あらかじめ説明が用意されています。編集すると、自分の食事に戻ります。";
 "This compact record contains no photo and can be deleted at any time." = "この簡易記録には写真が含まれておらず、いつでも削除できます。";
 "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on." = "この見積もりは投与量計算機ではありません。あなたと糖尿病チームが合意した方法とケアプランを使用してください。";
+"This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it." = "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it.";
 "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution." = "この公開版にはインスリン単位の算術は含まれていません。将来の臨床版は、配布前に個別の資格あるレビューおよび適用される規制および市場の証拠が必要です。";
 "This removes only the selected local review. It cannot be undone." = "選択したローカルの確認記録だけが削除されます。元に戻すことはできません。";
 "This removes only this local record. It cannot be undone." = "このローカル記録だけが削除されます。元に戻すことはできません。";
@@ -374,7 +382,7 @@
 "Use your meal photo" = "食事写真を使用してください。";
 "Usual" = "通常";
 "Vegetables and sauce" = "野菜とソース";
-"Verified amount you entered" = "入力した確認済みの金額";
+"Verified amount you entered" = "Amount you entered";
 "Version" = "バージョン";
 "View details" = "詳細を表示";
 "Visible main portion" = "表示される主要部分";
@@ -395,6 +403,7 @@
 "Your care plan" = "あなたのケアプラン";
 "Your check, your call." = "あなたのチェック、あなたの判断";
 "Your description" = "あなたの説明";
+"Your entry" = "Your entry";
 "Your estimate" = "あなたの見積もり";
 "Your meal review" = "食事の確認";
 "Your meal starts empty" = "食事は空の状態から始まります";
@@ -402,7 +411,7 @@
 "Your meal stays on this device" = "あなたの食事はこのデバイスに残ります";
 "Your on-device photo" = "あなたのデバイス上の写真";
 "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server." = "あなたの写真はApple Visionを使ってデバイス上で検査されます。炭水化物の範囲は、サーバーではなく、指定した地元の食材から来ます。";
-"Your verified entry" = "あなたの確認済みの入力";
+"Your verified entry" = "Your entry";
 "apple" = "りんご";
 "bagel" = "ベーグル";
 "banana" = "バナナ";
@@ -467,7 +476,3 @@
 "简体中文" = "簡体字中国語";
 "粵語（繁體）" = "広東語（繁体字）";
 "한국어" = "韓国語";
-"Start with a photo or a few words. Add context when a picture leaves questions." = "食事の写真または短い言葉から始めましょう。写真だけでは分からないことを補足できます。";
-"Choose a photo or name one food to continue." = "続けるには、写真を選ぶか食べ物を1つ入力してください。";
-"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "ローカルリストに一致する食べ物がまだありません。分かる食べ物、または信頼できる炭水化物量だけを追加してください。";
-"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "写真を確認できませんでした。画像から食べ物や炭水化物量は取得していません。";

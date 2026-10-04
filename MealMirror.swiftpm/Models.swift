@@ -1,7 +1,7 @@
 import Foundation
 import MealCore
 
-enum MealInputSource: Hashable {
+enum MealInputSource: String, Codable, Hashable {
     case demo
     case manual
     case personalPhoto
@@ -166,6 +166,8 @@ struct SavedReview: Codable, Hashable, Identifiable {
     let id: UUID
     let mealName: String
     let mealNameTreatment: MealTextTreatment
+    let source: MealInputSource?
+    let referenceItemPresent: Bool?
     let range: CarbRange
     let createdAt: Date
     let items: [SavedReviewItem]
@@ -174,6 +176,8 @@ struct SavedReview: Codable, Hashable, Identifiable {
         id: UUID,
         mealName: String,
         mealNameTreatment: MealTextTreatment,
+        source: MealInputSource?,
+        referenceItemPresent: Bool?,
         range: CarbRange,
         createdAt: Date,
         items: [SavedReviewItem] = []
@@ -181,6 +185,8 @@ struct SavedReview: Codable, Hashable, Identifiable {
         self.id = id
         self.mealName = mealName
         self.mealNameTreatment = mealNameTreatment
+        self.source = source
+        self.referenceItemPresent = referenceItemPresent
         self.range = range
         self.createdAt = createdAt
         self.items = items
@@ -190,6 +196,8 @@ struct SavedReview: Codable, Hashable, Identifiable {
         case id
         case mealName
         case mealNameTreatment
+        case source
+        case referenceItemPresent
         case range
         case createdAt
         case items
@@ -201,6 +209,10 @@ struct SavedReview: Codable, Hashable, Identifiable {
         mealName = try container.decode(String.self, forKey: .mealName)
         mealNameTreatment = try container.decodeIfPresent(MealTextTreatment.self, forKey: .mealNameTreatment)
             ?? .localizedCatalog
+        // Older records did not retain their origin or reference selection.
+        // Keep those values unknown rather than treating an example as a real meal.
+        source = try container.decodeIfPresent(MealInputSource.self, forKey: .source)
+        referenceItemPresent = try container.decodeIfPresent(Bool.self, forKey: .referenceItemPresent)
         range = try container.decode(CarbRange.self, forKey: .range)
         createdAt = try container.decode(Date.self, forKey: .createdAt)
         items = try container.decodeIfPresent([SavedReviewItem].self, forKey: .items) ?? []
@@ -245,6 +257,8 @@ enum LocalReviewStore {
                 id: UUID(),
                 mealName: mealName,
                 mealNameTreatment: mealNameTreatment,
+                source: analysis.source,
+                referenceItemPresent: analysis.referenceItemPresent,
                 range: range,
                 createdAt: Date(),
                 items: analysis.includedComponents.map(SavedReviewItem.init)

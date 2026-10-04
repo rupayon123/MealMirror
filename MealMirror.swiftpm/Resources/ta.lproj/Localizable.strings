@@ -24,22 +24,22 @@
 "About ½ cup" = "சுமார் ½ கப்";
 "About ¾ cup" = "சுமார் ¾ கப்";
 "Add" = "சேர்க்கவும்";
+"Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
 "Add a carbohydrate amount from packaging or another trusted source." = "பேக்கேஜிங் அல்லது மற்ற நம்பகமான மூலத்தில் இருந்து கார்போஹைட்ரேட் அளவை சேர்க்கவும்.";
 "Add a carbohydrate amount from packaging or your own trusted reference." = "பேக்கேஜிங் அல்லது உங்கள் சொந்த நம்பகமான சுட்டியைப் பயன்படுத்தி கார்போஹைட்ரேட் அளவை சேர்க்கவும்.";
+"Add a carbohydrate item" = "Add a carbohydrate item";
 "Add a description, with or without a photo." = "படத்துடன் அல்லது படம் இல்லாமல் ஒரு விளக்கத்தைச் சேர்க்கவும்.";
 "Add a little more detail" = "சிறிது கூடுதல் விவரங்களைச் சேர்க்கவும்";
 "Add a meal" = "ஒரு உணவைச் சேர்க்கவும்";
-"Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "தொகுப்பு லேபிள் அல்லது நம்பகமான ஆதாரத்திலிருந்து சரிபார்க்கப்பட்ட கார்போஹைட்ரேட் அளவைச் சேர்க்கவும், திரும்பிச் சென்று உணவை மேலும் விரிவாக விவரிக்கவும் அல்லது விருப்பமான பயிற்சி உணவைத் தேர்ந்தெடுக்கவும்.";
-"Add a verified carbohydrate item" = "சரிபார்க்கப்பட்ட கார்போஹைட்ரேட் பொருளை சேர்க்கவும்";
-"Add a verified item" = "சரிபார்க்கப்பட்ட பொருளை சேர்க்கவும்";
 "Add item" = "பொருளை சேர்க்கவும்";
 "Add more detail" = "மேலும் விரிவாக சேர்க்கவும்";
 "Add the foods you recognize to build an inspectable carbohydrate range." = "நீங்கள் அடையாளம் காணும் உணவுகளைச் சேர்த்து, சரிபார்க்கக்கூடிய கார்போஹைட்ரேட் வரம்பை உருவாக்கவும்.";
 "Added to the review" = "விமர்சனத்தில் சேர்க்கப்பட்டது";
-"Adds this verified carbohydrate amount to the review." = "இந்த சரிபார்க்கப்பட்ட கார்போஹைட்ரேட் அளவை விமர்சனத்தில் சேர்க்கிறது.";
+"Adds the amount you entered to the review." = "Adds the amount you entered to the review.";
 "Adjust if needed" = "தேவையானால் சரிசெய்யவும்";
 "Adjust ingredients" = "பொருட்களை சரிசெய்யவும்";
-"Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation." = "பாகங்களை சரிசெய்யவும், பொருத்தமற்றதை அகற்றவும், சரிபார்க்கப்பட்ட கார்போஹைட்ரேட் பொருளை சேர்க்கவும், மற்றும் உள்ளூர் குறிப்பை சேமிக்கலாமா என்று தீர்மானிக்கவும். எந்தமாதிரியான அளவு பரிந்துரை கிடையாது.";
+"Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.";
+"Amount you entered" = "Amount you entered";
 "Analysis in progress" = "பகுப்பாய்வு நடைபெற்று வருகிறது";
 "App" = "செயலி";
 "App language" = "செயலி மொழி";
@@ -85,6 +85,7 @@
 "Chickpeas" = "கடலைகள்";
 "Children and supported use" = "குழந்தைகள் மற்றும் ஆதரவான பயன்பாடு";
 "Choose a meal photo from your library" = "உங்கள் நூலகத்திலிருந்து ஒரு உணவுப் புகைப்படத்தைத் தேர்ந்தெடுக்கவும்";
+"Choose a photo or name one food to continue." = "தொடர உணவுப் படத்தைத் தேர்ந்தெடுக்கவும் அல்லது ஒரு உணவின் பெயரைச் சொல்லவும்.";
 "Choose the language used throughout MealMirror." = "MealMirror முழுவதும் பயன்படுத்தப்படும் மொழியைத் தேர்ந்தெடுக்கவும்.";
 "Chosen" = "தேர்ந்தெடுக்கப்பட்டது";
 "Close" = "மூடவும்";
@@ -152,7 +153,7 @@
 "How it works" = "இது எவ்வாறு வேலை செய்கிறது";
 "Hungarian" = "ஹங்கேரியன்";
 "I added a reference item" = "நான் ஒரு குறிப்பிட்ட உருப்படியைச் சேர்ந்தேன்";
-"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
+"If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "சேர்க்கப்பட்ட கூறுகள்";
 "Inspect it locally" = "அதை உள்ளூரில் கண்காணிக்கவும்";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";
@@ -184,6 +185,7 @@
 "Meal description" = "உணவின் விளக்கம்";
 "Meal description review" = "உணவு விளக்கச் சரிபார்ப்பு";
 "Meal items" = "உணவு பொருட்கள்";
+"Meal source" = "Meal source";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror உங்கள் விவரத்தில் கர்போஹைட்ரேட் கொண்ட பொருளை இன்னும் கண்டுபிடிக்கவில்லை.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror அந்த படத்தை தயார் செய்ய முடியவில்லை. வேறு படம் một தேர்ந்தெடுக்கவும் அல்லது கேமராவைப் பயன்படுத்தவும்.";
@@ -207,7 +209,7 @@
 "Meet MealMirror" = "MealMirror ஐ சந்திக்கவும்";
 "Milk" = "பால்";
 "Naan" = "naan";
-"Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next." = "கார்போஹைட்ரேட் உள்ள பொருட்களையும் பரிமாறும் அளவு விவரங்களையும் குறிப்பிடவும். அடுத்து, முடிவைச் சரிசெய்து லேபிளில் சரிபார்க்கப்பட்ட மதிப்பைச் சேர்க்கலாம்.";
+"Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source." = "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source.";
 "No account" = "கணக்கில்லை";
 "No clear food clues found in this photo." = "No clear food clues found in this photo.";
 "No collection by the developer" = "அபிவிருத்தியாளர் சேகரிப்பு இல்லை";
@@ -230,6 +232,7 @@
 "Not provided" = "வழங்கப்படவில்லை";
 "Not recorded" = "பதிவு செய்யப்படவில்லை";
 "Not run for this Practice meal" = "இந்தப் பயிற்சி உணவுக்கு இயக்கப்படவில்லை";
+"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "உள்ளூர் பட்டியலில் இதுவரை எந்த உணவும் பொருந்தவில்லை. உங்களுக்குத் தெரிந்த உணவுகளை மட்டும் அல்லது நம்பகமான கார்போஹைட்ரேட் அளவைச் சேர்க்கவும்.";
 "OK" = "சரி";
 "ON DEVICE" = "சாதனத்தில்";
 "Oats" = "ஓட்ஸ்";
@@ -253,6 +256,7 @@
 "Photo (context only)" = "படம் (சூழலுக்காக மட்டும்)";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "இந்தச் சாதனத்தில் படம் சோதிக்கப்பட்டது. வரம்பை நம்புவதற்கு முன்னர் நீங்கள் அடையாளம் காணும்தைச் சேர்க்கவும்.";
 "Photo inspected on this device. Visual cues: %@." = "இந்தச் சாதனத்தில் படம் சோதிக்கப்பட்டது. காட்சி குறிப்புகள்: %@.";
+"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "படத்தை ஆய்வு செய்ய முடியவில்லை. படத்திலிருந்து உணவு அல்லது கார்போஹைட்ரேட் அளவு எதுவும் பெறப்படவில்லை.";
 "Photo inspection was unavailable. The range still comes only from the meal details you entered." = "படம் சோதனை கிடைக்கவில்லை. வரம்பு இன்னும் நீங்கள் உள்ளீடு செய்த உணவு விவரங்களிலிருந்து மட்டும்தான் வருகிறது.";
 "Photo preparation in progress" = "புகைப்பட தயாரிப்பு நடைபெற்று வருகிறது";
 "Photo selected; inspection unavailable" = "புகைப்படம் தேர்ந்தெடுக்கப்பட்டது; ஆய்வு கிடைக்கவில்லை";
@@ -293,6 +297,7 @@
 "Recorded only; it does not alter this carbohydrate range" = "மட்டுமே பதிவு செய்யப்பட்டுள்ளது; இது இந்த கார்போஹைட்ரேட் வரம்பை மாற்றுவதில்லை";
 "Recorded only; it does not change this range" = "மட்டுமே பதிவு செய்யப்பட்டுள்ளது; இது இந்த வரம்பை மாற்றாது";
 "Reference note" = "குறிப்பு குறிப்பு";
+"Reference note not recorded in this older review" = "Reference note not recorded in this older review";
 "Remove selected photo" = "தேர்ந்தெடுத்த படத்தை அகற்று";
 "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal." = "மீண்டும் பயன்படுத்தக்கூடிய, இதில் சேர்க்கப்பட்ட பயிற்சித் தரவு. இந்த வரம்பு சரிபார்ப்பு செயல்முறையைக் கற்பிக்கிறது; உண்மையான உணவை உறுதிப்படுத்தாது.";
 "Replay the welcome guide" = "வரவேற்பு கையேட்டை மீண்டும் ஒளிப்படுத்து";
@@ -331,8 +336,10 @@
 "Small side bowl" = "சிறிய பக்க கிண்ணம்";
 "Small side serving" = "சிறிய பக்க பரிமாற்றம்";
 "Smaller" = "இன்னும் சிறியது";
+"Source not recorded" = "Source not recorded";
 "Spanish" = "ஸ்பானிஷ்";
 "Start a meal review" = "உணவுச் சரிபார்ப்பைத் தொடங்கவும்";
+"Start with a photo or a few words. Add context when a picture leaves questions." = "உணவுப் படம் அல்லது சில சொற்களுடன் தொடங்குங்கள். படம் தெளிவுபடுத்தாத விவரங்களைச் சேர்க்கலாம்.";
 "Start with your meal" = "உங்கள் உணவுடன் தொடங்கவும்";
 "Starting carbohydrate range" = "கார்போஹைட்ரேட் தொடக்க வரம்பு";
 "Sweet potato" = "சர்க்கரை உருளைக்கிழங்கு";
@@ -353,6 +360,7 @@
 "This Practice meal starts with a prepared description. Editing it switches back to your own meal." = "இந்தப் பயிற்சி உணவு தயார் செய்யப்பட்ட விளக்கத்துடன் தொடங்குகிறது. அதைத் திருத்தினால் உங்கள் சொந்த உணவுக்கு மாறும்.";
 "This compact record contains no photo and can be deleted at any time." = "இந்தச் சுருக்கப் பதிவில் படம் இல்லை; எப்போது வேண்டுமானாலும் நீக்கலாம்.";
 "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on." = "இந்த மதிப்பீடு ஒரு மருந்து அளவு கணக்கிடும் கருவி அல்ல. நீங்கள் மற்றும் உங்கள் நீரிழிவு குழு உடன்பட்ட அணுகுமுறை மற்றும் கவன திட்டத்தை பயன்படுத்தவும்.";
+"This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it." = "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it.";
 "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution." = "இந்தப் பொது பதிப்பில் இன்சுலின் யூனிட் கணக்கீடு இல்லை. எதிர்கால மருத்துவப் பதிப்பு எதுவாக இருந்தாலும், விநியோகத்திற்கு முன் தனித்தகுதியான மதிப்பாய்வும் பொருந்தும் ஒழுங்குமுறை மற்றும் சந்தைச் சான்றுகளும் தேவைப்படும்.";
 "This removes only the selected local review. It cannot be undone." = "இது தேர்ந்தெடுத்த உள்ளூர் சரிபார்ப்பை மட்டுமே நீக்கும். இதை மீளமைக்க முடியாது.";
 "This removes only this local record. It cannot be undone." = "இது இந்த உள்ளூர் பதிவை மட்டுமே நீக்கும். இதை மீளமைக்க முடியாது.";
@@ -374,7 +382,7 @@
 "Use your meal photo" = "உங்கள் உணவு புகைப்படத்தைப் பயன்படுத்தவும்";
 "Usual" = "சாதாரணம்";
 "Vegetables and sauce" = "காய்கறிகள் மற்றும் சாஸ்";
-"Verified amount you entered" = "நீங்கள் உள்ளிடிய பரிசீலிக்கப்பட்ட தொகை";
+"Verified amount you entered" = "Amount you entered";
 "Version" = "பதிப்பு";
 "View details" = "விவரங்களைக் காண்க";
 "Visible main portion" = "தெரியும் முக்கிய பகுதி";
@@ -395,6 +403,7 @@
 "Your care plan" = "உங்கள் பராமரிப்பு திட்டம்";
 "Your check, your call." = "உங்கள் சோதனை, உங்கள் அழைப்பு.";
 "Your description" = "உங்கள் விளக்கம்";
+"Your entry" = "Your entry";
 "Your estimate" = "உங்கள் கணிப்பு";
 "Your meal review" = "உங்கள் உணவுச் சரிபார்ப்பு";
 "Your meal starts empty" = "உங்கள் உணவு காலியாகத் தொடங்குகிறது";
@@ -402,7 +411,7 @@
 "Your meal stays on this device" = "உங்கள் உணவு இந்த சாதனத்தில் இருப்பதாக இருக்கும்";
 "Your on-device photo" = "உங்கள் சாதனத்தில் எடுக்கப்பட்ட புகைப்படம்";
 "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server." = "உங்கள் புகைப்படம் Apple Vision மூலம் சாதனத்தில் ஆய்விடப்படும். கார்போஹைட்ரேட் வரம்பு நீங்கள் பெயரிட்ட உள்ளூர் பொருட்களில் இருந்து வருகிறது, ஒரு சேவையகம் மூலம் அல்ல.";
-"Your verified entry" = "உங்கள் உறுதிப்படுத்தப்பட்ட பதிவேடு";
+"Your verified entry" = "Your entry";
 "apple" = "ஆப்பிள்";
 "bagel" = "பேகல்";
 "banana" = "வாழைப்பழம்";
@@ -467,7 +476,3 @@
 "简体中文" = "சிம்பிள் சீனீஸ்";
 "粵語（繁體）" = "காந்தோனி (தொகுதியான)";
 "한국어" = "கொரியன்";
-"Start with a photo or a few words. Add context when a picture leaves questions." = "உணவுப் படம் அல்லது சில சொற்களுடன் தொடங்குங்கள். படம் தெளிவுபடுத்தாத விவரங்களைச் சேர்க்கலாம்.";
-"Choose a photo or name one food to continue." = "தொடர உணவுப் படத்தைத் தேர்ந்தெடுக்கவும் அல்லது ஒரு உணவின் பெயரைச் சொல்லவும்.";
-"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "உள்ளூர் பட்டியலில் இதுவரை எந்த உணவும் பொருந்தவில்லை. உங்களுக்குத் தெரிந்த உணவுகளை மட்டும் அல்லது நம்பகமான கார்போஹைட்ரேட் அளவைச் சேர்க்கவும்.";
-"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "படத்தை ஆய்வு செய்ய முடியவில்லை. படத்திலிருந்து உணவு அல்லது கார்போஹைட்ரேட் அளவு எதுவும் பெறப்படவில்லை.";

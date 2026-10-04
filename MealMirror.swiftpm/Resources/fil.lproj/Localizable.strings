@@ -24,22 +24,22 @@
 "About ½ cup" = "Mga humigit-kumulang ½ tasa";
 "About ¾ cup" = "Mga humigit-kumulang ¾ tasa";
 "Add" = "Idagdag";
+"Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
 "Add a carbohydrate amount from packaging or another trusted source." = "Magdagdag ng dami ng carbohydrates mula sa pakete o mula sa iba pang pinagkakatiwalaang sanggunian.";
 "Add a carbohydrate amount from packaging or your own trusted reference." = "Magdagdag ng dami ng carbohydrates mula sa pakete o sa iyong sariling pinagkakatiwalaang sanggunian.";
+"Add a carbohydrate item" = "Add a carbohydrate item";
 "Add a description, with or without a photo." = "Magdagdag ng paglalarawan, may larawan man o wala.";
 "Add a little more detail" = "Magdagdag ng kaunting higit pang detalye";
 "Add a meal" = "Magdagdag ng isang pagkain";
-"Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Magdagdag ng napatunayang dami ng carbohydrate mula sa label ng pakete o mapagkakatiwalaang source, bumalik at ilarawan ang pagkain nang mas detalyado, o pumili ng opsyonal na pagkaing pangsanay.";
-"Add a verified carbohydrate item" = "Magdagdag ng beripikadong item ng carbohydrate";
-"Add a verified item" = "Magdagdag ng beripikadong item";
 "Add item" = "Magdagdag ng item";
 "Add more detail" = "Magdagdag ng higit pang detalye";
 "Add the foods you recognize to build an inspectable carbohydrate range." = "Idagdag ang mga pagkaing nakikilala mo upang bumuo ng nasusuring saklaw ng carbohydrate.";
 "Added to the review" = "Idinagdag sa pagsusuri";
-"Adds this verified carbohydrate amount to the review." = "Idinadagdag ang beripikadong halagang ito ng carbohydrate sa pagsusuri.";
+"Adds the amount you entered to the review." = "Adds the amount you entered to the review.";
 "Adjust if needed" = "Ayusin kung kinakailangan";
 "Adjust ingredients" = "Ayusin ang mga sangkap";
-"Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation." = "Ayusin ang mga bahagi, alisin ang hindi tugmang item, magdagdag ng beripikadong carbohydrate na item, at magpasya kung ise-save ang lokal na tala. Walang rekomendasyon sa dosis.";
+"Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.";
+"Amount you entered" = "Amount you entered";
 "Analysis in progress" = "Kasalukuyang isinasagawa ang pagsusuri";
 "App" = "App";
 "App language" = "Wika ng app";
@@ -85,6 +85,7 @@
 "Chickpeas" = "Chickpeas";
 "Children and supported use" = "Mga bata at suportadong paggamit";
 "Choose a meal photo from your library" = "Piliin ang larawan ng pagkain mula sa iyong librarya";
+"Choose a photo or name one food to continue." = "Pumili ng larawan o pangalanan ang isang pagkain para magpatuloy.";
 "Choose the language used throughout MealMirror." = "Piliin ang wikang gagamitin sa buong MealMirror.";
 "Chosen" = "Napili";
 "Close" = "Isara";
@@ -152,7 +153,7 @@
 "How it works" = "Paano ito gumagana";
 "Hungarian" = "Hungarian";
 "I added a reference item" = "Nagdagdag ako ng reference na item";
-"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
+"If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "Kasamang mga bahagi";
 "Inspect it locally" = "Suriin ito nang lokal";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";
@@ -184,6 +185,7 @@
 "Meal description" = "Paglalarawan ng pagkain";
 "Meal description review" = "Pagsusuri sa paglalarawan ng pagkain";
 "Meal items" = "Mga item ng pagkain";
+"Meal source" = "Meal source";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "Hindi mahanap ng MealMirror ang isang item na may carbohydrate sa iyong paglalarawan hanggang ngayon.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "Hindi maihanda ng MealMirror ang larawang iyon. Pumili ng ibang imahe o gamitin ang kamera.";
@@ -207,7 +209,7 @@
 "Meet MealMirror" = "Kilalanin si MealMirror";
 "Milk" = "Gatas";
 "Naan" = "Naan";
-"Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next." = "Tukuyin ang mga pagkaing may carbohydrate at ang mga detalye ng serving. Pagkatapos, maaayos mo ang resulta at makapagdagdag ka ng napatunayang halaga mula sa label.";
+"Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source." = "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source.";
 "No account" = "Walang account";
 "No clear food clues found in this photo." = "No clear food clues found in this photo.";
 "No collection by the developer" = "Walang koleksyon mula sa developer";
@@ -230,6 +232,7 @@
 "Not provided" = "Hindi ibinigay";
 "Not recorded" = "Hindi naitala";
 "Not run for this Practice meal" = "Hindi isinagawa para sa pagkaing pangsanay na ito";
+"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "Wala pang katugmang pagkain sa lokal na listahan. Idagdag lamang ang pagkaing nakikilala mo o mapagkakatiwalaang dami ng carbohydrate.";
 "OK" = "OK";
 "ON DEVICE" = "SA DEVICE";
 "Oats" = "Oats";
@@ -253,6 +256,7 @@
 "Photo (context only)" = "Larawan (para sa konteksto lamang)";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "Larawan na nasuri sa device na ito. Idagdag kung ano ang nakikilala mo bago umasa sa saklaw.";
 "Photo inspected on this device. Visual cues: %@." = "Larawan na nasuri sa device na ito. Mga visual cue: %@.";
+"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "Hindi nasuri ang larawan. Walang pagkain o dami ng carbohydrate na kinuha mula sa larawan.";
 "Photo inspection was unavailable. The range still comes only from the meal details you entered." = "Hindi magagamit ang pagsusuri ng larawan. Ang saklaw ay nagmumula pa rin lamang sa detalye ng pagkain na iyong inilagay.";
 "Photo preparation in progress" = "Pinaghahandaan ang larawan";
 "Photo selected; inspection unavailable" = "Napili na ang larawan; hindi magagamit ang inspeksyon";
@@ -293,6 +297,7 @@
 "Recorded only; it does not alter this carbohydrate range" = "Naitala lamang; hindi nito binabago ang saklaw ng karbohidrat";
 "Recorded only; it does not change this range" = "Naitala lamang; hindi nito binabago ang saklaw na ito";
 "Reference note" = "Tala ng sanggunian";
+"Reference note not recorded in this older review" = "Reference note not recorded in this older review";
 "Remove selected photo" = "Alisin ang napiling larawan";
 "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal." = "Paulit-ulit na magagamit na nakapaloob na data para sa pagsasanay. Itinuturo ng saklaw na ito ang daloy ng pagsusuri at hindi nito pinatutunayang tama ang isang tunay na pagkain.";
 "Replay the welcome guide" = "I-replay ang gabay sa pagtanggap";
@@ -331,8 +336,10 @@
 "Small side bowl" = "Maliit na mangkok na pantabi";
 "Small side serving" = "Maliit na bahagi ng pantabi";
 "Smaller" = "Mas maliit";
+"Source not recorded" = "Source not recorded";
 "Spanish" = "Kastila";
 "Start a meal review" = "Magsimula ng pagsusuri sa pagkain";
+"Start with a photo or a few words. Add context when a picture leaves questions." = "Magsimula sa larawan ng pagkain o ilang salita. Magdagdag ng detalye kung may tanong ang larawan.";
 "Start with your meal" = "Magsimula sa iyong pagkain";
 "Starting carbohydrate range" = "Nagsisimulang saklaw ng karbohidrat";
 "Sweet potato" = "Kamote";
@@ -353,6 +360,7 @@
 "This Practice meal starts with a prepared description. Editing it switches back to your own meal." = "Nagsisimula ang pagkaing pangsanay na ito sa isang inihandang paglalarawan. Kapag in-edit mo iyon, babalik ito sa sarili mong pagkain.";
 "This compact record contains no photo and can be deleted at any time." = "Walang larawan ang maikling talang ito at maaari itong tanggalin anumang oras.";
 "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on." = "Ang pagtatantiyang ito ay hindi tagakalkula ng dosis. Gamitin ang pamamaraan at plano ng pangangalaga na inyong napagkasunduan ng inyong koponan sa diabetes.";
+"This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it." = "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it.";
 "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution." = "Ang pampublikong bersyon na ito ay hindi kasama ang aritmetika ng yunit ng insulin. Anumang hinaharap na klinikal na bersyon ay mangangailangan ng hiwalay na kwalipikadong pagsusuri at ang naaangkop na ebidensiya mula sa regulasyon at pamilihan bago ito ipamahagi.";
 "This removes only the selected local review. It cannot be undone." = "Ang napiling lokal na pagsusuri lang ang aalisin nito. Hindi na ito maibabalik.";
 "This removes only this local record. It cannot be undone." = "Ang lokal na talang ito lang ang aalisin nito. Hindi na ito maibabalik.";
@@ -374,7 +382,7 @@
 "Use your meal photo" = "Gamitin ang larawan ng iyong pagkain";
 "Usual" = "Karaniwan";
 "Vegetables and sauce" = "Mga gulay at sarsa";
-"Verified amount you entered" = "Napatunayan na halaga na iyong in-enter";
+"Verified amount you entered" = "Amount you entered";
 "Version" = "Bersyon";
 "View details" = "Tingnan ang mga detalye";
 "Visible main portion" = "Nakikitang pangunahing bahagi";
@@ -395,6 +403,7 @@
 "Your care plan" = "Ang iyong planong pangangalaga";
 "Your check, your call." = "Ang iyong tseke, ang iyong desisyon.";
 "Your description" = "Ang iyong paglalarawan";
+"Your entry" = "Your entry";
 "Your estimate" = "Ang iyong pagtataya";
 "Your meal review" = "Ang iyong pagsusuri sa pagkain";
 "Your meal starts empty" = "Nagsisimulang walang laman ang iyong pagkain";
@@ -402,7 +411,7 @@
 "Your meal stays on this device" = "Mananatili sa aparatong ito ang iyong pagkain";
 "Your on-device photo" = "Ang iyong litrato sa aparato";
 "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server." = "Susuriin ang iyong litrato sa aparato gamit ang Apple Vision. Ang saklaw ng carbohydrate ay mula sa mga lokal na sangkap na iyong binanggit, hindi mula sa server.";
-"Your verified entry" = "Ang iyong beripikadong entry";
+"Your verified entry" = "Your entry";
 "apple" = "mansanas";
 "bagel" = "bagel";
 "banana" = "saging";
@@ -467,7 +476,3 @@
 "简体中文" = "简体中文";
 "粵語（繁體）" = "粵語（繁體）";
 "한국어" = "한국어";
-"Start with a photo or a few words. Add context when a picture leaves questions." = "Magsimula sa larawan ng pagkain o ilang salita. Magdagdag ng detalye kung may tanong ang larawan.";
-"Choose a photo or name one food to continue." = "Pumili ng larawan o pangalanan ang isang pagkain para magpatuloy.";
-"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "Wala pang katugmang pagkain sa lokal na listahan. Idagdag lamang ang pagkaing nakikilala mo o mapagkakatiwalaang dami ng carbohydrate.";
-"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "Hindi nasuri ang larawan. Walang pagkain o dami ng carbohydrate na kinuha mula sa larawan.";

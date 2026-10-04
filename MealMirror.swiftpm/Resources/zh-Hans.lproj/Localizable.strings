@@ -24,22 +24,22 @@
 "About ½ cup" = "大约 ½ 杯";
 "About ¾ cup" = "大约 ¾ 杯";
 "Add" = "添加";
+"Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
 "Add a carbohydrate amount from packaging or another trusted source." = "从包装或其他可信来源添加碳水化合物含量。";
 "Add a carbohydrate amount from packaging or your own trusted reference." = "从包装或你自己的可信参考资料添加碳水化合物含量。";
+"Add a carbohydrate item" = "Add a carbohydrate item";
 "Add a description, with or without a photo." = "添加说明，无论是否有照片。";
 "Add a little more detail" = "添加更多细节";
 "Add a meal" = "添加一餐";
-"Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "添加从包装标签或可靠来源核实的碳水化合物含量，返回并更详细地描述餐食，或选择可选的练习餐。";
-"Add a verified carbohydrate item" = "添加已验证的碳水化合物项目";
-"Add a verified item" = "添加已验证的项目";
 "Add item" = "添加项目";
 "Add more detail" = "添加更多细节";
 "Add the foods you recognize to build an inspectable carbohydrate range." = "添加您能识别的食物，以生成可检查的碳水化合物范围。";
 "Added to the review" = "已添加到评论";
-"Adds this verified carbohydrate amount to the review." = "将此已验证的碳水化合物含量添加到评论中。";
+"Adds the amount you entered to the review." = "Adds the amount you entered to the review.";
 "Adjust if needed" = "如有需要进行调整";
 "Adjust ingredients" = "调整配料";
-"Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation." = "调整份量，删除不匹配项目，添加已验证的碳水化合物项目，并决定是否保存本地备注。没有剂量建议。";
+"Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.";
+"Amount you entered" = "Amount you entered";
 "Analysis in progress" = "分析进行中";
 "App" = "应用程序";
 "App language" = "应用程序语言";
@@ -85,6 +85,7 @@
 "Chickpeas" = "鹰嘴豆（复数）";
 "Children and supported use" = "儿童及其支持使用";
 "Choose a meal photo from your library" = "从您的图库中选择餐食照片";
+"Choose a photo or name one food to continue." = "选择照片或说出一种食物即可继续。";
 "Choose the language used throughout MealMirror." = "选择 MealMirror 中使用的语言。";
 "Chosen" = "已选择";
 "Close" = "关闭";
@@ -152,7 +153,7 @@
 "How it works" = "它是如何工作的";
 "Hungarian" = "匈牙利语";
 "I added a reference item" = "我添加了一个参考项目";
-"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
+"If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "包含的组件";
 "Inspect it locally" = "本地检查它";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";
@@ -184,6 +185,7 @@
 "Meal description" = "餐点描述";
 "Meal description review" = "餐食描述核对";
 "Meal items" = "餐点项目";
+"Meal source" = "Meal source";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror 在您的描述中找不到含碳水化合物的项目。";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror 无法准备该照片。请选择另一张图片或使用相机。";
@@ -207,7 +209,7 @@
 "Meet MealMirror" = "认识 MealMirror";
 "Milk" = "牛奶";
 "Naan" = "印度烤饼";
-"Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next." = "列出含碳水化合物的食物和份量详情。接下来，您可以调整结果并添加标签上已核实的值。";
+"Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source." = "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source.";
 "No account" = "没有账户";
 "No clear food clues found in this photo." = "No clear food clues found in this photo.";
 "No collection by the developer" = "开发者未收集";
@@ -230,6 +232,7 @@
 "Not provided" = "未提供";
 "Not recorded" = "未记录";
 "Not run for this Practice meal" = "此练习餐未运行";
+"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "本地食物列表中尚未找到匹配项。只添加您认识的食物或来自可信来源的碳水化合物含量。";
 "OK" = "好";
 "ON DEVICE" = "在设备上";
 "Oats" = "燕麦";
@@ -253,6 +256,7 @@
 "Photo (context only)" = "照片（仅供参考）";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "照片已在此设备上检查。在依赖范围之前，请添加您识别的内容。";
 "Photo inspected on this device. Visual cues: %@." = "照片已在此设备上检查。视觉提示：%@。";
+"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "照片检查不可用。图像未用于推断食物或碳水化合物含量。";
 "Photo inspection was unavailable. The range still comes only from the meal details you entered." = "无法进行照片检查。范围仍仅来自您输入的餐食详细信息。";
 "Photo preparation in progress" = "照片准备中";
 "Photo selected; inspection unavailable" = "已选择照片；无法检查";
@@ -293,6 +297,7 @@
 "Recorded only; it does not alter this carbohydrate range" = "仅记录； 不改变此碳水化合物范围";
 "Recorded only; it does not change this range" = "仅记录； 不改变此范围";
 "Reference note" = "参考说明";
+"Reference note not recorded in this older review" = "Reference note not recorded in this older review";
 "Remove selected photo" = "移除所选照片";
 "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal." = "可重复使用的内置练习数据。此范围用于教授检查流程，并不验证真实餐食。";
 "Replay the welcome guide" = "重播欢迎指南";
@@ -331,8 +336,10 @@
 "Small side bowl" = "小配碗";
 "Small side serving" = "小份配菜";
 "Smaller" = "更小";
+"Source not recorded" = "Source not recorded";
 "Spanish" = "西班牙语";
 "Start a meal review" = "开始核对餐食";
+"Start with a photo or a few words. Add context when a picture leaves questions." = "从餐食照片或几个词开始。如果照片让你有疑问，可以补充说明。";
 "Start with your meal" = "从餐点开始";
 "Starting carbohydrate range" = "开始碳水化合物范围";
 "Sweet potato" = "红薯";
@@ -353,6 +360,7 @@
 "This Practice meal starts with a prepared description. Editing it switches back to your own meal." = "此练习餐以预先准备的说明开始。编辑说明后，将切换回您自己的餐食。";
 "This compact record contains no photo and can be deleted at any time." = "这份精简记录不含照片，可以随时删除。";
 "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on." = "该估算不是剂量计算器。请使用您与糖尿病团队共同商定的方法和护理方案。";
+"This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it." = "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it.";
 "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution." = "该公开版本不包括胰岛素单位的计算。任何未来的临床版本都需要经过单独的合格审查，并在分发前提供适用的监管和市场证据。";
 "This removes only the selected local review. It cannot be undone." = "这只会删除所选的本地检查记录。此操作无法撤销。";
 "This removes only this local record. It cannot be undone." = "这只会删除这份本地记录。此操作无法撤销。";
@@ -374,7 +382,7 @@
 "Use your meal photo" = "使用您的餐食照片";
 "Usual" = "通常";
 "Vegetables and sauce" = "蔬菜和酱汁";
-"Verified amount you entered" = "您输入的已验证金额";
+"Verified amount you entered" = "Amount you entered";
 "Version" = "版本";
 "View details" = "查看详情";
 "Visible main portion" = "可见的主体部分";
@@ -395,6 +403,7 @@
 "Your care plan" = "您的护理计划";
 "Your check, your call." = "您的支票，您的决定。";
 "Your description" = "您的描述";
+"Your entry" = "Your entry";
 "Your estimate" = "您的估算";
 "Your meal review" = "你的餐食核对";
 "Your meal starts empty" = "您的餐食初始为空";
@@ -402,7 +411,7 @@
 "Your meal stays on this device" = "您的餐食保存在此设备上。";
 "Your on-device photo" = "您的设备上的照片";
 "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server." = "您的照片将使用 Apple Vision 在设备上进行检查。碳水化合物范围来自您提供的本地食材，绝不会来自服务器。";
-"Your verified entry" = "您的已验证条目";
+"Your verified entry" = "Your entry";
 "apple" = "苹果";
 "bagel" = "贝果";
 "banana" = "香蕉";
@@ -467,7 +476,3 @@
 "简体中文" = "简体中文";
 "粵語（繁體）" = "粤语（繁体）";
 "한국어" = "韩语";
-"Start with a photo or a few words. Add context when a picture leaves questions." = "从餐食照片或几个词开始。如果照片让你有疑问，可以补充说明。";
-"Choose a photo or name one food to continue." = "选择照片或说出一种食物即可继续。";
-"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "本地食物列表中尚未找到匹配项。只添加您认识的食物或来自可信来源的碳水化合物含量。";
-"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "照片检查不可用。图像未用于推断食物或碳水化合物含量。";

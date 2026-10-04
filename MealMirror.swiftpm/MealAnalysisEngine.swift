@@ -101,7 +101,7 @@ struct MealAnalysisEngine {
                 uncertaintyNote: hasVisualMatches
                     ? "A photo can miss hidden ingredients and cannot reliably establish a mixed dish, recipe, or serving size. Confirm each item and portion; check a trusted label or reference when available."
                     : components.isEmpty
-                    ? "Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal."
+                    ? "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal."
                     : "Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method."
             )
         }

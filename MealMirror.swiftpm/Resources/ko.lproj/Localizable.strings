@@ -24,22 +24,22 @@
 "About ½ cup" = "약 ½ 컵";
 "About ¾ cup" = "약 ¾ 컵";
 "Add" = "추가";
+"Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
 "Add a carbohydrate amount from packaging or another trusted source." = "포장 정보나 다른 신뢰할 수 있는 자료에서 확인한 탄수화물 양을 추가하세요.";
 "Add a carbohydrate amount from packaging or your own trusted reference." = "포장 정보나 직접 신뢰하는 자료에서 확인한 탄수화물 양을 추가하세요.";
+"Add a carbohydrate item" = "Add a carbohydrate item";
 "Add a description, with or without a photo." = "사진 유무와 관계없이 설명을 추가하세요.";
 "Add a little more detail" = "세부 정보 조금 더 추가";
 "Add a meal" = "식사 추가";
-"Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "포장 라벨이나 신뢰할 수 있는 자료에서 확인한 탄수화물 양을 추가하거나, 돌아가서 식사를 더 자세히 설명하거나, 선택 사항인 연습용 식사를 고르세요.";
-"Add a verified carbohydrate item" = "확인된 탄수화물 항목 추가";
-"Add a verified item" = "확인된 항목 추가";
 "Add item" = "항목 추가";
 "Add more detail" = "세부 정보 추가";
 "Add the foods you recognize to build an inspectable carbohydrate range." = "알아볼 수 있는 음식을 추가하여 확인 가능한 탄수화물 범위를 만드세요.";
 "Added to the review" = "리뷰에 추가됨";
-"Adds this verified carbohydrate amount to the review." = "확인된 이 탄수화물 양을 리뷰에 추가합니다.";
+"Adds the amount you entered to the review." = "Adds the amount you entered to the review.";
 "Adjust if needed" = "필요한 경우 조정";
 "Adjust ingredients" = "재료 조정";
-"Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation." = "분량을 조정하고, 맞지 않는 항목을 제거하고, 확인된 탄수화물 항목을 추가한 뒤 로컬 메모를 저장할지 결정하세요. 투여량은 권고하지 않습니다.";
+"Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.";
+"Amount you entered" = "Amount you entered";
 "Analysis in progress" = "분석 중";
 "App" = "앱";
 "App language" = "앱 언어";
@@ -85,6 +85,7 @@
 "Chickpeas" = "병아리콩";
 "Children and supported use" = "아동 및 보호자의 지원을 받는 사용";
 "Choose a meal photo from your library" = "사진 보관함에서 식사 사진 선택";
+"Choose a photo or name one food to continue." = "계속하려면 사진을 선택하거나 음식 한 가지를 입력하세요.";
 "Choose the language used throughout MealMirror." = "MealMirror 전체에서 사용할 언어를 선택하세요.";
 "Chosen" = "선택됨";
 "Close" = "닫기";
@@ -152,7 +153,7 @@
 "How it works" = "작동 방식";
 "Hungarian" = "헝가리어";
 "I added a reference item" = "참고 항목을 추가했습니다";
-"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
+"If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "포함된 구성 항목";
 "Inspect it locally" = "기기에서 검사";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";
@@ -184,6 +185,7 @@
 "Meal description" = "식사 설명";
 "Meal description review" = "식사 설명 검토";
 "Meal items" = "식사 항목";
+"Meal source" = "Meal source";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror이 아직 설명에서 탄수화물이 포함된 항목을 찾지 못했습니다.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror이 해당 사진을 준비하지 못했습니다. 다른 이미지를 선택하거나 카메라를 사용하세요.";
@@ -207,7 +209,7 @@
 "Meet MealMirror" = "MealMirror 소개";
 "Milk" = "우유";
 "Naan" = "난";
-"Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next." = "탄수화물이 포함된 항목과 분량 세부 정보를 입력하세요. 다음 단계에서 결과를 조정하고 확인된 라벨 값을 추가할 수 있습니다.";
+"Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source." = "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source.";
 "No account" = "계정 없음";
 "No clear food clues found in this photo." = "No clear food clues found in this photo.";
 "No collection by the developer" = "개발자가 수집하지 않음";
@@ -230,6 +232,7 @@
 "Not provided" = "제공되지 않음";
 "Not recorded" = "기록되지 않음";
 "Not run for this Practice meal" = "이 연습용 식사에는 실행되지 않음";
+"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "로컬 목록에서 일치하는 음식이 아직 없어요. 아는 음식이나 신뢰할 수 있는 탄수화물 양만 추가하세요.";
 "OK" = "확인";
 "ON DEVICE" = "기기에서";
 "Oats" = "귀리";
@@ -253,6 +256,7 @@
 "Photo (context only)" = "사진(참고용)";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "이 기기에서 사진을 검사했습니다. 범위를 사용하기 전에 알아볼 수 있는 항목을 추가하세요.";
 "Photo inspected on this device. Visual cues: %@." = "이 기기에서 사진을 검사했습니다. 시각적 단서: %@.";
+"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "사진을 확인할 수 없었어요. 사진에서 음식이나 탄수화물 양을 가져오지 않았어요.";
 "Photo inspection was unavailable. The range still comes only from the meal details you entered." = "사진 검사를 사용할 수 없었습니다. 범위는 여전히 사용자가 입력한 식사 세부 정보만을 바탕으로 합니다.";
 "Photo preparation in progress" = "사진 준비 중";
 "Photo selected; inspection unavailable" = "사진이 선택됨. 검사는 사용할 수 없음";
@@ -293,6 +297,7 @@
 "Recorded only; it does not alter this carbohydrate range" = "기록만 됨. 이 탄수화물 범위는 변경하지 않음";
 "Recorded only; it does not change this range" = "기록만 됨. 이 범위는 변경하지 않음";
 "Reference note" = "참고 메모";
+"Reference note not recorded in this older review" = "Reference note not recorded in this older review";
 "Remove selected photo" = "선택한 사진 제거";
 "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal." = "반복해서 사용할 수 있는 번들 연습 데이터입니다. 이 범위는 리뷰 과정을 익히기 위한 것이며 실제 식사를 검증하지 않습니다.";
 "Replay the welcome guide" = "시작 안내 다시 보기";
@@ -331,8 +336,10 @@
 "Small side bowl" = "작은 곁들임 그릇";
 "Small side serving" = "소량 곁들임 분량";
 "Smaller" = "더 작게";
+"Source not recorded" = "Source not recorded";
 "Spanish" = "스페인어";
 "Start a meal review" = "식사 검토 시작";
+"Start with a photo or a few words. Add context when a picture leaves questions." = "식사 사진이나 몇 단어로 시작하세요. 사진으로 알 수 없는 내용은 덧붙일 수 있어요.";
 "Start with your meal" = "내 식사로 시작";
 "Starting carbohydrate range" = "초기 탄수화물 범위";
 "Sweet potato" = "고구마";
@@ -353,6 +360,7 @@
 "This Practice meal starts with a prepared description. Editing it switches back to your own meal." = "이 연습용 식사는 미리 준비된 설명으로 시작합니다. 이를 수정하면 사용자의 식사로 다시 전환됩니다.";
 "This compact record contains no photo and can be deleted at any time." = "이 간단한 기록에는 사진이 없으며 언제든 삭제할 수 있습니다.";
 "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on." = "이 추정치는 투여량 계산기가 아닙니다. 사용자와 당뇨병 관리팀이 합의한 방식과 관리 계획을 사용하세요.";
+"This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it." = "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it.";
 "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution." = "이 공개 버전에는 인슐린 단위 계산이 포함되지 않습니다. 향후 임상 버전은 배포 전에 별도의 적격 검토와 해당 규제 및 마켓플레이스 증빙이 필요합니다.";
 "This removes only the selected local review. It cannot be undone." = "선택한 로컬 리뷰만 삭제합니다. 이 작업은 취소할 수 없습니다.";
 "This removes only this local record. It cannot be undone." = "이 로컬 기록만 삭제합니다. 이 작업은 취소할 수 없습니다.";
@@ -374,7 +382,7 @@
 "Use your meal photo" = "식사 사진 사용";
 "Usual" = "보통";
 "Vegetables and sauce" = "채소와 소스";
-"Verified amount you entered" = "입력한 확인된 양";
+"Verified amount you entered" = "Amount you entered";
 "Version" = "버전";
 "View details" = "세부 정보 보기";
 "Visible main portion" = "보이는 주된 분량";
@@ -395,6 +403,7 @@
 "Your care plan" = "사용자의 관리 계획";
 "Your check, your call." = "확인과 결정은 사용자의 몫입니다.";
 "Your description" = "사용자 설명";
+"Your entry" = "Your entry";
 "Your estimate" = "사용자 추정치";
 "Your meal review" = "식사 검토";
 "Your meal starts empty" = "식사는 빈 상태로 시작합니다";
@@ -402,7 +411,7 @@
 "Your meal stays on this device" = "식사 정보는 이 기기에만 남습니다";
 "Your on-device photo" = "기기 내 사진";
 "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server." = "사진은 Apple Vision을 통해 기기에서 검사됩니다. 탄수화물 범위는 사용자가 입력한 로컬 재료에서만 나오며 서버에서 가져오지 않습니다.";
-"Your verified entry" = "확인된 사용자 입력";
+"Your verified entry" = "Your entry";
 "apple" = "사과";
 "bagel" = "베이글";
 "banana" = "바나나";
@@ -467,7 +476,3 @@
 "简体中文" = "중국어 간체";
 "粵語（繁體）" = "광둥어(번체)";
 "한국어" = "한국어";
-"Start with a photo or a few words. Add context when a picture leaves questions." = "식사 사진이나 몇 단어로 시작하세요. 사진으로 알 수 없는 내용은 덧붙일 수 있어요.";
-"Choose a photo or name one food to continue." = "계속하려면 사진을 선택하거나 음식 한 가지를 입력하세요.";
-"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "로컬 목록에서 일치하는 음식이 아직 없어요. 아는 음식이나 신뢰할 수 있는 탄수화물 양만 추가하세요.";
-"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "사진을 확인할 수 없었어요. 사진에서 음식이나 탄수화물 양을 가져오지 않았어요.";

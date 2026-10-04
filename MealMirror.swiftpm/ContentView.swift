@@ -731,7 +731,7 @@ private struct AddMealView: View {
     }
 
     private var descriptionHelp: some View {
-        Text(LocalizedStringKey(inputSource == .demo ? "This Practice meal starts with a prepared description. Editing it switches back to your own meal." : "Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next."))
+        Text(LocalizedStringKey(inputSource == .demo ? "This Practice meal starts with a prepared description. Editing it switches back to your own meal." : "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source."))
             .font(CarbInTheme.reading(.footnote, size: 13))
             .foregroundStyle(CarbInTheme.mutedInk)
     }
@@ -1064,7 +1064,7 @@ private struct EstimateView: View {
                     Button {
                         showIngredientEditor = true
                     } label: {
-                        Label("Add a verified carbohydrate item", systemImage: "plus.circle")
+                        Label("Add a carbohydrate item", systemImage: "plus.circle")
                     }
                     .buttonStyle(SecondaryActionStyle())
                     .accessibilityHint("Add a carbohydrate amount from packaging or another trusted source.")
@@ -1107,7 +1107,7 @@ private struct EstimateView: View {
                         .font(CarbInTheme.display(.title3, size: 19))
                         .foregroundStyle(CarbInTheme.tomato)
                     Text(LocalizedStringKey(analysis.components.isEmpty
-                        ? "Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal."
+                        ? "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal."
                         : "Add the foods you recognize to build an inspectable carbohydrate range."))
                         .font(CarbInTheme.reading(.subheadline, size: 15))
                         .foregroundStyle(CarbInTheme.mutedInk)
@@ -1519,7 +1519,7 @@ private struct IngredientEditorSheet: View {
                     Button {
                         showManualEntry = true
                     } label: {
-                        Label("Add a verified carbohydrate item", systemImage: "plus.circle")
+                        Label("Add a carbohydrate item", systemImage: "plus.circle")
                             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                     }
                     .foregroundStyle(CarbInTheme.moss)
@@ -1567,7 +1567,7 @@ private struct ManualCarbEntrySheet: View {
                 CountertopBackdrop()
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
-                    Text("Add a verified item")
+                    Text("Add a carbohydrate item")
                         .font(CarbInTheme.display(.title3, size: 19))
                         .foregroundStyle(CarbInTheme.ink)
                     VStack(alignment: .leading, spacing: 6) {
@@ -1614,7 +1614,7 @@ private struct ManualCarbEntrySheet: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") { addItem() }
                         .disabled(!canAdd)
-                        .accessibilityHint(Text(LocalizedStringKey(canAdd ? "Adds this verified carbohydrate amount to the review." : "Enter an item name and a whole carbohydrate amount from 0 to 500 grams first.")))
+                        .accessibilityHint(Text(LocalizedStringKey(canAdd ? "Adds the amount you entered to the review." : "Enter an item name and a whole carbohydrate amount from 0 to 500 grams first.")))
                         .accessibilityIdentifier("carbin.ingredient.confirm")
                 }
             }
@@ -1627,10 +1627,10 @@ private struct ManualCarbEntrySheet: View {
             MealComponent(
                 id: UUID().uuidString,
                 name: name.trimmingCharacters(in: .whitespacesAndNewlines),
-                detail: "Verified amount you entered",
+                detail: "Amount you entered",
                 carbohydrates: CarbRange(low: value, high: value),
                 symbol: "checkmark.seal.fill",
-                signal: "Your verified entry",
+                signal: "Your entry",
                 nameTreatment: .verbatimUser
             )
         )
@@ -1665,7 +1665,7 @@ private struct HowItWorksView: View {
                 VStack(spacing: 0) {
                     HowItWorksStep(number: "01", symbol: "camera.viewfinder", title: "Show the meal", detail: "Take a photo or choose one from your library, then describe the foods you can identify. You can record a familiar reference object for your own review; it does not alter the carbohydrate range.")
                     HowItWorksStep(number: "02", symbol: "cpu", title: "Check possible food clues", detail: "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values.")
-                    HowItWorksStep(number: "03", symbol: "checkmark.circle", title: "Keep your judgment", detail: "Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation.")
+                    HowItWorksStep(number: "03", symbol: "checkmark.circle", title: "Keep your judgment", detail: "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.")
                 }
                 .mealTicket()
 
@@ -1905,6 +1905,9 @@ private struct SavedReviewRow: View {
 
     private var reviewSummary: some View {
         VStack(alignment: .leading, spacing: 2) {
+            Text(localization.text(review.source?.title ?? "Source not recorded"))
+                .font(.caption.weight(.bold))
+                .foregroundStyle(review.source == .demo || review.source == nil ? CarbInTheme.terracotta : CarbInTheme.mutedInk)
             Text(MealTextResolver.resolve(
                 review.mealName,
                 treatment: review.mealNameTreatment,
@@ -1959,7 +1962,23 @@ private struct SavedReviewDetailView: View {
                         titleTreatment: review.mealNameTreatment
                     )
 
+                    if review.source == .demo {
+                        SafetyRail(
+                            title: "Practice meal",
+                            detail: "Use a bundled Practice meal to learn the review controls. Practice values are examples, not an analysis of your meal."
+                        )
+                    } else if review.source == nil {
+                        SafetyRail(
+                            title: "Source not recorded",
+                            detail: "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it."
+                        )
+                    }
+
                     VStack(alignment: .leading, spacing: 14) {
+                        LabeledContent("Meal source") {
+                            Text(localization.text(review.source?.title ?? "Source not recorded"))
+                                .multilineTextAlignment(.trailing)
+                        }
                         LabeledContent("Carbohydrate range") {
                             Text(localization.carbohydrateRange(review.range))
                                 .font(.headline.monospacedDigit())
@@ -1967,6 +1986,10 @@ private struct SavedReviewDetailView: View {
                         }
                         LabeledContent("Saved") {
                             Text(review.createdAt.formatted(Date.FormatStyle(date: .long, time: .shortened).locale(locale)))
+                                .multilineTextAlignment(.trailing)
+                        }
+                        LabeledContent("Reference note") {
+                            Text(localization.text(referenceNote))
                                 .multilineTextAlignment(.trailing)
                         }
                     }
@@ -2033,6 +2056,14 @@ private struct SavedReviewDetailView: View {
             } message: {
                 Text("This removes only this local record. It cannot be undone.")
             }
+        }
+    }
+
+    private var referenceNote: String {
+        switch review.referenceItemPresent {
+        case .some(true): "Recorded only; it does not change this range"
+        case .some(false): "No reference item recorded"
+        case .none: "Reference note not recorded in this older review"
         }
     }
 }

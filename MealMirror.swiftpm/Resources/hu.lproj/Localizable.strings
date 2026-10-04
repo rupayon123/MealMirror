@@ -24,22 +24,22 @@
 "About ½ cup" = "Kb. ½ csésze";
 "About ¾ cup" = "Kb. ¾ csésze";
 "Add" = "Hozzáadás";
+"Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
 "Add a carbohydrate amount from packaging or another trusted source." = "Adj hozzá szénhidráttartalmat a csomagolásról vagy egy másik megbízható forrásból.";
 "Add a carbohydrate amount from packaging or your own trusted reference." = "Adj hozzá szénhidráttartalmat a csomagolásról vagy a saját megbízható referenciaforrásodból.";
+"Add a carbohydrate item" = "Add a carbohydrate item";
 "Add a description, with or without a photo." = "Adj hozzá leírást, fényképpel vagy anélkül.";
 "Add a little more detail" = "Adj hozzá egy kicsit több részletet";
 "Add a meal" = "Adj hozzá egy étkezést";
-"Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Adj hozzá a csomagolás címkéjéről vagy megbízható forrásból ellenőrzött szénhidrátmennyiséget, lépj vissza és írd le részletesebben az étkezést, vagy válassz egy tetszőleges gyakorló étkezést.";
-"Add a verified carbohydrate item" = "Adj hozzá egy ellenőrzött szénhidrát tételt";
-"Add a verified item" = "Adj hozzá egy ellenőrzött tételt";
 "Add item" = "Adj hozzá tételt";
 "Add more detail" = "Adj hozzá több részletet";
 "Add the foods you recognize to build an inspectable carbohydrate range." = "Add hozzá a felismert ételeket egy ellenőrizhető szénhidráttartomány összeállításához.";
 "Added to the review" = "Hozzáadva a véleményhez";
-"Adds this verified carbohydrate amount to the review." = "Hozzáadja ezt az ellenőrzött szénhidráttartalmat a véleményhez.";
+"Adds the amount you entered to the review." = "Adds the amount you entered to the review.";
 "Adjust if needed" = "Szükség esetén igazítsd";
 "Adjust ingredients" = "Igazítsd az összetevőket";
-"Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation." = "Igazítsd az adagokat, távolíts el egy eltérést, adj hozzá egy ellenőrzött szénhidrát tételt, és döntsd el, hogy mented-e a helyi jegyzetet. Nincs dózisajánlás.";
+"Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.";
+"Amount you entered" = "Amount you entered";
 "Analysis in progress" = "Elemzés folyamatban";
 "App" = "Alkalmazás";
 "App language" = "Alkalmazás nyelve";
@@ -85,6 +85,7 @@
 "Chickpeas" = "Csicseriborsó";
 "Children and supported use" = "Gyermekek és támogatott használat";
 "Choose a meal photo from your library" = "Válasszon ételfotót a könyvtárból";
+"Choose a photo or name one food to continue." = "A folytatáshoz válassz egy fotót vagy nevezz meg egy ételt.";
 "Choose the language used throughout MealMirror." = "Válassza ki a MealMirror teljes használata során alkalmazott nyelvet.";
 "Chosen" = "Kiválasztott";
 "Close" = "Bezárás";
@@ -152,7 +153,7 @@
 "How it works" = "Hogyan működik";
 "Hungarian" = "Magyar";
 "I added a reference item" = "Hozzáadtam egy hivatkozási tételt";
-"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
+"If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "Tartalmazott összetevők";
 "Inspect it locally" = "Ellenőrizze helyben";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";
@@ -184,6 +185,7 @@
 "Meal description" = "Ételleírás";
 "Meal description review" = "Az étkezés leírásának ellenőrzése";
 "Meal items" = "Ételelemek";
+"Meal source" = "Meal source";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror nem talált szénhidráttartalmú ételt a leírásodban.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror nem tudta elkészíteni azt a fényképet. Válassz másik képet, vagy használd a kamerát.";
@@ -207,7 +209,7 @@
 "Meet MealMirror" = "Találkozzon a MealMirror márkával";
 "Milk" = "Tej";
 "Naan" = "Naan";
-"Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next." = "Nevezd meg a szénhidráttartalmú ételeket, és add meg az adagok részleteit. Ezután módosíthatod az eredményt, és hozzáadhatsz egy címkén ellenőrzött értéket.";
+"Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source." = "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source.";
 "No account" = "Nincs fiók";
 "No clear food clues found in this photo." = "No clear food clues found in this photo.";
 "No collection by the developer" = "Nincs gyűjtemény a fejlesztő által";
@@ -230,6 +232,7 @@
 "Not provided" = "Nem megadott";
 "Not recorded" = "Nincs rögzítve";
 "Not run for this Practice meal" = "Ennél a gyakorló étkezésnél nem futott le";
+"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "A helyi listában még nincs egyező étel. Csak az általad felismert ételt vagy megbízható szénhidrátértéket adj hozzá.";
 "OK" = "Rendben";
 "ON DEVICE" = "ESZKÖZÖN";
 "Oats" = "Zabok";
@@ -253,6 +256,7 @@
 "Photo (context only)" = "Fotó (csak tájékoztató jelleggel)";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "Fénykép ellenőrizve ezen az eszközön. Add hozzá, amit felismersz, mielőtt a tartományra hagyatkoznál.";
 "Photo inspected on this device. Visual cues: %@." = "Fénykép ellenőrizve ezen az eszközön. Vizuális jelzések: %@.";
+"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "A fotó elemzése nem volt elérhető. A képből nem származik étel vagy szénhidrátérték.";
 "Photo inspection was unavailable. The range still comes only from the meal details you entered." = "A fénykép-ellenőrzés nem volt elérhető. A tartomány továbbra is csak az általad megadott ételadatokból származik.";
 "Photo preparation in progress" = "Fénykép előkészítése folyamatban";
 "Photo selected; inspection unavailable" = "Fénykép kiválasztva; ellenőrzés nem elérhető";
@@ -293,6 +297,7 @@
 "Recorded only; it does not alter this carbohydrate range" = "Csak rögzítve; nem módosítja ezt a szénhidráttartományt";
 "Recorded only; it does not change this range" = "Csak rögzítve; nem változtatja meg ezt a tartományt";
 "Reference note" = "Hivatkozási megjegyzés";
+"Reference note not recorded in this older review" = "Reference note not recorded in this older review";
 "Remove selected photo" = "Kiválasztott fénykép eltávolítása";
 "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal." = "Ismételten használható beépített gyakorlóadatok. Ez a tartomány az ellenőrzési folyamatot mutatja be, és nem igazol valódi étkezést.";
 "Replay the welcome guide" = "Üdvözlő útmutató újrajátszása";
@@ -331,8 +336,10 @@
 "Small side bowl" = "Kis oldaltál";
 "Small side serving" = "Kis oldalmennyiség";
 "Smaller" = "Kisebb";
+"Source not recorded" = "Source not recorded";
 "Spanish" = "Spanyol";
 "Start a meal review" = "Étkezés ellenőrzésének indítása";
+"Start with a photo or a few words. Add context when a picture leaves questions." = "Kezdj egy ételfotóval vagy néhány szóval. Egészítsd ki, amit a kép nem mutat meg.";
 "Start with your meal" = "Kezdje az ételével";
 "Starting carbohydrate range" = "Kezdő szénhidrát-tartomány";
 "Sweet potato" = "Édesburgonya";
@@ -353,6 +360,7 @@
 "This Practice meal starts with a prepared description. Editing it switches back to your own meal." = "Ez a gyakorló étkezés előre elkészített leírással indul. Ha szerkeszted, visszavált a saját étkezésedre.";
 "This compact record contains no photo and can be deleted at any time." = "Ez a tömör bejegyzés nem tartalmaz fényképet, és bármikor törölhető.";
 "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on." = "Ez a becslés nem adagkalkulátor. Használja a megállapodott megközelítést és gondozási tervet, amelyet Ön és cukorbetegség-specialistája egyeztetett.";
+"This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it." = "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it.";
 "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution." = "Ez a nyilvános verzió nem tartalmaz inzulinegység-számítást. Bármely jövőbeni klinikai verzió külön, képzett áttekintést, valamint az alkalmazandó szabályozási és piaci bizonyítékot igényelne a terjesztés előtt.";
 "This removes only the selected local review. It cannot be undone." = "Csak a kiválasztott helyi ellenőrzést távolítja el. Nem vonható vissza.";
 "This removes only this local record. It cannot be undone." = "Csak ezt a helyi bejegyzést távolítja el. Nem vonható vissza.";
@@ -374,7 +382,7 @@
 "Use your meal photo" = "Használd az ételfotódat";
 "Usual" = "Szokásos";
 "Vegetables and sauce" = "Zöldségek és szósz";
-"Verified amount you entered" = "Ellenőrzött összeg, amelyet megadott";
+"Verified amount you entered" = "Amount you entered";
 "Version" = "Verzió";
 "View details" = "Részletek megtekintése";
 "Visible main portion" = "Látható fő rész";
@@ -395,6 +403,7 @@
 "Your care plan" = "Az Ön gondozási terve";
 "Your check, your call." = "Az Ön ellenőrzése, az Ön döntése.";
 "Your description" = "Az Ön leírása";
+"Your entry" = "Your entry";
 "Your estimate" = "Az Ön becslése";
 "Your meal review" = "Az étkezés ellenőrzése";
 "Your meal starts empty" = "Az étkezésed üresen indul";
@@ -402,7 +411,7 @@
 "Your meal stays on this device" = "Az étel ezen az eszközön marad";
 "Your on-device photo" = "Az eszközön lévő fényképed";
 "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server." = "A fényképedet az eszközön fogják ellenőrizni a Apple Vision használatával. A szénhidráttartományt az általad megnevezett helyi összetevők alapján állapítják meg, soha nem egy szerverről.";
-"Your verified entry" = "A hitelesített bejegyzésed";
+"Your verified entry" = "Your entry";
 "apple" = "alma";
 "bagel" = "bagel";
 "banana" = "banán";
@@ -467,7 +476,3 @@
 "简体中文" = "简体中文";
 "粵語（繁體）" = "粵語（繁體）";
 "한국어" = "한국어";
-"Start with a photo or a few words. Add context when a picture leaves questions." = "Kezdj egy ételfotóval vagy néhány szóval. Egészítsd ki, amit a kép nem mutat meg.";
-"Choose a photo or name one food to continue." = "A folytatáshoz válassz egy fotót vagy nevezz meg egy ételt.";
-"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "A helyi listában még nincs egyező étel. Csak az általad felismert ételt vagy megbízható szénhidrátértéket adj hozzá.";
-"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "A fotó elemzése nem volt elérhető. A képből nem származik étel vagy szénhidrátérték.";

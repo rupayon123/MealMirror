@@ -24,22 +24,22 @@
 "About ½ cup" = "حوالي ½ كوب";
 "About ¾ cup" = "حوالي ¾ كوب";
 "Add" = "أضف";
+"Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
 "Add a carbohydrate amount from packaging or another trusted source." = "أضف كمية الكربوهيدرات من العبوة أو مصدر موثوق آخر.";
 "Add a carbohydrate amount from packaging or your own trusted reference." = "أضف كمية الكربوهيدرات من العبوة أو من مصدر موثوق خاص بك.";
+"Add a carbohydrate item" = "Add a carbohydrate item";
 "Add a description, with or without a photo." = "أضف وصفًا، مع صورة أو من دونها.";
 "Add a little more detail" = "أضف مزيدًا من التفاصيل";
 "Add a meal" = "أضف وجبة";
-"Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "أضف كمية كربوهيدرات تم التحقق منها من ملصق عبوة أو مصدر موثوق، أو ارجع وصِف الوجبة بمزيد من التفاصيل، أو اختر وجبة تدريبية اختيارية.";
-"Add a verified carbohydrate item" = "أضف عنصر كربوهيدرات مؤكد";
-"Add a verified item" = "أضف عنصراً مؤكداً";
 "Add item" = "أضف العنصر";
 "Add more detail" = "أضف المزيد من التفاصيل";
 "Add the foods you recognize to build an inspectable carbohydrate range." = "أضف الأطعمة التي تتعرف عليها لإنشاء نطاق كربوهيدرات يمكن فحصه.";
 "Added to the review" = "تم الإضافة إلى المراجعة";
-"Adds this verified carbohydrate amount to the review." = "يضيف هذه الكمية المؤكدة من الكربوهيدرات إلى المراجعة";
+"Adds the amount you entered to the review." = "Adds the amount you entered to the review.";
 "Adjust if needed" = "اضبط إذا لزم الأمر";
 "Adjust ingredients" = "ضبط المكونات";
-"Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation." = "اضبط الحصص، أزل التناقض، أضف عنصر كربوهيدرات مؤكد، وقرر ما إذا كنت ستحتفظ بملاحظة محلية. لا يوجد توصية بالجرعة.";
+"Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.";
+"Amount you entered" = "Amount you entered";
 "Analysis in progress" = "جارٍ تحليل البيانات";
 "App" = "التطبيق";
 "App language" = "لغة التطبيق";
@@ -85,6 +85,7 @@
 "Chickpeas" = "حمص";
 "Children and supported use" = "الأطفال والاستخدام المدعوم";
 "Choose a meal photo from your library" = "اختر صورة وجبة من مكتبتك";
+"Choose a photo or name one food to continue." = "للمتابعة، اختر صورة أو اذكر اسم طعام واحد.";
 "Choose the language used throughout MealMirror." = "اختر اللغة المستخدمة في MealMirror.";
 "Chosen" = "تم الاختيار";
 "Close" = "إغلاق";
@@ -152,7 +153,7 @@
 "How it works" = "كيف يعمل";
 "Hungarian" = "هنغارية";
 "I added a reference item" = "لقد أضفت عنصر مرجعي";
-"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
+"If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "المكونات المدرجة";
 "Inspect it locally" = "فحصه محليًا";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";
@@ -184,6 +185,7 @@
 "Meal description" = "وصف الوجبة";
 "Meal description review" = "مراجعة وصف الوجبة";
 "Meal items" = "عناصر الوجبة";
+"Meal source" = "Meal source";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror لم يتمكن من العثور على عنصر يحتوي على الكربوهيدرات في وصفك بعد.";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror لم يتمكن من إعداد تلك الصورة. اختر صورة أخرى أو استخدم الكاميرا.";
@@ -207,7 +209,7 @@
 "Meet MealMirror" = "تعرف على MealMirror";
 "Milk" = "حليب";
 "Naan" = "خبز النان";
-"Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next." = "اذكر الأصناف التي تحتوي على الكربوهيدرات وتفاصيل الحصص. ستتمكن بعد ذلك من تعديل النتيجة وإضافة قيمة تم التحقق منها من الملصق.";
+"Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source." = "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source.";
 "No account" = "لا يوجد حساب";
 "No clear food clues found in this photo." = "No clear food clues found in this photo.";
 "No collection by the developer" = "لا توجد مجموعة بواسطة المطوّر";
@@ -230,6 +232,7 @@
 "Not provided" = "لم يُقدّم";
 "Not recorded" = "لم يُسجل";
 "Not run for this Practice meal" = "لم يُشغّل لهذه الوجبة التدريبية";
+"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "لم يُعثر بعد على طعام مطابق في القائمة المحلية. أضف فقط أطعمة تعرفها أو كمية كربوهيدرات من مصدر موثوق.";
 "OK" = "حسنًا";
 "ON DEVICE" = "على الجهاز";
 "Oats" = "الشوفان";
@@ -253,6 +256,7 @@
 "Photo (context only)" = "الصورة (للسياق فقط)";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "تم فحص الصورة على هذا الجهاز. أضف ما تتعرف عليه قبل الاعتماد على النطاق.";
 "Photo inspected on this device. Visual cues: %@." = "تم فحص الصورة على هذا الجهاز. المؤشرات البصرية: %@.";
+"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "تعذّر فحص الصورة. لم تُستخرج منها أطعمة أو كمية كربوهيدرات.";
 "Photo inspection was unavailable. The range still comes only from the meal details you entered." = "كان فحص الصورة غير متاح. النطاق لا يزال يأتي فقط من تفاصيل الوجبة التي أدخلتها.";
 "Photo preparation in progress" = "جاري تجهيز الصورة";
 "Photo selected; inspection unavailable" = "تم اختيار الصورة؛ الفحص غير متاح";
@@ -293,6 +297,7 @@
 "Recorded only; it does not alter this carbohydrate range" = "تم تسجيله فقط؛ لا يغير هذا النطاق من الكربوهيدرات";
 "Recorded only; it does not change this range" = "تم تسجيله فقط؛ لا يغير هذا النطاق";
 "Reference note" = "ملاحظة مرجعية";
+"Reference note not recorded in this older review" = "Reference note not recorded in this older review";
 "Remove selected photo" = "إزالة الصورة المحددة";
 "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal." = "بيانات تدريبية مضمّنة قابلة لإعادة الاستخدام. يعلّمك هذا النطاق خطوات المراجعة ولا يتحقق من وجبة حقيقية.";
 "Replay the welcome guide" = "أعد تشغيل دليل الترحيب";
@@ -331,8 +336,10 @@
 "Small side bowl" = "وعاء جانبي صغير";
 "Small side serving" = "حصة جانبية صغيرة";
 "Smaller" = "أصغر";
+"Source not recorded" = "Source not recorded";
 "Spanish" = "الإسبانية";
 "Start a meal review" = "بدء مراجعة الوجبة";
+"Start with a photo or a few words. Add context when a picture leaves questions." = "ابدأ بصورة للوجبة أو ببضع كلمات. أضف تفاصيل إذا تركت الصورة أسئلة دون إجابة.";
 "Start with your meal" = "ابدأ بوجبتك";
 "Starting carbohydrate range" = "نطاق الكربوهيدرات المبدئي";
 "Sweet potato" = "البطاطا الحلوة";
@@ -353,6 +360,7 @@
 "This Practice meal starts with a prepared description. Editing it switches back to your own meal." = "تبدأ هذه الوجبة التدريبية بوصف مُعد مسبقًا. يؤدي تعديله إلى الرجوع إلى وجبتك الخاصة.";
 "This compact record contains no photo and can be deleted at any time." = "لا يحتوي هذا السجل الموجز على صورة ويمكن حذفه في أي وقت.";
 "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on." = "هذا التقدير ليس حاسبة للجرعات. استخدم النهج وخطة الرعاية التي اتفقت عليها أنت وفريق مرض السكري الخاص بك.";
+"This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it." = "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it.";
 "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution." = "هذا الإصدار العام لا يتضمن الحسابات الوحدوية للأنسولين. أي إصدار سريري مستقبلي سيتطلب مراجعة مستقلة مؤهلة بالإضافة إلى الأدلة التنظيمية والسوقية المعمول بها قبل التوزيع.";
 "This removes only the selected local review. It cannot be undone." = "لا يزيل هذا سوى المراجعة المحلية المحددة. لا يمكن التراجع عن ذلك.";
 "This removes only this local record. It cannot be undone." = "لا يزيل هذا سوى هذا السجل المحلي. لا يمكن التراجع عن ذلك.";
@@ -374,7 +382,7 @@
 "Use your meal photo" = "استخدم صورة وجبتك.";
 "Usual" = "عادي";
 "Vegetables and sauce" = "خضار وصلصة";
-"Verified amount you entered" = "المبلغ الذي أدخلته تم التحقق منه";
+"Verified amount you entered" = "Amount you entered";
 "Version" = "الإصدار";
 "View details" = "عرض التفاصيل";
 "Visible main portion" = "الجزء الرئيسي الظاهر";
@@ -395,6 +403,7 @@
 "Your care plan" = "خطة رعايتك";
 "Your check, your call." = "فحصك، قرارك.";
 "Your description" = "وصفك";
+"Your entry" = "Your entry";
 "Your estimate" = "تقديرك";
 "Your meal review" = "تقييم وجبتك";
 "Your meal starts empty" = "تبدأ وجبتك فارغة";
@@ -402,7 +411,7 @@
 "Your meal stays on this device" = "تبقى وجبتك على هذا الجهاز.";
 "Your on-device photo" = "صورتك على الجهاز";
 "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server." = "سيتم فحص صورتك على الجهاز باستخدام Apple Vision. نطاق الكربوهيدرات يأتي من المكونات المحلية التي تذكرها، وليس من خادم.";
-"Your verified entry" = "إدخالك المؤكد";
+"Your verified entry" = "Your entry";
 "apple" = "تفاحة";
 "bagel" = "خبز البيغل";
 "banana" = "موزة";
@@ -467,7 +476,3 @@
 "简体中文" = "简体中文";
 "粵語（繁體）" = "粵語（繁體）";
 "한국어" = "한국어";
-"Start with a photo or a few words. Add context when a picture leaves questions." = "ابدأ بصورة للوجبة أو ببضع كلمات. أضف تفاصيل إذا تركت الصورة أسئلة دون إجابة.";
-"Choose a photo or name one food to continue." = "للمتابعة، اختر صورة أو اذكر اسم طعام واحد.";
-"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "لم يُعثر بعد على طعام مطابق في القائمة المحلية. أضف فقط أطعمة تعرفها أو كمية كربوهيدرات من مصدر موثوق.";
-"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "تعذّر فحص الصورة. لم تُستخرج منها أطعمة أو كمية كربوهيدرات.";

@@ -24,22 +24,22 @@
 "About ½ cup" = "تقریباً ½ کپ";
 "About ¾ cup" = "تقریباً ¾ کپ";
 "Add" = "شامل کریں";
+"Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal.";
 "Add a carbohydrate amount from packaging or another trusted source." = "پیکجنگ یا کسی دوسرے معتبر ذریعہ سے کاربوہائیڈریٹ کی مقدار شامل کریں۔";
 "Add a carbohydrate amount from packaging or your own trusted reference." = "پیکجنگ یا اپنے معتبر حوالہ سے کاربوہائیڈریٹ کی مقدار شامل کریں۔";
+"Add a carbohydrate item" = "Add a carbohydrate item";
 "Add a description, with or without a photo." = "تصویر کے ساتھ یا اس کے بغیر تفصیل شامل کریں۔";
 "Add a little more detail" = "تھوڑا اور تفصیل شامل کریں";
 "Add a meal" = "ایک کھانے کو شامل کریں";
-"Add a verified carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal." = "پیکیج لیبل یا قابل اعتماد ذریعے سے تصدیق شدہ کاربوہائیڈریٹ کی مقدار شامل کریں، واپس جا کر کھانے کی مزید تفصیل بیان کریں، یا اختیاری تربیتی کھانا منتخب کریں۔";
-"Add a verified carbohydrate item" = "تصدیق شدہ کاربوہائیڈریٹ اشیاء شامل کریں";
-"Add a verified item" = "تصدیق شدہ آئٹم شامل کریں";
 "Add item" = "آئٹم شامل کریں";
 "Add more detail" = "مزید تفصیل شامل کریں";
 "Add the foods you recognize to build an inspectable carbohydrate range." = "جن کھانوں کو آپ پہچانتے ہیں انہیں شامل کرکے قابل جانچ کاربوہائیڈریٹ رینج بنائیں۔";
 "Added to the review" = "جائزے میں شامل کیا گیا";
-"Adds this verified carbohydrate amount to the review." = "یہ تصدیق شدہ کاربوہائیڈریٹ کی مقدار جائزے میں شامل کرتا ہے۔";
+"Adds the amount you entered to the review." = "Adds the amount you entered to the review.";
 "Adjust if needed" = "ضرورت ہو تو ایڈجسٹ کریں";
 "Adjust ingredients" = "اجزاء کو ایڈجسٹ کریں";
-"Adjust portions, remove a mismatch, add a verified carbohydrate item, and decide whether to save a local note. There is no dose recommendation." = "حصوں کو ایڈجسٹ کریں، میل کھانے والی چیز کو ہٹائیں، تصدیق شدہ کاربوہائیڈریٹ اشیاء شامل کریں، اور فیصلہ کریں کہ مقامی نوٹ محفوظ کرنا ہے یا نہیں۔ کوئی خوراک کی تجویز نہیں ہے۔";
+"Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation." = "Adjust portions, remove a mismatch, add an amount from a trusted source, and decide whether to save a local note. There is no dose recommendation.";
+"Amount you entered" = "Amount you entered";
 "Analysis in progress" = "تجزیہ جاری ہے";
 "App" = "ایپ";
 "App language" = "ایپ کی زبان";
@@ -85,6 +85,7 @@
 "Chickpeas" = "چنے";
 "Children and supported use" = "بچوں اور معاون استعمال";
 "Choose a meal photo from your library" = "اپنی لائبریری سے کھانے کی تصویر منتخب کریں";
+"Choose a photo or name one food to continue." = "جاری رکھنے کے لیے کھانے کی تصویر منتخب کریں یا کسی ایک غذا کا نام بتائیں۔";
 "Choose the language used throughout MealMirror." = "پورے MealMirror میں استعمال ہونے والی زبان کا انتخاب کریں۔";
 "Chosen" = "منتخب شدہ";
 "Close" = "بند کریں";
@@ -152,7 +153,7 @@
 "How it works" = "یہ کس طرح کام کرتا ہے";
 "Hungarian" = "ہنگیرین";
 "I added a reference item" = "میں نے ایک حوالہ آئٹم شامل کیا";
-"If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores the saved meal name or your description; each included food’s name, source, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
+"If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved." = "If you choose Save, MealMirror stores whether the review began with Practice, a description, or a selected photo; the saved meal name or your description; whether you marked a reference item; each included food’s name, source label, portion choice, and reviewed carbohydrate range; the total range; the date; and a random identifier in a protected local file. The photo is not saved. The file is excluded from device backups. Language and onboarding preferences are stored in app preferences. Insulin ratios and insulin-unit arithmetic are not saved.";
 "Included components" = "شامل اجزاء";
 "Inspect it locally" = "اسے مقامی طور پر جانچیں";
 "Inspected locally; no clear food clues found" = "Inspected locally; no clear food clues found";
@@ -184,6 +185,7 @@
 "Meal description" = "کھانے کی تفصیل";
 "Meal description review" = "کھانے کی تفصیل کا جائزہ";
 "Meal items" = "کھانے کی اشیاء";
+"Meal source" = "Meal source";
 "MealMirror" = "MealMirror";
 "MealMirror could not find a carbohydrate-containing item in your description yet." = "MealMirror آپ کے بیان میں کاربوہائیڈریٹ پر مشتمل آئٹم نہیں ڈھونڈ سکا۔";
 "MealMirror could not prepare that photo. Choose another image or use the camera." = "MealMirror اس تصویر کو تیار نہیں کر سکا۔ دوسری تصویر منتخب کریں یا کیمرہ استعمال کریں۔";
@@ -207,7 +209,7 @@
 "Meet MealMirror" = "MealMirror سے ملاقات کریں";
 "Milk" = "دودھ";
 "Naan" = "نان";
-"Name carbohydrate-containing items and portion details. You’ll be able to adjust the result and add a verified label value next." = "کاربوہائیڈریٹ رکھنے والی اشیا اور حصے کی تفصیلات لکھیں۔ اس کے بعد آپ نتیجہ ایڈجسٹ کر سکیں گے اور لیبل سے تصدیق شدہ قدر شامل کر سکیں گے۔";
+"Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source." = "Name carbohydrate-containing items and portion details. You can adjust the result and add an amount from a package label or trusted source.";
 "No account" = "کوئی اکاؤنٹ نہیں";
 "No clear food clues found in this photo." = "No clear food clues found in this photo.";
 "No collection by the developer" = "ڈویلپر کی جانب سے کوئی مجموعہ نہیں";
@@ -230,6 +232,7 @@
 "Not provided" = "فراہم نہیں کیا گیا";
 "Not recorded" = "ریکارڈ نہیں کیا گیا";
 "Not run for this Practice meal" = "اس تربیتی کھانے کے لیے نہیں چلایا گیا";
+"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "مقامی فہرست میں ابھی کوئی غذا نہیں ملی۔ صرف اپنی پہچانی ہوئی غذا یا قابلِ اعتماد کاربوہائیڈریٹ مقدار شامل کریں۔";
 "OK" = "ٹھیک ہے";
 "ON DEVICE" = "ڈیوائس پر";
 "Oats" = "جو کے دانے";
@@ -253,6 +256,7 @@
 "Photo (context only)" = "تصویر (صرف سیاق کے لیے)";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "اس ڈیوائس پر تصویر کی جانچ کی گئی۔ حد پر انحصار کرنے سے پہلے جو پہچانیں اسے شامل کریں۔";
 "Photo inspected on this device. Visual cues: %@." = "اس ڈیوائس پر تصویر کی جانچ کی گئی۔ بصری نشانیاں: %@۔";
+"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "تصویر کی جانچ دستیاب نہیں تھی۔ تصویر سے کوئی غذا یا کاربوہائیڈریٹ مقدار نہیں لی گئی۔";
 "Photo inspection was unavailable. The range still comes only from the meal details you entered." = "تصویر کی جانچ دستیاب نہیں تھی۔ حد پھر بھی صرف وہی معلومات دینے والے کھانے کی تفصیلات سے حاصل ہوتی ہے جو آپ نے داخل کیں۔";
 "Photo preparation in progress" = "تصویر کی تیاری جاری ہے";
 "Photo selected; inspection unavailable" = "تصویر منتخب کی گئی؛ معائنہ دستیاب نہیں";
@@ -293,6 +297,7 @@
 "Recorded only; it does not alter this carbohydrate range" = "صرف ریکارڈ کیا گیا؛ یہ کاربوہائیڈریٹ کی اس حد کو تبدیل نہیں کرتا";
 "Recorded only; it does not change this range" = "صرف ریکارڈ کیا گیا؛ یہ اس حد کو تبدیل نہیں کرتا";
 "Reference note" = "حوالہ نوٹ";
+"Reference note not recorded in this older review" = "Reference note not recorded in this older review";
 "Remove selected photo" = "منتخب تصویر ہٹائیں";
 "Repeatable bundled Practice data. This range teaches the review flow and does not validate a real meal." = "بار بار استعمال ہونے والا پہلے سے شامل تربیتی ڈیٹا۔ یہ رینج جائزے کا طریقہ سکھاتی ہے اور کسی اصل کھانے کی توثیق نہیں کرتی۔";
 "Replay the welcome guide" = "ویلکم گائیڈ دوبارہ چلائیں";
@@ -331,8 +336,10 @@
 "Small side bowl" = "چھوٹا سائیڈ پیالہ";
 "Small side serving" = "چھوٹی ضمنی خوراک";
 "Smaller" = "چھوٹا";
+"Source not recorded" = "Source not recorded";
 "Spanish" = "ہسپانوی";
 "Start a meal review" = "کھانے کا جائزہ شروع کریں";
+"Start with a photo or a few words. Add context when a picture leaves questions." = "کھانے کی تصویر یا چند الفاظ سے شروع کریں۔ تصویر میں جو بات واضح نہ ہو، اس کی تفصیل شامل کریں۔";
 "Start with your meal" = "اپنے کھانے سے شروع کریں";
 "Starting carbohydrate range" = "شروع ہونے والی کاربوہائیڈریٹ رینج";
 "Sweet potato" = "میٹھا آلو";
@@ -353,6 +360,7 @@
 "This Practice meal starts with a prepared description. Editing it switches back to your own meal." = "یہ تربیتی کھانا تیار شدہ تفصیل کے ساتھ شروع ہوتا ہے۔ اسے تبدیل کرنے سے آپ اپنے کھانے پر واپس آ جائیں گے۔";
 "This compact record contains no photo and can be deleted at any time." = "اس مختصر ریکارڈ میں کوئی تصویر نہیں اور اسے کسی بھی وقت حذف کیا جا سکتا ہے۔";
 "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on." = "یہ اندازہ خوراک کا کیلکولیٹر نہیں ہے۔ اپنی مرضی اور احتیاطی منصوبہ وہی استعمال کریں جس پر آپ اور آپ کی ذیابیطس ٹیم نے اتفاق کیا ہو۔";
+"This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it." = "This older review does not say whether it came from a Practice example or your meal. Recheck its range before using it.";
 "This public version does not include insulin-unit arithmetic. Any future clinical version would require separate qualified review and the applicable regulatory and marketplace evidence before distribution." = "اس عوامی ورژن میں انسولین یونٹ کے حسابات شامل نہیں ہیں۔ کسی بھی مستقبل کے کلینیکل ورژن کے لیے علیحدہ اہل جائزہ اور تقسیم سے پہلے متعلقہ ریگولیٹری اور مارکیٹ ثبوت کی ضرورت ہوگی۔";
 "This removes only the selected local review. It cannot be undone." = "اس سے صرف منتخب مقامی جائزہ حذف ہوگا۔ اسے واپس نہیں لایا جا سکتا۔";
 "This removes only this local record. It cannot be undone." = "اس سے صرف یہ مقامی ریکارڈ حذف ہوگا۔ اسے واپس نہیں لایا جا سکتا۔";
@@ -374,7 +382,7 @@
 "Use your meal photo" = "اپنے کھانے کی تصویر استعمال کریں۔";
 "Usual" = "معمول کے مطابق";
 "Vegetables and sauce" = "سبزیاں اور چٹنی";
-"Verified amount you entered" = "آپ نے جو رقم داخل کی ہے اس کی تصدیق ہو گئی";
+"Verified amount you entered" = "Amount you entered";
 "Version" = "ورژن";
 "View details" = "تفصیلات دیکھیں";
 "Visible main portion" = "ظاہر شدہ مین حصہ";
@@ -395,6 +403,7 @@
 "Your care plan" = "آپ کا دیکھ بھال منصوبہ";
 "Your check, your call." = "آپ کا چیک، آپ کا فیصلہ۔";
 "Your description" = "آپ کی تفصیل";
+"Your entry" = "Your entry";
 "Your estimate" = "آپ کا اندازہ";
 "Your meal review" = "آپ کے کھانے کا جائزہ";
 "Your meal starts empty" = "آپ کا کھانا خالی حالت سے شروع ہوتا ہے";
@@ -402,7 +411,7 @@
 "Your meal stays on this device" = "آپ کا کھانا اس ڈیوائس پر رہتا ہے";
 "Your on-device photo" = "آپ کی ڈیوائس پر موجود تصویر";
 "Your photo will be inspected on-device with Apple Vision. The carbohydrate range comes from the local ingredients you name, never from a server." = "آپ کی تصویر کو Apple Vision کے ساتھ ڈیوائس پر ہی جانچا جائے گا۔ کاربوہائیڈریٹس کی مقدار آپ کے بتائے ہوئے مقامی اجزاء سے معلوم کی جاتی ہے، کبھی بھی سرور سے نہیں۔";
-"Your verified entry" = "آپ کی تصدیق شدہ انٹری";
+"Your verified entry" = "Your entry";
 "apple" = "سیب";
 "bagel" = "بیگل";
 "banana" = "کیلا";
@@ -467,7 +476,3 @@
 "简体中文" = "简体中文";
 "粵語（繁體）" = "粵語（繁體）";
 "한국어" = "한국어";
-"Start with a photo or a few words. Add context when a picture leaves questions." = "کھانے کی تصویر یا چند الفاظ سے شروع کریں۔ تصویر میں جو بات واضح نہ ہو، اس کی تفصیل شامل کریں۔";
-"Choose a photo or name one food to continue." = "جاری رکھنے کے لیے کھانے کی تصویر منتخب کریں یا کسی ایک غذا کا نام بتائیں۔";
-"Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "مقامی فہرست میں ابھی کوئی غذا نہیں ملی۔ صرف اپنی پہچانی ہوئی غذا یا قابلِ اعتماد کاربوہائیڈریٹ مقدار شامل کریں۔";
-"Photo inspection was unavailable. No food or carbohydrate value came from the image." = "تصویر کی جانچ دستیاب نہیں تھی۔ تصویر سے کوئی غذا یا کاربوہائیڈریٹ مقدار نہیں لی گئی۔";
