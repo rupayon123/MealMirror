@@ -1,4 +1,5 @@
 @preconcurrency import Vision
+import CoreImage
 import Foundation
 import ImageIO
 import UIKit
@@ -129,11 +130,40 @@ enum MealPhotoPreparation {
         return UIImage(cgImage: cgImage)
     }
 
-    static func downsampledImage(from image: UIImage, maxPixelSize: CGFloat = 1_800) -> UIImage {
-        image.preparingThumbnail(of: CGSize(width: maxPixelSize, height: maxPixelSize)) ?? image
+    static func downsampledImage(from image: UIImage, maxPixelSize: CGFloat = 1_800) -> UIImage? {
+        guard maxPixelSize.isFinite, maxPixelSize > 0 else { return nil }
+
+        // UIKit's thumbnail preparer returns nil for a CIImage-backed UIImage.
+        // Never pass the unprepared original to the preview or Vision.
+        if let ciImage = image.ciImage {
+            let extent = ciImage.extent
+            guard !extent.isNull, !extent.isInfinite,
+                  extent.width.isFinite, extent.height.isFinite,
+                  extent.width > 0, extent.height > 0,
+                  extent.width * extent.height <= 50_000_000 else { return nil }
+            let scale = min(1, maxPixelSize / max(extent.width, extent.height))
+            let scaledImage = ciImage.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
+            guard let cgImage = CIContext(options: [.cacheIntermediates: false])
+                .createCGImage(scaledImage, from: scaledImage.extent),
+                  max(CGFloat(cgImage.width), CGFloat(cgImage.height)) <= maxPixelSize else {
+                return nil
+            }
+            return UIImage(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
+        }
+
+        guard image.scale.isFinite, image.scale > 0 else { return nil }
+        // preparingThumbnail's size is in points; Vision receives CGImage pixels.
+        let pointLimit = maxPixelSize / max(image.scale, 1)
+        guard let thumbnail = image.preparingThumbnail(
+            of: CGSize(width: pointLimit, height: pointLimit)
+        ), let cgImage = thumbnail.cgImage,
+              max(CGFloat(cgImage.width), CGFloat(cgImage.height)) <= maxPixelSize else {
+            return nil
+        }
+        return thumbnail
     }
 
-    static func downsampledImageAsync(from image: UIImage, maxPixelSize: CGFloat = 1_800) async -> UIImage {
+    static func downsampledImageAsync(from image: UIImage, maxPixelSize: CGFloat = 1_800) async -> UIImage? {
         await withCheckedContinuation { continuation in
             DispatchQueue.global(qos: .userInitiated).async {
                 continuation.resume(returning: downsampledImage(from: image, maxPixelSize: maxPixelSize))
