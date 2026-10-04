@@ -42,11 +42,12 @@ struct MealAnalysisEngine {
             } else {
                 []
             }
-            let visualMatches = MealIngredientCatalog.components(
-                matchingLabels: visualLabels,
+            let photoClues = PhotoCluePolicy.components(
+                matching: visualLabels,
                 locale: language.locale,
                 localizedKeyword: { catalog.text($0, language: language) }
             )
+            let visualMatches = photoClues
             .filter { !describedIDs.contains($0.id) }
             .map { component in
                 MealComponent(
@@ -72,10 +73,10 @@ struct MealAnalysisEngine {
             case .unavailable:
                 .unavailable
             case .inspected:
-                .inspected(labels: visualMatches.map(\.name))
+                .inspected(labels: photoClues.map(\.name))
             }
             let components = describedComponents + visualMatches
-            let hasVisualMatches = !visualMatches.isEmpty
+            let hasVisualMatches = !photoClues.isEmpty
             let methodNote: String
             if hasVisualMatches {
                 methodNote = "On-device Vision suggested possible food names. Photo suggestions start excluded. Add only foods you recognize; the photo does not determine portions or carbohydrate values."
