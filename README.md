@@ -32,7 +32,7 @@ The current packaging script creates an English-only candidate archive:
 
 It writes `build/MealMirror-SSC2027.zip`, removes non-English resource catalogs and Xcode user state, and checks the currently published size limit. A generated archive is only a packaging artifact; it does not establish app readiness, applicant eligibility, authorship, or a completed submission.
 
-For testing, [download the current candidate ZIP](candidate/MealMirror-SSC2027.zip), generated from app commit `6de1a64`. Its SHA-256 is `283eb669edcdd8bd77142f18ae9442c067f46b9986c800c055cf510cdadf925a` and its size is 12,195,989 bytes. This is a review candidate, not a submitted or clinically validated app. It includes the Pixel Kitchen UI, up to three numbered meal photos plus a separate label photo, local label transcription, and a checked manual-amount path. The [readiness checklist](CHALLENGE-READINESS.md) distinguishes verified package behavior from remaining work.
+For testing, [download the current candidate ZIP](candidate/MealMirror-SSC2027.zip), generated from app commit `16323fe` (including `18a80ed`). Its SHA-256 is `3d527eed0a3c5a81b39e0ca25bb7bc57153c38d2bd64a3269b44ad83295de9e2` and its size is 12,195,957 bytes. This is a review candidate, not a submitted or clinically validated app. It includes the Pixel Kitchen UI, up to three numbered meal photos plus a separate label photo, local label transcription, and a checked manual-amount path. This exact archive was built after clean extraction and launched on iPhone 17 and iPhone SE simulators; a full photo/label flow was last run on the preceding candidate. The [readiness checklist](CHALLENGE-READINESS.md) distinguishes verified package behavior from remaining work.
 
 ## Project records
 
