@@ -103,7 +103,7 @@ struct SettingsView: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.55)
             Text(localization.text("A clearer view of your meal"))
-                .font(.subheadline.weight(.semibold))
+                .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                 .foregroundStyle(CarbInTheme.tomato)
                 .fixedSize(horizontal: false, vertical: true)
         }
@@ -126,7 +126,7 @@ struct SettingsView: View {
                             rowChevron
                         }
                         Text(title)
-                            .font(.headline.weight(.bold))
+                            .font(CarbInTheme.display(.headline, size: 17))
                             .foregroundStyle(CarbInTheme.ink)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -152,7 +152,7 @@ struct SettingsView: View {
 
     private var rowChevron: some View {
         Image(systemName: "chevron.forward")
-            .font(.headline)
+            .font(CarbInTheme.display(.headline, size: 17))
             .foregroundStyle(CarbInTheme.ink)
             .accessibilityHidden(true)
     }
@@ -250,12 +250,12 @@ private struct PolicyScroll<Content: View>: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     Text(LocalizedStringKey(eyebrow))
-                        .font(.caption.weight(.bold))
+                        .font(CarbInTheme.reading(.caption1, size: 13, weight: .bold))
                         .tracking(localization.language.supportsDecorativeTracking ? 1 : 0)
                         .foregroundStyle(CarbInTheme.tomato)
                     if !dynamicTypeSize.isAccessibilitySize {
                         Text(LocalizedStringKey(title))
-                            .font(.system(.largeTitle, design: .rounded).weight(.bold))
+                            .font(CarbInTheme.display(.largeTitle, size: 34))
                             .foregroundStyle(CarbInTheme.ink)
                     }
                     Text(LocalizedStringKey(introduction))

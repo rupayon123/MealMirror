@@ -392,7 +392,7 @@ private struct AppHeader: View {
                     .minimumScaleFactor(0.85)
                 if !dynamicTypeSize.isAccessibilitySize {
                     Text(localization.text("A clearer view of your meal"))
-                        .font(.caption.weight(.bold))
+                        .font(CarbInTheme.reading(.caption1, size: 13, weight: .bold))
                         .foregroundStyle(CarbInTheme.tomato)
                 }
             }
@@ -511,7 +511,7 @@ private struct AddMealView: View {
                                 .multilineTextAlignment(.center)
                                 .foregroundStyle(CarbInTheme.actionInk)
                             Text(localization.text("A clearer view of your meal"))
-                                .font(.subheadline.weight(.bold))
+                                .font(CarbInTheme.reading(.subheadline, size: 15, weight: .bold))
                                 .multilineTextAlignment(.center)
                                 .foregroundStyle(CarbInTheme.actionInk)
                         }
@@ -766,7 +766,7 @@ private struct AddMealView: View {
                     PixelKitchenIcon(kind: .photos)
                         .frame(width: 24, height: 24)
                 }
-                    .font(.subheadline.weight(.semibold))
+                    .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .frame(maxWidth: .infinity, minHeight: 70, alignment: .center)
                     .insetControlGroup(inset: 10)
@@ -818,7 +818,7 @@ private struct AddMealView: View {
 
             if isPreparingPhoto {
                 Label("Preparing your photo on this device…", systemImage: "arrow.triangle.2.circlepath")
-                    .font(.footnote.weight(.medium))
+                    .font(CarbInTheme.reading(.footnote, size: 13, weight: .medium))
                     .foregroundStyle(CarbInTheme.basil)
                     .accessibilityLabel("Preparing selected photo on this device")
             }
@@ -1385,7 +1385,7 @@ private struct EstimateView: View {
         )
         .overlay(alignment: .topLeading) {
             Text(LocalizedStringKey(analysis.source == .demo ? "PRACTICE" : "ON DEVICE"))
-                .font(.caption2.weight(.black))
+                .font(CarbInTheme.display(.caption2, size: 11))
                 .tracking(localization.language.supportsDecorativeTracking ? 0.7 : 0)
                 .foregroundStyle(CarbInTheme.surface)
                 .padding(.horizontal, 9)
@@ -1511,7 +1511,7 @@ private struct EstimateView: View {
         Toggle(isOn: $hasConfirmedMealParts) {
             VStack(alignment: .leading, spacing: 4) {
                 Text("Confirm the parts you recognize before you keep a local record.")
-                    .font(.subheadline.weight(.bold))
+                    .font(CarbInTheme.reading(.subheadline, size: 15, weight: .bold))
                     .foregroundStyle(CarbInTheme.ink)
                 Text(hasSingleAmount
                      ? "Check the serving size and each listed item before you keep this amount."
@@ -1600,7 +1600,7 @@ private struct EstimateView: View {
 
     private var rangeStatus: some View {
         Text(LocalizedStringKey(analysis.isReadyForReview || !analysis.components.isEmpty ? "Adjust if needed" : "Add more detail"))
-            .font(.caption)
+            .font(CarbInTheme.reading(.caption1, size: 13))
             .foregroundStyle(CarbInTheme.mutedInk)
     }
 }
@@ -1902,7 +1902,7 @@ private struct ManualCarbEntrySheet: View {
                         .foregroundStyle(CarbInTheme.ink)
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Item name")
-                            .font(.subheadline.weight(.semibold))
+                            .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                         TextField("For example, packaged drink", text: $name)
                             .textInputAutocapitalization(.words)
                             .accessibilityLabel("Item name")
@@ -1911,7 +1911,7 @@ private struct ManualCarbEntrySheet: View {
                     .workbenchSurface()
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Carbohydrates in whole grams")
-                            .font(.subheadline.weight(.semibold))
+                            .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                         TextField("For example, 18", text: $grams)
                             .keyboardType(.numberPad)
                             .accessibilityLabel("Carbohydrates in whole grams")
@@ -2029,7 +2029,7 @@ private struct HowItWorksView: View {
                         .fixedSize(horizontal: false, vertical: true)
 
                     Text("Carbohydrate values can differ by recipe, product, serving, preparation, and hidden ingredients. Features may change as safety, legal, accessibility, and platform requirements evolve.")
-                        .font(.caption)
+                        .font(CarbInTheme.reading(.caption1, size: 13))
                         .foregroundStyle(CarbInTheme.mutedInk)
                         .fixedSize(horizontal: false, vertical: true)
                 }
@@ -2074,7 +2074,7 @@ private struct PrivacyView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     if reviewLoadFailed {
                         Label("Review needed", systemImage: "exclamationmark.triangle.fill")
-                            .font(.subheadline.weight(.semibold))
+                            .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                             .foregroundStyle(CarbInTheme.terracotta)
                             .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
                     } else {
@@ -2217,13 +2217,13 @@ private struct SavedReviewRow: View {
                     reviewSummary
                     Spacer(minLength: 8)
                     Text(localization.carbohydrateRange(review.range))
-                        .font(.subheadline.monospacedDigit().weight(.bold))
+                        .font(CarbInTheme.reading(.subheadline, size: 15, weight: .bold).monospacedDigit())
                         .foregroundStyle(CarbInTheme.moss)
                 }
                 VStack(alignment: .leading, spacing: 4) {
                     reviewSummary
                     Text(localization.carbohydrateRange(review.range))
-                        .font(.subheadline.monospacedDigit().weight(.bold))
+                        .font(CarbInTheme.reading(.subheadline, size: 15, weight: .bold).monospacedDigit())
                         .foregroundStyle(CarbInTheme.moss)
                 }
             }
@@ -2244,19 +2244,19 @@ private struct SavedReviewRow: View {
     private var reviewSummary: some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(localization.text(review.source?.title ?? "Source not recorded"))
-                .font(.caption.weight(.bold))
+                .font(CarbInTheme.reading(.caption1, size: 13, weight: .bold))
                 .foregroundStyle(review.source == .demo || review.source == nil ? CarbInTheme.terracotta : CarbInTheme.mutedInk)
             Text(MealTextResolver.resolve(
                 review.mealName,
                 treatment: review.mealNameTreatment,
                 localize: { localization.text($0) }
             ))
-                .font(.subheadline.weight(.semibold))
+                .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                 .foregroundStyle(CarbInTheme.ink)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityIdentifier("carbin.history.item.\(index)")
             Text(review.createdAt.formatted(Date.FormatStyle(date: .abbreviated, time: .shortened).locale(locale)))
-                .font(.caption)
+                .font(CarbInTheme.reading(.caption1, size: 13))
                 .foregroundStyle(CarbInTheme.mutedInk)
         }
     }
@@ -2318,7 +2318,7 @@ private struct SavedReviewDetailView: View {
                         }
                         LabeledContent(review.range.low == review.range.high ? "Carbohydrate amount" : "Carbohydrate range") {
                             Text(localization.carbohydrateRange(review.range))
-                                .font(.headline.monospacedDigit())
+                                .font(CarbInTheme.reading(.headline, size: 17, weight: .semibold).monospacedDigit())
                                 .foregroundStyle(CarbInTheme.moss)
                         }
                         LabeledContent("Saved") {
@@ -2334,36 +2334,36 @@ private struct SavedReviewDetailView: View {
 
                     if review.items.isEmpty {
                         Text("This older saved review contains only the total range. Its individual sources were not saved.")
-                            .font(.subheadline)
+                            .font(CarbInTheme.reading(.subheadline, size: 15))
                             .foregroundStyle(CarbInTheme.mutedInk)
                             .mirrorCard()
                     } else {
                         VStack(alignment: .leading, spacing: 14) {
                             Text(localization.text(review.range.low == review.range.high ? "Source of this amount" : "What shaped the range"))
-                                .font(.headline)
+                                .font(CarbInTheme.display(.headline, size: 17))
                                 .foregroundStyle(CarbInTheme.ink)
                             ForEach(review.items) { item in
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(MealTextResolver.resolve(item.name, treatment: item.nameTreatment, localize: { localization.text($0) }))
-                                        .font(.subheadline.weight(.semibold))
+                                        .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                                     if item.allowsPortionAdjustment ?? (item.source != "Your entry") {
                                         Text(localization.text("%@ portion", arguments: localization.text(item.portion.title)))
-                                            .font(.caption.weight(.semibold))
+                                            .font(CarbInTheme.reading(.caption1, size: 13, weight: .semibold))
                                             .foregroundStyle(CarbInTheme.moss)
                                     }
                                     Text(localization.carbohydrateRange(item.carbohydrates))
-                                        .font(.subheadline.monospacedDigit())
+                                        .font(CarbInTheme.reading(.subheadline, size: 15).monospacedDigit())
                                     Text(MealTextResolver.resolve(item.source, treatment: item.sourceTreatment, localize: { localization.text($0) }))
-                                        .font(.caption)
+                                        .font(CarbInTheme.reading(.caption1, size: 13))
                                         .foregroundStyle(CarbInTheme.mutedInk)
                                 }
                                 .accessibilityElement(children: .combine)
                             }
                             Text(localization.text("A photo cannot reveal every ingredient or portion. Confirm the foods, adjust portions, and prefer a package label or trusted reference when available."))
-                                .font(.caption)
+                                .font(CarbInTheme.reading(.caption1, size: 13))
                                 .foregroundStyle(CarbInTheme.mutedInk)
                             Text(localization.text("This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on."))
-                                .font(.caption.weight(.semibold))
+                                .font(CarbInTheme.reading(.caption1, size: 13, weight: .semibold))
                                 .foregroundStyle(CarbInTheme.terracotta)
                         }
                         .mirrorCard()
@@ -2491,12 +2491,12 @@ private struct MealChoiceCard: View {
                     .accessibilityHidden(true)
 
                 Text(localization.text(meal.name))
-                    .font(.subheadline.weight(.semibold))
+                    .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                     .foregroundStyle(CarbInTheme.ink)
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
                 Text(meal.analysis(description: meal.prompt, referenceItemPresent: false).overallRange.map(localization.carbohydrateRange) ?? localization.text("Review needed"))
-                    .font(.caption.weight(.medium))
+                    .font(CarbInTheme.reading(.caption1, size: 13, weight: .medium))
                     .foregroundStyle(CarbInTheme.moss)
             }
             .frame(width: cardWidth, alignment: .topLeading)
@@ -2578,10 +2578,10 @@ private struct PhotoPreview: View {
                             .font(.system(.largeTitle, design: .rounded).weight(.semibold))
                             .foregroundStyle(CarbInTheme.moss)
                         Text(LocalizedStringKey(emptyState.titleKey))
-                            .font(.subheadline.weight(.semibold))
+                            .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                             .foregroundStyle(CarbInTheme.ink)
                         Text(LocalizedStringKey(emptyState.detailKey))
-                            .font(.caption)
+                            .font(CarbInTheme.reading(.caption1, size: 13))
                             .foregroundStyle(CarbInTheme.mutedInk)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -2705,7 +2705,7 @@ private struct ConfidenceTrail: View {
 
     private var trailSubtitle: some View {
         Text("How inputs were handled")
-            .font(.caption)
+            .font(CarbInTheme.reading(.caption1, size: 13))
             .foregroundStyle(CarbInTheme.mutedInk)
     }
 }
@@ -2720,17 +2720,17 @@ private struct EvidenceRow: View {
     var body: some View {
         HStack(spacing: 12) {
             Image(systemName: symbol)
-                .font(.subheadline.weight(.semibold))
+                .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                 .foregroundStyle(isActive ? CarbInTheme.moss : CarbInTheme.mutedInk)
                 .frame(width: 32, height: 32)
                 .background(isActive ? CarbInTheme.basilSoft : CarbInTheme.inset, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 2) {
                 Text(localization.text(title))
-                    .font(.subheadline.weight(.semibold))
+                    .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                     .foregroundStyle(CarbInTheme.ink)
                 Text(localization.text(detail))
-                    .font(.caption)
+                    .font(CarbInTheme.reading(.caption1, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
             }
             Spacer()
@@ -2777,7 +2777,7 @@ private struct ComponentRow: View {
 
     private var componentIcon: some View {
         Image(systemName: component.symbol)
-            .font(.body.weight(.medium))
+            .font(CarbInTheme.reading(.body, size: 17, weight: .medium))
             .foregroundStyle(CarbInTheme.basil)
             .frame(width: 38, height: 38)
             .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
@@ -2787,7 +2787,7 @@ private struct ComponentRow: View {
     private var componentDetails: some View {
         VStack(alignment: .leading, spacing: 3) {
             Text(display(component.name, treatment: component.nameTreatment))
-                .font(.subheadline.weight(.semibold))
+                .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                 .foregroundStyle(CarbInTheme.ink)
             Text(
                 display(component.detail, treatment: component.detailTreatment)
@@ -2797,14 +2797,14 @@ private struct ComponentRow: View {
                    ? ""
                    : " • " + localization.text("%@ portion", arguments: localization.text(component.portion.title)))
             )
-                .font(.caption)
+                .font(CarbInTheme.reading(.caption1, size: 13))
                 .foregroundStyle(CarbInTheme.mutedInk)
         }
     }
 
     private var rangeText: some View {
         Text(component.isIncluded ? localization.carbohydrateRange(component.carbohydrates) : localization.text("Excluded"))
-            .font(.subheadline.monospacedDigit().weight(.semibold))
+            .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold).monospacedDigit())
             .foregroundStyle(component.isIncluded ? CarbInTheme.moss : CarbInTheme.mutedInk)
             .accessibilityLabel(component.isIncluded
                 ? (component.carbohydrates.low == component.carbohydrates.high
@@ -2845,7 +2845,7 @@ private struct ReviewFact: View {
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 2) {
                 Text(localization.text(title))
-                    .font(.caption.weight(.semibold))
+                    .font(CarbInTheme.reading(.caption1, size: 13, weight: .semibold))
                     .foregroundStyle(CarbInTheme.mutedInk)
                 Text(MealTextResolver.resolve(value, treatment: valueTreatment, localize: { localization.text($0) }))
                     .font(CarbInTheme.reading(.subheadline, size: 15))
@@ -2888,7 +2888,7 @@ private struct HowItWorksStep: View {
     private var stepMarker: some View {
         VStack(spacing: 8) {
             Text(number)
-                .font(.system(.caption, design: .monospaced).weight(.bold))
+                .font(CarbInTheme.reading(.caption1, size: 13, weight: .bold).monospacedDigit())
                 .foregroundStyle(CarbInTheme.canvas)
                 .frame(width: 34, height: 24)
                 .background(CarbInTheme.terracotta)

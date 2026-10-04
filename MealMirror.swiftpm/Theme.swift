@@ -535,7 +535,7 @@ struct SafetyRail: View {
                     .font(CarbInTheme.display(.subheadline, size: 15))
                     .foregroundStyle(CarbInTheme.ink)
                 Text(detail)
-                    .font(.footnote)
+                    .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
             }

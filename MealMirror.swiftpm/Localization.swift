@@ -242,13 +242,13 @@ struct LanguagePickerMenu: View {
 
     private var languageTitle: some View {
         Label(localization.text("Language"), systemImage: "globe")
-            .font(.subheadline.weight(.bold))
+            .font(CarbInTheme.reading(.subheadline, size: 15, weight: .bold))
             .fixedSize(horizontal: false, vertical: true)
     }
 
     private var currentLanguageName: some View {
         Text(verbatim: localization.language.bilingualMenuName)
-            .font(.subheadline)
+            .font(CarbInTheme.reading(.subheadline, size: 15))
             .foregroundStyle(CarbInTheme.mutedInk)
             .fixedSize(horizontal: false, vertical: true)
     }

@@ -217,7 +217,7 @@ private struct OnboardingView: View {
                                 onboardingPage(pages[page], compactHeight: compactHeight)
 
                                 VStack(spacing: 4) { legalButtons }
-                                    .font(.caption.weight(.semibold))
+                                    .font(CarbInTheme.reading(.caption1, size: 13, weight: .semibold))
                                     .foregroundStyle(CarbInTheme.pine)
                                     .padding(.horizontal, 20)
                             }
@@ -243,7 +243,7 @@ private struct OnboardingView: View {
                             HStack(spacing: 16) { legalButtons }
                             VStack(spacing: 0) { legalButtons }
                         }
-                        .font(.caption.weight(.semibold))
+                        .font(CarbInTheme.reading(.caption1, size: 13, weight: .semibold))
                         .foregroundStyle(CarbInTheme.pine)
                         .padding(.horizontal, 20)
 
@@ -314,7 +314,7 @@ private struct OnboardingView: View {
             .accessibilityHidden(true)
 
             Text(localization.text(item.eyebrow))
-                .font(.caption.weight(.bold))
+                .font(CarbInTheme.reading(.caption1, size: 13, weight: .bold))
                 .tracking(localization.language.supportsDecorativeTracking ? 0.7 : 0)
                 .foregroundStyle(CarbInTheme.tomato)
 
