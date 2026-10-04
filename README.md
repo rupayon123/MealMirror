@@ -8,7 +8,7 @@ This is a work in progress, not a medical device, treatment guide, or submission
 
 Open [`MealMirror.swiftpm`](MealMirror.swiftpm) in Xcode 26 or later and choose an iPhone or iPad simulator. The package includes bundled Practice images and local example ranges; those values demonstrate the review controls and are not measurements of a real meal.
 
-The candidate is Swift-only and has no sign-in, required server, Dexcom/Libre connection, or insulin-dose calculation. Photo selection and Vision inspection stay on device. Its instructions, assets, and examples are bundled; no app screen needs a network connection. A photo never determines a portion or carbohydrate amount. When a food is not recognized, the person can add foods they know or enter a value from a package or another trusted source. The local catalog is illustrative and finite; it does not cover every meal or culture, and its example ranges are not clinically validated.
+The candidate is Swift-only and has no sign-in, required server, Dexcom/Libre connection, or insulin-dose calculation. Photo selection and Vision inspection stay on device. Its instructions, assets, and examples are bundled; no app screen needs a network connection. A photo never determines a portion or carbohydrate amount. When a food is not recognized, the person can add foods they know or enter a value from a package or another trusted source. A manually entered amount stays fixed and can be edited directly; the portion controls apply only to illustrative catalog ranges. The local catalog is finite; it does not cover every meal or culture, and its example ranges are not clinically validated.
 
 MealMirror's product aim is to keep food and joy in everyday life after diagnosis. It should welcome family recipes, restaurant meals, snacks, celebrations, and foods from any culture without shaming choices. For a picture that leaves questions, the app should ask only for details the person can confirm.
 
@@ -30,7 +30,7 @@ The current packaging script creates an English-only candidate archive:
 
 It writes `build/MealMirror-SSC2027.zip`, removes non-English resource catalogs and Xcode user state, and checks the currently published size limit. A generated archive is only a packaging artifact; it does not establish app readiness, applicant eligibility, authorship, or a completed submission.
 
-For testing, [download the current candidate ZIP](candidate/MealMirror-SSC2027.zip), generated from app commit `a5a3052`. Its SHA-256 is `dd089f28d1e7da477a93fb0ec638720bf963f85933e923546d599a9c46194576` and its size is 12,190,590 bytes. This is a review candidate, not a submitted or clinically validated app. The [readiness checklist](CHALLENGE-READINESS.md) distinguishes verified package behavior from remaining work.
+For testing, [download the current candidate ZIP](candidate/MealMirror-SSC2027.zip), generated from app commit `4d6d0f4`. Its SHA-256 is `bcbacf75fd879a06d1301e42727c91332a723ba017351dc05a3a65011c780434` and its size is 12,191,224 bytes. This is a review candidate, not a submitted or clinically validated app. The [readiness checklist](CHALLENGE-READINESS.md) distinguishes verified package behavior from remaining work.
 
 ## Project records
 
