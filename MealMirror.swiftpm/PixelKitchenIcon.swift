@@ -3,7 +3,7 @@ import SwiftUI
 // Small, hand-plotted utility sprites share the loading ring's 12 × 12 grid.
 // They carry no text, so every language keeps its own readable button label.
 enum PixelKitchenIconKind {
-    case camera, photos, history, info, settings, check
+    case camera, photos, history, info, settings, check, adjust, review
 
     var rows: [String] {
         switch self {
@@ -31,6 +31,14 @@ enum PixelKitchenIconKind {
             ["............", ".........kk.", "........kGk.", ".......kGGk.",
              "..kk..kGGk..", ".kGGkkGGk...", "kGGGGGGk....", ".kGGGGk.....",
              "..kGGk......", "...kk.......", "............", "............"]
+        case .adjust:
+            ["............", "...rr.......", ".kkrrkkkkkk.", "...rr.......",
+             "............", ".......GG...", ".kkkkkkGGkk.", ".......GG...",
+             "............", "..YY........", ".kYYkkkkkkk.", "..YY........"]
+        case .review:
+            ["...kkkk.....", "..kBBBBk....", ".kBwwwwBk...", "kBwwrrwwBk..",
+             "kBwwwwwwBk..", ".kBwwwwBk...", "..kBBBBk....", "...kkkkkk...",
+             ".......kYYk.", "........kYYk", ".........kYk", "..........kk"]
         }
     }
 }
@@ -85,5 +93,19 @@ struct PixelKitchenIconBadge: View {
                     .stroke(CarbInTheme.line, lineWidth: 2)
             }
             .accessibilityHidden(true)
+    }
+}
+
+struct PixelKitchenActionLabel: View {
+    let title: LocalizedStringKey
+    let kind: PixelKitchenIconKind
+
+    var body: some View {
+        Label {
+            Text(title)
+                .fixedSize(horizontal: false, vertical: true)
+        } icon: {
+            PixelKitchenIconBadge(kind: kind, size: 32)
+        }
     }
 }

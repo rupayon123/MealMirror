@@ -744,7 +744,12 @@ private struct AddMealView: View {
                     emptyState: .mealEntry
                 )
             } else {
-                Label("No photo selected", systemImage: "photo")
+                Label {
+                    Text("No photo selected")
+                } icon: {
+                    PixelKitchenIcon(kind: .photos)
+                        .frame(width: 24, height: 24)
+                }
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .frame(maxWidth: .infinity, minHeight: 70, alignment: .center)
@@ -1048,7 +1053,7 @@ private struct EstimateView: View {
                     Button {
                         showIngredientEditor = true
                     } label: {
-                        Label("Adjust ingredients", systemImage: "slider.horizontal.3")
+                        PixelKitchenActionLabel(title: "Adjust ingredients", kind: .adjust)
                     }
                     .buttonStyle(SecondaryActionStyle())
                     .accessibilityIdentifier("carbin.estimate.adjust")
@@ -1241,14 +1246,14 @@ private struct EstimateView: View {
         Group {
             if analysis.isReadyForReview {
                 Button(action: onReview) {
-                    Label("Review before saving", systemImage: "arrow.right.circle.fill")
+                    PixelKitchenActionLabel(title: "Review before saving", kind: .review)
                 }
                 .buttonStyle(PrimaryActionStyle(isEnabled: hasConfirmedMealParts))
                 .disabled(!hasConfirmedMealParts)
                 .accessibilityIdentifier("carbin.estimate.review")
             } else if !analysis.components.isEmpty {
                 Button(action: { showIngredientEditor = true }) {
-                    Label("Adjust ingredients", systemImage: "slider.horizontal.3")
+                    PixelKitchenActionLabel(title: "Adjust ingredients", kind: .adjust)
                 }
                 .buttonStyle(PrimaryActionStyle())
                 .accessibilityIdentifier("carbin.estimate.reviewCandidates")

@@ -188,6 +188,7 @@ final class LocalizationStore: ObservableObject {
 
 struct LanguagePickerMenu: View {
     @EnvironmentObject private var localization: LocalizationStore
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
     var accessibilityIdentifier: String
     var showsCurrentLanguage = false
@@ -200,15 +201,20 @@ struct LanguagePickerMenu: View {
                 }
             }
         } label: {
-            HStack(spacing: 9) {
-                Label(localization.text("Language"), systemImage: "globe")
-                    .font(.subheadline.weight(.bold))
-                if showsCurrentLanguage {
-                    Spacer(minLength: 10)
-                    Text(verbatim: localization.language.bilingualMenuName)
-                        .font(.subheadline)
-                        .foregroundStyle(CarbInTheme.mutedInk)
-                        .lineLimit(1)
+            Group {
+                if showsCurrentLanguage && dynamicTypeSize.isAccessibilitySize {
+                    VStack(alignment: .leading, spacing: 4) {
+                        languageTitle
+                        currentLanguageName
+                    }
+                } else {
+                    HStack(alignment: .firstTextBaseline, spacing: 9) {
+                        languageTitle
+                        if showsCurrentLanguage {
+                            Spacer(minLength: 10)
+                            currentLanguageName
+                        }
+                    }
                 }
             }
             .foregroundStyle(CarbInTheme.ink)
@@ -223,5 +229,18 @@ struct LanguagePickerMenu: View {
         }
         .accessibilityHint(localization.text("Choose the language used throughout MealMirror."))
         .accessibilityIdentifier(accessibilityIdentifier)
+    }
+
+    private var languageTitle: some View {
+        Label(localization.text("Language"), systemImage: "globe")
+            .font(.subheadline.weight(.bold))
+            .fixedSize(horizontal: false, vertical: true)
+    }
+
+    private var currentLanguageName: some View {
+        Text(verbatim: localization.language.bilingualMenuName)
+            .font(.subheadline)
+            .foregroundStyle(CarbInTheme.mutedInk)
+            .fixedSize(horizontal: false, vertical: true)
     }
 }
