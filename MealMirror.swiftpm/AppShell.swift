@@ -119,15 +119,18 @@ private struct OnboardingIllustration: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(CarbInTheme.surface)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .stroke(CarbInTheme.basil, lineWidth: 3)
-                }
+            if page != 0 {
+                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                    .fill(CarbInTheme.surface)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 18, style: .continuous)
+                            .stroke(CarbInTheme.basil, lineWidth: 3)
+                    }
+            }
 
             MealPlateGraphic(showsPen: false)
-                .frame(width: size * 0.72, height: size * 0.72)
+                .frame(width: size * (page == 0 ? 1 : 0.72),
+                       height: size * (page == 0 ? 1 : 0.72))
                 .offset(x: page == 1 ? -26 : 0)
 
             if page == 1 {
