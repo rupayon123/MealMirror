@@ -466,7 +466,7 @@ private struct AddMealView: View {
                 StepRail(current: 1)
                 if !dynamicTypeSize.isAccessibilitySize {
                     SectionHeading(
-                        eyebrow: "Description",
+                        eyebrow: showsPhotoInput ? "Photo" : "Description",
                         title: "Start with your meal",
                         detail: "Start with a photo or a few words. Add context when a picture leaves questions."
                     )
