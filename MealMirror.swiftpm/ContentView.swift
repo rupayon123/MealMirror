@@ -1134,11 +1134,13 @@ private struct EstimateView: View {
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityLabel(Text(
                     (analysis.source == .demo ? localization.text("Practice meal") + ". " : "")
-                    + localization.text(
-                        "Estimated carbohydrate range: %lld to %lld grams",
-                        arguments: Int64(range.low),
-                        Int64(range.high)
-                    )
+                    + (range.low == range.high
+                       ? localization.carbohydrateRange(range)
+                       : localization.text(
+                            "Estimated carbohydrate range: %lld to %lld grams",
+                            arguments: Int64(range.low),
+                            Int64(range.high)
+                         ))
                 ))
             Text("Starting carbohydrate range")
                 .font(CarbInTheme.display(.headline, size: 16))
@@ -2504,7 +2506,9 @@ private struct ComponentRow: View {
             .font(.subheadline.monospacedDigit().weight(.semibold))
             .foregroundStyle(component.isIncluded ? CarbInTheme.moss : CarbInTheme.mutedInk)
             .accessibilityLabel(component.isIncluded
-                ? localization.text("%lld to %lld grams", arguments: Int64(component.carbohydrates.low), Int64(component.carbohydrates.high))
+                ? (component.carbohydrates.low == component.carbohydrates.high
+                   ? localization.carbohydrateRange(component.carbohydrates)
+                   : localization.text("%lld to %lld grams", arguments: Int64(component.carbohydrates.low), Int64(component.carbohydrates.high)))
                 : localization.text("Excluded from total"))
     }
 

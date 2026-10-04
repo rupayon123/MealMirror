@@ -175,6 +175,15 @@ final class LocalizationStore: ObservableObject {
 
     func carbohydrateRange(_ range: CarbRange) -> String {
         let localizedFormat = catalog.text("%lld–%lld g", language: language)
+        if range.low == range.high, localizedFormat.contains("%lld–%lld") {
+            // Every catalog keeps its own unit after this shared placeholder.
+            // A user-entered fixed value should read as one amount, not 42–42.
+            let singleFormat = localizedFormat.replacingOccurrences(of: "%lld–%lld", with: "%lld")
+            let displayFormat = language.isRightToLeft
+                ? singleFormat.replacingOccurrences(of: "%lld", with: "\u{2066}%lld\u{2069}")
+                : singleFormat
+            return String(format: displayFormat, locale: language.locale, arguments: [Int64(range.low)])
+        }
         // Keep the low-to-high numeric run in order inside right-to-left text.
         let displayFormat = language.isRightToLeft
             ? localizedFormat.replacingOccurrences(of: "%lld–%lld", with: "\u{2066}%lld–%lld\u{2069}")
