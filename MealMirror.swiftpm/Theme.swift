@@ -10,6 +10,22 @@ enum CarbInTheme {
     static let ticket = adaptive(light: rgb(0xFFF2BB), dark: rgb(0x352D3B))
     static let inset = adaptive(light: rgb(0xFFE9A5), dark: rgb(0x443545))
     static let ink = adaptive(light: rgb(0x32202C), dark: rgb(0xFFF1DB))
+    @MainActor static func navigationInk(for scheme: ColorScheme) -> Color {
+        // A dismissed sheet can leave the toolbar's SwiftUI color-scheme
+        // environment out of sync with the window for a scrolled screen.
+        // Use the active scene so the title matches the canvas beneath it.
+        let style = UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first(where: { $0.activationState == .foregroundActive })?
+            .traitCollection.userInterfaceStyle
+        let isDark = switch style {
+        case .dark: true
+        case .light: false
+        default: scheme == .dark
+        }
+        let value = isDark ? rgb(0xFFF1DB) : rgb(0x32202C)
+        return Color(red: value.0, green: value.1, blue: value.2)
+    }
     static let mutedInk = adaptive(light: rgb(0x6A4C50), dark: rgb(0xDBC9D1))
     static let basil = adaptive(light: rgb(0x17663C), dark: rgb(0xB9E8B0))
     static let basilAction = adaptive(light: rgb(0x237B49), dark: rgb(0x2A7A4E))
@@ -600,6 +616,7 @@ private struct KitchenBubbleSurface: ViewModifier {
 private struct KitchenNavigationTitle: ViewModifier {
     let title: LocalizedStringKey
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
         content.navigationTitle(title)
@@ -612,7 +629,7 @@ private struct KitchenNavigationTitle: ViewModifier {
                         .font(dynamicTypeSize.isAccessibilitySize
                             ? .system(size: 18, weight: .bold)
                             : CarbInTheme.display(.headline, size: 18))
-                        .foregroundStyle(CarbInTheme.ink)
+                        .foregroundStyle(CarbInTheme.navigationInk(for: colorScheme))
                         .lineLimit(dynamicTypeSize.isAccessibilitySize ? 1 : 2)
                         .minimumScaleFactor(0.8)
                 }

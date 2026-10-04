@@ -1088,7 +1088,13 @@ private struct AddMealView: View {
     @ViewBuilder
     private var labelPhotoActions: some View {
         Button { openCamera(for: .label) } label: {
-            Label("Label camera", systemImage: "camera.viewfinder")
+            Label {
+                Text("Label camera")
+                    .fixedSize(horizontal: false, vertical: true)
+            } icon: {
+                PixelKitchenIcon(kind: .camera)
+                    .frame(width: 24, height: 24)
+            }
         }
         .buttonStyle(CompactActionStyle())
         .disabled(!CameraAccess.isAvailable)
@@ -1317,7 +1323,12 @@ private struct EstimateView: View {
     @ViewBuilder
     private var labelEvidence: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Label("Nutrition label text", systemImage: "text.viewfinder")
+            Label {
+                Text("Nutrition label text")
+            } icon: {
+                PixelKitchenIcon(kind: .nutritionLabel)
+                    .frame(width: 24, height: 24)
+            }
                 .font(CarbInTheme.display(.headline, size: 16))
                 .foregroundStyle(CarbInTheme.ink)
             Text("Label text is a transcription, not a verified carbohydrate amount. Check the photo and serving size yourself.")
