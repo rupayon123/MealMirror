@@ -8,12 +8,12 @@ The product direction begins with a photo, then asks the person to confirm anyth
 
 Open this `MealMirror.swiftpm` package in Xcode 26 or later, choose an iPhone or iPad simulator, and run. The included images, catalog, instructions, and sample ranges are local. The meal-review flow has no account or network dependency.
 
-## Three-minute Practice walkthrough
+## Three-minute walkthrough
 
-1. Tap **Start a meal review** on Home, then scroll to **Optional Practice**.
-2. Choose the bundled biryani, grain-bowl, or breakfast Practice meal and tap **Build my local review**.
-3. Inspect the example items and carbohydrate range. Adjust or exclude anything that does not fit.
-4. Read the review trail and final check; save only if a local note is useful.
+1. On first launch, tap **Choose a meal photo from your library**. Select a photo for your own review, or close the picker to explore the entry screen. Later, Home offers **Camera**, **Library**, and **Start a meal review**.
+2. For a guided example, scroll to **Optional Practice** and choose biryani, grain bowl, or breakfast. A Practice choice opens its example review directly; no personal photo or measured serving is implied.
+3. Inspect the possible items and example carbohydrate range. Include, exclude, or adjust portions, then confirm the meal parts and open the final review.
+4. Read the source trail and final check; save only if a local note is useful. A personal photo or description instead uses **Build my local review** before this step.
 
 Practice numbers teach the review controls. They do not analyze the example image, validate a real serving, or replace a package label or trusted carb-counting method.
 
