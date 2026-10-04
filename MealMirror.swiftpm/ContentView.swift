@@ -875,9 +875,6 @@ private struct AddMealView: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .center)
-            .accessibilityElement(children: .contain)
-            .accessibilityLabel("Practice meal choices")
-            .accessibilityIdentifier("carbin.practice.list")
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .mealTicket(inset: 14)
