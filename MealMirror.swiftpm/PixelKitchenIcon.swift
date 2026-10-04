@@ -4,6 +4,7 @@ import SwiftUI
 // They carry no text, so every language keeps its own readable button label.
 enum PixelKitchenIconKind {
     case camera, photos, history, info, settings, check, adjust, review
+    case replay, privacy, medical
 
     var rows: [String] {
         switch self {
@@ -39,6 +40,18 @@ enum PixelKitchenIconKind {
             ["...kkkk.....", "..kBBBBk....", ".kBwwwwBk...", "kBwwrrwwBk..",
              "kBwwwwwwBk..", ".kBwwwwBk...", "..kBBBBk....", "...kkkkkk...",
              ".......kYYk.", "........kYYk", ".........kYk", "..........kk"]
+        case .replay:
+            ["....kkkk....", "..kkGGGGkk..", ".kGG....GGk.", "..kr.....GGk",
+             ".krrG.....Gk", "krrrG.....Gk", ".krrG.....Gk", "..kr.....GGk",
+             "........GGk.", "....GGGGkk..", "....kkkk....", "............"]
+        case .privacy:
+            ["...kkkkkk...", "..kggggggk..", ".kggggggggk.", ".kgggkkgggk.",
+             ".kggkwwkggk.", ".kggkwwkggk.", "..kggkkggk..", "..kgkYYkgk..",
+             "...kkYYkk...", "...kgYYgk...", "....kggk....", ".....kk....."]
+        case .medical:
+            ["....kkkk....", "...kwwwwk...", "...kkkkkk...", ".kkkkkkkkkk.",
+             "krrrrrrrrrrk", "krrrrwwrrrrk", "krrwwwwwwrrk", "krrwwwwwwrrk",
+             "krrrrwwrrrrk", "krrrrrrrrrrk", ".kkkkkkkkkk.", "............"]
         }
     }
 }

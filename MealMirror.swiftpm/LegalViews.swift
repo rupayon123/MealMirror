@@ -24,8 +24,8 @@ struct SettingsView: View {
                     brandCard
 
                     sectionHeading("Learn")
-                    actionRow("How MealMirror works", symbol: "questionmark.circle", identifier: "carbin.settings.how", action: onHowItWorks)
-                    actionRow("Replay the welcome guide", symbol: "arrow.counterclockwise", identifier: "carbin.settings.replayOnboarding", action: onReplayOnboarding)
+                    actionRow("How MealMirror works", icon: .info, identifier: "carbin.settings.how", action: onHowItWorks)
+                    actionRow("Replay the welcome guide", icon: .replay, identifier: "carbin.settings.replayOnboarding", action: onReplayOnboarding)
 
                     if localization.availableLanguages.count > 1 {
                         sectionHeading("Language")
@@ -36,9 +36,9 @@ struct SettingsView: View {
                     }
 
                     sectionHeading("Legal and safety")
-                    actionRow("Local data and deletion", symbol: "externaldrive.badge.xmark", identifier: "carbin.settings.history", action: onLocalPrivacy)
-                    actionRow("Privacy Policy", symbol: "hand.raised.fill", identifier: "carbin.settings.legal.privacy", action: onPrivacyPolicy)
-                    actionRow("Medical Safety", symbol: "cross.case.fill", identifier: "carbin.settings.legal.medical", action: onMedicalSafety)
+                    actionRow("Local data and deletion", icon: .history, identifier: "carbin.settings.history", action: onLocalPrivacy)
+                    actionRow("Privacy Policy", icon: .privacy, identifier: "carbin.settings.legal.privacy", action: onPrivacyPolicy)
+                    actionRow("Medical Safety", icon: .medical, identifier: "carbin.settings.legal.medical", action: onMedicalSafety)
 
                     sectionHeading("About")
                     VStack(alignment: .leading, spacing: 12) {
@@ -112,7 +112,7 @@ struct SettingsView: View {
 
     private func actionRow(
         _ title: LocalizedStringKey,
-        symbol: String,
+        icon: PixelKitchenIconKind,
         identifier: String,
         action: @escaping () -> Void
     ) -> some View {
@@ -121,7 +121,7 @@ struct SettingsView: View {
                 if dynamicTypeSize.isAccessibilitySize {
                     VStack(alignment: .leading, spacing: 10) {
                         HStack {
-                            rowIcon(symbol)
+                            PixelKitchenIconBadge(kind: icon)
                             Spacer(minLength: 5)
                             rowChevron
                         }
@@ -132,7 +132,7 @@ struct SettingsView: View {
                     }
                 } else {
                     HStack(spacing: 14) {
-                        rowIcon(symbol)
+                        PixelKitchenIconBadge(kind: icon)
                         Text(title)
                             .font(CarbInTheme.display(.headline, size: 17))
                             .foregroundStyle(CarbInTheme.ink)
@@ -148,15 +148,6 @@ struct SettingsView: View {
         .buttonStyle(.plain)
         .workbenchSurface(inset: 14)
         .accessibilityIdentifier(identifier)
-    }
-
-    private func rowIcon(_ symbol: String) -> some View {
-        Image(systemName: symbol)
-            .font(.title3.weight(.semibold))
-            .foregroundStyle(CarbInTheme.basil)
-            .frame(width: 44, height: 44)
-            .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
-            .accessibilityHidden(true)
     }
 
     private var rowChevron: some View {
