@@ -817,10 +817,15 @@ private struct AddMealView: View {
             }
 
             if isPreparingPhoto {
-                Label("Preparing your photo on this device…", systemImage: "arrow.triangle.2.circlepath")
-                    .font(CarbInTheme.reading(.footnote, size: 13, weight: .medium))
-                    .foregroundStyle(CarbInTheme.basil)
-                    .accessibilityLabel("Preparing selected photo on this device")
+                HStack(spacing: 8) {
+                    ProgressView()
+                        .tint(CarbInTheme.basil)
+                    Text("Preparing your photo on this device…")
+                        .font(CarbInTheme.reading(.footnote, size: 13, weight: .medium))
+                        .foregroundStyle(CarbInTheme.basil)
+                }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("Preparing selected photo on this device")
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -1134,8 +1139,8 @@ private struct AddMealView: View {
             }
         }
         .buttonStyle(CompactActionStyle())
-        .disabled(!CameraAccess.isAvailable || remainingFoodSlots == 0)
-        .opacity(CameraAccess.isAvailable && remainingFoodSlots > 0 ? 1 : 0.5)
+        .disabled(isPreparingPhoto || !CameraAccess.isAvailable || remainingFoodSlots == 0)
+        .opacity(!isPreparingPhoto && CameraAccess.isAvailable && remainingFoodSlots > 0 ? 1 : 0.5)
         .accessibilityHint(Text(LocalizedStringKey(CameraAccess.isAvailable ? "Opens the camera after you grant access." : "Camera is available when this app is run on an iPhone or iPad with a camera.")))
         .accessibilityIdentifier("carbin.meal.camera")
 
@@ -1154,7 +1159,7 @@ private struct AddMealView: View {
             }
         }
         .buttonStyle(CompactActionStyle())
-        .disabled(remainingFoodSlots == 0)
+        .disabled(isPreparingPhoto || remainingFoodSlots == 0)
         .accessibilityLabel(Text(LocalizedStringKey("Choose a meal photo from your library")))
         .accessibilityIdentifier("carbin.meal.library")
     }
@@ -1171,7 +1176,7 @@ private struct AddMealView: View {
             }
         }
         .buttonStyle(CompactActionStyle())
-        .disabled(!CameraAccess.isAvailable)
+        .disabled(isPreparingPhoto || !CameraAccess.isAvailable)
         .accessibilityIdentifier("carbin.meal.labelCamera")
 
         PhotosPicker(selection: $labelPickerItems, maxSelectionCount: 1, matching: .images) {
@@ -1184,6 +1189,7 @@ private struct AddMealView: View {
             }
         }
         .buttonStyle(CompactActionStyle())
+        .disabled(isPreparingPhoto)
         .accessibilityIdentifier("carbin.meal.labelLibrary")
     }
 
