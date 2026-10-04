@@ -303,20 +303,34 @@ private struct PixelStar: View {
 private enum PixelFoodKind: Int, CaseIterable {
     case tomato, carrot, broccoli, rice, egg, fish
 
+    // Hand-plotted 12 × 12 sprites. At the 36 pt ring size each square is
+    // exactly 3 pt, keeping the food crisp on both 2× and 3× displays.
     var rows: [String] {
         switch self {
         case .tomato:
-            ["...ggg...", "..gGGGg..", ".xrrrrrx.", "xrrRrrrRx", "rrrrrrrrr", "rrrrrrrrr", ".rrrrrrr.", "..rrrrr..", "...xxx..."]
+            ["....gGGg....", "...ggGGgg...", "...kggggk...", "..krrrrrrk..",
+             ".kRrRrrrrRk.", ".kRrhrrrrRk.", "kRrhhrrrrrRk", "kRrrrrrrrrRk",
+             ".kRrrrrrrRk.", ".kRrrrrrrRk.", "..kRRRRRRk..", "...kkkkkk..."]
         case .carrot:
-            ["ggg......", ".gGg.....", "..xxx....", "...oox...", "...ooox..", "....ooox.", ".....ooox", "......oox", ".......xx"]
+            ["...g.g.g....", "..gGgGgGg...", "...gGGGg....", "....gGg.....",
+             "...kkkkkk...", "..kOoOoOok..", "..koooooOk..", "...kooooOk..",
+             "....koooOk..", ".....kooOk..", "......kook..", ".......kk..."]
         case .broccoli:
-            ["..ggggg..", ".gGgGgGg.", "ggggggggg", ".ggggggg.", "..ggggg..", "...xxx...", "...bbb...", "...bbb...", "....x...."]
+            ["...kk..kk...", "..kGgkkGgk..", ".kGgGGgGGgk.", "kGgGGgGGGgGk",
+             "kggGGGGGGggk", ".kggGGGGggk.", "..kkgGGgkk..", "...kggggk...",
+             "....kttk....", "...kttttk...", "...kttttk...", "....kkkk...."]
         case .rice:
-            [".........", "..wwwww..", ".wwwwwww.", "wwwwwwwww", "xwwwwwwwx", ".xxxxxxx.", "..bbbbb..", "...bbb...", "....x...."]
+            [".....kkkk...", "...kkwwwwkk.", "..kwwWwwWwwk", ".kwwwwwwwwk.",
+             "kwwWwwwWwwwk", ".kkkkkkkkkk.", ".kbbbbbbbbk.", "..kBbbbbBk..",
+             "...kBBBBk...", "....kkkk....", "............", "............"]
         case .egg:
-            [".........", "..wwwww..", ".wwwwwww.", "wwwyyywww", "wwyyyyyww", "wwwyyywww", ".wwwwwww.", "..wwwww..", "........."]
+            ["............", "..kkk.......", ".kwwWkkk....", "kwwwwwwwkk..",
+             "kwwwyyywwwk.", "kwwyYYYywwk.", ".kwwYhYywwk.", "..kwwyyywwwk",
+             "...kwwwwwwk.", "....kkkkkk..", "............", "............"]
         case .fish:
-            ["....uuu..", "..uuuuuu.", "xuuuUuuux", "xuuwwuuux", "xuuuUuuux", "..uuuuuu.", "....uuu..", "......x..", "........."]
+            [".....kk...kk", "....kUUk.kUk", "..kkUuUUkkUk", ".kUUuuuuUUk.",
+            "kUekUuuuuUUk", "kUuuUuuuuUUk", ".kUUuuuuUUk.", "..kkUuUUkkUk",
+             "....kUUk.kUk", ".....kk...kk", "............", "............"]
         }
     }
 }
@@ -327,7 +341,7 @@ private struct PixelFoodGlyph: View {
     var body: some View {
         Canvas { context, size in
             let rows = kind.rows
-            let pixel = min(size.width, size.height) / 9
+            let pixel = min(size.width, size.height) / 12
             for (y, row) in rows.enumerated() {
                 for (x, symbol) in row.enumerated() where symbol != "." {
                     context.fill(
@@ -342,17 +356,25 @@ private struct PixelFoodGlyph: View {
 
     private func color(for symbol: Character) -> Color {
         switch symbol {
-        case "x": Color(red: 0.18, green: 0.10, blue: 0.15)
-        case "g": Color(red: 0.07, green: 0.55, blue: 0.24)
-        case "G": Color(red: 0.28, green: 0.77, blue: 0.38)
-        case "r": Color(red: 0.88, green: 0.22, blue: 0.27)
-        case "R": Color(red: 1, green: 0.48, blue: 0.43)
-        case "o": Color(red: 1, green: 0.49, blue: 0.12)
-        case "w": Color(red: 1, green: 0.97, blue: 0.82)
-        case "y": Color(red: 1, green: 0.70, blue: 0.17)
-        case "b": Color(red: 0.58, green: 0.32, blue: 0.18)
-        case "u": Color(red: 0.19, green: 0.50, blue: 0.69)
-        default: Color(red: 0.42, green: 0.75, blue: 0.89)
+        case "k": Color(red: 0.196, green: 0.118, blue: 0.165)
+        case "g": Color(red: 0.094, green: 0.459, blue: 0.247)
+        case "G": Color(red: 0.333, green: 0.733, blue: 0.369)
+        case "r": Color(red: 0.902, green: 0.271, blue: 0.306)
+        case "R": Color(red: 0.686, green: 0.184, blue: 0.227)
+        case "h": Color(red: 1.000, green: 0.969, blue: 0.769)
+        case "o": Color(red: 0.961, green: 0.498, blue: 0.161)
+        case "O": Color(red: 1.000, green: 0.682, blue: 0.243)
+        case "t": Color(red: 0.573, green: 0.733, blue: 0.388)
+        case "w": Color(red: 1.000, green: 0.980, blue: 0.898)
+        case "W": Color(red: 0.871, green: 0.820, blue: 0.686)
+        case "b": Color(red: 0.886, green: 0.361, blue: 0.353)
+        case "B": Color(red: 0.616, green: 0.216, blue: 0.255)
+        case "y": Color(red: 0.929, green: 0.620, blue: 0.125)
+        case "Y": Color(red: 1.000, green: 0.796, blue: 0.243)
+        case "u": Color(red: 0.196, green: 0.510, blue: 0.651)
+        case "U": Color(red: 0.380, green: 0.725, blue: 0.780)
+        case "e": Color(red: 1.000, green: 1.000, blue: 1.000)
+        default: .clear
         }
     }
 }
@@ -366,21 +388,30 @@ struct FoodOrbitRing: View {
         ZStack {
             Circle()
                 .stroke(CarbInTheme.actionInk.opacity(0.85), style: StrokeStyle(lineWidth: 3, dash: [8, 9]))
-                .frame(width: diameter - 26, height: diameter - 26)
+                .frame(width: diameter - 10, height: diameter - 10)
 
-            ForEach(PixelFoodKind.allCases, id: \.rawValue) { food in
-                let angle = Double(food.rawValue) * 2 * Double.pi / Double(PixelFoodKind.allCases.count)
-                PixelFoodGlyph(kind: food)
-                    .frame(width: 34, height: 34)
-                    .padding(3)
-                    .background(CarbInTheme.surface, in: Circle())
-                    .overlay { Circle().stroke(CarbInTheme.line, lineWidth: 2) }
-                    .offset(x: CGFloat(cos(angle)) * (diameter / 2 - 13), y: CGFloat(sin(angle)) * (diameter / 2 - 13))
+            MealMirrorBadge()
+                .frame(width: diameter * 0.76, height: diameter * 0.76)
+
+            ZStack {
+                ForEach(PixelFoodKind.allCases, id: \.rawValue) { food in
+                    let angle = Double(food.rawValue) * 2 * Double.pi / Double(PixelFoodKind.allCases.count)
+                    PixelFoodGlyph(kind: food)
+                        .frame(width: 36, height: 36)
+                        .padding(3)
+                        .background(CarbInTheme.actionInk, in: Circle())
+                        .overlay {
+                            Circle().stroke(Color(red: 0.196, green: 0.118, blue: 0.165), lineWidth: 2)
+                        }
+                        .rotationEffect(.degrees(isRotating && !reduceMotion ? -360 : 0))
+                        .offset(x: CGFloat(cos(angle)) * (diameter / 2 - 5), y: CGFloat(sin(angle)) * (diameter / 2 - 5))
+                }
             }
+            .frame(width: diameter, height: diameter)
+            .rotationEffect(.degrees(isRotating && !reduceMotion ? 360 : 0))
+            .animation(reduceMotion ? nil : .linear(duration: 14).repeatForever(autoreverses: false), value: isRotating)
         }
         .frame(width: diameter, height: diameter)
-        .rotationEffect(.degrees(isRotating && !reduceMotion ? 360 : 0))
-        .animation(reduceMotion ? nil : .linear(duration: 14).repeatForever(autoreverses: false), value: isRotating)
         .onAppear { isRotating = !reduceMotion }
         .onChange(of: reduceMotion) { _, newValue in isRotating = !newValue }
         .accessibilityHidden(true)
@@ -391,13 +422,9 @@ struct KitchenLoadingArtwork: View {
     let diameter: CGFloat
 
     var body: some View {
-        ZStack {
-            FoodOrbitRing(diameter: diameter)
-            MealMirrorBadge()
-                .frame(width: diameter * 0.76, height: diameter * 0.76)
-        }
-        .frame(width: diameter, height: diameter)
-        .accessibilityHidden(true)
+        FoodOrbitRing(diameter: diameter)
+            .frame(width: diameter, height: diameter)
+            .accessibilityHidden(true)
     }
 }
 
