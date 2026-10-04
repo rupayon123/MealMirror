@@ -627,6 +627,10 @@ private struct AddMealView: View {
                         let prepared = await MealPhotoPreparation.downsampledImageAsync(from: image)
                         guard photoLoadToken == token else { return }
                         isPreparingPhoto = false
+                        guard let prepared else {
+                            photoLoadError = "MealMirror could not prepare that photo. Choose another image or use the camera."
+                            return
+                        }
                         usePersonalPhoto(prepared)
                     }
                 },
@@ -2108,6 +2112,7 @@ private struct SectionHeading: View {
                 .font(CarbInTheme.display(.title1, size: 29))
                 .foregroundStyle(CarbInTheme.ink)
                 .fixedSize(horizontal: false, vertical: true)
+                .accessibilityAddTraits(.isHeader)
             Text(MealTextResolver.resolve(detail, treatment: detailTreatment, localize: { localization.text($0) }))
                 .font(CarbInTheme.reading(.body, size: 17))
                 .foregroundStyle(CarbInTheme.mutedInk)
