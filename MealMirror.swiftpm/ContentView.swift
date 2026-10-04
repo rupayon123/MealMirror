@@ -995,7 +995,6 @@ private struct EstimateView: View {
     let selectedPhoto: UIImage?
     let onReview: () -> Void
 
-    @ScaledMetric(relativeTo: .largeTitle) private var rangeFontSize = 48
     @State private var showIngredientEditor = false
     @State private var hasConfirmedMealParts = false
     @State private var showReviewTrail = false
@@ -1127,11 +1126,12 @@ private struct EstimateView: View {
                     .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
             }
             Text(localization.carbohydrateRange(range))
-                .font(CarbInTheme.display(.largeTitle, size: rangeFontSize))
+                .font(CarbInTheme.display(.largeTitle, size: 48))
                 .monospacedDigit()
                 .foregroundStyle(CarbInTheme.basil)
-                .lineLimit(1)
-                .minimumScaleFactor(0.25)
+                .lineLimit(2)
+                .minimumScaleFactor(0.75)
+                .fixedSize(horizontal: false, vertical: true)
                 .accessibilityLabel(Text(
                     (analysis.source == .demo ? localization.text("Practice meal") + ". " : "")
                     + localization.text(
