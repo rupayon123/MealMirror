@@ -207,18 +207,19 @@ private struct OnboardingView: View {
             let compactHeight = geometry.size.height < 700
             Group {
                 if dynamicTypeSize.isAccessibilitySize {
-                    ScrollView {
-                        VStack(spacing: 16) {
-                            languageMenu
-                            onboardingPage(pages[page], compactHeight: compactHeight)
+                    VStack(spacing: 0) {
+                        ScrollView {
+                            VStack(spacing: 16) {
+                                languageMenu
+                                onboardingPage(pages[page], compactHeight: compactHeight)
 
-                            VStack(spacing: 4) { legalButtons }
-                                .font(.caption.weight(.semibold))
-                                .foregroundStyle(CarbInTheme.pine)
-                                .padding(.horizontal, 20)
-
-                            continueButton
+                                VStack(spacing: 4) { legalButtons }
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(CarbInTheme.pine)
+                                    .padding(.horizontal, 20)
+                            }
                         }
+                        continueButton
                     }
                 } else {
                     VStack(spacing: 0) {
@@ -343,8 +344,9 @@ private struct OnboardingView: View {
     }
 
     private var continueButton: some View {
-        Button {
-            if page == pages.count - 1 {
+        let photoAction = page == pages.count - 1
+        return Button {
+            if photoAction {
                 onFinish()
             } else {
                 withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.22)) {
@@ -353,10 +355,11 @@ private struct OnboardingView: View {
             }
         } label: {
             Label(
-                localization.text(page == pages.count - 1 ? "Choose a meal photo from your library" : "Continue"),
-                systemImage: page == pages.count - 1 ? "photo.on.rectangle" : continueSymbol
+                localization.text(photoAction && dynamicTypeSize.isAccessibilitySize ? "Photo" : photoAction ? "Choose a meal photo from your library" : "Continue"),
+                systemImage: photoAction ? "photo.on.rectangle" : continueSymbol
             )
         }
+        .accessibilityLabel(localization.text(photoAction ? "Choose a meal photo from your library" : "Continue"))
         .buttonStyle(PrimaryActionStyle())
         .frame(maxWidth: 620)
         .frame(maxWidth: .infinity)
