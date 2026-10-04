@@ -168,6 +168,7 @@ struct SavedReviewItem: Codable, Hashable, Identifiable {
     let source: String
     let sourceTreatment: MealTextTreatment
     let portion: PortionAdjustment
+    let allowsPortionAdjustment: Bool?
     let carbohydrates: CarbRange
 
     init(_ component: MealComponent) {
@@ -177,6 +178,7 @@ struct SavedReviewItem: Codable, Hashable, Identifiable {
         source = component.signal
         sourceTreatment = component.signalTreatment
         portion = component.portion
+        allowsPortionAdjustment = component.allowsPortionAdjustment
         carbohydrates = component.carbohydrates
     }
 }

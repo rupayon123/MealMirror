@@ -2247,9 +2247,11 @@ private struct SavedReviewDetailView: View {
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(MealTextResolver.resolve(item.name, treatment: item.nameTreatment, localize: { localization.text($0) }))
                                         .font(.subheadline.weight(.semibold))
-                                    Text(localization.text("%@ portion", arguments: localization.text(item.portion.title)))
-                                        .font(.caption.weight(.semibold))
-                                        .foregroundStyle(CarbInTheme.moss)
+                                    if item.allowsPortionAdjustment ?? (item.source != "Your entry") {
+                                        Text(localization.text("%@ portion", arguments: localization.text(item.portion.title)))
+                                            .font(.caption.weight(.semibold))
+                                            .foregroundStyle(CarbInTheme.moss)
+                                    }
                                     Text(localization.carbohydrateRange(item.carbohydrates))
                                         .font(.subheadline.monospacedDigit())
                                     Text(MealTextResolver.resolve(item.source, treatment: item.sourceTreatment, localize: { localization.text($0) }))
