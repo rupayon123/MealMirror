@@ -247,6 +247,11 @@ enum LocalReviewStore {
         if analysis.source != .demo, !trimmedDescription.isEmpty {
             mealName = trimmedDescription
             mealNameTreatment = .verbatimUser
+        } else if analysis.source == .personalPhoto {
+            // An empty-description photo analysis may use an instructional
+            // heading such as "Add a little more detail". That is not a meal name.
+            mealName = "Your meal review"
+            mealNameTreatment = .localizedCatalog
         } else {
             mealName = analysis.title
             mealNameTreatment = .localizedCatalog
