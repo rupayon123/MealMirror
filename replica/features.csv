@@ -17,7 +17,7 @@ Food substitutions and recipes,learning,could,yes,no,Can build original optional
 Expert and AI companion,service,could,yes,skip,Requires experts/network; no fabricated medical advice
 Clinician report/portal,service,could,yes,skip,Licensed service and clinical workflow outside Challenge
 Offline no-account core loop,differentiator,must,limited,partial,MealMirror code is local; exact package airplane-mode device run open
-Source trail for every carbohydrate number,differentiator,must,unverified,partial,Review shows source but saved history retains only range
+Source trail for every carbohydrate number,differentiator,must,unverified,partial,Review and new saved records retain item sources; older saved records may contain only a total
 Uncertain photo result with useful recovery,differentiator,must,unverified,partial,Unknown and manual path exist; usability evidence open
 Accessible short child/caregiver flow,differentiator,must,unverified,partial,Need fresh multi-device visual and user checks
 Personalized insulin dose,treatment,should,no,skip,Clinical protocol validation and applicable review required before real dose output
