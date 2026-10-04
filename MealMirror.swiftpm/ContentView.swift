@@ -1423,6 +1423,14 @@ private struct ReviewView: View {
 
     private var reviewSummary: some View {
                         VStack(alignment: .leading, spacing: 4) {
+                            if analysis.source == .demo {
+                                Text("Practice meal")
+                                    .font(CarbInTheme.display(.caption1, size: 12))
+                                    .foregroundStyle(CarbInTheme.basil)
+                                    .padding(.horizontal, 9)
+                                    .padding(.vertical, 6)
+                                    .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+                            }
                             Text(LocalizedStringKey(analysis.title))
                                 .font(CarbInTheme.display(.headline, size: 16))
                                 .foregroundStyle(CarbInTheme.ink)
