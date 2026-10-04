@@ -30,7 +30,7 @@ The current packaging script creates an English-only candidate archive:
 
 It writes `build/MealMirror-SSC2027.zip`, removes non-English resource catalogs and Xcode user state, and checks the currently published size limit. A generated archive is only a packaging artifact; it does not establish app readiness, applicant eligibility, authorship, or a completed submission.
 
-For testing, [download the current candidate ZIP](candidate/MealMirror-SSC2027.zip), generated from app commit `96ee3ea`. Its SHA-256 is `bfb7822ea11593cec88213d4f9fa5a74c72707b46c868b6eb7e133211753f6de` and its size is 12,189,350 bytes. This is a review candidate, not a submitted or clinically validated app. The [readiness checklist](CHALLENGE-READINESS.md) distinguishes verified package behavior from remaining work.
+For testing, [download the current candidate ZIP](candidate/MealMirror-SSC2027.zip), generated from app commit `49c083e`. Its SHA-256 is `0efd3306f04604114386c58cd2aae8ca6ed6e810b3d022506b0de8c93e9379f5` and its size is 12,190,542 bytes. This is a review candidate, not a submitted or clinically validated app. The [readiness checklist](CHALLENGE-READINESS.md) distinguishes verified package behavior from remaining work.
 
 ## Project records
 
