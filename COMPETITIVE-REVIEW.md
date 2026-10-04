@@ -1,6 +1,6 @@
 # Meal-photo diabetes apps: public feature review
 
-Reviewed October 3, 2026. This compares public product descriptions and a small number of public user reports. It is not a hands-on product audit, a clinical assessment, or a head-to-head accuracy study.
+Reviewed October 3–4, 2026. This compares public product descriptions and a small number of public user reports. It is not a hands-on product audit, a clinical assessment, or a head-to-head accuracy study. The current [RxFood recon](replica/recon.md) and [feature matrix](replica/features.csv) track the wider product separately from the Challenge slice.
 
 ## RxFood: strongest direct comparison
 
@@ -11,6 +11,8 @@ RxFood's FAQ says tablets need internet or Wi-Fi and that when data is unavailab
 MealMirror cannot credibly claim a broader food database, better carb accuracy, dose support, or a working Dexcom experience today. The defensible direction to earn is an offline-first, no-account meal review for people who need it at home, school, a restaurant, or anywhere else: open with a photo, let the person correct uncertain items and portions, explain where each number came from, and keep any saved note on the device. Photo-only entry works. In the tested iOS 26.5 Simulator, Vision returned the same unrelated scene labels for three distinct meal images; MealMirror now treats that known result as an unavailable inspection. No physical-device or comparative accuracy evidence exists yet, so the product's offline photo-first distinction remains a direction to prove rather than a superiority claim.
 
 RxFood's clinician page also describes high/low-GI and fibre/whole-grain summaries, food substitutions, recipe suggestions, and reports. A three-minute Swift Challenge playground should not imitate that whole clinical-service workflow. The Challenge candidate should make one short interaction unusually clear and memorable; the broader product roadmap can assess optional caregiver and clinician tools separately.
+
+The current [RxFood App Store listing](https://apps.apple.com/us/app/rxfood/id1482235880) also advertises text, recent-meal and SMS logging, nutrition/biomarker context, wearable connections, expert and AI support, learning modules, and recipes. These are public descriptions, not hands-on findings. One visible user review reports underestimated calories, fats and carbohydrates; that individual report does not establish a failure rate. RxFood's [patient FAQ](https://rxfood.com/patient) itself notes that wraps, smoothies and homemade soups hide ingredients from photo analysis. MealMirror should address that limitation openly and test whether people can correct an uncertain result quickly.
 
 ## Other visible products
 
