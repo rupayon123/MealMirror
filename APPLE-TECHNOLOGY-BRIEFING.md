@@ -1,6 +1,6 @@
 # MealMirror: Apple technology briefing
 
-Reviewed October 3, 2026. This describes the current public Challenge candidate at commit `3173307` and the next technical direction. It is a technical briefing, not an applicant-written Challenge essay.
+Reviewed October 4, 2026. This describes the public Challenge candidate and its next technical direction. See [CHALLENGE-READINESS.md](CHALLENGE-READINESS.md) for the exact tested archive and commit. This is a technical briefing, not an applicant-written Challenge essay.
 
 ## The point to make
 
@@ -15,14 +15,14 @@ This lines up with Apple's public emphasis on private on-device intelligence, us
 | Swift 6 and SwiftUI | Native iPhone/iPad playground, onboarding, photo flow, review, editing, Practice, history, adaptive theme, and localization UI. `MealMirror.swiftpm/Package.swift` sets iOS 17 as its deployment floor. | “The experience is a native Swift app playground.” |
 | PhotosUI `PhotosPicker` | Lets a person select a meal image from the system photo picker. | “A selected photo enters the local review flow.” Do not say a photo alone yields a trustworthy carb count. |
 | AVFoundation and UIKit camera bridge | Requests camera authorization and presents `UIImagePickerController` for a rear-camera photo on supported hardware. | Physical-device capture and return have not yet been verified. |
-| ImageIO, UIKit thumbnails, Swift concurrency | Downsamples a selected image to at most 1,800 pixels on a background queue so preparation does not block the screen. The latest selection wins if images are replaced quickly. | This is local preprocessing, not nutrition analysis. |
+| ImageIO, Core Image, UIKit thumbnails, Swift concurrency | Downsamples a selected image to at most 1,800 pixels on a background queue so preparation does not block the screen. The camera path also handles CIImage-backed images, rejects unpreparable images, and guards against 2× image scale producing a larger bitmap. The latest selection wins if images are replaced quickly. | This is local preprocessing, not nutrition analysis. A large camera source may still decode at high peak memory before a thumbnail exists. |
 | Vision `VNClassifyImageRequest` | Requests image labels locally. A broad `food` label gates further labels; the app maps possible labels to a finite bundled food catalog. It filters a known broken iOS Simulator result. | This is Apple's general image classifier, **not** the Apple Intelligence multimodal Foundation Model and **not** a custom Core ML food model. Apple documents Vision classification as labels/observations, not serving measurements. [Vision API](https://developer.apple.com/documentation/vision/vnclassifyimagerequest). |
 | Swift concurrency and cancellation | The image request has a 12-second unavailable fallback; abandoning the task cancels the Vision request and ignores late results. | This prevents a stalled classifier from trapping the meal flow; it is not evidence of fast hardware inference. |
 | Local Swift models and catalog | Possible photo and description matches start *excluded*. Only person-confirmed items and portion controls can affect the illustrative range; a trusted manually entered gram amount is marked as user-entered. | Catalog ranges are examples and are not validated nutrition measurements for arbitrary meals. |
-| Foundation local storage | Saves reviewed meal name, range, and date in a protected local file excluded from backup; photos are not saved. `UserDefaults` stores language/onboarding choices. | The candidate has no account, required server, photo upload, judge analytics, or CGM integration. Physical airplane-mode verification is still open. |
+| Foundation local storage | Saves reviewed meal name, Practice/description/photo origin, reference-item choice, confirmed items with source labels and portions, range, and date in a protected local file excluded from backup; photos are not saved. Older records without origin keep it marked unknown. `UserDefaults` stores language/onboarding choices. | The candidate has no account, required server, photo upload, judge analytics, or CGM integration. Physical airplane-mode verification is still open. |
 | Accessibility and localization APIs | VoiceOver labels, Dynamic Type-related layout, Reduce Motion, and right-to-left direction are present in source. Everyday source offers 18 language choices; the Challenge ZIP is English-only under currently published terms. | Do not claim completed accessibility or translation quality until direct QA is done. |
 
-The current ZIP is 12,186,125 bytes and built from a clean extraction with Xcode 26.6 for iOS Simulator. That confirms packaging/building, not broad food recognition or iPhone performance. See [CHALLENGE-READINESS.md](CHALLENGE-READINESS.md).
+The exact ZIP's size, checksum, and clean-extraction build evidence are recorded in [CHALLENGE-READINESS.md](CHALLENGE-READINESS.md). Packaging and Simulator builds do not prove broad food recognition or physical iPhone performance.
 
 ## What WWDC26 changes, and why it is not yet a shipping claim
 

@@ -55,7 +55,13 @@ Keep the following as a separate roadmap, not a claim that the Challenge package
 - Publish reviewed, buildable updates to `rupayon123/MealMirror` so the user can install and evaluate them.
 - Compare public feature claims and documented limitations fairly. Do not claim MealMirror is more accurate, safer, or award-winning without evidence; the goal is to build the strongest candidate we can substantiate, not promise a judging result.
 
-## Current evidence and open gaps — October 3, 2026
+## Current checkpoint — October 4, 2026
+
+The public app now has photo-first onboarding, an offline review path with honest unknown-photo recovery, optional Practice examples, and local saved history that retains meal origin and reference-item choice. A cleanly extracted English-only candidate ZIP builds with Xcode 26.6 for iOS Simulator. The exact archive checksum, measured visual and functional checks, Apple's published-rule checklist, and the remaining gates are maintained in [CHALLENGE-READINESS.md](CHALLENGE-READINESS.md) and [SUBMISSION-COMPLETION-PLAN.md](SUBMISSION-COMPLETION-PLAN.md). Broad dependable meal recognition, connected CGM data, clinical dose output, physical-device verification, applicant-owned submission work, and the next year's rules remain open.
+
+## Earlier evidence log — through October 3, 2026
+
+The dated checkpoints below record how the candidate developed. Their commit IDs, archive sizes, catalog counts, and pending checks are historical; use the current checkpoint and linked readiness documents for today's status.
 
 - The `180b867` checkpoint placed the meal/photo action card first on compact Home screens. Home Library presents Apple's system photo picker directly after the route transition; an iPhone 17 Simulator showed the picker with a bundled biryani photo. Home Camera enters the existing permission/capture path, but capture and return behavior still need a physical-device check. The iOS Simulator build and clean extraction build of the English-only ZIP passed. A fresh rendered check of the latest Home order is pending while Settings QA uses the Simulator UI.
 - The Home layout at the largest accessibility text size was inspected in English and Arabic on an iPhone 17 Simulator. The brand, Settings control, main meal action, Camera, and Library were readable in the first viewport. Other screens, direct VoiceOver, Reduce Motion, and physical-device layout remain open. A separate Settings accessibility pass is in progress.
