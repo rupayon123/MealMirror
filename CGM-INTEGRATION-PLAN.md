@@ -1,0 +1,32 @@
+# Dexcom and FreeStyle Libre integration decision
+
+Reviewed October 4, 2026 from official developer and vendor pages. **Neither service is connected in MealMirror today.** The Swift Student Challenge ZIP remains a self-contained, offline meal-review experience. CGM context is a separate optional product workstream; it cannot be described as live, universal, or available without consent and service access.
+
+## Dexcom: documented path and constraints
+
+- Dexcom's [developer guide](https://developer.dexcom.com/docs/dexcom/getting-started) requires developer registration, an app, and credentials. Sandbox access is available to registered developers; testing with real users requires an approved Limited Access upgrade, and commercial distribution requires Full Access review. [Access policy](https://developer.dexcom.com/docs/dexcom/scopes-access).
+- The [v3 API](https://developer.dexcom.com/docs/dexcomv3/endpoint-overview) exposes estimated glucose values, events, devices, alerts, calibrations, and data-range endpoints. It uses OAuth 2.0. Dexcom says mobile-app uploads reach its API with a **one-hour delay in the US and three-hour delay outside the US**. Records are in mg/dL and include multiple time fields that require careful handling. This is retrospective context, not a current glucose feed for a dose calculation.
+- Dexcom's [authentication guide](https://developer.dexcom.com/docs/dexcom/authentication) explicitly requires partner tokens and client secrets on a server, not in a mobile app. A pure offline `.swiftpm` ZIP cannot contain a production Dexcom integration without violating that architecture. It must never bundle a client secret.
+- Sandbox data is simulated and [Dexcom says it is not formal validation data](https://developer.dexcom.com/docs/dexcom/sandbox-data). A development adapter can be built and checked with sandbox responses after the applicant has a developer account; it does not prove live patient access or treatment suitability.
+
+## FreeStyle Libre: supported public routes
+
+- Abbott's [partner integration list](https://www.diabetescare.abbott/partnerships/integrations/en.html) describes evaluated app/device partnerships and region-specific availability. Its [Libre app page](https://www.freestyle.abbott/us-en/products/freestyle-libre-app.html) presents LibreView sharing with clinicians and LibreLinkUp sharing with loved ones, not an open third-party API specification.
+- Abbott says raw Libre 3 glucose data can be [downloaded from LibreView](https://www.support.freestyle.abbott/hc/en-us/articles/14806679954199-Can-I-download-my-data-with-the-FreeStyle-Libre-3-app). A user-initiated file import is a lawful, offline-capable research direction once the exact export schema, units, timestamps, provenance, consent and error states are verified with a real sample. No sample or parser is validated here.
+- The current US [Libre app](https://www.freestyle.abbott/us-en/products/freestyle-libre-app.html) also advertises Libre Assist photo-based food/glucose-impact suggestions. That raises the competitive bar; it does not make its private data path available to MealMirror.
+- Do not use undocumented LibreLinkUp endpoints, shared credentials, or reverse-engineered sensor protocols to imply official integration. If Abbott offers a partner route for this use case, obtain its documentation and agreement before implementation.
+
+## Apple Health as an optional user-controlled bridge
+
+Apple's [HealthKit authorization guide](https://developer.apple.com/documentation/HealthKit/authorizing-access-to-health-data) permits an app to request read access to specific sample types after adding the HealthKit capability and purpose string. This could support a local historical glucose view **only if** the user's chosen CGM software writes blood-glucose samples to Apple Health and the user grants MealMirror access. It is not equivalent to direct Dexcom/Libre support or proof of fresh data. Apple's privacy model may make denied read access look like no data. The Challenge package should not request access to sensitive health data for a decorative or nonfunctional screen.
+
+## Implementation order and acceptance gates
+
+1. Finish the offline meal-review story and exact package verification first. No CGM account, network call, health permission, or token is needed for the Challenge core.
+2. Define a glucose sample model with source, units, observation time, received time and freshness. Keep any historical graph visually and semantically separate from treatment actions; explicitly show missing, delayed and stale data.
+3. For optional HealthKit, add entitlement and read-purpose text, then verify sample origin and freshness on an actual device. Do not assume a provider synchronizes there.
+4. For Dexcom, use a server-side OAuth/token component, official sandbox and approved partner access. Verify time zones, mg/dL↔mmol/L conversion, delayed/backfilled readings, revocation, account deletion and privacy obligations. Never send a glucose value from the delayed web API into dose advice.
+5. For Libre, pursue official partner access or a user-selected LibreView export importer with documented schema. Verify region/device coverage and show the import timestamp. Treat any file as historical.
+6. Any insulin calculator requires a separate clinical protocol, individualized prescribed settings, safety and human-factors validation, and applicable regulatory/App Store review. The [ADA Type 1 self-care manual](https://diabetes.org/sites/default/files/2023-10/T1DSelfCareManual.pdf) says each person's insulin-to-carbohydrate ratio is personal and can vary by time of day. A shared formula does not supply safe values for an individual.
+
+**Current blocker:** no Dexcom developer credentials or approved production access, no documented public Libre API in the reviewed Abbott materials, no verified LibreView export sample, and no clinically validated dosing protocol. These are external and clinical dependencies, not hidden finished app features.
