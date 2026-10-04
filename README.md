@@ -30,9 +30,14 @@ The current packaging script creates an English-only candidate archive:
 
 It writes `build/MealMirror-SSC2027.zip`, removes non-English resource catalogs and Xcode user state, and checks the currently published size limit. A generated archive is only a packaging artifact; it does not establish app readiness, applicant eligibility, authorship, or a completed submission.
 
+For testing, [download the current candidate ZIP](candidate/MealMirror-SSC2027.zip), generated from app commit `96ee3ea`. Its SHA-256 is `bfb7822ea11593cec88213d4f9fa5a74c72707b46c868b6eb7e133211753f6de` and its size is 12,189,350 bytes. This is a review candidate, not a submitted or clinically validated app. The [readiness checklist](CHALLENGE-READINESS.md) distinguishes verified package behavior from remaining work.
+
 ## Project records
 
 - [`PLAN.md`](PLAN.md) tracks the delivery goal, current evidence, product boundaries, and ordered work.
+- [`CHALLENGE-READINESS.md`](CHALLENGE-READINESS.md) records the exact candidate ZIP, Apple checklist, Simulator checks, and open submission gates.
 - [`SUBMISSION-COMPLETION-PLAN.md`](SUBMISSION-COMPLETION-PLAN.md) separates finished work, the remaining Challenge gates, and the decision about any future insulin calculator.
+- [`APPLE-TECHNOLOGY-BRIEFING.md`](APPLE-TECHNOLOGY-BRIEFING.md) identifies the Apple frameworks used today and the unshipped on-device AI options.
+- [`CGM-INTEGRATION-PLAN.md`](CGM-INTEGRATION-PLAN.md) explains Dexcom, Libre, and HealthKit access limits and the optional connected product path.
 - [`COMPETITIVE-REVIEW.md`](COMPETITIVE-REVIEW.md) reviews public feature claims from RxFood and other meal-photo apps without unsupported superiority claims.
 - [`MealMirror.swiftpm/AI-AND-ASSET-DISCLOSURE.md`](MealMirror.swiftpm/AI-AND-ASSET-DISCLOSURE.md) is a working record; the applicant must reconcile it with the full project history and actual bundled assets.
