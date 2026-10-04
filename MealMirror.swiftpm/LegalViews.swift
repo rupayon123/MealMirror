@@ -53,6 +53,10 @@ struct SettingsView: View {
                 .padding(20)
                 .frame(maxWidth: .infinity)
             }
+            // A language change can resize every row while Menu keeps this
+            // scroll position; restart at the heading instead of showing a
+            // clipped fragment under the navigation bar.
+            .id(localization.language)
         }
         .kitchenNavigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
