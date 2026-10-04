@@ -945,7 +945,13 @@ private struct AddMealView: View {
     @ViewBuilder
     private func mealPhotoActions(hasSelectedPhoto: Bool) -> some View {
         Button(action: openCamera) {
-            Label("Camera", systemImage: "camera")
+            Label {
+                Text("Camera")
+                    .fixedSize(horizontal: false, vertical: true)
+            } icon: {
+                PixelKitchenIcon(kind: .camera)
+                    .frame(width: 24, height: 24)
+            }
         }
         .buttonStyle(CompactActionStyle())
         .disabled(!CameraAccess.isAvailable)
@@ -956,9 +962,10 @@ private struct AddMealView: View {
         PhotosPicker(selection: $photoPickerItem, matching: .images) {
             Label {
                 Text(LocalizedStringKey(hasSelectedPhoto ? "Chosen" : "Library"))
-                    .fixedSize(horizontal: true, vertical: false)
+                    .fixedSize(horizontal: false, vertical: true)
             } icon: {
-                Image(systemName: hasSelectedPhoto ? "checkmark" : "photo.on.rectangle")
+                PixelKitchenIcon(kind: hasSelectedPhoto ? .check : .photos)
+                    .frame(width: 24, height: 24)
             }
         }
         .buttonStyle(CompactActionStyle())

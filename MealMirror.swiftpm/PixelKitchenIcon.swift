@@ -3,7 +3,7 @@ import SwiftUI
 // Small, hand-plotted utility sprites share the loading ring's 12 × 12 grid.
 // They carry no text, so every language keeps its own readable button label.
 enum PixelKitchenIconKind {
-    case camera, photos, history, info, settings
+    case camera, photos, history, info, settings, check
 
     var rows: [String] {
         switch self {
@@ -27,6 +27,10 @@ enum PixelKitchenIconKind {
             ["....kkkk....", "..kkggggkk..", ".kgggkkgggk.", "kgggkkkkgggk",
              "kggkkwwkkggk", "kggkwYYwkggk", "kggkwYYwkggk", "kggkkwwkkggk",
              "kgggkkkkgggk", ".kgggkkgggk.", "..kkggggkk..", "....kkkk...."]
+        case .check:
+            ["............", ".........kk.", "........kGk.", ".......kGGk.",
+             "..kk..kGGk..", ".kGGkkGGk...", "kGGGGGGk....", ".kGGGGk.....",
+             "..kGGk......", "...kk.......", "............", "............"]
         }
     }
 }
