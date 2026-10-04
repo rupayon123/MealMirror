@@ -249,6 +249,7 @@
 "Pasta" = "المعكرونة";
 "Permitted use" = "الاستخدام المسموح به";
 "Persian" = "الفارسية";
+"Photo" = "الصورة";
 "Photo (context only)" = "الصورة (للسياق فقط)";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "تم فحص الصورة على هذا الجهاز. أضف ما تتعرف عليه قبل الاعتماد على النطاق.";
 "Photo inspected on this device. Visual cues: %@." = "تم فحص الصورة على هذا الجهاز. المؤشرات البصرية: %@.";

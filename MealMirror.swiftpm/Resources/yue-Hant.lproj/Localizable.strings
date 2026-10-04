@@ -249,6 +249,7 @@
 "Pasta" = "意粉";
 "Permitted use" = "允許使用";
 "Persian" = "波斯語";
+"Photo" = "相片";
 "Photo (context only)" = "相片（只供參考）";
 "Photo inspected on this device. Add what you recognize before relying on the range." = "照片已在此裝置檢查。請先添加您能辨認的內容，再依賴範圍結果。";
 "Photo inspected on this device. Visual cues: %@." = "照片已在此裝置檢查。視覺提示：%@。";

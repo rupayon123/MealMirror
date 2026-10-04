@@ -4,7 +4,7 @@ import OnboardingCore
 struct CarbInRootView: View {
     @AppStorage(OnboardingState.completionKey) private var hasCompletedOnboarding = false
     @State private var isPreparing = true
-    @State private var startsWithPractice = false
+    @State private var startsWithLibrary = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
@@ -23,13 +23,13 @@ struct CarbInRootView: View {
                 .transition(reduceMotion ? .identity : .opacity)
             } else if hasCompletedOnboarding {
                 ContentView(
-                    startsWithPractice: startsWithPractice,
+                    startsWithLibrary: startsWithLibrary,
                     onReplayOnboarding: { hasCompletedOnboarding = false }
                 )
                     .transition(reduceMotion ? .identity : .opacity)
             } else {
                 OnboardingView {
-                    startsWithPractice = true
+                    startsWithLibrary = true
                     hasCompletedOnboarding = true
                 }
                 .transition(reduceMotion ? .identity : .opacity)
@@ -349,8 +349,8 @@ private struct OnboardingView: View {
             }
         } label: {
             Label(
-                localization.text("Practice meal review"),
-                systemImage: continueSymbol
+                localization.text(page == pages.count - 1 ? "Choose a meal photo from your library" : "Continue"),
+                systemImage: page == pages.count - 1 ? "photo.on.rectangle" : continueSymbol
             )
         }
         .buttonStyle(PrimaryActionStyle())
@@ -361,6 +361,10 @@ private struct OnboardingView: View {
         .accessibilityIdentifier("carbin.onboarding.continue")
     }
 
+    private var continueSymbol: String {
+        localization.language.layoutDirection == .rightToLeft ? "chevron.left" : "chevron.right"
+    }
+
     @ToolbarContentBuilder
     private var legalCloseToolbar: some ToolbarContent {
         ToolbarItem(placement: .cancellationAction) {
@@ -368,14 +372,6 @@ private struct OnboardingView: View {
                 .accessibilityLabel("Close")
                 .accessibilityIdentifier("carbin.onboarding.legal.close")
         }
-    }
-
-    private var continueSymbol: String {
-        let isRightToLeft = localization.language.layoutDirection == .rightToLeft
-        if page == pages.count - 1 {
-            return isRightToLeft ? "arrow.left.circle.fill" : "arrow.right.circle.fill"
-        }
-        return isRightToLeft ? "chevron.left" : "chevron.right"
     }
 
     @ViewBuilder

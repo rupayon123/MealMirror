@@ -11,11 +11,11 @@ private enum InitialPhotoSource {
 }
 
 struct ContentView: View {
-    let startsWithPractice: Bool
+    let startsWithLibrary: Bool
     let onReplayOnboarding: () -> Void
 
-    init(startsWithPractice: Bool = false, onReplayOnboarding: @escaping () -> Void = {}) {
-        self.startsWithPractice = startsWithPractice
+    init(startsWithLibrary: Bool = false, onReplayOnboarding: @escaping () -> Void = {}) {
+        self.startsWithLibrary = startsWithLibrary
         self.onReplayOnboarding = onReplayOnboarding
     }
 
@@ -30,14 +30,14 @@ struct ContentView: View {
     @State private var initialDescriptionMode = false
     @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.colorScheme) private var colorScheme
-    @State private var didApplyInitialPractice = false
+    @State private var didApplyInitialLibrary = false
 
     var body: some View {
         NavigationStack(path: $navigation.path) {
             HomeView(
                 onStart: { beginMealReview(photoSource: .none) },
                 onCamera: { beginMealReview(photoSource: .camera) },
-                onDescribe: { beginMealReview(photoSource: .none, prefersDescription: true) },
+                onLibrary: { beginMealReview(photoSource: .library) },
                 onHowItWorks: { navigation.open(.howItWorks) },
                 onHistory: { navigation.open(.privacy) },
                 onSettings: { navigation.open(.settings) }
@@ -108,12 +108,11 @@ struct ContentView: View {
             clearMealDraft()
         }
         .task {
-            guard startsWithPractice, !didApplyInitialPractice else { return }
-            didApplyInitialPractice = true
+            guard startsWithLibrary, !didApplyInitialLibrary else { return }
+            didApplyInitialLibrary = true
             try? await Task.sleep(for: .milliseconds(350))
             guard !Task.isCancelled else { return }
-            selectMeal(DemoMeal.library[0])
-            navigation.beginMealReview()
+            beginMealReview(photoSource: .library)
         }
     }
 
@@ -160,7 +159,7 @@ struct ContentView: View {
 private struct HomeView: View {
     let onStart: () -> Void
     let onCamera: () -> Void
-    let onDescribe: () -> Void
+    let onLibrary: () -> Void
     let onHowItWorks: () -> Void
     let onHistory: () -> Void
     let onSettings: () -> Void
@@ -265,14 +264,14 @@ private struct HomeView: View {
                 .accessibilityIdentifier("carbin.home.estimate")
                 quickAction("Camera", symbol: "camera", enabled: CameraAccess.isAvailable, action: onCamera)
                     .accessibilityIdentifier("carbin.home.camera")
-                quickAction("Description", symbol: "pencil", enabled: true, action: onDescribe)
-                    .accessibilityIdentifier("carbin.home.describe")
+                quickAction("Library", symbol: "photo.on.rectangle", enabled: true, action: onLibrary)
+                    .accessibilityIdentifier("carbin.home.library")
             } else {
                 HStack(spacing: 10) {
                     quickAction("Camera", symbol: "camera", enabled: CameraAccess.isAvailable, action: onCamera)
                         .accessibilityIdentifier("carbin.home.camera")
-                    quickAction("Description", symbol: "pencil", enabled: true, action: onDescribe)
-                        .accessibilityIdentifier("carbin.home.describe")
+                    quickAction("Library", symbol: "photo.on.rectangle", enabled: true, action: onLibrary)
+                        .accessibilityIdentifier("carbin.home.library")
                 }
             }
         }
@@ -668,7 +667,7 @@ private struct AddMealView: View {
             : AnyLayout(HStackLayout(spacing: 5))
         return layout {
             inputTab("Description", isSelected: !showsPhotoInput) { showsPhotoInput = false }
-            inputTab("Photo (context only)", isSelected: showsPhotoInput) { showsPhotoInput = true }
+            inputTab("Photo", isSelected: showsPhotoInput) { showsPhotoInput = true }
         }
         .padding(4)
         .background(CarbInTheme.inset, in: RoundedRectangle(cornerRadius: 8))
