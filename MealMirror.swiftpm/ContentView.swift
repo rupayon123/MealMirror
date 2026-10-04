@@ -1410,7 +1410,6 @@ private struct ReviewView: View {
                     Label("Save this local review", systemImage: "lock.fill")
                 }
                 .buttonStyle(PrimaryActionStyle())
-                .accessibilityHint("Saves only the user-entered meal description, carbohydrate range, and date on this device. It does not save the photo.")
                 .accessibilityIdentifier("carbin.review.save")
             }
         }
@@ -1980,13 +1979,16 @@ private struct SavedReviewDetailView: View {
                             .mirrorCard()
                     } else {
                         VStack(alignment: .leading, spacing: 14) {
-                            Text("What makes up this range")
+                            Text(localization.text("What shaped the range"))
                                 .font(.headline)
                                 .foregroundStyle(CarbInTheme.ink)
                             ForEach(review.items) { item in
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(MealTextResolver.resolve(item.name, treatment: item.nameTreatment, localize: { localization.text($0) }))
                                         .font(.subheadline.weight(.semibold))
+                                    Text(localization.text("%@ portion", arguments: localization.text(item.portion.title)))
+                                        .font(.caption.weight(.semibold))
+                                        .foregroundStyle(CarbInTheme.moss)
                                     Text(localization.carbohydrateRange(item.carbohydrates))
                                         .font(.subheadline.monospacedDigit())
                                     Text(MealTextResolver.resolve(item.source, treatment: item.sourceTreatment, localize: { localization.text($0) }))
