@@ -115,6 +115,7 @@ private struct OnboardingPage: Identifiable {
 
 private struct OnboardingIllustration: View {
     let page: Int
+    let size: CGFloat
 
     var body: some View {
         ZStack {
@@ -126,7 +127,7 @@ private struct OnboardingIllustration: View {
                 }
 
             MealPlateGraphic(showsPen: false)
-                .frame(width: 180, height: 180)
+                .frame(width: size * 0.72, height: size * 0.72)
                 .offset(x: page == 1 ? -26 : 0)
 
             if page == 1 {
@@ -153,7 +154,7 @@ private struct OnboardingIllustration: View {
             }
 
         }
-        .frame(width: 250, height: 250)
+        .frame(width: size, height: size)
         .accessibilityHidden(true)
     }
 
@@ -202,45 +203,48 @@ private struct OnboardingView: View {
     }
 
     var body: some View {
-        Group {
-            if dynamicTypeSize.isAccessibilitySize {
-                ScrollView {
-                    VStack(spacing: 16) {
-                        languageMenu
-                        onboardingPage(pages[page])
+        GeometryReader { geometry in
+            let compactHeight = geometry.size.height < 700
+            Group {
+                if dynamicTypeSize.isAccessibilitySize {
+                    ScrollView {
+                        VStack(spacing: 16) {
+                            languageMenu
+                            onboardingPage(pages[page], compactHeight: compactHeight)
 
-                        VStack(spacing: 4) { legalButtons }
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(CarbInTheme.pine)
-                            .padding(.horizontal, 20)
+                            VStack(spacing: 4) { legalButtons }
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(CarbInTheme.pine)
+                                .padding(.horizontal, 20)
+
+                            continueButton
+                        }
+                    }
+                } else {
+                    VStack(spacing: 0) {
+                        languageMenu
+
+                        TabView(selection: $page) {
+                            ForEach(pages) { item in
+                                ScrollView {
+                                    onboardingPage(item, compactHeight: compactHeight)
+                                }
+                                .tag(item.id)
+                                .accessibilityIdentifier("carbin.onboarding.page.\(item.id)")
+                            }
+                        }
+                        .tabViewStyle(.page(indexDisplayMode: .never))
+
+                        ViewThatFits(in: .horizontal) {
+                            HStack(spacing: 16) { legalButtons }
+                            VStack(spacing: 0) { legalButtons }
+                        }
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(CarbInTheme.pine)
+                        .padding(.horizontal, 20)
 
                         continueButton
                     }
-                }
-            } else {
-                VStack(spacing: 0) {
-                    languageMenu
-
-                    TabView(selection: $page) {
-                        ForEach(pages) { item in
-                            ScrollView {
-                                onboardingPage(item)
-                            }
-                            .tag(item.id)
-                            .accessibilityIdentifier("carbin.onboarding.page.\(item.id)")
-                        }
-                    }
-                    .tabViewStyle(.page(indexDisplayMode: .never))
-
-                    ViewThatFits(in: .horizontal) {
-                        HStack(spacing: 16) { legalButtons }
-                        VStack(spacing: 0) { legalButtons }
-                    }
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(CarbInTheme.pine)
-                    .padding(.horizontal, 20)
-
-                    continueButton
                 }
             }
         }
@@ -271,27 +275,27 @@ private struct OnboardingView: View {
         }
     }
 
-    private func onboardingPage(_ item: OnboardingPage) -> some View {
+    private func onboardingPage(_ item: OnboardingPage, compactHeight: Bool) -> some View {
         ViewThatFits(in: .horizontal) {
             HStack(alignment: .center, spacing: 34) {
-                OnboardingIllustration(page: item.id)
-                onboardingCopy(item)
+                OnboardingIllustration(page: item.id, size: compactHeight ? 160 : 250)
+                onboardingCopy(item, compactHeight: compactHeight)
             }
-            VStack(alignment: .leading, spacing: 22) {
-                OnboardingIllustration(page: item.id)
+            VStack(alignment: .leading, spacing: compactHeight ? 12 : 22) {
+                OnboardingIllustration(page: item.id, size: compactHeight ? 160 : 250)
                     .frame(maxWidth: .infinity, alignment: .center)
-                onboardingCopy(item)
+                onboardingCopy(item, compactHeight: compactHeight)
             }
         }
         .frame(maxWidth: 860, alignment: .leading)
         .padding(.horizontal, 24)
-        .padding(.vertical, 18)
+        .padding(.vertical, compactHeight ? 10 : 18)
         .frame(maxWidth: .infinity)
         .accessibilityIdentifier("carbin.onboarding.page.\(item.id)")
     }
 
-    private func onboardingCopy(_ item: OnboardingPage) -> some View {
-        VStack(alignment: .leading, spacing: 15) {
+    private func onboardingCopy(_ item: OnboardingPage, compactHeight: Bool) -> some View {
+        VStack(alignment: .leading, spacing: compactHeight ? 10 : 15) {
             HStack(spacing: 6) {
                 ForEach(0..<pages.count, id: \.self) { index in
                     Rectangle()
@@ -334,7 +338,7 @@ private struct OnboardingView: View {
                     .foregroundStyle(CarbInTheme.basil)
             }
         }
-        .mealTicket(inset: 20)
+        .mealTicket(inset: compactHeight ? 16 : 20)
         .frame(maxWidth: 520, alignment: .leading)
     }
 

@@ -364,29 +364,12 @@ private struct AppHeader: View {
 
     @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    @Environment(\.layoutDirection) private var layoutDirection
 
     var body: some View {
-        Group {
-            if dynamicTypeSize.isAccessibilitySize {
-                HStack(alignment: .center, spacing: 12) {
-                    brand
-                    Spacer(minLength: 8)
-                    settingsButton
-                }
-            } else if layoutDirection == .rightToLeft {
-                VStack(alignment: .leading, spacing: 12) {
-                    brand
-                    settingsButton
-                        .frame(maxWidth: .infinity, alignment: .trailing)
-                }
-            } else {
-                HStack(alignment: .center) {
-                    brand
-                    Spacer()
-                    settingsButton
-                }
-            }
+        HStack(alignment: .center, spacing: 8) {
+            brand
+                .frame(maxWidth: .infinity, alignment: .leading)
+            settingsButton
         }
     }
 
