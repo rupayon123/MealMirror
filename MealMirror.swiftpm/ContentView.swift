@@ -777,13 +777,23 @@ private struct AddMealView: View {
                                     .frame(width: 136, height: 104)
                                     .clipped()
                                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                                Text(photo.role == .food ? "Food view" : "Nutrition label")
-                                    .font(CarbInTheme.reading(.footnote, size: 12))
-                                    .foregroundStyle(CarbInTheme.ink)
+                                Label {
+                                    Text(photo.role == .food ? "Food view" : "Nutrition label")
+                                } icon: {
+                                    PixelKitchenIcon(kind: photo.role == .food ? .foodView : .nutritionLabel)
+                                        .frame(width: 24, height: 24)
+                                }
+                                .font(CarbInTheme.reading(.footnote, size: 12))
+                                .foregroundStyle(CarbInTheme.ink)
                                 Button {
                                     removePhoto(photo.id)
                                 } label: {
-                                    Label("Remove photo", systemImage: "xmark.circle")
+                                    Label {
+                                        Text("Remove photo")
+                                    } icon: {
+                                        PixelKitchenIcon(kind: .removePhoto)
+                                            .frame(width: 24, height: 24)
+                                    }
                                         .frame(minHeight: 44, alignment: .leading)
                                 }
                                 .foregroundStyle(CarbInTheme.tomato)
@@ -1065,7 +1075,7 @@ private struct AddMealView: View {
                 Text(LocalizedStringKey(hasFoodPhotos ? "Add food photos" : "Library"))
                     .fixedSize(horizontal: false, vertical: true)
             } icon: {
-                PixelKitchenIcon(kind: .photos)
+                PixelKitchenIcon(kind: hasFoodPhotos ? .addPhoto : .photos)
                     .frame(width: 24, height: 24)
             }
         }
@@ -1085,7 +1095,13 @@ private struct AddMealView: View {
         .accessibilityIdentifier("carbin.meal.labelCamera")
 
         PhotosPicker(selection: $labelPickerItems, maxSelectionCount: 1, matching: .images) {
-            Label("Add label photo", systemImage: "text.viewfinder")
+            Label {
+                Text("Add label photo")
+                    .fixedSize(horizontal: false, vertical: true)
+            } icon: {
+                PixelKitchenIcon(kind: .nutritionLabel)
+                    .frame(width: 24, height: 24)
+            }
         }
         .buttonStyle(CompactActionStyle())
         .accessibilityIdentifier("carbin.meal.labelLibrary")
@@ -1111,9 +1127,9 @@ private struct EstimateView: View {
     let onReview: () -> Void
 
     @State private var showIngredientEditor = false
+    @State private var showManualEntry = false
     @State private var hasConfirmedMealParts = false
     @State private var showReviewTrail = false
-    @Environment(\.dismiss) private var dismiss
     @Environment(\.locale) private var locale
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @EnvironmentObject private var localization: LocalizationStore
@@ -1174,7 +1190,7 @@ private struct EstimateView: View {
                     .accessibilityIdentifier("carbin.estimate.adjust")
                 } else {
                     Button {
-                        showIngredientEditor = true
+                        showManualEntry = true
                     } label: {
                         Label("Add item", systemImage: "plus.circle")
                     }
@@ -1203,6 +1219,11 @@ private struct EstimateView: View {
         .toolbarBackground(.visible, for: .navigationBar)
         .sheet(isPresented: $showIngredientEditor) {
             IngredientEditorSheet(analysis: $analysis)
+        }
+        .sheet(isPresented: $showManualEntry) {
+            ManualCarbEntrySheet { component in
+                analysis.components.append(component)
+            }
         }
         .onChange(of: analysis.components) { _, _ in
             hasConfirmedMealParts = false
@@ -1337,7 +1358,7 @@ private struct EstimateView: View {
                     .foregroundStyle(CarbInTheme.mutedInk)
             }
             Button {
-                showIngredientEditor = true
+                showManualEntry = true
             } label: {
                 Label("Add amount from label", systemImage: "plus.circle")
             }
@@ -1433,11 +1454,15 @@ private struct EstimateView: View {
                 .buttonStyle(PrimaryActionStyle())
                 .accessibilityIdentifier("carbin.estimate.reviewCandidates")
             } else {
-                Button(action: { dismiss() }) {
-                    Label("Go back and add detail", systemImage: "chevron.backward")
+                Button(action: { showManualEntry = true }) {
+                    Label {
+                        Text(LocalizedStringKey(labelImage == nil ? "Add a checked amount" : "Add amount from label"))
+                    } icon: {
+                        Image(systemName: "plus.circle")
+                    }
                 }
                 .buttonStyle(PrimaryActionStyle())
-                .accessibilityIdentifier("carbin.estimate.back")
+                .accessibilityIdentifier("carbin.estimate.addAmount")
             }
         }
         .frame(maxWidth: 840)

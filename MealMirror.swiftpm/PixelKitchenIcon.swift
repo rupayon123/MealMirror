@@ -5,6 +5,7 @@ import SwiftUI
 enum PixelKitchenIconKind {
     case camera, photos, history, info, settings, check, adjust, review
     case replay, privacy, medical, details, delete, save
+    case foodView, nutritionLabel, addPhoto, removePhoto
 
     var rows: [String] {
         switch self {
@@ -64,6 +65,22 @@ enum PixelKitchenIconKind {
             [".kkkkkkkkkk.", "krrrrrrrrrrk", "krkkkkkkrrrk", "krkwwwwkrrrk",
              "krkwwwwkrrrk", "krkkkkkkrrrk", "krrrrrrrrrrk", "krkkkkkkkkrk",
              "krkwwwwwwkrk", "krkwwwwwwkrk", "krkkkkkkkkrk", ".kkkkkkkkkk."]
+        case .foodView:
+            ["....kkkk....", "..kkwwwwkk..", ".kwwwwwwwwk.", ".kwYYwwwwwk.",
+             "kwwYYYwrrwwk", "kwwYYYwrrwwk", "kwwwYYwrgwwk", ".kwwwgggwwk.",
+             ".kwwwwwwwwk.", "..kkwwwwkk..", "....kkkk....", "............"]
+        case .nutritionLabel:
+            ["..kkkkkkkk..", ".kwwwwwwwwk.", ".kwrrrrrrwk.", ".kwwwwwwwwk.",
+             ".kwkkkkkkwk.", ".kwwwwwwwwk.", ".kwkkkkwkwk.", ".kwwwwwwwwk.",
+             ".kwkkkkkkwk.", ".kwkwkwkkwk.", ".kwwwwwwwwk.", "..kkkkkkkk.."]
+        case .addPhoto:
+            [".kkkkkkkk...", "kBBBBBBBBk..", "kBBBBBBYBk..", "kBBBBBBYBk..",
+             "kBBBBBBBBk..", "kBBgBBBBBk..", "kwgwgwwgwk..", "kgwwwggwkkk.",
+             "kggggggkGwGk", "kggggggkwwwk", ".kkkkkkkGwGk", "........kkk."]
+        case .removePhoto:
+            [".kkkkkkkk...", "kBBBBBBBBk..", "kBBBBBBYBk..", "kBBBBBBYBk..",
+             "kBBBBBBBBk..", "kBBgBBBBBk..", "kwgwgwwgwk..", "kgwwwggwkkk.",
+             "kggggggkrwrk", "kggggggkwrwk", ".kkkkkkkrwrk", "........kkk."]
         }
     }
 }
