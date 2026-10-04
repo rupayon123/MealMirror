@@ -189,8 +189,8 @@ private struct HomeView: View {
                         }
                     }
                 } else {
-                    homeHero
                     quickActions
+                    homeHero
                     historyTicket
                     howItWorksTicket
                 }
@@ -454,6 +454,7 @@ private struct AddMealView: View {
     @State private var showPhotoPicker = false
     @State private var cameraError: String?
     @State private var analysisTask: Task<Void, Never>?
+    @State private var analysisRunID = UUID()
     @FocusState private var isMealDescriptionFocused: Bool
     @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
@@ -556,6 +557,7 @@ private struct AddMealView: View {
         }
         .onChange(of: photoPickerItem) { _, newItem in
             guard let newItem else { return }
+            cancelPendingAnalysis()
             let token = UUID()
             photoLoadToken = token
             isPreparingPhoto = true
@@ -618,6 +620,7 @@ private struct AddMealView: View {
             CameraCapture(
                 onCapture: { image in
                     showCamera = false
+                    cancelPendingAnalysis()
                     let token = UUID()
                     photoLoadToken = token
                     isPreparingPhoto = true
@@ -639,7 +642,7 @@ private struct AddMealView: View {
             .ignoresSafeArea()
         }
         .onDisappear {
-            analysisTask?.cancel()
+            cancelPendingAnalysis()
         }
         .task {
             showsPhotoInput = !startsWithDescription
@@ -779,6 +782,7 @@ private struct AddMealView: View {
 
             if selectedPhoto != nil {
                 Button {
+                    cancelPendingAnalysis()
                     invalidatePendingPhotoLoad()
                     selectedPhoto = nil
                     photoPickerItem = nil
@@ -910,7 +914,9 @@ private struct AddMealView: View {
     }
 
     private func analyze() {
-        analysisTask?.cancel()
+        cancelPendingAnalysis()
+        let runID = UUID()
+        analysisRunID = runID
         isAnalyzing = true
         analysisTask = Task { @MainActor in
             let result = await MealAnalysisEngine().analyze(
@@ -921,13 +927,15 @@ private struct AddMealView: View {
                 image: selectedPhoto,
                 language: localization.language
             )
-            guard !Task.isCancelled else { return }
+            guard !Task.isCancelled, analysisRunID == runID else { return }
+            analysisTask = nil
             isAnalyzing = false
             onAnalyze(result)
         }
     }
 
     private func usePersonalPhoto(_ image: UIImage) {
+        cancelPendingAnalysis()
         let isUntouchedDemoPrompt = inputSource == .demo
             && (mealDescription == selectedMeal.prompt || mealDescription == localization.text(selectedMeal.prompt))
         invalidatePendingPhotoLoad()
@@ -940,8 +948,7 @@ private struct AddMealView: View {
     }
 
     private func selectDemo(_ meal: DemoMeal) {
-        analysisTask?.cancel()
-        isAnalyzing = false
+        cancelPendingAnalysis()
         invalidatePendingPhotoLoad()
         photoPickerItem = nil
         photoLoadError = nil
@@ -955,6 +962,13 @@ private struct AddMealView: View {
     private func invalidatePendingPhotoLoad() {
         photoLoadToken = UUID()
         isPreparingPhoto = false
+    }
+
+    private func cancelPendingAnalysis() {
+        analysisRunID = UUID()
+        analysisTask?.cancel()
+        analysisTask = nil
+        isAnalyzing = false
     }
 
     @ViewBuilder
@@ -1997,9 +2011,12 @@ private struct SavedReviewDetailView: View {
                                 }
                                 .accessibilityElement(children: .combine)
                             }
-                            Text("These saved values came from your review. A photo did not measure ingredients, portions, or carbohydrate grams. Do not use this record to calculate insulin.")
+                            Text(localization.text("A photo cannot reveal every ingredient or portion. Confirm the foods, adjust portions, and prefer a package label or trusted reference when available."))
                                 .font(.caption)
                                 .foregroundStyle(CarbInTheme.mutedInk)
+                            Text(localization.text("This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on."))
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(CarbInTheme.terracotta)
                         }
                         .mirrorCard()
                     }
