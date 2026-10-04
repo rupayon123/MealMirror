@@ -6,6 +6,7 @@ enum PixelKitchenIconKind {
     case camera, photos, history, info, settings, check, adjust, review
     case replay, privacy, medical, details, delete, save
     case foodView, nutritionLabel, addPhoto, removePhoto
+    case reviewPendingRecord, reviewSavedRecord
 
     var rows: [String] {
         switch self {
@@ -81,6 +82,14 @@ enum PixelKitchenIconKind {
             [".kkkkkkkk...", "kBBBBBBBBk..", "kBBBBBBYBk..", "kBBBBBBYBk..",
              "kBBBBBBBBk..", "kBBgBBBBBk..", "kwgwgwwgwk..", "kgwwwggwkkk.",
              "kggggggkrwrk", "kggggggkwrwk", ".kkkkkkkrwrk", "........kkk."]
+        case .reviewPendingRecord:
+            ["..kkkkkk....", ".kwwwwwwk...", ".kwrrrrwk...", ".kwwwwwwk...",
+             ".kwkkkkwk...", ".kwwwwwkkk..", ".kwkkkkBwBk.", ".kwwwwkBBBk.",
+             ".kwwwwkBBBk.", ".kwwwwwkkkk.", "..kkkkkk..Yk", "...........k"]
+        case .reviewSavedRecord:
+            ["..kkkkkk....", ".kwwwwwwk...", ".kwrrrrwk...", ".kwwwwwwk...",
+             ".kwkkkkwk...", ".kwwwwwkkk..", ".kwkkkkgggk.", ".kwwwkgggggk",
+             ".kwwwkwgggwk", ".kwwwkgwgwgk", "..kkkkkgwgk.", ".......kkk.."]
         }
     }
 }

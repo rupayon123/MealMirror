@@ -747,6 +747,10 @@ private struct AddMealView: View {
                 VStack(spacing: 8) { mealPhotoActions }
             }
 
+            if inputSource != .demo {
+                photoSlotSummary
+            }
+
             if inputSource == .demo {
                 PhotoPreview(
                     meal: selectedMeal,
@@ -767,46 +771,23 @@ private struct AddMealView: View {
                     .frame(maxWidth: .infinity, minHeight: 70, alignment: .center)
                     .insetControlGroup(inset: 10)
             } else {
-                ScrollView(.horizontal) {
-                    HStack(alignment: .top, spacing: 10) {
+                if dynamicTypeSize.isAccessibilitySize {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 220), spacing: 10)], alignment: .leading, spacing: 12) {
                         ForEach(mealPhotos, id: \.id) { (photo: MealPhoto) in
-                            VStack(alignment: .leading, spacing: 5) {
-                                Image(uiImage: photo.image)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 136, height: 104)
-                                    .clipped()
-                                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                                Label {
-                                    Text(photo.role == .food ? "Food view" : "Nutrition label")
-                                } icon: {
-                                    PixelKitchenIcon(kind: photo.role == .food ? .foodView : .nutritionLabel)
-                                        .frame(width: 24, height: 24)
-                                }
-                                .font(CarbInTheme.reading(.footnote, size: 12))
-                                .foregroundStyle(CarbInTheme.ink)
-                                Button {
-                                    removePhoto(photo.id)
-                                } label: {
-                                    Label {
-                                        Text("Remove photo")
-                                    } icon: {
-                                        PixelKitchenIcon(kind: .removePhoto)
-                                            .frame(width: 24, height: 24)
-                                    }
-                                        .frame(minHeight: 44, alignment: .leading)
-                                }
-                                .foregroundStyle(CarbInTheme.tomato)
-                                .accessibilityIdentifier("carbin.meal.removePhoto.\(photo.id)")
-                            }
-                            .frame(width: 136, alignment: .leading)
-                            .accessibilityElement(children: .contain)
-                            .accessibilityLabel(photo.role == .food ? "Food photo" : "Nutrition label photo")
+                            selectedPhotoCard(photo)
                         }
                     }
-                    .padding(.vertical, 2)
+                } else {
+                    ScrollView(.horizontal) {
+                        HStack(alignment: .top, spacing: 10) {
+                            ForEach(mealPhotos, id: \.id) { (photo: MealPhoto) in
+                                selectedPhotoCard(photo)
+                            }
+                        }
+                        .padding(.vertical, 2)
+                    }
+                    .scrollIndicators(.visible)
                 }
-                .scrollIndicators(.hidden)
             }
 
             if labelPhoto == nil {
@@ -844,6 +825,99 @@ private struct AddMealView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .mealTicket()
+    }
+
+    private var photoSlotSummary: some View {
+        let layout = dynamicTypeSize.isAccessibilitySize
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
+            : AnyLayout(HStackLayout(alignment: .top, spacing: 8))
+        return layout {
+            photoSlotStatus("Food view", count: foodPhotos.count, total: 3, kind: .foodView)
+            photoSlotStatus("Nutrition label", count: labelPhoto == nil ? 0 : 1, total: 1, kind: .nutritionLabel)
+        }
+    }
+
+    private func photoSlotStatus(_ title: LocalizedStringKey, count: Int, total: Int, kind: PixelKitchenIconKind) -> some View {
+        HStack(alignment: .center, spacing: 7) {
+            PixelKitchenIcon(kind: kind)
+                .frame(width: 24, height: 24)
+                .accessibilityHidden(true)
+            Text(title)
+                .font(CarbInTheme.reading(.footnote, size: 12))
+                .fixedSize(horizontal: false, vertical: true)
+            Spacer(minLength: 4)
+            Text(verbatim: localizedSlotCount(count, total: total))
+                .font(CarbInTheme.display(.subheadline, size: 15))
+                .monospacedDigit()
+        }
+        .foregroundStyle(CarbInTheme.ink)
+        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+        .insetControlGroup(inset: 8)
+        .accessibilityElement(children: .combine)
+    }
+
+    private func selectedPhotoCard(_ photo: MealPhoto) -> some View {
+        let foodNumber = photo.role == .food
+            ? foodPhotos.firstIndex(where: { $0.id == photo.id }).map { $0 + 1 }
+            : nil
+        let numberedRole = foodNumber.map {
+            localization.text("Food view") + " " + localizedNumber($0)
+        } ?? localization.text("Nutrition label")
+        let selectedRole = foodNumber.map {
+            localization.text("Selected meal photo") + " " + localizedNumber($0)
+        } ?? localization.text("Selected nutrition label photo")
+
+        return VStack(alignment: .leading, spacing: 5) {
+            GeometryReader { geometry in
+                Image(uiImage: photo.image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .clipped()
+            }
+            .frame(height: dynamicTypeSize.isAccessibilitySize ? 144 : 104)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .accessibilityHidden(true)
+
+            Label {
+                Text(verbatim: numberedRole)
+                    .fixedSize(horizontal: false, vertical: true)
+            } icon: {
+                PixelKitchenIcon(kind: photo.role == .food ? .foodView : .nutritionLabel)
+                    .frame(width: 24, height: 24)
+            }
+            .font(CarbInTheme.reading(.footnote, size: 12))
+            .foregroundStyle(CarbInTheme.ink)
+
+            Button {
+                removePhoto(photo.id)
+            } label: {
+                Label {
+                    Text("Remove photo")
+                        .fixedSize(horizontal: false, vertical: true)
+                } icon: {
+                    PixelKitchenIcon(kind: .removePhoto)
+                        .frame(width: 24, height: 24)
+                }
+                .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+            }
+            .foregroundStyle(CarbInTheme.tomato)
+            .accessibilityIdentifier("carbin.meal.removePhoto.\(photo.id)")
+        }
+        .frame(width: dynamicTypeSize.isAccessibilitySize ? nil : 136, alignment: .leading)
+        .frame(maxWidth: dynamicTypeSize.isAccessibilitySize ? .infinity : nil, alignment: .leading)
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel(selectedRole)
+    }
+
+    private func localizedNumber(_ value: Int) -> String {
+        let number = value.formatted(.number.locale(localization.language.locale))
+        return localization.language.isRightToLeft ? "\u{2068}\(number)\u{2069}" : number
+    }
+
+    private func localizedSlotCount(_ count: Int, total: Int) -> String {
+        let counts = "\(count.formatted(.number.locale(localization.language.locale)))/\(total.formatted(.number.locale(localization.language.locale)))"
+        return localization.language.isRightToLeft ? "\u{2068}\(counts)\u{2069}" : counts
     }
 
     private var referenceToggle: some View {
@@ -1150,10 +1224,12 @@ private struct EstimateView: View {
                     SectionHeading(
                         eyebrow: "Your estimate",
                         title: analysis.isReadyForReview
-                            ? "A range worth checking"
+                            ? (hasSingleAmount ? "A single amount to check" : "A range worth checking")
                             : (analysis.components.isEmpty ? "A little more detail will help" : "Possible foods to check"),
                         detail: analysis.isReadyForReview
-                            ? "The range stays visible and editable, so you can review what it is based on."
+                            ? (hasSingleAmount
+                               ? "The amount stays visible and editable, so you can check its source and serving size."
+                               : "The range stays visible and editable, so you can review what it is based on.")
                             : analysis.methodNote
                     )
                 }
@@ -1285,11 +1361,13 @@ private struct EstimateView: View {
                             Int64(range.high)
                          ))
                 ))
-            Text("Starting carbohydrate range")
+            Text(range.low == range.high ? "Carbohydrate amount to check" : "Starting carbohydrate range")
                 .font(CarbInTheme.display(.headline, size: 16))
                 .foregroundStyle(CarbInTheme.ink)
             PixelDivider(color: CarbInTheme.butter)
-            Text("Keep the full range visible while you verify portions, ingredients, and labels. This is not dose advice.")
+            Text(range.low == range.high
+                 ? "Check the amount against the serving size and your trusted source. This is not dose advice."
+                 : "Keep the full range visible while you verify portions, ingredients, and labels. This is not dose advice.")
                 .font(CarbInTheme.reading(.footnote, size: 13))
                 .foregroundStyle(CarbInTheme.mutedInk)
                 .fixedSize(horizontal: false, vertical: true)
@@ -1435,7 +1513,9 @@ private struct EstimateView: View {
                 Text("Confirm the parts you recognize before you keep a local record.")
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(CarbInTheme.ink)
-                Text("Recipe, portion size, sauces, and product labels can change this range. Confirm or adjust every listed item.")
+                Text(hasSingleAmount
+                     ? "Check the serving size and each listed item before you keep this amount."
+                     : "Recipe, portion size, sauces, and product labels can change this range. Confirm or adjust every listed item.")
                     .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
@@ -1506,9 +1586,16 @@ private struct EstimateView: View {
     }
 
     private var rangeHeading: some View {
-        Text(LocalizedStringKey(analysis.isReadyForReview ? "What shaped the range" : "Possible foods to check"))
+        Text(LocalizedStringKey(analysis.isReadyForReview
+            ? (hasSingleAmount ? "Source of this amount" : "What shaped the range")
+            : "Possible foods to check"))
             .font(CarbInTheme.display(.headline, size: 16))
             .foregroundStyle(CarbInTheme.ink)
+    }
+
+    private var hasSingleAmount: Bool {
+        guard let range = analysis.overallRange else { return false }
+        return range.low == range.high
     }
 
     private var rangeStatus: some View {
@@ -1652,13 +1739,14 @@ private struct ReviewView: View {
     }
 
     private var reviewStatusIcon: some View {
-        Image(systemName: saved ? "checkmark.seal.fill" : "doc.text.magnifyingglass")
-            .font(CarbInTheme.display(.title2, size: 22))
-            .foregroundStyle(saved ? CarbInTheme.actionInk : CarbInTheme.tomato)
+        PixelKitchenIcon(kind: saved ? .reviewSavedRecord : .reviewPendingRecord)
+            .frame(width: 36, height: 36)
             .frame(width: 52, height: 52)
-            .background(saved ? CarbInTheme.basilAction : CarbInTheme.tomatoSoft.opacity(0.35))
-            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-            .rotationEffect(saved ? .degrees(-4) : .zero)
+            .background(CarbInTheme.actionInk, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .stroke(CarbInTheme.line, lineWidth: 2)
+            }
             .accessibilityHidden(true)
     }
 
@@ -2228,7 +2316,7 @@ private struct SavedReviewDetailView: View {
                             Text(localization.text(review.source?.title ?? "Not recorded"))
                                 .multilineTextAlignment(.trailing)
                         }
-                        LabeledContent("Carbohydrate range") {
+                        LabeledContent(review.range.low == review.range.high ? "Carbohydrate amount" : "Carbohydrate range") {
                             Text(localization.carbohydrateRange(review.range))
                                 .font(.headline.monospacedDigit())
                                 .foregroundStyle(CarbInTheme.moss)
@@ -2251,7 +2339,7 @@ private struct SavedReviewDetailView: View {
                             .mirrorCard()
                     } else {
                         VStack(alignment: .leading, spacing: 14) {
-                            Text(localization.text("What shaped the range"))
+                            Text(localization.text(review.range.low == review.range.high ? "Source of this amount" : "What shaped the range"))
                                 .font(.headline)
                                 .foregroundStyle(CarbInTheme.ink)
                             ForEach(review.items) { item in

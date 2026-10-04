@@ -184,7 +184,7 @@ struct SecondaryActionStyle: ButtonStyle {
 struct CompactActionStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.subheadline.weight(.semibold))
+            .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
             .foregroundStyle(CarbInTheme.ink)
             .frame(maxWidth: .infinity)
             .frame(minHeight: 46)
