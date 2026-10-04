@@ -1371,6 +1371,11 @@ private struct ReviewView: View {
 
             PixelDivider(color: saved ? CarbInTheme.basil : CarbInTheme.tomato)
 
+            SafetyRail(
+                title: "No insulin recommendation",
+                detail: "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on."
+            )
+
             ReviewFact(
                 symbol: "text.alignleft",
                 title: "Description",
@@ -1387,11 +1392,6 @@ private struct ReviewView: View {
                 title: "Included components",
                 value: localization.text("%lld meal parts", arguments: Int64(analysis.includedComponents.count)),
                 valueTreatment: .formattedLocalized
-            )
-
-            SafetyRail(
-                title: "No insulin recommendation",
-                detail: "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on."
             )
         }
         .mealTicket(inset: 20)
