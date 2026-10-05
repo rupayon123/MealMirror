@@ -36,4 +36,4 @@ These public listings change over time. Recheck current features before publishi
 5. **Design for a newly diagnosed child and the people supporting them.** Use short, understandable steps, readable type, VoiceOver, recoverable mistakes, and caregiver support without treating food as a problem to remove from life.
 6. **Keep the Challenge's scope honest.** No insulin-dose calculator, treatment recommendation, pump connection, or live CGM service belongs in this offline candidate. Any broader connected or dose-related work needs separate clinical, privacy, regulatory, and validation decisions.
 
-The installed Xcode 26.6 / iOS 26.5 SDK does not expose Apple's documented Foundation Models image-attachment API, so that API is not integrated or validated here. No comparative performance or award claim is supported by the research in this document.
+Xcode 27.0 and the iOS 27 SDK are now installed, and Apple documents Foundation Models image attachments. The API is not integrated or evaluated in MealMirror because the Xcode and Apple SDK license remains unaccepted on this Mac. No comparative performance or award claim is supported by the research in this document.
