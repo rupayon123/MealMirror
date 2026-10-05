@@ -8,6 +8,8 @@ Deliver one original, short, English-language Swift app playground that a judge 
 
 The strongest differentiator to prove is **useful on-device meal understanding with clear abstention**: a picture starts the experience, but the app asks only for what the picture cannot establish. No model, UI polish, or number of features guarantees an award. Apple's [judging terms](https://developer.apple.com/swift-student-challenge/policy/) cite technical accomplishment, creativity, and written responses; its [overview](https://developer.apple.com/swift-student-challenge/) also highlights innovation, social impact, and inclusivity.
 
+**October 4 device follow-up:** Set up an iPhone 16 Pro simulator and verified that a current-source build launches to the settled welcome screen. Automated multi-photo/label coverage on that simulator remains failed, not passed: the two food views appeared in the tray, then the label step reached Estimate without an attached/readable label. A retry after adding an explicit PhotosUI confirmation attempt still ended in the same state. Preserve the failure evidence at `../outputs/typography-followup/iPhone16Pro-current-submission.xcresult` and `../outputs/typography-followup/iPhone16Pro-current-submission-retry.xcresult`; next verify the label picker manually before changing app code. No Challenge ZIP change was made for this run.
+
 ## Current inventory
 
 | Area | Done and evidenced | Missing or limited |
