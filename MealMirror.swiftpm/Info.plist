@@ -48,6 +48,8 @@
     <string>$(CURRENT_PROJECT_VERSION)</string>
     <key>LSRequiresIPhoneOS</key>
     <true/>
+    <key>ITSAppUsesNonExemptEncryption</key>
+    <false/>
     <key>NSCameraUsageDescription</key>
     <string>MealMirror uses Apple Vision on this device to suggest possible food clues from the meal photo. The photo is not uploaded or saved.</string>
     <key>UISupportedInterfaceOrientations</key>

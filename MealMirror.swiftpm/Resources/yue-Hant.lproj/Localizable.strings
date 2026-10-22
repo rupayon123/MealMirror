@@ -43,10 +43,13 @@
 "Analysis in progress" = "分析中";
 "App" = "應用程式";
 "App language" = "應用程式語言";
+"Apple Intelligence is off. Other local review tools are still available." = "Apple Intelligence 已關閉。裝置內其他核對工具仍然可以使用。";
+"Apple Intelligence on this device" = "呢部裝置嘅 Apple Intelligence";
 "Apple Vision can inspect a chosen photo locally, while your description drives the ingredient review. MealMirror shows an estimate and its uncertainty; confirm every value with a trusted source and your clinician-approved care plan." = "Apple Vision 可以本地檢視選定的相片，而你的描述會驅動成分的審查。MealMirror 顯示估算值及其不確定性；請用可信來源及你的臨床批准護理計劃確認每個數值。";
 "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values." = "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values.";
 "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review." = "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review.";
 "Apple Vision runs on the chosen photo. The local ingredient list uses what you named, so its starting point stays inspectable." = "Apple Vision 在選定的相片上運行。本地成分清單使用你命名的名稱，所以其起始點保持可檢查。";
+"Apple's local model is not ready. Other local review tools are still available." = "Apple 嘅裝置內模型未準備好。裝置內其他核對工具仍然可以使用。";
 "Apple’s Standard Licensed Application End User License Agreement and the laws identified in the final published terms apply to use of MealMirror." = "Apple 的標準授權應用程式最終用戶許可協議及最終發佈條款中列明的法律適用於使用 MealMirror。";
 "Applicable terms" = "適用條款";
 "Arabic" = "阿拉伯語";
@@ -140,6 +143,7 @@
 "Excluded" = "被排除";
 "Excluded from total" = "從總數中排除";
 "Filipino" = "菲律賓文";
+"Food names only. Check each name against your photo; no carbohydrate amount comes from these clues." = "只提供食物名稱。請對照相片逐一確認名稱；呢啲線索唔會提供碳水化合物含量。";
 "For example, 18" = "例如，18";
 "For example, packaged drink" = "例如，包裝飲品";
 "Français" = "法文";
@@ -351,6 +355,11 @@
 "That photo could not be loaded. Choose it again, select a different image, or use the camera." = "無法加載該照片。請重新選擇，選擇另一張圖片，或者使用相機。";
 "The camera and on-device inspection never upload the photo." = "相機和裝置上的檢查從不會上傳照片。";
 "The camera did not return a photo. Try again or choose a photo from your library." = "相機沒有返回照片。請再試一次或者從你的相簿選一張照片。";
+"The local image model could not check these photos. Other local review tools are still available." = "裝置內嘅影像模型未能檢查呢啲相片。裝置內其他核對工具仍然可以使用。";
+"The local image model does not support this language. Other local review tools are still available." = "裝置內嘅影像模型唔支援呢種語言。裝置內其他核對工具仍然可以使用。";
+"The local image model is not supported on this device. Other local review tools are still available." = "呢部裝置唔支援裝置內嘅影像模型。裝置內其他核對工具仍然可以使用。";
+"The local image model needs iOS 27 or later. Other local review tools are still available." = "裝置內嘅影像模型需要 iOS 27 或之後版本。裝置內其他核對工具仍然可以使用。";
+"The local image model took too long. Other local review tools are still available." = "裝置內嘅影像模型處理時間太長。裝置內其他核對工具仍然可以使用。";
 "The local review could not be saved. Nothing was uploaded. Try again while your device is unlocked." = "本地審查無法儲存。沒有任何檔案被上傳。請在裝置解鎖時再試一次。";
 "The local review file could not be deleted. Try again while your device is unlocked." = "本地審查檔案無法刪除。請在裝置解鎖時再試一次。";
 "The photo remains on this device, but visual inspection was unavailable. Your description still drives the review." = "照片仍然保留在此裝置，但無法進行視覺檢查。你的描述仍然影響審查。";

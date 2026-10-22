@@ -43,10 +43,13 @@
 "Analysis in progress" = "Analysis in progress";
 "App" = "App";
 "App language" = "App language";
+"Apple Intelligence is off. Other local review tools are still available." = "Apple Intelligence is off. Other local review tools are still available.";
+"Apple Intelligence on this device" = "Apple Intelligence on this device";
 "Apple Vision can inspect a chosen photo locally, while your description drives the ingredient review. MealMirror shows an estimate and its uncertainty; confirm every value with a trusted source and your clinician-approved care plan." = "Apple Vision can inspect a chosen photo locally, while your description drives the ingredient review. MealMirror shows an estimate and its uncertainty; confirm every value with a trusted source and your clinician-approved care plan.";
 "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values." = "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values.";
 "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review." = "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review.";
 "Apple Vision runs on the chosen photo. The local ingredient list uses what you named, so its starting point stays inspectable." = "Apple Vision runs on the chosen photo. The local ingredient list uses what you named, so its starting point stays inspectable.";
+"Apple's local model is not ready. Other local review tools are still available." = "Apple's local model is not ready. Other local review tools are still available.";
 "Apple’s Standard Licensed Application End User License Agreement and the laws identified in the final published terms apply to use of MealMirror." = "Apple’s Standard Licensed Application End User License Agreement and the laws identified in the final published terms apply to use of MealMirror.";
 "Applicable terms" = "Applicable terms";
 "Arabic" = "Arabic";
@@ -140,6 +143,7 @@
 "Excluded" = "Excluded";
 "Excluded from total" = "Excluded from total";
 "Filipino" = "Filipino";
+"Food names only. Check each name against your photo; no carbohydrate amount comes from these clues." = "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.";
 "For example, 18" = "For example, 18";
 "For example, packaged drink" = "For example, packaged drink";
 "Français" = "Français";
@@ -351,6 +355,11 @@
 "That photo could not be loaded. Choose it again, select a different image, or use the camera." = "That photo could not be loaded. Choose it again, select a different image, or use the camera.";
 "The camera and on-device inspection never upload the photo." = "The camera and on-device inspection never upload the photo.";
 "The camera did not return a photo. Try again or choose a photo from your library." = "The camera did not return a photo. Try again or choose a photo from your library.";
+"The local image model could not check these photos. Other local review tools are still available." = "The local image model could not check these photos. Other local review tools are still available.";
+"The local image model does not support this language. Other local review tools are still available." = "The local image model does not support this language. Other local review tools are still available.";
+"The local image model is not supported on this device. Other local review tools are still available." = "The local image model is not supported on this device. Other local review tools are still available.";
+"The local image model needs iOS 27 or later. Other local review tools are still available." = "The local image model needs iOS 27 or later. Other local review tools are still available.";
+"The local image model took too long. Other local review tools are still available." = "The local image model took too long. Other local review tools are still available.";
 "The local review could not be saved. Nothing was uploaded. Try again while your device is unlocked." = "The local review could not be saved. Nothing was uploaded. Try again while your device is unlocked.";
 "The local review file could not be deleted. Try again while your device is unlocked." = "The local review file could not be deleted. Try again while your device is unlocked.";
 "The photo remains on this device, but visual inspection was unavailable. Your description still drives the review." = "The photo remains on this device, but visual inspection was unavailable. Your description still drives the review.";

@@ -2,7 +2,9 @@
 
 MealMirror is a short, offline SwiftUI experience for reviewing meal carbohydrates. Its aim is to make the first step approachable for a newly diagnosed child or adult while preserving the joy and choice of everyday food. The Pixel Kitchen theme uses the user's selected MM pot emblem, Pixelify Sans for short Latin-script headings, Nunito for Latin-script reading text, native fonts for other scripts, and kitchen dialogue panels.
 
-The product direction begins with a photo, then asks the person to confirm anything a photo cannot establish. Photo-only entry works, but iOS 26.5 Simulator's general Vision classifier returned the same unrelated scene labels for three distinct meal photos. MealMirror marks that known result as an unavailable inspection and shows no reliable range. A separate macOS Vision run recognized the biryani image; physical iPhone/iPad behavior remains unverified.
+The product direction begins with a photo, then asks the person to confirm anything a photo cannot establish. Build 3 adds Apple's local Foundation Models image path on supported iOS 27 devices. It checks availability, image and structured-output capability, and language before requesting tentative visible food names from up to three views of one meal. These names stay separate from all carbohydrate values. Tapping one opens an editable name with a blank checked-amount field; it does not add an ingredient or amount by itself. Unsupported models, timeouts and errors retain local Vision/manual review, with no cloud fallback. Real model inference remains unverified: the current Mac reports `modelNotReady`.
+
+Photo-only entry also works without the new model. The iOS 26.5 Simulator's general Vision classifier returned the same unrelated scene labels for three distinct meal photos. MealMirror marks that known result as unavailable and shows no reliable range. A separate macOS Vision run recognized the biryani image; physical iPhone/iPad behavior remains unverified.
 
 ## Open and run
 
@@ -24,7 +26,7 @@ Practice numbers teach the review controls. They do not analyze the example imag
 - The app does not tell someone what to eat. It shows the source and limits of a carbohydrate estimate for the person to review.
 - If the photo is unclear, the person can name foods or add a carbohydrate amount from a package or another trusted source. Photo labels never set portion sizes or carbohydrate values.
 - Local catalog values are illustrative and finite; MealMirror does not currently analyze arbitrary home-cooked, restaurant, mixed, or culturally specific meals from a photo alone.
-- The applicant accepted the Xcode license on October 22. The source builds with Xcode 27.1 (27A9275) and the iOS 27.1 Simulator SDK after splitting the meal-entry view into smaller compiler expressions. Build 2 preserves the current layout and meal-review behavior. Fresh runtime checks await the iOS Simulator runtime download. Apple documents Foundation Models image attachments, but this candidate still uses Vision; the model path is not implemented or evaluated. Any model path must check device, region, and model readiness and preserve a useful offline manual fallback. [Apple Xcode 27.1 release](https://developer.apple.com/news/releases/?id=10152026a).
+- Build 3 uses the iOS 27.1 SDK while retaining an iOS 17 deployment minimum. Apple Intelligence hardware, an enabled and ready local model, supported capabilities and locale are required for the new image path. It remains unvalidated on real meals and cannot be described as arbitrary-meal recognition. The exact ZIP must be checked after this change. [Apple image prompting API](https://developer.apple.com/documentation/FoundationModels/analyzing-images-with-multimodal-prompting).
 
 ## Languages
 

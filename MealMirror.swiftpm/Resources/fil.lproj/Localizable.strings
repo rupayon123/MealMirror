@@ -43,10 +43,13 @@
 "Analysis in progress" = "Kasalukuyang isinasagawa ang pagsusuri";
 "App" = "App";
 "App language" = "Wika ng app";
+"Apple Intelligence is off. Other local review tools are still available." = "Naka-off ang Apple Intelligence. Magagamit pa rin ang iba pang lokal na tool para sa pagrepaso.";
+"Apple Intelligence on this device" = "Apple Intelligence sa device na ito";
 "Apple Vision can inspect a chosen photo locally, while your description drives the ingredient review. MealMirror shows an estimate and its uncertainty; confirm every value with a trusted source and your clinician-approved care plan." = "Maaaring suriin ng Apple Vision ang napiling larawan nang lokal, habang ang iyong paglalarawan ang naggi-gabay sa pagsusuri ng sangkap. Ipinapakita ng MealMirror ang isang pagtatantya at ang kawalang-tiyak nito; tiyaking bawat halaga ay nakumpirma sa isang pinagkakatiwalaang source at sa care plan na aprubado ng iyong clinician.";
 "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values." = "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values.";
 "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review." = "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review.";
 "Apple Vision runs on the chosen photo. The local ingredient list uses what you named, so its starting point stays inspectable." = "Tumakbo ang Apple Vision sa napiling larawan. Ginagamit ng lokal na listahan ng sangkap ang pinangalanan mo, kaya ang panimulang punto nito ay nananatiling masusuri.";
+"Apple's local model is not ready. Other local review tools are still available." = "Hindi pa handa ang lokal na modelo ng Apple. Magagamit pa rin ang iba pang lokal na tool para sa pagrepaso.";
 "Apple’s Standard Licensed Application End User License Agreement and the laws identified in the final published terms apply to use of MealMirror." = "Ang Standard Licensed Application End User License Agreement ng Apple at ang mga batas na tinukoy sa huling inilathalang mga termino ay naaangkop sa paggamit ng MealMirror.";
 "Applicable terms" = "Mga naaangkop na termino";
 "Arabic" = "Arabe";
@@ -140,6 +143,7 @@
 "Excluded" = "Hindi kasama";
 "Excluded from total" = "Hindi kasama sa kabuuan";
 "Filipino" = "Filipino";
+"Food names only. Check each name against your photo; no carbohydrate amount comes from these clues." = "Mga pangalan lang ng pagkain. Itugma ang bawat pangalan sa iyong litrato; walang dami ng carbohydrate na ibinibigay ang mga pahiwatig na ito.";
 "For example, 18" = "Halimbawa, 18";
 "For example, packaged drink" = "Halimbawa, inuming naka-pakete";
 "Français" = "Pranses";
@@ -351,6 +355,11 @@
 "That photo could not be loaded. Choose it again, select a different image, or use the camera." = "Hindi ma-load ang larawang iyon. Piliin itong muli, pumili ng ibang imahe, o gamitin ang camera.";
 "The camera and on-device inspection never upload the photo." = "Ang camera at inspeksyon sa device ay hindi kailanman nag-a-upload ng larawan.";
 "The camera did not return a photo. Try again or choose a photo from your library." = "Hindi nagbalik ng larawan ang camera. Subukang muli o pumili ng larawan mula sa iyong librarya.";
+"The local image model could not check these photos. Other local review tools are still available." = "Hindi nasuri ng lokal na modelo para sa larawan ang mga litratong ito. Magagamit pa rin ang iba pang lokal na tool para sa pagrepaso.";
+"The local image model does not support this language. Other local review tools are still available." = "Hindi sinusuportahan ng lokal na modelo para sa larawan ang wikang ito. Magagamit pa rin ang iba pang lokal na tool para sa pagrepaso.";
+"The local image model is not supported on this device. Other local review tools are still available." = "Hindi sinusuportahan ng device na ito ang lokal na modelo para sa larawan. Magagamit pa rin ang iba pang lokal na tool para sa pagrepaso.";
+"The local image model needs iOS 27 or later. Other local review tools are still available." = "Kailangan ng lokal na modelo para sa larawan ang iOS 27 o mas bago. Magagamit pa rin ang iba pang lokal na tool para sa pagrepaso.";
+"The local image model took too long. Other local review tools are still available." = "Masyadong matagal ang pagproseso ng lokal na modelo para sa larawan. Magagamit pa rin ang iba pang lokal na tool para sa pagrepaso.";
 "The local review could not be saved. Nothing was uploaded. Try again while your device is unlocked." = "Hindi masagip ang lokal na pagsusuri. Walang na-upload. Subukang muli habang naka-unlock ang iyong device.";
 "The local review file could not be deleted. Try again while your device is unlocked." = "Hindi matanggal ang lokal na file ng pagsusuri. Subukang muli habang naka-unlock ang iyong device.";
 "The photo remains on this device, but visual inspection was unavailable. Your description still drives the review." = "Nanatili ang larawan sa device na ito, ngunit hindi magagamit ang visual na inspeksyon. Ang iyong paglalarawan pa rin ang humuhubog sa pagsusuri.";

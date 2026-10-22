@@ -43,10 +43,13 @@
 "Analysis in progress" = "分析中";
 "App" = "アプリ";
 "App language" = "アプリの言語";
+"Apple Intelligence is off. Other local review tools are still available." = "Apple Intelligenceがオフになっています。端末内のほかの確認ツールは引き続き利用できます。";
+"Apple Intelligence on this device" = "この端末のApple Intelligence";
 "Apple Vision can inspect a chosen photo locally, while your description drives the ingredient review. MealMirror shows an estimate and its uncertainty; confirm every value with a trusted source and your clinician-approved care plan." = "Apple Vision は選択した写真をローカルで検査できます。あなたの説明が材料レビューを導きます。MealMirror は推定値とその不確実性を表示します。すべての値は信頼できる情報源と医師承認のケアプランで確認してください。";
 "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values." = "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values.";
 "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review." = "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review.";
 "Apple Vision runs on the chosen photo. The local ingredient list uses what you named, so its starting point stays inspectable." = "Apple Vision は選択した写真で動作します。ローカルの材料リストはあなたが名前を付けたものを使用するため、出発点は検査可能なままです。";
+"Apple's local model is not ready. Other local review tools are still available." = "Appleの端末内モデルはまだ準備ができていません。端末内のほかの確認ツールは引き続き利用できます。";
 "Apple’s Standard Licensed Application End User License Agreement and the laws identified in the final published terms apply to use of MealMirror." = "Apple の標準ライセンスアプリケーションエンドユーザーライセンス契約および最終公開版の利用規約で特定された法律は、MealMirror の使用に適用されます。";
 "Applicable terms" = "適用される条件";
 "Arabic" = "アラビア語";
@@ -140,6 +143,7 @@
 "Excluded" = "除外";
 "Excluded from total" = "合計から除外";
 "Filipino" = "フィリピン語";
+"Food names only. Check each name against your photo; no carbohydrate amount comes from these clues." = "食品名のみです。写真と照らし合わせて各名称を確認してください。これらの手がかりから炭水化物量は算出しません。";
 "For example, 18" = "例: 18";
 "For example, packaged drink" = "例えば、包装された飲み物";
 "Français" = "フランス語";
@@ -351,6 +355,11 @@
 "That photo could not be loaded. Choose it again, select a different image, or use the camera." = "その写真を読み込めませんでした。再度選択するか、別の画像を選ぶか、カメラを使用してください。";
 "The camera and on-device inspection never upload the photo." = "カメラとデバイス上での検査では、写真はアップロードされません。";
 "The camera did not return a photo. Try again or choose a photo from your library." = "カメラは写真を返しませんでした。再試行するか、ライブラリから写真を選んでください。";
+"The local image model could not check these photos. Other local review tools are still available." = "端末内の画像モデルではこれらの写真を確認できませんでした。端末内のほかの確認ツールは引き続き利用できます。";
+"The local image model does not support this language. Other local review tools are still available." = "端末内の画像モデルはこの言語に対応していません。端末内のほかの確認ツールは引き続き利用できます。";
+"The local image model is not supported on this device. Other local review tools are still available." = "この端末は端末内の画像モデルに対応していません。端末内のほかの確認ツールは引き続き利用できます。";
+"The local image model needs iOS 27 or later. Other local review tools are still available." = "端末内の画像モデルにはiOS 27以降が必要です。端末内のほかの確認ツールは引き続き利用できます。";
+"The local image model took too long. Other local review tools are still available." = "端末内の画像モデルの処理に時間がかかりすぎました。端末内のほかの確認ツールは引き続き利用できます。";
 "The local review could not be saved. Nothing was uploaded. Try again while your device is unlocked." = "ローカルレビューを保存できませんでした。何もアップロードされませんでした。デバイスのロックを解除した状態で再試行してください。";
 "The local review file could not be deleted. Try again while your device is unlocked." = "ローカルレビューのファイルを削除できませんでした。デバイスのロックを解除した状態で再試行してください。";
 "The photo remains on this device, but visual inspection was unavailable. Your description still drives the review." = "写真はこのデバイスに残っていますが、視覚的な確認はできませんでした。レビューは引き続きあなたの説明に基づきます。";

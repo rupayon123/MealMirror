@@ -43,10 +43,13 @@
 "Analysis in progress" = "Elemzés folyamatban";
 "App" = "Alkalmazás";
 "App language" = "Alkalmazás nyelve";
+"Apple Intelligence is off. Other local review tools are still available." = "Az Apple Intelligence ki van kapcsolva. A többi, készüléken működő ellenőrzési eszköz továbbra is elérhető.";
+"Apple Intelligence on this device" = "Apple Intelligence ezen a készüléken";
 "Apple Vision can inspect a chosen photo locally, while your description drives the ingredient review. MealMirror shows an estimate and its uncertainty; confirm every value with a trusted source and your clinician-approved care plan." = "A Apple Vision képes helyben megvizsgálni egy kiválasztott fényképet, miközben a leírásod vezérli az összetevők áttekintését. A MealMirror egy becslést és annak bizonytalanságát mutatja; minden értéket ellenőrizz egy megbízható forrással és az orvos által jóváhagyott gondozási tervvel.";
 "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values." = "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values.";
 "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review." = "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review.";
 "Apple Vision runs on the chosen photo. The local ingredient list uses what you named, so its starting point stays inspectable." = "A Apple Vision a kiválasztott fényképen fut. A helyi összetevőlista az általad megnevezett elemeket használja, így az kiindulópontként továbbra is átvizsgálható marad.";
+"Apple's local model is not ready. Other local review tools are still available." = "Az Apple helyi modellje még nem áll készen. A többi, készüléken működő ellenőrzési eszköz továbbra is elérhető.";
 "Apple’s Standard Licensed Application End User License Agreement and the laws identified in the final published terms apply to use of MealMirror." = "Az Apple szabványos licencelt alkalmazás végfelhasználói licencszerződése és a végleges, közzétett feltételekben meghatározott jogszabályok vonatkoznak a MealMirror használatára.";
 "Applicable terms" = "Alkalmazandó feltételek";
 "Arabic" = "Arab";
@@ -140,6 +143,7 @@
 "Excluded" = "Kizárt";
 "Excluded from total" = "Kizárt az összesből";
 "Filipino" = "Fülöp";
+"Food names only. Check each name against your photo; no carbohydrate amount comes from these clues." = "Csak ételnevek. Ellenőrizze az egyes neveket a fotó alapján; a szénhidrátok mennyiségét nem ezek a támpontok adják meg.";
 "For example, 18" = "Például, 18";
 "For example, packaged drink" = "Például csomagolt ital";
 "Français" = "Francia";
@@ -351,6 +355,11 @@
 "That photo could not be loaded. Choose it again, select a different image, or use the camera." = "A fotót nem sikerült betölteni. Válaszd újra, válassz egy másik képet, vagy használd a kamerát.";
 "The camera and on-device inspection never upload the photo." = "A kamera és az eszközön történő ellenőrzés soha nem tölti fel a fotót.";
 "The camera did not return a photo. Try again or choose a photo from your library." = "A kamera nem adott vissza fotót. Próbáld újra, vagy válassz egy fotót a könyvtáradból.";
+"The local image model could not check these photos. Other local review tools are still available." = "A helyi képfeldolgozó modell nem tudta ellenőrizni ezeket a fotókat. A többi, készüléken működő ellenőrzési eszköz továbbra is elérhető.";
+"The local image model does not support this language. Other local review tools are still available." = "A helyi képfeldolgozó modell nem támogatja ezt a nyelvet. A többi, készüléken működő ellenőrzési eszköz továbbra is elérhető.";
+"The local image model is not supported on this device. Other local review tools are still available." = "Ez a készülék nem támogatja a helyi képfeldolgozó modellt. A többi, készüléken működő ellenőrzési eszköz továbbra is elérhető.";
+"The local image model needs iOS 27 or later. Other local review tools are still available." = "A helyi képfeldolgozó modellhez iOS 27 vagy újabb rendszer szükséges. A többi, készüléken működő ellenőrzési eszköz továbbra is elérhető.";
+"The local image model took too long. Other local review tools are still available." = "A helyi képfeldolgozó modell túl sokáig dolgozott. A többi, készüléken működő ellenőrzési eszköz továbbra is elérhető.";
 "The local review could not be saved. Nothing was uploaded. Try again while your device is unlocked." = "A helyi értékelést nem lehetett menteni. Semmi sem lett feltöltve. Próbálkozz újra, miközben az eszközöd fel van oldva.";
 "The local review file could not be deleted. Try again while your device is unlocked." = "A helyi értékelés fájl nem törölhető. Próbálkozz újra, miközben az eszközöd fel van oldva.";
 "The photo remains on this device, but visual inspection was unavailable. Your description still drives the review." = "A fotó megmarad ezen az eszközön, de a vizuális ellenőrzés nem volt elérhető. A leírásod továbbra is irányítja az értékelést.";

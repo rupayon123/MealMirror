@@ -43,10 +43,13 @@
 "Analysis in progress" = "বিশ্লেষণ প্রগতিস্থলে";
 "App" = "অ্যাপ";
 "App language" = "অ্যাপের ভাষা";
+"Apple Intelligence is off. Other local review tools are still available." = "Apple Intelligence বন্ধ আছে। ডিভাইসে পর্যালোচনার অন্যান্য উপায় এখনও ব্যবহার করা যাবে।";
+"Apple Intelligence on this device" = "এই ডিভাইসে Apple Intelligence";
 "Apple Vision can inspect a chosen photo locally, while your description drives the ingredient review. MealMirror shows an estimate and its uncertainty; confirm every value with a trusted source and your clinician-approved care plan." = "Apple Vision একটি নির্বাচিত ছবি স্থানীয়ভাবে পরীক্ষা করতে পারে, যখন আপনার বর্ণনা উপাদান পর্যালোচনা চালিত করে। MealMirror একটি অনুমান এবং তার অনিশ্চয়তা দেখায়; প্রতিটি মানকে একটি বিশ্বাসযোগ্য সূত্র এবং আপনার চিকিৎসা-নির্ধারিত যত্ন পরিকল্পনার সঙ্গে নিশ্চিত করুন।";
 "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values." = "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values.";
 "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review." = "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review.";
 "Apple Vision runs on the chosen photo. The local ingredient list uses what you named, so its starting point stays inspectable." = "Apple Vision নির্বাচিত ছবিতে চলে। স্থানীয় উপাদান তালিকাটি আপনি যা নামে করেছেন তা ব্যবহার করে, তাই এর সূচনামূলক বিন্দু পরীক্ষা করা যায়।";
+"Apple's local model is not ready. Other local review tools are still available." = "Apple-এর স্থানীয় মডেল এখনও প্রস্তুত নয়। ডিভাইসে পর্যালোচনার অন্যান্য উপায় এখনও ব্যবহার করা যাবে।";
 "Apple’s Standard Licensed Application End User License Agreement and the laws identified in the final published terms apply to use of MealMirror." = "অ্যাপলের স্ট্যান্ডার্ড লাইসেন্সকৃত অ্যাপ্লিকেশন এন্ড ইউজার লাইসেন্স এগ্রিমেন্ট এবং চূড়ান্ত প্রকাশিত শর্তগুলিতে চিহ্নিত আইনগুলি MealMirror ব্যবহারে প্রযোজ্য।";
 "Applicable terms" = "প্রযোজ্য শর্তাবলী";
 "Arabic" = "আরবি";
@@ -140,6 +143,7 @@
 "Excluded" = "বাদ দেওয়া হয়েছে";
 "Excluded from total" = "মোট থেকে বাদ দেওয়া হয়েছে";
 "Filipino" = "ফিলিপিনো";
+"Food names only. Check each name against your photo; no carbohydrate amount comes from these clues." = "শুধু খাবারের নাম। আপনার ছবির সঙ্গে প্রতিটি নাম মিলিয়ে দেখুন; এই ইঙ্গিতগুলো কার্বোহাইড্রেটের পরিমাণ জানায় না।";
 "For example, 18" = "উদাহরণস্বরূপ, ১৮";
 "For example, packaged drink" = "উদাহরণস্বরূপ, প্যাকেজড পানীয়";
 "Français" = "ফরাসি";
@@ -351,6 +355,11 @@
 "That photo could not be loaded. Choose it again, select a different image, or use the camera." = "ছবিটি লোড করা যায়নি। একবার আবার নির্বাচন করুন, একটি ভিন্ন ছবি বেছে নিন, বা ক্যামেরা ব্যবহার করুন।";
 "The camera and on-device inspection never upload the photo." = "ক্যামেরা এবং ডিভাইস-ভিত্তিক পরীক্ষা কখনই ছবি আপলোড করে না।";
 "The camera did not return a photo. Try again or choose a photo from your library." = "ক্যামেরা কোন ছবি ফিরে দেয়নি। আবার চেষ্টা করুন বা আপনার লাইব্রেরি থেকে একটি ছবি বেছে নিন।";
+"The local image model could not check these photos. Other local review tools are still available." = "ছবি বিশ্লেষণের স্থানীয় মডেল এই ছবিগুলো যাচাই করতে পারেনি। ডিভাইসে পর্যালোচনার অন্যান্য উপায় এখনও ব্যবহার করা যাবে।";
+"The local image model does not support this language. Other local review tools are still available." = "ছবি বিশ্লেষণের স্থানীয় মডেল এই ভাষা সমর্থন করে না। ডিভাইসে পর্যালোচনার অন্যান্য উপায় এখনও ব্যবহার করা যাবে।";
+"The local image model is not supported on this device. Other local review tools are still available." = "এই ডিভাইসে ছবি বিশ্লেষণের স্থানীয় মডেল সমর্থিত নয়। ডিভাইসে পর্যালোচনার অন্যান্য উপায় এখনও ব্যবহার করা যাবে।";
+"The local image model needs iOS 27 or later. Other local review tools are still available." = "ছবি বিশ্লেষণের স্থানীয় মডেলের জন্য iOS 27 বা পরের সংস্করণ প্রয়োজন। ডিভাইসে পর্যালোচনার অন্যান্য উপায় এখনও ব্যবহার করা যাবে।";
+"The local image model took too long. Other local review tools are still available." = "ছবি বিশ্লেষণের স্থানীয় মডেল খুব বেশি সময় নিয়েছে। ডিভাইসে পর্যালোচনার অন্যান্য উপায় এখনও ব্যবহার করা যাবে।";
 "The local review could not be saved. Nothing was uploaded. Try again while your device is unlocked." = "স্থানীয় পর্যালোচনা সংরক্ষণ করা যায়নি। কিছু আপলোড করা হয়নি। আপনার ডিভাইস আনলক রাখার সময় আবার চেষ্টা করুন।";
 "The local review file could not be deleted. Try again while your device is unlocked." = "স্থানীয় পর্যালোচনা ফাইলটি মুছে ফেলা যায়নি। আপনার ডিভাইস আনলক রাখার সময় আবার চেষ্টা করুন।";
 "The photo remains on this device, but visual inspection was unavailable. Your description still drives the review." = "ছবি এই ডিভাইসে রয়েছে, কিন্তু দৃশ্যমান পরিদর্শন উপলব্ধ ছিল না। আপনার বর্ণনা এখনও পর্যালোচনাকে পরিচালনা করে।";

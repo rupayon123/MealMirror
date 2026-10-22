@@ -43,10 +43,13 @@
 "Analysis in progress" = "جارٍ تحليل البيانات";
 "App" = "التطبيق";
 "App language" = "لغة التطبيق";
+"Apple Intelligence is off. Other local review tools are still available." = "Apple Intelligence متوقف. لا يزال بإمكانك استخدام أدوات المراجعة الأخرى على الجهاز.";
+"Apple Intelligence on this device" = "Apple Intelligence على هذا الجهاز";
 "Apple Vision can inspect a chosen photo locally, while your description drives the ingredient review. MealMirror shows an estimate and its uncertainty; confirm every value with a trusted source and your clinician-approved care plan." = "يمكن Apple Vision فحص صورة مختارة محليا، بينما يقود وصفك مراجعة المكونات. MealMirror يظهر تقديرا وعدم اليقين فيه؛ تأكد من كل قيمة بمصدر موثوق وخطة رعاية معتمدة من الطبيب.";
 "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values." = "Apple Vision can suggest food words on-device. Possible matches start excluded; you choose what belongs, and local reference ranges—not the photo—supply the example carbohydrate values.";
 "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review." = "Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review.";
 "Apple Vision runs on the chosen photo. The local ingredient list uses what you named, so its starting point stays inspectable." = "Apple Vision يعمل على الصورة المختارة. قائمة المكونات المحلية تستخدم ما ذكرته، لذا يبقى نقطة البداية قابلة للفحص.";
+"Apple's local model is not ready. Other local review tools are still available." = "نموذج Apple على الجهاز غير جاهز. لا يزال بإمكانك استخدام أدوات المراجعة الأخرى على الجهاز.";
 "Apple’s Standard Licensed Application End User License Agreement and the laws identified in the final published terms apply to use of MealMirror." = "اتفاقية ترخيص المستخدم النهائي للتطبيقات المرخصة القياسية من آبل والقوانين المحددة في الشروط النهائية المنشورة تنطبق على استخدام MealMirror.";
 "Applicable terms" = "الشروط المطبقة";
 "Arabic" = "العربية";
@@ -140,6 +143,7 @@
 "Excluded" = "مستبعد";
 "Excluded from total" = "مستبعد من الإجمالي";
 "Filipino" = "الفيلبينية";
+"Food names only. Check each name against your photo; no carbohydrate amount comes from these clues." = "أسماء الأطعمة فقط. قارن كل اسم بصورتك للتأكد منه؛ لا تقدم هذه الدلائل أي كمية للكربوهيدرات.";
 "For example, 18" = "على سبيل المثال، 18";
 "For example, packaged drink" = "على سبيل المثال، مشروب معلب";
 "Français" = "فرنسي";
@@ -351,6 +355,11 @@
 "That photo could not be loaded. Choose it again, select a different image, or use the camera." = "لم يتم تحميل هذه الصورة. اخترها مرة أخرى، أو حدد صورة مختلفة، أو استخدم الكاميرا.";
 "The camera and on-device inspection never upload the photo." = "الكاميرا والفحص على الجهاز لا يرفعان الصورة أبدًا.";
 "The camera did not return a photo. Try again or choose a photo from your library." = "الكاميرا لم تعِد بصورة. حاول مرة أخرى أو اختر صورة من مكتبتك.";
+"The local image model could not check these photos. Other local review tools are still available." = "لم يتمكن نموذج تحليل الصور على الجهاز من فحص هذه الصور. لا يزال بإمكانك استخدام أدوات المراجعة الأخرى على الجهاز.";
+"The local image model does not support this language. Other local review tools are still available." = "نموذج تحليل الصور على الجهاز لا يدعم هذه اللغة. لا يزال بإمكانك استخدام أدوات المراجعة الأخرى على الجهاز.";
+"The local image model is not supported on this device. Other local review tools are still available." = "نموذج تحليل الصور غير مدعوم على هذا الجهاز. لا يزال بإمكانك استخدام أدوات المراجعة الأخرى على الجهاز.";
+"The local image model needs iOS 27 or later. Other local review tools are still available." = "يحتاج نموذج تحليل الصور على الجهاز إلى iOS 27 أو أحدث. لا يزال بإمكانك استخدام أدوات المراجعة الأخرى على الجهاز.";
+"The local image model took too long. Other local review tools are still available." = "استغرق نموذج تحليل الصور على الجهاز وقتًا طويلًا. لا يزال بإمكانك استخدام أدوات المراجعة الأخرى على الجهاز.";
 "The local review could not be saved. Nothing was uploaded. Try again while your device is unlocked." = "لم يتم حفظ المراجعة المحلية. لم يتم تحميل أي شيء. حاول مرة أخرى أثناء فتح جهازك.";
 "The local review file could not be deleted. Try again while your device is unlocked." = "لم يتمكن من حذف ملف المراجعة المحلي. حاول مرة أخرى أثناء فتح جهازك.";
 "The photo remains on this device, but visual inspection was unavailable. Your description still drives the review." = "تظل الصورة على هذا الجهاز، لكن الفحص البصري غير متاح. لا تزال وصفك يوجه المراجعة.";

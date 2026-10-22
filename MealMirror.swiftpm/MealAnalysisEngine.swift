@@ -19,16 +19,24 @@ struct MealAnalysisEngine {
         case .demo:
             return demoMeal.analysis(description: description, referenceItemPresent: referenceItemPresent)
         case .manual, .personalPhoto:
-            let visionStatus: VisionStatus = if source == .personalPhoto && !foodImages.isEmpty {
+            let photoAI: PhotoAIStatus = if source == .personalPhoto && !foodImages.isEmpty {
+                await LocalPhotoAI.inspect(foodImages, locale: language.locale)
+            } else {
+                .notRun
+            }
+            guard !Task.isCancelled else { return .empty() }
+            let visionStatus: VisionStatus = if source == .personalPhoto && !foodImages.isEmpty && !photoAI.usedLocalModel {
                 await VisionPhotoInspector.inspect(foodImages)
             } else {
                 .notRun
             }
+            guard !Task.isCancelled else { return .empty() }
             let labelTextStatus: LabelTextStatus = if source == .personalPhoto, let labelImage {
                 await VisionLabelInspector.inspect(labelImage)
             } else {
                 .notRun
             }
+            guard !Task.isCancelled else { return .empty() }
             let catalog = LocalizationCatalog.shared
             let describedComponents = MealIngredientCatalog.components(
                 matching: description,
@@ -85,7 +93,11 @@ struct MealAnalysisEngine {
             let components = describedComponents + visualMatches
             let hasVisualMatches = !photoClues.isEmpty
             let methodNote: String
-            if hasVisualMatches {
+            if !photoAI.names.isEmpty {
+                methodNote = "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues."
+            } else if photoAI.usedLocalModel {
+                methodNote = "No clear food clues found in this photo."
+            } else if hasVisualMatches {
                 methodNote = "On-device Vision suggested possible food names. Photo suggestions start excluded. Add only foods you recognize; the photo does not determine portions or carbohydrate values."
             } else if components.isEmpty {
                 if case .unavailable = visionStatus {
@@ -97,7 +109,7 @@ struct MealAnalysisEngine {
                 methodNote = "Add the foods you recognize to build an inspectable carbohydrate range."
             }
             return MealAnalysis(
-                title: hasVisualMatches ? "Possible foods to check" : (components.isEmpty ? "Add a little more detail" : "Your meal review"),
+                title: hasVisualMatches || !photoAI.names.isEmpty ? "Possible foods to check" : (components.isEmpty ? "Add a little more detail" : "Your meal review"),
                 description: description,
                 source: source,
                 components: components,
@@ -109,7 +121,8 @@ struct MealAnalysisEngine {
                     ? "A photo can miss hidden ingredients and cannot reliably establish a mixed dish, recipe, or serving size. Confirm each item and portion; check a trusted label or reference when available."
                     : components.isEmpty
                     ? "Add a carbohydrate amount from a package label or trusted source, go back and describe the meal in more detail, or choose an optional Practice meal."
-                    : "Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method."
+                    : "Confirm whether each item belongs in the total, then choose the closest portion. These local reference ranges are a starting point—not a substitute for a product label or your own trusted carb-counting method.",
+                photoAI: photoAI
             )
         }
     }
@@ -434,7 +447,7 @@ private final class VisionContinuationGate<Result: Sendable>: @unchecked Sendabl
     }
 }
 
-private extension UIImage.Orientation {
+extension UIImage.Orientation {
     var cgImagePropertyOrientation: CGImagePropertyOrientation {
         switch self {
         case .up: .up

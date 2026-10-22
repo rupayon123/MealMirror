@@ -55,6 +55,8 @@ struct MealAnalysis: Hashable {
     var labelTextStatus: LabelTextStatus
     var methodNote: String
     var uncertaintyNote: String
+    // Generated names are separate from amount-bearing components and history.
+    var photoAI: PhotoAIStatus = .notRun
 
     var includedComponents: [MealComponent] {
         components.filter(\.isIncluded)

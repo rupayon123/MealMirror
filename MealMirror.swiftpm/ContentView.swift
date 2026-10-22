@@ -1226,6 +1226,7 @@ private struct EstimateView: View {
 
     @State private var showIngredientEditor = false
     @State private var showManualEntry = false
+    @State private var proposedFoodName = ""
     @State private var hasConfirmedMealParts = false
     @State private var showReviewTrail = false
     @Environment(\.locale) private var locale
@@ -1255,6 +1256,8 @@ private struct EstimateView: View {
                         detailTreatment: analysis.isReadyForReview && hasSingleAmount ? .formattedLocalized : .localizedCatalog
                     )
                 }
+
+                if !analysis.photoAI.names.isEmpty { photoNameClues }
 
                 if horizontalSizeClass == .regular && analysis.source != .manual {
                     HStack(alignment: .top, spacing: 18) {
@@ -1324,14 +1327,50 @@ private struct EstimateView: View {
         .sheet(isPresented: $showIngredientEditor) {
             IngredientEditorSheet(analysis: $analysis)
         }
-        .sheet(isPresented: $showManualEntry) {
-            ManualCarbEntrySheet { component in
+        .sheet(isPresented: $showManualEntry, onDismiss: { proposedFoodName = "" }) {
+            ManualCarbEntrySheet(initialName: proposedFoodName) { component in
                 analysis.components.append(component)
             }
         }
         .onChange(of: analysis.components) { _, _ in
             hasConfirmedMealParts = false
         }
+    }
+
+    private var photoNameClues: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Label("Possible foods to check", systemImage: "camera.viewfinder")
+                .font(CarbInTheme.display(.headline, size: 17))
+                .foregroundStyle(CarbInTheme.ink)
+                .accessibilityAddTraits(.isHeader)
+            Text("Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.")
+                .font(CarbInTheme.reading(.subheadline, size: 15))
+                .foregroundStyle(CarbInTheme.mutedInk)
+                .fixedSize(horizontal: false, vertical: true)
+            ForEach(analysis.photoAI.names, id: \.self) { name in
+                Button {
+                    // Prefill only an editable name. A checked amount is still
+                    // required before anything can enter the carbohydrate total.
+                    proposedFoodName = name
+                    showManualEntry = true
+                } label: {
+                    HStack(spacing: 12) {
+                        Text(verbatim: name)
+                            .multilineTextAlignment(.leading)
+                            .fixedSize(horizontal: false, vertical: true)
+                        Spacer(minLength: 8)
+                        Image(systemName: "plus.circle").accessibilityHidden(true)
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(SecondaryActionStyle())
+                .accessibilityHint("Add a carbohydrate amount from packaging or another trusted source.")
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .mealTicket()
+        .accessibilityIdentifier("carbin.estimate.photoNameClues")
     }
 
     private var rangeWorkbench: some View {
@@ -1510,8 +1549,17 @@ private struct EstimateView: View {
                     descriptionProvided: !analysis.description.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
                     referenceItemPresent: analysis.referenceItemPresent,
                     visionStatus: analysis.visionStatus,
-                    source: analysis.source
+                    source: analysis.source,
+                    photoAI: analysis.photoAI
                 )
+                if case let .unavailable(reason) = analysis.photoAI {
+                    EvidenceRow(
+                        symbol: "camera.viewfinder",
+                        title: "Apple Intelligence on this device",
+                        detail: reason.detail,
+                        isActive: false
+                    )
+                }
                 Text(LocalizedStringKey(analysis.methodNote))
                     .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
@@ -1589,7 +1637,10 @@ private struct EstimateView: View {
     }
 
     private var localizedVisionDetail: String {
-        switch analysis.visionStatus {
+        if analysis.photoAI.usedLocalModel {
+            return localization.text("Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.")
+        }
+        return switch analysis.visionStatus {
         case .notRun:
             localization.text(analysis.source == .demo
                 ? "No photo inspection was needed for this Practice meal."
@@ -1908,10 +1959,10 @@ private struct ManualCarbEntrySheet: View {
     @State private var name: String
     @State private var grams: String
 
-    init(initialComponent: MealComponent? = nil, onSave: @escaping (MealComponent) -> Void) {
+    init(initialComponent: MealComponent? = nil, initialName: String = "", onSave: @escaping (MealComponent) -> Void) {
         self.initialComponent = initialComponent
         self.onSave = onSave
-        _name = State(initialValue: initialComponent?.name ?? "")
+        _name = State(initialValue: initialComponent?.name ?? initialName)
         _grams = State(initialValue: initialComponent.map { String($0.baselineCarbohydrates.low) } ?? "")
     }
 
@@ -2667,6 +2718,7 @@ private struct ConfidenceTrail: View {
     let referenceItemPresent: Bool
     let visionStatus: VisionStatus
     let source: MealInputSource
+    var photoAI: PhotoAIStatus = .notRun
     @EnvironmentObject private var localization: LocalizationStore
 
     var body: some View {
@@ -2703,7 +2755,13 @@ private struct ConfidenceTrail: View {
     }
 
     private var photoInspectionDetail: String {
-        switch visionStatus {
+        if photoAI.usedLocalModel {
+            return localization.text("Apple Intelligence on this device") + ". "
+                + localization.text(photoAI.names.isEmpty
+                    ? "No clear food clues found in this photo."
+                    : "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.")
+        }
+        return switch visionStatus {
         case .notRun:
             source == .demo ? "Not run for this Practice meal" : "No photo selected"
         case let .inspected(labels):
