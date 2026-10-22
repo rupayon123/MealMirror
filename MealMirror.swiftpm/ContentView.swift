@@ -449,48 +449,7 @@ private struct AddMealView: View {
 
     var body: some View {
         ScreenScroll(maxWidth: 1080) {
-            VStack(alignment: .leading, spacing: 24) {
-                StepRail(current: 1)
-                if !dynamicTypeSize.isAccessibilitySize {
-                    SectionHeading(
-                        eyebrow: showsPhotoInput ? "Photo" : "Description",
-                        title: "Start with your meal",
-                        detail: "Start with a photo or a few words. Add context when a picture leaves questions."
-                    )
-                }
-
-                if horizontalSizeClass == .regular && !dynamicTypeSize.isAccessibilitySize {
-                    HStack(alignment: .top, spacing: 18) {
-                        photoWorkbench
-                        descriptionWorkbench
-                    }
-                } else {
-                    inputTabs
-                    if showsPhotoInput {
-                        photoWorkbench
-                        if selectedPhoto != nil { descriptionWorkbench }
-                    } else {
-                        descriptionWorkbench
-                    }
-                }
-
-                referenceToggle
-                practiceShelf
-
-                if inputSource == .personalPhoto {
-                    Label("Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review.", systemImage: "cpu")
-                        .font(CarbInTheme.reading(.footnote, size: 13))
-                        .foregroundStyle(CarbInTheme.mutedInk)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-
-                if dynamicTypeSize.isAccessibilitySize {
-                    analyzeAction
-                } else {
-                    Color.clear.frame(height: 66)
-                }
-            }
-            .disabled(isAnalyzing)
+            entryContent
         }
         .safeAreaInset(edge: .bottom) {
             if dynamicTypeSize.isAccessibilitySize {
@@ -641,6 +600,59 @@ private struct AddMealView: View {
             case .none:
                 break
             }
+        }
+    }
+
+    private var entryContent: some View {
+        VStack(alignment: .leading, spacing: 24) {
+            StepRail(current: 1)
+            if !dynamicTypeSize.isAccessibilitySize {
+                SectionHeading(
+                    eyebrow: showsPhotoInput ? "Photo" : "Description",
+                    title: "Start with your meal",
+                    detail: "Start with a photo or a few words. Add context when a picture leaves questions."
+                )
+            }
+
+            inputWorkbench
+            referenceToggle
+            practiceShelf
+            photoInspectionNote
+
+            if dynamicTypeSize.isAccessibilitySize {
+                analyzeAction
+            } else {
+                Color.clear.frame(height: 66)
+            }
+        }
+        .disabled(isAnalyzing)
+    }
+
+    @ViewBuilder
+    private var inputWorkbench: some View {
+        if horizontalSizeClass == .regular && !dynamicTypeSize.isAccessibilitySize {
+            HStack(alignment: .top, spacing: 18) {
+                photoWorkbench
+                descriptionWorkbench
+            }
+        } else {
+            inputTabs
+            if showsPhotoInput {
+                photoWorkbench
+                if selectedPhoto != nil { descriptionWorkbench }
+            } else {
+                descriptionWorkbench
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var photoInspectionNote: some View {
+        if inputSource == .personalPhoto {
+            Label("Apple Vision offers possible food clues on this device. You choose what belongs; only confirmed items and local reference ranges shape the review.", systemImage: "cpu")
+                .font(CarbInTheme.reading(.footnote, size: 13))
+                .foregroundStyle(CarbInTheme.mutedInk)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 
