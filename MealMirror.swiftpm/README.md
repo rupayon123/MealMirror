@@ -24,7 +24,7 @@ Practice numbers teach the review controls. They do not analyze the example imag
 - The app does not tell someone what to eat. It shows the source and limits of a carbohydrate estimate for the person to review.
 - If the photo is unclear, the person can name foods or add a carbohydrate amount from a package or another trusted source. Photo labels never set portion sizes or carbohydrate values.
 - Local catalog values are illustrative and finite; MealMirror does not currently analyze arbitrary home-cooked, restaurant, mixed, or culturally specific meals from a photo alone.
-- Xcode 27.0 and the iOS 27 SDK are installed on the development Mac. Apple documents Foundation Models image attachments, but this candidate still uses Vision; the model path is not implemented or evaluated. The Xcode and Apple SDK license has not been accepted, so a rebuild with this toolchain is pending. Any model path must check device, region, and model readiness and preserve a useful offline manual fallback.
+- Xcode 27.1 (27A9275) and the iOS 27.1 SDKs are installed on the development Mac. Apple documents Foundation Models image attachments, but this candidate still uses Vision; the model path is not implemented or evaluated. A fresh simulator build on October 22 stopped because the Xcode and Apple SDK license has not been accepted. The applicant must review and accept it before the next build. Any model path must check device, region, and model readiness and preserve a useful offline manual fallback. [Apple Xcode 27.1 release](https://developer.apple.com/news/releases/?id=10152026a).
 
 ## Languages
 
