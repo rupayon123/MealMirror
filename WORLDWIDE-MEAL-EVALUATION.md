@@ -1,10 +1,18 @@
 # Worldwide meal photo evaluation
 
-MealMirror should work for the meal a person chooses, whether it is cooked at home, bought, packed for school, or served at a celebration. The current Vision classifier and small reference catalog have **not** been shown to recognize arbitrary meals. This document is the acceptance plan for expanding coverage without claiming that a picture reveals a recipe, portion, or carbohydrate amount.
+Refreshed October 24, 2026.
+
+MealMirror should work for the meal a person chooses, whether it is cooked at home, bought, packed for school, or served at a celebration. The optional Foundation Models image path, Vision fallback and small reference catalog have **not** been shown to recognize arbitrary meals. This document is the acceptance plan for expanding coverage without claiming that a picture reveals a recipe, portion, or carbohydrate amount.
 
 ## Current usable path
 
-A person may add up to three views of a meal and one nutrition-label photo. All selected images are processed on the device. Food labels from Vision are only possible clues and start outside the carbohydrate total. The label reader presents raw text beside the original image; the person checks the serving size and enters any carbohydrate amount themselves. A meal outside the local catalog can still be described and recorded with a trusted, manually entered amount. These paths support varied foods but do not prove recognition or nutritional accuracy.
+A person may add up to three views of a meal and one nutrition-label photo. All selected images are processed on the device. On supported iOS 27 devices, the optional Foundation Models path checks model readiness, vision/guided-generation capabilities and language before requesting tentative visible food names. Those names stay separate from carbohydrate items; tapping one only prefills an editable name and still requires a checked amount. A successful empty model result stays unknown. Unavailable/error/timeout paths retain local Vision/manual review. Food labels from Vision are only possible clues and start outside the carbohydrate total. The label reader presents raw text beside the original image; the person checks the serving size and enters any carbohydrate amount themselves. A meal outside the local catalog can still be described and recorded with a trusted, manually entered amount. These paths support varied foods but do not prove recognition or nutritional accuracy.
+
+## Current evidence is not held-out evaluation
+
+The reviewed fixed-text native Mac comparison and its original-prompt failures are recorded once in [Foundation Models evidence](research/foundation-models/README.md). The text is now applied, but previously exposed fixtures and exploratory selection prevent this comparison from serving as the independent acceptance set below. Pet empty lists do not establish broad semantic abstention. External fixture rendering also provides no recognition evidence.
+
+Record inspected-empty, policy rejection, unavailability, timeout, guardrail and other errors separately. An error fallback must not count as correct nonfood classification. No current smoke check establishes broad cultural coverage, nutrition, calibrated performance, iOS app behavior or physical offline readiness.
 
 ## Evaluation set to collect with permission
 
