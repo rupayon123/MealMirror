@@ -1,0 +1,1722 @@
+{
+  "schemaVersion": 1,
+  "recordDate": "2026-10-24",
+  "promptVariant": "main-visible-food-v1",
+  "scope": "External prompt-modified iOS27.1 Simulator tuning comparison on eight exposed photos, plus three separately frozen broad-scope probes. Not unchanged6457 source execution, qualified held-out acceptance, arbitrary/worldwide-food accuracy, clinical validation, competitor superiority, exact-app UI, physical-device, network-isolation, performance or submission-readiness evidence.",
+  "durableContent": "Nonpersonal metadata and observed outputs only. No images, models, helper source, compiled app or binary is included.",
+  "sourceAndArtifactIdentities": {
+    "baselineSourceZipSHA256": "6457bc795e7faef1fff14614a40267f165ee4dd0b0c7a23a98a3c8ef3cfdc675",
+    "baselineLocalPhotoAISHA256": "46b9723a3118bacbf6f97a344afdce919371ae2239010fba7bec608cec9bbbe3",
+    "proposalLocalPhotoAISHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "changedTextOnly": "Exactly three LocalPhotoAI fixed literals: names Guide, system instructions and request. Schema structure, options, gates, default guardrails, image preparation, policy and amount separation unchanged.",
+    "protectedSourceHashes": [
+      {
+        "path": "MealAnalysisEngine.swift",
+        "sha256": "d9bf3466072d65c3c878db0d32d40fceaff11a23ade2362ff4b0827b4002b721",
+        "byteIdentical": true
+      },
+      {
+        "path": "Models.swift",
+        "sha256": "00b5a4a331a7427dbac3aded9ee904f09c3b491d4a03e3cc6ee188b6489caff3",
+        "byteIdentical": true
+      },
+      {
+        "path": "MealCore/PhotoNamePolicy.swift",
+        "sha256": "e905f098a2e56eead569aee895dc3c75d323379e83ae77c704208cf49188a4c4",
+        "byteIdentical": true
+      },
+      {
+        "path": "CameraCapture.swift",
+        "sha256": "0c3693c12a525324082d81e84f434b6ba9e9487f963cb3d1aaa85d98a80fc434",
+        "byteIdentical": true
+      },
+      {
+        "path": "PhotoCluePolicy.swift",
+        "sha256": "644110f7872461dc27e2c458d594a5b0cd9a64935063522db26c2c9ca7b1a959",
+        "byteIdentical": true
+      },
+      {
+        "path": "Localization.swift",
+        "sha256": "18ee8f08a6b01baa0efd7bac9bf5f82bcff6fbd39e1aa1a503437655c6a08877",
+        "byteIdentical": true
+      }
+    ],
+    "proposalHelperSHA256": "df897ca45a780486e9577cabc3905e97f010faf4141578021a4ba5b9dedc66fb",
+    "comparisonProtocol": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/frozen-comparison-protocol.json",
+      "sha256": "75d09173a08612f1b37d72e3782df511b9f073be3aa296be6393a85c54146621",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "eightTuningCohort": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/cohort/frozen-cohort.json",
+      "sha256": "6418fdabc742acc4b882af9869f7a8d9eecb2f5a2efbd1c566b501a460c55819",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "originalEightCollection": {
+      "workspaceRelativePath": "outputs/offline-ai-20261024-new-photo-diagnostics/frozen-manifest.json",
+      "sha256": "13dc70c04fef68446e1c5d7880e1361748be2ea6ce0b1cd6e5b825fe0a627884",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "separateThreeScopeCollection": {
+      "workspaceRelativePath": "outputs/offline-ai-20261024-snack-scope-diagnostics/frozen-manifest.json",
+      "sha256": "e716e36216ee5c99deb5c1b8c585f1da754b50cf83e37d4dd7db1bd65922e215",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "scopeRuntimeFilenameMapping": {
+      "workspaceRelativePath": "outputs/offline-ai-20261024-snack-scope-diagnostics/runtime-fixture-mapping.json",
+      "sha256": "2c4bb075b07c5327a81a7c0cbd08ea6b0924e3a54784e527801a67da16024851",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "optionalScopeProtocol": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/optional-scope-probe-extension.json",
+      "sha256": "cd88ae82556226ac6bc2784719f04e2211c4155d43d5ce9692acf7aadd520586",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "originalEightOnlyPreBuildFreeze": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/pre-build-freeze.json",
+      "sha256": "1e956cdacab4b9b8ef94be1de486bcf92a68fa91e4e6fdb28a1e0d03fedac450",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "activePreBuildFreeze": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/pre-build-freeze-with-scope.json",
+      "sha256": "9de849de9f830d259cd68a65722470f94e00a7eb3448fa032ee9deb2cc8fb8d9",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "sourceFidelity": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/proposal-source-fidelity.json",
+      "sha256": "2c6e0555372bb673dac0fe2fabe4b7f62f78b789d0404331bb416d722530c7d3",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "parentPreExecutionReview": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/parent-pre-execution-review.json",
+      "sha256": "00621d0d58328696e6a5ac58ceca10d44d300549fbd1111d7e9c8f57177854a1",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "baselineApp": {
+      "bundleIdentifier": "com.mealmirror.qa.offlineintegration20261024c49",
+      "codeDylibSHA256": "c91b80b10b781ef810ed827b78f2cc8b9392fa41d6afcead4cb4838644d73734",
+      "executableSHA256": "aebdeb8034578a070306453b4f4db7b141cec484d82e495bbf56a502cf50a36c",
+      "appFileInventory": [
+        {
+          "path": "AppIcon60x60@2x.png",
+          "sha256": "043cff2e5ce4f8efee291d796c81ca062ea20590607a66076442f0ca22c2391f",
+          "bytes": 26417
+        },
+        {
+          "path": "AppIcon76x76@2x~ipad.png",
+          "sha256": "c8f37f276af8b0fcf5a504cbf71e46139092c32d9a41d9b2a5183377e638f520",
+          "bytes": 40431
+        },
+        {
+          "path": "Assets.car",
+          "sha256": "d164001b35f335a45a2e0b5d84f7a6de595544e77bea61bbd0e2d94efa3ddc94",
+          "bytes": 2932792
+        },
+        {
+          "path": "Info.plist",
+          "sha256": "69e55a7533f664d536d5656ae81cef6b18ba5cfc32c2672190501ba3acfeef30",
+          "bytes": 1958
+        },
+        {
+          "path": "MealMirror",
+          "sha256": "aebdeb8034578a070306453b4f4db7b141cec484d82e495bbf56a502cf50a36c",
+          "bytes": 40216
+        },
+        {
+          "path": "MealMirror.debug.dylib",
+          "sha256": "c91b80b10b781ef810ed827b78f2cc8b9392fa41d6afcead4cb4838644d73734",
+          "bytes": 8282152
+        },
+        {
+          "path": "Nunito.ttf",
+          "sha256": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207",
+          "bytes": 276932
+        },
+        {
+          "path": "PixelifySans.ttf",
+          "sha256": "9ba86cd010a4de309d263ceff8e8044092c9db7efda869620cb9ff1c4389e8a5",
+          "bytes": 79160
+        },
+        {
+          "path": "PkgInfo",
+          "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+          "bytes": 8
+        },
+        {
+          "path": "PrivacyInfo.xcprivacy",
+          "sha256": "5c20dbcb4ab17c390d6c89c0d6c7f7a274f377c2304159f01bb2ebb88a2cd069",
+          "bytes": 694
+        },
+        {
+          "path": "__preview.dylib",
+          "sha256": "bbe1164a28d7602312a3614894ae1952b0373e5f4ae5b69abb5bd8701e3caf44",
+          "bytes": 16760
+        },
+        {
+          "path": "app_strings.json",
+          "sha256": "5eab59cfef5b5d0a8b52a01afb3e529bf3446c959830af1c7f7236d92d23d906",
+          "bytes": 45274
+        },
+        {
+          "path": "biryani-demo.png",
+          "sha256": "e922bb400ee9fb0d93b3ca065bb2aa8bf3e7f12459a6c763c6f61ab991fd6c69",
+          "bytes": 3067066
+        },
+        {
+          "path": "breakfast-demo.png",
+          "sha256": "e3d2bc9f9e53d30f7364dc97ad25c5d79520877b5756d5495e8fe2a656ecc353",
+          "bytes": 2918385
+        },
+        {
+          "path": "en.lproj/InfoPlist.strings",
+          "sha256": "270a50bf404d66cee909bcae219e29d6eda36cd98c8156f12ad6879262bb1ee4",
+          "bytes": 217
+        },
+        {
+          "path": "en.lproj/Localizable.strings",
+          "sha256": "47228ae7732879b6eb95d1b1334afff92fbaf8a6a1421d82db0a116146aef6ff",
+          "bytes": 43796
+        },
+        {
+          "path": "grain-bowl-demo.png",
+          "sha256": "c0646bb5f28542891de42e5cb1ac3bdf698a7481028dd35444c58b090805c3eb",
+          "bytes": 2884599
+        }
+      ],
+      "appFileInventorySHA256": "d64f8cc4fd1559f84a06b4874317ed2bd82c2d69c4b599b950f48a070a7058e8",
+      "appFileInventoryHashMethod": "SHA256 of UTF-8 compact JSON encoding of this ordered appFileInventory, sort_keys=true, separators comma/colon; app bundles are directories, so code/executable/file identities are explicit.",
+      "buildEvidence": {
+        "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/build-evidence.json",
+        "sha256": "be9bff12a245a72e66dd539333a70e659fbf215862dd319f7d8c930ac63b911d",
+        "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+      },
+      "frozenIdentity": {
+        "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/frozen-v2-identity.json",
+        "sha256": "c68fb2be451c6e5d1dc2a2a7167b8dcce5f237fe2eef6569d01ea026c85c506f",
+        "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+      }
+    },
+    "proposalApp": {
+      "bundleIdentifier": "com.mealmirror.qa.mainvisible20261024v1",
+      "codeDylibSHA256": "13504306752219dd2184fcdc9134d7dc476f3806d69043dfb9aa324dda54ef58",
+      "executableSHA256": "20bbb4674798e1674754bc259c204192d1fbcb772cb7d6285b2d55f7b5ebca1f",
+      "appFileInventory": [
+        {
+          "path": "AppIcon60x60@2x.png",
+          "bytes": 26417,
+          "sha256": "043cff2e5ce4f8efee291d796c81ca062ea20590607a66076442f0ca22c2391f"
+        },
+        {
+          "path": "AppIcon76x76@2x~ipad.png",
+          "bytes": 40431,
+          "sha256": "c8f37f276af8b0fcf5a504cbf71e46139092c32d9a41d9b2a5183377e638f520"
+        },
+        {
+          "path": "Assets.car",
+          "bytes": 2932792,
+          "sha256": "d164001b35f335a45a2e0b5d84f7a6de595544e77bea61bbd0e2d94efa3ddc94"
+        },
+        {
+          "path": "Info.plist",
+          "bytes": 1952,
+          "sha256": "ba83273ed94f2ac948c614543dd2de907c48c2656fc438a4f7d2eff00ada82dd"
+        },
+        {
+          "path": "MealMirror",
+          "bytes": 40216,
+          "sha256": "20bbb4674798e1674754bc259c204192d1fbcb772cb7d6285b2d55f7b5ebca1f"
+        },
+        {
+          "path": "MealMirror.debug.dylib",
+          "bytes": 8216808,
+          "sha256": "13504306752219dd2184fcdc9134d7dc476f3806d69043dfb9aa324dda54ef58"
+        },
+        {
+          "path": "Nunito.ttf",
+          "bytes": 276932,
+          "sha256": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207"
+        },
+        {
+          "path": "PixelifySans.ttf",
+          "bytes": 79160,
+          "sha256": "9ba86cd010a4de309d263ceff8e8044092c9db7efda869620cb9ff1c4389e8a5"
+        },
+        {
+          "path": "PkgInfo",
+          "bytes": 8,
+          "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+        },
+        {
+          "path": "PrivacyInfo.xcprivacy",
+          "bytes": 694,
+          "sha256": "5c20dbcb4ab17c390d6c89c0d6c7f7a274f377c2304159f01bb2ebb88a2cd069"
+        },
+        {
+          "path": "__preview.dylib",
+          "bytes": 16760,
+          "sha256": "bbe1164a28d7602312a3614894ae1952b0373e5f4ae5b69abb5bd8701e3caf44"
+        },
+        {
+          "path": "app_strings.json",
+          "bytes": 45274,
+          "sha256": "5eab59cfef5b5d0a8b52a01afb3e529bf3446c959830af1c7f7236d92d23d906"
+        },
+        {
+          "path": "biryani-demo.png",
+          "bytes": 3067066,
+          "sha256": "e922bb400ee9fb0d93b3ca065bb2aa8bf3e7f12459a6c763c6f61ab991fd6c69"
+        },
+        {
+          "path": "breakfast-demo.png",
+          "bytes": 2918385,
+          "sha256": "e3d2bc9f9e53d30f7364dc97ad25c5d79520877b5756d5495e8fe2a656ecc353"
+        },
+        {
+          "path": "en.lproj/InfoPlist.strings",
+          "bytes": 217,
+          "sha256": "270a50bf404d66cee909bcae219e29d6eda36cd98c8156f12ad6879262bb1ee4"
+        },
+        {
+          "path": "en.lproj/Localizable.strings",
+          "bytes": 43796,
+          "sha256": "47228ae7732879b6eb95d1b1334afff92fbaf8a6a1421d82db0a116146aef6ff"
+        },
+        {
+          "path": "grain-bowl-demo.png",
+          "bytes": 2884599,
+          "sha256": "c0646bb5f28542891de42e5cb1ac3bdf698a7481028dd35444c58b090805c3eb"
+        }
+      ],
+      "appFileInventorySHA256": "38d5f9ca034a525a96c9b62176349649ee31bef80dd614b56be8449d52d5c535",
+      "appFileInventoryHashMethod": "SHA256 of UTF-8 compact JSON encoding of this ordered appFileInventory, sort_keys=true, separators comma/colon; app bundles are directories, so code/executable/file identities are explicit.",
+      "buildEvidence": {
+        "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/build-evidence.json",
+        "sha256": "d59f2b7f3cb001e4c0f70f08b22a3f9699220eaf3df3e0ec91719e09da0afede",
+        "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+      },
+      "frozenIdentity": {
+        "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/frozen-built-identity.json",
+        "sha256": "06269bffa832b6d51f8ce2699ee127c4db46b73aac9acf4a83be21002a17f3fe",
+        "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+      }
+    },
+    "baselineExecutionIndex": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/photo-diagnostic-execution.json",
+      "sha256": "e696597026b62ba85cb5f77ebfd5118512b8e61b412779fcbdd882c8452b0d33",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "proposalExecutionIndex": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/proposal-execution.json",
+      "sha256": "bcdce191dc0f060fbf8eee5039a677ea3779348998601495e22a9787f0771d7b",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "reviewProvenance": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/comparison-review-provenance.json",
+      "sha256": "161cadc8caf25509225b891fbecbbf99dd481792de78084607febe5a087a9c4d",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "originalComparisonReview": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/COMPARISON-REVIEW.md",
+      "sha256": "a03e076a4951a67927da080430608a3a4822aaff5fd0cc3fdc9ea1ecbf00acf5",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    }
+  },
+  "fixedPromptAndCriteria": {
+    "instructionsRecord": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/PROPOSED-INSTRUCTIONS.md",
+      "sha256": "111d48e82716daeef456b4740f59f665e7e08477dc258eb727c6c4f4dbee9fb4",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "textOnlyDiff": {
+      "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/prompt-only.diff",
+      "sha256": "fe65e53f490a26d6875774d9bebcd93f41c574b283aada31f9d0e79da555edcd",
+      "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+    },
+    "samePromptForAllEleven": true,
+    "noExpectedNamesOrMetadataInPrompt": true,
+    "input": "English fixed prompt plus prepared CGImage attachments; empty description and no OCR label/manual amount. File titles, basenames, expected labels, source/license metadata and baseline outputs are not model input.",
+    "generationAndGuards": {
+      "schemaFields": [
+        "visibleFood: Bool",
+        "names: [String]"
+      ],
+      "maximumNames": 6,
+      "temperature": 0,
+      "maximumResponseTokens": 180,
+      "model": "SystemLanguageModel.default",
+      "guardrails": "Apple default, unchanged",
+      "allGates": "Availability, vision/guidedGeneration, locale, image-count, preparation, cancellation,15s caller deadline unchanged",
+      "namePolicy": "Byte-identical PhotoNamePolicy",
+      "amountSeparation": "Byte-identical engine and model-name to amount separation; no generated amounts or dose output."
+    },
+    "criteria": [
+      {
+        "id": "mainVisibleFoodUsefulness",
+        "review": "Record whether each food image retains one or more broad visually compatible main food/dish clues; accept varied wording and cultures, do not require exact labels from source titles. Empty/overbroad outputs record lost usefulness rather than forced success."
+      },
+      {
+        "id": "unsupportedDecomposition",
+        "review": "Review every emitted clue against pixels; flag unsupported ingredient, filling, seasoning, garnish, broth or sauce specificity and ambiguous identities. Do not infer actual ingredient absence. Compare qualitative concern to baseline without a keyword blacklist."
+      },
+      {
+        "id": "synonymousDuplication",
+        "review": "Record repeated synonyms for the same visible food conservatively; keep regional/language variations valid and do not alter PhotoNamePolicy."
+      },
+      {
+        "id": "nonfoodControls",
+        "review": "Both controls should complete inspected-empty; unavailable/errors/timeouts remain distinct and never count as correct abstention. Any food names require review."
+      },
+      {
+        "id": "amountSeparation",
+        "review": "For successful model use require amount components0, included0, totalnil and readyfalse; record fields from actual engine. Errors remain errors."
+      },
+      {
+        "id": "overallInterpretation",
+        "review": "Per-case qualitative baseline/variant observations only, all cases retained. No accuracy percentage, statistical or causal certainty, qualified acceptance or submission-ready claim."
+      }
+    ]
+  },
+  "execution": {
+    "platform": "iOS27.1 Simulator, isolated QA bundles; UIKit/ImageIO preparation and actual MealAnalysisEngine code",
+    "sourceAdaptation": "External SwiftUI lifecycle/bundle/report/allowlist only; proposed three text literal changes explicit. No UIKit-to-Mac substitution.",
+    "orderedTunedCases": [
+      "food-01-noodle-soup",
+      "food-02-flatbread-stews",
+      "food-03-filled-tortillas",
+      "food-04-pasta",
+      "food-05-rice-beans",
+      "food-06-sandwich",
+      "control-01-mug",
+      "control-02-shoes"
+    ],
+    "orderedSeparateScopeCases": [
+      "scope-01-whole-fruit",
+      "scope-02-dessert",
+      "scope-03-filled-beverage"
+    ],
+    "baselineRequests": 8,
+    "proposalRequests": 11,
+    "withinRunRetries": 0,
+    "attemptPolicy": "Exactly one serial baseline request for each original8, then one fixed-proposal request per8exposed photos plus3separate scope images. Reusing8images is intentional tuning, not a hidden retry or independent acceptance. No output-dependent omissions, per-photo prompt changes or retry-until-pass.",
+    "baselineReportPhases": "All8 completed",
+    "proposalReportPhases": "All11 completed",
+    "observedModelAvailability": "available in all19raw reports",
+    "unavailableOrErrorOutcomeCount": 0,
+    "timing": "No calibrated latency or observed strict-deadline claim; prior host clock anomalies remain relevant.",
+    "storage": "No review-history API used; reports/isolated fixture copies are deliberate external research output."
+  },
+  "eightExposedTuningCases": [
+    {
+      "case": "food-01-noodle-soup",
+      "group": "eight-image-tuning-comparison",
+      "imageSHA256": "977210f74c4c08bedcad860c9d2e676b1e100229e33b5c9730759a827e0e6fe4",
+      "bytes": 55063,
+      "width": 500,
+      "height": 375,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Pho, popular Vietnamese noodle soup.jpg",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Pho,_popular_Vietnamese_noodle_soup.jpg",
+      "sourceRevisionID": 1142266661,
+      "sourceRevisionTimestamp": "2026-01-05T10:41:28Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Pho,_popular_Vietnamese_noodle_soup.jpg&oldid=1142266661",
+      "author": "Tayzar44",
+      "license": "CC BY 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/4.0",
+      "creditLine": "Pho, popular Vietnamese noodle soup.jpg by Tayzar44, via Wikimedia Commons, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Retain title/author/source/license credit and identify resizing; no endorsement implied.",
+      "rightsRecordAtCollectionFreeze": "Current Commons API imageinfo metadata and source revision contain an explicit own-work self-license grant; no restrictive metadata flag. See local source records. No inference of rights from page footer.",
+      "modificationNote": "Provider-generated thumbnail only, no local crop, recolor, compositing, metadata edit or other image transformation. API tracking query removed from download URL; image bytes retained unchanged.",
+      "preFrozenVisualExpectations": {
+        "food_visible": true,
+        "broad_compatible_categories": [
+          "soup",
+          "noodles or noodle soup (tentative)"
+        ],
+        "optional_categories_not_required": [
+          "green garnish",
+          "lime wedges"
+        ],
+        "nonfood_expected_food_name_list": null,
+        "uncertainty": "Broth partly obscures the contents. Exact protein, noodle type, recipe and hidden ingredients are not established.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "portion size",
+          "food weight",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "exposure": "These images were previously inspected and run once with the baseline prompt; their observed outputs motivated this proposal. This is exposed prompt tuning, not held-out acceptance.",
+      "baseline": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/results/matrix-document-photo-food-01-noodle-soup.jpg.json",
+          "sha256": "83166376090c000a2a78081d658c49ef2bfb7a2939fb6c97582c21522286b017",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "soup",
+            "meat",
+            "green onions",
+            "scallions",
+            "noodles",
+            "garlic"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      },
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-food-01-noodle-soup.jpg.json",
+          "sha256": "1c2ed24f9b827c45d4ba758889d1159354188043b8bfac50ea94206adf0446a8",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "soup"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    },
+    {
+      "case": "food-02-flatbread-stews",
+      "group": "eight-image-tuning-comparison",
+      "imageSHA256": "c9526fd634b9adf0d6e85002103e862ea9f4e5980a7d949da506b12bf85ab2ec",
+      "bytes": 63934,
+      "width": 500,
+      "height": 375,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Injera 02.jpg",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Injera_02.jpg",
+      "sourceRevisionID": 1200704810,
+      "sourceRevisionTimestamp": "2026-04-20T13:51:13Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Injera_02.jpg&oldid=1200704810",
+      "author": "Ngminnie",
+      "license": "CC0",
+      "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "creditLine": "Injera 02.jpg by Ngminnie, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Public domain dedication; courtesy credit retained.",
+      "rightsRecordAtCollectionFreeze": "Current Commons API imageinfo metadata and source revision contain an explicit own-work self-license grant; no restrictive metadata flag. See local source records. No inference of rights from page footer.",
+      "modificationNote": "Provider-generated thumbnail only, no local crop, recolor, compositing, metadata edit or other image transformation. API tracking query removed from download URL; image bytes retained unchanged.",
+      "preFrozenVisualExpectations": {
+        "food_visible": true,
+        "broad_compatible_categories": [
+          "flatbread",
+          "stew"
+        ],
+        "optional_categories_not_required": [
+          "drink in a glass (contents unknown)"
+        ],
+        "nonfood_expected_food_name_list": null,
+        "uncertainty": "Stew ingredients and drink contents cannot be established visually; no lentil, chickpea, meat or beverage-specific requirement.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "portion size",
+          "food weight",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "exposure": "These images were previously inspected and run once with the baseline prompt; their observed outputs motivated this proposal. This is exposed prompt tuning, not held-out acceptance.",
+      "baseline": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/results/matrix-document-photo-food-02-flatbread-stews.jpg.json",
+          "sha256": "8b772928577bb8c21ed2957170fbe59ce5da16faa552ff49398635bcf72bb895",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "bread",
+            "sauce"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      },
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-food-02-flatbread-stews.jpg.json",
+          "sha256": "189e65c5c9d5d564481b4d002dfa594f90d2a8f93aacfa2b9a54cc6a93c5e81e",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "flatbread",
+            "sauce"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    },
+    {
+      "case": "food-03-filled-tortillas",
+      "group": "eight-image-tuning-comparison",
+      "imageSHA256": "b741de2853407d8b0cb4287e8646075dda7af57ef9debe98a329f1627a41a19f",
+      "bytes": 66491,
+      "width": 500,
+      "height": 375,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Tacos in a soft tortilla 5.jpg",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Tacos_in_a_soft_tortilla_5.jpg",
+      "sourceRevisionID": 1192821828,
+      "sourceRevisionTimestamp": "2026-04-06T21:26:58Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Tacos_in_a_soft_tortilla_5.jpg&oldid=1192821828",
+      "author": "Kurt Kaiser",
+      "license": "CC0",
+      "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "creditLine": "Tacos in a soft tortilla 5.jpg by Kurt Kaiser, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Public domain dedication; courtesy credit retained.",
+      "rightsRecordAtCollectionFreeze": "Current Commons API imageinfo metadata and source revision contain an explicit own-work self-license grant; no restrictive metadata flag. See local source records. No inference of rights from page footer.",
+      "modificationNote": "Provider-generated thumbnail only, no local crop, recolor, compositing, metadata edit or other image transformation. API tracking query removed from download URL; image bytes retained unchanged.",
+      "preFrozenVisualExpectations": {
+        "food_visible": true,
+        "broad_compatible_categories": [
+          "tacos",
+          "filled tortillas"
+        ],
+        "optional_categories_not_required": [
+          "green garnish"
+        ],
+        "nonfood_expected_food_name_list": null,
+        "uncertainty": "Do not infer exact proteins, sauces, preparation, or invisible fillings from the file title or appearance.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "portion size",
+          "food weight",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "exposure": "These images were previously inspected and run once with the baseline prompt; their observed outputs motivated this proposal. This is exposed prompt tuning, not held-out acceptance.",
+      "baseline": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/results/matrix-document-photo-food-03-filled-tortillas.jpg.json",
+          "sha256": "9c854940289dbd4a6a610e96bd66e505cdd07e1980bc50fddd4dfaa512310424",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "taco",
+            "meat",
+            "onion",
+            "garlic",
+            "cilantro",
+            "red pepper"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      },
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-food-03-filled-tortillas.jpg.json",
+          "sha256": "b9e3c709ab3b638547d0e4667328f047ba8956ba2266a85dc93ef39451b45542",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "tacos"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    },
+    {
+      "case": "food-04-pasta",
+      "group": "eight-image-tuning-comparison",
+      "imageSHA256": "a706b308086dc2538efb444a81b543f9b2a2a370ada4e4eb80d0239670c6b15d",
+      "bytes": 88257,
+      "width": 500,
+      "height": 375,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Italian-Spaghetti-2.jpg",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Italian-Spaghetti-2.jpg",
+      "sourceRevisionID": 1176684534,
+      "sourceRevisionTimestamp": "2026-03-06T11:37:30Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Italian-Spaghetti-2.jpg&oldid=1176684534",
+      "author": "Evelyn-rose",
+      "license": "CC0",
+      "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "creditLine": "Italian-Spaghetti-2.jpg by Evelyn-rose, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Public domain dedication; courtesy credit retained.",
+      "rightsRecordAtCollectionFreeze": "Current Commons API imageinfo metadata and source revision contain an explicit own-work self-license grant; no restrictive metadata flag. See local source records. No inference of rights from page footer.",
+      "modificationNote": "Provider-generated thumbnail only, no local crop, recolor, compositing, metadata edit or other image transformation. API tracking query removed from download URL; image bytes retained unchanged.",
+      "preFrozenVisualExpectations": {
+        "food_visible": true,
+        "broad_compatible_categories": [
+          "pasta",
+          "spaghetti"
+        ],
+        "optional_categories_not_required": [
+          "visible sliced vegetables"
+        ],
+        "nonfood_expected_food_name_list": null,
+        "uncertainty": "Exact sauce, recipe, protein and the yellow base are not independently established from this photo.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "portion size",
+          "food weight",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "exposure": "These images were previously inspected and run once with the baseline prompt; their observed outputs motivated this proposal. This is exposed prompt tuning, not held-out acceptance.",
+      "baseline": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/results/matrix-document-photo-food-04-pasta.jpg.json",
+          "sha256": "5d437673a6192ae7b6ac2d94d3a19ad48994a3abcb4b9490ed6e0f5d1c38fe77",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "noodles",
+            "pepper",
+            "onion",
+            "meat"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      },
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-food-04-pasta.jpg.json",
+          "sha256": "573acc11e4fa46496180c2f74b5111ced6aa3a4ba940cc1fb779eefca4615ead",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "noodles",
+            "meat",
+            "vegetables",
+            "sauce"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    },
+    {
+      "case": "food-05-rice-beans",
+      "group": "eight-image-tuning-comparison",
+      "imageSHA256": "e48b17e5857a2ac9064ba37088264565b69b58e1c6859ae4b59b56fba3044977",
+      "bytes": 50790,
+      "width": 500,
+      "height": 375,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Rice and Beans stew.jpg",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Rice_and_Beans_stew.jpg",
+      "sourceRevisionID": 1018707670,
+      "sourceRevisionTimestamp": "2025-04-07T22:49:42Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Rice_and_Beans_stew.jpg&oldid=1018707670",
+      "author": "SAgbley",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creditLine": "Rice and Beans stew.jpg by SAgbley, via Wikimedia Commons, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Retain title/author/source/license credit and identify resizing; no endorsement implied. Distribute adaptations under the same or compatible share-alike license if redistributed.",
+      "rightsRecordAtCollectionFreeze": "Current Commons API imageinfo metadata and source revision contain an explicit own-work self-license grant; no restrictive metadata flag. See local source records. No inference of rights from page footer.",
+      "modificationNote": "Provider-generated thumbnail only, no local crop, recolor, compositing, metadata edit or other image transformation. API tracking query removed from download URL; image bytes retained unchanged.",
+      "preFrozenVisualExpectations": {
+        "food_visible": true,
+        "broad_compatible_categories": [
+          "rice",
+          "beans or bean stew"
+        ],
+        "optional_categories_not_required": [
+          "fried plantain-like slices (tentative)"
+        ],
+        "nonfood_expected_food_name_list": null,
+        "uncertainty": "No required exact protein, bean variety, cooking fat, portion or ingredient list. Plantain interpretation is optional rather than required.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "portion size",
+          "food weight",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "exposure": "These images were previously inspected and run once with the baseline prompt; their observed outputs motivated this proposal. This is exposed prompt tuning, not held-out acceptance.",
+      "baseline": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/results/matrix-document-photo-food-05-rice-beans.jpg.json",
+          "sha256": "ee3a24b9724abc222a5aadaf571dfe8bd24338faa1eeba6278859834cf30433a",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "rice",
+            "beans",
+            "plantains"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      },
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-food-05-rice-beans.jpg.json",
+          "sha256": "f53db7be1afe656dfd258b5fad537ca40935988abbec0f3dca1fe48807444d9c",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "rice",
+            "beans",
+            "plantains"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    },
+    {
+      "case": "food-06-sandwich",
+      "group": "eight-image-tuning-comparison",
+      "imageSHA256": "f5afd3582a94ad9d017342a0b30d9013c1bd4cabce07a68c5f0b27185b2ddb78",
+      "bytes": 48494,
+      "width": 500,
+      "height": 339,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Club-sandwich2.jpg",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Club-sandwich2.jpg",
+      "sourceRevisionID": 862468479,
+      "sourceRevisionTimestamp": "2024-03-22T03:35:02Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Club-sandwich2.jpg&oldid=862468479",
+      "author": "Anton Porsche",
+      "license": "CC0",
+      "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "creditLine": "Club-sandwich2.jpg by Anton Porsche, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Public domain dedication; courtesy credit retained.",
+      "rightsRecordAtCollectionFreeze": "Current Commons API imageinfo metadata and source revision contain an explicit own-work self-license grant; no restrictive metadata flag. See local source records. No inference of rights from page footer.",
+      "modificationNote": "Provider-generated thumbnail only, no local crop, recolor, compositing, metadata edit or other image transformation. API tracking query removed from download URL; image bytes retained unchanged.",
+      "preFrozenVisualExpectations": {
+        "food_visible": true,
+        "broad_compatible_categories": [
+          "sandwich",
+          "bread"
+        ],
+        "optional_categories_not_required": [],
+        "nonfood_expected_food_name_list": null,
+        "uncertainty": "Exact fillings, spreads and protein types are not required and cannot be assumed from the name club sandwich.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "portion size",
+          "food weight",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "exposure": "These images were previously inspected and run once with the baseline prompt; their observed outputs motivated this proposal. This is exposed prompt tuning, not held-out acceptance.",
+      "baseline": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/results/matrix-document-photo-food-06-sandwich.jpg.json",
+          "sha256": "dfcd1f491ee1338d7f9e4a2d4d7d96a03f59b1903ed12ce466f5f340bd89ebd0",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "bread",
+            "cheese",
+            "tomato",
+            "egg",
+            "bacon"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 339,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      },
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-food-06-sandwich.jpg.json",
+          "sha256": "7ba065d1ba38f7ad0b31313321d7b7777759e024f1291c135960d5421b57aa2d",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "sandwich"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 339,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    },
+    {
+      "case": "control-01-mug",
+      "group": "eight-image-tuning-comparison",
+      "imageSHA256": "693e5d8de7c98f688f85d3318cad9d2b860e9c6bd36df9756db03596475a04ec",
+      "bytes": 30283,
+      "width": 500,
+      "height": 375,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Ceramic mug.jpg",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Ceramic_mug.jpg",
+      "sourceRevisionID": 1276179092,
+      "sourceRevisionTimestamp": "2026-09-13T23:54:03Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Ceramic_mug.jpg&oldid=1276179092",
+      "author": "NNU-11-Zaclee",
+      "license": "CC BY-SA 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0",
+      "creditLine": "Ceramic mug.jpg by NNU-11-Zaclee, via Wikimedia Commons, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Retain title/author/source/license credit and identify resizing; no endorsement implied. Distribute adaptations under the same or compatible share-alike license if redistributed.",
+      "rightsRecordAtCollectionFreeze": "Current Commons API imageinfo metadata and source revision contain an explicit own-work self-license grant; no restrictive metadata flag. See local source records. No inference of rights from page footer.",
+      "modificationNote": "Provider-generated thumbnail only, no local crop, recolor, compositing, metadata edit or other image transformation. API tracking query removed from download URL; image bytes retained unchanged.",
+      "preFrozenVisualExpectations": {
+        "food_visible": false,
+        "broad_compatible_categories": [],
+        "optional_categories_not_required": [],
+        "nonfood_expected_food_name_list": [],
+        "uncertainty": "Mugs are not food. Do not infer coffee, tea or another drink from containers or printed branding.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "portion size",
+          "food weight",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "exposure": "These images were previously inspected and run once with the baseline prompt; their observed outputs motivated this proposal. This is exposed prompt tuning, not held-out acceptance.",
+      "baseline": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/results/matrix-document-photo-control-01-mug.jpg.json",
+          "sha256": "94b014b4b277e7ec00983b1167a37bbbec1e0ac7950f8e8ba04cdbb1ca848029",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "No clear food clues found in this photo.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedEmpty",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      },
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-control-01-mug.jpg.json",
+          "sha256": "e825741862da4c77c10794f7eb078424f6d322d59d5ae76b0f600176f54d5db4",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "No clear food clues found in this photo.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedEmpty",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    },
+    {
+      "case": "control-02-shoes",
+      "group": "eight-image-tuning-comparison",
+      "imageSHA256": "8c3f5ffb8d7a9b00c12723ad2e4db37960d4cd26ab17e849fc06bd3c93c54239",
+      "bytes": 44962,
+      "width": 500,
+      "height": 240,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Nike Running Shoes Not Dissected Reference.jpg",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Nike_Running_Shoes_Not_Dissected_Reference.jpg",
+      "sourceRevisionID": 1226853619,
+      "sourceRevisionTimestamp": "2026-06-06T17:01:12Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Nike_Running_Shoes_Not_Dissected_Reference.jpg&oldid=1226853619",
+      "author": "Yottanesia",
+      "license": "CC0",
+      "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "creditLine": "Nike Running Shoes Not Dissected Reference.jpg by Yottanesia, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Public domain dedication; courtesy credit retained.",
+      "rightsRecordAtCollectionFreeze": "Current Commons API imageinfo metadata and source revision contain an explicit own-work self-license grant; no restrictive metadata flag. See local source records. No inference of rights from page footer.",
+      "modificationNote": "Provider-generated thumbnail only, no local crop, recolor, compositing, metadata edit or other image transformation. API tracking query removed from download URL; image bytes retained unchanged.",
+      "preFrozenVisualExpectations": {
+        "food_visible": false,
+        "broad_compatible_categories": [],
+        "optional_categories_not_required": [],
+        "nonfood_expected_food_name_list": [],
+        "uncertainty": "Shoe branding and the fabric pattern are not evidence of food.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "portion size",
+          "food weight",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "exposure": "These images were previously inspected and run once with the baseline prompt; their observed outputs motivated this proposal. This is exposed prompt tuning, not held-out acceptance.",
+      "baseline": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/baseline/results/matrix-document-photo-control-02-shoes.jpg.json",
+          "sha256": "7473f1fa36fc7914aad33fd7a81ab5f92a7e6f2eb06c303a050c5b6d4181e824",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "No clear food clues found in this photo.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedEmpty",
+          "photoCount": 1,
+          "preparedHeight": 240,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      },
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-control-02-shoes.jpg.json",
+          "sha256": "2b46113992a91e8327ae637a6389b9ca061051efc84e9587e14ff66127aa3c8b",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "No clear food clues found in this photo.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedEmpty",
+          "photoCount": 1,
+          "preparedHeight": 240,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    }
+  ],
+  "threeSeparateScopeCases": [
+    {
+      "case": "scope-01-whole-fruit",
+      "group": "optional-broad-scope-regression",
+      "imageSHA256": "e01a2b18a3ff2e17ea224eed59804d973be6f0d0a046759f76626a5357df6384",
+      "bytes": 42331,
+      "width": 500,
+      "height": 667,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Apple on red background.jpg",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Apple_on_red_background.jpg",
+      "sourceRevisionID": 1146557452,
+      "sourceRevisionTimestamp": "2026-01-12T12:11:20Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3AApple+on+red+background.jpg&oldid=1146557452",
+      "author": "FTKelle",
+      "license": "CC0",
+      "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "creditLine": "Apple on red background.jpg by FTKelle, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Public domain dedication; courtesy attribution retained.",
+      "rightsRecordAtCollectionFreeze": "Current official Commons API imageinfo metadata and revision wikitext contain an explicit own-work self-license grant; page footer is not the basis for rights.",
+      "modificationNote": "Provider thumbnail only; downloaded bytes unchanged. No local crop, recolor or compositing. Tracking query removed from download URL only.",
+      "preFrozenVisualExpectations": {
+        "edible_food_or_visible_drink": true,
+        "nonempty_broad_clue_expected_for_scope_check": true,
+        "broad_compatible_categories": [
+          "fruit",
+          "apple"
+        ],
+        "optional_categories_not_required": [],
+        "uncertainty": "The photo supports broad apple/fruit, not cultivar, ripeness, weight, edible portion, sugar content or health judgments.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "weight or portion",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety",
+          "food moral judgment"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "runtimeBasename": "scope-01-fruit.jpg",
+      "exposure": "Separately selected/frozen after the fixed prompt, outside the tuned eight; no baseline call on these three. Small purposive scope checks, not qualified held-out acceptance; unknown pretraining exposure.",
+      "baseline": null,
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-scope-01-fruit.jpg.json",
+          "sha256": "763e3524579a4367888d7382ad87ceb485498b04d015a320923568e9425433b3",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "apple"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 667,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    },
+    {
+      "case": "scope-02-dessert",
+      "group": "optional-broad-scope-regression",
+      "imageSHA256": "359024873a24aa062682c354f345660389f86ecc74fbaa7c1ec08bf7d2edbdd7",
+      "bytes": 35582,
+      "width": 500,
+      "height": 373,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Chocolate cake on white plate.jpg",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Chocolate_cake_on_white_plate.jpg",
+      "sourceRevisionID": 1123818831,
+      "sourceRevisionTimestamp": "2025-12-01T07:56:50Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3AChocolate+cake+on+white+plate.jpg&oldid=1123818831",
+      "author": "Peulle",
+      "license": "CC0",
+      "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "creditLine": "Chocolate cake on white plate.jpg by Peulle, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Public domain dedication; courtesy attribution retained.",
+      "rightsRecordAtCollectionFreeze": "Current official Commons API imageinfo metadata and revision wikitext contain an explicit own-work self-license grant; page footer is not the basis for rights.",
+      "modificationNote": "Provider thumbnail only; downloaded bytes unchanged. No local crop, recolor or compositing. Tracking query removed from download URL only.",
+      "preFrozenVisualExpectations": {
+        "edible_food_or_visible_drink": true,
+        "nonempty_broad_clue_expected_for_scope_check": true,
+        "broad_compatible_categories": [
+          "cake",
+          "dessert"
+        ],
+        "optional_categories_not_required": [
+          "dark frosting/topping (appearance only)"
+        ],
+        "uncertainty": "Flavor, frosting ingredients, nuts, dairy, allergens and hidden fillings are not established by appearance. The source title is not ingredient ground truth.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "weight or portion",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety",
+          "food moral judgment"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "runtimeBasename": "scope-02-dessert.jpg",
+      "exposure": "Separately selected/frozen after the fixed prompt, outside the tuned eight; no baseline call on these three. Small purposive scope checks, not qualified held-out acceptance; unknown pretraining exposure.",
+      "baseline": null,
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-scope-02-dessert.jpg.json",
+          "sha256": "ef7a3ee734ee18e3ba3f32d9e76d5049ddb5ae0763fc7e8149f16af599de7abb",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "cake"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 373,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    },
+    {
+      "case": "scope-03-filled-beverage",
+      "group": "optional-broad-scope-regression",
+      "imageSHA256": "8aec915f2af18aa6f48507a3ec948c240e1c6f35bb001833b57241f525d4e613",
+      "bytes": 34490,
+      "width": 500,
+      "height": 514,
+      "sourceProvider": "Wikimedia Commons",
+      "sourceTitle": "File:Vollmilch im Glas.JPG",
+      "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Vollmilch_im_Glas.JPG",
+      "sourceRevisionID": 1272187098,
+      "sourceRevisionTimestamp": "2026-09-04T15:13:58Z",
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3AVollmilch+im+Glas.JPG&oldid=1272187098",
+      "author": "Miriam Guterland",
+      "license": "CC BY-SA 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+      "creditLine": "Vollmilch im Glas.JPG by Miriam Guterland, via Wikimedia Commons, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0); provider-generated 500 px thumbnail, no local image edits.",
+      "licenseConditions": "Credit author/title/source/license and identify resizing; no endorsement. Share adaptations under the same or compatible share-alike license if redistributed.",
+      "rightsRecordAtCollectionFreeze": "Current official Commons API imageinfo metadata and revision wikitext contain an explicit own-work self-license grant; page footer is not the basis for rights.",
+      "modificationNote": "Provider thumbnail only; downloaded bytes unchanged. No local crop, recolor or compositing. Tracking query removed from download URL only.",
+      "preFrozenVisualExpectations": {
+        "edible_food_or_visible_drink": true,
+        "nonempty_broad_clue_expected_for_scope_check": true,
+        "broad_compatible_categories": [
+          "drink",
+          "beverage",
+          "milk-like drink (tentative appearance category)"
+        ],
+        "optional_categories_not_required": [],
+        "uncertainty": "White liquid appearance cannot establish animal versus plant source, dairy, whole versus low-fat, sweetening, composition, volume or nutrition. Milk is compatible as a tentative appearance clue, not verified contents.",
+        "forbidden_inferences": [
+          "hidden ingredients",
+          "weight or portion",
+          "carbohydrate amount",
+          "insulin dose",
+          "allergen safety",
+          "food moral judgment"
+        ]
+      },
+      "rightsLimit": "Attribution/rights metadata is the frozen collection record, not a fresh independent legal opinion; no image bytes are redistributed in this evidence summary.",
+      "runtimeBasename": "scope-03-beverage.jpg",
+      "exposure": "Separately selected/frozen after the fixed prompt, outside the tuned eight; no baseline call on these three. Small purposive scope checks, not qualified held-out acceptance; unknown pretraining exposure.",
+      "baseline": null,
+      "proposal": {
+        "attemptCount": 1,
+        "retries": 0,
+        "driverExitCode": 0,
+        "phase": "completed",
+        "modelPreflight": {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "model": "SystemLanguageModel.default",
+          "vision": true
+        },
+        "systemVersion": "27.1",
+        "fixtureHashMatchesFrozenImage": true,
+        "rawReport": {
+          "workspaceRelativePath": "outputs/offline-ai-ios-main-visible-proposal-20261024/results/main-visible-tuning-scope-03-beverage.jpg.json",
+          "sha256": "21a201f76c1a4811b11b24e26bbbd571b8e8bbaeb1314a691b4d6ce39b8a1db7",
+          "availability": "Local research artifact outside repository; identifier is relative to the original workspace root."
+        },
+        "observation": {
+          "acceptedNames": [
+            "milk"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 514,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      }
+    }
+  ],
+  "qualitativeReview": {
+    "durableReview": "main-visible-food-20261024-review.md",
+    "durableReviewSHA256": "08802948d2e64d60996a8bc6f463a4a6cdd34765ddd99c49900955ec318b8740",
+    "originalReviewSHA256": "a03e076a4951a67927da080430608a3a4822aaff5fd0cc3fdc9ea1ecbf00acf5",
+    "reviewMethod": "Collection preparer individually re-opened11actual thumbnails and read11proposal plus8baseline raw reports against frozen expectations; separate parent review, not blinded expert annotation. This durable copy performs no new inference or image review.",
+    "observedRefinement": "Soup/taco/sandwich outputs are broad dish names in these calls; earlier unsupported garlic/cheese and green-onion/scallion duplication are absent from these observed outputs. This does not establish persistence or wording-only causality.",
+    "remainingAmbiguities": [
+      "Pasta still returns noodles/meat/vegetables/sauce despite the no-decomposition instruction; the issue is not fully fixed.",
+      "Flatbread/sauce remains generic relative to stew; no exact dish/cultural identification established.",
+      "Plantains is compatible with a pre-frozen optional appearance interpretation, not verified species or preparation.",
+      "Milk is an unconfirmed appearance clue for opaque white liquid, not verified dairy/plant source, fat/sugar/ingredients or volume. The no-content-guessing instruction is not a semantic guarantee.",
+      "Empty controls cover two object scenes only; raw visibleFood Boolean and rejected raw names are not exposed.",
+      "Single nonrandomized baseline/proposal calls on exposed photos cannot establish causal reliability or broad generalization.",
+      "Scope probes have no baseline calls and are small purposive examples; no baseline-improvement/regression rate follows."
+    ]
+  },
+  "nameAmountBoundary": {
+    "observation": "Every one of the19baseline/proposal reports records amountComponentCount0,includedComponentCount0,automaticCarbohydrateTotalAbsenttrue,readyForReviewfalse; both invariants true.",
+    "limit": "Evidence of the tested name/amount separation only. No serving, recipe, carbohydrate ground truth, insulin dose, treatment recommendation or clinical safety/efficacy claim."
+  },
+  "remainingGates": [
+    "Qualified independently annotated varied meal/nonfood acceptance collection, including ambiguous images and model/device variability.",
+    "Complete exact-app picker/camera/clue correction/checked-amount/fallback/cancellation interactions.",
+    "Physical-device model-ready airplane-mode run and offline network isolation.",
+    "Accessibility/system text-size and language UI interactions.",
+    "Representative performance with stable clocks.",
+    "Current applicable Challenge rules, applicant-owned eligibility/disclosure/individual contribution/essays and final submission review."
+  ],
+  "localArtifactReferencePolicy": "workspaceRelativePath identifiers refer to original external outputs under the workspace root, not public repository files. No private absolute paths, device-container UUID paths, images, helper code or binaries are retained in this durable summary."
+}

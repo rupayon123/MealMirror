@@ -2,13 +2,13 @@
 
 MealMirror is a short, offline SwiftUI experience for reviewing meal carbohydrates. Its aim is to make the first step approachable for a newly diagnosed child or adult while preserving the joy and choice of everyday food. The Pixel Kitchen theme uses the user's selected MM pot emblem, Pixelify Sans for short Latin-script headings, Nunito for Latin-script reading text, native fonts for other scripts, and kitchen dialogue panels.
 
-The product direction begins with a photo, then asks the person to confirm anything a photo cannot establish. Build 3 adds Apple's local Foundation Models image path on supported iOS 27 devices. It checks availability, image and structured-output capability, and language before requesting tentative visible food names from up to three views of one meal. These names stay separate from all carbohydrate values. Tapping one opens an editable name with a blank checked-amount field; it does not add an ingredient or amount by itself. Unsupported models, timeouts and errors retain local Vision/manual review, with no cloud fallback. Real model inference remains unverified: the current Mac reports `modelNotReady`.
+The product direction begins with a photo, then asks the person to confirm anything a photo cannot establish. Build 3 adds Apple's local Foundation Models image path on supported iOS 27 devices. It checks availability, image and structured-output capability, and language before requesting tentative main visible food or dish names from up to three views of one meal. These names stay separate from all carbohydrate values. Tapping one opens an editable name with a blank checked-amount field; it does not add an ingredient or amount by itself. Unsupported models, timeouts and errors retain local Vision/manual review, with no cloud fallback. Separate iOS 27.1 Simulator checks completed synthetic and real-photo requests without creating carbohydrate amounts. A fixed whole-food/dish prompt was reviewed on eight development photos and three separate snack/dessert/drink scope examples; it reduced some unsupported recipe guesses in that small comparison. Names remain unconfirmed, including uncertain drink contents and mixed-dish components. This is limited processing and tuning evidence; the complete app journey, independent real-meal accuracy and physical offline use remain unverified.
 
 Photo-only entry also works without the new model. The iOS 26.5 Simulator's general Vision classifier returned the same unrelated scene labels for three distinct meal photos. MealMirror marks that known result as unavailable and shows no reliable range. A separate macOS Vision run recognized the biryani image; physical iPhone/iPad behavior remains unverified.
 
 ## Open and run
 
-Open this `MealMirror.swiftpm` package in Xcode 26 or later, choose an iPhone or iPad simulator, and run. The included images, catalog, instructions, and sample ranges are local. The meal-review flow has no account or network dependency.
+Open this `MealMirror.swiftpm` package in Xcode 27.1 or later, choose an iPhone or iPad simulator, and run. Xcode 27.1 is the verified toolchain for the image-input API; the app's deployment floor remains iOS 17, with the new model path gated to iOS 27. The included images, catalog, instructions, and sample ranges are local. The meal-review flow has no account or network dependency. Swift Playgrounds compilation has not been verified.
 
 ## Three-minute walkthrough
 
@@ -30,7 +30,7 @@ Practice numbers teach the review controls. They do not analyze the example imag
 
 ## Languages
 
-The everyday app has English, French, Simplified Chinese, Cantonese (Traditional), Punjabi, Urdu, Tamil, Filipino, Spanish, Arabic, Persian, Hindi, Portuguese, Gujarati, Bengali, Japanese, Korean, and Hungarian choices. Some new strings fall back to English in non-English catalogs and still need reviewed translation. The Challenge archive is made English-only to match Apple's last published terms.
+The everyday app has English, French, Simplified Chinese, Cantonese (Traditional), Punjabi, Urdu, Tamil, Filipino, Spanish, Arabic, Persian, Hindi, Portuguese, Gujarati, Bengali, Japanese, Korean, and Hungarian choices. Its catalogs include the new photo-model status text, but older English fallbacks and unreviewed translations remain. The Challenge archive is made English-only to match Apple's last published terms.
 
 ## Challenge status
 
@@ -44,4 +44,4 @@ Create an English-only candidate archive from the repository root with:
 
 The applicant still owns eligibility, current enrollment proof, a complete AI/asset disclosure, personal review and understanding of the work, their own essay answers, and final submission.
 
-See [`../PLAN.md`](../PLAN.md) for current evidence and remaining work, and [`AI-AND-ASSET-DISCLOSURE.md`](AI-AND-ASSET-DISCLOSURE.md) for the working provenance record.
+The bundled [`AI-AND-ASSET-DISCLOSURE.md`](AI-AND-ASSET-DISCLOSURE.md) is the working provenance record. The source repository maintains the detailed readiness checklist and remaining work separately from this standalone playground.

@@ -1,0 +1,907 @@
+{
+  "scope": "External source-derived iOS27.1 Simulator diagnostics, not the exact-app interaction journey, physical-device, calibrated latency, offline-isolation, worldwide/clinical accuracy or competitor comparison.",
+  "sourceZipSHA256": "6457bc795e7faef1fff14614a40267f165ee4dd0b0c7a23a98a3c8ef3cfdc675",
+  "processingSource": "Unchanged LocalPhotoAI/MealAnalysisEngine/Models/MealCore, original ContentView prefix unchanged; QA entry/helpers/bundle only differ.",
+  "frozenProtocolSHA256": "e3b2d155794641b31d16ccedbb23a8f1d409ce553866c49038c73e6d1f23f20c",
+  "externalHelperSHA256": "41d30a46ebc6b09362d317d1c786345336f7410bd2a490b78b4113dd91c3c74e",
+  "fixedCases": [
+    {
+      "case": "input-bounds",
+      "rawReportSHA256": "36889d81d57d51d41dbb3a0f5b8c13dffc191f24cf8f2653c507b3a3955e278f",
+      "observations": [
+        {
+          "entryBoundObserved": true,
+          "id": "zeroImagesDirectInspector",
+          "outcome": "unavailable",
+          "reason": "failed",
+          "state": "unavailable"
+        },
+        {
+          "entryBoundObserved": true,
+          "id": "fourImagesDirectInspector",
+          "inputCount": 4,
+          "limit": "Direct public inspector entry only; not wholesale engine rejection.",
+          "outcome": "unavailable",
+          "reason": "failed",
+          "state": "unavailable"
+        }
+      ]
+    },
+    {
+      "case": "image-preparation",
+      "rawReportSHA256": "fc4601559a3de8d07f9b1f114240ed1f4b1aed04bf8e8e98006d58733177d164",
+      "observations": [
+        {
+          "bytes": 55373,
+          "fileSHA256": "ac22ff9e5f07033974b7de878262af6b0bef9e3c01617021b0c16aca90801830",
+          "height": 1280,
+          "id": "orientationFixturePNG",
+          "outcome": "generatedPNGExported",
+          "relativePath": "Documents/GeneratedFixtures/orientation-quadrants.png",
+          "scope": "Procedural visual shapes only; no lettering, image instructions, personal image or inference in this export operation.",
+          "width": 1920
+        },
+        {
+          "bytes": 31611,
+          "fileSHA256": "345f51ff0ca24330ab4353f2a15b1880465a67465f6daa9701f92db331b362a2",
+          "height": 640,
+          "id": "nonfoodFixturePNGWithoutInference",
+          "outcome": "generatedPNGExported",
+          "relativePath": "Documents/GeneratedFixtures/nonfood-pattern.png",
+          "scope": "Procedural visual shapes only; no lettering, image instructions, personal image or inference in this export operation.",
+          "width": 960
+        },
+        {
+          "actualCornerSamples": [
+            [
+              235,
+              103,
+              32,
+              255
+            ],
+            [
+              31,
+              211,
+              235,
+              255
+            ],
+            [
+              32,
+              50,
+              237,
+              255
+            ],
+            [
+              66,
+              188,
+              8,
+              255
+            ]
+          ],
+          "actualValidCornerCount": 4,
+          "cornerTolerance": 12,
+          "displayAspectDifference": 0,
+          "effectiveOrientationPreserved": true,
+          "expectedCornerSamples": [
+            [
+              235,
+              103,
+              32,
+              255
+            ],
+            [
+              31,
+              211,
+              235,
+              255
+            ],
+            [
+              32,
+              50,
+              237,
+              255
+            ],
+            [
+              66,
+              188,
+              8,
+              255
+            ]
+          ],
+          "id": "up-scale1",
+          "inputOrientation": "up",
+          "inputScale": 1,
+          "limit": "UIKit orientation-aware drawn-reference corner/aspect check with four valid reference/actual corners and distinct reference colors; metadata equality is not required. No model or arbitrary-camera color-fidelity claim.",
+          "maxCornerComponentDifference": 0,
+          "normalizedCornerSamplesCompared": true,
+          "outcome": "prepared",
+          "outputOrientationRawValue": 0,
+          "outputPixels": {
+            "height": 512,
+            "width": 768
+          },
+          "outputScale": 1,
+          "pixelBoundSatisfied": true,
+          "preparationInvariantPassed": true,
+          "referenceDistinctnessSatisfied": true,
+          "referenceDistinctnessThreshold": 64,
+          "referenceMinimumPairwiseMaxComponentDifference": 161,
+          "referenceValidCornerCount": 4
+        },
+        {
+          "actualCornerSamples": [
+            [
+              235,
+              103,
+              32,
+              255
+            ],
+            [
+              31,
+              211,
+              235,
+              255
+            ],
+            [
+              32,
+              50,
+              237,
+              255
+            ],
+            [
+              66,
+              188,
+              8,
+              255
+            ]
+          ],
+          "actualValidCornerCount": 4,
+          "cornerTolerance": 12,
+          "displayAspectDifference": 0,
+          "effectiveOrientationPreserved": true,
+          "expectedCornerSamples": [
+            [
+              235,
+              103,
+              32,
+              255
+            ],
+            [
+              31,
+              211,
+              235,
+              255
+            ],
+            [
+              32,
+              50,
+              237,
+              255
+            ],
+            [
+              66,
+              188,
+              8,
+              255
+            ]
+          ],
+          "id": "up-scale2",
+          "inputOrientation": "up",
+          "inputScale": 2,
+          "limit": "UIKit orientation-aware drawn-reference corner/aspect check with four valid reference/actual corners and distinct reference colors; metadata equality is not required. No model or arbitrary-camera color-fidelity claim.",
+          "maxCornerComponentDifference": 0,
+          "normalizedCornerSamplesCompared": true,
+          "outcome": "prepared",
+          "outputOrientationRawValue": 0,
+          "outputPixels": {
+            "height": 512,
+            "width": 768
+          },
+          "outputScale": 2,
+          "pixelBoundSatisfied": true,
+          "preparationInvariantPassed": true,
+          "referenceDistinctnessSatisfied": true,
+          "referenceDistinctnessThreshold": 64,
+          "referenceMinimumPairwiseMaxComponentDifference": 161,
+          "referenceValidCornerCount": 4
+        },
+        {
+          "actualCornerSamples": [
+            [
+              235,
+              103,
+              32,
+              255
+            ],
+            [
+              32,
+              50,
+              237,
+              255
+            ],
+            [
+              31,
+              211,
+              235,
+              255
+            ],
+            [
+              66,
+              188,
+              8,
+              255
+            ]
+          ],
+          "actualValidCornerCount": 4,
+          "cornerTolerance": 12,
+          "displayAspectDifference": 0,
+          "effectiveOrientationPreserved": true,
+          "expectedCornerSamples": [
+            [
+              235,
+              103,
+              32,
+              255
+            ],
+            [
+              32,
+              50,
+              237,
+              255
+            ],
+            [
+              31,
+              211,
+              235,
+              255
+            ],
+            [
+              66,
+              188,
+              8,
+              255
+            ]
+          ],
+          "id": "leftMirrored-scale1",
+          "inputOrientation": "leftMirrored",
+          "inputScale": 1,
+          "limit": "UIKit orientation-aware drawn-reference corner/aspect check with four valid reference/actual corners and distinct reference colors; metadata equality is not required. No model or arbitrary-camera color-fidelity claim.",
+          "maxCornerComponentDifference": 0,
+          "normalizedCornerSamplesCompared": true,
+          "outcome": "prepared",
+          "outputOrientationRawValue": 6,
+          "outputPixels": {
+            "height": 512,
+            "width": 768
+          },
+          "outputScale": 1,
+          "pixelBoundSatisfied": true,
+          "preparationInvariantPassed": true,
+          "referenceDistinctnessSatisfied": true,
+          "referenceDistinctnessThreshold": 64,
+          "referenceMinimumPairwiseMaxComponentDifference": 161,
+          "referenceValidCornerCount": 4
+        },
+        {
+          "actualCornerSamples": [
+            [
+              235,
+              103,
+              32,
+              255
+            ],
+            [
+              32,
+              50,
+              237,
+              255
+            ],
+            [
+              31,
+              211,
+              235,
+              255
+            ],
+            [
+              66,
+              188,
+              8,
+              255
+            ]
+          ],
+          "actualValidCornerCount": 4,
+          "cornerTolerance": 12,
+          "displayAspectDifference": 0,
+          "effectiveOrientationPreserved": true,
+          "expectedCornerSamples": [
+            [
+              235,
+              103,
+              32,
+              255
+            ],
+            [
+              32,
+              50,
+              237,
+              255
+            ],
+            [
+              31,
+              211,
+              235,
+              255
+            ],
+            [
+              66,
+              188,
+              8,
+              255
+            ]
+          ],
+          "id": "leftMirrored-scale2",
+          "inputOrientation": "leftMirrored",
+          "inputScale": 2,
+          "limit": "UIKit orientation-aware drawn-reference corner/aspect check with four valid reference/actual corners and distinct reference colors; metadata equality is not required. No model or arbitrary-camera color-fidelity claim.",
+          "maxCornerComponentDifference": 0,
+          "normalizedCornerSamplesCompared": true,
+          "outcome": "prepared",
+          "outputOrientationRawValue": 6,
+          "outputPixels": {
+            "height": 512,
+            "width": 768
+          },
+          "outputScale": 2,
+          "pixelBoundSatisfied": true,
+          "preparationInvariantPassed": true,
+          "referenceDistinctnessSatisfied": true,
+          "referenceDistinctnessThreshold": 64,
+          "referenceMinimumPairwiseMaxComponentDifference": 161,
+          "referenceValidCornerCount": 4
+        }
+      ]
+    },
+    {
+      "case": "same-meal",
+      "rawReportSHA256": "13814b29a57808a718ccf89c3c65da80be885b3fb9cbb24f12389f64ed266a1b",
+      "observations": [
+        {
+          "acceptedNames": [
+            "rice",
+            "chicken",
+            "salad",
+            "sauce"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "sameMealThreeAttachments",
+          "includedComponentCount": 0,
+          "inputCount": 3,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 3,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      ]
+    },
+    {
+      "case": "nonfood-pattern",
+      "rawReportSHA256": "52f8749ba9f04c633d87c4afc4d67e7474e06a116eb451f88e722a84db40f7e5",
+      "observations": [
+        {
+          "bytes": 31611,
+          "fileSHA256": "345f51ff0ca24330ab4353f2a15b1880465a67465f6daa9701f92db331b362a2",
+          "height": 640,
+          "id": "nonfoodFixturePNG",
+          "outcome": "reusedByteIdenticalGeneratedPNG",
+          "relativePath": "Documents/GeneratedFixtures/nonfood-pattern.png",
+          "scope": "Procedural visual shapes only; no lettering, image instructions, personal image or inference in this export operation.",
+          "width": 960
+        },
+        {
+          "acceptedNames": [],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "nonfoodShapePattern",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "No clear food clues found in this photo.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "nonfoodDisposition": "emptyAcceptedList",
+          "outcome": "inspectedEmpty",
+          "photoCount": 1,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        }
+      ]
+    },
+    {
+      "case": "cancel-recovery",
+      "rawReportSHA256": "8e664cb46a945c8dc3896cc4ad8a11c884c58900e02938bfb9758db084c5316b",
+      "observations": [
+        {
+          "completedBeforeCancellation": false,
+          "entryObservedBeforeCancellation": true,
+          "id": "cancelAfterExternalEntry",
+          "limit": "Entry witness is immediately before public inspect call; not proof internal generation started or OS compute stopped.",
+          "outcome": "unavailable",
+          "raceOutcome": "cancelRequestedAfterExternalEntry",
+          "reason": "cancelled",
+          "state": "unavailable"
+        },
+        {
+          "acceptedNames": [
+            "rice",
+            "chicken",
+            "salad",
+            "sauce"
+          ],
+          "attemptCount": 1,
+          "id": "singleAwaitedRecoveryRequest",
+          "limit": "Exactly one fresh request after awaiting cancellation outcome; unavailable/failed recovery is retained with no retry.",
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "previousInspectionReturnedBeforeRecovery": true,
+          "state": "inspected"
+        }
+      ]
+    }
+  ],
+  "photoCollection": {
+    "frozenManifestSHA256": "13dc70c04fef68446e1c5d7880e1361748be2ea6ce0b1cd6e5b825fe0a627884",
+    "selection": "Six varied prepared meals plus empty mugs/shoes, individually reviewed before inference. No exact match to prior local fixture set; not proof of pretraining independence.",
+    "attemptPolicy": "One request per image; no retries, prompt changes or result-based selection within this cohort.",
+    "imagesRedistributed": false,
+    "caseCount": 8,
+    "cases": [
+      {
+        "case": "food-01-noodle-soup",
+        "imageSHA256": "977210f74c4c08bedcad860c9d2e676b1e100229e33b5c9730759a827e0e6fe4",
+        "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Pho,_popular_Vietnamese_noodle_soup.jpg",
+        "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Pho,_popular_Vietnamese_noodle_soup.jpg&oldid=1142266661",
+        "author": "Tayzar44",
+        "license": "CC BY 4.0",
+        "licenseURL": "https://creativecommons.org/licenses/by/4.0",
+        "credit": "Pho, popular Vietnamese noodle soup.jpg by Tayzar44, via Wikimedia Commons, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0); provider-generated 500 px thumbnail, no local image edits.",
+        "preFrozenVisualExpectations": {
+          "food_visible": true,
+          "broad_compatible_categories": [
+            "soup",
+            "noodles or noodle soup (tentative)"
+          ],
+          "optional_categories_not_required": [
+            "green garnish",
+            "lime wedges"
+          ],
+          "nonfood_expected_food_name_list": null,
+          "uncertainty": "Broth partly obscures the contents. Exact protein, noodle type, recipe and hidden ingredients are not established.",
+          "forbidden_inferences": [
+            "hidden ingredients",
+            "portion size",
+            "food weight",
+            "carbohydrate amount",
+            "insulin dose",
+            "allergen safety"
+          ]
+        },
+        "rawReportSHA256": "83166376090c000a2a78081d658c49ef2bfb7a2939fb6c97582c21522286b017",
+        "actualObservation": {
+          "acceptedNames": [
+            "soup",
+            "meat",
+            "green onions",
+            "scallions",
+            "noodles",
+            "garlic"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        },
+        "manualReview": "Soup/meat and broad garnish clues are visually compatible. Garlic is not visually established; noodles are partly obscured. Green onions/scallions duplicates one category."
+      },
+      {
+        "case": "food-02-flatbread-stews",
+        "imageSHA256": "c9526fd634b9adf0d6e85002103e862ea9f4e5980a7d949da506b12bf85ab2ec",
+        "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Injera_02.jpg",
+        "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Injera_02.jpg&oldid=1200704810",
+        "author": "Ngminnie",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "credit": "Injera 02.jpg by Ngminnie, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+        "preFrozenVisualExpectations": {
+          "food_visible": true,
+          "broad_compatible_categories": [
+            "flatbread",
+            "stew"
+          ],
+          "optional_categories_not_required": [
+            "drink in a glass (contents unknown)"
+          ],
+          "nonfood_expected_food_name_list": null,
+          "uncertainty": "Stew ingredients and drink contents cannot be established visually; no lentil, chickpea, meat or beverage-specific requirement.",
+          "forbidden_inferences": [
+            "hidden ingredients",
+            "portion size",
+            "food weight",
+            "carbohydrate amount",
+            "insulin dose",
+            "allergen safety"
+          ]
+        },
+        "rawReportSHA256": "8b772928577bb8c21ed2957170fbe59ce5da16faa552ff49398635bcf72bb895",
+        "actualObservation": {
+          "acceptedNames": [
+            "bread",
+            "sauce"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        },
+        "manualReview": "Bread/sauce is broadly compatible but generic; the exact stew recipe is not established."
+      },
+      {
+        "case": "food-03-filled-tortillas",
+        "imageSHA256": "b741de2853407d8b0cb4287e8646075dda7af57ef9debe98a329f1627a41a19f",
+        "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Tacos_in_a_soft_tortilla_5.jpg",
+        "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Tacos_in_a_soft_tortilla_5.jpg&oldid=1192821828",
+        "author": "Kurt Kaiser",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "credit": "Tacos in a soft tortilla 5.jpg by Kurt Kaiser, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+        "preFrozenVisualExpectations": {
+          "food_visible": true,
+          "broad_compatible_categories": [
+            "tacos",
+            "filled tortillas"
+          ],
+          "optional_categories_not_required": [
+            "green garnish"
+          ],
+          "nonfood_expected_food_name_list": null,
+          "uncertainty": "Do not infer exact proteins, sauces, preparation, or invisible fillings from the file title or appearance.",
+          "forbidden_inferences": [
+            "hidden ingredients",
+            "portion size",
+            "food weight",
+            "carbohydrate amount",
+            "insulin dose",
+            "allergen safety"
+          ]
+        },
+        "rawReportSHA256": "9c854940289dbd4a6a610e96bd66e505cdd07e1980bc50fddd4dfaa512310424",
+        "actualObservation": {
+          "acceptedNames": [
+            "taco",
+            "meat",
+            "onion",
+            "garlic",
+            "cilantro",
+            "red pepper"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        },
+        "manualReview": "Taco and broad visible fillings are compatible; garlic is not established. Red pepper is ambiguous; pink/orange slices do not establish pepper."
+      },
+      {
+        "case": "food-04-pasta",
+        "imageSHA256": "a706b308086dc2538efb444a81b543f9b2a2a370ada4e4eb80d0239670c6b15d",
+        "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Italian-Spaghetti-2.jpg",
+        "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Italian-Spaghetti-2.jpg&oldid=1176684534",
+        "author": "Evelyn-rose",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "credit": "Italian-Spaghetti-2.jpg by Evelyn-rose, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+        "preFrozenVisualExpectations": {
+          "food_visible": true,
+          "broad_compatible_categories": [
+            "pasta",
+            "spaghetti"
+          ],
+          "optional_categories_not_required": [
+            "visible sliced vegetables"
+          ],
+          "nonfood_expected_food_name_list": null,
+          "uncertainty": "Exact sauce, recipe, protein and the yellow base are not independently established from this photo.",
+          "forbidden_inferences": [
+            "hidden ingredients",
+            "portion size",
+            "food weight",
+            "carbohydrate amount",
+            "insulin dose",
+            "allergen safety"
+          ]
+        },
+        "rawReportSHA256": "5d437673a6192ae7b6ac2d94d3a19ad48994a3abcb4b9490ed6e0f5d1c38fe77",
+        "actualObservation": {
+          "acceptedNames": [
+            "noodles",
+            "pepper",
+            "onion",
+            "meat"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        },
+        "manualReview": "Broad noodles/pepper/onion/meat clues are compatible; exact sauce/protein recipe is not established."
+      },
+      {
+        "case": "food-05-rice-beans",
+        "imageSHA256": "e48b17e5857a2ac9064ba37088264565b69b58e1c6859ae4b59b56fba3044977",
+        "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Rice_and_Beans_stew.jpg",
+        "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Rice_and_Beans_stew.jpg&oldid=1018707670",
+        "author": "SAgbley",
+        "license": "CC BY-SA 4.0",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+        "credit": "Rice and Beans stew.jpg by SAgbley, via Wikimedia Commons, CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0); provider-generated 500 px thumbnail, no local image edits.",
+        "preFrozenVisualExpectations": {
+          "food_visible": true,
+          "broad_compatible_categories": [
+            "rice",
+            "beans or bean stew"
+          ],
+          "optional_categories_not_required": [
+            "fried plantain-like slices (tentative)"
+          ],
+          "nonfood_expected_food_name_list": null,
+          "uncertainty": "No required exact protein, bean variety, cooking fat, portion or ingredient list. Plantain interpretation is optional rather than required.",
+          "forbidden_inferences": [
+            "hidden ingredients",
+            "portion size",
+            "food weight",
+            "carbohydrate amount",
+            "insulin dose",
+            "allergen safety"
+          ]
+        },
+        "rawReportSHA256": "ee3a24b9724abc222a5aadaf571dfe8bd24338faa1eeba6278859834cf30433a",
+        "actualObservation": {
+          "acceptedNames": [
+            "rice",
+            "beans",
+            "plantains"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        },
+        "manualReview": "Rice/beans and plantain-like slices are visually compatible. This does not establish preparation, ingredients or serving amounts."
+      },
+      {
+        "case": "food-06-sandwich",
+        "imageSHA256": "f5afd3582a94ad9d017342a0b30d9013c1bd4cabce07a68c5f0b27185b2ddb78",
+        "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Club-sandwich2.jpg",
+        "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Club-sandwich2.jpg&oldid=862468479",
+        "author": "Anton Porsche",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "credit": "Club-sandwich2.jpg by Anton Porsche, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+        "preFrozenVisualExpectations": {
+          "food_visible": true,
+          "broad_compatible_categories": [
+            "sandwich",
+            "bread"
+          ],
+          "optional_categories_not_required": [],
+          "nonfood_expected_food_name_list": null,
+          "uncertainty": "Exact fillings, spreads and protein types are not required and cannot be assumed from the name club sandwich.",
+          "forbidden_inferences": [
+            "hidden ingredients",
+            "portion size",
+            "food weight",
+            "carbohydrate amount",
+            "insulin dose",
+            "allergen safety"
+          ]
+        },
+        "rawReportSHA256": "dfcd1f491ee1338d7f9e4a2d4d7d96a03f59b1903ed12ce466f5f340bd89ebd0",
+        "actualObservation": {
+          "acceptedNames": [
+            "bread",
+            "cheese",
+            "tomato",
+            "egg",
+            "bacon"
+          ],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedNames",
+          "photoCount": 1,
+          "preparedHeight": 339,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        },
+        "manualReview": "Bread/tomato/egg/bacon-like layers are visually compatible but exact fillings are uncertain. Cheese is not independently established as a separate visible layer; whole sandwich is the safer broad clue."
+      },
+      {
+        "case": "control-01-mug",
+        "imageSHA256": "693e5d8de7c98f688f85d3318cad9d2b860e9c6bd36df9756db03596475a04ec",
+        "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Ceramic_mug.jpg",
+        "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Ceramic_mug.jpg&oldid=1276179092",
+        "author": "NNU-11-Zaclee",
+        "license": "CC BY-SA 3.0",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0",
+        "credit": "Ceramic mug.jpg by NNU-11-Zaclee, via Wikimedia Commons, CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0); provider-generated 500 px thumbnail, no local image edits.",
+        "preFrozenVisualExpectations": {
+          "food_visible": false,
+          "broad_compatible_categories": [],
+          "optional_categories_not_required": [],
+          "nonfood_expected_food_name_list": [],
+          "uncertainty": "Mugs are not food. Do not infer coffee, tea or another drink from containers or printed branding.",
+          "forbidden_inferences": [
+            "hidden ingredients",
+            "portion size",
+            "food weight",
+            "carbohydrate amount",
+            "insulin dose",
+            "allergen safety"
+          ]
+        },
+        "rawReportSHA256": "94b014b4b277e7ec00983b1167a37bbbec1e0ac7950f8e8ba04cdbb1ca848029",
+        "actualObservation": {
+          "acceptedNames": [],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "No clear food clues found in this photo.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedEmpty",
+          "photoCount": 1,
+          "preparedHeight": 375,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        },
+        "manualReview": "Successful empty accepted list matches a scene of apparently empty mugs; no coffee/tea inference."
+      },
+      {
+        "case": "control-02-shoes",
+        "imageSHA256": "8c3f5ffb8d7a9b00c12723ad2e4db37960d4cd26ab17e849fc06bd3c93c54239",
+        "sourceFilePage": "https://commons.wikimedia.org/wiki/File:Nike_Running_Shoes_Not_Dissected_Reference.jpg",
+        "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Nike_Running_Shoes_Not_Dissected_Reference.jpg&oldid=1226853619",
+        "author": "Yottanesia",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "credit": "Nike Running Shoes Not Dissected Reference.jpg by Yottanesia, via Wikimedia Commons, CC0 (http://creativecommons.org/publicdomain/zero/1.0/deed.en); provider-generated 500 px thumbnail, no local image edits.",
+        "preFrozenVisualExpectations": {
+          "food_visible": false,
+          "broad_compatible_categories": [],
+          "optional_categories_not_required": [],
+          "nonfood_expected_food_name_list": [],
+          "uncertainty": "Shoe branding and the fabric pattern are not evidence of food.",
+          "forbidden_inferences": [
+            "hidden ingredients",
+            "portion size",
+            "food weight",
+            "carbohydrate amount",
+            "insulin dose",
+            "allergen safety"
+          ]
+        },
+        "rawReportSHA256": "7473f1fa36fc7914aad33fd7a81ab5f92a7e6f2eb06c303a050c5b6d4181e824",
+        "actualObservation": {
+          "acceptedNames": [],
+          "amountComponentCount": 0,
+          "automaticCarbohydrateTotalAbsent": true,
+          "id": "restrictedDocumentPhoto",
+          "includedComponentCount": 0,
+          "labelText": "notRun",
+          "limit": "Unavailable-model fallback can create excluded catalog components; it must not create an included amount or total.",
+          "methodNote": "No clear food clues found in this photo.",
+          "modelNameAmountSeparationInvariant": true,
+          "noAutomaticAmountInvariant": true,
+          "outcome": "inspectedEmpty",
+          "photoCount": 1,
+          "preparedHeight": 240,
+          "preparedOrientationRawValue": 0,
+          "preparedWidth": 500,
+          "readyForReview": false,
+          "state": "inspected",
+          "vision": "notRun"
+        },
+        "manualReview": "Successful empty accepted list matches the nonfood shoes scene."
+      }
+    ]
+  },
+  "conclusion": "Input/preparation and amount-separation invariants held. Multiple-view and cancelled-caller recovery mechanics completed. Broad meal clues are useful, but unsupported ingredient specificity and synonym duplicates remain. Nonfood examples returned empty accepted lists; raw visibleFood and filtered-out names are not exposed.",
+  "remaining": "Full exact-app UI/fallback/cancel interactions, qualified independent evaluation, system accessibility and physical offline use. Any prompt refinement must be recorded separately as tuning on this exposed development cohort."
+}

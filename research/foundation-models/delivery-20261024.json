@@ -1,0 +1,87 @@
+{
+  "scope": "Exact current source ZIP packaging, clean Simulator build and initial Home only. No full-flow, accuracy, accessibility, phone or offline-isolation claim.",
+  "artifact": {
+    "candidate": "MealMirror-SSC2027.zip",
+    "bytes": 12203649,
+    "sha256": "6abc22fab293e4bbbf2d3da594a3beabd709eab7c6d9db4c55aa9c6397167ebd",
+    "two_generations_byte_identical": true,
+    "integrity": true,
+    "english_only": true,
+    "swift_files_equal_to_source": 17,
+    "local_photo_ai_sha256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "previous_candidate_sha256": "6457bc795e7faef1fff14614a40267f165ee4dd0b0c7a23a98a3c8ef3cfdc675",
+    "changed_archive_files": [
+      "MealMirror.swiftpm/AI-AND-ASSET-DISCLOSURE.md",
+      "MealMirror.swiftpm/LocalPhotoAI.swift",
+      "MealMirror.swiftpm/README.md"
+    ],
+    "clean_build": "passed: fresh extraction, arm64 iOS Simulator, jobs1, Xcode27.1",
+    "runtime": "install/launch and visually inspected initial Home only",
+    "runtime_report": "exact-runtime-scope.json"
+  },
+  "build": {
+    "clean_extraction_build_exit": 0,
+    "build_succeeded_marker": true,
+    "log_sha256": "ca8592ed14701e8a44dcfd8fa9b21717c335676d10f8bf039f8ec5c062a81bd2",
+    "architecture": "arm64",
+    "platform": "iOS Simulator",
+    "toolchain": "Xcode 27.1\nBuild version 27A9275",
+    "build_number": "3",
+    "bundle_id": "com.mealmirror.swiftchallenge",
+    "minimum_os": "17.0",
+    "warning_lines": [
+      "warning: Skipping duplicate build file in Compile Sources build phase: outputs/main-visible-delivery-20261024/exact/MealMirror.swiftpm/Assets/Brand.xcassets (in target 'MealMirror-product' from project 'MealMirror')",
+      "2026-10-24 14:52:13.871 appintentsmetadataprocessor[34163:17575750] warning: Metadata extraction skipped, no AppIntents.framework dependency found"
+    ]
+  },
+  "runtime": {
+    "zip_sha256": "6abc22fab293e4bbbf2d3da594a3beabd709eab7c6d9db4c55aa9c6397167ebd",
+    "device": "MealMirror QA iPhone Duo",
+    "runtime": "iOS27.1 Simulator",
+    "display": "primary",
+    "install_exit": 0,
+    "launch_exit": 0,
+    "bundle_identifier": "com.mealmirror.swiftchallenge",
+    "build_number": "3",
+    "built_installed_bytes_equal": [
+      "Info.plist",
+      "MealMirror"
+    ],
+    "file_sha256": {
+      "Info.plist": "593e9737fd1053ea294b70520c94c8f9b39b06ba73c5c9fb1bf7fcec15c8adc9",
+      "MealMirror": "d6f2227a6fae093f5237b2e875972e0730f43adfe4935a93450294feae3cc10a"
+    },
+    "process_present": true,
+    "screenshot": "exact-duo-primary.png",
+    "screenshot_sha256": "daccc248f50627a79ee0f80105b2d34ac07c33101b7d9f01edebd873cf12933e",
+    "visually_inspected": "Initial Pixel Kitchen Home: camera/photos, pot mark, meal introduction and fixed Start a meal review action visible. Right status region belongs to the current primary display capture.",
+    "scope_limits": [
+      "Existing onboarding persisted; not fresh welcome",
+      "No UI clicks, photo/model request, scrolling, full flow or accessibility interaction",
+      "No open/partial-Duo support claim",
+      "No physical device or network isolation evidence",
+      "Mac remains locked for interactive computer-use QA"
+    ],
+    "harness_error": "Initial launch used a wrong literal bundle identifier, exit4; corrected from actual built Info.plist and succeeded. Failure preserved, no app crash established."
+  },
+  "local_evidence_root": "outputs/main-visible-delivery-20261024",
+  "distribution": "Testing only. Build3 is not uploaded; build2 is the last verified internal TestFlight build. No public release.",
+  "source_review": "Exact tested main-visible-food-v1 source; only3prompt literals changed vs6457 baseline. Bundled README/disclosure also updated.",
+  "intermediates": [
+    {
+      "sha256": "8088a1df31981a0d0a86786a99100ab80f9b2e9c50e4d9d8f70ebeaaf5222908",
+      "scope": "Docs-only intermediate generated before prompt application; no build; superseded."
+    },
+    {
+      "sha256": "a331d39e7d611d4c581338738b52d4cb07a79be22b7b5468cef4b7461fa3c89f",
+      "scope": "Prompt+docs intermediate clean-built; superseded by disclosure wording correction, no install evidence used."
+    }
+  ],
+  "remaining_gates": [
+    "Complete exact-app photo/clue/checked-amount/save/history/delete and fallback/error interaction",
+    "Representative independent meal/nonfood acceptance with qualified annotation",
+    "Accessibility and full Duo/iPad layouts/animation checks",
+    "Later physical iPhone camera and airplane-mode validation",
+    "Applicant authorship/disclosure/eligibility and future2027rules"
+  ]
+}
