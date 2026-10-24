@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "recordedDate": "2026-10-24",
+  "sourceBaseCommit": "f453da9e3263e764580bdc3313478c62d7241b3d",
+  "scope": "Snapshot-bound source-color comparison plus four initial Welcome screenshots of the exact build6 app. Not overall accessibility or loading-screen animation acceptance.",
+  "loadingText": {
+    "scriptPath": "scripts/verify-loading-contrast.py",
+    "scriptSHA256": "1553a5dfacafebd756da378540f25c1def2a8911f87c724eff5488ab553dfe71",
+    "sourceSHA256": {
+      "Theme.swift": "ce6385c5c955c4bde1ab0baea35a547ed2c9d2148c3d7bd99c1185e53f62030d",
+      "AppShell.swift": "547945bf60ec6317552ef8d2bbf5efb1ef4d17e223b09314ad49b10accd70db1",
+      "ContentView.swift": "ba2a587a0fd35e767afd308c6586a8b5731015d426c2674af2aa58f081d354e7"
+    },
+    "frozenProtocolSHA256": "5140a5b19508501ad30c70955067d3c6a9871158ed3fd1aa8965fc5ae8a206c8",
+    "roles": [
+      "launchTitle",
+      "launchTagline",
+      "analysisTitle",
+      "analysisTagline"
+    ],
+    "appearances": [
+      "light",
+      "dark"
+    ],
+    "conservativeTarget": 4.5,
+    "baselineBelowChosenTarget": 4,
+    "baselineTranslucentTaglineLightRatio": 2.921389085246151,
+    "candidateChecks": 8,
+    "candidateFailures": 0,
+    "candidateMinimumRatio": 4.518078573868349,
+    "candidateLightRatio": 4.518078573868349,
+    "candidateDarkRatio": 8.092736589425648,
+    "change": "Use existing opaque adaptive ink for four text styles; no font, artwork, palette or background change.",
+    "thresholdLimit": "W3C permits 3:1 for large text; not every opaque bold baseline role is established as a WCAG failure. The translucent tagline is below even 3:1. The selected 4.5 target avoids that classification ambiguity.",
+    "manualPairReview": "For this exact snapshot, independent source review confirmed loadingCanvas is the text background and no additional steady-state ancestor opacity changes the pair. The numeric driver parses selected foreground declarations and assumes that manually reviewed pairing; it is not a general SwiftUI hierarchy or ancestor-opacity validator.",
+    "renderLimit": "No rendered loading-text, fade-phase, anti-aliasing, font-equivalence or whole-app conformance proof.",
+    "prototypeHistory": "V1 rejected duplicate tagline text in another component before producing color results. V2 scopes analysis text to AddMealView and rejects unsupported parsed source with exit 2; retained error is not a baseline contrast failure.",
+    "officialFormulaSource": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html"
+  },
+  "exactAppWelcome": {
+    "version": "1.0",
+    "build": "6",
+    "candidateSHA256": "774e37b26a642d8d9a08e0e292d868d1ee0b2aca5de47febb9f02d9d89c2856b",
+    "target": "Separate headless iPhone Duo, iOS27.1, active primary display, English",
+    "configuration": "Supported Simulator system content_size and appearance settings; not SwiftUI environment injection.",
+    "viewports": [
+      {
+        "state": {
+          "id": "light-standard",
+          "appearance": "light",
+          "contentSize": "large"
+        },
+        "systemOptions": {
+          "appearance": "light",
+          "content_size": "large",
+          "increase_contrast": "disabled"
+        },
+        "pixels": [
+          1398,
+          2034
+        ],
+        "screenshotSHA256": "3b196f0bb6aa6711aa116f6338b8aada6146ffd596a30c4663ad7c27c7c517a4",
+        "initialPhotoActionVisible": true,
+        "visiblePhotoText": "Choose a meal photo from your library",
+        "observed": "Initial Welcome rendered with the expected appearance and clearly enlarged/wrapped text at maximum size. The photo action fits. Body content continues below the visible scroll region.",
+        "limits": "No taps, scrolling, direct VoiceOver, all-font metric audit or full app journey."
+      },
+      {
+        "state": {
+          "id": "light-maximum",
+          "appearance": "light",
+          "contentSize": "accessibility-extra-extra-extra-large"
+        },
+        "systemOptions": {
+          "appearance": "light",
+          "content_size": "accessibility-extra-extra-extra-large",
+          "increase_contrast": "disabled"
+        },
+        "pixels": [
+          1398,
+          2034
+        ],
+        "screenshotSHA256": "1eeb4500eaf1272a1cbffdab60970d6bd611d5e851091066721206f4faf40d5a",
+        "initialPhotoActionVisible": true,
+        "visiblePhotoText": "Photo",
+        "observed": "Initial Welcome rendered with the expected appearance and clearly enlarged/wrapped text at maximum size. The photo action fits. Body content continues below the visible scroll region.",
+        "limits": "No taps, scrolling, direct VoiceOver, all-font metric audit or full app journey."
+      },
+      {
+        "state": {
+          "id": "dark-maximum",
+          "appearance": "dark",
+          "contentSize": "accessibility-extra-extra-extra-large"
+        },
+        "systemOptions": {
+          "appearance": "dark",
+          "content_size": "accessibility-extra-extra-extra-large",
+          "increase_contrast": "disabled"
+        },
+        "pixels": [
+          1398,
+          2034
+        ],
+        "screenshotSHA256": "d2e4aa13e2e0bce185ff062c15513e92f674f599bcac7a79ad302406acbb85df",
+        "initialPhotoActionVisible": true,
+        "visiblePhotoText": "Photo",
+        "observed": "Initial Welcome rendered with the expected appearance and clearly enlarged/wrapped text at maximum size. The photo action fits. Body content continues below the visible scroll region.",
+        "limits": "No taps, scrolling, direct VoiceOver, all-font metric audit or full app journey."
+      },
+      {
+        "state": {
+          "id": "dark-standard",
+          "appearance": "dark",
+          "contentSize": "large"
+        },
+        "systemOptions": {
+          "appearance": "dark",
+          "content_size": "large",
+          "increase_contrast": "disabled"
+        },
+        "pixels": [
+          1398,
+          2034
+        ],
+        "screenshotSHA256": "1fcd5fb7f2d9a963d01578fe76f00cd478636dc1f168c14a7c5a43d32bb3278c",
+        "initialPhotoActionVisible": true,
+        "visiblePhotoText": "Choose a meal photo from your library",
+        "observed": "Initial Welcome rendered with the expected appearance and clearly enlarged/wrapped text at maximum size. The photo action fits. Body content continues below the visible scroll region.",
+        "limits": "No taps, scrolling, direct VoiceOver, all-font metric audit or full app journey."
+      }
+    ],
+    "scope": "Photo action visibility and initial viewport legibility only; safety/legal copy and later body content can be offscreen. Scrolling, full text traversal, direct VoiceOver, other screens/iPad/RTL and physical behavior remain open."
+  },
+  "unrunAndExcluded": {
+    "build5FourStateProtocolExecuted": false,
+    "build5ShortVideo": "Viewed selected frames show SpringBoard/native launch artwork; later screenshot shows Welcome. It does not verify the SwiftUI loading text or animation smoothness.",
+    "noModelOrPhotoPickerInput": true
+  },
+  "artifacts": {
+    "loadingRoot": "../../../../outputs/loading-contrast-20261024/",
+    "renderRoot": "../../../../outputs/photo-load-delivery-20261024-build6/",
+    "localOnly": true,
+    "loading": [
+      {
+        "name": "frozen-protocol-v2.json",
+        "sha256": "5140a5b19508501ad30c70955067d3c6a9871158ed3fd1aa8965fc5ae8a206c8"
+      },
+      {
+        "name": "baseline-v2.json",
+        "sha256": "3f42b0830765d71a4291043de6365fcc35ae54743d8010c02d9101f9af84b7aa"
+      },
+      {
+        "name": "baseline-v2-command.json",
+        "sha256": "65535ddbaa57d9bbfac6bc58be7b02f6bbe54e77475f8d2d6cad8b6c33544c05"
+      },
+      {
+        "name": "candidate.json",
+        "sha256": "926841ff28f355f6a551781e1b1c53648297aced114d0b58157a201d3973a214"
+      },
+      {
+        "name": "candidate-command.json",
+        "sha256": "0734f70e8e81d0427abd5b257f2876a36dda78aa3701eb0073f24689a6eccd1b"
+      },
+      {
+        "name": "baseline-command.json",
+        "sha256": "816f3c42459d859c0d4c2ef58d63dd1326ea6610d344984fd91770db47aa37f1"
+      }
+    ],
+    "renders": [
+      {
+        "name": "frozen-welcome-render-protocol.json",
+        "sha256": "b3a00e87991971310864f0690fd87b20bad72fdb2dddde822e1cac36d12e9438"
+      },
+      {
+        "name": "welcome-visual-review.json",
+        "sha256": "cf3919cd04ac7f08564106e8ed2172b72c0087b644ad7599ccb14906d42c2c60"
+      },
+      {
+        "name": "light-standard.png",
+        "sha256": "3b196f0bb6aa6711aa116f6338b8aada6146ffd596a30c4663ad7c27c7c517a4"
+      },
+      {
+        "name": "light-maximum.png",
+        "sha256": "1eeb4500eaf1272a1cbffdab60970d6bd611d5e851091066721206f4faf40d5a"
+      },
+      {
+        "name": "dark-maximum.png",
+        "sha256": "d2e4aa13e2e0bce185ff062c15513e92f674f599bcac7a79ad302406acbb85df"
+      },
+      {
+        "name": "dark-standard.png",
+        "sha256": "1fcd5fb7f2d9a963d01578fe76f00cd478636dc1f168c14a7c5a43d32bb3278c"
+      }
+    ]
+  },
+  "remainingGates": [
+    "Exact photo/clue/checked-amount/save/history journey and error recovery",
+    "Actual scrolling, legal/safety traversal, VoiceOver, Reduce Motion and loading animations",
+    "All screens, phone/iPad sizes, RTL/native language review",
+    "Physical iPhone camera/offline and independent recognition",
+    "Applicant and current Challenge requirements"
+  ]
+}

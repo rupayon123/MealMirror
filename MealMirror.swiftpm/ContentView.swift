@@ -468,11 +468,11 @@ private struct AddMealView: View {
                             Text(localization.text("Inspecting on this device…"))
                                 .font(CarbInTheme.display(.title2, size: 24))
                                 .multilineTextAlignment(.center)
-                                .foregroundStyle(CarbInTheme.actionInk)
+                                .foregroundStyle(CarbInTheme.ink)
                             Text(localization.text("A clearer view of your meal"))
                                 .font(CarbInTheme.reading(.subheadline, size: 15, weight: .bold))
                                 .multilineTextAlignment(.center)
-                                .foregroundStyle(CarbInTheme.actionInk)
+                                .foregroundStyle(CarbInTheme.ink)
                         }
                         .padding(20)
                         .frame(maxWidth: .infinity)
@@ -1091,12 +1091,20 @@ private struct AddMealView: View {
             do {
                 var prepared: [UIImage] = []
                 for item in items {
-                    guard let data = try await item.loadTransferable(type: Data.self),
-                          let image = await MealPhotoPreparation.downsampledImageAsync(
+                    guard photoLoadToken == token else { return }
+                    let data = try await item.loadTransferable(type: Data.self)
+                    guard photoLoadToken == token else { return }
+                    let image: UIImage?
+                    if let data {
+                        image = await MealPhotoPreparation.downsampledImageAsync(
                             from: data,
                             maxPixelSize: role == .label ? 2_400 : 1_800
-                          ) else {
-                        guard photoLoadToken == token else { return }
+                        )
+                    } else {
+                        image = nil
+                    }
+                    guard photoLoadToken == token else { return }
+                    guard let image else {
                         isPreparingPhoto = false
                         photoLoadError = "MealMirror could not prepare that photo. Choose another image or use the camera."
                         return

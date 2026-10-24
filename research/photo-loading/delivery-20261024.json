@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "recordedDate": "2026-10-24",
+  "scope": "Exact English-only build 1.0 (6) package, clean Simulator build/install/launch, four initial Welcome viewports, signed archive and internal-only upload. Not full app, broad meal accuracy or physical offline acceptance.",
+  "source": {
+    "baseCommit": "f453da9e3263e764580bdc3313478c62d7241b3d",
+    "snapshotHasUncommittedLoadingFix": true,
+    "modelSourceSHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "engineSourceSHA256": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+    "changedZIPMembersFromBuild5": [
+      "MealMirror.swiftpm/AppShell.swift",
+      "MealMirror.swiftpm/ContentView.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ],
+    "modelEnginePromptUnchanged": true,
+    "loadingMethodChecks": "invalidation-20261024.json",
+    "sourceColorAndInitialWelcomeChecks": "../accessibility/loading-and-welcome-20261024.json",
+    "historicalPreparationChecks": "../photo-preparation/ci-origin-20261024.json",
+    "historicalCombinedProcessingChecks": "../foundation-models/combined-label-20261024.json"
+  },
+  "candidate": {
+    "repositoryPath": "candidate/MealMirror-SSC2027.zip",
+    "sha256": "774e37b26a642d8d9a08e0e292d868d1ee0b2aca5de47febb9f02d9d89c2856b",
+    "bytes": 12203935,
+    "build": "6",
+    "generationsIdentical": true,
+    "integrityPassed": true,
+    "englishOnly": true,
+    "swiftSourceEqualityCount": 17,
+    "packagedFileCount": 59,
+    "changedMembersFromBuild5": [
+      "MealMirror.swiftpm/AppShell.swift",
+      "MealMirror.swiftpm/ContentView.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ],
+    "version": "1.0",
+    "all17SwiftSourcesEqual": true,
+    "fileMemberListUnchangedFromBuild5": true
+  },
+  "simulator": {
+    "cleanBuildExit": 0,
+    "identity": {
+      "CFBundleIdentifier": "com.mealmirror.swiftchallenge",
+      "CFBundleShortVersionString": "1.0",
+      "CFBundleVersion": "6",
+      "MinimumOSVersion": "17.0",
+      "DTSDKName": "iphonesimulator27.1"
+    },
+    "platform": "IOSSIMULATOR",
+    "architecture": "arm64",
+    "buildLogSHA256": "0a0c2ff6a45cb50a33cf59a2ae78cdd354f201bcf797dfcf63759f342532bc20",
+    "executableSHA256": "30937c4454101643c466a439deaa75f1acbad9ca7e2aed12e272fb98f89da1db",
+    "infoSHA256": "fd2f37cd2bf7f63c81f35d31e2a340d68a4f5b934919d93c2196d52a8844a163",
+    "installExit": 0,
+    "launchExit": 0,
+    "installedExecutableAndInfoEqual": true,
+    "target": "Separate headless iPhone Duo, iOS 27.1; original interactive build-4 picker session preserved.",
+    "binarySDKs": {
+      "mainExecutable": "27.1",
+      "debugDylib": "27.0",
+      "minimumOS": "17.0",
+      "limit": "Build metadata and main executable SDK 27.1 do not establish that every Simulator binary header records 27.1."
+    },
+    "initialWelcome": {
+      "renderedViewports": 4,
+      "systemConfigurationReadback": true,
+      "swiftUIEnvironmentOnlyOverride": false,
+      "appearance": [
+        "light",
+        "dark"
+      ],
+      "contentSize": [
+        "large",
+        "accessibility-extra-extra-extra-large"
+      ],
+      "photoActionVisibleInAllFour": true,
+      "pixels": [
+        1398,
+        2034
+      ],
+      "display": "active primary",
+      "atMaximumSize": "Visible photo action reads Photo; body, safety and legal content continues offscreen. Scroll/touch reachability is unverified.",
+      "screenshotRecord": "../accessibility/loading-and-welcome-20261024.json",
+      "interactionsPerformed": false
+    },
+    "warnings": [
+      "Nonfatal duplicate asset Compile Sources entry and skipped App Intents metadata extraction.",
+      "Simulator build emitted an incompatible macOS 27.0 sysroot / arm64 iOS 17 Simulator target warning; retained debug dylib SDK is 27.0. Exact install, launch and these four initial renders succeeded. This is not a general SDK/toolchain health claim.",
+      "Earlier separate QA boot retained Data Migration Failed despite bootstatus exit 0; bounded runtime observations do not clear it."
+    ]
+  },
+  "signedArchive": {
+    "commandExit": 0,
+    "signatureVerifyExit": 0,
+    "identity": {
+      "CFBundleIdentifier": "com.mealmirror.swiftchallenge",
+      "CFBundleShortVersionString": "1.0",
+      "CFBundleVersion": "6",
+      "MinimumOSVersion": "17.0",
+      "DTSDKName": "iphoneos27.1"
+    },
+    "binaryPlatform": "IOS",
+    "binarySDK": "27.1",
+    "binaryMinimum": "17.0",
+    "executableSHA256": "c4ca4d2b49b3d72f19c84cb52474670edafd87e33098d210e7251a85ca5fd5c3",
+    "infoSHA256": "c21f2da655227320970792e10d9a2210f07e93e69735e83e7c4f49550511dafb",
+    "archiveLogSHA256": "305bcdfe0bae0f8bbe9fdd611048ed0705503ae980f5fc62acb669eedbc1587f",
+    "archiveScriptUnchanged": true,
+    "all59PackagedBytesUnchanged": true,
+    "noExternalQAProbeOrFixtures": true,
+    "englishOnly": true,
+    "warnings": "Nonfatal duplicate asset Compile Sources entry and skipped App Intents metadata extraction retained; the Simulator sysroot warning was not present in this signed archive log."
+  },
+  "internalUpload": {
+    "commandExit": 0,
+    "exportOptions": {
+      "method": "app-store-connect",
+      "destination": "upload",
+      "testFlightInternalTestingOnly": true,
+      "manageAppVersionAndBuildNumber": false,
+      "signingStyle": "automatic"
+    },
+    "exportSucceeded": true,
+    "uploadSucceeded": true,
+    "appleReported": "Uploaded package is processing.",
+    "logSHA256": "0375fb17c171135398195fa45f39fc5155b36c431e603b257ded108ec89b5ad9",
+    "processingCompleteVerified": false,
+    "complianceVerified": false,
+    "serverInternalIndicatorVerified": false,
+    "existingInternalGroupTestingVerified": false,
+    "phoneInstallationVerified": false,
+    "lastVerifiedTestingBuild": "1.0 (2), earlier dated App Store Connect check",
+    "appStoreConnect": "Existing sign-in handoff pending; no new sign-in or group/compliance change in this delivery.",
+    "appStoreReviewOrRelease": false,
+    "externalOrPublicBeta": false,
+    "publicAppReleaseArtifacts": false,
+    "manualReleaseSetting": "Preserved; no App Store distribution settings changed."
+  },
+  "remainingGates": [
+    "Full exact-app photo selection, tentative clue, separate label OCR, checked-amount confirmation, save/history/delete and recovery.",
+    "Actual touch scrolling, direct VoiceOver, other screens/iPad/RTL, Reduce Motion and rendered loading/animation.",
+    "Independent varied meals/nonfood/real labels and qualified ground truth; no nutrition or insulin inferred from photos.",
+    "Large real camera input and peak memory; loading spies and preparation correction establish no measured memory improvement.",
+    "Later physical iPhone camera and airplane-mode validation.",
+    "Applicant code/asset/disclosure review, personal answers and published 2027 rules."
+  ],
+  "localArtifacts": {
+    "root": "../../../../outputs/photo-load-delivery-20261024-build6/",
+    "notPublished": true,
+    "files": [
+      {
+        "name": "candidate-verification.json",
+        "sha256": "2b19bab6f429627cd1cdca6ea20d897812f40e86bdd0e7479a168ab91ab742f1"
+      },
+      {
+        "name": "exact-build-command.json",
+        "sha256": "5bc232b82de377a5655a39a2af9d7ae0fc868de5b9df957e18905cb914606c88"
+      },
+      {
+        "name": "exact-build.log",
+        "sha256": "0a0c2ff6a45cb50a33cf59a2ae78cdd354f201bcf797dfcf63759f342532bc20"
+      },
+      {
+        "name": "exact-runtime-scope.json",
+        "sha256": "5f04b8c690928ff782e4e3d2fd1efe03c3574fb5d90d7f33e10619b4bd022177"
+      },
+      {
+        "name": "frozen-welcome-render-protocol.json",
+        "sha256": "b3a00e87991971310864f0690fd87b20bad72fdb2dddde822e1cac36d12e9438"
+      },
+      {
+        "name": "welcome-visual-review.json",
+        "sha256": "cf3919cd04ac7f08564106e8ed2172b72c0087b644ad7599ccb14906d42c2c60"
+      },
+      {
+        "name": "archive-command-result.json",
+        "sha256": "a3d01a8c6e354057008bc10ea06067ff674a762ba6561e576d2e7cbde0ddef27"
+      },
+      {
+        "name": "archive-verification.json",
+        "sha256": "6c15e3a7a32874fc31cfde7456202116e2a90be3d4af5e2fb8066692c73e836f"
+      },
+      {
+        "name": "signed-archive.log",
+        "sha256": "305bcdfe0bae0f8bbe9fdd611048ed0705503ae980f5fc62acb669eedbc1587f"
+      },
+      {
+        "name": "upload-command-result.json",
+        "sha256": "f233d44196e8190d230ea52cdb59e56beec1e534d256d1bb21e04980ea6f3d22"
+      },
+      {
+        "name": "internal-upload.log",
+        "sha256": "0375fb17c171135398195fa45f39fc5155b36c431e603b257ded108ec89b5ad9"
+      },
+      {
+        "name": "light-standard.json",
+        "sha256": "f952dc7f4c56c6061360502bed0ece1a2ad7318c05ad8095e00b144c6335497e"
+      },
+      {
+        "name": "light-standard.png",
+        "sha256": "3b196f0bb6aa6711aa116f6338b8aada6146ffd596a30c4663ad7c27c7c517a4"
+      },
+      {
+        "name": "light-maximum.json",
+        "sha256": "3ea26c24dac8043c4482b670e41264f29636dc433f83ff7f1d12aee148bc20b2"
+      },
+      {
+        "name": "light-maximum.png",
+        "sha256": "1eeb4500eaf1272a1cbffdab60970d6bd611d5e851091066721206f4faf40d5a"
+      },
+      {
+        "name": "dark-maximum.json",
+        "sha256": "0825009a5988365eafd8bcbb7e779407e7ba1feeacef4cf6e968487d06636c26"
+      },
+      {
+        "name": "dark-maximum.png",
+        "sha256": "d2e4aa13e2e0bce185ff062c15513e92f674f599bcac7a79ad302406acbb85df"
+      },
+      {
+        "name": "dark-standard.json",
+        "sha256": "2ff097a431132f2331f30468c0e4fa19487497d71d25cc3eb307710e1b9a2bfd"
+      },
+      {
+        "name": "dark-standard.png",
+        "sha256": "1fcd5fb7f2d9a963d01578fe76f00cd478636dc1f168c14a7c5a43d32bb3278c"
+      },
+      {
+        "name": "final-review-initial-verifier-error.json",
+        "sha256": "32bf378d96d75ca91c1dbcc0231609c30d2c591f364895189742904679e5df2a"
+      },
+      {
+        "name": "final-package-review.json",
+        "sha256": "6dd6bfe25f32846ade1d31fc09b14147f1b0b509fc0887c3526533b86f4f3528"
+      },
+      {
+        "name": "final-independent-review.json",
+        "sha256": "5b7f7cb2832f0555c90edc09ec2a5f2210282a5686f24ed4986f83d8862b7273"
+      }
+    ]
+  },
+  "privacy": "Only source and curated evidence are published. Logs, compiled apps, signed archives, export options, account/team/device/container paths and research images remain outside the public repository.",
+  "independentReview": {
+    "outcome": "No concrete blocker found in the reviewed snapshot.",
+    "scope": "Read-only focused app diff, helper fidelity, package identity and evidence-claim review; no execution or full repository security/clinical audit.",
+    "recordedResultsNotIndependentlyRerun": true,
+    "snapshotNote": "The local report pins every reviewed source/script/document hash and the delivery receipt before this nonrecursive reference."
+  }
+}

@@ -58,10 +58,10 @@ private struct LaunchExperienceView: View {
                     VStack(spacing: 5) {
                         Text("MealMirror")
                             .font(CarbInTheme.brand(.largeTitle, size: 30))
-                            .foregroundStyle(CarbInTheme.actionInk)
+                            .foregroundStyle(CarbInTheme.ink)
                         Text(localization.text("A clearer view of your meal"))
                             .font(CarbInTheme.display(.headline, size: 16))
-                            .foregroundStyle(CarbInTheme.actionInk.opacity(0.92))
+                            .foregroundStyle(CarbInTheme.ink)
                     }
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)

@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "recordDate": "2026-10-24",
+  "scope": "Foundation-only native Mac loading-method mechanics with declared ID-only transfer, image, preparation and append spies. No real photo decoding or UI lifecycle execution.",
+  "source": {
+    "repositoryRelativePath": "MealMirror.swiftpm/ContentView.swift",
+    "repositoryHEADAtCapture": "f453da9e3263e764580bdc3313478c62d7241b3d",
+    "baselineFileSHA256": "94399bcbb94ddfa8e6a89875dc289cf214e174540bd31c1411901e51d0e06bdb",
+    "baselineLoadMethodSHA256": "b120bf5d3949c927ecb17216ff73176e974c620acbaee89dc25e56c349234b07",
+    "correctedWorkingTreeSnapshot": true,
+    "correctedFileSHA256": "ba2a587a0fd35e767afd308c6586a8b5731015d426c2674af2aa58f081d354e7",
+    "correctedLoadMethodSHA256": "0916ed00101ccb220ab5cace04ae9d8f41cbce059344bd6cfaeaa033704f043d",
+    "unchangedInvalidateMethodSHA256": "d42975475a54693ed247736e9b8fe465a9ddfcd41b9b1b16c805c781230a83c0",
+    "correction": "Check the token before each transfer, after transfer before preparation, and after preparation; split the former combined await guard. Preserve final/catch protection. No new task lifecycle state.",
+    "fileScopeLimit": "The corrected whole-file snapshot also includes two loading-overlay foreground-style changes outside these extracted methods; this unit check does not verify their rendering."
+  },
+  "harness": {
+    "driver": {
+      "repositoryRelativePath": "scripts/verify-photo-load.py",
+      "sha256": "a3d5f7930886a3d61e0db02bb8f6389242745c62cc977a5c848a608b4f813551"
+    },
+    "fixture": {
+      "repositoryRelativePath": "scripts/verify-photo-load.swift",
+      "sha256": "fc897194d6f42ce3e5573781683be1d415a524ef8b8c80b3a5f3cfc15d338f16"
+    },
+    "frozenFixtureBodySHA256": "12c06912588295d98bafd25d681cf5139a5869a724838f4fba996f2cbab4eab0",
+    "caseContractCanonicalSHA256": "d7dee1f1509db0ee6642030a63b2da5c2373e38f32df55d98dc42cf627f6693a",
+    "fixtureBodyAndCaseContractUnchangedFromBaseline": true,
+    "sourceTransformation": "Each variant extracts its actual methods. One outer capturedTask = assignment permits awaiting completion; its Task expression/closure bytes remain unchanged. Invalidation method bytes are exact.",
+    "declaredSpies": {
+      "PhotosPickerItem": "Fixed transfer outcomes controlled by explicit continuations.",
+      "UIImage": "Sendable ID-only value, without UIKit.",
+      "MealPhotoPreparation": "Records requests and fixed success/nil outcomes; no decoder.",
+      "appendPersonalPhotos": "Records IDs/role and invokes actual invalidation to preserve its token/busy-reset contract only.",
+      "cancelPendingAnalysis": "No-op; no analysis/model task."
+    },
+    "excludedAppenderBehavior": [
+      "Photo capacity",
+      "Localization",
+      "Picker clearing",
+      "Input source changes",
+      "SwiftUI bindings"
+    ],
+    "ordering": "Explicit actor witnesses and checked-continuation releases; no ordering sleeps.",
+    "bounds": {
+      "processWatchdogSeconds": 20,
+      "hostCompileTimeoutSeconds": 30,
+      "hostRunTimeoutSeconds": 30
+    },
+    "languageMode": "Swift 6, native Mac Foundation"
+  },
+  "baseline": {
+    "caseCount": 8,
+    "checkCount": 36,
+    "failedExpectations": 3,
+    "failedCaseCount": 2,
+    "compileExitCode": 0,
+    "executionExitCode": 1,
+    "attemptCount": 1,
+    "timedOut": false,
+    "failures": [
+      {
+        "case": "invalidatedDuringTransfer_completedB",
+        "expectation": "A1 does not start decode after transfer-time invalidation"
+      },
+      {
+        "case": "invalidatedDuringTransfer_completedB",
+        "expectation": "A2/A3 do not start transfer or decode"
+      },
+      {
+        "case": "invalidatedDuringDecode_activeB",
+        "expectation": "A2/A3 do not start transfer or decode"
+      }
+    ],
+    "interpretation": "After invalidation during transfer, A1 still requested preparation and A2/A3 requested transfer/preparation after B completed. After invalidation during preparation, A2/A3 still requested work while B was active.",
+    "protectionsAlreadyPassed": "No stale append, error, busy reset or state write changed completed/active B. Stale-failure and active success/failure controls passed.",
+    "sourceUnchangedDuringExecution": true,
+    "assembledSourceSHA256": "f8ba442f61a75deeca18cd887aba7756de3996a891e689cfa9ecfb660cffa270",
+    "protocol": {
+      "relativePath": "../../../../outputs/photo-load-race-20261024/frozen-protocol.json",
+      "sha256": "5d2674bdfd9af0ec51a8798c84c59fb03cab49fbb98eafe0773897deb93eca5d",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "results": {
+      "relativePath": "../../../../outputs/photo-load-race-20261024/results.json",
+      "sha256": "dc51aae5ddb9b45f636c36ddd670d5d5d604510f94e0f7337c8b7c975a652a4a",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "sourceFidelity": {
+      "relativePath": "../../../../outputs/photo-load-race-20261024/pre-execution-fidelity.json",
+      "sha256": "b9c43cba5ab84cee385984d449b8d632ea8061702ddbd671b790f0faba38b4b0",
+      "availability": "Retained local evidence outside the repository and submission package."
+    }
+  },
+  "corrected": {
+    "caseCount": 8,
+    "checkCount": 36,
+    "failedExpectations": 0,
+    "compileExitCode": 0,
+    "executionExitCode": 0,
+    "attemptCount": 1,
+    "sourceAndInputsUnchanged": true,
+    "assembledSourceSHA256": "6e1081556e77a183bd99e8869c426f098774831c92381c9c0810b00de55c276a",
+    "observed": "Transfer-time invalidation prevented A1 preparation and all A2/A3 requests. Preparation-time invalidation allowed already-started A1 to finish but prevented all A2/A3 requests. Existing stale-state protections and active food/label success/failure controls passed.",
+    "roleArgumentChecks": "Food requests retained 1800 and label requests 2400; these are spy-recorded arguments, not image-dimension checks.",
+    "protocol": {
+      "relativePath": "../../../../outputs/photo-load-race-candidate-20261024/frozen-protocol.json",
+      "sha256": "02d3f8037de7cdcfb3ce7b2210f38bffa37eaefa955f3a5cbda61b80fc44e6f1",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "results": {
+      "relativePath": "../../../../outputs/photo-load-race-candidate-20261024/results.json",
+      "sha256": "06a1def3b8d1282f8795eaa065ff674faf0bc530f8f06f7b2fb18e3385bdc508",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "sourceFidelity": {
+      "relativePath": "../../../../outputs/photo-load-race-candidate-20261024/pre-execution-fidelity.json",
+      "sha256": "4d295fbbe9570f8622657f2e103617bbc0ffd7e8472c8f009bb8e6b7ddeca7e3",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "receipt": {
+      "relativePath": "../../../../outputs/photo-load-race-candidate-20261024/verification.json",
+      "sha256": "92af7aea5407304930a27311581b87d0f1f186e8ab63b2e07c3598822b29eaef",
+      "availability": "Retained local evidence outside the repository and submission package."
+    }
+  },
+  "frozenCaseOrder": [
+    "invalidatedDuringTransfer_completedB",
+    "invalidatedDuringDecode_activeB",
+    "staleTransferFailure_completedB",
+    "staleDecodeFailure_completedB",
+    "activeFoodSuccess",
+    "activeLabelSuccess",
+    "activeTransferFailure",
+    "activeDecodeFailure"
+  ],
+  "existingOutputRefusal": {
+    "separateFromAssertionExecution": true,
+    "exitCode": 2,
+    "verificationBytesUnchanged": true,
+    "secondCompileOrProbeExecution": false,
+    "evidence": {
+      "relativePath": "../../../../outputs/photo-load-race-candidate-20261024/existing-output-refusal.json",
+      "sha256": "d63e53da58757409739178d3e0912a6cf3f16ed764b9989fd6fb320bd583e9fd",
+      "availability": "Retained local evidence outside the repository and submission package."
+    }
+  },
+  "limits": [
+    "The eight deterministic schedules are not proof of every possible concurrency interleaving.",
+    "Spies are not PhotosUI/UIKit, actual image decoding, camera authorization, SwiftUI @State lifetime, navigation/disappearance or physical-device evidence.",
+    "Stopping later requests does not interrupt an already-started transfer/preparation or establish OS compute cancellation.",
+    "No measured memory or performance improvement is established; earlier high-peak preparation memory remains unresolved.",
+    "Role checks cover forwarded request limits only, not real output pixel bounds.",
+    "Source fragments, raw logs and executables remain local; no app package, delivery or distribution claim follows from this unit evidence."
+  ]
+}
