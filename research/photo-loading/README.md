@@ -25,3 +25,7 @@ These are ID-only transfer, image and preparation spies. The append spy records 
 ## Exact build-6 delivery
 
 The separate [delivery receipt](delivery-20261024.json) records the deterministic English-only ZIP, clean arm64 Simulator build/install/launch, four initial Welcome viewports and matching signed archive/internal-only upload. Apple reports processing; server compliance, internal status, existing-group Testing and phone installation remain unverified. The method-level checks above do not supply that package or distribution evidence.
+
+## Meal-entry exit guard, build 7
+
+[Teardown source evidence](teardown-20261024.md) records five fixed native surrogate cases/30 checks, with 17 overlapping original failures and zero candidate failures. It does not establish actual SwiftUI state lifetime or camera/navigation sequencing. [Build-7 delivery](teardown-delivery-20261024.json) separately records the exact package and testing scope.

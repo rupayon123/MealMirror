@@ -1,0 +1,13 @@
+# UNAPPLIED research proposal: content-tagging-v1; no production change resulted from this experiment.
+
+--- build6/LocalPhotoAI.swift
++++ content-tagging-v1/LocalPhotoAI.swift
+@@ -76,7 +76,7 @@
+     static func inspect(_ images: [UIImage], locale: Locale) async -> PhotoAIStatus {
+         // Explicitly choose Apple's on-device model. Never select a cloud model,
+         // fetch model weights, or change Apple Intelligence settings here.
+-        let model = SystemLanguageModel.default
++        let model = SystemLanguageModel(useCase: .contentTagging, guardrails: .default)
+         switch model.availability {
+         case .available: break
+         case let .unavailable(reason):

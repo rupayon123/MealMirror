@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "recordedDate": "2026-10-24",
+  "variant": "content-tagging-v1",
+  "scope": "Unapplied source-derived model-selection experiment against twelve original exposed neutral images. Stopped operational result, not a completed qualitative comparison.",
+  "decision": {
+    "outcome": "Rejected / not applied",
+    "reason": "Frozen all-twelve-inspected gate not met: first input unavailable, zero inspected and eleven unrun.",
+    "rootDecisionSHA256": "83ea1db65004b392fa3ec917ca4db9caddccea3e0f11d0507844fea544efe838",
+    "noProductionChangeResultedFromThisExperiment": true,
+    "noDistributionChangeResultedFromThisExperiment": true,
+    "laterIndependentChanges": "This record does not describe or freeze any later production fix; see current readiness for the latest artifact."
+  },
+  "sourceIdentity": {
+    "publicCommitAtProposal": "665f84e26b97e0ee243e6dca2a6fe2e21f496fea",
+    "sourceBuild": "1.0 (6)",
+    "sourceZIPAtProposal": "774e37b26a642d8d9a08e0e292d868d1ee0b2aca5de47febb9f02d9d89c2856b",
+    "baselineLocalPhotoAISHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "candidateLocalPhotoAISHA256": "e404295086b81523ab25bd3321c35f48b4b790c3968012c6e54f3860a642396d",
+    "engineSHA256": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+    "proposalSHA256": "97fa53f66435677831a9a2989b8bba67a2b385e6eaeb91dd08bdd7f035317556",
+    "frozenProtocolSHA256": "b154c5b827a5b7f17bd763526f0c08a5d39975b93e2dba7a51cb6f192780dce6",
+    "neutralManifestSHA256": "7450b42db69ccdf121dd347edfb47343f1df36bfee38547a4e99e728f4ffda69",
+    "originalBaselineSHA256": "92ec229ea83dd50390fb5fe32e939d9e8eb722f1cf7352404eecc46ee6a58941",
+    "frozenExpectationsSHA256": "4a83ee168b4fd8b1673222b9c35cb4b782e1e389a7fa85c0eda5df786a57a905"
+  },
+  "selectionOnlyProposal": {
+    "applied": false,
+    "line": 79,
+    "removed": "let model = SystemLanguageModel.default",
+    "added": "let model = SystemLanguageModel(useCase: .contentTagging, guardrails: .default)",
+    "changedProcessingLines": 1,
+    "regeneratedFromExactOriginalZIP": true,
+    "candidateEqualsOriginalWithSingleSubstitution": true,
+    "publicDiffFile": "content-tagging-20261024.diff",
+    "publicDiffSHA256": "963a1e502888a192285e03dd18ecc40a19a5206813110f3faeb56569661a3dc0",
+    "diffScope": "Explicit unapplied header followed by the exact regenerated original6-to-candidate unified diff.",
+    "unchanged": [
+      "Original build6 prompt/Guides/schema/order, not rejected neutral text",
+      "On-device SystemLanguageModel family and explicit default guardrails",
+      "one generation per input",
+      "temperature0, maximumResponseTokens180, max6 names",
+      "image preparation/orientation, locale/capability/readiness checks",
+      "15-second caller deadline, cancellation/error mapping",
+      "PhotoNamePolicy",
+      "engine fallback and separate trusted amounts",
+      "production source/ZIP/distribution"
+    ]
+  },
+  "documentedAndAdvertisedSupport": {
+    "officialAppleSources": [
+      {
+        "url": "https://developer.apple.com/documentation/foundationmodels/categorizing-and-organizing-data-with-content-tags",
+        "supportedFact": "Describes an adapted on-device text-tagging model; the inspected article does not explicitly document image support. Omission does not prove images unsupported."
+      },
+      {
+        "url": "https://developer.apple.com/documentation/foundationmodels/analyzing-images-with-multimodal-prompting",
+        "supportedFact": "Documents on-device multimodal image analysis and structured classification in the framework; not a selected contentTagging request result."
+      },
+      {
+        "url": "https://developer.apple.com/documentation/foundationmodels/languagemodelcapabilities",
+        "supportedFact": "Capabilities describe advertised support and can be checked before requests; declarations or reported support are not successful generation evidence."
+      }
+    ],
+    "hostMacMetadata": {
+      "hostOS": "macOS 27.0.1",
+      "toolchain": "Xcode 27.1 (27A9275)",
+      "scope": "Metadata only: no session, prompt, image or generation.",
+      "imageOrGenerationCalls": 0,
+      "reportedModels": [
+        {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "name": "default",
+          "reasoning": false,
+          "toolCalling": true,
+          "vision": true
+        },
+        {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "name": "explicitGeneral",
+          "reasoning": false,
+          "toolCalling": true,
+          "vision": true
+        },
+        {
+          "availability": "available",
+          "englishSupported": true,
+          "guidedGeneration": true,
+          "name": "contentTagging",
+          "reasoning": false,
+          "toolCalling": true,
+          "vision": true
+        }
+      ],
+      "doesNotEstablishIOSRequestSuccess": true
+    },
+    "selectedModelIOSPreflight": {
+      "availability": "available",
+      "englishSupported": true,
+      "guardrails": "default",
+      "guidedGeneration": true,
+      "modelUseCase": "contentTagging",
+      "vision": true
+    },
+    "IOSPreflightLimit": "Advertised availability, vision, guided generation and English passed; the subsequent first engine return was unavailable. It does not establish completed image inference."
+  },
+  "frozenContract": {
+    "maximumEngineCalls": 12,
+    "serial": true,
+    "automaticRetries": 0,
+    "originalCaseOrder": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12"
+    ],
+    "requiredInspectedEmpty": [
+      "P02",
+      "P06",
+      "P12",
+      "P07"
+    ],
+    "P07Limit": "Frozen adoption criterion under visual material/edibility uncertainty, not truth that the object is nonfood.",
+    "all12InspectedRequired": true,
+    "anyUnavailableErrorCancellationOrMechanicalFailureStopsBatch": true,
+    "newEightCannotReplaceFailedCases": true,
+    "evenSuccessfulExposedRunWouldRequireSeparatelyFrozenNewEightFollowup": true
+  },
+  "externalBuild": {
+    "exit": 0,
+    "architecture": "arm64",
+    "platform": "iOS Simulator",
+    "runtimeVersion": "27.1",
+    "mainExecutableSDK": "27.1",
+    "debugDylibSDK": "27.0",
+    "minimumOS": "17.0",
+    "preBuildFrozenReferences": 145,
+    "baselinePayloadFiles": 59,
+    "unchangedOriginalFilesInQAAssembly": 56,
+    "unchangedOriginalSwiftFilesInQAAssembly": 14,
+    "externalOriginalFilesChanged": [
+      "LocalPhotoAI.swift",
+      "MealMirrorApp.swift",
+      "Package.swift"
+    ],
+    "additionalQAResources": "One helper and thirteen neutral input resources; no semantic labels, expected answers, captions, provenance or prior outputs in the prompt/bundle.",
+    "builtAppFileCount": 30,
+    "builtAndInstalledInventorySHA256": "b358335806864464fe5f9f2fb258558111c7cf8c4188fcc8144461a4cc81aacd",
+    "warnings": [
+      "Duplicate brand asset compile-source entry skipped.",
+      "macOS 27.0 sysroot warning while targeting arm64 iOS 17 Simulator.",
+      "App Intents metadata extraction skipped without that dependency."
+    ],
+    "buildIsNotGenerationOrUIEvidence": true
+  },
+  "observedRun": {
+    "phase": "stopped",
+    "stopCase": "P01",
+    "engineEntryIntentCheckpoints": 1,
+    "internalModelExecutionStartEstablished": false,
+    "completedInspectedCases": 0,
+    "rawAcceptedNamesFieldAbsent": true,
+    "qualitativeNamesAvailable": false,
+    "P01": {
+      "photoAIState": "unavailable",
+      "unavailableReason": "failed",
+      "stopReasons": [
+        "localModelUnavailable:failed"
+      ],
+      "visionFallbackState": "unavailable",
+      "labelTextState": "notRun",
+      "amountComponentCount": 0,
+      "includedComponentCount": 0,
+      "automaticCarbohydrateTotalAbsent": true,
+      "readyForReview": false,
+      "sourceContract": true,
+      "callerCancelledAfterReturn": false
+    },
+    "unrunCaseIDs": [
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12"
+    ],
+    "newEightStillUnrun": true,
+    "unrunCasesHaveNoRecognitionOrAmountOutcome": true,
+    "noRetryReplacementOrNewEightExtension": true,
+    "successfulAbstentionObserved": false
+  },
+  "finalIndependentReview": {
+    "sha256": "89353480373471faf71997f7c979958b4a0fca79b178ddbd4ed63a2039ce3199",
+    "finalized": true,
+    "consistencyChecks": 26,
+    "passed": 26,
+    "blockers": [],
+    "meaning": "Identity, retained evidence and stop-contract consistency checks. Not twenty-six recognition tests, twelve-case completion, semantic acceptance or adoption.",
+    "actualInstalled30FileInventoryAndReportMarkerVerified": true
+  },
+  "exitAndCleanupEvidence": {
+    "QAReportDeclaredExit": 6,
+    "simctlConsoleCommandExit": 0,
+    "hostTimedOut": false,
+    "outerControllerObservedExit": 1,
+    "outerControllerProvenance": "Parent-transcribed exec_command/write_stdin tool observation; not an independently emitted in-process controller receipt. Final assertion RuntimeError was consistent with the stopped report.",
+    "consoleExitZeroIsNotModelSuccess": true,
+    "nonSuccessTerminateExit": 3,
+    "nonSuccessTerminateObservation": "Nothing remained to terminate.",
+    "controllerShutdownExit": 0,
+    "laterShutdownExit": 149,
+    "laterShutdownObservation": "Already Shutdown; recorded state Shutdown.",
+    "reportsAndDataRetained": true,
+    "originalInteractiveBuild4PickerUntouched": true,
+    "OSComputeReleaseEstablished": false
+  },
+  "unresolvedCauseAndConfounds": {
+    "publicFailedMappingDoesNotExposeUnderlyingException": true,
+    "guardrailRefusalUnsupportedVisionPreparationOrRuntimeCauseNotIdentified": true,
+    "earlierBootStatusExit0AlsoReportedDataMigrationFailed": true,
+    "freshBootedAvailableStateAndEnvironmentProbeDoNotEstablishHealthyModelRuntime": true,
+    "unavailableVisionFallbackAlsoObserved": true,
+    "simulatorMigrationRuntimeAndModelDeliveryNotSeparated": true,
+    "modelSelectionCausalEffectNotEstablished": true
+  },
+  "limits": [
+    "No inspected or inspected-empty candidate output; no accuracy or abstention outcome and no qualitative comparison against baseline names.",
+    "One engine-entry intent checkpoint does not establish internal generation began.",
+    "The amount boundary was observed only on P01 return; no outcome is assigned to eleven unrun cases.",
+    "Final policy-filtered names would not expose raw visibleFood or rejection reasons.",
+    "No exact-app full journey, physical/network-isolated offline, performance/memory, nutrition/clinical, worldwide, superiority, submission-readiness or award result.",
+    "No saved-meal review API was invoked by the QA helper; isolated report/marker writes still occurred. storageTouched=false is not proof of no I/O."
+  ],
+  "nextStep": "Preserve this stopped run. Any cause-specific diagnostic requires a separate bounded frozen protocol; do not retry or fill the unrun cases. Continue independent app work without applying this selection-only proposal.",
+  "localArtifactReferencesBase": "../../../../",
+  "localArtifactReferences": [
+    {
+      "role": "proposal",
+      "path": "outputs/content-tagging-evaluation-20261024/PROPOSAL.json",
+      "sha256": "97fa53f66435677831a9a2989b8bba67a2b385e6eaeb91dd08bdd7f035317556"
+    },
+    {
+      "role": "candidateSource",
+      "path": "outputs/content-tagging-evaluation-20261024/LocalPhotoAI.swift",
+      "sha256": "e404295086b81523ab25bd3321c35f48b4b790c3968012c6e54f3860a642396d"
+    },
+    {
+      "role": "originalUnappliedSelectionDiff",
+      "path": "outputs/content-tagging-evaluation-20261024/selection-only.diff",
+      "sha256": "58484c881c20079704ddc5e986930aa9961c9e6f6ff753049a3ac401c9f58fc7"
+    },
+    {
+      "role": "sourceReview",
+      "path": "outputs/content-tagging-evaluation-20261024/source-review.json",
+      "sha256": "21f0094b9ab4f58001ec594e8099fc0de50f00e6a1044664befdc742d3e7b58d"
+    },
+    {
+      "role": "frozenProtocol",
+      "path": "outputs/content-tagging-evaluation-20261024/runner/assembly-v1/frozen-protocol.json",
+      "sha256": "b154c5b827a5b7f17bd763526f0c08a5d39975b93e2dba7a51cb6f192780dce6"
+    },
+    {
+      "role": "preBuildFreeze",
+      "path": "outputs/content-tagging-evaluation-20261024/runner/assembly-v1/pre-build-freeze.json",
+      "sha256": "980b0c4b06950f7f81454837633b283188ef6f3ded33524d94992113d2152c6f"
+    },
+    {
+      "role": "assemblyReview",
+      "path": "outputs/content-tagging-evaluation-20261024/runner/independent-assembly-review.json",
+      "sha256": "1117b554ec465088c31383b71163e93b55318d99e34b7dc3afbceb9e9458fc5c"
+    },
+    {
+      "role": "buildCommand",
+      "path": "outputs/content-tagging-evaluation-20261024/runner/build-v1/build-command-result.json",
+      "sha256": "c7cba75c42da5f8bbdecaac45299eea3f6ccc82a2cf1e9ef1fdc95fc5bcb24f1"
+    },
+    {
+      "role": "builtVerification",
+      "path": "outputs/content-tagging-evaluation-20261024/runner/build-v1/built-app-verification.json",
+      "sha256": "47b06984b1d08be5112e86b73da79deb5ca93852db7a90db0164a3174510df1d"
+    },
+    {
+      "role": "builtReview",
+      "path": "outputs/content-tagging-evaluation-20261024/runner/build-v1/independent-built-review.json",
+      "sha256": "46dc819568ae6ae74be2a4b43acaf4f5fed21b0f118def2d24e47cab200db625"
+    },
+    {
+      "role": "oneAttemptController",
+      "path": "outputs/content-tagging-evaluation-20261024/runner/build-v1/execute-once.py",
+      "sha256": "bbbb36fe13a380982729e2106a589bedef39d4a37219c1424729bd985e5789df"
+    },
+    {
+      "role": "executionApproval",
+      "path": "outputs/content-tagging-evaluation-20261024/EXECUTION-APPROVAL.json",
+      "sha256": "be62ff90e276af31d18be0485cc8bc5b39e6fbdc46d97405f220b1867dba83f5"
+    },
+    {
+      "role": "rawResult",
+      "path": "outputs/content-tagging-evaluation-20261024/runner/execution-v1/world-meal-qualitative.json",
+      "sha256": "b830c80799a15f18f968ce29087f305752808510edf1ad0a3b175c569ee7dc9b"
+    },
+    {
+      "role": "finalExecutionReview",
+      "path": "outputs/content-tagging-evaluation-20261024/runner/execution-v1/independent-execution-review.json",
+      "sha256": "89353480373471faf71997f7c979958b4a0fca79b178ddbd4ed63a2039ce3199"
+    },
+    {
+      "role": "interpretation",
+      "path": "outputs/content-tagging-evaluation-20261024/INTERPRETATION.md",
+      "sha256": "6a0675f98a0a3522b1d83e46f1294336e10f70dbf923e8907b65a96ccd5ac54e"
+    },
+    {
+      "role": "rootDecision",
+      "path": "outputs/content-tagging-evaluation-20261024/ROOT-DECISION.json",
+      "sha256": "83ea1db65004b392fa3ec917ca4db9caddccea3e0f11d0507844fea544efe838"
+    },
+    {
+      "role": "runtimePreparation",
+      "path": "outputs/content-tagging-evaluation-20261024/qa-device-preparation.json",
+      "sha256": "f97252f5c1261d43cabf2f03376af7b58e33ef0f5033205d94a6122330515021"
+    },
+    {
+      "role": "preExecutionState",
+      "path": "outputs/content-tagging-evaluation-20261024/qa-state-before-execution.json",
+      "sha256": "c494e94db4b3c51110fa97b8769a805a8eeb2f3cea8736ee271d5336cbb2ef78"
+    },
+    {
+      "role": "cleanup",
+      "path": "outputs/content-tagging-evaluation-20261024/qa-post-execution-cleanup.json",
+      "sha256": "57117e6d67d4d6b95329d6b03537548556cf68fe8cce2cc3125b79a1f12d7769"
+    },
+    {
+      "role": "outerToolObservation",
+      "path": "outputs/content-tagging-evaluation-20261024/root-controller-tool-observation.json",
+      "sha256": "eb96773c9d719c56a84252aced96e63b72bd24a54a8b0697a5a7af798a50b1ea"
+    },
+    {
+      "role": "hostMacMetadataResult",
+      "path": "outputs/food-kind-investigation-20261024/architecture-research/host-capability-probe-v1/RESULT.json",
+      "sha256": "e0142f52f0b8bdd424d788b322b7c27f1c0b57191125a3ed5ad81056df85eae4"
+    },
+    {
+      "role": "hostMacMetadataProbeSource",
+      "path": "outputs/food-kind-investigation-20261024/architecture-research/host-capability-probe-v1/CapabilityProbe.swift",
+      "sha256": "95004036e56225bb8cda5b3cbf65d577941ea2b6c277afaaae7c4636c927ff29"
+    },
+    {
+      "role": "hostMacMetadataCompile",
+      "path": "outputs/food-kind-investigation-20261024/architecture-research/host-capability-probe-v1/compile-command.json",
+      "sha256": "dd70ba93800c6f34f533bf8f2edc54296962098f201889ff86f24eddfef05f4b"
+    },
+    {
+      "role": "hostMacMetadataQuery",
+      "path": "outputs/food-kind-investigation-20261024/architecture-research/host-capability-probe-v1/query-command.json",
+      "sha256": "e1c4ddd2a92ce7a308fc48a82f68e58eb298c60c3f21f1ad169eeb72ee46e931"
+    },
+    {
+      "role": "hostMacEnvironment",
+      "path": "outputs/food-kind-investigation-20261024/architecture-research/host-capability-probe-v1/environment.json",
+      "sha256": "c77043542f04b415d2898027b8ad6cf56c73c54bce4976b595b7253682b8f1cb"
+    },
+    {
+      "role": "appleContentTagging",
+      "path": "outputs/food-kind-investigation-20261024/architecture-research/official-docs/content-tagging.json",
+      "sha256": "fc51c06e1bea4e207a04a3f9cef897494f23fb14cc20f11032b8f6b6ae4da9c2"
+    },
+    {
+      "role": "appleMultimodal",
+      "path": "outputs/food-kind-investigation-20261024/architecture-research/official-docs/multimodal.json",
+      "sha256": "1d453451967c4289c1c1bbc59e31af65e0d975dc09b80b098c06352d22d3f819"
+    },
+    {
+      "role": "appleCapabilities",
+      "path": "outputs/food-kind-investigation-20261024/architecture-research/official-docs/capabilities.json",
+      "sha256": "613e3c125b80831161e42e94e5c9febbb0d69e78ad4059be0813e250c85990f4"
+    },
+    {
+      "role": "originalBaseline",
+      "path": "outputs/world-meal-next-protocol-20261024/runner-review/execution-v1/world-meal-qualitative.json",
+      "sha256": "92ec229ea83dd50390fb5fe32e939d9e8eb722f1cf7352404eecc46ee6a58941"
+    },
+    {
+      "role": "frozenVisualExpectations",
+      "path": "outputs/world-meal-next-protocol-20261024/frozen-v1/EXPECTATIONS.json",
+      "sha256": "4a83ee168b4fd8b1673222b9c35cb4b782e1e389a7fa85c0eda5df786a57a905"
+    }
+  ],
+  "localArtifactScope": "Paths resolve from this file using localArtifactReferencesBase into the task outputs directory. External artifacts are retained locally and are not reproduced or redistributed here; the public record contains selected evidence and hashes only. No pixels, source/license metadata, private paths, device identifiers or process identifiers are copied."
+}

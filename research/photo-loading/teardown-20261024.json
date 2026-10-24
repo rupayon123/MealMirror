@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "recordDate": "2026-10-24",
+  "scope": "Native Mac Foundation source-bound callback mechanics using a retained-entry/shared-parent state surrogate. No actual SwiftUI lifecycle execution.",
+  "source": {
+    "repositoryRelativePath": "MealMirror.swiftpm/ContentView.swift",
+    "baselineFileSHA256": "ba2a587a0fd35e767afd308c6586a8b5731015d426c2674af2aa58f081d354e7",
+    "correctedFileSHA256": "286cfeae2542a62bbee0b6c1d41014a027a7781bb97c25e3404cbab338c7688d",
+    "actualChangedCallback": "AddMealView.onDisappear",
+    "change": "After existing cancelPendingAnalysis(), call existing invalidatePendingPhotoLoad(). No new task lifecycle state or loading-method change.",
+    "order": [
+      "cancelPendingAnalysis()",
+      "invalidatePendingPhotoLoad()"
+    ],
+    "baselineCallbackSHA256": "f73b07cb078664d3ffa51e4e0561c4351dec796fed63b507bca9483fc6b091f3",
+    "correctedCallbackSHA256": "dbbac58121d5c32aa8ddfb7c6d53a8c7a39b82f2c9110764cfedefc5fbd482a4",
+    "actualMethodsUnchangedSHA256": {
+      "load": "0916ed00101ccb220ab5cace04ae9d8f41cbce059344bd6cfaeaa033704f043d",
+      "append": "2e42057cdf1b546e32b9d3887056e452f957444d862b8785b09769d4db1b0444",
+      "invalidate": "d42975475a54693ed247736e9b8fe465a9ddfcd41b9b1b16c805c781230a83c0",
+      "cancel": "cae8b4d41f5f27f5d21b54b1e421b9518d6e0d762003d08a563cdd591fdc5f90",
+      "clear": "9afb27052bafd302729ed5d49ff4e2679644dab2a55f41bd90b57f4049b7c7a8"
+    }
+  },
+  "frozenProtocol": {
+    "sha256": "43ea79832d922b5f369adad31dcd0e62f6d4e3da9804ecebe1a0e6c8ec95cab5",
+    "caseCount": 5,
+    "checkCount": 30,
+    "runOrder": [
+      "baseline",
+      "candidate"
+    ],
+    "caseOrderAndExpectationsUnchanged": true,
+    "fence": "Snapshot after manual disappearance callback, parent reset and declared newer entry start/completion. Token/busy changes performed by candidate invalidation before this fence are permitted. Only later continuation writes are forbidden.",
+    "ordering": "Explicit checked-continuation witnesses/releases; no ordering sleeps.",
+    "boundsSeconds": {
+      "processWatchdog": 20,
+      "nativeCompile": 30,
+      "nativeRun": 30
+    }
+  },
+  "harness": {
+    "languageMode": "Swift6 native Mac Foundation",
+    "sourceExtraction": "Actual loadSelectedPhotos, appendPersonalPhotos, invalidatePendingPhotoLoad, cancelPendingAnalysis and clearMealDraft bodies. Actual disappearance callback body is manually invoked in a wrapper.",
+    "instrumentation": "Only an outer capturedTask = assignment is inserted in loadSelectedPhotos. Its Task expression/closure bytes are unchanged. Candidate differs from baseline only by the one callback line.",
+    "declaredSubstitutes": [
+      "Existing ID-only PhotosPickerItem/UIImage/preparation continuation spies; no real transfer or decoder.",
+      "MainActor entry classes replace SwiftUI State storage. Two retained entry instances use computed references to one shared parent draft.",
+      "Minimal demo, analysis, localization and role values satisfy unchanged method APIs."
+    ],
+    "actualAppenderAndParentResetBodiesUsed": true,
+    "taskExpressionAndClosureByteIdentical": true,
+    "fixtureSHA256": "edfa772104f6cb7a1644fe0fe30ea8b50f34bac81c3193304abbe0dca7759daa",
+    "driverSHA256": "e9b27b5b7342c33cec5989374158ae5eaafa326b03d8fbda37cf6d56523f1018",
+    "reusedBackendSHA256": "4140236d562a8fe7ecc1853c232180d79ea85b985b2aab43a10bee7acb4a84f6"
+  },
+  "baseline": {
+    "nativeCompileExitCode": 0,
+    "executionExitCode": 1,
+    "caseCount": 5,
+    "checkCount": 30,
+    "passedExpectations": 13,
+    "failedExpectations": 17,
+    "failedCases": 4,
+    "assembledFixtureSHA256": "db714518553f7f60aa87846e3a1a836bd73b7c0411f46bbbf89f8738ec08949f",
+    "resultsSHA256": "a8458e6c792ae1592c551a89716941a91de6a8d62dc568c66b1cbfdfd3f01745",
+    "observations": [
+      "After completed newer entry B, held A transfer resumed, prepared the abandoned batch and appended stale A photos into the shared draft.",
+      "A held decode resumed after reset while B was pending, populated the shared draft with A photos and consumed photo slots before B completed.",
+      "Late failed transfer and nil preparation wrote error/busy changes into the old entry scope after reset.",
+      "Active food success control already passed."
+    ],
+    "failureCountLimit": "Seventeen failed assertions are overlapping observations across four schedules, not seventeen distinct product defects."
+  },
+  "candidate": {
+    "nativeCompileExitCode": 0,
+    "executionExitCode": 0,
+    "caseCount": 5,
+    "checkCount": 30,
+    "passedExpectations": 30,
+    "failedExpectations": 0,
+    "assembledFixtureSHA256": "0acf41b7b5a38635e0b60971627f640ed2c1de936e177777b2f0d0b41bd92cf9",
+    "resultsSHA256": "dd71ea1af2a82c0026c922c33914ba34a864b2e6c1453602f04b28dd518d54ae",
+    "observations": "After allowed teardown invalidation writes, no abandoned continuation started later preparation/batch items or changed shared draft, old-scope error or photo-state writes. Already-started work was allowed to finish. Active food success was unchanged."
+  },
+  "postApplyFidelity": {
+    "sha256": "cc5fc8bb6d68eff98b48446bf929f211f87f5db5490cf8ebd0fc499e7dd271a0",
+    "actualCallbackMatchesTestedCandidate": true,
+    "allFiveActualMethodsMatchFrozenExtraction": true,
+    "currentSourceReassembledFixtureByteIdenticalToTestedCandidate": true,
+    "currentSourceReassembledFixtureSHA256": "0acf41b7b5a38635e0b60971627f640ed2c1de936e177777b2f0d0b41bd92cf9",
+    "extraExecutionPerformed": false,
+    "baselineAndCandidateRawResultsUnchanged": true
+  },
+  "cases": [
+    {
+      "id": "heldTransfer_lateSuccess_newerBCompleted",
+      "expectations": [
+        "No A1 preparation after teardown",
+        "No A2/A3 work after teardown",
+        "Only newer B photo retained",
+        "Shared parent unchanged after resume",
+        "No old entry photo-state writes after fence",
+        "No old error appears",
+        "Newer B state unchanged"
+      ]
+    },
+    {
+      "id": "heldDecode_lateSuccess_newerBActive",
+      "expectations": [
+        "Only already-started A1 preparation",
+        "No A2/A3 work after teardown",
+        "Reset parent remains empty while B pending",
+        "Shared parent unchanged after resume",
+        "No old entry photo-state writes after fence",
+        "No old error appears",
+        "Newer B remains busy without stale writes",
+        "B then appends only its own photo"
+      ]
+    },
+    {
+      "id": "heldTransfer_lateFailure_reset",
+      "expectations": [
+        "Failed transfer never prepares",
+        "No A2/A3 work after teardown",
+        "Reset shared parent unchanged",
+        "No old entry photo-state writes after fence",
+        "No stale transfer error"
+      ]
+    },
+    {
+      "id": "heldDecode_lateNil_reset",
+      "expectations": [
+        "Only already-started A1 preparation",
+        "No A2/A3 work after teardown",
+        "Reset shared parent unchanged",
+        "No old entry photo-state writes after fence",
+        "No stale preparation error"
+      ]
+    },
+    {
+      "id": "activeFoodSuccess",
+      "expectations": [
+        "Active photos append in order",
+        "Active source becomes personalPhoto",
+        "Active busy clears",
+        "Active error absent",
+        "Active preparation remains1800"
+      ]
+    }
+  ],
+  "executionPolicy": {
+    "attemptsPerVariant": 1,
+    "automaticRetries": 0,
+    "existingReceiptsAndResultsRefusedByDriver": true,
+    "refusalBranchExecuted": false,
+    "rawReportsWrittenAtomicallyAndReadBack": true,
+    "compileAndExecutionReceiptsRetained": true
+  },
+  "reviewStatus": {
+    "focusedIndependentReview": "Pending at curation; no independent-review completion is asserted in this record.",
+    "authorStaticPreExecutionReviewRetained": true
+  },
+  "localArtifacts": {
+    "run-once.py": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/run-once.py",
+      "sha256": "e9b27b5b7342c33cec5989374158ae5eaafa326b03d8fbda37cf6d56523f1018",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "teardown-fixture.swift": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/teardown-fixture.swift",
+      "sha256": "edfa772104f6cb7a1644fe0fe30ea8b50f34bac81c3193304abbe0dca7759daa",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "frozen-protocol.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/frozen-protocol.json",
+      "sha256": "43ea79832d922b5f369adad31dcd0e62f6d4e3da9804ecebe1a0e6c8ec95cab5",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "pre-execution-fidelity.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/pre-execution-fidelity.json",
+      "sha256": "a6acfd6937cbad12b35942ac606badbe091fd13c8d9ed912cc867eb4396a4df1",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "pre-execution-review.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/pre-execution-review.json",
+      "sha256": "a1d1a8504d961379b6e527efe75988caaf95ab3511f0ff1d66277ccad1ef97cc",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "task-handle-only.diff": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/task-handle-only.diff",
+      "sha256": "ed64763bca7b4ec2a54b288c190c1c4af331f936a964b8674e403d7a1a7856f8",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "onDisappear.actual.swift.txt": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/onDisappear.actual.swift.txt",
+      "sha256": "660aac5bde31c2822dc80058d3f260a9355ecbde647809e5711b3fd6145aa65f",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "onDisappear.candidate-only.diff": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/onDisappear.candidate-only.diff",
+      "sha256": "8d724817fa63edae9e48710b09a90df1d2a6bfdb437c848bb93d40e411d917d7",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "assembled-candidate-only.diff": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/assembled-candidate-only.diff",
+      "sha256": "85a71724c6d0d604a0c08cd686c8d155712292ef32b69bf59cb1be7a89fc5b5a",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "baseline/TeardownProbe.swift": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/baseline/TeardownProbe.swift",
+      "sha256": "db714518553f7f60aa87846e3a1a836bd73b7c0411f46bbbf89f8738ec08949f",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "baseline/compile.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/baseline/compile.json",
+      "sha256": "48aa0ea8a7c9e7393408e355b7599494a0caa630483283a557c62ebda1ae84b0",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "baseline/execute.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/baseline/execute.json",
+      "sha256": "d8412b8a8174d9a3e6e9dcc462f0290d914bb180ce6641656bc335030f5520ae",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "baseline/results.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/baseline/results.json",
+      "sha256": "a8458e6c792ae1592c551a89716941a91de6a8d62dc568c66b1cbfdfd3f01745",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "candidate/TeardownProbe.swift": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/candidate/TeardownProbe.swift",
+      "sha256": "0acf41b7b5a38635e0b60971627f640ed2c1de936e177777b2f0d0b41bd92cf9",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "candidate/compile.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/candidate/compile.json",
+      "sha256": "499d6adbf9ddaf86cd7e7036e11750c899d789bca0f406a733d07e8a910cc066",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "candidate/execute.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/candidate/execute.json",
+      "sha256": "ec52e573f168f96a64ebc038edf0fec7545610ec233adff60e5079f86904afbd",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "candidate/results.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/candidate/results.json",
+      "sha256": "dd71ea1af2a82c0026c922c33914ba34a864b2e6c1453602f04b28dd518d54ae",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "verification.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/verification.json",
+      "sha256": "cbbb95940225c22aa4c9f105d7e801027c4c9e4ab17f1c7f82b82a21c486e2a5",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "post-apply-fidelity.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/post-apply-fidelity.json",
+      "sha256": "cc5fc8bb6d68eff98b48446bf929f211f87f5db5490cf8ebd0fc499e7dd271a0",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "CONCLUSIONS.json": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/CONCLUSIONS.json",
+      "sha256": "fc86e54c2227c2b98e3dfd680ad1be763df1ddaa6a9d38d8c15f453eda1fe171",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "CONCLUSIONS.md": {
+      "relativePath": "../../../../outputs/photo-teardown-repro-20261024/CONCLUSIONS.md",
+      "sha256": "4c6ffba9121364f264d4d5870414f2b2de988e214d6eca62492d833f8b6803f2",
+      "availability": "Retained local evidence outside the repository and submission package."
+    }
+  },
+  "limits": [
+    "A retained class/shared-parent surrogate does not prove actual SwiftUI State capture, location, retention or lifetime, NavigationStack disappearance, or fullScreenCover presentation/dismissal/capture ordering.",
+    "The parent disappearance callback may also occur around full-screen camera presentation; existing analysis cancellation already uses it. Camera authorization and capture behavior were not covered.",
+    "Newer-entry snapshots include shared parent fields. Their baseline changes do not prove that old A changed newer B-local token/busy state.",
+    "Token invalidation does not cancel the async task, interrupt an already-started transfer/preparation, prove OS inference compute release or establish memory improvement.",
+    "No PhotosUI/UIKit, real image decoding, camera, model, Simulator/app UI, physical-device, network-isolated offline, performance or accessibility result follows.",
+    "Prior eight-case36-check loading evidence remains separate and does not gain actual lifecycle coverage.",
+    "No package, archive, delivery, upload, distribution or submission-readiness claim follows from this record. Raw sources/logs/binaries remain local; no images or compiled artifacts are published here."
+  ]
+}

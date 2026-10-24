@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "recordedUTC": "2026-10-24T22:45:59.697940+00:00",
+  "build": "1.0 (7)",
+  "sourceBaseCommit": "665f84e26b97e0ee243e6dca2a6fe2e21f496fea",
+  "zip": {
+    "bytes": 12203935,
+    "sha256": "2b3472a5b81fce6d8abec9d0e3d05fbb144b0be6bfbe24fe4ea4da8048a04d39",
+    "fileCount": 59,
+    "swiftFileCount": 17,
+    "swiftAllEqualWorkingSource": true,
+    "twoGenerationsEqual": true,
+    "changedFromBuild6": [
+      "MealMirror.swiftpm/ContentView.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ],
+    "path": "candidate/MealMirror-SSC2027.zip"
+  },
+  "sourceScope": {
+    "changedSinceBuild6": [
+      "ContentView.swift: existing meal-entry disappearance callback also invalidates pending photo loading after analysis cancellation.",
+      "Package.swift: build6 to7."
+    ],
+    "modelSHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "engineSHA256": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+    "modelPromptEngineAndAppearanceUnchanged": true,
+    "teardownRepro": "Five source-bound retained-entry/shared-parent surrogate cases: baseline17 overlapping failed assertions; candidate30/30passed. Exact current callback/reconstructedfixture equal tested candidate. Not actual SwiftUI lifecycle/camera evidence.",
+    "focusedIndependentReviewSHA256": "42d4f948dc8514dc91da74386c0db9e9137f656fdaa8b083cf2190c874644005",
+    "earlierCurationSnapshot": "teardown-20261024.json preserves pending-at-curation wording; focused independent review completed afterward and is pinned here."
+  },
+  "exactSimulator": {
+    "cleanBuildExit": 0,
+    "arm64": true,
+    "mainSDK": "27.1",
+    "debugDylibSDK": "27.0",
+    "minimumIOS": "17.0",
+    "installExit": 0,
+    "launchExit": 0,
+    "all17InstalledAppFileHashesMatch": true,
+    "scope": "Command install/launch only on separate owned headless iOS27.1 Duo. No render, tap, scrolling, navigation/camera lifecycle or full journey. Original build4 interactive picker/data preserved.",
+    "warningsRetained": [
+      "Duplicate asset compile-source entry skipped.",
+      "macOS27.0 sysroot while targeting iOS17Simulator.",
+      "No AppIntents dependency; metadata extraction skipped."
+    ],
+    "earlierMigrationWarningNotClearedByStateOrLaunch": true,
+    "ownedQAShutDownAfterVerificationWithAppDataRetained": true
+  },
+  "signedArchive": {
+    "codesignVerifyExit": 0,
+    "bundleIdentifier": "com.mealmirror.swiftchallenge",
+    "version": "1.0",
+    "build": "7",
+    "SDK": "iphoneos27.1",
+    "minimumIOS": "17.0",
+    "EnglishOnly": true,
+    "all59ExtractedPackagedFilesUnchangedAfterBuildAndArchive": true
+  },
+  "distribution": {
+    "testingOnly": true,
+    "exportUploadExit": 0,
+    "testFlightInternalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "appleReported": "Uploaded package is processing.",
+    "processingCompleteVerified": false,
+    "serverInternalIndicatorComplianceAndExistingGroupTestingVerified": false,
+    "phoneInstallVerified": false,
+    "lastVerifiedTestingBuild": "1.0 (2)",
+    "AppStoreReviewSubmissionOrRelease": false,
+    "externalGroupPublicBetaLinkOrPublicBinaryReleaseCreated": false,
+    "releaseSettingsChanged": false,
+    "ASCFreshCheck": "Existing browser tab still shows sign-in. No credentials entered/new question sent; handoff preserved."
+  },
+  "preBuildCorrection": {
+    "withdrawnInitialZIP": "c92bc3150d38b7b24d494c15f2aba10c5308aeca53e983cf601b4ce40e37a1c8",
+    "reason": "Initial patch order differed from frozen passing callback; byte check caught before build/install/upload/push. Correct order packaged freshly; initial artifact retained."
+  },
+  "open": [
+    "Actual SwiftUI state lifetime/navigation and camera presentation/capture/authorization ordering.",
+    "Full exact photo\u2192clue\u2192checked amount\u2192save/history/delete and fallback/error journeys.",
+    "Semantic food-category/abstention reliability; no arbitrary meal accuracy or superiority evidence.",
+    "iPad/RTL/large-text/VoiceOver/Reduce Motion full journeys.",
+    "Physical network-isolated offline and performance/memory checks.",
+    "Processing/compliance/existing internal-group availability and tester phone install.",
+    "Qualified clinical validation before any dosing; no dose feature or live Dexcom/Libre integration.",
+    "Applicant ownership/eligibility/answers and unpublished2027 rules."
+  ],
+  "localArtifactReferencesBase": "../../../..",
+  "localArtifactReferences": [
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/candidate-verification.json",
+      "sha256": "2cebe160ba1f096b8c0d8f7f1ae4e3755c102fbf75a328e6ddfc6e1a86596b57"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/exact-build-intent.json",
+      "sha256": "46df8e649bcb42c1808b6441a8b1193b73b01498605024881f367fd23279915f"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/exact-build-result.json",
+      "sha256": "384763bcf2807831f3816c7092e980953c90e97c07ccf0ae7fda93e9faecb70d"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/exact-build-verification.json",
+      "sha256": "716baaf51db69ad9bbfcde9522c86367a8754414836ed93b8f01559212661837"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/archive-intent.json",
+      "sha256": "f1d2e4a56c34a483852a104f43eef8eafc0472067698eeb5ee2eac02ef3402a3"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/archive-result.json",
+      "sha256": "ba7dad64248f2907c91305e0889eb3557c536dfae6799d32db8c8fd60198e235"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/archive-verification.json",
+      "sha256": "0164a2c43fcafecc4a4e7344044f95323997a74752af054cc4a670c7bbe8517d"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/exact-runtime-verification.json",
+      "sha256": "1b89564c072fef6d4981fa52794513a051bc5663e3fad25388a36d206f0a08ea"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/install-command.json",
+      "sha256": "1ef443dce4ce4206efa2ef9f0fe4f5fa449e861058b862fd1bc6409a2ecee373"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/launch-command.json",
+      "sha256": "6c2714bbc56965050b91c29f9b6518dba111ecb7dc92200973403835bcff9371"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/upload-intent.json",
+      "sha256": "67c1a6246c009c2d3f80d8a994b9db8c406cd98b992e8e9ed2d78970f21021b6"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/upload-result.json",
+      "sha256": "412fb133fceed2cd8f6b2ef3b51affab2eb1b873ff4029750e7f49c0fa641be6"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/internal-upload.log",
+      "sha256": "31d71063acf41e67afb250be9d7fb660f9ec182a2941b23c07d9650a9febfc6d"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/Internal-ExportOptions.plist",
+      "sha256": "043de9791e4a4f0afc6cbce10480237301f799316fd2ee382f8e93f87df357f9"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/asc-read-observation.json",
+      "sha256": "24197951b0dc110e8de1f46a150fd3a151daab45404152d50a1e103de481e146"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/root-public-source-record-check.json",
+      "sha256": "b4a595053dd0c9092d675e6310bf2556848a4defdacca5af691a84d75b6a6b78"
+    },
+    {
+      "path": "outputs/photo-teardown-repro-20261024/verification.json",
+      "sha256": "cbbb95940225c22aa4c9f105d7e801027c4c9e4ab17f1c7f82b82a21c486e2a5"
+    },
+    {
+      "path": "outputs/photo-teardown-repro-20261024/post-apply-fidelity.json",
+      "sha256": "cc5fc8bb6d68eff98b48446bf929f211f87f5db5490cf8ebd0fc499e7dd271a0"
+    },
+    {
+      "path": "outputs/photo-teardown-repro-20261024/focused-independent-review.json",
+      "sha256": "42d4f948dc8514dc91da74386c0db9e9137f656fdaa8b083cf2190c874644005"
+    },
+    {
+      "path": "outputs/photo-teardown-repro-20261024/public-curation-review.json",
+      "sha256": "4b63f8c915129a57ad7d55cf04a556bf6fcd805d7f8808140c27de6e0e8324b9"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7/WITHDRAWN.json",
+      "sha256": "3b4187c105cf56750205ae834d7f5eb25955f9dd28d5ec8b9f7bdd0c6400131f"
+    },
+    {
+      "path": "outputs/photo-teardown-delivery-20261024-build7-v2/qa-final-shutdown.json",
+      "sha256": "aa1ed4672079544b58da2153f9efc8110e51ab155a9ad5bd580c03b9ae710222"
+    }
+  ],
+  "localArtifactLimit": "Hashes identify retained local evidence, not redistributed local files. No pixels, credentials, private absolute paths or device identifiers are copied."
+}

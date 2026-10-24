@@ -4,9 +4,9 @@ Reviewed October 24, 2026. This records native Mac probes and source-derived iOS
 
 Raw logs and harness sources remain in local output folders outside the repository and Challenge ZIP. The links below resolve in this Mac workspace; they are not publicly distributed artifacts. No images, model weights or executables are added here.
 
-## Latest proposal: neutral wording rejected
+## Earlier prompt-only proposal: neutral wording rejected
 
-The [neutral-eligibility comparison](neutral-eligibility-20261024.md) changed only four fixed prompt text surfaces in an external QA app and made one call on each of the same twelve exposed images. All twelve retained name/amount separation; 30 mechanical checks passed. The proposal **failed its fixed adoption criteria**: P07 returned `brown dessert` instead of inspected-empty, P04 lost its broad compatible clue, and P08 added unsupported specificity. P02 became empty and P05 returned a broader name, but these individual changes do not establish a net or causal improvement. [All old/new names, unapplied diff and decision](neutral-eligibility-20261024.json) are retained. Production source, build-6 ZIP and distribution are unchanged. Eight separately pixel-reviewed inputs remain unrun; no failed case was replaced. Investigate general semantic decision architecture/capabilities before another frozen proposal; typed abstention remains untested.
+The [neutral-eligibility comparison](neutral-eligibility-20261024.md) changed only four fixed prompt text surfaces in an external QA app and made one call on each of the same twelve exposed images. All twelve retained name/amount separation; 30 mechanical checks passed. The proposal **failed its fixed adoption criteria**: P07 returned `brown dessert` instead of inspected-empty, P04 lost its broad compatible clue, and P08 added unsupported specificity. P02 became empty and P05 returned a broader name, but these individual changes do not establish a net or causal improvement. [All old/new names, unapplied diff and decision](neutral-eligibility-20261024.json) are retained. That prompt experiment changed no production source, build-6 ZIP or distribution. Eight separately pixel-reviewed inputs remain unrun; no failed case was replaced. Investigate general semantic decision architecture/capabilities before another frozen proposal; typed abstention remains untested.
 
 ## Baseline: twelve new public images, unchanged build-6 processing
 
@@ -167,3 +167,7 @@ The one recorded console launch returned exit code 0 and the report phase was co
 The [build-5 delivery receipt](../photo-preparation/delivery-20261024.json) separately records the exact production app’s clean build/install/launch/initial Welcome render and signed internal-only upload. It has no current-build UI interaction claim. Apple reports processing; completed processing, compliance and existing-group Testing remain unverified.
 
 The setup's `DataMigrationFailed` warning is retained despite `bootstatus` exit code 0 and an inventory state of `Booted`; the completed request demonstrates this run's usable processing. Nonfatal duplicate asset, sysroot and absent-AppIntents warnings also remain: build SDK 27.1, actual debug-dylib load-command SDK 27.0, all compiled code arm64/IOSSIMULATOR. These facts do not establish general runtime health or timing. Exact-app photo/model/OCR/manual-commit journeys, representative recognition/real-label evaluation, accessibility, later physical offline use and submission gates remain open. Research images, helper and QA binaries stay outside the repository and Challenge ZIP.
+
+## Rejected content-tagging selection trial
+
+[October 24 selection-only trial](content-tagging-20261024.md): selected-model capability preflight passed, then P01 returned unavailable/failed; zero inspected and eleven unrun. No retry, successful abstention, accuracy comparison or production change resulted. The separate new eight remain unrun.

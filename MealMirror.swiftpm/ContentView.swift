@@ -584,6 +584,7 @@ private struct AddMealView: View {
         }
         .onDisappear {
             cancelPendingAnalysis()
+            invalidatePendingPhotoLoad()
         }
         .task {
             showsPhotoInput = !startsWithDescription
