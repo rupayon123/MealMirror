@@ -151,7 +151,8 @@ enum MealPhotoPreparation {
     }
 
     static func downsampledImage(from image: UIImage, maxPixelSize: CGFloat = 1_800) -> UIImage? {
-        guard maxPixelSize.isFinite, maxPixelSize > 0 else { return nil }
+        guard maxPixelSize.isFinite, maxPixelSize > 0,
+              image.scale.isFinite, image.scale > 0 else { return nil }
 
         // UIKit's thumbnail preparer returns nil for a CIImage-backed UIImage.
         // Never pass the unprepared original to the preview or Vision.
@@ -162,7 +163,12 @@ enum MealPhotoPreparation {
                   extent.width > 0, extent.height > 0,
                   extent.width * extent.height <= 50_000_000 else { return nil }
             let scale = min(1, maxPixelSize / max(extent.width, extent.height))
-            let scaledImage = ciImage.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
+            // Align the crop before scaling so integral render bounds do not
+            // add a pixel for a negative fractional origin and exceed the limit.
+            let normalizedImage = ciImage.transformed(by: CGAffineTransform(
+                translationX: -extent.minX, y: -extent.minY
+            ))
+            let scaledImage = normalizedImage.transformed(by: CGAffineTransform(scaleX: scale, y: scale))
             guard let cgImage = CIContext(options: [.cacheIntermediates: false])
                 .createCGImage(scaledImage, from: scaledImage.extent),
                   max(CGFloat(cgImage.width), CGFloat(cgImage.height)) <= maxPixelSize else {
@@ -171,7 +177,6 @@ enum MealPhotoPreparation {
             return UIImage(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
         }
 
-        guard image.scale.isFinite, image.scale > 0 else { return nil }
         // preparingThumbnail's size is in points; Vision receives CGImage pixels.
         let pointLimit = maxPixelSize / max(image.scale, 1)
         guard let thumbnail = image.preparingThumbnail(

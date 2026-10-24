@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "recordedDate": "2026-10-24",
+  "title": "Build 5 source-derived iOS combined meal-image and synthetic-label integration",
+  "scope": "One fixed external QA engine request on the iOS 27.1 Simulator with three correlated crops of one previously exposed licensed meal photo plus a separate synthetic OCR label. Processing integration, not exact-app UI/full journey, physical offline, nutrition, clinical validation or recognition accuracy.",
+  "source": {
+    "zipSHA256": "062365e63b6b15f9e814940866517699a2b45a3a7c2b37fb4a7550b9466119fc",
+    "zipBytes": 12203922,
+    "version": "1.0",
+    "build": "5",
+    "baselineFileCount": 59,
+    "qaUnchangedOriginalFiles": 57,
+    "qaUnchangedSwiftFiles": 15,
+    "qaChangedOriginalFiles": [
+      "Package.swift: isolated QA bundle and fixture resource",
+      "MealMirrorApp.swift: external SwiftUI task lifecycle"
+    ],
+    "qaAddedFiles": 6,
+    "processingSourcesByteIdenticalToCleanZIP": true,
+    "processingSourceHashes": {
+      "LocalPhotoAI.swift": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+      "MealAnalysisEngine.swift": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+      "Models.swift": "00b5a4a331a7427dbac3aded9ee904f09c3b491d4a03e3cc6ee188b6489caff3",
+      "MealCore/PhotoNamePolicy.swift": "e905f098a2e56eead569aee895dc3c75d323379e83ae77c704208cf49188a4c4",
+      "MealCore/MealModels.swift": "ce1c8eb5114471f08f84049c7492396981f78ac7f1674575699d457109ae1303",
+      "Localization.swift": "18ee8f08a6b01baa0efd7bac9bf5f82bcff6fbd39e1aa1a503437655c6a08877",
+      "CameraCapture.swift": "0c3693c12a525324082d81e84f434b6ba9e9487f963cb3d1aaa85d98a80fc434",
+      "PhotoCluePolicy.swift": "644110f7872461dc27e2c458d594a5b0cd9a64935063522db26c2c9ca7b1a959"
+    },
+    "helperSHA256": "01ca2cff26f5a247cec1f2846e0bf34af2b78eb6932af0f4bf204e0ac2a89e27",
+    "frozenProtocolSHA256": "6627a84062b598c1eff5868b5875820184c107ebbd147c2674ec285398b192f7",
+    "frozenInputsSHA256": "b80573b75f4dd9dd20a124699b0d818b6c59e206b6e161cef88aad77ae232bfe",
+    "sourceFidelitySHA256": "80002a86f008e23324da75f8d5e1b7d4eaaed88c9400d09a6f53e44bd373fc04",
+    "preservedModelContract": "SystemLanguageModel.default; default Apple guardrails; fixed main-visible prompt; visibleFood/names schema, maximum 6 names, temperature 0, token limit 180; all gates, policy and the 15-second caller deadline unchanged. Vision/OCR 12-second gates unchanged.",
+    "sourceEditsByThisEvidenceTask": false
+  },
+  "build": {
+    "externalQAOnly": true,
+    "compileExitCode": 0,
+    "buildSucceededPhrasePresent": true,
+    "architecture": "arm64",
+    "buildSDK": "iphonesimulator27.1",
+    "minimumIOS": "17.0",
+    "platform": "IOSSIMULATOR",
+    "bundleIdentifier": "com.mealmirror.qa.combinedlabel20261024b5v3",
+    "mainExecutableSHA256": "99d99389c4630610c51bfa2e4911324f462ee657f03074f455d81c7a423f2f6f",
+    "debugDylibSHA256": "7c3696172c363efcef9e40bfcccd3b3369707b697be5319d46fb07c75a047de1",
+    "appInventoryCanonicalSHA256": "271aa2a1f4e20dafebafc8fc2b89284492ffbd1ad224238f1b7ae1078871beec",
+    "appInventoryFileCount": 22,
+    "currentBuiltAppInventoryMatchesFrozen": true,
+    "fixturesAndCreditInBuiltBundleMatchFrozen": true,
+    "logSHA256": "cf2ce0da551fe899c1628d986e600fbda5027045bd0909b6d5c30109a0134b44",
+    "warningScope": "Nonfatal duplicate asset compile entry, product linker macOS sysroot warning and skipped AppIntents metadata extraction retained. Launcher/preview LC_BUILD_VERSION SDK 27.1; actual app debug dylib reports SDK 27.0. All three are arm64/IOSSIMULATOR; the actual iOS 27.1 request below completed. No linker workaround or rebuild was used for this QA variant."
+  },
+  "execution": {
+    "target": "Separate headless iPhone Duo Simulator, iOS 27.1; the interactive photo-picker Duo was not the QA target.",
+    "installCommandExitCode": 0,
+    "consoleLaunchCommandExitCode": 0,
+    "phase": "completed",
+    "combinedProcessingAndSeparationObserved": true,
+    "recordedLaunchAttempts": 1,
+    "recordedEngineCalls": 1,
+    "automaticRetries": 0,
+    "secondAttemptInProvidedExecutionRecords": false,
+    "attemptEvidenceLimit": "One parent-recorded console launch, one fixed completed report and one-shot source/report guards; not a machine-wide execution audit. No new execution was performed during independent evidence verification.",
+    "reportCopyMatchesIsolatedContainerReport": true,
+    "reportSHA256": "66087d9e4e029c632b3e871ed55cc1fb5c46cd9221c69eee9c90a51ec0cac424",
+    "consoleLogSHA256": "422ed24e86238b1f1153d9188d044cd198376255119fc5c8182fe553ab69ebdb",
+    "setupWarning": "Parent bootstatus returned exit code 0 with terminal DataMigrationFailed and an inventory state of Booted. Warning retained; this observed QA request establishes usable processing for this run, not general Simulator health.",
+    "noResetOrRetryClaim": "No reset/reboot or second attempt is recorded within this fixed case.",
+    "modelPreflight": {
+      "availability": "available",
+      "englishSupported": true,
+      "guidedGeneration": true,
+      "model": "SystemLanguageModel.default",
+      "vision": true
+    }
+  },
+  "frozenInputs": {
+    "manifestSHA256": "b80573b75f4dd9dd20a124699b0d818b6c59e206b6e161cef88aad77ae232bfe",
+    "orderedMealImages": [
+      "view-01-full.jpg",
+      "view-02-crop.png",
+      "view-03-crop.png"
+    ],
+    "separateLabel": "synthetic-label-37g.png",
+    "fixtures": [
+      {
+        "name": "view-01-full.jpg",
+        "role": "correlatedMealView",
+        "sha256": "977210f74c4c08bedcad860c9d2e676b1e100229e33b5c9730759a827e0e6fe4",
+        "bytes": 55063,
+        "width": 500,
+        "height": 375
+      },
+      {
+        "name": "view-02-crop.png",
+        "role": "correlatedMealView",
+        "sha256": "14a18fc58f3db23e9b416f935f798faf53a5b292f1bcdccc901228dcd9d2bf29",
+        "bytes": 285094,
+        "width": 425,
+        "height": 375
+      },
+      {
+        "name": "view-03-crop.png",
+        "role": "correlatedMealView",
+        "sha256": "a5b5ba66b116007ba578bc651c6825fc321aa281a2f5cf9e9159a4f632dcc8b6",
+        "bytes": 284147,
+        "width": 425,
+        "height": 375
+      },
+      {
+        "name": "synthetic-label-37g.png",
+        "role": "separateSyntheticLabel",
+        "sha256": "ae423ddbe85adcb46967f7f6a964de9a79a049fb936337d95b3a601f1460f80a",
+        "bytes": 22741,
+        "width": 1200,
+        "height": 320
+      }
+    ],
+    "foodDataPixelLimit": 1800,
+    "labelDataPixelLimit": 2400,
+    "modelFoodAttachmentPixelLimit": 768,
+    "cropping": "Full 500 × 375 source, plus 425 × 375 crops at CGImage rectangles [0, 0, 425, 375] and [75, 0, 425, 375], overlapping by 350 × 375 pixels. All 4 image hashes are unchanged since the initial unrun build 4 preparation.",
+    "exposure": "Full photo and main-visible prompt already exposed in exploratory tuning. Derived crops are correlated and not a new independent dataset, varied meals or independent camera views.",
+    "credit": {
+      "title": "File:Pho, popular Vietnamese noodle soup.jpg",
+      "author": "Tayzar44",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Pho,_popular_Vietnamese_noodle_soup.jpg",
+      "sourceRevisionID": 1142266661,
+      "sourceRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File:Pho,_popular_Vietnamese_noodle_soup.jpg&oldid=1142266661",
+      "license": "CC BY 4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/4.0",
+      "modification": "Provider 500 px thumbnail retained unchanged; two overlapping local crops exported as PNG. Historical source/license metadata reused; no new rights revalidation in this task.",
+      "creditSHA256": "18ddfba91ad1f1bfef3fb7702ae8646f073a2a030a0fb96b49bb79111912f723"
+    },
+    "syntheticLabel": "Newly rendered black-on-white \"Total Carbohydrate 37 g\" test text. Fabricated OCR fixture only: no relationship to the photographed meal, real product, serving or nutritional/clinical ground truth.",
+    "inferenceBoundary": "Only three meal image attachments and fixed prompt/locale enter the food-name model. Separate label enters actual VisionLabelInspector. No OCR text, expected names, source titles, filenames, license metadata, earlier outputs or expected synthetic phrase are injected into food-name generation.",
+    "preparedInputs": [
+      {
+        "bytes": 55063,
+        "fixture": "view-01-full.jpg",
+        "id": "preparedFrozenInput",
+        "preparedHeight": 375,
+        "preparedMaximumPixelsAtMostRoleLimit": true,
+        "preparedOrientationRawValue": 0,
+        "preparedScale": 1,
+        "preparedWidth": 500,
+        "role": "correlatedMealView",
+        "roleLimitPixels": 1800,
+        "sha256": "977210f74c4c08bedcad860c9d2e676b1e100229e33b5c9730759a827e0e6fe4"
+      },
+      {
+        "bytes": 285094,
+        "fixture": "view-02-crop.png",
+        "id": "preparedFrozenInput",
+        "preparedHeight": 375,
+        "preparedMaximumPixelsAtMostRoleLimit": true,
+        "preparedOrientationRawValue": 0,
+        "preparedScale": 1,
+        "preparedWidth": 425,
+        "role": "correlatedMealView",
+        "roleLimitPixels": 1800,
+        "sha256": "14a18fc58f3db23e9b416f935f798faf53a5b292f1bcdccc901228dcd9d2bf29"
+      },
+      {
+        "bytes": 284147,
+        "fixture": "view-03-crop.png",
+        "id": "preparedFrozenInput",
+        "preparedHeight": 375,
+        "preparedMaximumPixelsAtMostRoleLimit": true,
+        "preparedOrientationRawValue": 0,
+        "preparedScale": 1,
+        "preparedWidth": 425,
+        "role": "correlatedMealView",
+        "roleLimitPixels": 1800,
+        "sha256": "a5b5ba66b116007ba578bc651c6825fc321aa281a2f5cf9e9159a4f632dcc8b6"
+      },
+      {
+        "bytes": 22741,
+        "fixture": "synthetic-label-37g.png",
+        "id": "preparedFrozenInput",
+        "preparedHeight": 320,
+        "preparedMaximumPixelsAtMostRoleLimit": true,
+        "preparedOrientationRawValue": 0,
+        "preparedScale": 1,
+        "preparedWidth": 1200,
+        "role": "separateSyntheticLabel",
+        "roleLimitPixels": 2400,
+        "sha256": "ae423ddbe85adcb46967f7f6a964de9a79a049fb936337d95b3a601f1460f80a"
+      }
+    ]
+  },
+  "observed": {
+    "localImageInspection": {
+      "state": "inspected",
+      "outcome": "inspectedNames",
+      "photoCount": 3,
+      "acceptedNames": [
+        "soup"
+      ],
+      "meaning": "Unconfirmed food-name clue only; no name accuracy benchmark."
+    },
+    "separateLocalOCR": {
+      "state": "read",
+      "lines": [
+        "Total Carbohydrate 37 g"
+      ],
+      "syntheticTextExactIgnoringCaseAndWhitespace": true,
+      "syntheticFixtureOnly": true,
+      "meaning": "Transcription of fabricated test text, not a verified meal or product carbohydrate amount."
+    },
+    "visionFallback": {
+      "state": "notRun"
+    },
+    "amountComponentCount": 0,
+    "includedComponentCount": 0,
+    "componentIdentityAndInclusion": [],
+    "automaticCarbohydrateTotalAbsent": true,
+    "readyForReview": false,
+    "localNamesHaveNoAmountComponents": true,
+    "storageTouched": false,
+    "actualAppUI": false,
+    "physicalDevice": false,
+    "offlineNetworkIsolationEstablished": false
+  },
+  "preRuntimeHistory": {
+    "v1": "Unrun build 4 external helper/freeze preserved before the fail-closed report-writer correction.",
+    "v2": "Unrun fail-closed build 4 helper preserved before aligning the actual food 1800 px/label 2400 px role limits.",
+    "v3": "Exact build 5 rebase before compilation/inference; all frozen fixture bytes retained. Helper changed only ZIP/build/bundle/protocol metadata from the role-aligned build 4 version. Old full build 4 baseline, helper and records preserved.",
+    "reportPersistence": "Initial atomic report is mandatory before processing; any persistence failure exits with code 5; an existing report is refused. No production source changed to fix the external reporter."
+  },
+  "independentVerification": {
+    "cleanZIP59FilesMatchBaseline": true,
+    "allOriginalSourceFidelityEntriesMatch": true,
+    "all6ExternalAdditionEntriesMatch": true,
+    "freezeChecks": [
+      {
+        "path": "pre-build-freeze.json",
+        "sha256": "8a25c094fcd1b184676467cbc7314686747bd907d87a16f47ec3062b38441e6a",
+        "matches": true
+      },
+      {
+        "path": "pre-build-scope-freeze.json",
+        "sha256": "76d85b4f20bf1cacb9c013e8eb5b63a071aca91c5df71d37f4a381b0ec8e74f2",
+        "matches": true
+      },
+      {
+        "path": "built-v3-freeze.json",
+        "sha256": "c3822aff3b5211919b38d0da3815184d95702420171198f1616b65725288d0d6",
+        "matches": true
+      }
+    ],
+    "helperBindsFrozenProtocol": true,
+    "oneEngineCallInHelper": true,
+    "actualAppRoleBoundsMatch": true,
+    "builtAppInventoryMatches": true,
+    "runtimePreparedInputHashesMatchBuiltAndFrozen": true,
+    "labelAndAmountSeparationObserved": true,
+    "consoleAndReportCompletionAgree": true,
+    "newBuildRunUIModelOCROrSimulatorActivity": false
+  },
+  "remainingGates": [
+    "Exact-app photo-picker/selected-thumbnail/model/OCR/checked-amount/save/history complete journey",
+    "Actual app touch scrolling, VoiceOver, largest text, appearances and relevant screen sizes",
+    "Physical iPhone model-ready camera/airplane-mode use and network-isolation evidence",
+    "Independent culturally varied meals, nonfood and real-label evaluation with qualified ground truth",
+    "Reliable performance and cancellation behavior under stable clocks",
+    "Medical/individualized clinical validation for any future dosing feature; no doses produced here",
+    "Applicant code review/answers and current 2027 Swift Challenge rules/submission requirements"
+  ],
+  "artifactReferences": {
+    "localOnlyWorkspaceRoot": "../../../../outputs/offline-ai-ios-combined-label-20261024/",
+    "localArtifactsNotPublished": true,
+    "files": [
+      {
+        "localArtifact": "frozen-protocol.json",
+        "sha256": "6627a84062b598c1eff5868b5875820184c107ebbd147c2674ec285398b192f7",
+        "bytes": 5777
+      },
+      {
+        "localArtifact": "frozen-inputs.json",
+        "sha256": "b80573b75f4dd9dd20a124699b0d818b6c59e206b6e161cef88aad77ae232bfe",
+        "bytes": 2296
+      },
+      {
+        "localArtifact": "frozen-output-schema.json",
+        "sha256": "953b1261d477d6a2a66741238071c3fa7cc6c3a3c440813bf43c321949463e3f",
+        "bytes": 2509
+      },
+      {
+        "localArtifact": "source-fidelity.json",
+        "sha256": "80002a86f008e23324da75f8d5e1b7d4eaaed88c9400d09a6f53e44bd373fc04",
+        "bytes": 18236
+      },
+      {
+        "localArtifact": "pre-build-freeze.json",
+        "sha256": "8a25c094fcd1b184676467cbc7314686747bd907d87a16f47ec3062b38441e6a",
+        "bytes": 2216
+      },
+      {
+        "localArtifact": "pre-build-scope-freeze.json",
+        "sha256": "76d85b4f20bf1cacb9c013e8eb5b63a071aca91c5df71d37f4a381b0ec8e74f2",
+        "bytes": 1311
+      },
+      {
+        "localArtifact": "built-v3-freeze.json",
+        "sha256": "c3822aff3b5211919b38d0da3815184d95702420171198f1616b65725288d0d6",
+        "bytes": 1919
+      },
+      {
+        "localArtifact": "build-evidence-v3.json",
+        "sha256": "b5dd111f2c6e7234beb6774aea5c237fc5cc54af5a8b9ae1b9d034ae1ab6bce3",
+        "bytes": 5646
+      },
+      {
+        "localArtifact": "build-warnings-v3.json",
+        "sha256": "1a58a755bff4057281b00fff1246ef0be2999bf3e2987de3e02f32d10b689f44",
+        "bytes": 2353
+      },
+      {
+        "localArtifact": "v3-rebase-helper.diff",
+        "sha256": "675ca73c3d9813f51474e328a7d057e16a453e1610c83710da6229856a96d5f0",
+        "bytes": 1670
+      },
+      {
+        "localArtifact": "build4-to-build5-processing.diff",
+        "sha256": "b6f40f200d5826c4337ce33cef142b02da5aab5aa445f67e52d9ce8075f4d870",
+        "bytes": 1996
+      },
+      {
+        "localArtifact": "fixture-visual-review-before-inference.json",
+        "sha256": "863671c9f59dc0ce77b8aca7bba3441cea038b64bf5e68a1714c0174a2fd0eec",
+        "bytes": 1147
+      },
+      {
+        "localArtifact": "execution-v3/attempt.json",
+        "sha256": "ad6ab070b0dd770da7dea75a27fafca4148e5f46da6bb8722791dbdfaa773f85",
+        "bytes": 595
+      },
+      {
+        "localArtifact": "execution-v3/install.json",
+        "sha256": "1a08dbc85443824f7e56471451e982dada2f784437f0726772d098659ff99159",
+        "bytes": 281
+      },
+      {
+        "localArtifact": "execution-v3/console-command-result.json",
+        "sha256": "e62bd55b77bd98efdac69b0e40c7c5ba5bc6f6968167699f8ca6ce87c7190506",
+        "bytes": 73
+      },
+      {
+        "localArtifact": "execution-v3/console.log",
+        "sha256": "422ed24e86238b1f1153d9188d044cd198376255119fc5c8182fe553ab69ebdb",
+        "bytes": 51
+      },
+      {
+        "localArtifact": "execution-v3/combined-meal-label.json",
+        "sha256": "66087d9e4e029c632b3e871ed55cc1fb5c46cd9221c69eee9c90a51ec0cac424",
+        "bytes": 5302
+      }
+    ]
+  },
+  "distribution": "Evidence JSON/docs only. No images, helpers, binaries, model weights, personal images, glucose data, private absolute paths, device/container/team identifiers, app publication or upload by this task."
+}

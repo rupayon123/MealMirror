@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "recordDate": "2026-10-24",
+  "scope": "Actual source-derived photo preparation in a standalone arm64 iOS 27.1 Simulator process; procedural fixtures, no app UI, camera, Photos picker, model or production data.",
+  "source": {
+    "baseCommit": "b63de899f5e7bff1177b1cf257a1230a69ff0030",
+    "snapshotHasUncommittedPreparationFixes": true,
+    "repositoryRelativePath": "MealMirror.swiftpm/MealAnalysisEngine.swift",
+    "originalFileSHA256": "d9bf3466072d65c3c878db0d32d40fceaff11a23ade2362ff4b0827b4002b721",
+    "originalEnumSHA256": "783e221fbb83ad2baf8361bc38b33efde1ed98559763ee009f36624a729c55c5",
+    "verifiedFileSHA256": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+    "verifiedExactEnumSHA256": "5dc72ee41905c5d8b7abcbe94ada61a00aae8625023b5f106523c5dd5d739dae",
+    "changes": [
+      "Normalize the finite CI extent origin to zero before existing scaling and bounded rendering.",
+      "Move the existing finite/positive UIImage scale guard before the CI/CG branch."
+    ],
+    "extraction": "The driver extracts the current enum byte-identically; only standalone imports are prefixed outside it. No production implementation copy is committed in the test."
+  },
+  "reproduction": {
+    "originalGeometryCases": 64,
+    "originalPassed": 48,
+    "negativeFractionalOriginReturnedNil": 16,
+    "matrix": "Four origins, all eight UIImage orientation values, scales 1/2, procedural asymmetric bitmap and 768-pixel maximum.",
+    "cause": "Original nil results coincided with scaled integral bounds of 769 by 513 for negative fractional origins, consistent with render-bound expansion. The retained probe does not distinguish render failure from rejection by the 768-pixel guard. Origin normalization restored bounded results.",
+    "malformedScale": "Public UIImage CI constructors retained NaN/infinite scales; the original CI branch returned images carrying those scales. The CG branch rejected them. Zero/negative requested scales normalized to 1 on this runtime.",
+    "geometryEvidence": {
+      "relativePath": "../../../../outputs/photo-preparation-diagnosis-20261024/candidate-geometry.json",
+      "sha256": "75f4f63cf31ead7f264ea9e553ee12b6d5bf9efa250ae1ccdb7db0c52c35d405",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "malformedScaleEvidence": {
+      "relativePath": "../../../../outputs/photo-preparation-diagnosis-20261024/invalid-scale-execution.json",
+      "sha256": "db4db7ae00cc8a16b7c50b7efde498004237f1d107a5d9aa507ea5e1ea04023a",
+      "availability": "Retained local evidence outside the repository and submission package."
+    }
+  },
+  "verification": {
+    "driver": {
+      "repositoryRelativePath": "scripts/verify-photo-preparation.py",
+      "sha256": "b047a7592b7a593ffd3247ee6b1065a8abcae6f51b9d72b566470c4b1696cef6"
+    },
+    "fixtures": {
+      "repositoryRelativePath": "scripts/verify-photo-preparation.swift",
+      "sha256": "3a02a918c1176d519681b227367a6b62b38c1416d4e81b1aa6a6189db95da44b"
+    },
+    "languageMode": "Swift 6",
+    "target": "arm64-apple-ios17.0-simulator",
+    "runtime": "iOS 27.1 Simulator",
+    "recordedExecutionAttempts": 1,
+    "retries": 0,
+    "compileExitCode": 0,
+    "executionExitCode": 0,
+    "checks": {
+      "geometryCaseCount": 64,
+      "callerLimitCaseCount": 4,
+      "malformedScaleCaseCount": 8,
+      "invalidInputCaseCount": 7,
+      "failureCount": 0
+    },
+    "totalChecks": 83,
+    "fixedTolerances": {
+      "cornerComponentDifferenceMaximum": 12,
+      "referenceDistinctnessMinimum": 64,
+      "displayAspectDifferenceMaximum": 0.005
+    },
+    "observed": {
+      "cornerComponentDifferenceMaximum": 0,
+      "referenceDistinctnessMinimum": 163,
+      "displayAspectDifferenceMaximum": 0.00017352073572796112,
+      "allCheckedBoundsScaleAndOrientationPassed": true
+    },
+    "malformedInputResults": "NaN/infinite actual scales rejected on CI and CG; UIKit-normalized scales remained usable. Infinite/empty CI extents, invalid image data and invalid maximum sizes returned nil.",
+    "protocol": {
+      "relativePath": "../../../../outputs/photo-preparation-regression-20261024/protocol.json",
+      "sha256": "0c61256902267ee7edb87e7655c2741e085b03d378b1f3f7bee2afc4d76757e9",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "results": {
+      "relativePath": "../../../../outputs/photo-preparation-regression-20261024/results.json",
+      "sha256": "566a591cfda67065f87e91010777f1d07cb2d1c8bb9fcca7ca3acc607fb48aff",
+      "availability": "Retained local evidence outside the repository and submission package."
+    },
+    "receipt": {
+      "relativePath": "../../../../outputs/photo-preparation-regression-20261024/verification.json",
+      "sha256": "a7be2dd7ac113c73c707a3b8b9fcca77c9976f2d6920f46dc6320b44581150d0",
+      "availability": "Retained local evidence outside the repository and submission package."
+    }
+  },
+  "existingOutputRefusal": {
+    "exitCode": 2,
+    "existingReceiptUnchanged": true,
+    "secondSimulatorProcessExecuted": false,
+    "evidence": {
+      "relativePath": "../../../../outputs/photo-preparation-diagnosis-20261024/existing-output-refusal.json",
+      "sha256": "fb8db419468d62795c6bc9e98c2a5939f68b79d7bcf0c50b80d9dd754e86bfc9",
+      "availability": "Retained local evidence outside the repository and submission package."
+    }
+  },
+  "memory": {
+    "status": "Unresolved; no memory improvement claimed by either correctness fix.",
+    "historicalReceipt": "The original stress raw evidence was not located in bounded retained-output searches; first high-peak wording appears in 4235314 without a raw link. This does not establish deletion or reconstruct its measurement method.",
+    "freshProcedural48MPObservations": [
+      {
+        "input": "Lazy procedural CI graph",
+        "peakRSSBytesAfterFixture": 65683456,
+        "peakRSSBytesAfterPreparation": 105791488,
+        "outputBoundSatisfied": true,
+        "evidence": {
+          "relativePath": "../../../../outputs/photo-preparation-diagnosis-20261024/ci-lazy-48mp.json",
+          "sha256": "d2519616dcba70d914e550d6d839789f73b2092ff57e6d34feca296b07bfa1bc",
+          "availability": "Retained local evidence outside the repository and submission package."
+        }
+      },
+      {
+        "input": "CI image from full-size CIContext-created CG image; eager allocation unproven",
+        "peakRSSBytesAfterFixture": 83673088,
+        "peakRSSBytesAfterPreparation": 505593856,
+        "outputBoundSatisfied": true,
+        "evidence": {
+          "relativePath": "../../../../outputs/photo-preparation-diagnosis-20261024/ci-materialized-48mp.json",
+          "sha256": "e3b92c0baeb62226cce8bab394cc0603a199bd5b0160794dea9ee79713523d82",
+          "availability": "Retained local evidence outside the repository and submission package."
+        }
+      },
+      {
+        "input": "CG-backed UIImage from that full-size CG image; eager allocation unproven",
+        "peakRSSBytesAfterFixture": 83673088,
+        "peakRSSBytesAfterPreparation": 481427456,
+        "outputBoundSatisfied": true,
+        "evidence": {
+          "relativePath": "../../../../outputs/photo-preparation-diagnosis-20261024/cg-materialized-48mp.json",
+          "sha256": "7c9aa35bb7c528e2ec8a11c1254d7de70a3dfa7c5fb03e2cdf19d2c11c5ae171",
+          "availability": "Retained local evidence outside the repository and submission package."
+        }
+      },
+      {
+        "input": "CI image from explicitly filled 48 MP CGContext bitmap",
+        "peakRSSBytesAfterFixture": 256999424,
+        "peakRSSBytesAfterPreparation": 662077440,
+        "outputBoundSatisfied": true,
+        "evidence": {
+          "relativePath": "../../../../outputs/photo-preparation-diagnosis-20261024/forced-raster-memory.json",
+          "sha256": "73d7df9bd065517c86ab0aecd307cb60526ce2ea16b165fde55ffd54f79031d9",
+          "availability": "Retained local evidence outside the repository and submission package."
+        }
+      }
+    ],
+    "interpretation": "Peak RSS includes fixture, runtime, decoder/backing realization and render transients. CIContext-created CGImage fixtures were not proven eager; their raw materialized mode labels must not be interpreted as an eager-decode control. Even the explicitly filled CGContext control peaked higher during preparation, so fixture allocation alone does not explain the peak. Internal costs remain unisolated; no memory optimization is established."
+  },
+  "officialReferences": [
+    {
+      "url": "https://developer.apple.com/documentation/coreimage/cicontext/createcgimage(_:from:)",
+      "context": "Apple documents render-region integralization/intersection and nil for empty or oversized extents."
+    },
+    {
+      "url": "https://developer.apple.com/documentation/coreimage/cicontextoption/cacheintermediates",
+      "context": "This option controls intermediate caching; disabling it is not a guarantee of bounded peak decoding/render memory."
+    }
+  ],
+  "limits": [
+    "Four orientation-aware drawn-reference corner samples and aspect/metadata checks are not full pixel equivalence or off-center marker coverage.",
+    "Malformed UIImage API handling is reproduced; no evidence that the real camera or picker supplies NaN/infinite scales.",
+    "Procedural Simulator observations do not validate physical device behavior, real camera/HEIC/JPEG decoding, full app UI, network isolation, meal recognition or nutrition accuracy.",
+    "No source-derived process result is a submission-package build, upload, distribution or readiness claim.",
+    "Raw source slices, command receipts, device identifiers, image buffers and compiled binaries remain local and are not included in this record."
+  ]
+}
