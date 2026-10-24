@@ -10,7 +10,17 @@ A person may add up to three views of a meal and one nutrition-label photo. All 
 
 ## Current evidence is not held-out evaluation
 
-The [central Foundation Models evidence](research/foundation-models/README.md) retains the earlier native Mac comparison and original-prompt failures. The later iOS checks below used unchanged processing code from historical commit `c49c209` and ZIP `6457bc79…`; they must not be described as runs of the newly applied prompt.
+### Latest fixed twelve-image qualitative check
+
+The [new public-image run](research/foundation-models/new-public-meals-20261024.md) used unchanged build-6 processing in an external iOS 27.1 Simulator bundle, with one image per call, English, no description/label, no retries and unchanged model/prompt/default guardrails. Two blind AI pixel reviews and broad qualitative expectations preceded inference: eight food-like images, three nonfood presentations and one uncertain imitation. AI annotations and finite retained-fixture dedup are not qualified human/clinical ground truth or proof of model-training independence.
+
+All twelve requests returned inspected results (ten name lists, two empty), with zero amount components, no total and no review readiness. This did not establish semantic correctness: a vessel returned `ceramic bowl` as a food clue; fritter-like pieces returned a weak `pâté` label; the ambiguous imitation returned `brown square`; recipe/type/method specificity and visible mixed-dish decomposition remain. Sponge and yarn yielded two observed empty lists. The [per-case record](research/foundation-models/new-public-meals-20261024.json) retains names, qualifications, source credits and independent checks. Source captions were not visual truth or model answers. No source/ZIP/upload changed, and actual app UI, nutrition, performance and physical offline gates remain open.
+
+Prioritize general food-kind/abstention handling while preserving unfamiliar food names and correction. Do not hardcode these exposed object words, tune to this set and call it a fresh pass, or calculate an accuracy percentage. Freeze a future proposal and new evaluation before an improvement claim.
+
+### Historical diagnostics
+
+The [central Foundation Models evidence](research/foundation-models/README.md) retains the earlier native Mac comparison and original-prompt failures. The historical iOS checks below used unchanged processing code from commit `c49c209` and ZIP `6457bc79…`; they must not be described as runs of the newly applied prompt.
 
 The [five additional iOS matrix diagnostics](research/foundation-models/ios-diagnostics-20261024.json) establish bounded mechanics:
 

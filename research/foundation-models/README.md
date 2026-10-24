@@ -1,8 +1,12 @@
 # Foundation Models research evidence
 
-Reviewed October 24, 2026. This records native Mac probes and source-derived iOS Simulator integration, development-photo and fixed-prompt scope runs. Separate QA apps use real UIKit preparation; each report identifies its source and prompt hash rather than treating all revisions as the current ZIP. It is **not** an exact-app UI/full-journey, physical-device, airplane-mode or accuracy pass. Limited synthetic mechanics and previously exposed real-photo exploratory checks do not establish independent acceptance performance.
+Reviewed October 24, 2026. This records native Mac probes and source-derived iOS Simulator integration, development-photo and fixed-prompt scope runs. Separate QA apps use real UIKit preparation; each report identifies its source and prompt hash rather than treating all revisions as the current ZIP. It is **not** an exact-app UI/full-journey, physical-device, airplane-mode or accuracy pass. Limited synthetic mechanics and small purposive real-photo checks do not establish independent acceptance performance.
 
 Raw logs and harness sources remain in local output folders outside the repository and Challenge ZIP. The links below resolve in this Mac workspace; they are not publicly distributed artifacts. No images, model weights or executables are added here.
+
+## Latest: twelve new public images, unchanged build-6 processing
+
+The [fixed twelve-image qualitative check](new-public-meals-20261024.md) completed one source-derived iOS Simulator call per image, after two blind AI pixel reviews and a frozen protocol. All twelve retained name/amount separation; ten returned names and two returned empty lists. This is not a semantic pass: a nonfood vessel returned `ceramic bowl` in the food-clue channel, fritter-like pieces returned `pâté`, an uncertain food imitation returned `brown square`, and unconfirmed specificity/mixed-dish decomposition remain. [Exact outcomes, credits and evidence](new-public-meals-20261024.json) preserve every case. No model/prompt/app source or ZIP changed. These are now exposed exploratory data, not qualified held-out, nutrition, physical offline or full app UI evidence.
 
 ## Dated model readiness
 

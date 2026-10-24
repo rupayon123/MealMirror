@@ -1,0 +1,979 @@
+{
+  "schemaVersion": 1,
+  "recordedDate": "2026-10-24",
+  "title": "Build-6 source-derived twelve-public-image qualitative check",
+  "scope": "One fixed serial iOS27.1 Simulator experiment using unchanged build-6 processing. Source-derived engine integration, not actual production app UI or broad recognition acceptance.",
+  "source": {
+    "publicBaseCommit": "9c3d6bf352d8b52fc5f2cfd779fe7d8acae81494",
+    "candidateSHA256": "774e37b26a642d8d9a08e0e292d868d1ee0b2aca5de47febb9f02d9d89c2856b",
+    "candidateBytes": 12203935,
+    "version": "1.0",
+    "build": "6",
+    "modelSHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "engineSHA256": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+    "processingSourcesByteIdenticalToExactZIP": true,
+    "sourcePromptOrPolicyEditedByExperiment": false,
+    "baselineFiles": 59,
+    "unchangedQAOriginalFiles": 57,
+    "unchangedQASwiftFiles": 15,
+    "qaChangedOriginals": [
+      "Package.swift: isolated bundle and neutral resources",
+      "MealMirrorApp.swift: external processing lifecycle"
+    ],
+    "noResearchHelperOrImagesAddedToCandidate": true
+  },
+  "protocol": {
+    "semanticAndInputsFrozenBeforeInference": true,
+    "semanticProtocolSHA256": "ae5a886799394bf4eb5346268759cda648c266737eb9cee539241ad29fe992f6",
+    "expectationsSHA256": "4a83ee168b4fd8b1673222b9c35cb4b782e1e389a7fa85c0eda5df786a57a905",
+    "neutralRuntimeManifestSHA256": "7450b42db69ccdf121dd347edfb47343f1df36bfee38547a4e99e728f4ffda69",
+    "runnerProtocolSHA256": "e1c85d4f5252cdbb2490042d39e42467dad3927a152dee457aeee331b778f49f",
+    "orderedIDs": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12"
+    ],
+    "plannedMaximumEngineCalls": 12,
+    "oneRecordedConsoleLaunch": true,
+    "recordedReturnedEngineResults": 12,
+    "runnerAutomaticRetries": 0,
+    "singleImagePerCall": true,
+    "labelImage": null,
+    "description": "",
+    "referenceItemPresent": false,
+    "locale": "English",
+    "model": "SystemLanguageModel.default, default Apple guardrails, fixed prompt/schema/options/policy and production deadlines unchanged.",
+    "metadataBoundary": "Neutral IDs route report rows only. No captions, expected answers, provenance, mapping, filenames or label OCR text enter the image prompt. Original Practice assets remain compiled but are not selected. Visible incidental bottle text remains untrusted pixels.",
+    "stopPolicy": "Any model unavailable/error/timeout/notRun/cancellation or strict amount/source/separation/preparation/persistence breach stops the batch without retry; remaining cases stay unrun. No stop occurred.",
+    "timerScope": "45/600-second in-app timers require MainActor scheduling. Host observation deadline660 has separate bounded wrapper cleanup, not an OS compute-stop or timing guarantee. Failure/cleanup branches were statically reviewed, not exercised by this successful run.",
+    "attemptScope": "One recorded host install/launch, entry-intent checkpoints and twelve inspected-return reports; not a machine-wide audit or view into framework internal generation/retries."
+  },
+  "inputReview": {
+    "classificationCounts": {
+      "food": 8,
+      "nonfood": 3,
+      "uncertain": 1
+    },
+    "basis": "Two independent pixel-only AI-agent reviews before inference; root reconciled three selected pixels with prior metadata exposure. AI annotations are not qualified human, clinical, nutrition or edibility ground truth.",
+    "uncertainID": "P07",
+    "captionsNotGroundTruth": true,
+    "modelTrainingExposureUnknown": true,
+    "dedup": {
+      "retainedFilePaths": 543,
+      "retainedUniqueByteIdentities": 530,
+      "priorMetadataFiles": 22,
+      "byteDecodedNormalizedMatches": 0,
+      "perceptualFlagsAtHammingAtMost8": 0,
+      "sourceIdentityMatches": 0,
+      "withinNewSetFlags": 0,
+      "nearestPriorHammingMinimaRange": [
+        16,
+        22
+      ],
+      "limitation": "Finite retained fixture corpus and known source metadata only. Prior experiments screened additional UEC/Food101/pet/flower/CIFAR samples beyond these retained copies. No whole-machine, complete-prior-screening or model-training independence claim. Perceptual hashes can miss transformed/cropped duplicates; root visual distinctness review remains separate."
+    },
+    "transportHistory": {
+      "record": "collection-v1/transport-records.json, relative to localArtifacts.root",
+      "requests": 29,
+      "utmQueriesRemovedBeforeRequests": true,
+      "trackingBearingRedirectObserved": false,
+      "boundFailure": "C01/P08 provider declared951×1280 but supplied960×1292; oversized bytes were never accepted. Geometry-only declared standard-width fallback selected500×673 before review/inference. Preserved records are in collection-v1/initial-provider-bound-failure and provider-bound-rejections.json.",
+      "rateLimit": "Commons429 after C01–C10; preserved partial state and accepted hashes. After cooldown only C11/C12 were requested; prior ten inputs were not refetched or replaced. No model-driven selection occurred.",
+      "oneAcceptedInputPerID": true,
+      "localImageCropEnhancementOrReencoding": false
+    },
+    "privacyLimits": "Two AI reviews saw no identifiable face or private identifier; P09 possible indistinct hand and P11 ambiguous spoon reflection remain documented. This is not a qualified privacy release or a proven people-free set. Source rights/provenance do not establish visual contents.",
+    "futureUse": "All twelve images and these outputs are now exposed development evidence; do not reuse them as a fresh held-out acceptance set."
+  },
+  "build": {
+    "compileExit": 0,
+    "externalQAOnly": true,
+    "architecture": "arm64",
+    "runtime": "iOS27.1 Simulator on separate headless Duo",
+    "mainBinarySDK": "27.1",
+    "debugDylibSDK": "27.0",
+    "minimumIOS": "17.0",
+    "appFileCount": 30,
+    "appInventoryCanonicalSHA256": "0ebd19acb9b7d7f6663f809c72a19f4682ec0df47ddb2a7781a774aab61e9b62",
+    "neutralResourceFiles": 13,
+    "originalSourceFreezeReferencesMatched": 142,
+    "installedInventoryMatchesBuilt": true,
+    "independentBuildReviewBlockers": [],
+    "warnings": "Duplicate asset compile entry, macOS-sysroot/Simulator-target warning and skipped App Intents extraction retained. Build metadata/main executable27.1 does not establish every binary SDK27.1."
+  },
+  "execution": {
+    "hostExit": 0,
+    "appReportedExit": 0,
+    "hostTimedOut": false,
+    "phase": "completed",
+    "modelPreflight": {
+      "availability": "available",
+      "englishSupported": true,
+      "guidedGeneration": true,
+      "vision": true
+    },
+    "completedInspectedCases": 12,
+    "inspectedNames": 10,
+    "inspectedEmpty": 2,
+    "unavailable": 0,
+    "unrun": [],
+    "all12AmountAndSourceMechanicalContractsIntact": true,
+    "independentMechanicalChecksPassed": 29,
+    "reportSHA256": "92ec229ea83dd50390fb5fe32e939d9e8eb722f1cf7352404eecc46ee6a58941",
+    "containerReportCopyByteIdentical": true,
+    "reviewHistoryAPITouched": false,
+    "storageQualification": "The raw storageTouched=false field describes excluded meal-review storage APIs. The isolated QA app did write its evidence report and attempt marker; this is not zero filesystem writes.",
+    "actualAppUI": false,
+    "physicalDevice": false,
+    "offlineNetworkIsolationEstablished": false,
+    "calibratedPerformanceOrMemoryEstablished": false,
+    "cleanup": "Owned headless QA UI options restored to initial light/Large/normal contrast, then QA Simulator shut down. Reports/attempt marker remain. Original interactive picker was not operated; shutdown is not OS model compute-release proof."
+  },
+  "cases": [
+    {
+      "id": "P01",
+      "input": {
+        "file": "P01.jpg",
+        "sha256": "cee3f05992ab04e403dbafd8843214bc1fec9cf8d366d7fd31e93564b9d9e7fb",
+        "bytes": 108694,
+        "width": 960,
+        "height": 720
+      },
+      "frozenVisualClassification": "food",
+      "broadAppearanceExpectation": [
+        "rice dish",
+        "separately served shredded vegetable salad or slaw",
+        "browned meat- or poultry-like piece"
+      ],
+      "observedFinalState": "inspectedNames",
+      "acceptedNames": [
+        "rice",
+        "salad",
+        "meat",
+        "drink"
+      ],
+      "preparedInput": {
+        "preparedWidth": 960,
+        "preparedHeight": 720,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "compatible broad meal clues",
+        "qualified bottle-context inference"
+      ],
+      "assessment": "Broad meal recognition clues are useful here, with the bottle/contents qualification retained.",
+      "qualification": "Drink is a generic inference from a separate capped commercial bottle, not directly verified contents. No flavor, sugar or nutrition is established. The pink topping is not named, which is not a failure under the non-exhaustive expectations.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Jollof.jpg",
+        "sourceFileTitle": "File:Jollof.jpg",
+        "pageRevisionID": 1201369909,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3AJollof.jpg&oldid=1201369909",
+        "fileRevisionTimestamp": "2013-08-17T13:45:02Z",
+        "originalFileSHA1": "d793c83e9f3e6d215cf0433b04350dac05a4b33f",
+        "authorFromSummary": "Kwabena",
+        "sourceCredit": "Own work",
+        "license": "CC BY 3.0",
+        "licenseURL": "https://creativecommons.org/licenses/by/3.0",
+        "transformation": "Original retained byte-for-byte within bound."
+      }
+    },
+    {
+      "id": "P02",
+      "input": {
+        "file": "P02.jpg",
+        "sha256": "9b1d941897ff79f96862f0abdd0f0b5993344b4d2e5e7433272e55250a8f5236",
+        "bytes": 115020,
+        "width": 1280,
+        "height": 914
+      },
+      "frozenVisualClassification": "nonfood",
+      "broadAppearanceExpectation": [],
+      "observedFinalState": "inspectedNames",
+      "acceptedNames": [
+        "ceramic bowl"
+      ],
+      "preparedInput": {
+        "preparedWidth": 1280,
+        "preparedHeight": 914,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "nonfood object accepted in food-clue channel",
+        "unconfirmed material specificity"
+      ],
+      "assessment": "This is a semantic food-channel error, even though the noun identifies the visible object reasonably. The final record does not expose the raw visibleFood decision or policy reason; do not infer those internal values.",
+      "qualification": "That object-category fit does not make it an acceptable food clue: neither blind review established edible contents, and the frozen expectation intended inspected empty. Ceramic is a plausible material hypothesis, not verified composition.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Bowl_with_stones_and_carnelian_bead_MET_02.4.46_EGDP011346.jpg",
+        "sourceFileTitle": "File:Bowl with stones and carnelian bead MET 02.4.46 EGDP011346.jpg",
+        "pageRevisionID": 1096040244,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3ABowl+with+stones+and+carnelian+bead+MET+02.4.46+EGDP011346.jpg&oldid=1096040244",
+        "fileRevisionTimestamp": "2017-07-12T03:03:48Z",
+        "originalFileSHA1": "34729bff2edd76349ddb44fdd2dcde482bfd5155",
+        "authorFromSummary": null,
+        "sourceCredit": "This file was donated to Wikimedia Commons as part of a project by the Metropolitan Museum of Art. See the Image and Data Resources Open Access Policy",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "transformation": "Provider resized derivative only; downloaded bytes retained unchanged. No local crop, enhancement, recolour or re-encoding."
+      }
+    },
+    {
+      "id": "P03",
+      "input": {
+        "file": "P03.png",
+        "sha256": "78dd69298bd82271d7b9401808faa89ee6d71ab9596f8cee6d16b151cdf6647a",
+        "bytes": 1705704,
+        "width": 953,
+        "height": 694
+      },
+      "frozenVisualClassification": "food",
+      "broadAppearanceExpectation": [
+        "baked dish",
+        "casserole-like dish"
+      ],
+      "observedFinalState": "inspectedNames",
+      "acceptedNames": [
+        "lasagna"
+      ],
+      "preparedInput": {
+        "preparedWidth": 953,
+        "preparedHeight": 694,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "plausible but unconfirmed recipe specificity"
+      ],
+      "assessment": "The clue is more specific than the visible evidence supports as fact; retain it only as an unconfirmed possibility, not a demonstrated recipe identification.",
+      "qualification": "Lasagna is plausible appearance shorthand, but concealed pasta, layers and filling are not visible or verified. The frozen expectation explicitly preferred a broad baked-dish category. This is not proof that lasagna is absent.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Lasagna.png",
+        "sourceFileTitle": "File:Lasagna.png",
+        "pageRevisionID": 791309984,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3ALasagna.png&oldid=791309984",
+        "fileRevisionTimestamp": "2008-12-11T19:16:52Z",
+        "originalFileSHA1": "ddbedd8d8224c2178127d644d685181b1866c260",
+        "authorFromSummary": "YogurtMan6575",
+        "sourceCredit": "Own work",
+        "license": "Public domain",
+        "licenseURL": null,
+        "transformation": "Original retained byte-for-byte within bound."
+      }
+    },
+    {
+      "id": "P04",
+      "input": {
+        "file": "P04.jpg",
+        "sha256": "106eb8f483ee2a31aab8b206663290277d2cd2369a780f09566f9191e0d54ec1",
+        "bytes": 248179,
+        "width": 1280,
+        "height": 960
+      },
+      "frozenVisualClassification": "food",
+      "broadAppearanceExpectation": [
+        "flatbread-like rounds",
+        "round browned bread- or pancake-like pieces"
+      ],
+      "observedFinalState": "inspectedNames",
+      "acceptedNames": [
+        "flatbread"
+      ],
+      "preparedInput": {
+        "preparedWidth": 1280,
+        "preparedHeight": 960,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "compatible broad clue"
+      ],
+      "assessment": "A useful broad appearance clue under the frozen expectation.",
+      "qualification": "Wrapping conceals detail. The name does not establish exact bread, flour, leavening, sweetness, filling or regional recipe.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pupusas,_Salvadore%C3%B1as,_para_llevar.jpg",
+        "sourceFileTitle": "File:Pupusas, Salvadoreñas, para llevar.jpg",
+        "pageRevisionID": 1266992732,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3APupusas%2C+Salvadore%C3%B1as%2C+para+llevar.jpg&oldid=1266992732",
+        "fileRevisionTimestamp": "2014-08-02T00:02:00Z",
+        "originalFileSHA1": "4c9ccdff1de9818a787c13cf97dfa1e2f083c553",
+        "authorFromSummary": "Ll1324",
+        "sourceCredit": "Own work",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "transformation": "Provider resized derivative only; downloaded bytes retained unchanged. No local crop, enhancement, recolour or re-encoding."
+      }
+    },
+    {
+      "id": "P05",
+      "input": {
+        "file": "P05.jpg",
+        "sha256": "7cd5ddd52a6cb349fa387dee30cfbb1fc84c4043944a2588b934d68a802922e5",
+        "bytes": 308553,
+        "width": 1280,
+        "height": 960
+      },
+      "frozenVisualClassification": "food",
+      "broadAppearanceExpectation": [
+        "browned fritter-, croquette- or patty-like pieces"
+      ],
+      "observedFinalState": "inspectedNames",
+      "acceptedNames": [
+        "pâté",
+        "sauce"
+      ],
+      "preparedInput": {
+        "preparedWidth": 1280,
+        "preparedHeight": 960,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "poor-fit unconfirmed recipe label",
+        "compatible generic sauce clue"
+      ],
+      "assessment": "The principal food clue is unreliable for this appearance; the broad sauce clue alone does not resolve it.",
+      "qualification": "Pâté is a weaker visual fit than the pre-inference browned fritter/croquette/patty category: the two discrete browned pieces have an exposed coarse green interior, rather than an obviously spread-like main food. This supports a poor-fit warning, not a definitive claim that a particular recipe or ingredient is absent.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Falafel_with_green_peas_hummus,_Geisenheim.jpg",
+        "sourceFileTitle": "File:Falafel with green peas hummus, Geisenheim.jpg",
+        "pageRevisionID": 1194131358,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3AFalafel+with+green+peas+hummus%2C+Geisenheim.jpg&oldid=1194131358",
+        "fileRevisionTimestamp": "2025-02-18T15:42:29Z",
+        "originalFileSHA1": "d1af60e65bd83ed224d3d3590a0317503ebb6e6d",
+        "authorFromSummary": "Gerda Arendt",
+        "sourceCredit": "Own work",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "transformation": "Provider resized derivative only; downloaded bytes retained unchanged. No local crop, enhancement, recolour or re-encoding."
+      }
+    },
+    {
+      "id": "P06",
+      "input": {
+        "file": "P06.jpg",
+        "sha256": "0b7aa9fbcd6cb06295107ea6bc32e3876a51e54c5d1fb8a16b705224ceb7235f",
+        "bytes": 172377,
+        "width": 1280,
+        "height": 853
+      },
+      "frozenVisualClassification": "nonfood",
+      "broadAppearanceExpectation": [],
+      "observedFinalState": "inspectedEmpty",
+      "acceptedNames": [],
+      "preparedInput": {
+        "preparedWidth": 1280,
+        "preparedHeight": 853,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "observed nonfood abstention"
+      ],
+      "assessment": "Appropriate observed caution on this clear nonfood presentation.",
+      "qualification": "This is one observed empty result, not an error fallback and not proof of generally reliable nonfood rejection. Raw visibleFood and policy-filtering reasons remain inaccessible.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Small_yellow_green_sponge.jpg",
+        "sourceFileTitle": "File:Small yellow green sponge.jpg",
+        "pageRevisionID": 966425524,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3ASmall+yellow+green+sponge.jpg&oldid=966425524",
+        "fileRevisionTimestamp": "2018-01-29T13:50:12Z",
+        "originalFileSHA1": "862c60cbfda7ec4fad0b6f8fe60b099a3b35f170",
+        "authorFromSummary": "Jiří Sedláček",
+        "sourceCredit": "Own work",
+        "license": "CC BY-SA 4.0",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+        "transformation": "Provider resized derivative only; downloaded bytes retained unchanged. No local crop, enhancement, recolour or re-encoding."
+      }
+    },
+    {
+      "id": "P07",
+      "input": {
+        "file": "P07.jpg",
+        "sha256": "44ba50e454e96b8214090a20125be64f56a29cf6a496073dc2e2e1b82a2ffafe",
+        "bytes": 176052,
+        "width": 1280,
+        "height": 1087
+      },
+      "frozenVisualClassification": "uncertain",
+      "broadAppearanceExpectation": [],
+      "observedFinalState": "inspectedNames",
+      "acceptedNames": [
+        "brown square"
+      ],
+      "preparedInput": {
+        "preparedWidth": 1280,
+        "preparedHeight": 1087,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "preserved material ambiguity",
+        "unhelpful geometric descriptor in food-clue channel"
+      ],
+      "assessment": "A nonempty shape descriptor is weak utility rather than useful food identification. Empty output would also have been acceptable caution under the frozen expectations; no new exact-word target is imposed.",
+      "qualification": "It is not a recognizable food category and does not resolve the central wick-like strand or establish edibility/material. The pre-inference category remains uncertain. Do not recast this as a confirmed dessert, a confirmed candle, a strict food-recognition success or a strict nonfood false positive.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Candle_cake_01.jpg",
+        "sourceFileTitle": "File:Candle cake 01.jpg",
+        "pageRevisionID": 1118766365,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3ACandle+cake+01.jpg&oldid=1118766365",
+        "fileRevisionTimestamp": "2010-08-09T15:44:34Z",
+        "originalFileSHA1": "d0f3e11463818dcb068f9b1c303321ee2f6517e8",
+        "authorFromSummary": "Lionel Allorge",
+        "sourceCredit": "Own work",
+        "license": "CC BY-SA 3.0",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0",
+        "transformation": "Provider resized derivative only; downloaded bytes retained unchanged. No local crop, enhancement, recolour or re-encoding."
+      }
+    },
+    {
+      "id": "P08",
+      "input": {
+        "file": "P08.jpg",
+        "sha256": "ad14e621224584830a4f70cdb08609b92eda3acc7772b9d5eee8515eab86400e",
+        "bytes": 109828,
+        "width": 500,
+        "height": 673
+      },
+      "frozenVisualClassification": "food",
+      "broadAppearanceExpectation": [
+        "thick yellow grain- or porridge-like dish"
+      ],
+      "observedFinalState": "inspectedNames",
+      "acceptedNames": [
+        "curry",
+        "flatbread",
+        "fried potatoes"
+      ],
+      "preparedInput": {
+        "preparedWidth": 500,
+        "preparedHeight": 673,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "qualified separately served side clues",
+        "unconfirmed broad dish and preparation specificity"
+      ],
+      "assessment": "Some useful side-level appearance clues, with substantial dish/identity/method qualifications. Do not call all three names verified.",
+      "qualification": "Curry could refer to the base or the cropped side bowl, but the names have no localization and the pixels do not establish a curry recipe. Flatbread is a qualified resemblance for the thin crisp rather than confirmed composition. Potatoes is plausible, while fried adds an unverified preparation method. The list does not clearly characterize the dominant grain-like base; this is a utility limitation, not an exact-string or exhaustive-component recall failure.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Khichdi_from_West_Bengal,_photographed_by_Yogabrata_Chakraborty,_on_August_7,_2023.jpg",
+        "sourceFileTitle": "File:Khichdi from West Bengal, photographed by Yogabrata Chakraborty, on August 7, 2023.jpg",
+        "pageRevisionID": 798813961,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3AKhichdi+from+West+Bengal%2C+photographed+by+Yogabrata+Chakraborty%2C+on+August+7%2C+2023.jpg&oldid=798813961",
+        "fileRevisionTimestamp": "2023-08-27T16:12:35Z",
+        "originalFileSHA1": "62c2144f3a0477088705f8c9f47d836dd1da55c7",
+        "authorFromSummary": "Billjones94",
+        "sourceCredit": "Own work",
+        "license": "CC BY-SA 4.0",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+        "transformation": "Provider resized derivative only; downloaded bytes retained unchanged. No local crop, enhancement, recolour or re-encoding."
+      }
+    },
+    {
+      "id": "P09",
+      "input": {
+        "file": "P09.jpg",
+        "sha256": "b9f154f1a58db5564c4643b49e90a19e91159a8e8e52fa73e112962adebc69a6",
+        "bytes": 267388,
+        "width": 960,
+        "height": 1280
+      },
+      "frozenVisualClassification": "food",
+      "broadAppearanceExpectation": [
+        "poultry-like pieces",
+        "separately arranged vegetables",
+        "pale oval side foods with uncertain individual identities"
+      ],
+      "observedFinalState": "inspectedNames",
+      "acceptedNames": [
+        "chicken",
+        "potatoes",
+        "green beans",
+        "carrots"
+      ],
+      "preparedInput": {
+        "preparedWidth": 960,
+        "preparedHeight": 1280,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "compatible qualified poultry and side clues",
+        "unconfirmed green-vegetable specificity"
+      ],
+      "assessment": "Broad poultry/vegetable utility is present, but the green-bean label is an unsupported exact-type claim. Preserve the pre-existing possible partial hand near the edge as a privacy uncertainty, not a proven person-free scene.",
+      "qualification": "Green beans is not established by the long thick ridged green pieces and is a weaker fit than the frozen broad green-vegetable category. No replacement exact species is forced. Chicken/potato identities remain appearance hypotheses. Omission of egg-like rounds is not a failure under the non-exhaustive expectations.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Couscous_avec_l%C3%A9gumes.jpg",
+        "sourceFileTitle": "File:Couscous avec légumes.jpg",
+        "pageRevisionID": 974413954,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3ACouscous+avec+l%C3%A9gumes.jpg&oldid=974413954",
+        "fileRevisionTimestamp": "2017-03-07T12:47:30Z",
+        "originalFileSHA1": "33babb5bc6bc596544acc2501dc3986d6cfcfa41",
+        "authorFromSummary": "Sabah HAANA",
+        "sourceCredit": "Own work",
+        "license": "CC BY-SA 4.0",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+        "transformation": "Provider resized derivative only; downloaded bytes retained unchanged. No local crop, enhancement, recolour or re-encoding."
+      }
+    },
+    {
+      "id": "P10",
+      "input": {
+        "file": "P10.jpg",
+        "sha256": "6ede7b2e81fa2582483559708d18cd3137d1617ed01f1eff65e03aab18717598",
+        "bytes": 292405,
+        "width": 960,
+        "height": 1280
+      },
+      "frozenVisualClassification": "food",
+      "broadAppearanceExpectation": [
+        "crescent dumplings"
+      ],
+      "observedFinalState": "inspectedNames",
+      "acceptedNames": [
+        "dumplings"
+      ],
+      "preparedInput": {
+        "preparedWidth": 960,
+        "preparedHeight": 1280,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "compatible broad clue"
+      ],
+      "assessment": "A useful broad clue that avoids hidden filling or sauce guesses.",
+      "qualification": "Closed wrappers conceal the filling. No regional recipe, meat/vegetable identity, wrapper composition or preparation fact follows. Not naming the cropped dark liquid is not a recall failure.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Dumplings_on_a_blue_plate.jpg",
+        "sourceFileTitle": "File:Dumplings on a blue plate.jpg",
+        "pageRevisionID": 1214884131,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3ADumplings+on+a+blue+plate.jpg&oldid=1214884131",
+        "fileRevisionTimestamp": "2021-02-11T19:01:35Z",
+        "originalFileSHA1": "99d8d5e55d10a992faabf7c4f9448e2a4474724e",
+        "authorFromSummary": "Mshuang2",
+        "sourceCredit": "Own work",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "transformation": "Provider resized derivative only; downloaded bytes retained unchanged. No local crop, enhancement, recolour or re-encoding."
+      }
+    },
+    {
+      "id": "P11",
+      "input": {
+        "file": "P11.jpg",
+        "sha256": "b82b37d2efc86e2ac11ffaab3a39f4a7befc02afd2ea6d7ca5ae8bc124b132d8",
+        "bytes": 318426,
+        "width": 1280,
+        "height": 960
+      },
+      "frozenVisualClassification": "food",
+      "broadAppearanceExpectation": [
+        "noodle dish"
+      ],
+      "observedFinalState": "inspectedNames",
+      "acceptedNames": [
+        "fried egg",
+        "noodles",
+        "shrimp",
+        "lime"
+      ],
+      "preparedInput": {
+        "preparedWidth": 1280,
+        "preparedHeight": 960,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "compatible visible categories",
+        "mixed-dish decomposition"
+      ],
+      "assessment": "Mostly appearance-compatible words, with a presentation/main-dish granularity issue rather than a concealed recipe claim. The ambiguous spoon reflection remains unresolved and is not an identifiable-person finding.",
+      "qualification": "Egg and shrimp are visible mixed-dish elements, not hidden-ingredient hallucinations. Returning them separately alongside noodles still decomposes the mixed dish under the fixed main-visible-food preference. It must not imply separate meals, extra servings, a complete recipe, allergens or nutrition.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Pad_Thai_2018-04-19.jpg",
+        "sourceFileTitle": "File:Pad Thai 2018-04-19.jpg",
+        "pageRevisionID": 1139875523,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3APad+Thai+2018-04-19.jpg&oldid=1139875523",
+        "fileRevisionTimestamp": "2024-01-22T00:35:58Z",
+        "originalFileSHA1": "a2f30808cedcf6509513a4c5b72ba83971b14a1c",
+        "authorFromSummary": "Index Librorum Permissorum",
+        "sourceCredit": "Own work",
+        "license": "CC0",
+        "licenseURL": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "transformation": "Provider resized derivative only; downloaded bytes retained unchanged. No local crop, enhancement, recolour or re-encoding."
+      }
+    },
+    {
+      "id": "P12",
+      "input": {
+        "file": "P12.jpg",
+        "sha256": "109da25881a71969d0f0494d7aed2f508ff6c0ee90debcf7cddbc33d3d6c5508",
+        "bytes": 184665,
+        "width": 1280,
+        "height": 708
+      },
+      "frozenVisualClassification": "nonfood",
+      "broadAppearanceExpectation": [],
+      "observedFinalState": "inspectedEmpty",
+      "acceptedNames": [],
+      "preparedInput": {
+        "preparedWidth": 1280,
+        "preparedHeight": 708,
+        "preparedScale": 1,
+        "preparedOrientationRawValue": 0
+      },
+      "mechanicalContract": {
+        "photoCount": 1,
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "automaticTotalAbsent": true,
+        "readyForReview": false,
+        "labelOCR": "notRun",
+        "VisionFallback": "notRun",
+        "source": "personalPhoto",
+        "stopReasons": []
+      },
+      "qualitativeFindings": [
+        "observed nonfood abstention"
+      ],
+      "assessment": "Appropriate observed caution on this clear nonfood presentation.",
+      "qualification": "One observed empty result does not establish generally reliable nonfood handling or the internal reason for emptiness.",
+      "sourceCredit": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Unraveling_yarn.jpg",
+        "sourceFileTitle": "File:Unraveling yarn.jpg",
+        "pageRevisionID": 1054012805,
+        "pageRevisionURL": "https://commons.wikimedia.org/w/index.php?title=File%3AUnraveling+yarn.jpg&oldid=1054012805",
+        "fileRevisionTimestamp": "2022-01-11T04:51:24Z",
+        "originalFileSHA1": "78edf29122a8ec0e65477a4d4c459f3d2dda6ede",
+        "authorFromSummary": "MsFrazzle",
+        "sourceCredit": "Own work",
+        "license": "CC BY-SA 4.0",
+        "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0",
+        "transformation": "Provider resized derivative only; downloaded bytes retained unchanged. No local crop, enhancement, recolour or re-encoding."
+      }
+    }
+  ],
+  "findings": [
+    {
+      "priority": 1,
+      "caseIDs": [
+        "P02"
+      ],
+      "issue": "Nonfood-object text survived into the final food-clue channel. A bounded text name and correct object noun are insufficient to establish an edible-food clue. Any future correction needs a separately frozen evaluation; this observation alone does not validate a blacklist or a new semantic gate."
+    },
+    {
+      "priority": 2,
+      "caseIDs": [
+        "P05",
+        "P03"
+      ],
+      "issue": "Poor-fit or recipe-specific names can sound more established than the visible evidence supports. Pâté is a weak principal clue for the exposed green-interior browned pieces; lasagna is plausible but concealed-recipe specificity."
+    },
+    {
+      "priority": 3,
+      "caseIDs": [
+        "P07"
+      ],
+      "issue": "An ambiguous food-like object received a geometric descriptor rather than useful food guidance or abstention. Preserve the uncertain stratum; do not turn its caption or the returned descriptor into material/edibility truth."
+    },
+    {
+      "priority": 4,
+      "caseIDs": [
+        "P08",
+        "P09"
+      ],
+      "issue": "Broad served-side recognition remains mixed with unconfirmed recipe, vegetable-type and preparation labels. P08 output cannot be localized to base versus side bowl; P09 green beans is unconfirmed."
+    },
+    {
+      "priority": 5,
+      "caseIDs": [
+        "P11"
+      ],
+      "issue": "Visible mixed-dish elements are still listed separately. This is a main-dish granularity concern, not proof that the named visible elements were hallucinated."
+    }
+  ],
+  "interpretation": "Mechanical completion did not establish semantic accuracy. Nonfood object and generic-shape text survived the food-clue channel, some dish/type/method names are unconfirmed or poor fits, and visible mixed-dish decomposition persists. Empty lists on sponge and yarn are two observed abstentions, not general nonfood reliability.",
+  "nextStep": "Review a general food-kind/abstention approach that preserves culturally varied food names and correction. Do not patch only these object words or optimize to these exposed photos; freeze a future proposal and new evaluation before making an improvement claim. Full exact-app photo/label/checked-amount/history, accessibility, later physical offline and applicant/2027 gates remain open.",
+  "limits": [
+    "accuracy percentage or exhaustive per-food score",
+    "causal or persistent improvement over another prompt/model/app",
+    "qualified clinical or nutrition ground truth",
+    "arbitrary-meal or worldwide coverage",
+    "physical-device or network-isolated offline validation",
+    "serving mass, carbohydrate or insulin inference",
+    "full production app journey or runtime acceptance beyond the recorded source-derived processing"
+  ],
+  "localArtifacts": {
+    "root": "../../../../outputs/world-meal-next-protocol-20261024/",
+    "notPublished": true,
+    "files": [
+      {
+        "name": "frozen-v1/INFERENCE-PROTOCOL.json",
+        "sha256": "ae5a886799394bf4eb5346268759cda648c266737eb9cee539241ad29fe992f6"
+      },
+      {
+        "name": "frozen-v1/EXPECTATIONS.json",
+        "sha256": "4a83ee168b4fd8b1673222b9c35cb4b782e1e389a7fa85c0eda5df786a57a905"
+      },
+      {
+        "name": "frozen-v1/SOURCE-PROVENANCE.json",
+        "sha256": "fbef9c463efadec87bbfa07297c39b058aff80484830dfeb37890d359e9dac8b"
+      },
+      {
+        "name": "frozen-v1/FROZEN-INVENTORY.json",
+        "sha256": "f264f6acf2f65c3d3b102302fd8c5af8328ba07cde3b524d560c7be4813057e2"
+      },
+      {
+        "name": "collection-v1/FROZEN-COLLECTION-INVENTORY.json",
+        "sha256": "d9492f91ce591747fcf8cece20b8d7e1e528c210d8e8d3c5911d33505290458f"
+      },
+      {
+        "name": "collection-v1/PRE-INFERENCE-COLLECTION-VERIFICATION.json",
+        "sha256": "a004e96a4a6db7f8c8af8cd439ade71e3469217bf0e4f5909fee8ad87c46bf34"
+      },
+      {
+        "name": "collection-v1/independent-mechanical-review.json",
+        "sha256": "b439a4d0288bbda558f585557dc6e06fa0bd2b6225778087ee9a7c1bb51659c5"
+      },
+      {
+        "name": "runner-review/assembly-v1/pre-build-freeze.json",
+        "sha256": "4021d778d2f7ef9a138bc115689a93aae450b444f56b80d4343f0031849c644f"
+      },
+      {
+        "name": "runner-review/assembly-v1/source-fidelity.json",
+        "sha256": "e2bbbab26b28d4a889194a7f3c7cb09b18f0173f55bc931fceee73571d170cc0"
+      },
+      {
+        "name": "runner-review/assembly-v1/frozen-protocol.json",
+        "sha256": "e1c85d4f5252cdbb2490042d39e42467dad3927a152dee457aeee331b778f49f"
+      },
+      {
+        "name": "runner-review/assembly-v1/qa-source/MealMirror.swiftpm/WorldMealQualitativeProbe.swift",
+        "sha256": "57e41827eeb21d81b7516d3b5e8cc05bc161dda212d4687111e1f8889f8c9db7"
+      },
+      {
+        "name": "runner-review/review-assembly-v1.json",
+        "sha256": "91c26a235f1a88f8ee84ce80855285156374824cc3f37bc341aa766627996eb4"
+      },
+      {
+        "name": "runner-review/build-v1/build-command-result.json",
+        "sha256": "e00a8bc7a887215dc26c3c3c4f20926bdafb922c045e762c9bf2180b12b659cc"
+      },
+      {
+        "name": "runner-review/build-v1/built-app-verification.json",
+        "sha256": "fb380efe365ffc50e3171f7ac591b6adcf4cec02e6b8a30caeda88fb580c5fa0"
+      },
+      {
+        "name": "runner-review/build-v1/independent-built-review.json",
+        "sha256": "8dda535a1694f7a65a4bf344d1bc48a05d7ec984ea778ce9b611f9ac6c6792c1"
+      },
+      {
+        "name": "runner-review/build-v1/execute-once.py",
+        "sha256": "1be3de6be7189f3d4b2b8185c5ed048486890dcab111c0f8bc6b7f18ddcc3cbc"
+      },
+      {
+        "name": "runner-review/build-v1/controller-review.json",
+        "sha256": "1a8451a35c2def8b60a872d18c1018385f5a18242e75e69e57a81249803a7c6c"
+      },
+      {
+        "name": "runner-review/build-v1/execution-approval.json",
+        "sha256": "4ec9975f28ad0f7fc644e285ca020d2bb635edd55a66054aca7cac8c7277c345"
+      },
+      {
+        "name": "runner-review/execution-v1/host-attempt.json",
+        "sha256": "8085ebf07e2b70e82eecff981d62816b1f0855974f017dbbe2834bcd2cd12b2f"
+      },
+      {
+        "name": "runner-review/execution-v1/install-command.json",
+        "sha256": "81d90a27c7beca21cdf1a25486afa73f5f4b8ec617b6061c2b177e89d2aae69a"
+      },
+      {
+        "name": "runner-review/execution-v1/execution-preflight.json",
+        "sha256": "af923aaa33202afe07234a0696f80e3cdca8775b8786ca5463fecf10862da023"
+      },
+      {
+        "name": "runner-review/execution-v1/launch-intent.json",
+        "sha256": "bf9fbb9033f9f7a3ca7acdae16ee1988c37a42bb9313167aca7b319b8f193df1"
+      },
+      {
+        "name": "runner-review/execution-v1/launch-command-result.json",
+        "sha256": "378a2771a42f78ae871888875c0eac53a035ca40083ac94f6fd986be6a83c9fb"
+      },
+      {
+        "name": "runner-review/execution-v1/report-copy-receipt.json",
+        "sha256": "1ef3f72dd5c740a64734cc775a8b152f3de456858e9c0338c7ed29c6b7efb668"
+      },
+      {
+        "name": "runner-review/execution-v1/world-meal-qualitative.json",
+        "sha256": "92ec229ea83dd50390fb5fe32e939d9e8eb722f1cf7352404eecc46ee6a58941"
+      },
+      {
+        "name": "runner-review/execution-v1/world-meal-qualitative.attempt",
+        "sha256": "3ddd3a91b0efd0402d9736f334d192b3ff1516b82613021e4e3a2fb369384e53"
+      },
+      {
+        "name": "runner-review/execution-v1/independent-execution-review.json",
+        "sha256": "5255834d4b9f6bd1f0db01d9e8488aafd61752d1424374c6b61de1efb6318763"
+      },
+      {
+        "name": "runner-review/execution-v1/qualitative-review.json",
+        "sha256": "03ee216e6b9584890839814bf62dd4bd789b08da56a82834bc8bee5e052891de"
+      },
+      {
+        "name": "runner-review/execution-v1/qualitative-review.md",
+        "sha256": "5def53e56e25d65d881cb3390e1ad9661801c49ee94ab00d179d55573c4b8abf"
+      },
+      {
+        "name": "runner-review/execution-v1/qa-cleanup.json",
+        "sha256": "0156f1c08d6ac96af19cbbf14800ede855f901f89b8a5c1a14ce3b1209254814"
+      },
+      {
+        "name": "public-curation-review.json",
+        "sha256": "fda56e6e22b4c353b79d65cfd37ff63e38a90717e502bbb74cbdb855f2c43428"
+      }
+    ]
+  },
+  "privacyAndDistribution": "Only curated source/evidence metadata is published. Research images, QA helper/controller, logs, binaries, archives, device/container/account paths stay outside the repository and Challenge ZIP. No app distribution change or new upload; build6 testing-only/manual-release/server-processing limits remain.",
+  "independentCurationReview": {
+    "outcome": "No public-curation blocker found; 22 of 22 static checks passed.",
+    "scope": "The review pins the ten public files before this review reference was appended. It does not hash this updated JSON recursively.",
+    "artifact": "public-curation-review.json",
+    "runtimeRepeated": false
+  }
+}
