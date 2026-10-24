@@ -149,11 +149,19 @@ public enum WholeGramParser {
         locale: Locale,
         allowedRange: ClosedRange<Int> = 0...500
     ) -> Int? {
+        let digits = input.trimmingCharacters(in: .whitespacesAndNewlines)
+        // Validate the entered syntax before NumberFormatter can interpret
+        // separators, exponents or rounded fractions as a whole gram amount.
+        // Unicode decimal digits preserve the supported localized keyboards.
+        guard !digits.isEmpty,
+              digits.unicodeScalars.allSatisfy({ $0.properties.generalCategory == .decimalNumber }) else {
+            return nil
+        }
         let formatter = NumberFormatter()
         formatter.locale = locale
         formatter.numberStyle = .decimal
         formatter.generatesDecimalNumbers = true
-        guard let number = formatter.number(from: input.trimmingCharacters(in: .whitespacesAndNewlines)) else {
+        guard let number = formatter.number(from: digits) else {
             return nil
         }
         let value = number.doubleValue

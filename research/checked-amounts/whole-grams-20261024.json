@@ -1,0 +1,204 @@
+{
+  "recorded_at_utc": "2026-10-24T19:38:20.072862+00:00",
+  "source_base_commit": "e4d8628e108c7f256612bb7be34cd2884749057e",
+  "change": "Require whole-decimal-digit input before Foundation NumberFormatter in the existing checked-amount parser; increment internal build to 4. No model or UI-layout changes.",
+  "policy": "Trim outer whitespace/newlines; accept nonempty Unicode decimal digits including mixed scripts and leading zeroes in range; reject signs, separators, exponents, fractions, controls and other numeric symbols.",
+  "source_files": {
+    "MealMirror.swiftpm/MealCore/MealModels.swift": "ce1c8eb5114471f08f84049c7492396981f78ac7f1674575699d457109ae1303",
+    "MealMirror.swiftpm/Package.swift": "2ab9b3fbfa78e635e95f03c2ea45fbf35772296d6905837928004a878ecf0a9e",
+    "MealMirror.swiftpm/LocalPhotoAI.swift": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "scripts/verify-whole-grams.swift": "07210146a5d383769e3693fbc5c3f709710114ef3eedc2b2283bdc292daea071"
+  },
+  "mac_original_probe": {
+    "row_count": 1224,
+    "valid_digit_rows": 486,
+    "valid_digit_failures_before": 0,
+    "syntax_rows": 702,
+    "unexpected_acceptances_before": 162,
+    "unexpected_acceptances_after": 0,
+    "all_rows_match_after": true,
+    "pre_result_sha256": "4a5114eb89c4f9b7946d21fa2fdf556718816a8372ffe35104112727ca7e2d0d",
+    "post_result_sha256": "d1a2b2a5f23791e1085565bd2ed118f5e869c3a4f6fdbef08e95f58bffb0d022",
+    "probe_sha256": "37549c7574e5953a4bd5d184fbc91a00225dc1d706156638a40c3b2b89691009",
+    "scope": "Source-derived Foundation parser only. Existing garbage suffixes were rejected; no partial-prefix bug is claimed."
+  },
+  "committed_regression_harness": {
+    "compile_exit": 0,
+    "execution_exit": 0,
+    "checks": 4284,
+    "failure_count": 0,
+    "checks_by_group": {
+      "custom allowed range": 54,
+      "directional marks rejected": 648,
+      "Foundation-formatted positive whole numbers": 54,
+      "localized above range": 162,
+      "localized overflow": 162,
+      "localized whole digits": 1458,
+      "long leading zeroes": 18,
+      "long or overflowing number": 54,
+      "mixed or supplementary decimal digits": 72,
+      "non-whole syntax": 954,
+      "outer whitespace or leading zeroes": 648
+    },
+    "locales": [
+      "en",
+      "fr",
+      "zh-Hans",
+      "yue-Hant",
+      "pa",
+      "ur",
+      "ta",
+      "fil",
+      "es",
+      "ar",
+      "fa",
+      "hi",
+      "pt",
+      "gu",
+      "bn",
+      "ja",
+      "ko",
+      "hu"
+    ],
+    "digit_scripts": [
+      "ASCII",
+      "Arabic-Indic",
+      "Eastern Arabic-Indic",
+      "Bengali",
+      "Devanagari",
+      "Gujarati",
+      "Gurmukhi",
+      "Tamil",
+      "Fullwidth"
+    ],
+    "result_sha256": "fe4cf481161c4617517489e7fe553d7813c9e0339ea10767747cdb1a034c8e0e",
+    "scope": "Unit checks against actual MealModels.swift parser source; native Foundation behavior, not iOS keyboard/UI evidence."
+  },
+  "ios_source_derived_parser": {
+    "runtime": "iOS 27.1 Simulator",
+    "architecture": "arm64",
+    "target": "arm64-apple-ios17.0-simulator",
+    "sdk_directory_version": "27.1",
+    "standalone_binary_link_sdk": "27.0",
+    "standalone_binary_platform": "IOSSIMULATOR",
+    "compile_exit": 0,
+    "spawn_exit": 0,
+    "spawn_attempts": 1,
+    "row_count": 1224,
+    "all_rows_match": true,
+    "binary_sha256": "049f8eb90d30dc51790b0cced751feb31be7c8e38991d8898175d885cb6c6f78",
+    "result_sha256": "d1a2b2a5f23791e1085565bd2ed118f5e869c3a4f6fdbef08e95f58bffb0d022",
+    "receipt_sha256": "2f366f9b0179545e8ef34088f0224f0ec66f320aa8c3a01d1f6fa0b953e43041",
+    "scope_notes_sha256": "7b3ec5e4f7099877f51cd4d11a3a8e91f3948f54ced2dac6a4924ba177358d05",
+    "scope": "Separate source-derived parser process, not the app UI or a keyboard/save journey. The raw unchanged probe contains a stale native Mac scope literal; execution metadata establishes the Simulator environment."
+  },
+  "candidate": {
+    "sha256": "e9e702f4f835e32abc934391cd333a7aeab56f6ba34a8abb59b846ba0efb8b5e",
+    "bytes": 12203814,
+    "build": "4",
+    "integrity_pass": true,
+    "deterministic_generations": 2,
+    "english_only": true,
+    "swift_source_equality_count": 17,
+    "packaged_file_count": 59,
+    "changed_packaged_files_since_build3": [
+      "MealMirror.swiftpm/MealCore/MealModels.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ]
+  },
+  "exact_simulator_build": {
+    "exit": 0,
+    "log_sha256": "44111193e6f92b9566e4eff66863ae4b2b2a750aeaf5ba96dd5e10395d9509ed",
+    "identity": {
+      "CFBundleIdentifier": "com.mealmirror.swiftchallenge",
+      "CFBundleShortVersionString": "1.0",
+      "CFBundleVersion": "4",
+      "MinimumOSVersion": "17.0",
+      "DTSDKName": "iphonesimulator27.1"
+    },
+    "executable_sha256": "2cbc7e799a8d9d2f2b44bb21fcca5f3640ca3810388a78c2c6b78bdde670869c",
+    "install_exit": 0,
+    "launch_exit": 0,
+    "installed_executable_and_info_equal": true
+  },
+  "actual_app_form": {
+    "environment": "Open Duo, iOS 27.1 Simulator; light appearance and standard text size; exact installed build 4.",
+    "method": "CUA accessibility actions and field setValue; developer screenshot capture.",
+    "synthetic_item_name": "Parser QA item",
+    "invalid_entry": "3e1",
+    "invalid_feedback": "Enter a whole number from 0 to 500.; visibly gray Add",
+    "valid_entry": "٣٧",
+    "valid_feedback": "Warning absent; visibly green Add",
+    "cleanup": "Escape canceled the form; Back returned to entry and then Home. AX Home still reports the existing one Practice record. No entry was saved.",
+    "frames": [
+      {
+        "file": "invalid-exponent-inner.png",
+        "sha256": "aac512984ecfaba77a0347604b0e8e76feec4fdb57f0e3012fd3e2b16a4a19db",
+        "bytes": 513214
+      },
+      {
+        "file": "valid-arabic-indic-inner.png",
+        "sha256": "d626a7ce28491916a0d4af8a9d63c9d71cbee4f2eaa976cd84fd67954526f6d2",
+        "bytes": 504650
+      }
+    ],
+    "independent_visual_review_sha256": "a163467ed5e21d54fad84395d9067a5364c771868420cd7da1eeacfb540402fc",
+    "limits": "The Add toolbar action remains absent from the computer-control AX representation; no attempted commit, localized keyboard, paste, scroll, VoiceOver, dark/large-text or full photo journey is proved. Screenshots independently establish visible state only."
+  },
+  "signed_internal_archive": {
+    "archive_exit": 0,
+    "signature_verification_exit": 0,
+    "identity": {
+      "CFBundleIdentifier": "com.mealmirror.swiftchallenge",
+      "CFBundleShortVersionString": "1.0",
+      "CFBundleVersion": "4",
+      "MinimumOSVersion": "17.0",
+      "DTSDKName": "iphoneos27.1"
+    },
+    "packaged_source_files_unchanged": 59,
+    "localization_directories": [
+      "en.lproj"
+    ],
+    "executable_sha256": "29a68331276e8b0de2da485dcaad577ed33662247adb6a73cd57a96c837f98f6",
+    "app_inventory_sha256": "3d6ea651237d6e2e19d34972c2223392cb90961dcb68597b51302f6cbd0b2862",
+    "app_inventory_files": 17,
+    "archive_log_sha256": "c769de7e3b15b2a71a5ace377129b2c3a2f150b3fb73a779429e13464a868bfa",
+    "archive_script_sha256": "95e23e2b55b7031878ebdc130d4ceedf48e8dad3e2ec80f47459a043ff55ad41",
+    "archive_source": "Unchanged archive script copied beside the clean exact candidate extraction; repository script resolves its source from its own location."
+  },
+  "internal_upload": {
+    "exit": 0,
+    "result": "EXPORT SUCCEEDED; Upload succeeded; Uploaded package is processing.",
+    "log_sha256": "d8c1264672f500e0a354a7803fc6d27485ea326eb452e95e453238bddc6040e6",
+    "method": "app-store-connect",
+    "destination": "upload",
+    "testFlightInternalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "processed_server_internal_indicator_verified": false,
+    "compliance_verified": false,
+    "existing_group_testing_verified": false,
+    "browser_status": "App Store Connect sign-in page; existing sign-in handoff remains pending.",
+    "last_verified_testing_build": "1.0 (2), earlier dated record; not a fresh server-state claim.",
+    "no_local_ipa_claim": "Upload destination did not create a local exported IPA; no IPA hash is asserted."
+  },
+  "review": {
+    "independent_source_review": "No blocking issue for actual whole-number 0...500 contract. Existing custom-range precision above 2^53 is out of the app contract.",
+    "privacy": "No new logging, persistence, network, model inputs or dose path.",
+    "test_scope": "4284 Mac regression checks and 1224 iOS Simulator rows are parser evidence, not nutrition or worldwide recognition accuracy."
+  },
+  "open_gates": [
+    "Full exact-app photo/model/OCR/clue/checked-amount commit/save/delete interaction",
+    "Actual localized keyboard/paste and full accessibility/layout review",
+    "Independent meal/nonfood evaluation and representative performance",
+    "Later physical-device offline walkthrough",
+    "App Store Connect processing, compliance, existing internal group availability and invitation/device testing",
+    "Applicant review, individual contribution, own essays, eligibility and published 2027 rules"
+  ],
+  "distribution_boundary": "Direct development and existing internal testing only. No App Store submission/release, external/public beta group/link, new public app release artifact, or release-setting change.",
+  "local_evidence_roots": [
+    "../../outputs/checked-amount-parser-20261024",
+    "../../outputs/whole-grams-ios-20261024",
+    "../../outputs/whole-grams-delivery-20261024"
+  ],
+  "local_evidence_path_base": "Repository root; evidence remains outside the public repository."
+}
