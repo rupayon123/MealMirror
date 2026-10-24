@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "recordDate": "2026-10-24",
+  "scope": "External Foundation-only native Mac unit mechanics of byte-identical PhotoAIContinuationGate and PhotoAIStatus/reason blocks. Directly injected outcomes and Swift task flags only; no model invocation, iOS runtime, UI, image or production storage access.",
+  "source": {
+    "repositoryCommitAtFreeze": "d5ee39f4706020b01be17c5d5e4bd892b8db9960",
+    "path": "MealMirror.swiftpm/LocalPhotoAI.swift",
+    "sha256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "blocks": [
+      {
+        "name": "PhotoAIStatus and PhotoAIUnavailableReason",
+        "source_lines": [
+          9,
+          49
+        ],
+        "sha256": "5362f434fc36ebaf0ddbecf5148f9c74c353d6309a42d79242e2108c100d12a5",
+        "byte_identical_block_in_assembled_source": true
+      },
+      {
+        "name": "PhotoAIContinuationGate with original private access and comments",
+        "source_lines": [
+          184,
+          233
+        ],
+        "sha256": "d9c47786b66d29a419f8354cf3af2589da39a7e6c153e69303ee3bd3cffdf9ea",
+        "byte_identical_block_in_assembled_source": true
+      }
+    ],
+    "fidelity": "Exact blocks copied byte-identically, including original private class access and reason-detail strings. Foundation import and external assertions/barriers appended; no stubs, model adaptation or production source changes.",
+    "currentSourceStillMatchesFrozenHash": true
+  },
+  "frozenProtocol": {
+    "workspaceRelativePath": "outputs/photo-ai-gate-20261024/frozen-protocol.json",
+    "sha256": "ae26bd16bad777bad25f4ace780d176e3d65e06e1c13417d7e18e4bf13332b66",
+    "availability": "External local artifact, not included in the repository or Challenge ZIP."
+  },
+  "preExecutionReview": {
+    "record": {
+      "workspaceRelativePath": "outputs/photo-ai-gate-20261024/parent-pre-execution-review.json",
+      "sha256": "46a05c587c6946b549234f867eded9a53cf316fbf2db438ac51aed4610a2bf54",
+      "availability": "External local artifact, not included in the repository or Challenge ZIP."
+    },
+    "independentBlockComparison": true,
+    "reviewedCaseCount": 6,
+    "sourceUnchanged": true
+  },
+  "externalArtifacts": {
+    "GateVerification.swift": {
+      "workspaceRelativePath": "outputs/photo-ai-gate-20261024/GateVerification.swift",
+      "sha256": "48f5f7cacd86f688000e119f546dd95a3ff20324b0666b0a7d63fb2bd4feddb2",
+      "availability": "External local artifact, not included in the repository or Challenge ZIP."
+    },
+    "HarnessBody.swift.fragment": {
+      "workspaceRelativePath": "outputs/photo-ai-gate-20261024/HarnessBody.swift.fragment",
+      "sha256": "498acc1c4c9d29ea36159c449f89a7c30cc84eb956b69489e64887383832072e",
+      "availability": "External local artifact, not included in the repository or Challenge ZIP."
+    },
+    "run_reviewed.py": {
+      "workspaceRelativePath": "outputs/photo-ai-gate-20261024/run_reviewed.py",
+      "sha256": "6326b242325f49fdae50eb051367cf17895aba86b5cc3badfdce810236ae9dc1",
+      "availability": "External local artifact, not included in the repository or Challenge ZIP."
+    },
+    "source-fidelity.json": {
+      "workspaceRelativePath": "outputs/photo-ai-gate-20261024/source-fidelity.json",
+      "sha256": "7b3381014aaa86ecbdd2d37f561665007bf1a1e0e01dd1bd5f086c0fd6408100",
+      "availability": "External local artifact, not included in the repository or Challenge ZIP."
+    },
+    "review-command.json": {
+      "workspaceRelativePath": "outputs/photo-ai-gate-20261024/review-command.json",
+      "sha256": "fdce17ad60400d2645f1ac8fa928fdca31a4d6a3fc31f8c8d8c59d500fd5d071",
+      "availability": "External local artifact, not included in the repository or Challenge ZIP."
+    },
+    "build-result.json": {
+      "workspaceRelativePath": "outputs/photo-ai-gate-20261024/build-result.json",
+      "sha256": "af7ee089daa6a8863f115c0f63f2cbb1602abe86c2b85620309ff4321b1b1f24",
+      "availability": "External local artifact, not included in the repository or Challenge ZIP."
+    },
+    "execution-result.json": {
+      "workspaceRelativePath": "outputs/photo-ai-gate-20261024/execution-result.json",
+      "sha256": "a56cd81942eef4f11240c0f22a85c733f97efc2f2cc3ee70e3dcddf258e5e813",
+      "availability": "External local artifact, not included in the repository or Challenge ZIP."
+    },
+    "gate-verification": {
+      "workspaceRelativePath": "outputs/photo-ai-gate-20261024/gate-verification",
+      "sha256": "e364ad418d1840dcf2f13ae38c706fc2d9a004ca096aac1a274cf65a9c152eff",
+      "availability": "External local artifact, not included in the repository or Challenge ZIP."
+    }
+  },
+  "frozenExpectations": [
+    {
+      "case": "finishBeforeContinuation",
+      "expectation": "Register returns false and immediately resumes with stored unavailable.failed; no new work accepted."
+    },
+    {
+      "case": "finishBeforeWorkerTimerRegistration",
+      "expectation": "Both late registered held Swift tasks have Task.isCancelled true after explicit test-barrier release."
+    },
+    {
+      "case": "pendingContinuationAndWorkerTimerFinish",
+      "expectation": "Injected timeout result wins over late success; registered worker/timer cancellation flags true; original checked continuation completes once."
+    },
+    {
+      "case": "firstResultWinsMultipleFinish",
+      "expectation": "First inspected.Rice result survives later failed/cancelled finishes."
+    },
+    {
+      "case": "cancellationThenLateSuccessIgnored",
+      "expectation": "Directly injected unavailable.cancelled survives a late inspected success."
+    },
+    {
+      "case": "concurrentFinishRaces",
+      "race_count": 128,
+      "finishers_per_race": 8,
+      "expectation": "Each checked continuation completes without double-resume trap; result belongs to predeclared four candidates and remains identical after all finishers complete. No winning-value frequency criterion."
+    }
+  ],
+  "execution": {
+    "recordedBuildAttempts": 1,
+    "recordedExecutionAttempts": 1,
+    "withinProtocolRetries": 0,
+    "attemptBasis": "Parent reported one reviewed execution; the frozen driver refuses existing binary/build/execution result artifacts and performs no retry.",
+    "compile": "xcrun swiftc, Swift6 language mode, parse-as-library; Foundation-only executable on this Mac. Full local argv remains in the hashed build record.",
+    "buildExitCode": 0,
+    "executionExitCode": 0,
+    "buildOuterTimeout": false,
+    "executionOuterTimeout": false,
+    "phase": "completed",
+    "caseCount": 6,
+    "allSixExpectationsPassed": true,
+    "raceCount": 128,
+    "finishersPerRace": 8,
+    "outerProcessBounds": {
+      "compileSeconds": 30,
+      "executionSeconds": 15
+    },
+    "timingLimit": "Outer process bounds are configured harness limits; no measured latency or actual15-second model deadline is established."
+  },
+  "observedCases": [
+    {
+      "case": "finishBeforeContinuation",
+      "newWorkAccepted": false,
+      "passed": true,
+      "result": "unavailable.failed"
+    },
+    {
+      "cancelledTaskFlags": [
+        true,
+        true
+      ],
+      "case": "finishBeforeWorkerTimerRegistration",
+      "passed": true
+    },
+    {
+      "cancelledTaskFlags": [
+        true,
+        true
+      ],
+      "case": "pendingContinuationAndWorkerTimerFinish",
+      "passed": true,
+      "result": "unavailable.timeout",
+      "scope": "Timeout status injected directly; no elapsed deadline or inference compute is tested."
+    },
+    {
+      "case": "firstResultWinsMultipleFinish",
+      "passed": true,
+      "result": "inspected.Rice"
+    },
+    {
+      "case": "cancellationThenLateSuccessIgnored",
+      "passed": true,
+      "result": "unavailable.cancelled",
+      "scope": "Direct gate finish injection; not cancellation of a model session."
+    },
+    {
+      "case": "concurrentFinishRaces",
+      "checkedContinuationProtection": "A double resume traps instead of producing a passing report.",
+      "completedRaces": 128,
+      "finishersPerRace": 8,
+      "passed": true,
+      "winner": "Any supplied candidate; scheduling order intentionally unspecified."
+    }
+  ],
+  "interpretation": "The six frozen gate-mechanics checks passed, including first-result retention, rejection of late results and task cancellation flags across the tested registrations and128concurrent-finish races. This samples the declared schedules; it is not proof of every possible concurrency interleaving.",
+  "limits": [
+    "Timeout/cancellation/success statuses were injected directly into the gate; no real timeout, model request or model session was run.",
+    "Held Swift tasks deliberately ignore cancellation while parked behind an external test barrier; after release they inspect Task.isCancelled. This verifies task flags, not cancellation responsiveness or OS inference compute release.",
+    "No evidence of the app15-second deadline, calibrated timing, physical iPhone behavior, iOS integration, UI behavior, offline network isolation, meal recognition or nutrition/clinical validity follows from this gate-only executable.",
+    "Source, binaries and raw local command records remain outside the repository and Challenge playground. No app/candidate changes resulted from this verification."
+  ],
+  "localArtifactReferencePolicy": "workspaceRelativePath identifies a local artifact under the original workspace root; it is not a tracked repository file. This record retains no private absolute paths, device-container identifiers, executable/source bytes or personal story."
+}

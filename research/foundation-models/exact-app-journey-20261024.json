@@ -1,0 +1,208 @@
+{
+  "artifact_sha256": "6abc22fab293e4bbbf2d3da594a3beabd709eab7c6d9db4c55aa9c6397167ebd",
+  "source_commit": "d5ee39f4706020b01be17c5d5e4bd892b8db9960",
+  "bundle_identifier": "com.mealmirror.swiftchallenge",
+  "build": "1.0(3)",
+  "exact_installed_executable_matches_built_delivery": true,
+  "executable_sha256": "d6f2227a6fae093f5237b2e875972e0730f43adfe4935a93450294feae3cc10a",
+  "runtime": "MealMirror QA iPhone Duo / iOS27.1 Simulator",
+  "appearance": "light; content_size large (standard range), Increase Contrast disabled; open Duo",
+  "method": "Exploratory CUA native accessibility actions and keyboard input through actual installed exact-app screens; simulator developer CLI only for fixture import, screenshots, container inspection and terminate/relaunch. No injected UI fixture, app source edits or model request.",
+  "observed_steps": [
+    {
+      "step": "Home->Photos->system picker",
+      "result": "Picker loaded7thumbnails including the imported previously exposed licensed soup photo. No thumbnail could be selected because native coordinate API returned noWindowsAvailable; picker successfully cancelled via accessibility Cancel. No meal photo entered analysis."
+    },
+    {
+      "step": "Unknown description",
+      "result": "Typed UI test meal, built local review, saw No reliable range yet and Add a checked amount; no automatic carbohydrate range."
+    },
+    {
+      "step": "Checked form",
+      "result": "Blank form showed trusted-source/no-insulin reminder. UI test item and synthetic37g entered, visible Add enabled. ToolbarAdd absent from bridge AX, coordinate activation failed and CommandReturn made no observed change. Escape cancelled; nothing committed. This is not a37g save pass."
+    },
+    {
+      "step": "Practice confirmation",
+      "result": "Biryani Practice displayed49\u201366g illustrative range. Review disabled until parts confirmation switch toggled0->1, then Review enabled. Offscreen switch was activated by AX, not proven reachable by scrolling."
+    },
+    {
+      "step": "Practice review and save",
+      "result": "Review showed Practice meal and No insulin recommendation. Save resulted in Saved privately with message that Practice image was not copied into history."
+    },
+    {
+      "step": "History and detail",
+      "result": "Home/history displayed1record. Detail retained Practice origin,49\u201366g,3components and example warning."
+    },
+    {
+      "step": "Persistence",
+      "result": "DeveloperCLI terminate and relaunch exited0. Home/history still displayed1record, and actual storage bytes were unchanged."
+    },
+    {
+      "step": "Delete confirmation and cancel",
+      "result": "Selected only newly created Practice test record. Irreversible-delete confirmation appeared, then Escape cancelled it. Record remains. Permanent deletion not performed or claimed."
+    }
+  ],
+  "storage_observation": {
+    "record_count": 1,
+    "source": "demo",
+    "meal_name": "Chicken biryani plate",
+    "range": {
+      "low": 49,
+      "high": 66
+    },
+    "component_count": 3,
+    "bytes_sha256": "59397c1c5ba6e461ca00c993e7f10a30907be69fc6d2aee078b751daaf7b60e9",
+    "unchanged_after_relaunch_and_delete_cancel": true,
+    "unconfirmed_manual_test_input_absent": true,
+    "scope": "Synthetic Practice record only; not nutrition validation, physical file-protection verification or no-photo assurance for all histories."
+  },
+  "screenshots": [
+    {
+      "file": "01-open-home.png",
+      "sha256": "14654fd19c41b2f9e00f2168d783c7e031b76812119269aff7b9b02baaf7c958",
+      "pixels": [
+        2034,
+        1398
+      ],
+      "display": "primary (inactive cover)",
+      "scope": "Excluded: inactive black display, not rendered app evidence."
+    },
+    {
+      "file": "02-picker-primary.png",
+      "sha256": "14654fd19c41b2f9e00f2168d783c7e031b76812119269aff7b9b02baaf7c958",
+      "pixels": [
+        2034,
+        1398
+      ],
+      "display": "primary (inactive cover)",
+      "scope": "Excluded: inactive black display, not rendered app evidence."
+    },
+    {
+      "file": "03-picker-inner.png",
+      "sha256": "3e3b0750f038b2622295f582524e9e387baca95641938992fd045b143ee36b29",
+      "pixels": [
+        2853,
+        2007
+      ],
+      "display": "primary-1 (active inner)",
+      "scope": "Add a meal after picker cancellation: food0/3,label0/1,no selected photo. Filename sayspicker but this is not a picker capture."
+    },
+    {
+      "file": "04-description-unknown.png",
+      "sha256": "377a1e436e858add288d8534d9ddc305472d3c309fc6e13eb39ea7f0b37966f5",
+      "pixels": [
+        2853,
+        2007
+      ],
+      "display": "primary-1 (active inner)",
+      "scope": "Unknown description: no reliable range and checked-amount recovery."
+    },
+    {
+      "file": "05-synthetic-checked-form.png",
+      "sha256": "5eb2c6644d5d38cba607ebf79e57618e0e7d4ef47c35d7d8d0873496cae03e0f",
+      "pixels": [
+        2853,
+        2007
+      ],
+      "display": "primary-1 (active inner)",
+      "scope": "Synthetic UItestitem/37g form with visible enabledAdd; no committed value or saved record."
+    },
+    {
+      "file": "06-practice-review.png",
+      "sha256": "ceac58b4bdea85175f3a8c7c0713c0d7f57b1a0c07904922ff37bcc9edf53b01",
+      "pixels": [
+        2853,
+        2007
+      ],
+      "display": "primary-1 (active inner)",
+      "scope": "Practice Review49\u201366g with Practice label and No insulin recommendation."
+    },
+    {
+      "file": "07-practice-saved.png",
+      "sha256": "a23041868e9ddca5df91a0b94016f01a5b2e69f548b709f454c8557f830b6e6c",
+      "pixels": [
+        2853,
+        2007
+      ],
+      "display": "primary-1 (active inner)",
+      "scope": "Practice Saved privately result; image-not-copied text visible."
+    },
+    {
+      "file": "08-practice-history.png",
+      "sha256": "4c2dcfb72776c9e929ba0bba6642887fb0ead620c720098f39056b832af2beb5",
+      "pixels": [
+        2853,
+        2007
+      ],
+      "display": "primary-1 (active inner)",
+      "scope": "History displays1Practice QA record."
+    },
+    {
+      "file": "09-practice-detail.png",
+      "sha256": "78c79376fd2552c83c70c127797724686601390847a79b32a8178aaaaf512fc4",
+      "pixels": [
+        2853,
+        2007
+      ],
+      "display": "primary-1 (active inner)",
+      "scope": "Saved Practice detail and explicit examples warning; lower content extends beyondviewport."
+    },
+    {
+      "file": "10-open-home-after-relaunch.png",
+      "sha256": "a1a3857cfb1303b37dd1998f2443b703c8d525591e182f665c62af7ff3aaf4ca",
+      "pixels": [
+        2853,
+        2007
+      ],
+      "display": "primary-1 (active inner)",
+      "scope": "Open Home afterrelaunch; lower Camera/Photos labels and history count cropped by fixedCTA. Persistence count is supported by AX/storage, not this image alone."
+    },
+    {
+      "file": "11-delete-confirmation.png",
+      "sha256": "74e416816f048b3e4ab12e25980be48fa768af8e5a76d7a77982924f327616b8",
+      "pixels": [
+        2853,
+        2007
+      ],
+      "display": "primary-1 (active inner)",
+      "scope": "Permanent-delete confirmation only. Cancelled afterward, no completeddeletion."
+    }
+  ],
+  "limits": [
+    "No selected photo/model/clue/OCR workflow in exact app",
+    "Manual checked amount not committed; photo/manual save full flow open",
+    "No scroll/coordinate reachability, full keyboard, VoiceOver or every-screen check",
+    "No dark/large-text/partial-Duo/iPad/physical/offline isolation claim",
+    "No representative recognition or3-minute human timing claim",
+    "One synthetic Practice QA record remains after cancelled deletion"
+  ],
+  "terminal_state": "Exact app Home,1Practice QA record; no outstanding entry or delete dialog.",
+  "initial_history_observed": "No saved reviews yet in Home accessibility state before this test; existing app data was not reset.",
+  "source_path_confirmation": "MealAnalysisEngine returns demo analysis directly and does not call LocalPhotoAI for manual/empty-food input; source corroborates that these paths did not exercise the model.",
+  "local_evidence_root": "outputs/exact-ui-20261024",
+  "lifecycle_sha256": "8e96ef5a8572715c9b19ac44757710ea5201464939871d8a38efad65da413040",
+  "review_status": "All11recorded PNGs individually reviewed by a separate assistant; hashes unchanged. Review validates visible scope, not unrecorded actions.",
+  "independent_visual_review": {
+    "artifact": "outputs/exact-ui-20261024/VISUAL-REVIEW.md",
+    "sha256": "e7f7c0a70660f0eee31510f19a3048d94bdfb400294e834c6ba5b0205cde7ffb",
+    "findings": [
+      "01/02 are identical inactive black frames, excluded",
+      "03 is meal entry with no photo, despite picker filename",
+      "05 Add is visually present and enabled; bridge omission is not a missing visible control",
+      "10Home crops lower actions/history count; AX+storage support persistence separately",
+      "Practice labels/range/no-insulin boundary visible; no recognition evidence",
+      "11 is confirmation only, canceled withoutdeletion",
+      "Lower-card scrolling and actionreachability remain unverified"
+    ]
+  },
+  "observed_runtime_ui_settings": {
+    "values": {
+      "appearance": "light",
+      "content_size": "large",
+      "increase_contrast": "disabled"
+    },
+    "read_only_cli_check": true,
+    "artifact": "outputs/exact-ui-20261024/observed-ui-settings.json",
+    "sha256": "70f2d8fa9d4e0dad5ec50c0b83b386c2ff7f5a29522596094b0e7042c6175d29"
+  }
+}

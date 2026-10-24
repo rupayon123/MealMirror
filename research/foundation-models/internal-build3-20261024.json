@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "recordDate": "2026-10-24",
+  "scope": "Signed device archive and successful internal-only upload command for exact English-only build1.0(3). Apple reported package processing. No completed server processing, compliance approval, internal-group Testing status, invitation acceptance or phone installation is established.",
+  "source": {
+    "commitRecordedAtArchive": "d5ee39f4706020b01be17c5d5e4bd892b8db9960",
+    "zipSHA256": "6abc22fab293e4bbbf2d3da594a3beabd709eab7c6d9db4c55aa9c6397167ebd",
+    "zipBytes": 12203649,
+    "zipArtifact": {
+      "workspaceRelativePath": "outputs/testflight-build3-20261024/source-candidate.zip",
+      "sha256": "6abc22fab293e4bbbf2d3da594a3beabd709eab7c6d9db4c55aa9c6397167ebd",
+      "availability": "Local-only research artifact; not copied into this repository."
+    },
+    "allOriginalPackagedFilesMatchBeforeAndAfterArchive": true,
+    "packagedFileCount": 59,
+    "swiftFileCount": 17,
+    "LocalPhotoAISHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "englishOnly": true,
+    "packagingChecks": "English catalog only and CFBundleLocalizations=[en]. Source copy is a clean exact-ZIP extraction; all original packaged file bytes were independently compared after the completed archive/upload. Generated Xcode workspace/build artifacts are not original ZIP members.",
+    "archiveScriptSHA256": "95e23e2b55b7031878ebdc130d4ceedf48e8dad3e2ec80f47459a043ff55ad41",
+    "archiveScriptByteIdentical": true,
+    "sourceTargeting": "Unchanged archive script copied under isolated exact-source root/scripts beside extracted MealMirror.swiftpm; this avoids archiving the multilingual repository source. No runtime source change for signing or upload."
+  },
+  "archive": {
+    "archiveExitCode": 0,
+    "artifactIdentifier": "outputs/testflight-build3-20261024/MealMirror-1.0-3.xcarchive",
+    "bundleIdentifier": "com.mealmirror.swiftchallenge",
+    "displayVersion": "1.0",
+    "bundleVersion": "3",
+    "minimumOS": "17.0",
+    "sdk": "iphoneos27.1",
+    "platform": "iphoneos",
+    "supportedPlatforms": [
+      "iPhoneOS"
+    ],
+    "executableSHA256": "7a1a9666d60fc0668a220855a1e60e78e368bbc2adaa257d89fb79908bd03c99",
+    "appInfoPlistSHA256": "4d1099c94453b5fda57155d6d41b46f5e168a48871d0bffc32c3afac89d35338",
+    "archiveDirectoryIdentity": {
+      "inventorySHA256": "1c05e535195f7a0ab4c0f5a0822f251b504d9ea603d7e57a2f35ecb87b499da4",
+      "method": "SHA256 of UTF-8 compact JSON encoding of this ordered fileInventory with sort_keys=true and separators comma/colon. Archives are directories; this identifies all retained file bytes without claiming a single archive-file hash.",
+      "fileCount": 21,
+      "fileInventory": [
+        {
+          "path": "Info.plist",
+          "bytes": 2371,
+          "sha256": "2f8e36e8e828bd89306661395630001144a3d16d91472e4a906b5f5a05796325"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/AppIcon60x60@2x.png",
+          "bytes": 27289,
+          "sha256": "d2326a806b7b71c0155edb37acfdc2213e3b182a0a06f10adeb6341e60c77395"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/AppIcon76x76@2x~ipad.png",
+          "bytes": 41513,
+          "sha256": "bf3bbc248366a53b67bcec72e3760e645c236bb96ccb7ce1967f674024c05656"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/Assets.car",
+          "bytes": 2932792,
+          "sha256": "d164001b35f335a45a2e0b5d84f7a6de595544e77bea61bbd0e2d94efa3ddc94"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/Info.plist",
+          "bytes": 1931,
+          "sha256": "4d1099c94453b5fda57155d6d41b46f5e168a48871d0bffc32c3afac89d35338"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/MealMirror",
+          "bytes": 1581504,
+          "sha256": "7a1a9666d60fc0668a220855a1e60e78e368bbc2adaa257d89fb79908bd03c99"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/Nunito.ttf",
+          "bytes": 276932,
+          "sha256": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/PixelifySans.ttf",
+          "bytes": 79160,
+          "sha256": "9ba86cd010a4de309d263ceff8e8044092c9db7efda869620cb9ff1c4389e8a5"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/PkgInfo",
+          "bytes": 8,
+          "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/PrivacyInfo.xcprivacy",
+          "bytes": 694,
+          "sha256": "5c20dbcb4ab17c390d6c89c0d6c7f7a274f377c2304159f01bb2ebb88a2cd069"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/_CodeSignature/CodeResources",
+          "bytes": 5007,
+          "sha256": "28ae495b6abf3f7c0ef4fb77d1c5103c07006b4182b231f81ebb6bf2f316578c"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/app_strings.json",
+          "bytes": 45274,
+          "sha256": "5eab59cfef5b5d0a8b52a01afb3e529bf3446c959830af1c7f7236d92d23d906"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/biryani-demo.png",
+          "bytes": 3067066,
+          "sha256": "e922bb400ee9fb0d93b3ca065bb2aa8bf3e7f12459a6c763c6f61ab991fd6c69"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/breakfast-demo.png",
+          "bytes": 2918385,
+          "sha256": "e3d2bc9f9e53d30f7364dc97ad25c5d79520877b5756d5495e8fe2a656ecc353"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/embedded.mobileprovision",
+          "bytes": 14450,
+          "sha256": "4a2671e0788ca5f950dfc72d5c756996d6fc2393f42ecdd07ff73c277fe2f603"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/en.lproj/InfoPlist.strings",
+          "bytes": 217,
+          "sha256": "270a50bf404d66cee909bcae219e29d6eda36cd98c8156f12ad6879262bb1ee4"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/en.lproj/Localizable.strings",
+          "bytes": 43796,
+          "sha256": "47228ae7732879b6eb95d1b1334afff92fbaf8a6a1421d82db0a116146aef6ff"
+        },
+        {
+          "path": "Products/Applications/MealMirror.app/grain-bowl-demo.png",
+          "bytes": 2884599,
+          "sha256": "c0646bb5f28542891de42e5cb1ac3bdf698a7481028dd35444c58b090805c3eb"
+        },
+        {
+          "path": "dSYMs/MealMirror.app.dSYM/Contents/Info.plist",
+          "bytes": 658,
+          "sha256": "9dbeb4b8500b0e41967499cf32b9c5610ad7edfc4298676471039118e768b43a"
+        },
+        {
+          "path": "dSYMs/MealMirror.app.dSYM/Contents/Resources/DWARF/MealMirror",
+          "bytes": 9027368,
+          "sha256": "58402d58fbf7a327b24d02aa9004c4f0678b39ca1b7240ba97cb47a0a36b232d"
+        },
+        {
+          "path": "dSYMs/MealMirror.app.dSYM/Contents/Resources/Relocations/aarch64/MealMirror.yml",
+          "bytes": 841042,
+          "sha256": "c413326524ee682071dc9d1ddd8695a15c8815931592bbe6135137f8e587af72"
+        }
+      ]
+    },
+    "signature": {
+      "verifyExitCode": 0,
+      "verificationCommandScope": "codesign --verify --deep --strict on Products/Applications/MealMirror.app, as executed by the copied archive script.",
+      "limit": "Successful local archived-app signature verification; does not prove App Store processing, uploaded payload identity beyond archive/log provenance, internal-group availability or installation. Team and signing-identity values are intentionally omitted."
+    },
+    "executableSDKAndMinimumOSVerification": "Copied script verified actual executable SDK/minimum load-command values against selected SDK and Info.plist. Archive verification records SDK27.1 and iOS17.0 minimum; this is device archive evidence, distinct from Simulator builds.",
+    "localizations": [
+      "en.lproj"
+    ],
+    "catalogEnglishOnly": true,
+    "nonExemptEncryptionInfoValue": false,
+    "encryptionLimit": "The Info.plist value is an app metadata declaration; server export-compliance status still requires separate verification.",
+    "verificationArtifact": {
+      "workspaceRelativePath": "outputs/testflight-build3-20261024/archive-verification.json",
+      "sha256": "9e607979537112d16d3622e9640181a2f33703766cb2a174ae9e66b709f0556f",
+      "availability": "Local-only research artifact; not copied into this repository."
+    },
+    "archiveCommandResult": {
+      "workspaceRelativePath": "outputs/testflight-build3-20261024/archive-result.json",
+      "sha256": "5a8f978e3bc64f715e55b1d990921bb5cf9d9627ef7f3cfafe63192c460c6490",
+      "availability": "Local-only research artifact; not copied into this repository."
+    },
+    "archiveLog": {
+      "workspaceRelativePath": "outputs/testflight-build3-20261024/archive.log",
+      "sha256": "03a79c32a4f33d3f243a37862470a440b8c2c381b728896c922b934d58c93950",
+      "availability": "Local-only research artifact; not copied into this repository."
+    },
+    "binarySDKReport": {
+      "workspaceRelativePath": "outputs/testflight-build3-20261024/archived-executable-sdk.txt",
+      "sha256": "e44564db1a2d4d81b0d6bd3a0f10b5a62dab99ad7673be166ca6e3f33195f991",
+      "availability": "Local-only research artifact; not copied into this repository."
+    }
+  },
+  "exportAndUpload": {
+    "exportOptionsReviewedFromActualLocalPlist": {
+      "destination": "upload",
+      "manageAppVersionAndBuildNumber": false,
+      "method": "app-store-connect",
+      "signingStyle": "automatic",
+      "testFlightInternalTestingOnly": true
+    },
+    "exportOptionsPrivacy": "Team ID and complete export plist are not retained here. No authentication material is copied.",
+    "versionManagement": "manageAppVersionAndBuildNumber=false requested preservation of archived1.0(3); archive values verified above. No automatic build-number increment was requested. Server build metadata remains to be verified.",
+    "uploadCommandExitCode": 0,
+    "successLogPhrases": [
+      "Upload succeeded.",
+      "** EXPORT SUCCEEDED **"
+    ],
+    "exactProcessingPhrase": "Uploaded package is processing.",
+    "processingPhraseScope": "This is the uploader's progress message, not verification that server processing finished.",
+    "uploadLogSHA256": "da2c26b3b90d3460c1428dc6f8b65d9b4c8bba9d56686de59630c07296522fee",
+    "uploadLogArtifact": {
+      "workspaceRelativePath": "outputs/testflight-build3-20261024/upload.log",
+      "sha256": "da2c26b3b90d3460c1428dc6f8b65d9b4c8bba9d56686de59630c07296522fee",
+      "availability": "Local-only research artifact; not copied into this repository."
+    },
+    "uploadStartArtifact": {
+      "workspaceRelativePath": "outputs/testflight-build3-20261024/upload-started.json",
+      "sha256": "67dd3a5e9f149a72e9e38527d9f3473d47f63b62ea3885fb212f4ab627848841",
+      "availability": "Local-only research artifact; not copied into this repository."
+    },
+    "uploadResultArtifact": {
+      "workspaceRelativePath": "outputs/testflight-build3-20261024/upload-result.json",
+      "sha256": "c027563e384721ac5ac7e01926320ec2b0ff9134a3cc096f2245be9999288f2b",
+      "availability": "Local-only research artifact; not copied into this repository."
+    },
+    "preflightArtifact": {
+      "workspaceRelativePath": "outputs/testflight-build3-20261024/preflight.json",
+      "sha256": "a9b50ac87060dd3464a8e72179882a56d2a56a05d5d6de9886425ce2202ba5e9",
+      "availability": "Local-only research artifact; not copied into this repository."
+    },
+    "observedServerState": "Package processing message only; processed/group status not yet verified.",
+    "noAppStoreOrExternalBeta": "Internal-only flag was true in actual reviewed export options. No App Store review/submission/release, external beta or public testing distribution was performed by this recorded upload."
+  },
+  "officialReferences": [
+    {
+      "url": "https://developer.apple.com/documentation/xcode/distributing-your-app-for-beta-testing-and-releases",
+      "supports": "TestFlight Internal Only restricts testing to the team and prevents the build from being submitted to the App Store; manage version/build setting permits build-number changes when enabled."
+    },
+    {
+      "url": "https://developer.apple.com/help/app-store-connect/test-a-beta-version/add-internal-testers/",
+      "supports": "Internal-only builds are marked internal and can only be added to internal tester groups, not external testing or customers."
+    },
+    {
+      "url": "https://developer.apple.com/help/app-store-connect/manage-builds/upload-builds",
+      "supports": "Upload is followed by server processing; bundle/version associate the build and the build string uniquely identifies it."
+    }
+  ],
+  "remainingVerification": [
+    "App Store Connect must show processed build1.0(3) associated with the expected app and marked Internal Only.",
+    "Check or resolve any server processing/validation/export-compliance requirement; the processing phrase alone does not establish compliance completion.",
+    "Verify build3 is available in the existing MealMirror Internal group with Testing status; build2 evidence does not establish build3 distribution.",
+    "Verify authorized tester invitation acceptance and actual TestFlight installation on the user's current iPhone separately.",
+    "Complete exact-app interaction, model/fallback, accessibility and later physical offline checks; this upload is not Swift Challenge submission readiness."
+  ],
+  "privacyAndDistribution": "Only sanitized metadata/hashes/outcomes/official URLs are retained. Private absolute paths, team identifiers, signing identities, authentication material, full logs/export plist, binaries and app/archive payloads remain outside the repository. workspaceRelativePath identifiers refer to external local artifacts, not public repository files."
+}
