@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 1,
+  "recordedDate": "2026-10-24",
+  "variant": "typed-food-presence-v1",
+  "scope": "Unapplied associated-value schema and necessary instruction/mapping experiment on twelve previously exposed neutral images; no production change.",
+  "decision": {
+    "outcome": "Rejected / not applied",
+    "failedFixedGate": "P07 required inspected-empty but returned brown square and nuts. That one failure alone prevents adoption.",
+    "currentApp": "1.0 (7)",
+    "currentZIPSHA256": "2b3472a5b81fce6d8abec9d0e3d05fbb144b0be6bfbe24fe4ea4da8048a04d39",
+    "appSourceZIPDistributionChanged": false,
+    "newEightRun": false,
+    "candidateMultiViewLabelFollowupRun": false
+  },
+  "hypothesis": {
+    "shape": "foodOrDrink(VisibleFoodNames), nonfood, uncertain; only foodOrDrink can carry a names payload",
+    "oldVisibleFoodBoolWasAlreadyFirst": true,
+    "conditionalPayloadIsDesignInference": true,
+    "promptModified": true,
+    "schemaModified": true,
+    "modelSelectionModified": false,
+    "modelUseCase": "default",
+    "defaultAppleGuardrails": true,
+    "publicPhotoAIStatusUnchanged": true,
+    "enginePreparationPolicyAndControlUnchanged": true,
+    "generationCallsPerEntry": 1,
+    "temperature": 0,
+    "maximumResponseTokens": 180,
+    "callerDeadlineSeconds": 15,
+    "successfulEmptyKeepsVisionFallbackOff": true,
+    "privateBranchAndPolicyReasonObserved": false,
+    "structuralValidityDoesNotProveFoodSemantics": true
+  },
+  "nativeMapping": {
+    "manualScenarios": 6,
+    "checks": 20,
+    "failed": 0,
+    "compileExit": 0,
+    "executionExit": 0,
+    "imageOrGenerationCalls": 0,
+    "platform": "native arm64 macOS27.0.1, Swift6, macOS27.0SDK",
+    "limit": "Actual extracted candidate types/status/mapping and unchanged policy, with dummy response/count-only preparation. Not model-selected branches, Guide enforcement, iOS/runtime/locale/food/nutrition validation."
+  },
+  "externalBuild": {
+    "exit": 0,
+    "seconds": 32.310767500000004,
+    "sourceVersion": "1.0 (7)",
+    "originalZIPFiles": 59,
+    "originalFilesUnchanged": 56,
+    "originalSwiftUnchanged": 14,
+    "allowedChangedOriginals": [
+      "LocalPhotoAI.swift",
+      "MealMirrorApp.swift",
+      "Package.swift"
+    ],
+    "completeBuiltInventoryFiles": 30,
+    "inputResources": 13,
+    "frozenReferences": 146,
+    "platform": "arm64 iOSSimulator27.1, minimum17.0",
+    "mainExecutableSDK": "27.1",
+    "debugDylibSDK": "27.0",
+    "warnings": [
+      "duplicate asset build entry",
+      "macOS27.0 sysroot while targeting iOSSimulator17.0",
+      "AppIntents metadata skipped"
+    ],
+    "initialVerifierPathCorrection": "First parent verifier assumed a nonexistent source resource path, stopped before receipt/controller writes; actual Package.swift/QAWorldInputs inspected, verifier corrected. No rebuild or source change."
+  },
+  "observedRun": {
+    "phase": "completed",
+    "engineEntryIntentCheckpoints": 12,
+    "completedInspected": 12,
+    "nonempty": 9,
+    "empty": 3,
+    "unrun": [],
+    "automaticRetries": 0,
+    "reportExit": 0,
+    "consoleExit": 0,
+    "outerControllerExit": 0,
+    "hostTimedOut": false,
+    "selectedModelPreflight": {
+      "availability": "available",
+      "englishSupported": true,
+      "guardrails": "default",
+      "guidedGeneration": true,
+      "modelUseCase": "default",
+      "vision": true
+    },
+    "allZeroAmountAndIncludedComponents": true,
+    "allTotalsAbsentAndReadinessFalse": true,
+    "labelAndVisionNotRunAll": true,
+    "rows": [
+      {
+        "id": "P01",
+        "inputSHA256": "cee3f05992ab04e403dbafd8843214bc1fec9cf8d366d7fd31e93564b9d9e7fb",
+        "baselineNames": [
+          "rice",
+          "salad",
+          "meat",
+          "drink"
+        ],
+        "candidateNames": [
+          "rice",
+          "salad",
+          "meat",
+          "drink"
+        ],
+        "addedNames": [],
+        "lostNames": [],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Broad compatible clues, unchanged.",
+        "fixedDevelopmentGateAssessment": "Useful broad clue present; no newly incompatible clue observed."
+      },
+      {
+        "id": "P02",
+        "inputSHA256": "9b1d941897ff79f96862f0abdd0f0b5993344b4d2e5e7433272e55250a8f5236",
+        "baselineNames": [
+          "ceramic bowl"
+        ],
+        "candidateNames": [],
+        "addedNames": [],
+        "lostNames": [
+          "ceramic bowl"
+        ],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Now inspected-empty; prior object-name leakage absent in this observation.",
+        "fixedDevelopmentGateAssessment": "Required inspected-empty gate met."
+      },
+      {
+        "id": "P03",
+        "inputSHA256": "78dd69298bd82271d7b9401808faa89ee6d71ab9596f8cee6d16b151cdf6647a",
+        "baselineNames": [
+          "lasagna"
+        ],
+        "candidateNames": [
+          "baked dish"
+        ],
+        "addedNames": [
+          "baked dish"
+        ],
+        "lostNames": [
+          "lasagna"
+        ],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Broader category replaces unconfirmed recipe.",
+        "fixedDevelopmentGateAssessment": "Useful broad clue present; no newly incompatible clue observed."
+      },
+      {
+        "id": "P04",
+        "inputSHA256": "106eb8f483ee2a31aab8b206663290277d2cd2369a780f09566f9191e0d54ec1",
+        "baselineNames": [
+          "flatbread"
+        ],
+        "candidateNames": [
+          "flat bread"
+        ],
+        "addedNames": [
+          "flat bread"
+        ],
+        "lostNames": [
+          "flatbread"
+        ],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Broad compatible clue, spelling-space variation only.",
+        "fixedDevelopmentGateAssessment": "Useful broad clue present; no newly incompatible clue observed."
+      },
+      {
+        "id": "P05",
+        "inputSHA256": "7cd5ddd52a6cb349fa387dee30cfbb1fc84c4043944a2588b934d68a802922e5",
+        "baselineNames": [
+          "pâté",
+          "sauce"
+        ],
+        "candidateNames": [
+          "pâté",
+          "sauce"
+        ],
+        "addedNames": [],
+        "lostNames": [],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Existing main-food mismatch persists.",
+        "fixedDevelopmentGateAssessment": "Limited useful broad sauce clue remains; main-food identification is not established. No new incompatibility introduced relative to baseline."
+      },
+      {
+        "id": "P06",
+        "inputSHA256": "0b7aa9fbcd6cb06295107ea6bc32e3876a51e54c5d1fb8a16b705224ceb7235f",
+        "baselineNames": [],
+        "candidateNames": [],
+        "addedNames": [],
+        "lostNames": [],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Inspected-empty, unchanged.",
+        "fixedDevelopmentGateAssessment": "Required inspected-empty gate met."
+      },
+      {
+        "id": "P07",
+        "inputSHA256": "44ba50e454e96b8214090a20125be64f56a29cf6a496073dc2e2e1b82a2ffafe",
+        "baselineNames": [
+          "brown square"
+        ],
+        "candidateNames": [
+          "brown square",
+          "nuts"
+        ],
+        "addedNames": [
+          "nuts"
+        ],
+        "lostNames": [],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Mandatory uncertainty gate failed; new material/edibility specificity.",
+        "fixedDevelopmentGateAssessment": "FAIL: contract requires inspected-empty for the original uncertain P07; returned names are nonempty."
+      },
+      {
+        "id": "P08",
+        "inputSHA256": "ad14e621224584830a4f70cdb08609b92eda3acc7772b9d5eee8515eab86400e",
+        "baselineNames": [
+          "curry",
+          "flatbread",
+          "fried potatoes"
+        ],
+        "candidateNames": [
+          "stew",
+          "flatbread",
+          "fried slices",
+          "fried pieces"
+        ],
+        "addedNames": [
+          "stew",
+          "fried slices",
+          "fried pieces"
+        ],
+        "lostNames": [
+          "curry",
+          "fried potatoes"
+        ],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Tradeoff in specificity, with main-dish and method ambiguity retained.",
+        "fixedDevelopmentGateAssessment": "Qualified side-food clues present; main-dish coverage remains unresolved. No newly plainly incompatible category can be established solely from these broad labels."
+      },
+      {
+        "id": "P09",
+        "inputSHA256": "b9f154f1a58db5564c4643b49e90a19e91159a8e8e52fa73e112962adebc69a6",
+        "baselineNames": [
+          "chicken",
+          "potatoes",
+          "green beans",
+          "carrots"
+        ],
+        "candidateNames": [
+          "chicken",
+          "potatoes",
+          "green beans",
+          "carrots"
+        ],
+        "addedNames": [],
+        "lostNames": [],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Compatible appearance hypotheses with unchanged over-specific type.",
+        "fixedDevelopmentGateAssessment": "Useful broad appearance clues present; existing green-vegetable specificity persists."
+      },
+      {
+        "id": "P10",
+        "inputSHA256": "6ede7b2e81fa2582483559708d18cd3137d1617ed01f1eff65e03aab18717598",
+        "baselineNames": [
+          "dumplings"
+        ],
+        "candidateNames": [
+          "dumplings"
+        ],
+        "addedNames": [],
+        "lostNames": [],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Broad compatible main clue, unchanged.",
+        "fixedDevelopmentGateAssessment": "Useful broad clue present; no newly incompatible clue observed."
+      },
+      {
+        "id": "P11",
+        "inputSHA256": "b82b37d2efc86e2ac11ffaab3a39f4a7befc02afd2ea6d7ca5ae8bc124b132d8",
+        "baselineNames": [
+          "fried egg",
+          "noodles",
+          "shrimp",
+          "lime"
+        ],
+        "candidateNames": [
+          "fried egg",
+          "noodles",
+          "shrimp",
+          "lime"
+        ],
+        "addedNames": [],
+        "lostNames": [],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Visible mixed-dish decomposition persists, unchanged.",
+        "fixedDevelopmentGateAssessment": "Useful broad noodle clue present; existing decomposition and qualification concerns persist."
+      },
+      {
+        "id": "P12",
+        "inputSHA256": "109da25881a71969d0f0494d7aed2f508ff6c0ee90debcf7cddbc33d3d6c5508",
+        "baselineNames": [],
+        "candidateNames": [],
+        "addedNames": [],
+        "lostNames": [],
+        "amountComponents": 0,
+        "includedComponents": 0,
+        "totalAbsent": true,
+        "readyForReview": false,
+        "sourceContract": true,
+        "mechanicalContractPassed": true,
+        "labelState": "notRun",
+        "visionFallbackState": "notRun",
+        "independentQualitativeSummary": "Inspected-empty, unchanged.",
+        "fixedDevelopmentGateAssessment": "Required inspected-empty gate met."
+      }
+    ],
+    "engineCheckpointIsNotAppleInternalDispatchProof": true,
+    "privateEmptyBranchAndPolicyReasonNotObserved": true
+  },
+  "evaluation": {
+    "originalExpectationsSHA256": "4a83ee168b4fd8b1673222b9c35cb4b782e1e389a7fa85c0eda5df786a57a905",
+    "originalBaselineSHA256": "92ec229ea83dd50390fb5fe32e939d9e8eb722f1cf7352404eecc46ee6a58941",
+    "originalNeutralManifestSHA256": "7450b42db69ccdf121dd347edfb47343f1df36bfee38547a4e99e728f4ffda69",
+    "contractSHA256": "13eb0edb09cfbfadd128cbaeb5a0e3eab131a39e2b6bcf0e145ea8d358224992",
+    "caseOrder": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12"
+    ],
+    "clearNonfoodEmptyRequired": [
+      "P02",
+      "P06",
+      "P12"
+    ],
+    "uncertainEmptyRequired": [
+      "P07"
+    ],
+    "nonfoodEmptyOutcomesSatisfied": true,
+    "uncertainEmptyOutcomeSatisfied": false,
+    "allTwelveMechanicalCompletionIsNotRecognitionAccuracy": true,
+    "expectations": "Two blind AI pixel reviews of eight food-like, three nonfood and one uncertain appearance; not qualified human, material, recipe, nutrition or worldwide ground truth. All twelve were exposed development inputs."
+  },
+  "environmentAndCleanup": {
+    "freshBootExit": 0,
+    "freshBootStatusExit": 0,
+    "freshBootLoggedDataMigrationFailed": true,
+    "twelveActualResultsDoNotClearEnvironmentWarningOrDiagnoseEarlierTaggingFailure": true,
+    "ownedHeadlessShutdownExit": 0,
+    "finalOwnedHeadlessState": "Shutdown",
+    "reportsAndQADataRetained": true,
+    "originalInteractivePickerAccessed": false,
+    "productionReviewStorageTouched": false,
+    "qaEvidenceStorageWrites": true,
+    "OSComputeReleaseNotEstablished": true
+  },
+  "limits": [
+    "No causal separation of schema from necessary wording/mapping changes.",
+    "No raw enum tag/filter reason, qualified food/clinical accuracy or nutrition/dose validation.",
+    "No new-eight run, actual production UI/photo/save journey, candidate multi-view/label, direct accessibility, calibrated performance, physical/network-isolated offline or submission readiness.",
+    "No production prompt/model/source/ZIP, internal upload or app distribution changed; build7 remains current."
+  ],
+  "nextStep": "Keep proposal unapplied and new8 unrun. Reconsider recognition architecture and evaluation before any further model run; do not keep tuning prompts against exposed cases. Current app amount separation and useful independent verification remain priorities.",
+  "localArtifactReferencesBase": "../../../../outputs/typed-food-presence-20261024/",
+  "localArtifactReferences": [
+    {
+      "path": "candidate-v1/LocalPhotoAI.swift",
+      "sha256": "0df17f77f3162e794229b0a6e4d4903826f007cff54c11b7a0df166495ef510e"
+    },
+    {
+      "path": "candidate-v1/PROPOSAL.json",
+      "sha256": "30839ff12615a21d5b249f87351de70cff42139d3ebc55a0a3b17ddaa31c2332"
+    },
+    {
+      "path": "candidate-v1/candidate.diff",
+      "sha256": "9c2b04caf20614bacab9e2103798948d97090a8ae041203be75ed53e0f00bcf2"
+    },
+    {
+      "path": "candidate-v1/independent-source-review.json",
+      "sha256": "bcaf899223d697a9b57a2fdf898160931712a67dfe1d97da5f9fe48b21ad08d7"
+    },
+    {
+      "path": "candidate-v1/independent-contract-review.json",
+      "sha256": "9eed2c4c2cdb264753bc6fe85bffa0fa364d5790a626cf2b0ad235d0355c1233"
+    },
+    {
+      "path": "EVALUATION-CONTRACT-v1.json",
+      "sha256": "13eb0edb09cfbfadd128cbaeb5a0e3eab131a39e2b6bcf0e145ea8d358224992"
+    },
+    {
+      "path": "runner/independent-assembly-review.json",
+      "sha256": "8e2174f7b5a52b1043f124fa7e95402dda2e533ae03d57b5c2c3bc8653f5f4bf"
+    },
+    {
+      "path": "runner/assembly-v1/pre-build-freeze.json",
+      "sha256": "efff34a9bc0643a20430d12addecc22de229e18730827761b4934b82800d0625"
+    },
+    {
+      "path": "mapping-probe-v1/PREPARATION-FREEZE.json",
+      "sha256": "89ec8e04797c0c996db926f43c7f3c1dc14e94ea19e0519c67868bead782ec9c"
+    },
+    {
+      "path": "mapping-probe-v1/independent-review.json",
+      "sha256": "c37cfbb5ae8eaf3f26b5701cbafbeab8fb01f904e0f9e579e1ccbc87827119be"
+    },
+    {
+      "path": "mapping-probe-v1/results.json",
+      "sha256": "f0cb2e2c7ffd9648ee4b222bd80b6bc3eb2970fe698b2482f74f3b3b0119cee5"
+    },
+    {
+      "path": "mapping-probe-v1/verification.json",
+      "sha256": "69803aa8a022b9ebf3d6df99b7ca246e400463249543f10e1f6b326068d16058"
+    },
+    {
+      "path": "runner/build-v1/build-result.json",
+      "sha256": "dbf1a46a56c7b5eb104549a691c54c8882dd5e2386727524c4984348a740028e"
+    },
+    {
+      "path": "runner/build-v1/built-app-verification.json",
+      "sha256": "f63b9bd009bb3f91f5a59177c5216eb3014cc72c5d463ecd43bf7237dd56755f"
+    },
+    {
+      "path": "runner/build-v1/independent-built-review.json",
+      "sha256": "9a3ad5ed93213e72e5e38117a67540a44f4a988aa2f2c70ee61c7b972c93d1cc"
+    },
+    {
+      "path": "runner/build-v1/root-execution-approval.json",
+      "sha256": "8cdcf9c92591f9ab5a26cfb4c22e45f52fa0b6a233c4bfc66b420c69163be596"
+    },
+    {
+      "path": "runner/build-v1/execute-once.py",
+      "sha256": "27484e74b652861e9351db7f665101846e1a05a4ff1817d42c89e253cfacf5e8"
+    },
+    {
+      "path": "runner/build-v1/outer-controller-result.json",
+      "sha256": "41af916bee9873efe6cdc9ce37fb7213ae672e0288b8623190226abadbda3bc0"
+    },
+    {
+      "path": "runner/build-v1/qa-boot-observation.json",
+      "sha256": "6af0fbffa6b14c715a152e4a92f577fca8cce4a0e17e3dc58ec74bd869298700"
+    },
+    {
+      "path": "runner/build-v1/cleanup.json",
+      "sha256": "847f99a299f3ccb226b44b47078453e6f48a17631904edab3d92f3acb1d3aabe"
+    },
+    {
+      "path": "runner/execution-v1/world-meal-qualitative.json",
+      "sha256": "a82f29d5bc5ede94b60427b751e72e95d3468f85b63474c3d85e2a44973c8d4f"
+    },
+    {
+      "path": "ROOT-DECISION-v1.json",
+      "sha256": "a210f8cd307af66e11c62f3d7c6761ae03f2ff840479e0a870b12896644877df"
+    },
+    {
+      "path": "runner/execution-v1/interpretation-review.json",
+      "sha256": "1de33ba292dc69f87f801a7e22b4d6d6215bf1a16bb8aba01577eac27b36b63d"
+    },
+    {
+      "path": "runner/execution-v1/interpretation-review.md",
+      "sha256": "f47055144fe909db05ced0ab85f5b3f3be61a627fc7689d6db3463b73a2350e3"
+    }
+  ],
+  "localArtifactScope": "Hashes point to retained local artifacts not reproduced by these public records. No research pixels, provider/license metadata, private absolute paths or device/account identifiers are copied.",
+  "independentInterpretation": {
+    "sha256": "1de33ba292dc69f87f801a7e22b4d6d6215bf1a16bb8aba01577eac27b36b63d",
+    "scope": "Read-only receipt/source checks and all-row comparison to frozen expectations/baseline with prior blind AI annotations; P05/P07/P08 revisited visually, not a new blind annotation. No replay.",
+    "decisiveFailure": {
+      "id": "P07",
+      "expected": "inspected-empty on original uncertain stratum",
+      "observed": [
+        "brown square",
+        "nuts"
+      ]
+    },
+    "allOriginalRowsReviewed": 12,
+    "favorableObservations": [
+      "P02 is now inspected-empty instead of ceramic bowl.",
+      "P03 baked dish matches the broad appearance without lasagna recipe specificity.",
+      "P04 spelling-space variation preserves the broad clue."
+    ],
+    "remainingConcerns": [
+      "P05 existing pâté mismatch; broad sauce clue only.",
+      "P08 main grain/porridge category unresolved and cooking-method/region attribution uncertain.",
+      "P09 exact green-vegetable type unconfirmed.",
+      "P11 visible mixed-dish decomposition persists."
+    ],
+    "qualifiedGroundTruth": false
+  },
+  "localArtifactReferencesBaseIsRelativeTo": "This JSON file directory in the local checkout; referenced artifacts are not reproduced in the public repository."
+}
