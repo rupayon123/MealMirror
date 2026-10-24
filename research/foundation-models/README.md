@@ -4,7 +4,11 @@ Reviewed October 24, 2026. This records native Mac probes and source-derived iOS
 
 Raw logs and harness sources remain in local output folders outside the repository and Challenge ZIP. The links below resolve in this Mac workspace; they are not publicly distributed artifacts. No images, model weights or executables are added here.
 
-## Latest: twelve new public images, unchanged build-6 processing
+## Latest proposal: neutral wording rejected
+
+The [neutral-eligibility comparison](neutral-eligibility-20261024.md) changed only four fixed prompt text surfaces in an external QA app and made one call on each of the same twelve exposed images. All twelve retained name/amount separation; 30 mechanical checks passed. The proposal **failed its fixed adoption criteria**: P07 returned `brown dessert` instead of inspected-empty, P04 lost its broad compatible clue, and P08 added unsupported specificity. P02 became empty and P05 returned a broader name, but these individual changes do not establish a net or causal improvement. [All old/new names, unapplied diff and decision](neutral-eligibility-20261024.json) are retained. Production source, build-6 ZIP and distribution are unchanged. Eight separately pixel-reviewed inputs remain unrun; no failed case was replaced. Investigate general semantic decision architecture/capabilities before another frozen proposal; typed abstention remains untested.
+
+## Baseline: twelve new public images, unchanged build-6 processing
 
 The [fixed twelve-image qualitative check](new-public-meals-20261024.md) completed one source-derived iOS Simulator call per image, after two blind AI pixel reviews and a frozen protocol. All twelve retained name/amount separation; ten returned names and two returned empty lists. This is not a semantic pass: a nonfood vessel returned `ceramic bowl` in the food-clue channel, fritter-like pieces returned `pâté`, an uncertain food imitation returned `brown square`, and unconfirmed specificity/mixed-dish decomposition remain. [Exact outcomes, credits and evidence](new-public-meals-20261024.json) preserve every case. No model/prompt/app source or ZIP changed. These are now exposed exploratory data, not qualified held-out, nutrition, physical offline or full app UI evidence.
 

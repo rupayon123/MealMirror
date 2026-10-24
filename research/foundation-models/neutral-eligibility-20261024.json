@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-24",
+  "status": "Rejected development proposal; not applied to the app.",
+  "variant": "neutral-eligibility-v1",
+  "sourceContext": {
+    "publicCommitAtStart": "09fc187b992424870a83d06d668861d7670ea157",
+    "productionVersion": "1.0 (6)",
+    "productionZIPBytes": 12203935,
+    "productionZIPSHA256": "774e37b26a642d8d9a08e0e292d868d1ee0b2aca5de47febb9f02d9d89c2856b",
+    "productionModelSHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "candidateModelSHA256": "078869231be6f96e69be077c09aa6ca1f2e4a1823a0d334d0d70c712cc509383",
+    "candidateIsExternalQAOnly": true,
+    "originalFilesUnchanged": 56,
+    "originalSwiftFilesUnchanged": 14,
+    "originalFilesChanged": [
+      "LocalPhotoAI.swift: four declared prompt text surfaces only",
+      "MealMirrorApp.swift: external QA lifecycle",
+      "Package.swift: unique QA identity/resources"
+    ],
+    "productionSourceAndZIPChanged": false,
+    "newAppUploadOrDistribution": false
+  },
+  "hypothesis": "Neutral image framing and distinguishing uncertain food presence from uncertain recipe identity might reduce object/shape clues without excluding unfamiliar food categories. This was a hypothesis, not an established cause.",
+  "change": {
+    "surfaces": [
+      "visibleFood Guide",
+      "names Guide",
+      "system instructions",
+      "request"
+    ],
+    "unchanged": [
+      "Bool/names schema and field order",
+      "six-name maximum",
+      "on-device SystemLanguageModel.default",
+      "default guardrails",
+      "temperature0/response bound180",
+      "one generation call",
+      "15-second caller deadline",
+      "attachment preparation/orientation",
+      "language/capability gates",
+      "PhotoNamePolicy",
+      "engine fallback and amount separation"
+    ],
+    "longerNotSimpler": {
+      "systemInstructionWords": [
+        149,
+        190
+      ],
+      "booleanGuideWords": [
+        14,
+        33
+      ],
+      "namesGuideWords": [
+        41,
+        54
+      ]
+    },
+    "publicDiff": "neutral-eligibility-20261024.diff"
+  },
+  "method": {
+    "inputs": "Same original exposed P01-P12 bytes/order as the previous build6 qualitative run; prior input credits/rights remain in new-public-meals-20261024.json.",
+    "comparison": "One prior baseline and one later candidate call per image, separated in time. Not randomized or causal; no reruns or replacement.",
+    "engineInputs": {
+      "source": "personalPhoto",
+      "foodImages": 1,
+      "labelImage": null,
+      "description": "",
+      "referenceItemPresent": false,
+      "language": "english"
+    },
+    "expectations": "Pre-frozen broad visual expectations from two blind AI pixel reviews; not qualified human/nutrition/material/clinical truth.",
+    "semanticAnswersInModelPrompt": false,
+    "maximumCalls": 12,
+    "actualCompletedInspected": 12,
+    "automaticRetries": 0,
+    "newEightApplicationInferenceCalls": 0,
+    "newEightStatus": "Separate collected, pixel-only AI-reviewed expectations agree on5 recognizable food/drink,1 clear nonfood and2 uncertain; remain unrun. Intended source-selection strata are not truth labels.",
+    "rawDiagnosticLimit": "Only final policy-filtered names are exposed; raw visibleFood, rejected strings, confidence and empty-list reasons are unavailable."
+  },
+  "mechanicalResults": {
+    "hostExit": 0,
+    "appReportedExit": 0,
+    "hostTimeout": false,
+    "inspectedNames": 9,
+    "inspectedEmpty": 3,
+    "unrun": [],
+    "independentChecksPassed": 30,
+    "independentMechanicalBlockers": [],
+    "allCases": {
+      "amountComponents": 0,
+      "includedComponents": 0,
+      "automaticCarbohydrateTotalAbsent": true,
+      "readyForReview": false,
+      "labelOCR": "notRun",
+      "VisionFallback": "notRun"
+    },
+    "sourceFreezeFilesVerified": 146,
+    "builtInstalledAppFilesVerified": 30,
+    "reportCopyByteEqualToQAContainer": true,
+    "runtimeStorageFlagLimit": "storageTouched=false means the saved-meal-review store API was not invoked; QA wrote an isolated report and attempt marker.",
+    "failureCleanupBranchesExercised": false
+  },
+  "adoptionDecision": {
+    "outcome": "FAILED; do not adopt",
+    "decisiveCase": "P07",
+    "criterion": "Require an inspected-empty accepted-name list, fixed before inference. No confidence field exists; all-clues-are-tentative wording cannot waive it.",
+    "actual": [
+      "brown dessert"
+    ],
+    "uncertainObjectMaterialEstablished": false,
+    "foodUsefulnessGate": "Not demonstrated for all eight; P04 lost a broad compatible clue and the sole dumpling label was unsupported by the frozen broad visual description. P08 introduced unconfirmed specificity. This is AI appearance review, not proof of a recipe being impossible or hidden ingredient absent.",
+    "newEightExtensionRun": false,
+    "proposalRevisedAfterResults": false
+  },
+  "gateAssessment": [
+    {
+      "gate": "mechanical/name-amount-source separation",
+      "outcome": "met-in-recorded-results",
+      "basis": "All12 completed inspected responses; zero components/included, absent automatic total, false readiness, one photo, source contract, no label/Vision fallback and no stop reasons."
+    },
+    {
+      "gate": "three pre-frozen clear nonfood cases",
+      "outcome": "met-in-recorded-results",
+      "caseIDs": [
+        "P02",
+        "P06",
+        "P12"
+      ],
+      "basis": "P02/P06/P12 each returned inspected-empty, not unavailable/error."
+    },
+    {
+      "gate": "uncertain P07 inspected-empty",
+      "outcome": "FAILED",
+      "basis": "P07 returned brown dessert. The pre-inference clarification and contract require inspected-empty; tentative UI language and absent confidence fields do not waive it. Material/edibility remains uncertain."
+    },
+    {
+      "gate": "food-like broad usefulness/no new plainly incompatible clue",
+      "outcome": "not-demonstrated-for-all-eight",
+      "basis": "P04 only returns dumpling, which this reviewer cannot support as a broad compatible category for the frozen flat-round appearance. P08 adds unsupported garlic and more specific recipe identities; distinguish unsupported specificity from a proved absent ingredient or categorically false recipe. Some other food-like cases retain useful broad clues. P07 already independently fails the overall gate."
+    },
+    {
+      "gate": "overall adoption",
+      "outcome": "FAILED",
+      "basis": "Any failed fixed gate prevents adoption on this experiment. P07 alone is decisive; retain P04/P08 contrary evidence rather than summarizing all inspected lists as success."
+    },
+    {
+      "gate": "shipping/fresh follow-up",
+      "outcome": "not-eligible-on-this-experiment",
+      "basis": "Passing the exposed gates would still not authorize shipping; here they failed. New8 remains unrun and is not substituted for a failed case. This review neither authorizes another inference nor changes a proposal."
+    }
+  ],
+  "cases": [
+    {
+      "id": "P01",
+      "inputSHA256": "cee3f05992ab04e403dbafd8843214bc1fec9cf8d366d7fd31e93564b9d9e7fb",
+      "frozenVisualClassification": "food",
+      "baselineNames": [
+        "rice",
+        "salad",
+        "meat",
+        "drink"
+      ],
+      "candidateNames": [
+        "rice",
+        "salad",
+        "meat",
+        "drink"
+      ],
+      "candidateState": "inspectedNames",
+      "finding": "Broad compatibility retained",
+      "assessment": "Identical final list. Rice and salad fit the separate rice mound and slaw; meat is a qualified broad hypothesis for the browned piece. Drink remains bottle-context inference, not direct confirmation of contents. No new recipe, flavor or nutrition claim is established.",
+      "gateReview": "met-with-qualifications"
+    },
+    {
+      "id": "P02",
+      "inputSHA256": "9b1d941897ff79f96862f0abdd0f0b5993344b4d2e5e7433272e55250a8f5236",
+      "frozenVisualClassification": "nonfood",
+      "baselineNames": [
+        "ceramic bowl"
+      ],
+      "candidateNames": [],
+      "candidateState": "inspectedEmpty",
+      "finding": "Observed nonfood abstention replaces object clue",
+      "assessment": "The prior ceramic bowl output described a nonfood vessel in the food-clue channel. The candidate returned inspected-empty, meeting this fixed nonfood development gate. This is a useful observed change, not proof of causation, stable object rejection or material identity.",
+      "gateReview": "met"
+    },
+    {
+      "id": "P03",
+      "inputSHA256": "78dd69298bd82271d7b9401808faa89ee6d71ab9596f8cee6d16b151cdf6647a",
+      "frozenVisualClassification": "food",
+      "baselineNames": [
+        "lasagna"
+      ],
+      "candidateNames": [
+        "lasagna"
+      ],
+      "candidateState": "inspectedNames",
+      "finding": "Recipe specificity persists",
+      "assessment": "Lasagna is unchanged. The closed pale topping/red-edge baked dish is compatible with a casserole-like category, but pasta, layers and filling are not exposed. A plausible exact recipe remains unconfirmed; it is not proof of that recipe being absent.",
+      "gateReview": "compatible-appearance-only"
+    },
+    {
+      "id": "P04",
+      "inputSHA256": "106eb8f483ee2a31aab8b206663290277d2cd2369a780f09566f9191e0d54ec1",
+      "frozenVisualClassification": "food",
+      "baselineNames": [
+        "flatbread"
+      ],
+      "candidateNames": [
+        "dumpling"
+      ],
+      "candidateState": "inspectedNames",
+      "finding": "Lost broad compatible clue; new poor-fit label",
+      "assessment": "Flatbread was replaced by dumpling. Reopened original pixels still show overlapping flattened pale rounds with browned spots under wrapping, as both pre-inference blind reviews recorded. This reviewer cannot establish dumpling as a broad compatible clue from the visible form; no exact bread word is required, but a nonempty food noun alone does not satisfy usefulness. This is an appearance-fit judgment, not qualified recipe truth or proof that a regional dumpling variant is impossible.",
+      "gateReview": "not-met-by-this-qualitative-review"
+    },
+    {
+      "id": "P05",
+      "inputSHA256": "7cd5ddd52a6cb349fa387dee30cfbb1fc84c4043944a2588b934d68a802922e5",
+      "frozenVisualClassification": "food",
+      "baselineNames": [
+        "pâté",
+        "sauce"
+      ],
+      "candidateNames": [
+        "patties",
+        "sauce"
+      ],
+      "candidateState": "inspectedNames",
+      "finding": "Observed broader main clue",
+      "assessment": "Pâté became patties while sauce remained. Patties is a closer broad appearance description for discrete browned pieces with a coarse green interior than the previous spread-like recipe label. Sauce fits the smooth pale base. Neither interior ingredients nor sauce composition is established. This individual observed improvement is not a causal or persistent prompt-performance claim.",
+      "gateReview": "met-with-qualifications"
+    },
+    {
+      "id": "P06",
+      "inputSHA256": "0b7aa9fbcd6cb06295107ea6bc32e3876a51e54c5d1fb8a16b705224ceb7235f",
+      "frozenVisualClassification": "nonfood",
+      "baselineNames": [],
+      "candidateNames": [],
+      "candidateState": "inspectedEmpty",
+      "finding": "Observed nonfood abstention retained",
+      "assessment": "Inspected-empty on the sponge-like utility object is retained. It is not an error fallback, and neither raw visibleFood nor the policy reason for emptiness is available.",
+      "gateReview": "met"
+    },
+    {
+      "id": "P07",
+      "inputSHA256": "44ba50e454e96b8214090a20125be64f56a29cf6a496073dc2e2e1b82a2ffafe",
+      "frozenVisualClassification": "uncertain",
+      "baselineNames": [
+        "brown square"
+      ],
+      "candidateNames": [
+        "brown dessert"
+      ],
+      "candidateState": "inspectedNames",
+      "finding": "Fixed uncertain-case gate failed",
+      "assessment": "Brown square became brown dessert. The central wick-like strand and material ambiguity remain as frozen before inference. The clarification explicitly required inspected-empty, and the schema has no confidence field. A nonempty dessert name fails that gate even when app-wide copy calls clues tentative. The object is not relabeled certainly edible or certainly nonfood, and its material is not inferred.",
+      "gateReview": "failed-required-inspected-empty-gate"
+    },
+    {
+      "id": "P08",
+      "inputSHA256": "ad14e621224584830a4f70cdb08609b92eda3acc7772b9d5eee8515eab86400e",
+      "frozenVisualClassification": "food",
+      "baselineNames": [
+        "curry",
+        "flatbread",
+        "fried potatoes"
+      ],
+      "candidateNames": [
+        "dal",
+        "chapati",
+        "potato",
+        "garlic"
+      ],
+      "candidateState": "inspectedNames",
+      "finding": "New unsupported identities and recipe specificity",
+      "assessment": "Curry/flatbread/fried potatoes became dal/chapati/potato/garlic. Potato remains a qualified compatible side clue, and removing fried avoids that particular preparation assertion. Dal is a plausible but unconfirmed legume-dish identity for the yellow grain/porridge-like base; its composition is not visible proof. Chapati is more recipe-specific than the broad thin round blistered crisp/flatbread-like observation. Reopened pixels and both blind reports establish no clear garlic; the conspicuous purple-white segment is onion-like. Garlic is a new unsupported ingredient identity, without claiming hidden garlic is absent. Returned names have no location mapping, so do not assign dal to the base or cropped bowl as fact.",
+      "gateReview": "broad-side-usefulness-present-new-unsupported-specifics"
+    },
+    {
+      "id": "P09",
+      "inputSHA256": "b9f154f1a58db5564c4643b49e90a19e91159a8e8e52fa73e112962adebc69a6",
+      "frozenVisualClassification": "food",
+      "baselineNames": [
+        "chicken",
+        "potatoes",
+        "green beans",
+        "carrots"
+      ],
+      "candidateNames": [
+        "chicken",
+        "potatoes",
+        "carrots",
+        "green beans"
+      ],
+      "candidateState": "inspectedNames",
+      "finding": "Same clue set; unresolved vegetable specificity",
+      "assessment": "Only list order changed. Chicken and carrots remain appearance-compatible; potatoes may fit some larger pale ovals, not every white oval. Green beans remains unconfirmed and a weaker fit than the frozen broad long-ridged-green-vegetable category. No replacement species, hidden grain base or exhaustive egg recall is imposed.",
+      "gateReview": "met-with-existing-qualifications"
+    },
+    {
+      "id": "P10",
+      "inputSHA256": "6ede7b2e81fa2582483559708d18cd3137d1617ed01f1eff65e03aab18717598",
+      "frozenVisualClassification": "food",
+      "baselineNames": [
+        "dumplings"
+      ],
+      "candidateNames": [
+        "dumplings"
+      ],
+      "candidateState": "inspectedNames",
+      "finding": "Broad compatibility retained",
+      "assessment": "Dumplings is unchanged and fits the visible browned crescent parcels. Closed wrappers establish no filling or regional recipe. Omission of the cropped dark liquid is not a failure under the non-exhaustive expectations.",
+      "gateReview": "met"
+    },
+    {
+      "id": "P11",
+      "inputSHA256": "b82b37d2efc86e2ac11ffaab3a39f4a7befc02afd2ea6d7ca5ae8bc124b132d8",
+      "frozenVisualClassification": "food",
+      "baselineNames": [
+        "fried egg",
+        "noodles",
+        "shrimp",
+        "lime"
+      ],
+      "candidateNames": [
+        "fried egg",
+        "noodles",
+        "shrimp"
+      ],
+      "candidateState": "inspectedNames",
+      "finding": "Visible mixed-dish decomposition persists; side clue lost",
+      "assessment": "Fried egg/noodles/shrimp remain while lime was removed. These retained words have visible appearance support; fried egg is familiar appearance shorthand, not proof of cooking technique or oil. Egg and shrimp are mixed-dish elements rather than concealed ingredient guesses, but the list still decomposes one noodle dish. Lime was a compatible separately served citrus clue in the baseline; losing it is an observed utility loss, not an automatic exhaustive-recall gate failure.",
+      "gateReview": "met-with-granularity-limit"
+    },
+    {
+      "id": "P12",
+      "inputSHA256": "109da25881a71969d0f0494d7aed2f508ff6c0ee90debcf7cddbc33d3d6c5508",
+      "frozenVisualClassification": "nonfood",
+      "baselineNames": [],
+      "candidateNames": [],
+      "candidateState": "inspectedEmpty",
+      "finding": "Observed nonfood abstention retained",
+      "assessment": "Inspected-empty on the yarn skeins is retained. This single observation does not establish reliable nonfood behavior in general.",
+      "gateReview": "met"
+    }
+  ],
+  "balancedSummary": {
+    "usefulObservedChanges": [
+      "P02 nonfood object clue became inspected-empty.",
+      "P05 patties is a closer broad visible category than the prior pâté label."
+    ],
+    "contraryObservedChanges": [
+      "P04 lost the compatible flatbread clue and returned an unsupported dumpling category.",
+      "P07 now calls the ambiguous block a brown dessert and fails the fixed empty gate.",
+      "P08 adds unconfirmed garlic and more recipe-specific dal/chapati labels.",
+      "P11 drops the separately visible citrus clue while retaining mixed-dish decomposition."
+    ],
+    "unchangedLimits": [
+      "P03 lasagna remains concealed-recipe specificity.",
+      "P09 green beans remains unconfirmed; the list is merely reordered.",
+      "P01 drink remains a bottle-context inference.",
+      "P06/P12 inspected-empty is retained; neither proves global nonfood reliability."
+    ]
+  },
+  "limits": [
+    "Exposed, purposive, AI-reviewed development comparison, not qualified ground truth, an accuracy percentage or held-out acceptance.",
+    "No causal, repeatability, worldwide-food, nutrition, dose, clinical or competitive-superiority claim.",
+    "QA lifecycle and model instructions differ from production; no full production UI, physical camera/device, airplane-mode/network-isolation, performance/memory/thermal/battery or OS compute-release proof.",
+    "Apple guided output constrains format, not semantic correctness. A typed abstention schema remains an unimplemented alternative, not a demonstrated fix.",
+    "Four longer prompt surfaces changed together as one proposal; do not attribute an individual output to one clause.",
+    "The production preparation and model-control mechanics remain unchanged; remaining app readiness gates remain open."
+  ],
+  "next": "Investigate general food/uncertainty decision architecture and supported local capabilities before freezing another proposal; retain cultural names and useful broad foods. Do not hardcode exposed object/dish names, fit to captions or substitute the unrun8 for failed cases. Continue the exact production photo-to-history journey/accessibility and later physical/applicant/2027 gates.",
+  "appleSources": [
+    {
+      "title": "Image prompting",
+      "url": "https://developer.apple.com/documentation/foundationmodels/analyzing-images-with-multimodal-prompting"
+    },
+    {
+      "title": "Guided generation",
+      "url": "https://developer.apple.com/documentation/foundationmodels/generating-swift-data-structures-with-guided-generation"
+    },
+    {
+      "title": "On-device prompting",
+      "url": "https://developer.apple.com/documentation/foundationmodels/prompting-an-on-device-foundation-model"
+    },
+    {
+      "title": "Output safety",
+      "url": "https://developer.apple.com/documentation/foundationmodels/improving-the-safety-of-generative-model-output"
+    }
+  ],
+  "localArtifacts": {
+    "root": "../../../../outputs/food-kind-investigation-20261024/",
+    "notPublished": true,
+    "files": [
+      {
+        "name": "INVESTIGATION.json",
+        "sha256": "d0cd1e3c639656975ec3a920a3cdc100cee85c50d63ad623624de096b56c6ff4"
+      },
+      {
+        "name": "apple-research/REPORT.md",
+        "sha256": "73a56e775f28a3b73339927d4ac059d766f9daaf570f3af214f77c8eeb2e1a49"
+      },
+      {
+        "name": "apple-research/source-review.json",
+        "sha256": "8f0712010f1efa2f504497d8de994770e9b8c88088e3403b4b14f25d03272645"
+      },
+      {
+        "name": "reviewer/neutral-framing-findings-v1.json",
+        "sha256": "19ac3d3f39f7aea3e9305728659dbdbf39ea8c9137aa8498a605cf0e183f7dd9"
+      },
+      {
+        "name": "reviewer/neutral-eligibility-candidate-review-v1.json",
+        "sha256": "d80c32cde3066d2c62ffa6f6a5a9c9fce7293ac9b6a57f695250d9fb65dc7484"
+      },
+      {
+        "name": "neutral-eligibility-v1/LocalPhotoAI.swift",
+        "sha256": "078869231be6f96e69be077c09aa6ca1f2e4a1823a0d334d0d70c712cc509383"
+      },
+      {
+        "name": "neutral-eligibility-v1/PROPOSAL.json",
+        "sha256": "cf4202ffaf87e571d6015b178758c92c077aa0f05487cf9490a5421bfb81524c"
+      },
+      {
+        "name": "neutral-eligibility-v1/scope-verification.json",
+        "sha256": "ead3799c1c19ef335bc555c41b71caa7b4a7ca41536ef8e60a76e5145faa3df4"
+      },
+      {
+        "name": "neutral-eligibility-v1/prompt-only.diff",
+        "sha256": "b02572ac2e48b66b74bc9dd9d1c5fe8632131a0b41323df5ee601d3b045410ef"
+      },
+      {
+        "name": "neutral-eligibility-v1/PRE-INFERENCE-CLARIFICATION.json",
+        "sha256": "67c6268cc93d86c2f4d9a9168f5c6aad30fea0b867bb32cb40a34f06231c89c1"
+      },
+      {
+        "name": "neutral-eligibility-v1/development-evaluation-contract.json",
+        "sha256": "9114b66e33c064028f1f820635182ac40bcdaf4ac281244e8985e3faa30a0901"
+      },
+      {
+        "name": "neutral-eligibility-v1/ROOT-DECISION.json",
+        "sha256": "9b4992291849afd3fe7151bb922e55d8c58b3181ca8089e2a6fbd7f6f39c91de"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/assembly-v1/frozen-protocol.json",
+        "sha256": "acfc6423df85fcdd9064aba25f397d038efa7392e71610e3fd811a5deccb32a0"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/assembly-v1/source-fidelity.json",
+        "sha256": "153e6e78e6bbc85b56b85b21f272989653361177e7125d60a717f873e704435e"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/assembly-v1/pre-build-freeze.json",
+        "sha256": "f1ff113b4d8b013c954b5f09401b5c541d674e7570119e6214e8b23231348e00"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/independent-assembly-review.json",
+        "sha256": "6f07907409920aa18b845e876b773b173e636362308805e515f355ffb4b65a2b"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/build-v1/build-command-result.json",
+        "sha256": "ba552af6ee130f08d4f7b1c310564f8eb369f71bc9c8a95a812f2193a68a78da"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/build-v1/built-app-verification.json",
+        "sha256": "c847ddc12f803792f82199dbaf52b670003bd3023f0acced4f1c1cdaca838c09"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/build-v1/independent-built-review.json",
+        "sha256": "5aff63bc712c9653ae9ed750ccfe7d173ac710d64d541ef24937f20d87f693fb"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/build-v1/execute-once.py",
+        "sha256": "95ed74ffaaee73596ad0758820ce4783ccd7bf7c65f6436790535cf0e0aa0072"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/build-v1/execution-approval.json",
+        "sha256": "175990daf9c7eaba5c7e74c3754a5a2d8c7e9491a1743329d408a8b334717ec7"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/execution-v1/world-meal-qualitative.json",
+        "sha256": "73d2eb792fb51d2b83fe201f2747087906c7bae3b8991d1a3e690dda83e4a578"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/execution-v1/launch-command-result.json",
+        "sha256": "4b15c956957c6b84bc52e65253bcd3ec245765149bb8697cfdb704d4790ff8d5"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/execution-v1/report-copy-receipt.json",
+        "sha256": "5f6de41787de2ab758dfddb590c8abc8a7791cebc9c4d7b333a9dfd7fa789830"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/execution-v1/independent-execution-review.json",
+        "sha256": "51539e65373a73b3cab4191b23a1301245d900709cf886ab5cab4e62a3322c17"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/execution-v1/qualitative-review.json",
+        "sha256": "8fccb52853c3e3c69b5461c009b4d5b4549255d1170f7cf9ed00ea039735e0cc"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/execution-v1/qualitative-review.md",
+        "sha256": "87a1bf9c80ed63c4b25b07df9815e4cf4dec905e49ff828d361438fb35afa487"
+      },
+      {
+        "name": "neutral-eligibility-v1/runner/execution-v1/qa-cleanup.json",
+        "sha256": "8071f8b0e40047e8f02cb5bd57617bac889a231ff4265232aeb7affd7a66f432"
+      },
+      {
+        "name": "blind-inputs-v1/neutral-review-manifest.json",
+        "sha256": "ab9671398eca12cb79f3ea73f5b89962978c782b0972a8d36ead3d5fd3004296"
+      },
+      {
+        "name": "blind-inputs-v1/reviews/review-A.json",
+        "sha256": "fae00bf63fbf24051ae0b2af2a5456bbaf08bfc71cd9b6d9345a345553bba8d2"
+      },
+      {
+        "name": "blind-inputs-v1/reviews/review-B.json",
+        "sha256": "b9573555dd48a5b28fbb2ab80feae4a8c0af96a2b988215d9cb08a4217dd0c55"
+      },
+      {
+        "name": "blind-inputs-v1/RECONCILED-EXPECTATIONS.json",
+        "sha256": "0d028ea66e9be5b84e46cf663c7a9fc15f5a5af2972620fa47d332952c416142"
+      },
+      {
+        "name": "new-inputs-v1/FROZEN-COLLECTION.json",
+        "sha256": "4b8f07c75436dbb1a0d6e71ed32adea76c821492664f7cb835d9305e377ba021"
+      },
+      {
+        "name": "new-inputs-v1/independent-collection-review.json",
+        "sha256": "1e15f5bdfa8279b280d3df44116670740a3f8ba35c20aac09098908d9a866be7"
+      },
+      {
+        "name": "new-inputs-v1/independent-collection-review.md",
+        "sha256": "efdeb6f510b6a1917d8d06a71100d13e7e5ea6909236f51a0e03e75fb948caab"
+      },
+      {
+        "name": "public-curation-review.json",
+        "sha256": "e301c6ee998ad1a5a5e149eecb74f1bf4b8ec0306f581029cba72f80b4c59399"
+      }
+    ]
+  },
+  "newEightCollectionScope": {
+    "applicationInferenceCalls": 0,
+    "neutralExportCanonicalPixelsVerified": 8,
+    "frozenArtifactReferencesVerified": 49,
+    "finitePriorPaths": 555,
+    "finitePriorByteIdentities": 542,
+    "broadDedupNotRepeatedByIndependentReviewer": true,
+    "limitations": [
+      "Collection/source metadata is evidence as collected, not a continuing freshness guarantee.",
+      "The retained sanitized C02 rights evidence supports generic Public domain, not independent confirmation of the precise PD-self subtype. No precise subtype is asserted here.",
+      "Provider files retain some metadata; only neutral PNG exports are metadata-free.",
+      "No global training/historical independence, material truth, broad privacy clearance or distribution rights guarantee follows."
+    ]
+  },
+  "independentPublicCurationReview": {
+    "outcome": "No curation blockers; all seven public snapshots and35 artifact references matched before this reference was appended.",
+    "scope": "The review pins the pre-reference public JSON51dffe3e02116adec6b2e1d1f0a0454507c11e1d1b6e182f988fe235f0af8ecc. This identity reference is nonrecursive and changes that JSON hash.",
+    "appOrRuntimeChecksRepeated": false
+  }
+}
