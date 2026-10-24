@@ -1,0 +1,91 @@
+{
+  "bundleIdentifier" : "com.mealmirror.qa.offlineintegration20261024c49",
+  "cases" : [
+    {
+      "case" : "realUIKitPhotoPreparation",
+      "method" : "Unchanged MealPhotoPreparation UIKit\/ImageIO implementation from exact ZIP",
+      "modelThumbnailBoundSatisfied" : true,
+      "modelThumbnailOrientationRawValue" : 0,
+      "modelThumbnailPixels" : {
+        "height" : 768,
+        "width" : 768
+      },
+      "modelThumbnailPrepared" : true,
+      "previewOrientationRawValue" : 0,
+      "previewPixels" : {
+        "height" : 1254,
+        "width" : 1254
+      },
+      "state" : "prepared"
+    },
+    {
+      "automaticCarbohydrateTotalAbsent" : true,
+      "case" : "mealAnalysisEngineSyntheticPhoto",
+      "componentCount" : 0,
+      "includedComponentCount" : 0,
+      "inputLimit" : "No description, no label and no manual amount. Only bundled synthetic food image.",
+      "labelText" : "notRun",
+      "methodNote" : "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+      "photoAI" : {
+        "acceptedNames" : [
+          "rice",
+          "chicken",
+          "salad",
+          "sauce"
+        ],
+        "photoCount" : 1,
+        "state" : "inspected"
+      },
+      "readyForReview" : false,
+      "vision" : "notRun"
+    },
+    {
+      "case" : "arabicLocaleRequest",
+      "languageGuardObserved" : true,
+      "reason" : "language",
+      "state" : "unavailable"
+    },
+    {
+      "case" : "preCancelledInspection",
+      "preCancellationGuardObserved" : true,
+      "reason" : "cancelled",
+      "scope" : "Pre-cancelled task entry only; no in-flight compute release claim.",
+      "state" : "unavailable"
+    }
+  ],
+  "fixture" : "Bundled synthetic biryani-demo.png; no measured serving or nutrition ground truth",
+  "modelPreflight" : {
+    "arabicSupported" : false,
+    "availability" : "available",
+    "englishSupported" : true,
+    "guidedGeneration" : true,
+    "model" : "SystemLanguageModel.default",
+    "vision" : true
+  },
+  "phase" : "completed",
+  "savedAtUTC" : "2026-10-24T18:05:55Z",
+  "scope" : "Source-derived iOS processing runner; not exact app UI, physical device, held-out accuracy or offline-network-isolation evidence.",
+  "simulatorModel" : "iPhone19,4",
+  "sourceZipSHA256" : "6457bc795e7faef1fff14614a40267f165ee4dd0b0c7a23a98a3c8ef3cfdc675",
+  "storageIntegration" : {
+    "actual_file_excluded_from_backup" : true,
+    "actual_file_protection_attribute" : "not exposed",
+    "actual_json_schema_verified" : true,
+    "actual_save_read_delete_verified" : true,
+    "check" : "actual LocalReviewStore save\/read\/delete with synthetic analysis",
+    "cleanup_attempted" : true,
+    "cleanup_succeeded" : true,
+    "file_protection_verdict" : "Not evaluated: Simulator does not model iOS file-protection classes.",
+    "mutation_started" : true,
+    "only_review_json_in_store_directory" : true,
+    "photo_origin_and_person_entered_37g_verified" : true,
+    "photo_scope" : "Checks the exact stored JSON schema and absence of analysis OCR\/model markers. The store API accepts no photo bytes; this does not exercise or prove the entire camera\/photo pipeline.",
+    "physical_device_file_protection_verified" : false,
+    "probe_bundle_identifier" : "com.mealmirror.qa.offlineintegration20261024c49",
+    "scope" : "Separate iOS probe container; no model inference or UI, no production container access",
+    "status" : "passed",
+    "transient_ocr_model_and_excluded_markers_absent" : true
+  },
+  "systemVersion" : "27.1",
+  "timingLimit" : "No latency\/deadline claim; host clock anomalies were observed in earlier Mac probes."
+}

@@ -1,0 +1,72 @@
+{
+  "screenshots": [
+    {
+      "file": "manual-light-large-settled.png",
+      "bytes": 266802,
+      "width_px": 1398,
+      "height_px": 2034,
+      "sha256": "46b43488a82b3c0d685aa20561a51f15ca9e85c79ff42a11c9f6b75351611377"
+    },
+    {
+      "file": "manual-light-accessibility5-settled.png",
+      "bytes": 290717,
+      "width_px": 1398,
+      "height_px": 2034,
+      "sha256": "4012f8dc6de9250e70a2d5a8533abcfbbb599f0db1ce2c845a7d0e28fdb1b614"
+    },
+    {
+      "file": "manual-dark-large-settled.png",
+      "bytes": 264080,
+      "width_px": 1398,
+      "height_px": 2034,
+      "sha256": "ac38e252b36dc8492159ec3003097bb5b6c8b79229c57bc0f663e314216d6b42"
+    },
+    {
+      "file": "manual-dark-accessibility5-settled.png",
+      "bytes": 288097,
+      "width_px": 1398,
+      "height_px": 2034,
+      "sha256": "8d99626d598b999c882beed34a67f463bac2b128e9115770b3684d173753525e"
+    },
+    {
+      "file": "photo-names-light-large.png",
+      "bytes": 269093,
+      "width_px": 1398,
+      "height_px": 2034,
+      "sha256": "ed55c548efd9b866ebba54e6a502a0325954d399e380a7c3a7ea14c7c091f697"
+    },
+    {
+      "file": "photo-names-dark-large.png",
+      "bytes": 272976,
+      "width_px": 1398,
+      "height_px": 2034,
+      "sha256": "c5966993a31e6dcc0139c4a349ca27269063f74d201b177ae1e384fa52593004"
+    },
+    {
+      "file": "photo-names-light-accessibility5-settled.png",
+      "bytes": 307459,
+      "width_px": 1398,
+      "height_px": 2034,
+      "sha256": "3da0ce00ad432bf3763d7c53506f859b5b6b948e1d6d59d8307e94a584230b66"
+    },
+    {
+      "file": "photo-names-dark-accessibility5-settled.png",
+      "bytes": 308893,
+      "width_px": 1398,
+      "height_px": 2034,
+      "sha256": "9639f55640e96c679c39c109b14cf6a73f5c8286994e8056acec67f7e4411424"
+    }
+  ],
+  "excluded": [
+    "manual-light-large.png",
+    "manual-dark-large.png"
+  ],
+  "excluded_reason": "Early launch or transition capture; not accepted as settled layout evidence",
+  "sourceCommit": "c49c2097d11fcaa6174eaeff8092c3b3b9303bb0",
+  "sourceZipSHA256": "6457bc795e7faef1fff14614a40267f165ee4dd0b0c7a23a98a3c8ef3cfdc675",
+  "sourceComponents": "Unchanged production ContentView.swift prefix; external synthetic fixture and separate bundle.",
+  "simulator": "iPhone Duo folded primary display, iOS27.1",
+  "scope": "Eight initial component viewports in light/dark and standard/SwiftUI-injected accessibility5. No interactions, system text-size pass, exact app flow, accuracy, offline or physical proof.",
+  "observed": "Manual form: editable Rice, blank grams placeholder, muted Add, complete reminder visible. Names: no numeric amounts. Standard second clue partly below scroll viewport; accessibility layout shows both names/unknown panel but action outside viewport.",
+  "remaining": "Verify scrolling, keyboard, actions, system typography, contrast, VoiceOver and full flow. Custom text does not all scale with fixture injection. Repeated uncertainty copy deferred with paused redesign."
+}
