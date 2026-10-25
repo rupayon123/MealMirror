@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "One later native full-case attempt on unchanged build 10 stopped at its initial default History tap. Retained event/hierarchy/source review and separately attributed root video-frame review; no product cause, general History reliability or full photo-flow claim.",
+  "candidate": {
+    "version": "1.0 (10)",
+    "ZIP_SHA256": "ff82519efe1b6c2af74708abc9e09c0d88cb2fee7c1fe058d90414ce8fdd4a28",
+    "ZIPBytes": 12203953,
+    "ContentView_SHA256": "63b4afb3d39b794fba2e51fc5e6aa727827ee27ac7c6ffabe354571880af8a70",
+    "productionSourceChangedForThisCase": false
+  },
+  "nativeCase": {
+    "method": "testPhotoAndSingleLabelPersistence",
+    "testCommandExit": 65,
+    "hostTimedOut": false,
+    "bodySeconds": 44.845,
+    "wholeCommandSeconds": 756.7025982920001,
+    "caseAllowanceSeconds": 360,
+    "hostBoundSeconds": 900,
+    "failure": "Line 192: history.item.0 was absent after the ten-second wait following the initial public History button default tap. The baseline three-row assertion, Photos, single-label helper, OCR, checked amount, Review, Save and delete were not reached.",
+    "timingScope": "Case/host durations are retained test observations, not human journey time or app/model performance measurements."
+  },
+  "retainedEvent": {
+    "pointXY": [
+      201.00000000000003,
+      718.1666666666666
+    ],
+    "pointerSampleOffsetsSeconds": [
+      0,
+      0.05
+    ],
+    "targetMatchesFailureTreeApp": true,
+    "historyAXFrameXYWH": [
+      16,
+      672.6666666666666,
+      370,
+      91
+    ],
+    "pointInsideHistoryFrame": true,
+    "pointEqualsFrameCenter": true,
+    "pointInsideSummaryTextFrame": true,
+    "homeStartAXFrameXYWH": [
+      14.5,
+      774.5,
+      373,
+      57
+    ],
+    "historyItem0PresentInFailureTree": false,
+    "failureTree": "Remained Home with a three-review summary. The bottom Start frame is geometrically below the card/tap; no overlap with that control is demonstrated.",
+    "limit": "Recorded coordinates, app target and AX geometry do not prove which SwiftUI view or recognizer received the touch, or whether a navigation action ran."
+  },
+  "sourceReview": "History already has its surface and Rectangle content shape inside the plain Button label. ScreenScroll uses a normal ScrollView; the backdrop explicitly disables hit testing and the bottom Start action uses safeAreaInset. No disabling condition, custom competing gesture or demonstrated occlusion cause was found in these inspected components.",
+  "priorEvidencePreserved": "The focused 49-line case passed at relative point (0.85, 0.5), and an earlier build-10 full-case baseline History check also passed. This separate default-center failure does not replace those outcomes or establish whole-card reliability. No cause or additional production fix is adopted.",
+  "identityAndData": {
+    "rawImmediateCurrentLookupEstablished": false,
+    "raw17RetainedFilesExact": true,
+    "rawStoreCount": 3,
+    "rawStoreByteAndSemanticUnchanged": true,
+    "QARecordsCreated": 0,
+    "separateFreshCurrentFollowup": "Post-case v5 verified all 17 current installed build-10 files and actual current original three-record store byte/semantic equality. Earlier raw lookup failure stays recorded.",
+    "v5NoAppLaunchResetInstallStoreWriteByHelper": true,
+    "ownedShutdownConfirmed": true,
+    "originalInteractivePickerAndPhoneOperated": false
+  },
+  "review": {
+    "independentResultSHA256": "27a47346dbb310e67765a912f00282d08a057f55695e751d8f43825c96a2bc07",
+    "retainedArtifactExportExit": 0,
+    "exportedAttachments": 15,
+    "PNGAttachmentsExported": 0,
+    "pixelScope": "Independent event/hierarchy review and later separately attributed root video-frame review. No pixel comparison or broad visual/interaction acceptance follows."
+  },
+  "remaining": "Default History tap reliability/cause and the full current photo/label/OCR/checked-amount/save/history/delete journey remain open. The single-label correction was not exercised here; no recognition, physical offline, accessibility or submission gate closes.",
+  "privacy": "No screenshots/video, saved-record contents, private absolute paths, process/device/account identifiers or compiled binaries copied into the repository. Relative local artifact references and hashes only.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; raw evidence remains outside the repo and playground.",
+  "localArtifactReferences": [
+    {
+      "path": "native-ui-journey-20261025/photo-label-single-v1/UITests/MealMirrorUITests.swift",
+      "sha256": "d5732d46123c33060bd55fe488ab829e1d3290096b9833e7ae09c675a9679e42"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-single-v1/execution-v2/test-intent.json",
+      "sha256": "ccd90015bed086768375c89b127cc4722a7e9aea4aa5f5c123402f4c37c8b2a9"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-single-v1/execution-v2/test-result.json",
+      "sha256": "068d0391951cbd215a6253099c583bfac32be21de1f78024e3b5514877654f0a"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-single-v1/execution-v2/test.log",
+      "sha256": "437eb00e84fe9e0889d29d38bf7a57b902bc1dcca14e133fe4862a4c036b1f5f"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-single-v1/execution-v2/independent-event-decoding.json",
+      "sha256": "8dee6399a6b12feea7c4b2e3a1c5a245b8590d23611312a1a2d9cafa04fd5c74"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-single-v1/execution-v2/independent-result-review.json",
+      "sha256": "27a47346dbb310e67765a912f00282d08a057f55695e751d8f43825c96a2bc07"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-single-v1/execution-v2/independent-attachments-v1/manifest.json",
+      "sha256": "2b678686307839fa4c9f1ba8c2c5be03c00c99121d18253e453af9c20289a402"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-single-history-identity-v5/result.json",
+      "sha256": "3a71533b422bde0040f919ed885b6158b52315e3d4ef38f7625807651c74f024"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-single-history-identity-v5/current-app-container.json",
+      "sha256": "ec08726c4bee3b67f68d2ec1a30c361383f4731a015e17174c92ed289ebaedbe"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-single-history-identity-v5/current-data-container.json",
+      "sha256": "54ec4f5040d33ede6698a738ae3123ec6085f77261e0ece02d0679680668b180"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-single-v1/execution-v2/root-extracted-frames-v1/extraction.json",
+      "sha256": "63f1bf1cae496a73b90e35f61debc791b3b076f4adc55c7c55b4e8f57753ba3f"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-single-v1/execution-v2/root-extracted-frames-v1/requested-26s.png",
+      "sha256": "640870afc466475232716faa2996914a9949bc12eaf18f432ce228f1c7c4739d"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-single-v1/execution-v2/root-extracted-frames-v1/requested-40s.png",
+      "sha256": "c758692efc83b86dd2573265fd76f56c35aee07082f557413511c2828e87ce1d"
+    }
+  ],
+  "rootVisualCorroboration": {
+    "scope": "Root separately extracted and viewed two retained-video frames. This follows the independent hierarchy/event review and does not rewrite its checkpoint.",
+    "frames": [
+      {
+        "requestedSeconds": 26,
+        "actualSeconds": 25.915,
+        "width": 1206,
+        "height": 2622,
+        "sha256": "640870afc466475232716faa2996914a9949bc12eaf18f432ce228f1c7c4739d"
+      },
+      {
+        "requestedSeconds": 40,
+        "actualSeconds": 39.99666666666667,
+        "width": 1206,
+        "height": 2622,
+        "sha256": "c758692efc83b86dd2573265fd76f56c35aee07082f557413511c2828e87ce1d"
+      }
+    ],
+    "observation": "Both frames show Home and the three-review History summary, fully visible and clear of Start, with no navigation or other overlay.",
+    "notClaimed": "No regional or full-pixel equality, proof of which view received the touch, whole-card reliability, cause, or full photo-flow acceptance."
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; private raw artifacts remain outside repository and playground.",
+  "scope": "Testing-only build 1.0 (11) source adoption and exact ZIP/build/signed-archive/upload evidence. Read-only retained verification; no current build-11 install/UI/phone or server Testing confirmation.",
+  "candidate": {
+    "version": "1.0 (11)",
+    "zipBytes": 12204356,
+    "zipSHA256": "af99929a1a1a7019a01a92aa2773e4ab9e563415d8273bdc8e1bda903b69955d",
+    "packagedMembers": 59,
+    "SwiftFiles": 17,
+    "twoGenerationsEqualReported": true,
+    "all59MemberHashesMatchManifestAndExtractedCopy": true,
+    "sameMemberSetAsExactBuild10": true,
+    "changedFromExactBuild10": [
+      "MealMirror.swiftpm/MealAnalysisEngine.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ],
+    "other57MembersUnchanged": true,
+    "EnglishCatalogOnly": true
+  },
+  "diagnosticAdoption": {
+    "engineSHA256": "ef15ea5bb8ea00b5b0ce4dbd642e0c43ee931d9cba90e95d401173ad23beef55",
+    "exactReviewedCandidateAdopted": true,
+    "scope": "Winning photo-terminal Bool/cancellation wiring and fixed DEBUG-only reason/numeric-code logging. OCR inspector, statuses, 12-second deadlines, thresholds/filter/device/orientation/source/amount boundaries remain as reviewed.",
+    "LocalPhotoAI_SHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "modelPromptSchemaOrRecognitionAlgorithmChange": false,
+    "captureStrictControllerPassed": false,
+    "historicalVerificationReceipt": "verification-20261025.json",
+    "historicalVerificationSHA256": "a0b744e1475fdf14795d1df22d140ca76aee1bf1b44291d2618d024d1106829c",
+    "historyNote": "That immutable receipt records the earlier external, unadopted proposal stage; its false adoption fields are historical, not current build-11 status."
+  },
+  "exactSimulatorDebug": {
+    "buildExit": 0,
+    "hostTimedOut": false,
+    "arm64": true,
+    "minimumOS": "17.0.0",
+    "mainSDK": "27.1.0",
+    "engineDylibSDK": "27.0.0",
+    "platform": "IOSSIMULATOR",
+    "mainSHA256": "f0c6307ca33bf0e39f7ffa3d18186c5d9106bae86e1e675bce702ceea7d562db",
+    "engineDylibSHA256": "e17589fe5f698df7ecb11b5ff3c85ad40e24cc5d79b157e0775706e1e5404525",
+    "engineDylibFixedPrefixPresent": true,
+    "scope": "Clean exact-source compile and retained binary inspection only. No build-11 install/launch/UI/runtime capture evidence."
+  },
+  "signedIOSArchive": {
+    "archiveExit": 0,
+    "codesignVerifyExit": 0,
+    "retainedSignatureVerified": true,
+    "archiveVersion": "1.0 (11)",
+    "platform": "IOS",
+    "arm64": true,
+    "minimumOS": "17.0.0",
+    "SDK": "27.1.0",
+    "executableSHA256": "34ce5f6a3d0f8b9f38ccbf0958e9ff417c15796f6f74b37061d4b18d11163d8d",
+    "releaseExecutableFixedPrefixPresent": false,
+    "all59ExtractedFilesUnchangedAfterBuildAndArchive": true,
+    "scope": "Archive plist/Mach-O/hash and retained signing receipt read; no fresh signing command or actual Release privacy/runtime proof."
+  },
+  "internalUpload": {
+    "exit": 0,
+    "hostTimedOut": false,
+    "uploadLogSHA256": "2214b82b5d42dab71b6e6acfb44830b2aa2adbd7843f8d74c7e7e5e1260f8b3e",
+    "exportSucceeded": true,
+    "toolReported": "Uploaded package is processing",
+    "method": "app-store-connect",
+    "destination": "upload",
+    "testFlightInternalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "processedOrComplianceConfirmed": false,
+    "internalIndicatorOrGroupTestingConfirmed": false,
+    "physicalInstallConfirmed": false,
+    "scope": "Internal testing upload only; upload-tool success/processing message is not server processing completion, group Testing, phone installation or public release."
+  },
+  "independentReadOnlyReview": {
+    "reviewSHA256": "a657a0b60703d01ee8d93e423d7dfb0cdc71f8190d428721bff209add5fcf6e6",
+    "sourceZIPMemberHashAndBinaryHeaderChecks": true,
+    "allFourBuildArchiveSigningUploadLogHashesMatchReceipts": true,
+    "noFreshBuildSigningUploadOrRuntime": true
+  },
+  "stillUnverified": [
+    "Current build-11 installation, UI journey or actual Debug photo-terminal log retrieval",
+    "Physical phone and network-isolated offline behavior",
+    "Server processing/compliance/internal indicator/group Testing",
+    "Recognition accuracy, full photo/manual/save/history/delete journey, accessibility and Swift Challenge readiness"
+  ],
+  "separateEvidence": "Photo UI observations belong to build 1.0 (10) and do not become build-11 runtime evidence. The synthetic macOS capture is separately scoped in capture-20261025.json.",
+  "privacy": "Only curated metadata/hashes and relative artifact references; no raw logs, process/account/team/device identifiers, private absolute paths, binaries or pixels copied here.",
+  "localArtifactReferences": [
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/source-adoption.json",
+      "sha256": "5133de00a86de26b3a14ba721aa690458b55663e3984388159b2e7e71db7d16d"
+    },
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/zip-verification.json",
+      "sha256": "54e039184f19f0ecc19e2235cc3b237dfa62dce6ee0dae1629cd52fc8a97358a"
+    },
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/packaged-file-hashes.json",
+      "sha256": "8c727376eb3282baa17468c9782bb62cb6d564f92ca5933d413bb4d34b50c4c3"
+    },
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/exact-build-result.json",
+      "sha256": "c476c31ab452571ccc95c9d382be19ffaece298a90a8d336bb8d79642f2bdbbd"
+    },
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/archive-result.json",
+      "sha256": "6d104275a29b5a768c525b7986f0bd48d34e981bb843a6c66aaafe87433bc04d"
+    },
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/archive-verification.json",
+      "sha256": "39897c6b193025748a354e1366d0a48f6ed02a9941bc1dc374dd33db5877faa3"
+    },
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/codesign-verify-result.json",
+      "sha256": "19a02c47cdfa4aae19937aaf5c29c4a2efb78d0d4cf5c52db449c1b0f01b66bd"
+    },
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/compiled-string-boundary.json",
+      "sha256": "19e317b51d189a5eaa5fc9188bfff379d82da2c3465925da004528598162ac06"
+    },
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/upload-intent.json",
+      "sha256": "196a22a3603a9f9d419bed94f0e6fad3e92a15ae329ef4734b09e708214bee21"
+    },
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/upload-result.json",
+      "sha256": "a5676c419508d972f12954f602acce3f1afeeaf6189f56e5768e54ccb0541f23"
+    },
+    {
+      "path": "vision-diagnostics-delivery-20261025-build11/independent-delivery-review.json",
+      "sha256": "a657a0b60703d01ee8d93e423d7dfb0cdc71f8190d428721bff209add5fcf6e6"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "A separate native P1 attempt on unchanged build 10 used the previously observed relative History point and stopped at its initial opening assertion. It does not exercise Photos, the corrected single-label helper or later photo-flow steps.",
+  "candidate": {
+    "version": "1.0 (10)",
+    "ZIP_SHA256": "ff82519efe1b6c2af74708abc9e09c0d88cb2fee7c1fe058d90414ce8fdd4a28",
+    "ZIPBytes": 12203953,
+    "ContentView_SHA256": "63b4afb3d39b794fba2e51fc5e6aa727827ee27ac7c6ffabe354571880af8a70",
+    "productionSourceChangedForThisAttempt": false
+  },
+  "test": {
+    "method": "testPhotoSingleLabelWithObservedHistoryPoint",
+    "sourceSHA256": "01ba2e63d7a15938ca39d08904daf74eaeec3b65fe81f4a8354400d66f54f293",
+    "testCommandExit": 65,
+    "hostTimedOut": false,
+    "bodySeconds": 27.341,
+    "wholeCommandSeconds": 160.801126166,
+    "caseAllowanceSeconds": 360,
+    "hostBoundSeconds": 900,
+    "failureSourceLine": 216,
+    "failure": "Initial openHistory item-0 existence assertion failed after the same ten-second wait. The post-wait screenshot/tree were captured before asserting. The baseline three-row history assertion and all Photos/label/OCR/checked-amount/Review/Save/delete stages were not reached.",
+    "durationScope": "Recorded test/host observations, not human-flow or app/model performance benchmarks."
+  },
+  "historyEvent": {
+    "guardedRelativePoint": [
+      0.85,
+      0.5
+    ],
+    "actualPointerPointXY": [
+      330.5,
+      718.1666666666666
+    ],
+    "targetMatchesApp": true,
+    "historyAXFrameXYWH": [
+      16,
+      672.6666666666666,
+      370,
+      91
+    ],
+    "homeStartAXFrameXYWH": [
+      14.5,
+      774.5,
+      373,
+      57
+    ],
+    "precedingGuards": "One History element; finite positive whole frame inside viewport; enabled/hittable; one finite positive HomeStart frame with no intersection; stable History frame after the before-capture.",
+    "afterState": "Both retained hierarchies remained Home with a summary of three reviews and no history.item.0.",
+    "limits": "The recorded point and target do not identify actual SwiftUI touch routing, recognizer state or navigation handling. The earlier focused pass has no exported raw pointer record, so only its declared relative route/frame calculation is compared."
+  },
+  "rootVisualReview": {
+    "beforePNG_SHA256": "fa9a8e74481d7db634af6883d7b2bc25de96f26b58917e4adb7507353fed3eff",
+    "afterPNG_SHA256": "221f07f0397c18f7c15c6e86afb125f7571d96adaa761174d099f954d90897eb",
+    "observation": "Root separately viewed both exported frames: Home/History summary of three, clear of bottom Start, with no overlay or navigation.",
+    "pixelEqualityClaimed": false
+  },
+  "identityAndStore": {
+    "rawImmediateCurrentLookupEstablished": false,
+    "raw17RetainedPreflightFilesExact": true,
+    "rawOriginalStoreCount": 3,
+    "rawByteAndSemanticStoreEquality": true,
+    "remainingQARecords": 0,
+    "separateV6Followup": "All 17 CURRENT installed build-10 files and actual current original three-record store were verified byte/semantically unchanged. The helper performed no app launch, reset, install or store write; owned shutdown and preservation of the original interactive session were recorded. Earlier raw lookup failure remains retained."
+  },
+  "interpretation": "Retain the original 49-line relative-point pass, earlier full-case History pass, later default-center miss and this P1 relative-point miss as separate observations. General History activation reliability remains unresolved on unchanged production build 10. No cause, additional app fix, single-label result or full-photo-flow pass is established.",
+  "independentResultReview_SHA256": "28e1f87d964a6de431a65aa443bec37d13de3eb1a5830c9df127084f26dd8a4b",
+  "privacy": "Only curated metadata and hashes. No pixels, video, saved-record contents, raw logs, private absolute paths, process/device/account identifiers or binaries copied into the repo. The immutable preparation intent remains an authoring-time uncompiled/unrun record; this later result is separate.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; raw evidence remains outside repository/playground.",
+  "localArtifactReferences": [
+    {
+      "path": "native-ui-journey-20261025/photo-label-point-v1/INTENT-AND-SOURCE-HASHES.json",
+      "sha256": "082651dd4dea7e403d110f75bb16ea5b88110a691374cdc9224a3e8db4ce094a"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-point-v1/UITests/MealMirrorUITests.swift",
+      "sha256": "01ba2e63d7a15938ca39d08904daf74eaeec3b65fe81f4a8354400d66f54f293"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-point-v1/execution-v1/test-intent.json",
+      "sha256": "eae803ed43efbb770ec409103e18dddfe29978d2208da3676392617a4de2c37b"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-point-v1/execution-v1/test-result.json",
+      "sha256": "2fde470f4a3940a7c19fb0473ea03483192b58305b20efb9848f046ca83dc6d1"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-point-v1/execution-v1/test.log",
+      "sha256": "994b237ba5251d9a5e308af22707a0ca46e91f507fee86e7a6f8245272c3d771"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-point-v1/execution-v1/independent-event-decoding.json",
+      "sha256": "bd914e11a4de325b66a13e34e361d7184929e6f8db17941d756e86ea4a7ff42f"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-point-v1/execution-v1/independent-result-review.json",
+      "sha256": "28e1f87d964a6de431a65aa443bec37d13de3eb1a5830c9df127084f26dd8a4b"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-point-v1/execution-v1/independent-attachments-v1/manifest.json",
+      "sha256": "0441fcb2ca678454ee3991aafd77149e6e6249d7b67e57b2e72afe5c05391bb3"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-point-history-identity-v6/result.json",
+      "sha256": "3a71533b422bde0040f919ed885b6158b52315e3d4ef38f7625807651c74f024"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-point-history-identity-v6/current-app-container.json",
+      "sha256": "ec08726c4bee3b67f68d2ec1a30c361383f4731a015e17174c92ed289ebaedbe"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-point-history-identity-v6/current-data-container.json",
+      "sha256": "54ec4f5040d33ede6698a738ae3123ec6085f77261e0ece02d0679680668b180"
+    }
+  ]
+}

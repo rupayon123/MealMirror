@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "One separately approved macOS host compile/load and synthetic A1-B-A2 direct Core ML mechanical check; no production or recognizer adoption.",
+  "outcome": {
+    "SwiftCompilerExit": 0,
+    "controllerExit": 0,
+    "probeExit": 0,
+    "launchAttempts": 1,
+    "automaticRetries": 0,
+    "timeout": false,
+    "modelCompileEntriesAndReturns": 1,
+    "modelLoadEntriesAndReturns": 1,
+    "predictionEntriesAndReturns": 3,
+    "orderedSteps": [
+      "A1",
+      "B",
+      "A2"
+    ],
+    "fixedMechanicalCriteriaPassed": true,
+    "adoptionApproved": false
+  },
+  "route": {
+    "host": "macOS 27.0.1, arm64 binary with macOS13 deployment target",
+    "API": "MLModel.compileModel, MLModel load and synchronous prediction; no Vision or Apple Intelligence API in probe",
+    "model": "Exact previously inspected Apple MobileNetV2 INT8-LUT artifact, unchanged",
+    "modelBytes": 6257335,
+    "modelSHA256": "ee53bca4c5042d77aed5c093cba31c2ef229d1cc4c027300af9cc8bf9e240409",
+    "CPU": "CPU-only requested and configuration readback matched; no independent kernel observation",
+    "input": "Two fixed procedural 224x224 RGB8 patterns; explicit BGRA pixel-buffer write and active-row hash check. No decoder/rendering, resize/crop/orientation transform or external normalization; embedded model preprocessing retained."
+  },
+  "schema": {
+    "input": "image:224x224 image, runtime32BGRA constraint",
+    "outputs": [
+      "classLabel:string",
+      "classLabelProbs:string-keyed numeric dictionary"
+    ],
+    "runtimeClassLabels": 1001,
+    "returnedDictionaryKeysEach": 1000,
+    "duplicateLabel": "crane occurs at zero-based positional labels 135 and 518 but only one dictionary key. Returned dictionary values were retained without inventing separate positional scores, renormalizing or establishing a merge rule. Sums are descriptive."
+  },
+  "frozenNumericCriteria": {
+    "perVector": "1000 original unique keys; finite values in[0,1]; span>1e-8",
+    "acrossA1B": {
+      "maxAbsAtLeast": 1e-06,
+      "L2AtLeast": 1e-05
+    },
+    "repeatA1A2": {
+      "maxAbsAtMost": 1e-08,
+      "L2AtMost": 1e-07
+    },
+    "noRetuning": true
+  },
+  "retainedNumericResult": {
+    "acrossA1B": {
+      "maxAbs": 0.40495932020712644,
+      "L2": 0.4412468590582912,
+      "passed": true
+    },
+    "repeatA1A2": {
+      "maxAbs": 0,
+      "L2": 0,
+      "passed": true,
+      "bytesIdentical": true
+    },
+    "readback": "Root independently decoded Float64 binaries in Python and checked JSON/key/byte/hash consistency and ordered arithmetic. Separate retained-record review found matching frozen identities, counters, vector hashes and results; it did not rerun inference."
+  },
+  "priorVisionFailures": {
+    "receipt": "fresh-target-and-cgimage-20261025.json",
+    "sha256": "d3959f02b940cd8ffd75b78230b6f213b451680e6f8d41df2720d7f587a5823d",
+    "retained": true,
+    "meaning": "Earlier component extraction, CI-witness startup and direct Vision CI/CGImage repeat failures remain separate historical results. This host model check neither diagnoses nor fixes them and establishes no representation/backend/platform equivalence."
+  },
+  "limits": [
+    "These synthetic nonfood patterns do not evaluate food naming, ingredients, portions, nutrients, insulin, world-cuisine coverage, food-like/nonfood/unknown classification, confidence calibration or abstention.",
+    "No iOS/Simulator/physical-device portability, network-isolated offline-device, speed/memory/final compressed package, training, adoption or submission acceptance.",
+    "The embedded license pointer and referenced Apache 2.0 texts remain evidence to review; no legal assurance, third-party image rights or redistribution approval follows. Model/compiled files, raw vectors, raw errors and private paths stay outside the repository."
+  ],
+  "localArtifactReferencesBase": "../../../../outputs/recognition-architecture-20261025/direct-coreml-pattern-probe-v1/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; selected local hash references only, without copying model, source, compiled files, vectors or private runtime contents.",
+  "localArtifactReferences": [
+    {
+      "path": "PREPARATION-FREEZE.json",
+      "sha256": "196d3000a5612c2610e1612697f4d3845bd84ad0ea187f02dedb7cae7d341b16"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "ea6b25b5c5d93274a48888945d4dc43dfd0f2f97e3ced6253b53d18376b1bf48"
+    },
+    {
+      "path": "SOURCES.json",
+      "sha256": "e54e3a2535ef9d35f94925510fcf195ea40dcfb28fa3870aff11469d7fb0db81"
+    },
+    {
+      "path": "../mobilenetv2-int8-metadata-v1/inspection.json",
+      "sha256": "f82481459cebaf28dedbac219aff2c1c98cc8c071e961adf12c12dd81e8c4e03"
+    },
+    {
+      "path": "build-v1/compile-result.json",
+      "sha256": "a7b4e152e0ea7800fcfea7ea3fb657daf1460720d386c8aa90ae6c9a77719c6e"
+    },
+    {
+      "path": "build-v1/root-review.json",
+      "sha256": "3cd63f1a3156f8fab29b7c026803c02bb7a8ddcb03520ae626282ea0a96b8bf0"
+    },
+    {
+      "path": "build-v1/root-approval.json",
+      "sha256": "ca7f9342a45ced7f100da2898abf790ad421c1c68d97367194e036519440b82c"
+    },
+    {
+      "path": "build-v1/controller-host-result.json",
+      "sha256": "4929f0e25798faf48b82fc83007f6042bbedb14f1641773a9e23759435047770"
+    },
+    {
+      "path": "execution-v1/controller-result.json",
+      "sha256": "a6ad1db759aacc52a56ab54d1d8688bddbe00d5c61763d84a7d7861438b999d1"
+    },
+    {
+      "path": "execution-v1/report.json",
+      "sha256": "013d56a7ed31992b93584baa8ec0dd0c3b4570e06b00cd41e0f0b9721a1aeec9"
+    },
+    {
+      "path": "execution-v1/schema.json",
+      "sha256": "c946d8b7acedc5b691cee8a4d91e5133d1c4b764f4b7035a816aa3232f5a1e58"
+    },
+    {
+      "path": "execution-v1/root-independent-numeric-readback.json",
+      "sha256": "6105c6fd04fcf166ecc9bccef1c8c4ca3c1ad0fd29a2797b2a4a44792aef2077"
+    },
+    {
+      "path": "execution-v1/result-review.json",
+      "sha256": "3f4a3cd81def2d911742140c06ce52d60f11d591dc70fa44bd0996ca0fb68886"
+    }
+  ]
+}

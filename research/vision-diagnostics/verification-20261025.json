@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "External diagnostic proposal verification only. Full-source unsigned arm64 iOS Simulator Debug/Release builds and Foundation-only extracted-gate fixture; no production adoption or actual log-capture result.",
+  "proposal": {
+    "goal": "Record only the winning photo-inspection terminal decision as a fixed reason and numeric error code, without changing public statuses, classifier/amount behavior or OCR instrumentation. This does not diagnose the earlier unavailable result.",
+    "baselineAppVersion": "1.0 (10)",
+    "baseZIP_SHA256": "ff82519efe1b6c2af74708abc9e09c0d88cb2fee7c1fe058d90414ce8fdd4a28",
+    "baselineEngine_SHA256": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+    "candidateEngine_SHA256": "ef15ea5bb8ea00b5b0ce4dbd642e0c43ee931d9cba90e95d401173ad23beef55",
+    "candidateDiff_SHA256": "f53a00546a57460a88990afd8b59f0a3960ebc4103e0503d650d19834e305332",
+    "productionAdopted": false,
+    "productionSourceOrZIPChanged": false
+  },
+  "fullSourceCompile": {
+    "externalCopyBaseMembersChecked": 59,
+    "changedMember": "MealMirror.swiftpm/MealAnalysisEngine.swift",
+    "other58BaseMembersMatchExactZIP": true,
+    "target": "arm64 generic iOS Simulator; code signing disabled",
+    "Debug": {
+      "exit": 0,
+      "hostTimedOut": false
+    },
+    "Release": {
+      "exit": 0,
+      "hostTimedOut": false
+    },
+    "runtimeOrImageCallByBuildController": false,
+    "literalStringBoundary": {
+      "DebugEngineDylibFixedPrefixAndCategoryPresent": true,
+      "ReleaseExecutableFixedPrefixAndCategoryPresent": false,
+      "scope": "Hash-bound binary string inspection only; not emission, retrieval, flushing, retention, privacy or runtime proof."
+    }
+  },
+  "foundationFixture": {
+    "harness_SHA256": "ff303954c3bb782f45802856d4e72e71f0fd59c154d0b604d8c1c1647094ccde",
+    "expected_SHA256": "2b10f76ddcb548db6a794aaa790692b63d202e7a3008f227d0da0a1ad86285ca",
+    "freeze_SHA256": "0622efd5bb205ab232955335ebe2b0117fdcae0de5ffe381da77cb6ab69903b8",
+    "binary_SHA256": "aaea02b9420144812adacb7d47f604c5e1e267a3e21922519a928e92d8e57e7e",
+    "compileExit": 0,
+    "SwiftLanguageMode": "5",
+    "runExit": 0,
+    "hostTimedOut": false,
+    "phase": "completed",
+    "logicalCases": 20,
+    "gateLogicalCases": 17,
+    "sourceOnlyMappings": 2,
+    "inMemorySinkSourceCase": 1,
+    "gateSchedulesPerFlavor": 21,
+    "totalContinuationSchedules": 42,
+    "returnedValuesPerSchedule": 1,
+    "G20InMemoryFixedEvents": 12,
+    "reportedImageOrModelCalls": 0,
+    "reportedUnifiedLogEmissions": 0,
+    "independentResultReview_SHA256": "19bbebc5a5c8bbe4f9dfbe5f71818107042f6efb498ab3bfdd8797a6b16c5d29",
+    "independentBlockers": []
+  },
+  "observedChecks": "Frozen file/source/binary bindings and all 20 row/order/42 schedule observations matched fixed expectations: returned value, registrations, stub cancellation counts and candidate fixed-event payloads. Baseline and OCR-shaped schedules emitted no photo events. G17 independently permits either valid race winner; identical winners across independent runs are not required.",
+  "boundaries": [
+    "G03 uses a synthetic empty final-snippet payload; it does not prove reachability after real filtering. G06/G07 are source-only mappings, with no image condition or branch execution.",
+    "G18 is OCR-shaped generic-gate behavior; G19 uses separate per-view gates and source-only aggregation rather than actual image TaskGroup execution.",
+    "G20 replaces the logger with an in-memory sink. Its 12 fixed reason/Int payloads and sentinel exclusion do not establish actual OSLog emission, capture, retention or release privacy.",
+    "Injected deadline ordering does not test the production 12-second timers. Request stubs do not establish actual Vision cancellation or OS computation release; one controlled race per flavor is not stress/reliability acceptance.",
+    "Events occur outside the gate lock after continuation delivery. A consumer can resume before its event appears; absent logs cannot prove an absent branch, and there is no per-view identifier for correlation.",
+    "Retained compiler/hash receipts bind the observed builds; this review did not reproduce builds or audit every machine-wide execution. Watchdog/crash/timeout failure paths were not exercised."
+  ],
+  "pending": [
+    "Separately approved fixed-event OSLog emission/capture verification using a retained retrieval route.",
+    "Any source adoption and actual app/classifier integration require separate review and evidence.",
+    "Recognition quality, full photo journey, accessibility, physical offline, clinical/applicant and Swift Challenge readiness remain open."
+  ],
+  "privacy": "No binaries, pixels, raw logs, saved-record content, private absolute paths or account/device identifiers copied into this repository. Source and local artifact metadata/hashes only. Preparation freezes retain their original uncompiled/unrun state; the later observations are recorded separately here.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; raw evidence stays outside the repository and playground.",
+  "localArtifactReferences": [
+    {
+      "path": "vision-terminal-observability-20261025/candidate-v1/FROZEN-INVENTORY.json",
+      "sha256": "b2887bddc8a8c7a9fb3a2e9949a5bb6cf6925eabe9d52f263c0b3019d56b86eb"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/candidate-v1/PROPOSAL.json",
+      "sha256": "e0e5d855b5869d3dc963bded15e9a3b44e8b97f25b99fd165d2e3119e88f302f"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/candidate-v1/SOURCE-FIDELITY.json",
+      "sha256": "a7464807ca1107f2eac194cb9627f73690ea131ef105f32209f7bec8ad78c635"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/candidate-v1/harness-v1/FROZEN-INVENTORY.json",
+      "sha256": "0622efd5bb205ab232955335ebe2b0117fdcae0de5ffe381da77cb6ab69903b8"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/candidate-v1/harness-v1/EXPECTED-RESULTS.json",
+      "sha256": "2b10f76ddcb548db6a794aaa790692b63d202e7a3008f227d0da0a1ad86285ca"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/candidate-v1/harness-v1/SOURCE-BINDINGS.json",
+      "sha256": "51814ac8989b3bea7e625220cbf127f145edcd26cbc947543777e696d4b3df95"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/full-source-compile-v1/intent.json",
+      "sha256": "41896f7591953fde74a9525abf122789928c7e1365b4befb34e9a3a085e20e69"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/full-source-compile-v1/debug-intent.json",
+      "sha256": "b71da71ce6e5837d677803c2c3df892bbfcf87370d00a9b2bb54ffb0b41e1521"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/full-source-compile-v1/debug-result.json",
+      "sha256": "6bc35055683dc23df1913fa1c329275563b8c85c279b267b07d0ed140ff92c46"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/full-source-compile-v1/release-intent.json",
+      "sha256": "e0853c1d0478b11c2336bef7031664cc2a335a56ebafb7a1331b2d9b0d3f57c9"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/full-source-compile-v1/release-result.json",
+      "sha256": "e5d1672b3cbc4dff086f4c32bf9fb55551c55d8f669aa3ba3ec8c5e17877549c"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/full-source-compile-v1/compiled-string-boundary.json",
+      "sha256": "41481a289ed30c35122fcd5f47af0f5be71f64361b4be62ff64a991853efd5d8"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/foundation-fixture-execution-v1/root-review.json",
+      "sha256": "2e077fc9dd8a8a2b6e830c1519ff4858be79bf562ffbb2c7651921b7793adbd7"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/foundation-fixture-execution-v1/compile-result.json",
+      "sha256": "3465a304744d9e891ab5f5e61123eb4faafbc6c57bf712069bc4d8492fae5254"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/foundation-fixture-execution-v1/binary-binding.json",
+      "sha256": "76f9e2e50c87209e8f129b90d60d2429281956786990d33719027bd28c1f43f5"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/foundation-fixture-execution-v1/fixture-result.json",
+      "sha256": "ff4368d636dd279c1c89d4a1deca5e8175b370098e8e1d2faf4a4f5b1e77727d"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/foundation-fixture-execution-v1/runtime/result.json",
+      "sha256": "2ca71e94443e69d62a6a6072a9ba8c3b9e4509b64a042d884ee3e6142ebe3f41"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/foundation-fixture-execution-v1/independent-result-review.json",
+      "sha256": "19bbebc5a5c8bbe4f9dfbe5f71818107042f6efb498ab3bfdd8797a6b16c5d29"
+    }
+  ]
+}

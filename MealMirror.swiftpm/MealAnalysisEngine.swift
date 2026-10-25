@@ -4,6 +4,9 @@ import Foundation
 import ImageIO
 import UIKit
 import MealCore
+#if DEBUG
+import OSLog
+#endif
 
 struct MealAnalysisEngine {
     func analyze(
@@ -226,13 +229,13 @@ enum VisionPhotoInspector {
 
     static func inspect(_ image: UIImage?) async -> VisionStatus {
         guard let image, let cgImage = image.cgImage else {
-            #if DEBUG
-            print("[MealMirror Vision] Image did not provide a CGImage.")
-            #endif
+            VisionPhotoTerminalLog.record(.missingCGImage)
             return .unavailable
         }
 
-        let cancellation = VisionCancellationLatch<VisionStatus>()
+        let cancellation = VisionCancellationLatch<VisionStatus>(didCancel: {
+            VisionPhotoTerminalLog.record(.cancelled)
+        })
         return await withTaskCancellationHandler {
             await performInspection(image: image, cgImage: cgImage, cancellation: cancellation)
         } onCancel: {
@@ -251,18 +254,16 @@ enum VisionPhotoInspector {
             // Keep the meal flow usable if Vision never calls back. The gate
             // ignores a late result and cancels any still-running request.
             DispatchQueue.main.asyncAfter(deadline: .now() + 12) {
-                gate.cancelAndResume()
+                if gate.cancelAndResume() {
+                    VisionPhotoTerminalLog.record(.deadline)
+                }
             }
             DispatchQueue.global(qos: .userInitiated).async {
                 let request = VNClassifyImageRequest { request, error in
                     guard error == nil else {
-                        #if DEBUG
-                        if let error {
-                            let nsError = error as NSError
-                            print("[MealMirror Vision] Request callback failed: \(nsError.domain) (\(nsError.code)): \(error.localizedDescription)")
+                        if gate.resume(with: .unavailable) {
+                            VisionPhotoTerminalLog.record(.callbackError, errorCode: error.map { ($0 as NSError).code } ?? 0)
                         }
-                        #endif
-                        gate.resume(with: .unavailable)
                         return
                     }
 
@@ -275,7 +276,9 @@ enum VisionPhotoInspector {
                     // known broken result as a successful photo inspection.
                     let brokenSimulatorLabels = ["outdoor", "night_sky", "sky", "celestial_body", "moon"]
                     if Array(observations.prefix(5).map(\.identifier)) == brokenSimulatorLabels {
-                        gate.resume(with: .unavailable)
+                        if gate.resume(with: .unavailable) {
+                            VisionPhotoTerminalLog.record(.knownSimulatorResultRejected)
+                        }
                         return
                     }
 #endif
@@ -286,7 +289,9 @@ enum VisionPhotoInspector {
                     guard observations.contains(where: {
                         $0.identifier == "food" && $0.confidence >= 0.10
                     }) else {
-                        gate.resume(with: .inspected(labels: []))
+                        if gate.resume(with: .inspected(labels: [])) {
+                            VisionPhotoTerminalLog.record(.inspectedEmpty)
+                        }
                         return
                     }
                     var seen = Set<String>()
@@ -304,7 +309,9 @@ enum VisionPhotoInspector {
                                   seen.insert(label.lowercased()).inserted else { return nil }
                             return label
                         }
-                    gate.resume(with: .inspected(labels: labels))
+                    if gate.resume(with: .inspected(labels: labels)) {
+                        VisionPhotoTerminalLog.record(labels.isEmpty ? .inspectedEmpty : .inspectedLabels)
+                    }
                 }
                 guard gate.register(request) else { return }
 #if targetEnvironment(simulator)
@@ -327,14 +334,37 @@ enum VisionPhotoInspector {
                 do {
                     try handler.perform([request])
                 } catch {
-                    #if DEBUG
-                    let nsError = error as NSError
-                    print("[MealMirror Vision] Request execution failed: \(nsError.domain) (\(nsError.code)): \(error.localizedDescription)")
-                    #endif
-                    gate.resume(with: .unavailable)
+                    if gate.resume(with: .unavailable) {
+                        VisionPhotoTerminalLog.record(.performError, errorCode: (error as NSError).code)
+                    }
                 }
             }
         }
+    }
+}
+
+// Fixed photo-only diagnostic fields. Never pass image content, labels, OCR,
+// filenames, identifiers, descriptions, error domains or raw error messages.
+private enum VisionPhotoTerminalReason: String, Sendable {
+    case missingCGImage = "missing_cgimage"
+    case callbackError = "callback_error"
+    case knownSimulatorResultRejected = "known_simulator_result_rejected"
+    case performError = "perform_error"
+    case deadline
+    case cancelled
+    case inspectedEmpty = "inspected_empty"
+    case inspectedLabels = "inspected_labels"
+}
+
+private enum VisionPhotoTerminalLog {
+    #if DEBUG
+    private static let logger = Logger(subsystem: "com.mealmirror.swiftchallenge", category: "VisionPhoto")
+    #endif
+
+    static func record(_ reason: VisionPhotoTerminalReason, errorCode: Int = 0) {
+        #if DEBUG
+        logger.notice("photo_terminal reason=\(reason.rawValue, privacy: .public) error_code=\(errorCode, privacy: .public)")
+        #endif
     }
 }
 
@@ -391,13 +421,18 @@ private final class VisionCancellationLatch<Result: Sendable>: @unchecked Sendab
     private let lock = NSLock()
     private var gate: VisionContinuationGate<Result>?
     private var isCancelled = false
+    private let didCancel: (@Sendable () -> Void)?
+
+    init(didCancel: (@Sendable () -> Void)? = nil) {
+        self.didCancel = didCancel
+    }
 
     func register(_ newGate: VisionContinuationGate<Result>) -> Bool {
         lock.lock()
         let shouldStart = !isCancelled
         if shouldStart { gate = newGate }
         lock.unlock()
-        if !shouldStart { newGate.cancelAndResume() }
+        if !shouldStart, newGate.cancelAndResume() { didCancel?() }
         return shouldStart
     }
 
@@ -407,7 +442,7 @@ private final class VisionCancellationLatch<Result: Sendable>: @unchecked Sendab
         let currentGate = gate
         gate = nil
         lock.unlock()
-        currentGate?.cancelAndResume()
+        if currentGate?.cancelAndResume() == true { didCancel?() }
     }
 }
 
@@ -422,13 +457,15 @@ private final class VisionContinuationGate<Result: Sendable>: @unchecked Sendabl
         self.fallback = fallback
     }
 
-    func resume(with result: Result) {
+    @discardableResult
+    func resume(with result: Result) -> Bool {
         lock.lock()
         let currentContinuation = continuation
         continuation = nil
         request = nil
         lock.unlock()
         currentContinuation?.resume(returning: result)
+        return currentContinuation != nil
     }
 
     func register(_ newRequest: VNRequest) -> Bool {
@@ -440,7 +477,8 @@ private final class VisionContinuationGate<Result: Sendable>: @unchecked Sendabl
         return isPending
     }
 
-    func cancelAndResume() {
+    @discardableResult
+    func cancelAndResume() -> Bool {
         lock.lock()
         let currentContinuation = continuation
         let currentRequest = request
@@ -449,6 +487,7 @@ private final class VisionContinuationGate<Result: Sendable>: @unchecked Sendabl
         lock.unlock()
         currentRequest?.cancel()
         currentContinuation?.resume(returning: fallback)
+        return currentContinuation != nil
     }
 }
 

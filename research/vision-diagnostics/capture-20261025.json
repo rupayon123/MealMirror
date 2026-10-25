@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; private raw artifacts remain outside repository and playground.",
+  "scope": "Retained synthetic macOS logging artifacts only. Independent read-only review, no new emission/query/model/runtime. Both strict capture-controller failures remain failures.",
+  "backendSource": {
+    "candidateEngineSHA256": "ef15ea5bb8ea00b5b0ce4dbd642e0c43ee931d9cba90e95d401173ad23beef55",
+    "standaloneEmitterSourceSHA256": "bf7691ece5df89aef93d54b71b3acf5b6152027a2cb46b5c61c35e527d17f6c7",
+    "exactEnumAndLoggerBackendCopied": true,
+    "fields": "Closed fixed reason and signed numeric error code; DEBUG-only notice level. No photo/Vision/model input."
+  },
+  "originalAttempt": {
+    "compileExit": 0,
+    "emitterProcessExit": 0,
+    "controllerExit": 6,
+    "hostTimedOut": false,
+    "emitterLaunchAttemptsRecorded": 1,
+    "captureQueryAttemptsRecorded": 0,
+    "failure": "emission_receipt_identity",
+    "cause": "Controller bounded-process receipt and emitter completion receipt used the same filename; the process receipt overwrote the emitter-owned completion receipt.",
+    "completionReceiptLost": true,
+    "completionFieldsReconstructed": false,
+    "limit": "The retained about-to-start receipt and process exit do not restore lost fixedCallsReturned or completion-date fields."
+  },
+  "captureOnlyRecovery": {
+    "emitterLaunches": 0,
+    "builds": 0,
+    "queryAttempts": 1,
+    "queryExit": 0,
+    "controllerExit": 6,
+    "queryTimedOut": false,
+    "failure": "foreign_category_record",
+    "strictControllerPassed": false,
+    "fullArrayStrictCriterionUnchanged": true,
+    "queryRetries": 0,
+    "historicalWindowSeconds": 31,
+    "rawCapturedRecords": 11,
+    "strictAllExpectedRecordsRetrievedFlag": false
+  },
+  "independentRetainedArtifactReview": {
+    "reviewSHA256": "971cfbfe414fd2c268d4728fef49c75be48dd8d7572040666ba1074987534249",
+    "mechanicalConsistencyVerified": true,
+    "allRowsBelongToOriginalRetainedProcessAndImage": true,
+    "allRowsWithinFrozenWindow": true,
+    "fixedPayloadRecords": 8,
+    "exactExpectedFixedPayloadMultisetPresent": true,
+    "additionalSameProcessRecords": 3,
+    "additionalKinds": {
+      "activityCreation": 1,
+      "automaticXPCConnection": 2
+    },
+    "interpretation": "The one already captured JSON contains all eight fixed payloads plus three automatic records. This read-only subset finding is not a clean pass of the failed original full-array criterion; no additional query or emission occurred."
+  },
+  "collisionRegression": {
+    "hostExit": 0,
+    "hostTimedOut": false,
+    "mechanism": "Mocked Popen and temporary filesystem; no real subprocess or OSLog call.",
+    "baselineReceiptPreserved": false,
+    "futureNamespacedReceiptPreserved": true,
+    "futureControllerAdoptedOrEmitted": false,
+    "scope": "Reproduces the overwrite and checks proposed controller- filename preservation; it does not repair the lost receipt or repeat live capture."
+  },
+  "observedMeaning": "Fixed synthetic notice payloads were found in a recent-store capture after the emitting process exited. Exact original emission-completion receipt remains lost, and strict full-array capture acceptance failed.",
+  "limits": [
+    "No permanent retention, flushing, future permission/schema stability, app/Simulator/XCTest/xcresult capture or actual photo-terminal retrieval established.",
+    "No previous unavailable-classifier cause is identified; no classifier/image/model, recognition, accuracy or readiness gate closes.",
+    "Captured automatic metadata and raw logs are local-only; no raw payloads, process/account/device identifiers or private paths copied here.",
+    "Review describes recorded attempts and retained artifacts, not a machine-wide execution audit.",
+    "The historical proposal verification receipt remains unchanged; app-source adoption is recorded separately in delivery-20261025.json."
+  ],
+  "localArtifactReferences": [
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-v1/FROZEN-INVENTORY.json",
+      "sha256": "6c765d36060576e7242032d7ae604493d1a53a23b4faf5a4ec4a6e662999bd2c"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-v1/build-v1/compile-result.json",
+      "sha256": "6795b9a83770cfd93ecc5105dc923d7e8ce138c565d462178f554f94ff7bc896"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-v1/build-v1/controller-result.json",
+      "sha256": "685811ff31a01e965f3f373d15ed5b2f68358739fc6e546804c47da39504ad55"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-v1/execution-v1/emitter-started.json",
+      "sha256": "3bbcb9241143cbb156b0be5a8c41866a8f5b771159c5bc1b5884ae73a2332e64"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-v1/execution-v1/emitter-result.json",
+      "sha256": "96e7d621de71638eca176d81d80e05b6ea931b5f78fea989b42d4d421335943c"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-v1/execution-v1/result.json",
+      "sha256": "0c5aabb9cb987671a3b71d5a1c79f772652b652b15ac77c39b6e43d1e5e10021"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-recovery-v1/FROZEN-INVENTORY.json",
+      "sha256": "6c6c84d17666c50f263806a0b3b18bd3261ad217c0ec38bf889ae18f76227d15"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-recovery-v1/SOURCE-BINDINGS.json",
+      "sha256": "f77ec0af60191fad0cfd4026da38e886dff006a1ec17371bc70a7df04deddce6"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-recovery-v1/execution-v1/query-process-result.json",
+      "sha256": "36d862ee118a5ce377d85d07723ab26296dc8a4ff8ba5c251c3a8ae4d4124183"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-recovery-v1/execution-v1/recovery-result.json",
+      "sha256": "77767e439412e737826c280d527896c0a5177ab804fa1b65c9efeb68b1d262a6"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-recovery-v1/execution-v1/query-stdout.json",
+      "sha256": "640114e0f4df0df221007de077be97a96347d43d6023e67597534b0407822ce8"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-recovery-v1/execution-v1/root-retained-artifact-review.json",
+      "sha256": "76ab57ec10d231bb868fcb72bf7d5a53b31b3dda6da5ecce1a30adb99588e984"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-recovery-v1/execution-v1/independent-retained-review.json",
+      "sha256": "971cfbfe414fd2c268d4728fef49c75be48dd8d7572040666ba1074987534249"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-recovery-v1/root-execution-v1/collision-regression-host-result.json",
+      "sha256": "ed084c81d905be6a15b9c2ace5fe7cb40b3a3320049850446abb6259186cf955"
+    },
+    {
+      "path": "vision-terminal-observability-20261025/oslog-capture-recovery-v1/root-execution-v1/collision-regression.stdout",
+      "sha256": "039fe63e0a95240684d64154d56006c481bad2cba71ee7e069fb5bd9c2736b55"
+    }
+  ]
+}

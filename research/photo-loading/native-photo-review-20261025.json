@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "One independent native photo-to-Review case on exact installed build 10; no History, Save, persistence or deletion actions. Earlier History failures remain open.",
+  "candidate": {
+    "version": "1.0 (10)",
+    "ZIP_SHA256": "ff82519efe1b6c2af74708abc9e09c0d88cb2fee7c1fe058d90414ce8fdd4a28",
+    "ContentView_SHA256": "63b4afb3d39b794fba2e51fc5e6aa727827ee27ac7c6ffabe354571880af8a70",
+    "sourceNote": "Build11 was prepared afterward with only engine diagnostics/build-number changes; this is not a build 11 UI result."
+  },
+  "nativeTest": {
+    "method": "testPhotoLabelCheckedReviewOnly",
+    "testCommandExit": 0,
+    "cases": 1,
+    "failures": 0,
+    "bodySeconds": 162.848,
+    "wholeCommandSeconds": 271.06026016699997,
+    "hostTimedOut": false,
+    "caseBoundSeconds": 360,
+    "hostBoundSeconds": 900,
+    "durationScope": "Test observations, not human journey or model speed benchmarks.",
+    "platform": "Owned iOS 26.5 QA Simulator; English/light/standard size; iOS 27 local-image-model branch not exercised."
+  },
+  "observed": [
+    "One public-library meal photo selected with meal picker Done contract.",
+    "One separate label selected using its observed Done-zero single-selection contract; picker dismissed and selected-label AX appeared.",
+    "Actual label OCR disclosure expanded; no automatic carbohydrate range before manual entry.",
+    "Only a synthetic manually checked 37 g item entered; Add dismissed, component appeared, Review disabled before explicit parts confirmation.",
+    "Explicit confirmation enabled Review; final Review displayed 37 g and enabled Save. No Save action."
+  ],
+  "visualReview": {
+    "viewedFrames": 6,
+    "exportedAttachments": 32,
+    "summary": [
+      "Meal photo thumbnail visible with food 1/3 and label 0/1 at the first attachment.",
+      "The label-selected snapshot is scrolled below attachment controls; successful label selection is supported by its AX wait and later visible label/OCR panel, not a visible count in that frame.",
+      "Estimate explicitly shows Photo selected; inspection unavailable and No reliable range yet before manual entry.",
+      "Expanded OCR panel shows the synthetic label and transcription of its five lines, including37g; this is one fixture, not general OCR/nutrition accuracy.",
+      "Review stays disabled before explicit parts confirmation; final Review shows37g carbohydrates, QA description, no insulin recommendation and enabled Save. Save was never pressed.",
+      "Approved Pixel Kitchen appearance retained in these English/light/standard viewports. No broad layout/accessibility/motion/physical-offline claim."
+    ],
+    "copyFinding": "Final included-components count renders 1 meal parts; track singular-copy correction."
+  },
+  "identityAndData": {
+    "immediateLookupExit149Preserved": true,
+    "separateV7CurrentInstalledFilesExact": 17,
+    "originalRecords": 3,
+    "byteAndSemanticStoreUnchanged": true,
+    "QARecordsCreated": 0,
+    "ownedShutdownConfirmed": true,
+    "originalInteractiveSessionPreserved": true,
+    "phoneOperated": false
+  },
+  "limits": [
+    "Photo inspection explicitly unavailable in this case; no dish-recognition/portion/nutrition/dose accuracy acceptance.",
+    "Synthetic label fixture OCR display is not worldwide-label accuracy validation.",
+    "No History/Save/relaunch/delete, multiple-food-view maximum, physical camera, iOS 27 model UI, broad accessibility, physical offline or submission-readiness pass.",
+    "Existing History misses remain unresolved; no production UI source change is justified by this case."
+  ],
+  "privacy": "No photos, screenshots, library labels, raw hierarchy/logs, saved-record contents, private absolute paths, process/device/account identifiers or binaries copied into repository.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; raw artifacts remain outside repository/playground.",
+  "localArtifactReferences": [
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/INTENT-AND-SOURCE-HASHES.json",
+      "sha256": "a9fef56d058d82da9217ea6e67bc93b3be337ff6fa5afeff29602b512db4c860"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/UITests/MealMirrorUITests.swift",
+      "sha256": "76b0c053c1037cb54f2393b1bd27a62afdb20c4f4ff244ca975b247aa4bf3d75"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/root-review.json",
+      "sha256": "19b011b5fef63ed9b89137d01cdd02e158a9528e0faeb695eba5bad4887c243e"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/test-intent.json",
+      "sha256": "a5693d23237fc931a8b7d72433cadd181d127653659e654fbdd7650dcc808fe3"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/test-result.json",
+      "sha256": "7525be0edda9d8adf0b3e642078bfae787c6b33376e76d7297ae528c01beae47"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/test.log",
+      "sha256": "659b63372967fd7a43a59343886b9b5bbf56c5c419ba9f23c34217c4841d1e58"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/root-attachments-v1/manifest.json",
+      "sha256": "052eedc87a96bc465674f599d71f97e876ab763bac4c944849c697dc465c44c9"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/root-visual-result-review.json",
+      "sha256": "d902362200925806760dca0c1d4bdd3f1de38023eddf0027b8cdb59b78be8d41"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-photo-review-identity-v7/result.json",
+      "sha256": "3a71533b422bde0040f919ed885b6158b52315e3d4ef38f7625807651c74f024"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/root-attachments-v1/232BD2D1-1201-4EBE-A4BE-9AF0765ADA38.png",
+      "sha256": "5210fdacafcc6649d92bc40c2fd739868ffd2d03ed090747ad191f9b3320df60"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/root-attachments-v1/2D2B853E-0C85-47FD-A60F-1379EF9D5AA6.png",
+      "sha256": "81eecaf3bc702d0ddcba2273e1ea338219637251aa7d9ab845423951e66e159a"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/root-attachments-v1/43026C6B-1569-4193-907D-6E7178F4629C.png",
+      "sha256": "53c92cc9ed001c80e7e2f62280815af3b2dff22cc42a71b8ecd27dd7af089510"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/root-attachments-v1/7C560567-5E12-472F-B856-AE6AED7B7A70.png",
+      "sha256": "d49ad79d6dcec053d05fba8cfc0b9a60d362a5f6b40a22f56e219025a080c676"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/root-attachments-v1/2D5555B5-2BC0-4D61-9F0C-8729994B706E.png",
+      "sha256": "bd1942be43f8a059c9a6a109795639f53fd32177d65fbdb4966e2806e4fcb288"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-review-only-v1/execution-v1/root-attachments-v1/404118E2-0A2C-45C6-9FE2-26B9B7E65ED5.png",
+      "sha256": "6249c26c7d0515304650f110ec38d03271d12e9bb947f2dde9941afb33d26b77"
+    }
+  ]
+}
