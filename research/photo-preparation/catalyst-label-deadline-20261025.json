@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "One instrumented Mac Catalyst command-line first-label diagnostic; not exact-source acceptance or iOS proof",
+  "productionSourceChanged": false,
+  "candidateBuild": 19,
+  "candidateSHA256": "3c55b1bf656815eaf6a34c52398bfd0a09b989523411d3895811155c093a0e16",
+  "bindings": {
+    "engineSHA256": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+    "modelsSHA256": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e",
+    "fixtureSHA256": "6bb029163a814adce10c48d265817e9ab027b290510c6964d5e444d4befc7e26",
+    "driverSHA256": "f415eeaac5fa1b9e99d0af09933b5651b7d47446536f51925425cb51f6a6f2e8",
+    "assembledSHA256": "56f6fdf0f15729dd0f95f2b5111cddabfb8f8631cb3e4ecc96daaf7929f70c72"
+  },
+  "compile": {
+    "exitCode": 0,
+    "seconds": 5.940722624999999
+  },
+  "execute": {
+    "exitCode": 1,
+    "seconds": 14.216840416
+  },
+  "events": [
+    {
+      "event": "inspect-entry",
+      "secondsSinceInspection": 0.0
+    },
+    {
+      "event": "worker-entry",
+      "secondsSinceInspection": 0.0035112916957587004
+    },
+    {
+      "event": "handler-init-entry",
+      "secondsSinceInspection": 0.016906666802242398
+    },
+    {
+      "event": "handler-init-return",
+      "secondsSinceInspection": 0.07235550018958747
+    },
+    {
+      "event": "perform-entry",
+      "secondsSinceInspection": 0.07251658337190747
+    },
+    {
+      "event": "deadline-fired",
+      "secondsSinceInspection": 12.804068375146016
+    },
+    {
+      "event": "cancel-resume-attempt",
+      "secondsSinceInspection": 12.804443791741505
+    },
+    {
+      "event": "terminal-won",
+      "secondsSinceInspection": 12.80482479184866
+    }
+  ],
+  "outcome": {
+    "appHosted": false,
+    "cases": [
+      {
+        "checks": [
+          {
+            "id": "read",
+            "passed": false
+          },
+          {
+            "id": "exactText",
+            "passed": false
+          }
+        ],
+        "id": "label",
+        "lines": [],
+        "passed": false,
+        "seconds": 12.805002583190799,
+        "status": "unavailable"
+      }
+    ],
+    "failed": true,
+    "macCatalyst": true,
+    "unrun": [
+      "blank",
+      "longLabel",
+      "noPixelBacking"
+    ]
+  },
+  "conclusion": "For this sole first case, the timer fired and cancellation won after the perform-entry checkpoint, with no completion, resume attempt, perform return or throw observed before process exit. Underlying delay cause remains unknown.",
+  "instrumentationLimitations": [
+    "Logging changes scheduling; not exact-source acceptance",
+    "Generic winner events occur after gate release; cannot attribute arbitrary concurrent terminal paths from event order alone",
+    "No gate identity: successful earlier cases could leave timers that contaminate later traces; all later cases here were unrun",
+    "Process exited after first failure; no conclusion about eventual callback or OS computation cancellation",
+    "Retained driver has an unexercised timeout-cleanup race: a child exiting zero during cleanup could advance despite timedOut=true. Correct before future use; this run completed with execute exit 1 and no host timeout."
+  ],
+  "nextAction": "Obtain actual supported iOS app-host label evidence; do not change request configuration or extend production timeout based solely on this command-line result.",
+  "independentReview": {
+    "result": "Bindings, exact logging transformations, retained outputs and narrow deadline-winner conclusion verified; wording corrected to avoid implying OS processing started",
+    "scope": "Read-only review, no repeated test"
+  }
+}
