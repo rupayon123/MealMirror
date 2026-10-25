@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "sourceCommit": "269be045f9a4211a21484a91cab4af9fb5b1340b",
+  "candidate": {
+    "version": "1.0 (16)",
+    "bytes": 12205430,
+    "sha256": "3f967785bc8f5de774e936a10c8ad0a411a84818614aca17aa7b711b645f7f0b",
+    "unchanged": true
+  },
+  "scope": "Separate explicit UIKit application host using the exact guarded synchronous encoded-Data function. New isolated iPhone17 Simulator, iOS26.5, built with Simulator27.1 SDK. No production app source changes.",
+  "sourceFidelity": {
+    "productionEngineSHA256": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+    "testsSHA256": "c706495fd4767d20c931d20681f4f3fbe78ea81829a6c730f9602f86c9c5ed65",
+    "dataPreparationFileSHA256": "fe4b4fa9bf80233771048d3901c40d797aebe9ef6a7e6e779e182561f5a6e6a4",
+    "sourceFreezeFiles": 11,
+    "freshFreezeAllMatch": true,
+    "independentReadOnlyReview": "Explicit host/dependency/TEST_HOST and fixture orientation oracle reviewed; no material blocker found. Original non-explicit-host preparation retained separately."
+  },
+  "build": {
+    "exitCode": 0,
+    "timedOut": false,
+    "seconds": 105.333968958
+  },
+  "buildWarnings": [
+    "Manual target ordering deprecated",
+    "Traditional headermap warning",
+    "AppIntents metadata extraction skipped: no framework dependency"
+  ],
+  "compiledHost": {
+    "IsAppHostedTestBundle": true,
+    "xctestrunSHA256": "8a9092f899cdb73fa492d52b45b20688780edf566d6deb1bdc2e506ab2d1e091",
+    "hostExecutableSHA256": "18f0afd2356e70088f07015cef5a2b8a194b1be0d51e1e5bfc5c6b9b0e3688e8"
+  },
+  "bootObservations": [
+    {
+      "exitCode": -15,
+      "timedOut": true,
+      "seconds": 120.43033787499999
+    },
+    {
+      "exitCode": -15,
+      "timedOut": true,
+      "seconds": 60.020621042
+    }
+  ],
+  "startupObserved": "First observer waited on LaunchServices migration; later observer progressed to system app/BackBoard. Neither observer established terminal readiness. No device restart/retry.",
+  "control": {
+    "exitCode": -15,
+    "timedOut": true,
+    "seconds": 120.68624541700001
+  },
+  "controlObserved": "Xcode connected to testmanagerd and initiated a session, then last session log awaited EncodedHost installation. Host stdout is empty; no case-begin marker or terminal XCTest result. Partial result retained.",
+  "sdkDiagnostic": "Xcode also logged operatingSystemBuild invalidDigitCount. Causation is not established.",
+  "controlPassed": false,
+  "nativeImageCasesExecuted": 0,
+  "unrun": [
+    "Small encoded bounds",
+    "Empty/truncated data",
+    "EXIF2/6/8 dimensions, corner pixels and UIImage .up metadata"
+  ],
+  "retainedInitialLauncherFailure": "First private build launcher used wrong relative script path, exited2 before invoking compiler. Corrected parent path; subsequent sole compiler invocation passed.",
+  "limits": [
+    "This is build/setup evidence and a bounded runtime failure, not a UIKit image assertion pass.",
+    "No PhotosUI, camera, async/token handling, full MealMirror journey, 48MP/memory budget, offline Apple27 model, nutrition/accuracy or physical-device acceptance.",
+    "Earlier Mac adapter and build13 full-app results retain their original narrower scopes."
+  ],
+  "privateEvidence": {
+    "controlLogSHA256": "aec2f99141e3ce7dc7be7dcb94e65f5fb44189aef44155733a8856e9c65f8746",
+    "sourceFreezeSHA256": "e90eb11b4af1dfb9424d2e14f89d1d9d2c5a02a8a4d8de7c3694a47c2f75ce94"
+  },
+  "nextStep": "Diagnose isolated Simulator/app installation startup before another bounded native attempt; do not change production image code from this timeout.",
+  "cleanup": {
+    "exitCode": 0,
+    "timedOut": false,
+    "seconds": 31.804447958,
+    "newOwnedTargetVerifiedShutdown": true,
+    "priorDeviceStateDifferenceCount": 0,
+    "noPriorAppDataManipulated": true,
+    "note": "Device states checked fresh; no prior device file-content preservation assertion is made from state comparison alone."
+  }
+}
