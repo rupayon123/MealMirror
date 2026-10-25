@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "One isolated iOS 27.1 Simulator direct Core ML synthetic mechanical check; no production model adoption.",
+  "compileHistory": {
+    "v1": {
+      "exit": 65,
+      "runtimeAttempted": false,
+      "actualErrors": "SDK 27.1 rejects Thread.isMainThread in lexical async contexts; the prediction overload selected there requires await. These actual compiler blockers supersede the earlier static-only review."
+    },
+    "v2": {
+      "exit": 0,
+      "fix": "Synchronous nonisolated helper wrappers inspect the current thread and call the blocking prediction API from the same detached worker. No model/input/sequence/math/criterion change.",
+      "frozenSourceAndReferencesUnchanged": true,
+      "builtAndInstalledFiles": 9,
+      "appRootResourcesMatchingFrozenBytes": 4
+    },
+    "SDKWarningRetained": {
+      "warning": "incompatible-sysroot: macOS 27.0 sysroot while targeting arm64 iOS 17 Simulator",
+      "mainMachOSDK": "27.1.0",
+      "debugDylibMachOSDK": "27.0.0",
+      "InfoSDK": "iphonesimulator27.1",
+      "minimumOS": "17.0",
+      "AppIntentsMetadataSkipped": true,
+      "meaning": "Successful build/runtime does not erase the warning or establish its cause or general compatibility."
+    }
+  },
+  "runtime": {
+    "controllerExit": 0,
+    "consoleExit": 0,
+    "rawAppExit": 0,
+    "hostLaunchInvocations": 1,
+    "automaticRetries": 0,
+    "hostTimedOut": false,
+    "modelCompileEntriesAndReturns": 1,
+    "modelLoadEntriesAndReturns": 1,
+    "predictionEntriesAndReturns": 3,
+    "orderedSteps": [
+      "A1",
+      "B",
+      "A2"
+    ],
+    "entryGuardsPassed": true,
+    "workerRecordedOffMainThread": true,
+    "CPU": "CPU-only configuration requested and readback matched; not independent kernel proof."
+  },
+  "modelAndInputs": {
+    "artifact": "Exact previously inspected official Apple MobileNetV2 INT8-LUT model",
+    "bytes": 6257335,
+    "SHA256": "ee53bca4c5042d77aed5c093cba31c2ef229d1cc4c027300af9cc8bf9e240409",
+    "inputs": "Same two fixed 224x224 procedural RGB8 patterns as the Mac probe, A then B then identical A. Explicit BGRA pixel-buffer conversion and active-row hash validation; embedded preprocessing retained, no external normalization.",
+    "noPhotoOrDatasetInputs": true,
+    "noVisionOrAppleIntelligenceCallsInProbe": true
+  },
+  "schemaAndDuplicatePolicy": {
+    "runtimeClassLabels": 1001,
+    "returnedUniqueDictionaryKeysEach": 1000,
+    "duplicate": "crane is present at two positional labels but one dictionary key. Actual returned dictionary preserved; no separate scores, renormalization or merge rule invented. Sums remain descriptive."
+  },
+  "unchangedFrozenCriteria": {
+    "perVector": "1000 original unique keys, finite values in[0,1], span>1e-8",
+    "acrossA1B": {
+      "maxAbsAtLeast": 1e-06,
+      "L2AtLeast": 1e-05
+    },
+    "repeatA1A2": {
+      "maxAbsAtMost": 1e-08,
+      "L2AtMost": 1e-07
+    },
+    "retuned": false
+  },
+  "numericResult": {
+    "acrossA1B": {
+      "maxAbs": 0.4049592002411373,
+      "L2": 0.4412462654049975,
+      "passed": true
+    },
+    "repeatA1A2": {
+      "maxAbs": 0,
+      "L2": 0,
+      "bytesIdentical": true,
+      "passed": true
+    },
+    "independentReview": "All 3,000 Float64 JSON/byte roundtrips, vector hashes, finite/range/span checks and ordered comparison math verified. Fourteen captured files match the retained container; all nine built/installed files and four resources match. Root independent readback agrees.",
+    "fixedSyntheticMechanicalCriteriaPassed": true
+  },
+  "warningsAndCleanup": {
+    "bootLoggedDataMigrationFailed": true,
+    "ownedTargetRecordedShutdown": true,
+    "unrelatedProtectedTargetControlled": false,
+    "bootWarningEstablishedAsCause": false,
+    "OSComputeReleaseEstablished": false
+  },
+  "priorEvidence": {
+    "VisionFailuresRetained": "fresh-target-and-cgimage-20261025.json",
+    "VisionReceiptSHA256": "d3959f02b940cd8ffd75b78230b6f213b451680e6f8d41df2720d7f587a5823d",
+    "MacProbeReceipt": "direct-coreml-pattern-20261025.json",
+    "MacReceiptSHA256": "6350c26ead689c01028f7baa37715e89c7eddd7c722a956f5f44f5cd9ee42df5",
+    "meaning": "This separate direct-model check neither diagnoses/fixes the earlier Vision failures nor establishes equality across Mac, iOS, handlers, wrappers, representations or backends. No cross-platform equality criterion was applied."
+  },
+  "limits": [
+    "Only these synthetic iOS 27.1 Simulator mechanics passed. No food/world-cuisine naming, unknown/nonfood quality, abstention/calibration, ingredients, portions, nutrition or insulin result.",
+    "No physical-device or network-isolated offline acceptance, general iOS portability, performance/final-package, training, model adoption or submission-readiness acceptance. Model and compiled artifacts remain outside the repository.",
+    "Prior embedded licensing evidence remains evidence to review, not legal assurance, third-party image permission or redistribution approval."
+  ],
+  "privacy": "No model/compiled files, RGB images, probability vectors, raw private errors/paths, target UUIDs or account identifiers copied here.",
+  "localArtifactReferencesBase": "../../../../outputs/recognition-architecture-20261025/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; selected local relative hash references only.",
+  "localArtifactReferences": [
+    {
+      "path": "ios-direct-coreml-pattern-v1/PREPARATION-FREEZE.json",
+      "sha256": "e52e78995438f95eadb1f54325165de17104b3e37f5783e3776165a4fa4c7b38"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v1/build-v1/build-result.json",
+      "sha256": "a7c6eee7858dcfb826f2945a8c848011a9270ae124441b3cca706d1425e1b9d5"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v1/build-v1/build.log",
+      "sha256": "02352e5c10c9f9b32de0816e948a590fc67750049bd4171371de1d5d078bb38f"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/PREPARATION-FREEZE.json",
+      "sha256": "ebf23fee87854e5d0616f9203c0a80c3381919006fe40945824fa22a76ebcf32"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/PROTOCOL.json",
+      "sha256": "0abd8860e37c6476afa948b3c2db2ed4ed2e8287110c995f509563e833839023"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/SOURCE-CORRECTION.diff",
+      "sha256": "faf8f42e7e3dc082773aa4b3b42933f5803abc01e020e22bf3b9af0670d7ded0"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/independent-source-review.json",
+      "sha256": "b863e6c67b4ade5622289f20d458690f8fafa2fbee0c2a9ceaf9da2448896c07"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/build-v1/build-result.json",
+      "sha256": "94d408deb73848f0c2f5134cf6bba4813b1ee4d2ac3509596e2ec3529af4f744"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/build-v1/build.log",
+      "sha256": "02bcd037fff152258a69633085fae2a422524ffd88387628bdeeaf24669baeaa"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/build-v1/built-verification.json",
+      "sha256": "6c9012d8bd430a64682d1d134be2cd505556a05404002da488dc6fa53c445a19"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/build-v1/root-approval.json",
+      "sha256": "a1a4ed86f832f8d680c78d75667ef30dda6dec4bde93e9c8aaecfeae1030dfb3"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/execution-v1/controller-result.json",
+      "sha256": "8df5d90bb2e8e3066be150f0b7ffdeacf7b62963972a80a19a386f7638770a4b"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/execution-v1/controller-copy-index.json",
+      "sha256": "1a9140b89baf98fe368e9d0db046f6e855d7b1d3a9ea2dd60d0fa7bef833f0ae"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/execution-v1/controller-bootstatus-result.json",
+      "sha256": "c47d88abfa667617bb9655be75186d3b14b11675b8dfa7d848b8d1a38fec43d6"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/execution-v1/controller-cleanup-state-result.json",
+      "sha256": "56b53452d912c6d24d065eab1190fa179827e3dbb2ccd0534db60c08f5109468"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/execution-v1/captured/run-v1/report.json",
+      "sha256": "790caca5bbe25653f4f45a2073ea8bde0f38d7b5fe3b4de48d5a5503c0b5e143"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/execution-v1/root-independent-numeric-readback.json",
+      "sha256": "46e8139ab68ad3a6c0d7aea49927987e1829190e5c2374d18aa2bfd112fda6a1"
+    },
+    {
+      "path": "ios-direct-coreml-pattern-v2/execution-v1/result-review.json",
+      "sha256": "b4cd0b6ed52394a8c996743511007d0736909618616081a8e17195faade78ed2"
+    }
+  ]
+}

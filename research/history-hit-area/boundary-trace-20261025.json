@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "One positive native History activation on an external DEBUG-instrumented build 11 copy, on iOS 26.5 Simulator. This is not exact candidate 11 UI validation and does not explain the earlier failures.",
+  "source": {
+    "baseCandidateVersion": "1.0 (11)",
+    "baseCandidateZIP_SHA256": "af99929a1a1a7019a01a92aa2773e4ab9e563415d8273bdc8e1bda903b69955d",
+    "baseCandidateZIPBytes": 12204356,
+    "originalContentViewSHA256": "63b4afb3d39b794fba2e51fc5e6aa727827ee27ac7c6ffabe354571880af8a70",
+    "instrumentedContentViewSHA256": "ca2eeba0d6530283919cd5c04e1ce3f370c8fa2e7aa6062c6b901a96351f63a4",
+    "filesPinned": 59,
+    "SwiftFiles": 17,
+    "onlyChangedSource": "ContentView.swift",
+    "other58FilesAndPackage11Unchanged": true,
+    "delta": "DEBUG-only fixed OSLog observations at readiness, History action, immediate append, existing path observation, destination appearance and existing load outcome. No new UI state, gesture, path behavior or store operation.",
+    "productionSourceOrCandidateZIPChangedForDiagnostic": false
+  },
+  "preparationRevision": {
+    "v1FreezeSHA256": "c0ad40bb9f322201ae73beb84e89f73b4cb3dee28ad8a46e43ff8b34c9931ff6",
+    "v2FreezeSHA256": "3421fae4e1cf2ff2283a4a52967b95eb1c76ba7a47d73269aadbe44953e82d91",
+    "v1RuntimeAttempts": 0,
+    "v2RuntimeAttempts": 1,
+    "corrections": "Before runtime, v2 required the owned target to start Shutdown and bounded TERM plus KILL against the owned process group even after its leader exited. V1 remains unchanged.",
+    "buildReuse": "Root compiled the v1 app and standalone runner once each, both exit 0. All 59 source files and three test/project files matched v2 byte for byte, so the actual v1 built paths were explicitly bound to the v2 receipt without rebuilding.",
+    "controllerSHA256": "d02a7aed5f786c65b8da6bb240a845b6112033b3e0c0c08edc51d97bba9b7435",
+    "actualBuiltReceiptSHA256": "e3924f68d6b4eaac921500243cba68ff90f326330c0dfb0ea5fd22ae82cadf8d",
+    "actualAppFileCount": 17,
+    "actualRunnerFileCount": 8,
+    "mainExecutableSHA256": "acf61181257f97b4300a14f32e1798a565df4ccdf9c465a80d08c200ec73df38",
+    "debugLibrarySHA256": "8649d34cbc8d19afb3ee345ee536bfb9621514fd3ea974b863c7aef2e47ef030"
+  },
+  "nativeCase": {
+    "oneInstallOneCaseOneDefaultActivationOneStream": true,
+    "retries": 0,
+    "sourceSHA256": "9bb66f3f3091bf26fd0bbbbd988d8b81548c49848d6883c9dc423273ffd3cc87",
+    "caseCount": 1,
+    "failures": 0,
+    "testCommandExit": 0,
+    "controllerExit": 0,
+    "hostTimedOut": false,
+    "bodySeconds": 14.313,
+    "testCommandSeconds": 50.376482916,
+    "outerWrapperSeconds": 119.89766691700001,
+    "caseAllowanceSeconds": 120,
+    "testCommandHostBoundSeconds": 600,
+    "outerWrapperBoundSeconds": 1000,
+    "durationScope": "Separate command/body observations, not human-flow or performance benchmarks.",
+    "assertions": "Unique existing public History button, enabled/hittable and fully inside viewport, clear of pinned Start, existing three-review summary; one default activation; item 0 within ten seconds and three indexed rows. No row/detail or write action."
+  },
+  "boundaryEvidence": {
+    "captureBeganBeforeNativeTestAndAppReadiness": true,
+    "actualProcessAndCurrentExecutablePathBindingVerified": true,
+    "exactFixedEventCount": 6,
+    "observedOrder": [
+      "ready",
+      "action entered",
+      "append: privacy=1, path count=1",
+      "path observer: route code=5 (privacy), count=1",
+      "destination appeared",
+      "existing refresh: load code=0 (readable)"
+    ],
+    "timestampAndMachOrderVerified": true,
+    "withinActualCaseAndCaptureWindow": true,
+    "recordShape": "Six event dictionaries plus one non-JSON filtering preamble. No ancillary activity/XPC dictionary occurred in this capture; the parser retains such records rather than treating their presence as failure.",
+    "timestampInterpretation": "A separate read-only root parser normalized UTC-offset punctuation; raw records were unchanged and no runtime was repeated.",
+    "eventAbsenceWouldProveNonEntry": false,
+    "losslessPermanentOrXcresultRetentionClaim": false
+  },
+  "preservationAndCleanup": {
+    "freshInstalledBuild10InventoryMatchedBeforeInstall": true,
+    "postCurrentInstrumented17FilesMatchBuiltReceipt": true,
+    "originalStoreCountBeforeAndAfter": 3,
+    "storeByteIdentical": true,
+    "storeSemanticEqualsBaseline": true,
+    "semanticDifferenceCount": 0,
+    "storeSeedCopyResetRestore": false,
+    "streamStop": "Intentional TERM produced leader exit 143; group KILL subsequently found the group gone. This is a normal owned stream stop, not a failed native test or proof of system-service cleanup.",
+    "runnerTermination": "Exit 3 reported nothing to terminate; app termination and owned shutdown exited 0.",
+    "ownedShutdownConfirmed": true,
+    "otherTargetStatesUnchanged": true
+  },
+  "rootVisualReview": {
+    "attribution": "Root viewed two exported frames; this curation did not replay them.",
+    "frameCount": 2,
+    "frameDimensions": [
+      1206,
+      2622
+    ],
+    "beforeFrameSHA256": "a7b280516e17deb54f1cb3dd45f2dd5822756f7112206f23e900f6a44e78f518",
+    "afterFrameSHA256": "77ad6cdc5a04ae21ef0702a3601e37a9c4092169f182070bd67318e46126adbe",
+    "observations": [
+      "Home History card was visible above pinned Start.",
+      "History visibly showed three saved rows with distinct Practice/photo provenance labels; theme was consistent and no new clipping was observed in these two frames."
+    ],
+    "limits": "Privacy content below the viewport, scrolling, full-page layout, accessibility and broader flows were not reviewed."
+  },
+  "warnings": [
+    "App compile retained duplicate asset-source, incompatible sysroot and no-AppIntents metadata warnings; runner compile retained traditional headermap and no-AppIntents metadata warnings. Both builds exited 0.",
+    "Stream stderr retained an account-lookup warning and intentional termination notice; raw details remain local. This did not prevent six positively bound events from being observed."
+  ],
+  "interpretation": "In this successful instrumented attempt, the native activation reached the action, appended the History route, published it, presented History and completed the existing readable-load branch. Earlier default/relative-point misses remain unexplained: instrumentation can affect timing, and this positive path does not retrospectively diagnose a failed attempt or establish general reliability. No additional production fix is adopted.",
+  "notExercised": [
+    "Photos or label picker",
+    "OCR or image/model inference",
+    "Save, delete or persistence mutation",
+    "Full photo/manual review journey",
+    "Broad accessibility or physical-device offline behavior",
+    "Clinical accuracy or Challenge submission readiness"
+  ],
+  "privacy": "Only curated metadata and hashes are committed. No pixels, raw logs, saved-record content, process/device/account identifiers, private absolute paths, binaries or new candidate archive are copied into the repository. This remains development testing only.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; raw evidence stays outside the repository/playground.",
+  "localArtifactReferences": [
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v1/FROZEN-INVENTORY.json",
+      "sha256": "c0ad40bb9f322201ae73beb84e89f73b4cb3dee28ad8a46e43ff8b34c9931ff6"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/FROZEN-INVENTORY.json",
+      "sha256": "3421fae4e1cf2ff2283a4a52967b95eb1c76ba7a47d73269aadbe44953e82d91"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/REVISION.json",
+      "sha256": "5b2ead20c58734f52158c5267b31928489b05fbfa598703ea7b0d1261f4b8e3c"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/SOURCE-FIDELITY.json",
+      "sha256": "60d37f7ab2229c4098355d02897136b858105bd27f1d9d868dbe9729dff7ecb3"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/logging-only.diff",
+      "sha256": "daf337a94734115a116f988efb3900d5f1e0611d4c00c673a1888c0a2e8703e9"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2-delta-review.json",
+      "sha256": "301885edb65f7208e227f218fcaf6e4396d7e7e01bec014bd03698bc01072afc"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/root-built-verification.json",
+      "sha256": "e3924f68d6b4eaac921500243cba68ff90f326330c0dfb0ea5fd22ae82cadf8d"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/root-approval.json",
+      "sha256": "1d471388589ab9238a3d131bf2cdff4819eeaa066427f72077b179a288e3e39a"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v1/build-app-v1/build-result.json",
+      "sha256": "613aa4528a9dbf94e1477966516e2a9058a3f366b70cbd4dc5ee33ad6f5f6a8c"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v1/build-tests-v1/build-result.json",
+      "sha256": "5dc762da980a49626ff0c40d7d788cdf329a93faf96549ec2b7ffdcebeeedfe1"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/root-runtime-result.json",
+      "sha256": "e43fa6e69bae4a1aadd9403a9e674fa959d033e2d77a454664c1b143e911eab9"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/controller-result.json",
+      "sha256": "22eb0f3e0c31888d49e7ca4cbe9775e7a14dff80135eb18f951617d5a38ad7cb"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/test-intent.json",
+      "sha256": "f9ceb4db5added2635399264daf12dc5e738d1319e9cd9d458e596b3c726a5d5"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/test.log",
+      "sha256": "1acce822c5efba28de544c3e3db77dcf3c37ae2ebc19e7bcec982c80a94395e1"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/stream-intent.json",
+      "sha256": "3214f1b9971fc056e18b961acb23cbabcafbd7c2f7a14395495f18b136b642ad"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/stream.ndjson",
+      "sha256": "98fe874d0741d416cb633f181e6eeaff322d06458648fd6a1831e8f3e224a630"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/boundary-events.json",
+      "sha256": "80dbcae374e8be6cb2d31e57f0567f62658b62df633068a487f59d2556eec7bd"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/post-test-app-command-result.json",
+      "sha256": "c4bb2022566817e26a4ff668002031098c00eedd6217a4a800cc99e34bfc9774"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/post-test-data-command-result.json",
+      "sha256": "c6494cbfeb6ddcb1b564c21167f9424faeec3a1a23fe0e9b513e1b1ea960d3cd"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/devices-after.stdout",
+      "sha256": "57433d1706c1f6ca274c7fa245b6b6c04825fa53603b809f4686a7d3442332d3"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/shutdown-command-result.json",
+      "sha256": "b522f9f401bc7a91ee290794303e128dde24d32228968e4db9b5035d866fa9e6"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/root-visual-and-boundary-review.json",
+      "sha256": "8679f34e95813e93720fe3bfc31771f7f1392277805f2373abb099c6a8a4d263"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/independent-mechanics-review.json",
+      "sha256": "b8d68ed67dd97daf6f2021d0b0bccf54deede60e167ff803c95e14c2bba09ac5"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/PROTOCOL.json",
+      "sha256": "574e6428ffb18374ada37fd13ddc00b5932c584ed67b3731d3c44722b6be98a9"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execute-once.py",
+      "sha256": "d02a7aed5f786c65b8da6bb240a845b6112033b3e0c0c08edc51d97bba9b7435"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/source-review.json",
+      "sha256": "73e40bc745c52825a904d46e0df3e25b44ea83e3e50529afe5a28a444a72f46b"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v1/build-app-v1/build.log",
+      "sha256": "2bd12673520ce5c72ecc87b15e488f33020c98298b6db064f681a2a59e839efb"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v1/build-tests-v1/build.log",
+      "sha256": "9d742ebd3d5cb6847c1865baae93ec195fd450dd25dfbc228ad932cfe942b6d1"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/stream.stderr",
+      "sha256": "f30123762d3a937fa1f042f9e15a8b038101e3988b9c2557b745f9975cb6a797"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/root-review-timestamp-parser-correction.json",
+      "sha256": "8b94caa9c89daeaa2e8f6227ceed03be946fe28140094fa2c36b3f65ead29ab0"
+    },
+    {
+      "path": "history-activation-20261025-v2/boundary-probe-v2/execution-v1/result-review.json",
+      "sha256": "12a1d700e0b2dbed3db4759b52bd7c9dc6a90835f785ae74464784c3310e0784"
+    }
+  ]
+}

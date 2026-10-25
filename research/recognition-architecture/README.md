@@ -1,6 +1,6 @@
 # Offline recognition: next architecture
 
-October 24, 2026. **Research decision, not a new recognizer.** Current app 1.0 (9) retains the default local Apple model and `143feea0…` prompt source. Its draft-mode correction does not repair recognition; build 8’s final-heading change remains. The neutral-wording, content-tagging and typed-presence proposals were rejected; no further tuning against the exposed twelve is proposed.
+Decision started October 24, 2026; updated October 25. **Research decision, not a new recognizer.** Current app 1.0 (11) retains the default local Apple model and `143feea0…` prompt source. Its draft-mode correction does not repair recognition; build 8’s final-heading change remains and build 11 adds fixed debug photo diagnostics. The neutral-wording, content-tagging and typed-presence proposals were rejected; no further tuning against the exposed twelve is proposed.
 
 ## Decision
 
@@ -51,7 +51,7 @@ The `Data Migration Failed` boot warning and terminate warning remain recorded; 
 3. Train/calibrate one fixed head externally only after features and rights are suitable. Evaluate the gate together with actual model names; reject suppression that hides foods while leaving wrong names unresolved.
 4. Before adoption, verify the exact package, actual photo-to-history journey, error recovery, accessibility and physical network-isolated behavior. Name clues must still create no amount, portion, total, readiness or dose automatically.
 
-The current 12,203,935-byte ZIP leaves **12,796,065 bytes** under a conservative 25,000,000-byte planning cap. No new head, labels or notices have been exported or sized. An OS feature extractor avoids importing an encoder, but this alone does not prove offline availability. Apple's [published policy](https://developer.apple.com/swift-student-challenge/policy/) still identifies 2026; recheck 2027 rules before submission.
+The current build-11 ZIP is 12,204,356 bytes and leaves **12,795,644 bytes** under a conservative 25,000,000-byte planning cap. No replacement model, head, labels or notices have been added to that package. An OS feature extractor avoids importing an encoder, but this alone does not prove offline availability. Apple's [published policy](https://developer.apple.com/swift-student-challenge/policy/) still identifies 2026; recheck 2027 rules before submission.
 
 The source research and SDK metadata are retained outside the repository under `outputs/recognition-architecture-20261024/` and `outputs/recognition-architecture-20261025/`; public receipts pin selected evidence without redistributing datasets or model weights. No trained gate, improved recognition, worldwide accuracy, clinical validation or submission-readiness claim follows.
 
@@ -68,3 +68,9 @@ The unchanged CI-handler CPU batch and the separately built direct-CGImage-handl
 The [direct-model receipt](direct-coreml-pattern-20261025.json) records one separately approved macOS run of the exact inspected MobileNetV2 INT8-LUT artifact: one model compile/load and three CPU-only-configured A–B–A predictions on two fixed procedural 224×224 RGB patterns. The frozen mechanical criteria passed: A1/B maximum absolute difference was `0.40495932020712644` and L2 was `0.4412468590582912`; A1/A2 had zero difference and identical retained bytes. Root’s independent Python byte/numeric readback and a separate retained-record review agree.
 
 The runtime exposed 1001 positional labels and 1000 unique probability keys because `crane` is duplicated. The returned dictionary is preserved without inventing separate scores or a merge rule. This is synthetic macOS mechanics only: no food/world-cuisine or unknown/nonfood quality, calibrated abstention, iOS/device portability, physical offline, performance, final-package or adoption acceptance. Earlier Vision failures remain unchanged with no cause/fix established. No classifier head is trained and no model is added to the app.
+
+## Direct Core ML synthetic iOS Simulator check
+
+The [iOS receipt](ios-direct-coreml-pattern-20261025.json) records the first build’s SDK compiler errors and a separately frozen v2 correction using synchronous helper wrappers. V2 compiled and completed one isolated iOS 27.1 Simulator run: one model compile/load and three predictions configured for CPU only, in A–B–A order, on the same generated 224×224 patterns and exact MobileNetV2 INT8-LUT bytes. Unchanged mechanical gates passed: A1/B maximum absolute difference `0.4049592002411373`, L2 `0.4412462654049975`; identical-input A1/A2 differences were zero and their bytes matched. Independent byte/math reviews agree.
+
+The 1001-label/1000-key duplicate-crane uncertainty, incompatible-sysroot warning, main SDK 27.1 versus debug dylib SDK 27.0, and boot’s `Data Migration Failed` warning remain recorded. Shutdown of the owned QA target was confirmed. Earlier Vision failures stay retained; this result establishes no cause/fix, Mac/iOS equality, food/unknown quality, physical offline behavior or model adoption. No head is trained or model added to production.
