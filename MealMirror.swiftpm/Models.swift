@@ -244,6 +244,7 @@ struct SavedReview: Codable, Hashable, Identifiable {
 
 enum LocalReviewStore {
     private static let fileName = "CarbInReviews.json"
+    private enum StoreError: Error { case duplicateReviewID }
 
     private static var directoryURL: URL {
         FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
@@ -381,6 +382,10 @@ enum LocalReviewStore {
     private static func readStoredReviews() throws -> [SavedReview] {
         guard hasStoredReviewFile else { return [] }
         let data = try Data(contentsOf: storageURL)
-        return try JSONDecoder().decode([SavedReview].self, from: data)
+        let reviews = try JSONDecoder().decode([SavedReview].self, from: data)
+        guard Set(reviews.map(\.id)).count == reviews.count else {
+            throw StoreError.duplicateReviewID
+        }
+        return reviews
     }
 }
