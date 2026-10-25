@@ -51,3 +51,7 @@ The actual new helper passed ten synthetic-provider cases with 19 native Foundat
 ## Mac Catalyst encoded-photo follow-up
 
 **Mac Catalyst UIKit follow-up:** Three small encoded-photo groups passed **35 checks** against the unchanged actual Data function using real UIKit/ImageIO in a Mac Catalyst command-line process. This adds `UIImage` scale/orientation and fixed EXIF corner checks using the four original synthetic JPEGs. It is not an app-host, iOS or physical-device result; the earlier hosted Simulator control failure remains retained. Candidate 18 is unchanged. [Evidence and reproduction](research/photo-preparation/catalyst-encoded-20261025.json).
+
+## Label gate and actual OCR follow-up
+
+**Label processing follow-up:** A source-derived Mac test with a held provider returned unavailable on cancellation and the configured 12-second deadline, rejecting both synthetic late results. It did not perform OCR, and its historical compile/protocol retention is incomplete. A separate actual UIKit/Vision Catalyst command-line test failed the first synthetic label with unavailable after 12.798 seconds; the other three cases were left unrun. Neither result closes the native app/device label gate. [Spied-provider evidence and limits](research/vision-diagnostics/label-gate-20261025.json) · [Actual OCR attempt and retained failure](research/photo-preparation/catalyst-label-20261025.json).

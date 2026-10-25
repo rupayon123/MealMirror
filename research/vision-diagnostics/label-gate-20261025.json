@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "Source-derived native macOS label continuation/cancellation/deadline check with a spied provider; no actual OCR.",
+  "productionSourceChanged": false,
+  "bindings": {
+    "engineSHA256": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+    "productionLabelLatchGateExactAfterRemovingDeclaredInsertion": true,
+    "productionOrientationExtensionExact": true,
+    "insertionCount": 1,
+    "adapter": "UIKit UIImage replaced with small CGImage and orientation value; Vision perform bypassed by hold and simulated late completion.",
+    "sourceSHA256": "307a6ffa5639dc08fef8e458095af4137be74aa5fff26165dcccf82be38e41ca",
+    "driverSHA256": "96fb95432d98cb3be37c88309e01e50e9b9737d99eee365dced0da133b246ce8",
+    "executableSHA256": "19567fe68694b84dd5cb1ff4f28b880313c24b6a4935b7ab9df199c61d68f075"
+  },
+  "declaredAdapter": "Replace UIImage with a CGImage/orientation value. After actual VNRecognizeTextRequest registration, hold background worker2s(cancel) or16s(deadline), attempt one synthetic late result and return before Vision perform. Keep real request/gates and configured12s main-queue deadline.",
+  "cases": [
+    {
+      "mode": "cancel",
+      "exit": 0,
+      "timedOut": false,
+      "hostSeconds": 3.432,
+      "stdout": "mode=cancel unavailable=true seconds=0.10293666669167578 lateAccepted=Optional(false) pass=true\n",
+      "stderr": ""
+    },
+    {
+      "mode": "deadline",
+      "exit": 0,
+      "timedOut": false,
+      "hostSeconds": 18.152,
+      "stdout": "mode=deadline unavailable=true seconds=12.799853291595355 lateAccepted=Optional(false) pass=true\n",
+      "stderr": ""
+    }
+  ],
+  "rootReview": "Current production inspector/latch/gate/orientation matches retained Source.swift after removing exactly one declared hold/late/return insertion. Retained source/driver/executable hashes match. Raw two process results inspected.",
+  "compileEvidence": {
+    "exitCode": 0,
+    "basis": "Backend tool transcript records command/exit and expected unreachable-code warning; raw compiler stdout/stderr not retained. No historical compiler rerun was made.",
+    "commandShape": "xcrun swiftc -swift-version5 -parse-as-library Source.swift main.swift -o probe, with dedicated Swift/Clang module caches"
+  },
+  "evidenceLimits": [
+    "No separate pre-run protocol or source freeze retained; main.swift encodes assertions. Do not call this an independently frozen protocol.",
+    "Python subprocess controller was captured in task transcript but was not saved before execution.",
+    "Source/main/executable and two process results retained; reported compile differs in retention strength.",
+    "Return after0.103s from inspection start follows cancellation requested at0.100s; not a separately measured cancel-to-return interval.",
+    "Deadline result at12.800s does not establish a strict12.000s wall bound; main queue schedules timer.",
+    "Late gate resume false and normal process exits do not prove OS Vision compute stopped.",
+    "No actual Vision OCR perform, UIImage/iOS, PhotosUI, app UI or network-isolated offline behavior was tested."
+  ],
+  "nextGate": "Actual supported app-host label OCR/error/cancellation interactions remain open; keep Catalyst actual-OCR first-case failure separate."
+}

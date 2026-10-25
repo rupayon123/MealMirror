@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "One frozen Mac Catalyst command-line attempt through the actual label inspector using real UIKit and Vision; first synthetic OCR case failed. No app source fix or OCR acceptance follows.",
+  "baselineMain": "19c9a922e32a38a61cd8e69f530f1d231433be11",
+  "productionSourceChanged": false,
+  "protocol": {
+    "engineSHA256": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+    "modelsSHA256": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e",
+    "extractedInspectorGatesOrientationSHA256": "2d0df4836a6a7b90e1efc60e217f77a48d834f3f21f556fc5e62fe5faa9205ef",
+    "extractedStatusSHA256": "230191365b143ee315151ff84f54f6148fc7d6506e312fb71c53e6a85723be92",
+    "fixtureSHA256": "6bb029163a814adce10c48d265817e9ab027b290510c6964d5e444d4befc7e26",
+    "assembledSHA256": "3fb9d57231183e6303ab0f806a98763261568936056c6de417751134d7a28710",
+    "sourceTransformation": "None within extracted inspector/latch/gate/orientation and actual LabelTextStatus; imports/test fixture appended. Real UIKit and Vision.",
+    "cases": [
+      "label",
+      "blank",
+      "longLabel",
+      "noPixelBacking"
+    ],
+    "expectedChecks": 9,
+    "criteria": "Exact three synthetic label lines; blank read[]; exactfirst24 of28 generated lines; missingCGImage unavailable. Stop on first failure; later cases explicitly unrun.",
+    "boundsSeconds": {
+      "compile": 90,
+      "execute": 70,
+      "watchdog": 60
+    },
+    "productionTimerSeconds": 12,
+    "retries": 0,
+    "platform": "Mac Catalyst27.0 SDK minimum17.0; no UIApplication host, Simulator/device/network isolation or app journey proof."
+  },
+  "outcome": {
+    "appHosted": false,
+    "cases": [
+      {
+        "checks": [
+          {
+            "id": "read",
+            "passed": false
+          },
+          {
+            "id": "exactText",
+            "passed": false
+          }
+        ],
+        "id": "label",
+        "lines": [],
+        "passed": false,
+        "seconds": 12.797912041656673,
+        "status": "unavailable"
+      }
+    ],
+    "failed": true,
+    "macCatalyst": true,
+    "unrun": [
+      "blank",
+      "longLabel",
+      "noPixelBacking"
+    ]
+  },
+  "compile": {
+    "exitCode": 0,
+    "seconds": 12.826193542
+  },
+  "execution": {
+    "exitCode": 1,
+    "seconds": 14.025503792000002
+  },
+  "bindings": {
+    "sourceSHA256": "3fb9d57231183e6303ab0f806a98763261568936056c6de417751134d7a28710",
+    "runnerSHA256": "5cb9670415bb3f4ec15f6dfaf42418439bfaa1596e8de3cbe7c13e7168de37a8",
+    "binarySHA256": "bf7eca4160fdef774349b18fb90b8b4a9978776a6753b90fe59373c60de76d89",
+    "syntheticLabelPNGSHA256": "2956f196c17cf7922e91c905217dd03cbeb08599ef4b4fad4cc8c2b444c32a1e",
+    "compileStderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "executionStderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "fixtureInspection": "Root viewed generated1100x320 PNG; the three predeclared lines are visibly rendered. Synthetic37g is text test content, not a measured meal or dosing recommendation.",
+  "interpretation": [
+    "Two assertions failed on the first case:read status and exact three lines. Blank/long/no-pixel cases explicitly unrun.",
+    "The12.798s unavailable result is compatible with the configured12s fallback, but no per-stage/terminal-reason instrumentation was included. It does not identify timeout versus another unavailable path or underlying cause.",
+    "Empty compiler/runtime stderr does not prove actual VNImageRequestHandler entry, callback, OCR success, framework compatibility or OS compute release.",
+    "Mac Catalyst command-line context differs from UIKit app-host/iOS/physical devices. Prior build13 actual Simulator OCR evidence remains separately scoped.",
+    "No retry, source/prompt change, timer relaxation, nutrition inference, Simulator operation or public app distribution occurred."
+  ],
+  "nextAction": "Do not rerun unchanged. Any follow-up needs separately scoped provider-stage/terminal-reason instrumentation or supported app-host runtime; keep actual OCR/UI/physical gates open.",
+  "candidate18Unchanged": {
+    "sha256": "146527309fdfad75faf2ae9e114cbe5ac7e6c01d5bc2114cf505f359c63061ae",
+    "bytes": 12207404
+  },
+  "references": [
+    "https://developer.apple.com/documentation/vision/vnrecognizetextrequest",
+    "https://developer.apple.com/documentation/uikit/mac-catalyst"
+  ],
+  "independentReview": {
+    "result": "Evidence fidelity confirmed, with no OCR pass.",
+    "scope": "Read-only exact extraction/status/source/fixture/assembled hashes, readable fixture PNG and terminal failed result/unrun cases independently inspected; no repeat workload."
+  }
+}

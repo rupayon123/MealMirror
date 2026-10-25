@@ -44,6 +44,12 @@ The installed seven-file inventory matched, but the sole console launch attempt 
 
 The `Data Migration Failed` boot warning and terminate warning remain recorded; neither is established as the startup failure cause. Owned-QA shutdown was recorded, data was retained, and no retry occurred. Any follow-up must be separately scoped before execution. No source fix, threshold relaxation, trained head, recognition improvement or production change follows.
 
+## Native Mac platform comparison: initialization failed
+
+A [separately frozen native macOS comparison](native-mac-platform-20261025.json) retained the original two procedural PNGs, A1–B–A2 order, revision-2 CIImage/context route, CPU discovery/readback and numeric criteria. Only the native host, explicit input/output locations and environment metadata were adapted. Compile passed. The sole process exited by SIGABRT after 0.969 seconds during A1 request-handler initialization; the stack reached Vision image-option conversion with an uncaught nil-object dictionary exception. No vector returned, so B/A2 and the numerical comparison remained unrun. The checkpoint named perform was persisted **before handler construction** and does not prove perform or CPU dispatch. Original freeze/output hashes were independently checked; no retry occurred.
+
+This identifies a failing initialization boundary on this Mac, not the cause of the earlier Simulator repeat failure. Review documented input/options support before any new route diagnostic. No gate, training or production recognition change follows.
+
 ## Work after feature feasibility
 
 1. Establish lawful training, calibration and untouched evaluation partitions before collection or training. Group by source, scene and photographer so crops and related images cannot cross splits. Include varied meals, snacks/drinks, packaging, empty containers, imitations, plants, pets and ambiguous/poor-quality photos. Retain label disagreements; qualified independent human review is needed for acceptance claims.

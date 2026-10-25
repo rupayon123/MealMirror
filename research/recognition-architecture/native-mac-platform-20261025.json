@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "One separately frozen native macOS platform comparison of the earlier direct Vision procedural A1-B-A2 feature diagnostic. First handler initialization failed; no numerical comparison, food evaluation or adoption.",
+  "productionSourceChanged": false,
+  "candidate18Unchanged": true,
+  "preRunReview": "Root reviewed adaptation diff, source route and criteria and verified freeze bindings before authorizing the sole inference attempt.",
+  "bindings": {
+    "ADAPTATION.diff": "27bb2f299855f2c9064dac62694d136faa40b2b3a4875afe9f6cbd4749505f92",
+    "NativeMacVisionProbe.swift": "12e52d8de51e9320c3abd455c42f326bf1593a81556ba12a1d8ed2404af6685b",
+    "Original.swift": "c5be353c2d15d408160a476836b14560167139eede4bdcf35b0599429946d41d",
+    "fixtures/F01.png": "aa0718f05333bfb35a1f5accf9e49d9e6a1d6ba6a2aa33c0cf43f0786db1d890",
+    "fixtures/F02.png": "662eda49e795ad974be204a46f231a9e63bedff074fff80d4c4ecec8b6f6a4a5",
+    "protocolSHA256": "96f8fdbf6f00bfdc0d1d4079bd14415517483f9f36258d932071374213c10777",
+    "binarySHA256": "40e413d841b7d2ba3c81cc03dc60ea67a6148106d4c761b7536b29ef824b0f91",
+    "reportSHA256": "2cb2a5ce4b78f347e1410353ba6a4cdf4596507c5f32daaef74c83224b34f326",
+    "stderrSHA256": "eee3b61ac7c2bf9eba9d3f419728c14d1468ab44d1f3abf4fa996852cc7c3635"
+  },
+  "protocol": {
+    "bounds": {
+      "attemptsPerCase": 1,
+      "automaticRetries": 0,
+      "hostRunSeconds": 60,
+      "maximumPerforms": 3,
+      "maximumSupportQueries": 3,
+      "wholeBatchAppSeconds": 45
+    },
+    "claims": "Procedural geometry feature mechanics on this native Mac only; no food, recognition, model equivalence, CPU-kernel causality, iOS, physical device or production acceptance.",
+    "criteria": {
+      "acrossA1B": {
+        "l2AtLeast": 0.001,
+        "maxAbsAtLeast": 0.0001
+      },
+      "allFinite": true,
+      "bytes": 3072,
+      "count": 768,
+      "normGreaterThan": 1e-08,
+      "repeatA1A2": {
+        "byteEqualityRequired": false,
+        "l2AtMost": 0.0001,
+        "maxAbsAtMost": 1e-05
+      },
+      "spanGreaterThan": 1e-06,
+      "type": "Float32"
+    },
+    "inferenceRoute": "Unchanged ImageIO CGImage to CIImage explicit sRGB360, fresh default CIContext, VNGenerateImageFeaturePrintRequest revision2, centerCrop, up, full ROI, request-specific returned typed CPU at every exposed stage with readback, one perform maximum per case.",
+    "orderedCases": [
+      {
+        "caseID": "A1",
+        "fixture": "F01.png"
+      },
+      {
+        "caseID": "B",
+        "fixture": "F02.png"
+      },
+      {
+        "caseID": "A2",
+        "fixture": "F01.png"
+      }
+    ],
+    "stops": "First hash/decode/config/support/request/descriptor/IO/numeric error; preserve report checkpoints and unrun cases. No retries, fallback, threshold changes or training."
+  },
+  "platformAdaptation": "Removed UIKit/Simulator app entry, validated macOS27, passed explicit isolated fixture/output URLs, and used native host metadata. Original request/input/CPU-selection/readback/numerical tests retained; removed redundant nonisolated annotations. Full diff retained privately.",
+  "compile": {
+    "exit": 0,
+    "timedOut": false,
+    "hostSeconds": 44.455,
+    "sourceSHA256": "12e52d8de51e9320c3abd455c42f326bf1593a81556ba12a1d8ed2404af6685b"
+  },
+  "host": {
+    "exit": -6,
+    "timedOut": false,
+    "hostSeconds": 0.969,
+    "processCommunicateReturned": true
+  },
+  "outcome": {
+    "activeCaseID": "A1",
+    "automaticRetries": 0,
+    "binaryFilesPresent": {
+      "A1.bin": false,
+      "A2.bin": false,
+      "B.bin": false
+    },
+    "exception": "NSInvalidArgumentException at Vision VNImageBuffer visionCoreImageBufferOptionsFromOptions, nil-object dictionary insertion; specific platform cause unproved.",
+    "hostExit": -6,
+    "hostSeconds": 0.969,
+    "hostTimedOut": false,
+    "importantCheckpointLimit": "performEntryCheckpoints was persisted immediately before handler construction. The uncaught Objective-C exception occurred in VNImageRequestHandler(ciImage:orientation:options:) initialization; it does not prove handler.perform ran.",
+    "nonClaims": [
+      "No A1 feature returned, no B/A2 request, no repeat comparison.",
+      "No proof of CPU dispatch or a usable Mac feature route.",
+      "The Mac exception does not explain the earlier Simulator numeric failure."
+    ],
+    "observationCount": 0,
+    "performCallReturned": false,
+    "performEntryCheckpoints": 1,
+    "phase": "runningCase",
+    "processCleanup": "Child process terminated by SIGABRT and subprocess communicate returned. No persistent helper was started.",
+    "returnedVectors": 0,
+    "schemaVersion": 1,
+    "status": "TERMINAL_FIRST_FAILURE_NO_RETRY",
+    "supportDiscoveryEntryCheckpoints": 1,
+    "unrunCaseIDs": [
+      "B",
+      "A2"
+    ]
+  },
+  "rootIndependentInspection": "Recomputed frozen source/diff/input/protocol and executed binary/report/stderr hashes; inspected first-failure host result, per-case report and raw exception stack. No rerun.",
+  "limits": [
+    "Report checkpoint is persisted before handler construction; it proves entry to that source boundary, not handler.perform or OS CPU dispatch.",
+    "The stack reaches VNImageRequestHandler CIImage initialization and Vision image-option conversion before uncaught NSInvalidArgumentException/SIGABRT. Specific cause unproved.",
+    "Support discovery/CPU readback passed for A1; no feature observation or A1 vector file was returned. B/A2 remained unrun.",
+    "This Mac failure does not explain the distinct earlier Simulator repeat failure or prove that Vision features are unusable on iPhone.",
+    "No gate/head training, production replacement, arbitrary-meal/food/clinical/accuracy claim or public binary distribution follows."
+  ],
+  "nextAction": "Review documented/local-SDK input/options support before any separately frozen route diagnostic; no unchanged retry or relaxed numeric criteria.",
+  "references": [
+    "https://developer.apple.com/documentation/vision/vnimageoption",
+    "https://developer.apple.com/documentation/vision/vnimagerequesthandler"
+  ],
+  "priorEvidence": "direct-vision-multi-20261025.json"
+}
