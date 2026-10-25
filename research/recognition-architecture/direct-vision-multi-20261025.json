@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "curatedAtUTC": "2026-10-25T01:33:57.938555+00:00",
+  "scope": "One separately frozen A1\u2013B\u2013A2 direct Vision diagnostic on two procedural images in iOS 27.1 Simulator. The fixed repeat criterion failed. This is neither a production meal-analysis run nor food, training or adoption acceptance.",
+  "production": {
+    "appVersion": "1.0 (9)",
+    "candidateSHA256": "a4ceb44fb3e3f1255768400035fb67539d632a636d99e19921f411fdc3d0e1e8",
+    "candidateBytes": 12203935,
+    "LocalPhotoAISHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "MealAnalysisEngineSHA256": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+    "sourceOrZIPChangedByThisExperiment": false,
+    "gateAdopted": false
+  },
+  "lineage": {
+    "priorOneCallReceipt": "direct-vision-cpu-20261024.json",
+    "scope": "F01 has earlier component and direct Vision observations. This batch added one predeclared A1/F01, B/F02, A2/F01 sequence, not one F01 request across the whole investigation. A2 is a planned repeat, not an automatic retry."
+  },
+  "fixedInputs": {
+    "F01": {
+      "sha256": "aa0718f05333bfb35a1f5accf9e49d9e6a1d6ba6a2aa33c0cf43f0786db1d890",
+      "bytes": 1387,
+      "dimensions": [
+        360,
+        360
+      ],
+      "description": "Generated colored quadrants."
+    },
+    "F02": {
+      "sha256": "662eda49e795ad974be204a46f231a9e63bedff074fff80d4c4ecec8b6f6a4a5",
+      "bytes": 2218,
+      "dimensions": [
+        360,
+        360
+      ],
+      "description": "Generated alternating diagonal grayscale bands."
+    }
+  },
+  "protocol": {
+    "frozenBeforeRequests": true,
+    "sourceFreezeReferenceCount": 9,
+    "priorPinnedReferenceCount": 9,
+    "caseOrder": [
+      {
+        "caseID": "A1",
+        "inputID": "F01"
+      },
+      {
+        "caseID": "B",
+        "inputID": "F02"
+      },
+      {
+        "caseID": "A2",
+        "inputID": "F01"
+      }
+    ],
+    "inputRoute": "Each case reloads and hashes its fixed PNG, decodes with ImageIO and creates a CIImage with explicit sRGB. Upright orientation, centerCrop and full normalized region of interest are retained.",
+    "renderingContext": "A fresh default CIContext is passed through VNImageOption.ciContext for each case. No software-renderer option or CGImage handler substitution.",
+    "computeRoute": "Fresh revision-2 requests query request-specific exposed stages, require a returned typed CPU for every stage, select it and verify readback before one perform. No default or alternative-device fallback.",
+    "wholeBatchAppWatchdogSeconds": 45,
+    "hostConsoleBoundSeconds": 75,
+    "maximumOneLaunch": true,
+    "maximumSupportQueries": 3,
+    "maximumPerforms": 3,
+    "automaticRetries": 0,
+    "criteria": {
+      "expectedFloat32Count": 768,
+      "expectedBytes": 3072,
+      "allFiniteRequired": true,
+      "minimumNormExclusive": 1e-08,
+      "minimumSpanExclusive": 1e-06,
+      "acrossA1B": {
+        "maxAbsMinimumInclusive": 0.0001,
+        "l2MinimumInclusive": 0.001
+      },
+      "repeatA1A2": {
+        "maxAbsMaximumInclusive": 1e-05,
+        "l2MaximumInclusive": 0.0001,
+        "exactByteEqualityRequired": false
+      }
+    },
+    "criteriaMeaning": "These heuristic diagnostic bounds were retained unchanged and frozen before this batch; they are not Apple guarantees, calibrated confidence or semantic thresholds."
+  },
+  "actual": {
+    "compileExit": 0,
+    "builtAndInstalledFiles": 7,
+    "frozenSourceFilesUnchanged": true,
+    "oneRecordedLaunch": true,
+    "supportDiscoveryEntryCheckpoints": 3,
+    "performEntryCheckpoints": 3,
+    "automaticRetries": 0,
+    "unrunCaseIDs": [],
+    "workerIsMainThread": false,
+    "requestedConfiguredAndObservationRevision": 2,
+    "eachCaseExposedStages": [
+      {
+        "stage": "VNComputeStageMain",
+        "reportedDeviceKinds": [
+          "gpu",
+          "cpu"
+        ],
+        "selectedReturnedDeviceKind": "cpu",
+        "assignmentReadbackMatched": true
+      }
+    ],
+    "assignmentIsNotKernelDispatchProof": true,
+    "cases": [
+      {
+        "caseID": "A1",
+        "inputID": "F01",
+        "phase": "observationReturned",
+        "rowExit": 0,
+        "observationCount": 1,
+        "elementType": "IEEE 754 Float32",
+        "elementCount": 768,
+        "dataBytes": 3072,
+        "dataSHA256": "fdd4b8a0f11ae4261303d990a4b6f33afc280b81949493f78575d2ed7e99764d",
+        "allScalarsFinite": true,
+        "nonconstantWithinVector": true,
+        "norm": 1.0000000152970654,
+        "span": 0.6845185458660126,
+        "perVectorCriteriaPassed": true
+      },
+      {
+        "caseID": "B",
+        "inputID": "F02",
+        "phase": "observationReturned",
+        "rowExit": 0,
+        "observationCount": 1,
+        "elementType": "IEEE 754 Float32",
+        "elementCount": 768,
+        "dataBytes": 3072,
+        "dataSHA256": "b10827edba0eb3f43f54a6c7f79b45b03b80045cab522125149269e25027edc5",
+        "allScalarsFinite": true,
+        "nonconstantWithinVector": true,
+        "norm": 1.0000000079289368,
+        "span": 0.6845110207796097,
+        "perVectorCriteriaPassed": true
+      },
+      {
+        "caseID": "A2",
+        "inputID": "F01",
+        "phase": "observationReturned",
+        "rowExit": 0,
+        "observationCount": 1,
+        "elementType": "IEEE 754 Float32",
+        "elementCount": 768,
+        "dataBytes": 3072,
+        "dataSHA256": "b10827edba0eb3f43f54a6c7f79b45b03b80045cab522125149269e25027edc5",
+        "allScalarsFinite": true,
+        "nonconstantWithinVector": true,
+        "norm": 1.0000000079289368,
+        "span": 0.6845110207796097,
+        "perVectorCriteriaPassed": true
+      }
+    ],
+    "acrossA1B": {
+      "maxAbs": 0.0003711208701133728,
+      "l2": 0.0017806017870063094,
+      "passed": true
+    },
+    "repeatA1A2": {
+      "maxAbs": 0.0003711208701133728,
+      "l2": 0.0017806017870063094,
+      "binaryIdentical": false,
+      "passed": false
+    },
+    "BAndA2BinaryIdentical": true,
+    "A1MatchesPriorSingleF01Binary": true,
+    "batchPhase": "stopped",
+    "localNumericCriterionFailure": "identicalRepeatCriterion",
+    "failedCaseID": "A2",
+    "appReportExit": 6,
+    "consoleCommandRecordedExit": 0,
+    "controllerRecordedExit": 0,
+    "numericDiagnosticBatchPassed": false,
+    "diagnosticObservationComplete": true,
+    "hostTimedOut": false,
+    "bootStatusExit": 0,
+    "bootStatusLoggedDataMigrationFailed": true,
+    "cleanupTerminateExit": 3,
+    "cleanupTerminateMeaning": "The command reported nothing to terminate; it did not establish OS compute release.",
+    "cleanupShutdownExit": 0,
+    "ownedQARecordedShutdown": true,
+    "reportMarkerAndAllThreeBinaryCopiesMatchedContainer": true,
+    "dataPreserved": true,
+    "FoundationModelsOrFoodNamingCalls": 0,
+    "trainingCalls": 0
+  },
+  "independentReview": {
+    "checkedCount": 78,
+    "allMechanicalChecksPassed": true,
+    "blockers": [],
+    "sha256": "3c0c934b09711d2974f3054a7f4e9e611d6f728314db6166adae8647bf2c2363",
+    "method": "Filesystem hashes, frozen and built/installed inventories, approval/controller identity, saved cleanup records and retained-container copies; independent Float32 decoding and all 2,304 JSON-to-Float32 byte roundtrips. No controller import, API, rerun or Simulator action by the reviewer.",
+    "meaning": "Consistent evidence and failed numerical criterion, not a numerical or recognition pass."
+  },
+  "interpretation": [
+    "All three configured requests returned one finite, nonconstant 768-value vector. The A1-versus-B differences exceeded the frozen heuristic floors, but the identical F01 repeat exceeded both fixed repeat ceilings and stopped the batch.",
+    "B and A2 have exactly the same 3,072 observation bytes despite their different frozen PNG inputs. A1 differs from both and matches the earlier single F01 observation. These are recorded identities; they do not establish useful input sensitivity, semantic separation or a general reproducibility property.",
+    "Static review found no concrete mistake in the fixed case/input mapping, per-case reload or separate binary names. Source-input hash checks do not establish which rendered pixels Vision consumed. The cause of the observed B/A2 equality and repeat difference remains unknown.",
+    "App-report exit 6 records the failed repeat criterion. Console and controller exits zero mean the bounded launch was observed and its diagnostic failure was retained and classified; they do not override that failure.",
+    "The bootstatus command exited zero while logging Data Migration Failed. That warning remains; recorded shutdown and copied evidence do not establish environment health or OS compute release.",
+    "No threshold was relaxed, no request was retried and no head was trained or adopted. This does not establish a causal CPU or Espresso explanation, component MLShapedArray equivalence, food/name accuracy, calibrated abstention, physical-device, network-isolated offline, UI, performance, nutrition, clinical or submission readiness."
+  ],
+  "nextInvestigation": {
+    "status": "Follow-up recorded separately in ci-input-witness-20261025.json: compiled, but the one launch attempt returned no process handle and retained no app outputs. Render checkpoints remain unobserved.",
+    "proposal": "Resolve the separate witness startup failure before interpreting decoded/rendered input pixels or making further feature requests. Preserve this failed repeat and its original numerical bounds. A render-only witness cannot by itself prove which pixels the prior Vision requests consumed.",
+    "notApproved": "No tolerance relaxation, retry of this batch, food classifier training, gate adoption or production processing change."
+  },
+  "privacy": "No fixture pixels, scalar arrays, observation binaries, raw errors or memory addresses, private absolute paths, account/device identifiers or model weights are copied into the repository. Local artifacts remain outside it.",
+  "localArtifactReferencesBase": "../../../../outputs/recognition-architecture-20261025/direct-vision-multi-v1/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. Paths and hashes pin selected local evidence; raw data and binaries are not redistributed.",
+  "localArtifactReferences": [
+    {
+      "path": "PREPARATION-FREEZE.json",
+      "sha256": "15d4ea732c5c7dd0dea1a8f3670e238428c9d1841fed245d5eb18e4356454245"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "eff2826e27ca52cad6c69c9166a12640eeb263bc9e6487b32bbb093647357934"
+    },
+    {
+      "path": "SOURCE-API.json",
+      "sha256": "6c86ebe490ca527c8d7dae04ec55ff292d52b723736d084b3ddbc50766c03f8f"
+    },
+    {
+      "path": "FIXTURES.json",
+      "sha256": "b8e12a92275ce09c69e007d293c745538d866ee07e19dc91eed0446240deb68a"
+    },
+    {
+      "path": "DirectVisionMultiProbe.swiftpm/DirectVisionMultiProbe.swift",
+      "sha256": "c5be353c2d15d408160a476836b14560167139eede4bdcf35b0599429946d41d"
+    },
+    {
+      "path": "independent-review.json",
+      "sha256": "edb633c2b37606ba50031f95476e424929643452237901496dfc330db9ef0dc6"
+    },
+    {
+      "path": "root-source-review.json",
+      "sha256": "e802153308ec5feebf175ff7793951590f0e0f6c72e2d26eb19015de568c9b67"
+    },
+    {
+      "path": "build-v1/build-result.json",
+      "sha256": "514d6466fc1f9c8c4fb0a6bde932157b39dcf3005647f01601de5e71b2e7b7f0"
+    },
+    {
+      "path": "build-v1/built-verification.json",
+      "sha256": "2b1c03560aacbdcbf694fede6d0cf4fe7699b209a382eadb2e2862f8b210889a"
+    },
+    {
+      "path": "execution-v1/execute-once.py",
+      "sha256": "979e9e6807729e5e7895fc89b0881f69b3a50e4f24d0fed718ef1bb8f7b1df1a"
+    },
+    {
+      "path": "execution-v1/approval.json",
+      "sha256": "ffae87815ab23823488d94539c4afab33af599fc2e28d13bd6b91de0e0cc44ea"
+    },
+    {
+      "path": "execution-v1/host-attempt.json",
+      "sha256": "c968ed4aa091c75c731b334162d35b36d362603f4a38a5674146fad7b8a106ef"
+    },
+    {
+      "path": "execution-v1/preflight.json",
+      "sha256": "66569108e4b7d43ceece0ebfde8496e58421b309cdbacda2d2ee9f1e5d9a83ea"
+    },
+    {
+      "path": "execution-v1/launch-intent.json",
+      "sha256": "a132cc80166c87ac26e03627118c8ef59660e97d2b7450df150b967926fa737c"
+    },
+    {
+      "path": "execution-v1/direct-vision-multi.json",
+      "sha256": "39ce3f5fdfbc0b2bb04398fbcec28384e8fd4424871a1a8fce28507120e93d4a"
+    },
+    {
+      "path": "execution-v1/diagnostic-outcome.json",
+      "sha256": "fa8992be5e2f01ce4f168b07ac34f1e44694cd0507b6294ec52209222fa8c2ff"
+    },
+    {
+      "path": "execution-v1/controller-result.json",
+      "sha256": "9d33dd2aec4149aa45b00059fcce8018b1a573beb66b8162ba684fec3512e183"
+    },
+    {
+      "path": "execution-v1/report-copy.json",
+      "sha256": "97c2497e9f93c019b98b82f1d24f936942cb51047704cd144271028fd5381cbd"
+    },
+    {
+      "path": "execution-v1/bootstatus.json",
+      "sha256": "c74c26a596c1bbc030ba333e4ab52b261ed324aca22c986b66c48766c8994244"
+    },
+    {
+      "path": "execution-v1/cleanup-terminate.json",
+      "sha256": "12479164c9783f8e94ca9b0b85ea2caf38e8c89055e527cc59ff4ca113e983c8"
+    },
+    {
+      "path": "execution-v1/cleanup-shutdown.json",
+      "sha256": "6b8fb336cbfffbe4b33df140651570fac19c7adb2dd4017d1bbf0e62f1836159"
+    },
+    {
+      "path": "execution-v1/cleanup-state.json",
+      "sha256": "315cda405280b318df40b0fbcc20b56ea04b5ab0428301a38f55a452aec8f822"
+    },
+    {
+      "path": "execution-v1/independent-result-review.json",
+      "sha256": "3c0c934b09711d2974f3054a7f4e9e611d6f728314db6166adae8647bf2c2363"
+    }
+  ]
+}

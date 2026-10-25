@@ -24,7 +24,25 @@ A [separately frozen one-call diagnostic](direct-vision-cpu-20261024.json) kept 
 
 The boot record still logged `Data Migration Failed`; the warning and retained evidence remain, and the owned QA Simulator was recorded shut down. Changing wrapper/device route is not a causal CPU-only comparison or proven Espresso bypass. Equal feature counts do not prove equivalence with component `MLShapedArray` representations. No training, food accuracy, physical-device, network-isolated offline or performance pass follows.
 
-The next proposed step is a **separately frozen multi-input and repeated-input diagnostic**, still unrun. It must declare criteria before execution and preserve support/stop gates. Cross-image variation, repeatability, lawful data, useful names and calibrated abstention remain open; no gate is adopted and the production app/ZIP are unchanged.
+That single observation was followed by the separately frozen diagnostic below. It did not approve training or a production change.
+
+## A–B–A diagnostic: repeat criterion failed
+
+The [three-case receipt](direct-vision-multi-20261025.json) records one fixed A1/F01, B/F02, A2/F01 sequence using two generated geometric images. All three revision-2 requests passed their returned-CPU selection/readback gates and returned one finite, nonconstant 768-value Float32 observation each. Independent review checked 78 evidence conditions and all 2,304 scalar byte roundtrips.
+
+**The numerical diagnostic failed.** A1 versus B exceeded the frozen difference floors, but A1 versus the identical-input A2 repeat had the same maximum absolute difference (`0.0003711208701133728`) and L2 distance (`0.0017806017870063094`), exceeding the repeat ceilings of `0.00001` and `0.0001`. B and A2 were byte-identical despite their different frozen PNG inputs; A1 matched the prior single F01 observation. Passing the across-input floors therefore does not establish useful input sensitivity or semantic separation. The underlying cause remains unknown; static input mapping and file hashes do not prove the rendered pixels Vision consumed.
+
+The app report stopped at `identicalRepeatCriterion` with exit 6. Console/controller exits zero mean the diagnostic failure was observed and retained, not a numeric pass. There was one launch, no automatic retry or timeout, and no tolerance change. The `Data Migration Failed` boot warning remains recorded; copied evidence and owned-QA shutdown do not establish environment health or OS compute release.
+
+A separately frozen CI-only input/render witness was subsequently attempted, as recorded below. No head is trained or adopted; useful names, calibrated abstention, representation equivalence, physical offline behavior and actual app integration remain open. The production source and ZIP are unchanged.
+
+## CI-only witness: startup attempt failed
+
+The [CI-only witness receipt](ci-input-witness-20261025.json) keeps the same F01/F02 bytes and planned ImageIO → CIImage sRGB → default-CIContext RGBA8 route. It contains no Vision, CoreML, FoundationModels or training call. The first Xcode build timed out; direct typechecking then passed with an empty diagnostic log, and an incremental second build succeeded with all eight frozen files unchanged. This does not explain the first build timeout.
+
+The installed seven-file inventory matched, but the sole console launch attempt returned `NSPOSIXErrorDomain` code 3 without an app process handle; the controller exited 1. No marker, app report or RGBA buffer was retained. **Actual app entry/exit and decode/render counts are unobserved, not zero.** The controller’s `launched=true` means it started the host launch command, not that the app entered its worker. There is no pixel comparison or explanation of the earlier feature-vector failure.
+
+The `Data Migration Failed` boot warning and terminate warning remain recorded; neither is established as the startup failure cause. Owned-QA shutdown was recorded, data was retained, and no retry occurred. Any follow-up must be separately scoped before execution. No source fix, threshold relaxation, trained head, recognition improvement or production change follows.
 
 ## Work after feature feasibility
 
@@ -35,4 +53,4 @@ The next proposed step is a **separately frozen multi-input and repeated-input d
 
 The current 12,203,935-byte ZIP leaves **12,796,065 bytes** under a conservative 25,000,000-byte planning cap. No new head, labels or notices have been exported or sized. An OS feature extractor avoids importing an encoder, but this alone does not prove offline availability. Apple's [published policy](https://developer.apple.com/swift-student-challenge/policy/) still identifies 2026; recheck 2027 rules before submission.
 
-The source research and SDK metadata are retained outside the repository under `outputs/recognition-architecture-20261024/`; public receipts pin selected evidence without redistributing datasets or model weights. No trained gate, improved recognition, worldwide accuracy, clinical validation or submission-readiness claim follows.
+The source research and SDK metadata are retained outside the repository under `outputs/recognition-architecture-20261024/` and `outputs/recognition-architecture-20261025/`; public receipts pin selected evidence without redistributing datasets or model weights. No trained gate, improved recognition, worldwide accuracy, clinical validation or submission-readiness claim follows.

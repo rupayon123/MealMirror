@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "status": "Two completed measurement-only global-size QA observations; no production font fix or accessibility acceptance.",
+  "source": {
+    "appVersion": "1.0 (9)",
+    "sourceCommit": "ca264d6",
+    "zipSHA256": "a4ceb44fb3e3f1255768400035fb67539d632a636d99e19921f411fdc3d0e1e8",
+    "zipBytes": 12203935,
+    "packagedFiles": 59,
+    "packagedSwiftFiles": 17,
+    "ContentViewSHA256": "b28eb2390c6b1883379978564b05e3439ce16a80c03f0ec42d49cb55e7d9e1d3",
+    "ReviewViewSHA256": "469479ab4482db76787062679f0701df92924e0d8c306fbc9a557955528ac1f7",
+    "completeViewPrefixPreserved": true,
+    "ThemeAndOriginalResourcesUnchanged": true,
+    "QAChanges": "Only appended measurement host, separate UIKit entry/identity and scene manifest; 55 original packaged files unchanged. No production source/theme/font/model/ZIP or distribution change."
+  },
+  "method": {
+    "runtime": "Separate owned iOS 27.1 Simulator; light appearance, real UIWindow/UIHostingController with actual ReviewView/ScrollView.",
+    "fixture": "Same constructed personal-photo analysis with one person-entered fixed 37 g component, empty clues and no processing. Not a form commit, photo analysis or nutritional measurement.",
+    "cases": [
+      {
+        "case": "global-Large",
+        "framebufferSHA256": "eadc44a3b6afebf3c61a4609f8a9eb355c2ba85aa32accfb4d74a13bc95d5f37",
+        "receiptSHA256": "40f81c3b21c92025de8573d12a26e90defc43f12514f6dd12af4eae22447943b",
+        "dimensionsPixels": [
+          1398,
+          2034
+        ],
+        "requestedGlobalSetting": "large",
+        "UIApplicationCurrentSceneWindowHostSwiftUICategoriesMatched": true,
+        "pixelScope": "Body, neutral meal heading, constructed 37 g, safety and Save visible; lower facts partial/offscreen."
+      },
+      {
+        "case": "global-accessibility5",
+        "framebufferSHA256": "4235c099852b26a6df406f2f2f013bff594e7e91154915831af57844522c0e74",
+        "receiptSHA256": "8739da32544fe851353a352c2d2c91c2c1ed76e16fa3e0e6bb2e3e0df305ea45",
+        "dimensionsPixels": [
+          1398,
+          2034
+        ],
+        "requestedGlobalSetting": "accessibility-extra-extra-extra-large",
+        "UIApplicationCurrentSceneWindowHostSwiftUICategoriesMatched": true,
+        "pixelScope": "Upper step/header/intro grows and wraps. Neutral meal heading, 37 g, safety, facts, decorative symbols and Save below initial viewport and unobserved."
+      }
+    ],
+    "globalSetting": "Original content_size large saved before any set. Actual global Large then accessibility5 set/read back with the QA stopped by controller protocol; no per-scene preferred-size override or SwiftUI font/dynamicType injection.",
+    "measurements": "UIApplication preferred/current UIKit/scene/window/host categories and SwiftUI witness; four registered custom font aliases; default versus explicit-host UIFontMetrics recipes at appearance, SwiftUI callback and receipt refresh.",
+    "metricBoundary": "Equivalent UIFont recipes beside unchanged Theme, not introspection of resolved SwiftUI Font point sizes or every production call context.",
+    "exactBuildAndInstalledInventory": "QA compile exit 0; all 128 frozen preparation members unchanged; 17 built app members and all 17 installed QA members match. Actual generated scene manifest permits multiple scenes despite authored false; no single-scene-disablement claim.",
+    "viewports": "Actual 466×678-point window at 3×, 1398×2034 native framebuffer; explicit display 1. No forced frame, input events, scrolling or alternate display capture.",
+    "actions": "One isolated install and two fixed single launches/captures. No Save/history/delete, model/OCR, photo picker or camera request."
+  },
+  "results": {
+    "registeredFontAliasesVerified": 4,
+    "pairedRecipeObservations": 18,
+    "recipeContexts": [
+      "host.viewDidAppear",
+      "SwiftUI environment callback",
+      "receipt refresh"
+    ],
+    "metricTable": [
+      {
+        "label": "brand.title1",
+        "LargePointSize": 29,
+        "accessibility5PointSize": 58,
+        "defaultEqualsExplicitHostInBothSettings": true
+      },
+      {
+        "label": "display.headline.english",
+        "LargePointSize": 16,
+        "accessibility5PointSize": 45,
+        "defaultEqualsExplicitHostInBothSettings": true
+      },
+      {
+        "label": "display.subheadline.english",
+        "LargePointSize": 15,
+        "accessibility5PointSize": 44,
+        "defaultEqualsExplicitHostInBothSettings": true
+      },
+      {
+        "label": "reading.body.regular",
+        "LargePointSize": 17,
+        "accessibility5PointSize": 48,
+        "defaultEqualsExplicitHostInBothSettings": true
+      },
+      {
+        "label": "reading.footnote.regular",
+        "LargePointSize": 13,
+        "accessibility5PointSize": 38,
+        "defaultEqualsExplicitHostInBothSettings": true
+      },
+      {
+        "label": "reading.caption1.semibold",
+        "LargePointSize": 13,
+        "accessibility5PointSize": 41,
+        "defaultEqualsExplicitHostInBothSettings": true
+      }
+    ],
+    "tableRepeatedAcrossAllThreeContexts": true,
+    "preferredSystemBodyPointSize": {
+      "LargeDefaultAndExplicitHost": 17,
+      "accessibility5DefaultAndExplicitHost": 53
+    },
+    "allObservedDefaultAndExplicitHostPointSizesEqual": true,
+    "allSixRecipesGrowAcrossTheTwoGlobalSettings": true,
+    "independentReadHashMetricChecksPassed": 60,
+    "checksAreNotGeneralFontOrAccessibilityAcceptance": true
+  },
+  "interpretation": {
+    "supported": "Matching actual global/native/SwiftUI categories produce growth in these custom-font recipes and visible upper custom text. The earlier per-scene-only frames cannot justify a production Theme font fix. This supports a limitation of that prior QA override.",
+    "notEstablished": "The lower Review ticket, safety/fact symbols and Save are below the global-AX5 initial viewport. No symbol-crowding cause, lower-layout/control reachability, all-font or general accessibility conclusion follows.",
+    "productionFixProposedOrApplied": false
+  },
+  "cleanup": {
+    "exactOriginalGlobalSetting": "large",
+    "restoreCommandExit": 0,
+    "restoreReadback": "large",
+    "restorationVerifiedBeforeShutdown": true,
+    "ownedShutdownExit": 0,
+    "QADataRetained": true,
+    "otherTargetsOrPhoneOperated": false,
+    "resetOrUninstall": false,
+    "OSComputeReleaseProof": false
+  },
+  "environmentCaveat": "The preceding owned-target bootstatus exited 0 but logged Data Migration Failed. Both later QA launches/captures completed; the warning is preserved without claiming healthy migration, production corruption or whole-environment reliability.",
+  "limits": [
+    "Two initial light QA frames are not the prior eight-case matrix, dark/Practice verification, actual production photo-to-history flow or physical-device run.",
+    "No scrolling, VoiceOver, lower controls, translations, all font styles/metrics, general contrast/accessibility, network isolation, performance, model accuracy or clinical validation.",
+    "Only hashes and curated metadata are public; no screenshot pixels, compiled binary, private device/account identifier or absolute user path is copied."
+  ],
+  "localArtifactReferencesBase": "../../../../outputs/review-heading-20261025/global-font-metrics-v1/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. Retained local artifacts are outside the public repository.",
+  "localArtifactReferences": [
+    {
+      "path": "PREPARATION-FREEZE.json",
+      "sha256": "6c75baae238eb2a90b0db1d44495c07f1f0e08bc99cedb1891a695711eec5bc4"
+    },
+    {
+      "path": "source-fidelity.json",
+      "sha256": "bc3ac559b80b850060df233da13080caaebc4bc00cd820e8561c24d059b64787"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "cdeb70f02a6505bf88ef614647b6f35ab6438ae28b27ecb7633d077500b7f4ac"
+    },
+    {
+      "path": "GlobalFontMetricsHost.swift.txt",
+      "sha256": "03df1f8a7d61534c4664cfadcc8e17d0ec364e763df5f6b886d4bd07169e98c6"
+    },
+    {
+      "path": "root-source-review.json",
+      "sha256": "97cb12fc82d74b46b25038e610edfebcd51b592aba7c43373e04b8d0c42550ad"
+    },
+    {
+      "path": "build-v1/build-result.json",
+      "sha256": "0c330bbe14e34f743ab8ed025ca216e7b12665d65d597399d45197709cd172fa"
+    },
+    {
+      "path": "build-v1/built-verification.json",
+      "sha256": "089e5ef48ca362682037f1b9cc4e7873629c41827dcebc5017907fccffefc99e"
+    },
+    {
+      "path": "boot-v1/bootstatus.json",
+      "sha256": "e070436945e8b664b26865033028d07dc23b14838a30e3b5dfc6af3a8e57cb94"
+    },
+    {
+      "path": "execution-v1/CONTROLLER-FREEZE.json",
+      "sha256": "e12307007c38891831aeaf87b624a38f407a00b090d552b9a7f7c107824b6bf2"
+    },
+    {
+      "path": "execution-v1/capture-once.py",
+      "sha256": "69b1feea29a87dfe4e9a42e0ace0ca31666b2fa15b8d8a4637c9cef633d4671e"
+    },
+    {
+      "path": "execution-v1/root-approval.json",
+      "sha256": "51d8c83a22415ef9d5efddd21373fa5202ecc13664b894a11694fd8517facf24"
+    },
+    {
+      "path": "execution-v1/run-v1/setup-complete.json",
+      "sha256": "2d75a9ff7ad5ee768f7baf436da70444e8563abe2bb23f629e889b15fa7dd3b1"
+    },
+    {
+      "path": "execution-v1/run-v1/original-global-size.json",
+      "sha256": "9d15a94f12d5c06313a15ae511226602a8dd3cc7b5d488bf8d0ac81da0877803"
+    },
+    {
+      "path": "execution-v1/run-v1/global-restore-complete.json",
+      "sha256": "9757002f4126b4e6bf0df6d34af48c737ccab5eb0f2a83efed43afbf4b14d59c"
+    },
+    {
+      "path": "execution-v1/run-v1/finish-restore-readback-command.json",
+      "sha256": "a9225c913727a30a92ac219d4999f86542754613cb0a2622e6e97ba29137c8f5"
+    },
+    {
+      "path": "execution-v1/run-v1/finish-shutdown-command.json",
+      "sha256": "f63a0a74a43e6a0b4f02043d6453fa561bdc07dc5a8e37b8dea713b5719a5115"
+    },
+    {
+      "path": "execution-v1/run-v1/finish-complete.json",
+      "sha256": "9ef2378e423773296452cf986b578b33bb87976e8fe838869460506b8e75d7c8"
+    },
+    {
+      "path": "execution-v1/run-v1/root-metrics-comparison.json",
+      "sha256": "75e1cf2d98109b2935a8776f16c062ff189bef8fa1dab956de9cf769d2abafed"
+    },
+    {
+      "path": "execution-v1/run-v1/cases/global-Large/font-metrics-receipt.json",
+      "sha256": "40f81c3b21c92025de8573d12a26e90defc43f12514f6dd12af4eae22447943b"
+    },
+    {
+      "path": "execution-v1/run-v1/cases/global-Large/capture-complete.json",
+      "sha256": "5b2b277e6ff2fd25462c7e398be51480aeb678de2fdbfd10344837d4e8d4e09f"
+    },
+    {
+      "path": "execution-v1/run-v1/cases/global-Large/pixel-review.json",
+      "sha256": "7209210a2f3984efc3ba3420e3acc69f701d69588da0d71a5ca8555253df1410"
+    },
+    {
+      "path": "execution-v1/run-v1/cases/global-Large/framebuffer.png",
+      "sha256": "eadc44a3b6afebf3c61a4609f8a9eb355c2ba85aa32accfb4d74a13bc95d5f37"
+    },
+    {
+      "path": "execution-v1/run-v1/cases/global-Large/display-match.json",
+      "sha256": "531350fb1ae238f60fec48dae6874762cb5dd7c621ea21a0b61a9ced9a361172"
+    },
+    {
+      "path": "execution-v1/run-v1/cases/global-accessibility5/font-metrics-receipt.json",
+      "sha256": "8739da32544fe851353a352c2d2c91c2c1ed76e16fa3e0e6bb2e3e0df305ea45"
+    },
+    {
+      "path": "execution-v1/run-v1/cases/global-accessibility5/capture-complete.json",
+      "sha256": "d2a5022bd72230d8f070ca05d2945de30403d32d8a0ee9f4828a01028c8e550f"
+    },
+    {
+      "path": "execution-v1/run-v1/cases/global-accessibility5/pixel-review.json",
+      "sha256": "d64d41e16e80fb95357efb6500e05514b614cf9c25a64894637da77bff0e2701"
+    },
+    {
+      "path": "execution-v1/run-v1/cases/global-accessibility5/framebuffer.png",
+      "sha256": "4235c099852b26a6df406f2f2f013bff594e7e91154915831af57844522c0e74"
+    },
+    {
+      "path": "execution-v1/run-v1/cases/global-accessibility5/display-match.json",
+      "sha256": "531350fb1ae238f60fec48dae6874762cb5dd7c621ea21a0b61a9ced9a361172"
+    },
+    {
+      "path": "execution-v1/run-v1/independent-result-review.json",
+      "sha256": "9fb81e337f2caec4e88d0de5fbd35f7d566edee1683d2a5250e02d6171c3c520"
+    },
+    {
+      "path": "execution-v1/run-v1/finish-restore-command.json",
+      "sha256": "f567137b882e2f595a4b452b52e4bf8b0a971713775ce517e00843a58d88f02a"
+    },
+    {
+      "path": "execution-v1/run-v1/root-final-outcome.json",
+      "sha256": "c46eb1f4a30fac44614099e9f8b782da24ee966186edc94ff9320c198630c34f"
+    }
+  ]
+}

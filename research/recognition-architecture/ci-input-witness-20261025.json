@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 1,
+  "curatedAtUTC": "2026-10-25T12:37:09.581904+00:00",
+  "scope": "One attempted startup of a separately frozen CI-only render witness in iOS 27.1 Simulator. The launch command failed without a returned app process handle; app entry, exit and render counts were unobserved. This is not a render result or a diagnosis of the prior feature-vector failure.",
+  "production": {
+    "appVersion": "1.0 (9)",
+    "sourceOrZIPChangedByThisExperiment": false,
+    "gateOrTrainingAdopted": false
+  },
+  "lineage": {
+    "priorResult": "direct-vision-multi-20261025.json",
+    "scope": "The prior A1–B–A2 repeat criterion remains failed. This separate witness was designed to inspect the chosen CI render route, not retry feature extraction or prove pixels consumed by earlier Vision requests."
+  },
+  "frozenWitness": {
+    "sourceFreezeReferenceCount": 8,
+    "priorContextReferenceCount": 4,
+    "sourceFreezeSHA256": "685ccc245660c9db953b0136783085bc3295c163447a485af7aa76a52964c421",
+    "protocolSHA256": "34a42ae5e026d0240356648bd103e58d89b2cf9af4311ea821bacb2a71373a76",
+    "orderedInputs": [
+      {
+        "ID": "F01",
+        "sha256": "aa0718f05333bfb35a1f5accf9e49d9e6a1d6ba6a2aa33c0cf43f0786db1d890",
+        "bytes": 1387,
+        "dimensions": [
+          360,
+          360
+        ],
+        "origin": "Retained generated colored quadrants."
+      },
+      {
+        "ID": "F02",
+        "sha256": "662eda49e795ad974be204a46f231a9e63bedff074fff80d4c4ecec8b6f6a4a5",
+        "bytes": 2218,
+        "dimensions": [
+          360,
+          360
+        ],
+        "origin": "Retained generated diagonal grayscale bands."
+      }
+    ],
+    "plannedRoute": "Both fixed file hashes checked before ImageIO decoding, then CIImage with explicit sRGB and a fresh default CIContext. At most one RGBA8 render per input, with fixed 360-square extent, channel ranges, predetermined corners and full-buffer comparison.",
+    "plannedMaximumDecodes": 2,
+    "plannedMaximumRenders": 2,
+    "wholeAppWatchdogSeconds": 45,
+    "hostConsoleBoundSeconds": 75,
+    "modelOrTrainingAPIsInFrozenSource": false,
+    "noRenderOrModelFallback": true,
+    "routeLimit": "Even a returned render witness would describe only this CI route, not necessarily Vision-consumed pixels or the cause of earlier feature behavior."
+  },
+  "compileHistory": {
+    "firstXcodeBuild": {
+      "exit": null,
+      "timedOut": true,
+      "boundObservationSeconds": 120.119442083,
+      "causeEstablished": false
+    },
+    "directTypecheck": {
+      "exit": 0,
+      "timedOut": false,
+      "emptyDiagnosticLog": true,
+      "runtimeExecuted": false
+    },
+    "secondXcodeBuild": {
+      "exit": 0,
+      "timedOut": false,
+      "incrementalSameFrozenSource": true,
+      "cleanBuild": false
+    },
+    "actualBuiltInventory": {
+      "files": 7,
+      "allEightFrozenFilesUnchanged": true,
+      "fixtureBytesMatchFrozen": true,
+      "version": "1.0 (1)",
+      "infoPlistSDK": "iphonesimulator27.1",
+      "minimumIOS": "17.0",
+      "receiptLocationNote": "The built inventory is retained in build-v1/built-verification.json and explicitly binds the successful build-v2 result, not the timed-out first result."
+    },
+    "interpretation": "Successful direct typechecking and the incremental build do not identify the first build timeout cause or prove app startup or rendering."
+  },
+  "controllerPreparation": {
+    "correctedBeforeAttempt": true,
+    "correction": "Guard each evidence-file copy and raw-report parse independently, retain failures, then attempt the final controller receipt. The earlier approval was preserved and replaced with an approval bound to the corrected controller before launch.",
+    "correctedControllerSHA256": "19003a5244f5a4e31dc0b9982027acf0ec75b4a95eb6d39a1dda5534cce3565e",
+    "finalApprovalSHA256": "c7c539781664628b3c4185b84bc4a1fec49a69d4f620ed0e878c80f044c873d0"
+  },
+  "actualAttempt": {
+    "installedInventoryMatched": true,
+    "outputFilesAbsentAtPreflight": true,
+    "oneRecordedConsoleLaunchAttempt": true,
+    "automaticRetries": 0,
+    "consoleCommandExit": 3,
+    "controllerExit": 1,
+    "hostTimedOut": false,
+    "sanitizedLaunchError": {
+      "domain": "NSPOSIXErrorDomain",
+      "code": 3,
+      "observation": "The launch command did not return an app process handle; it reported no such process."
+    },
+    "controllerLaunchedFlagMeaning": "The controller created the host console-command process. Its launched=true field is not evidence that the app entered its lifecycle or worker.",
+    "appStartEstablished": false,
+    "appReportExit": null,
+    "decodeEntryCheckpoints": null,
+    "renderEntryCheckpoints": null,
+    "renderReturnCount": null,
+    "appAndRenderObservationStatus": "Unobserved; no marker, app report or RGBA buffer was retained. Absence is not an observed zero count or proof that no app code ran.",
+    "copiedEvidenceFiles": [],
+    "copyErrors": [],
+    "dataContainerRetained": true,
+    "bootStatusExit": 0,
+    "bootStatusLoggedDataMigrationFailed": true,
+    "cleanupTerminateExit": 3,
+    "cleanupTerminateObservation": "Nothing to terminate was reported.",
+    "cleanupShutdownExit": 0,
+    "ownedQARecordedFinalState": "Shutdown",
+    "OSComputeReleaseEstablished": false
+  },
+  "independentReview": {
+    "sha256": "326a925f997852982594c9ddddceeb4daafa2bc02f1038b29c1067dd214a2248",
+    "blockers": [],
+    "method": "Read-only local source/freeze/build/controller/approval and retained execution-record verification. No controller import, compile, launch, render, model or Simulator action by the reviewer.",
+    "meaning": "Evidence consistency only. No successful app start, pixel observation or cause/fix is inferred.",
+    "checkedCount": 30,
+    "sourceLimit": "Current built files were independently hashed. Installed inventory equality and post-attempt output absence are retained controller observations, not a new independent read of Simulator containers."
+  },
+  "interpretation": [
+    "The fixed witness compiled incrementally and its installed inventory matched, but its sole recorded launch attempt returned a console error. No actual app exit or decode/render checkpoints were observed.",
+    "No rendered-buffer comparison is available. This attempt cannot explain B/A2 feature equality, the failed F01 repeat, a CPU/Espresso mechanism, source incompatibility or a rendering defect.",
+    "The Data Migration Failed boot warning and terminate warning remain recorded. Neither is established as the launch failure cause. Recorded owned-QA shutdown and retained data do not prove OS compute release or environment health.",
+    "The source contains no Vision, CoreML, FoundationModels or training route. No feature request was part of this witness, and no prior numerical bound was relaxed. There was no automatic retry or production source/ZIP change.",
+    "No food/name/amount/clinical, learned-head, calibrated-abstention, physical-device, network-isolated offline, actual production UI, performance or submission-readiness claim follows."
+  ],
+  "nextStep": {
+    "status": "No rerun authorized by this receipt.",
+    "direction": "Resolve startup observability through a separately scoped investigation before claiming rendered pixel evidence. Preserve this failed attempt, the prior numerical failure and unchanged bounds; any later execution requires a new explicit protocol/approval."
+  },
+  "privacy": "No pixels, RGBA buffers, raw private error details, absolute paths, account/device identifiers or binaries are copied into the repository. Only sanitized observations and hashes of selected external evidence are retained here.",
+  "localArtifactReferencesBase": "../../../../outputs/recognition-architecture-20261025/ci-input-witness-v1/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. References identify local evidence and do not redistribute its raw contents.",
+  "localArtifactReferences": [
+    {
+      "path": "PREPARATION-FREEZE.json",
+      "sha256": "685ccc245660c9db953b0136783085bc3295c163447a485af7aa76a52964c421"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "34a42ae5e026d0240356648bd103e58d89b2cf9af4311ea821bacb2a71373a76"
+    },
+    {
+      "path": "FIXTURES.json",
+      "sha256": "fa563203b58dd534abcb85bd75724b70fec013726cf69c11d8d4012ed2e817d7"
+    },
+    {
+      "path": "root-source-review.json",
+      "sha256": "d052a13ae387a842fe9a5913b5c7f5b56477bddb648d7a02d9bc7db18e54571d"
+    },
+    {
+      "path": "build-v1/approval.json",
+      "sha256": "f7b04efaccdfe7825f4dd7673fa69d7b6da4e9572014f0fbffe6a35cb6b6306e"
+    },
+    {
+      "path": "build-v1/build-result.json",
+      "sha256": "f8f1ecf0887540c4a1cffa4639080f4128eebf33e9956bebcc9dc3de8ca09fbe"
+    },
+    {
+      "path": "build-v1/build.log",
+      "sha256": "19b41a535514439d5a2c6c5183503abe9b8b067dd10bfd8b83a02ef9eaac28d1"
+    },
+    {
+      "path": "compile-diagnostic-v1/intent.json",
+      "sha256": "44b8b20fcaa60dd8c08fc065dac51b75f4fdb642b36452d571e60393b05ee3cc"
+    },
+    {
+      "path": "compile-diagnostic-v1/result.json",
+      "sha256": "e867fa5aef3416f82fe0e531dadcdf25a8abe01228dd33fd3825dcacfab322e6"
+    },
+    {
+      "path": "compile-diagnostic-v1/diagnostic.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "build-v2/intent.json",
+      "sha256": "94009d6c880182a8027f53cb51a6788521fdc54ce976ea7ec8c021610fcf66f5"
+    },
+    {
+      "path": "build-v2/build-result.json",
+      "sha256": "1b429fe27f3661c8bd55ccb287c5c74d3c854852691e42a6a6253f93040d03ef"
+    },
+    {
+      "path": "build-v2/build.log",
+      "sha256": "97d5f1486007ea67f53e00f425a52847848dc080bbfa57a1a1c69f9d433b1491"
+    },
+    {
+      "path": "build-v1/built-verification.json",
+      "sha256": "8723e357de084ac41b2299bd6559af857e4317f7035b81ec239a8dd68d1b36cc"
+    },
+    {
+      "path": "execution-v1/execute-once.py",
+      "sha256": "19003a5244f5a4e31dc0b9982027acf0ec75b4a95eb6d39a1dda5534cce3565e"
+    },
+    {
+      "path": "execution-v1/approval-before-copy-retention-fix.json",
+      "sha256": "6319fe865c61cf3225dc52c2f0c5292f02abe8776eaf7d2a7c0cd26a18cde22b"
+    },
+    {
+      "path": "execution-v1/approval.json",
+      "sha256": "c7c539781664628b3c4185b84bc4a1fec49a69d4f620ed0e878c80f044c873d0"
+    },
+    {
+      "path": "execution-v1/host-attempt.json",
+      "sha256": "f13fb9db73543a4bc06d1c8d3ecf896131dc992d68785395452c9d2272159a70"
+    },
+    {
+      "path": "execution-v1/preflight.json",
+      "sha256": "319312b9b62ba0085b73137400e8f18b9bf5786af048a22aa8b884e4ed4a66c5"
+    },
+    {
+      "path": "execution-v1/launch-intent.json",
+      "sha256": "362a4535dc6d959d7be05cac2fd1563233ebdc916602c96faedefa889d5da150"
+    },
+    {
+      "path": "execution-v1/console.log",
+      "sha256": "79106f933f27ebb814c6e1f5a848b51504454f5e0835e0ed91f98cf4fac69e07"
+    },
+    {
+      "path": "execution-v1/controller-result.json",
+      "sha256": "0175a9c6d5fad598fd775b3912e41bec0890e63b4baef90ea588d054b13e0ef0"
+    },
+    {
+      "path": "execution-v1/copied-files.json",
+      "sha256": "7a0dc9c63a6025c0188ff0a3a8cc1f3c2cf270555f6b5614e0b0ba8f7fcd514e"
+    },
+    {
+      "path": "execution-v1/bootstatus.json",
+      "sha256": "44990fe49f54c0626a296916fa411766dd67ced6cd75b1c2c6a4bfd4c2be9e08"
+    },
+    {
+      "path": "execution-v1/terminate.json",
+      "sha256": "6a2a79e60ffc72acd09d764f36bcc277b438acd1c71676043e40095bb913f65c"
+    },
+    {
+      "path": "execution-v1/shutdown.json",
+      "sha256": "6d04897eced460dfce1bf1c9eb07d0b16d19a967d2020b3614c7f33aa50154b8"
+    },
+    {
+      "path": "execution-v1/final-devices.json",
+      "sha256": "606ef8dbdb767d0508750a77ccfa32204b4077d74f0699204fd670f0b46fe4fb"
+    },
+    {
+      "path": "execution-v1/independent-result-review.json",
+      "sha256": "326a925f997852982594c9ddddceeb4daafa2bc02f1038b29c1067dd214a2248"
+    }
+  ]
+}
