@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "Native Mac actual Vision inspector with explicitly substituted UIImage CGImage/orientation adapter. Same retained synthetic label as previous Catalyst failure. Not actual UIKit, app-host, iOS, physical, worldwide or network-isolation proof.",
+  "protocol": {
+    "engineSHA256": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+    "statusSHA256": "230191365b143ee315151ff84f54f6148fc7d6506e312fb71c53e6a85723be92",
+    "inspectorGatesOrientationSHA256": "2d0df4836a6a7b90e1efc60e217f77a48d834f3f21f556fc5e62fe5faa9205ef",
+    "assembledSHA256": "77b588ee1236f5f59f089484972f35145cbfdf1867297c2f45d155d4768c3134",
+    "fixtureSHA256": "2956f196c17cf7922e91c905217dd03cbeb08599ef4b4fad4cc8c2b444c32a1e",
+    "scope": "Native Mac actual Vision inspector with explicitly substituted UIImage CGImage/orientation adapter. Same retained synthetic label as previous Catalyst failure. Not actual UIKit, app-host, iOS, physical, worldwide or network-isolation proof.",
+    "criteria": [
+      "read status",
+      "exact three retained label lines"
+    ],
+    "compileBoundSeconds": 60,
+    "executeBoundSeconds": 30,
+    "watchdogSeconds": 25,
+    "attempts": 1
+  },
+  "driverBinding": {
+    "driverSHA256": "5f144b31028c069169403fa8242fbb16a66f1d52fa717a5927dc5fad71e2075d",
+    "protocolSHA256": "a36bb6d26727d3eef51b33ba65cc4e354267c658cb5b66232f6d36c9a093087a",
+    "scope": "Bounded compile and single actual OCR execution, refused if other native build jobs are live. No retry after phase begins."
+  },
+  "postRunBinding": {
+    "sourceSHA256": "77b588ee1236f5f59f089484972f35145cbfdf1867297c2f45d155d4768c3134",
+    "fixtureSHA256": "2956f196c17cf7922e91c905217dd03cbeb08599ef4b4fad4cc8c2b444c32a1e",
+    "binarySHA256": "f0d43c04f6b80ab4c460315f49a78d18fa9dcb90a6282dfdc198da61fd496e32",
+    "ownedProcessAbsent": true
+  },
+  "compile": {
+    "exitCode": 0,
+    "timedOut": false,
+    "seconds": 13.832101875
+  },
+  "execute": {
+    "exitCode": 1,
+    "timedOut": false,
+    "seconds": 13.656093750000002
+  },
+  "outcome": {
+    "checks": {
+      "exactText": false,
+      "read": false
+    },
+    "lines": [],
+    "passed": false,
+    "platform": "native macOS UIImage adapter; actual Vision OCR, not UIKit/iOS/app-host proof",
+    "seconds": 12.869570000097156,
+    "status": "unavailable"
+  },
+  "preparation": "One earlier resource preflight refusal; no compiler/OCR process or phase record created then. One actual compile and execution after other native build jobs ended.",
+  "conclusion": "This native Mac adapter control also returned unavailable. It does not explain the Catalyst failure or prove its timeout path; no callback/timer instrumentation was present in this control.",
+  "contraryAppHostedEvidence": "Build 13 actual iOS photo/label journey separately read Total Carbohydrate 37 g; see research/native-ui-journey/full-photo-save-20261025-build13.json. Not fresh build 19 acceptance.",
+  "productionSourceChanged": false,
+  "candidateBuild": 19,
+  "candidateSHA256": "3c55b1bf656815eaf6a34c52398bfd0a09b989523411d3895811155c093a0e16",
+  "limitations": [
+    "No actual UIKit, app-host or physical iPhone execution",
+    "One synthetic label, no general OCR or worldwide accuracy",
+    "Adapter and PNG decoding differ from earlier renderer-created Catalyst UIImage; not a one-variable causal test",
+    "No assertion that return timing establishes terminal cause",
+    "Production timer/request configuration unchanged"
+  ],
+  "independentReview": {
+    "result": "Exact extraction, source/fixture/driver/protocol/binary bindings, failed checks, empty logs and public copies verified",
+    "scope": "Read-only retained evidence; no repeat run",
+    "productionSource": "All 94 frozen build-19 source files still matched during review",
+    "wording": "Historical iOS evidence supports the stated single line, not this exact PNG or all three current oracle lines"
+  }
+}
