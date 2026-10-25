@@ -21,7 +21,7 @@ import sys
 
 
 BASELINE_PROTOCOL_SHA256 = "5d2674bdfd9af0ec51a8798c84c59fb03cab49fbb98eafe0773897deb93eca5d"
-FROZEN_FIXTURE_BODY_SHA256 = "12c06912588295d98bafd25d681cf5139a5869a724838f4fba996f2cbab4eab0"
+FROZEN_FIXTURE_BODY_SHA256 = "95ca37322bae73d7f00200d98e8a9c9cd30b7e34ab1eb1317738e1dae9a23057"
 CASE_CONTRACT = json.loads(r'''{
   "scope": "Foundation-only native Mac deterministic photo loading algorithm mechanics with declared transfer, image, preparation and append spies. No Simulator, UIImage/CoreImage implementation, image decoding, model, UI lifecycle, production data or memory/performance proof.",
   "instrumentation": "One external outer capturedTask = assignment before the original Task expression; entire Task expression/closure and following function bytes unchanged. invalidatePendingPhotoLoad copied exactly.",

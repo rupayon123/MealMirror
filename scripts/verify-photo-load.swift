@@ -138,6 +138,8 @@ private final class PhotoLoadHarness {
     private var photoLoadError: String? { didSet { stateWrites += 1 } }
     private var capturedTask: Task<Void, Never>?
     private var appends: [AppendEvent] = []
+    private var foodPickerItems: [PhotosPickerItem] = []
+    private var labelPickerItems: [PhotosPickerItem] = []
 
     func begin(_ ids: [String], role: MealPhotoRole = .food) -> Task<Void, Never> {
         loadSelectedPhotos(ids.map { PhotosPickerItem(id: $0) }, role: role)

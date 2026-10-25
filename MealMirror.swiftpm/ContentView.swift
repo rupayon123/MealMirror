@@ -1108,6 +1108,8 @@ private struct AddMealView: View {
                     guard photoLoadToken == token else { return }
                     guard let image else {
                         isPreparingPhoto = false
+                        foodPickerItems = []
+                        labelPickerItems = []
                         photoLoadError = "MealMirror could not prepare that photo. Choose another image or use the camera."
                         return
                     }
@@ -1118,6 +1120,8 @@ private struct AddMealView: View {
             } catch {
                 guard photoLoadToken == token else { return }
                 isPreparingPhoto = false
+                foodPickerItems = []
+                labelPickerItems = []
                 photoLoadError = "That photo could not be loaded. Choose it again, select a different image, or use the camera."
             }
         }

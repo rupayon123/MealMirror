@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "baselineCommit": "95efe72f909f3f819a45a025105f6f317a508b4f",
+  "scope": "Exact loading-method mechanics with declared native Mac Foundation transfer/preparation/selection/append spies. No PhotosUI, UIKit, actual transfer/decoding, SwiftUI lifecycle or physical-device result.",
+  "change": "Clear both transient picker selections in each current-token terminal failure. Existing actor/token guards and attachments code are unchanged.",
+  "baseline": {
+    "compileExitCode": 0,
+    "executionExitCode": 1,
+    "cases": 14,
+    "checks": 66,
+    "failedExpectations": 12,
+    "failureSet": "Only both empty-selection and identical-ID transition assertions in all six food/label x transfer-throw/missing-data/decode-nil cases."
+  },
+  "fixed": {
+    "compileExitCode": 0,
+    "executionExitCode": 0,
+    "cases": 14,
+    "checks": 66,
+    "failedExpectations": 0
+  },
+  "comparison": {
+    "fixtureSHA256": "f5d993782b6a017df5c5685b5ee6a185e6f44efc183cae2446be0288d9310709",
+    "driverSHA256": "05f6dccd3c55a8231e24a5174701df8437fe4df71fd466477ced67f3a4c45f76",
+    "fixtureAndDriverIdenticalAcrossRuns": true,
+    "caseOrderAndExpectationListsMatch": true,
+    "transferPreparationEventSequencesMatch": true,
+    "productionMethodDiff": "Exactly four selection-reset assignments.",
+    "sourceExtraction": "Complete actual load and invalidation methods. Only outer capturedTask assignment inserted; actual Task expression/closure unchanged.",
+    "baselineSourceSHA256": "5fabb6967a62d35062691bf28bac145defce2de58b0e01e214627e0c88dc83e3",
+    "fixedSourceSHA256": "e3adbc2ee37245f64b7fab777e4c7c84b3b20af363158cef3c2ca71d4e6ee909",
+    "baselineLoadMethodSHA256": "0916ed00101ccb220ab5cace04ae9d8f41cbce059344bd6cfaeaa033704f043d",
+    "fixedLoadMethodSHA256": "b3eaa3f8150747b6471d9d61d0c86bd5b806b90df772e89a6bc0323b16088578",
+    "baselineResultsSHA256": "677ce2da1fe83c60f342a7bf18d591ec344abaf6d4799b0545164b8f55e183fc",
+    "fixedResultsSHA256": "8e937313570c5015d550039f5b1c9d01b20d850c8d7e38b2b4225059afe1e37c"
+  },
+  "existingSuiteAdaptation": "Two default-empty picker properties added to original spy; its frozen body hash updated explicitly. New retry driver seeds IDs, mirrors pre-existing success cleanup and includes selection IDs/write counts in snapshots. Original eight cases and 36 expectation lists retained; six new cases add30checks.",
+  "staleResultCoverage": "An invalidated A completing while B is active compares full snapshot including current nonempty B IDs/write count. Completed B stale-failure comparisons retain empty selections and detect attempted writes.",
+  "appendScope": "No additional append event on failed batch is proven. Real mealPhotos and physical attachments are not exercised; source review confirms this patch does not write them.",
+  "independentReadOnlyReview": "Verified exact12 baseline failures, fixed66pass, unchanged fixture/driver/case/call sequences and four-assignment assembled diff; no material blocker.",
+  "attempts": "One compile and one execution per variant; no test retries or modified criteria after baseline.",
+  "sources": [
+    "https://developer.apple.com/documentation/photosui/photospickeritem",
+    "https://developer.apple.com/documentation/SwiftUI/View/onChange(of:initial:_:)-4psgg"
+  ],
+  "limits": [
+    "The identical-ID inequality check models a possible Equatable transition; no actual native picker retry occurred.",
+    "No image processing, visual/animation/accessibility, full-app journey, model/recognition or clinical result.",
+    "Simulator startup/install failures remain separately retained; no runtime pass inferred from compilation."
+  ]
+}
