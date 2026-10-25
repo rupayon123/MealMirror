@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUTC": "2026-10-25T00:29:41.804644+00:00",
+  "scope": "One separate additional synthetic F01 feature-extraction call solely for NSError information omitted by the earlier completed v2 run. Not MealMirror production photo analysis, food recognition, acceptance or a paired causal comparison.",
+  "production": "Model/engine unchanged in build9; no feature gate adopted.",
+  "whyRepeat": "The earlier process discarded NSError details and scoped logs were empty. Domain/code cannot reconstruct the lost error object. This is one justified diagnostic repetition across the investigation, not a claim of zero repeats overall.",
+  "fixedInputAndConfiguration": {
+    "sameFrozenF01SHA256": "aa0718f05333bfb35a1f5accf9e49d9e6a1d6ba6a2aa33c0cf43f0786db1d890",
+    "decode": "Same ImageIO CGImage to CIImage with explicit sRGB,360\u00d7360.",
+    "revision": 2,
+    "cropAndScale": "centerCrop",
+    "context": "CIContext() default",
+    "computeOverride": false,
+    "callsMaximum": 1,
+    "newDistinctBundleAndMarkers": true,
+    "noNumericalThresholdsOrTraining": true
+  },
+  "actual": {
+    "compileExit": 0,
+    "builtAndInstalledFiles": 6,
+    "oneRecordedLaunch": true,
+    "entryCheckpoints": 1,
+    "phase": "stopped",
+    "failedPhase": "extracting",
+    "errorDomain": "NSOSStatusErrorDomain",
+    "errorCode": -1,
+    "sanitizedDiagnosticMessage": "Failed to create espresso context.",
+    "underlyingErrorIncluded": false,
+    "captureTruncationCount": 0,
+    "returnedVectors": 0,
+    "rawAppReportExit": 6,
+    "consoleCommandExit": 0,
+    "controllerExit": 0,
+    "meaningOfController0": "A complete error-observability report was captured and retained; not successful extraction or a feature/recognition pass.",
+    "hostTimedOut": false,
+    "ownedQAShutdownConfirmed": true,
+    "reportAndAttemptCopiesMatchedContainer": true,
+    "dataPreserved": true,
+    "thisBootLoggedMigrationFailed": false,
+    "priorMigrationWarningsNotCleared": true,
+    "LLMCalls": 0,
+    "trainingCalls": 0
+  },
+  "interpretation": [
+    "The current diagnostic locates failure at Espresso context creation, before any vector. The underlying reason and selected compute device remain unknown.",
+    "The generic message cannot retroactively identify the earlier request failure, prove simulator/hardware incompatibility or establish feature collapse.",
+    "No old numerical criteria, repeatability, food/name/edibility/nutrition accuracy, production flow, physical offline, performance or adoption pass follows.",
+    "Raw descriptions/userInfo are retained locally only; this record copies just the reviewed non-sensitive diagnostic message."
+  ],
+  "nextSupportedHypothesis": {
+    "API": "Direct Vision VNGenerateImageFeaturePrintRequest revision2 with documented per-stage compute-device discovery/selection on iOS17+.",
+    "plan": "Pin revision2 and centerCrop; query supportedComputeStageDevices; select only CPU devices actually returned for every exposed stage, otherwise stop. A later distinct bounded protocol is required.",
+    "notExecuted": true,
+    "limits": "CPU selection is not an Apple-documented Espresso bypass. CIContext software rendering is not ML compute selection. Vision observations are not demonstrated equivalent to component MLShapedArray vectors; do not mix training representations. Changing CIImage to CGImage is another input route and must not be silently conflated with a compute change.",
+    "officialSource": "https://developer.apple.com/documentation/vision/vnrequest/setcomputedevice(_:for:)"
+  },
+  "localArtifactReferencesBase": "../../../../outputs/recognition-architecture-20261024/feature-v2-error-diagnostic-v1/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. Selected local evidence stays outside the public repo; no raw private paths, account/device identifiers, datasets or weights copied.",
+  "localArtifactReferences": [
+    {
+      "path": "PREPARATION-FREEZE.json",
+      "sha256": "735747ae70ce6ef0f79ccaf5e629df483bb00a38ed8d0e13794c62d1bbe4e3d9"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "239fcaab3979246c76d11141dcb4c4377eb846f782b7ec8645bf3bcad2d251c4"
+    },
+    {
+      "path": "independent-review.json",
+      "sha256": "e7171ca30d57b2231f15a0105b2216cc6266a16737b7c612bec2e95601111418"
+    },
+    {
+      "path": "build-v1/build-result.json",
+      "sha256": "3f03b32c3344886e8185cdf866d74a2100db22237996900e397b9f153b43c304"
+    },
+    {
+      "path": "build-v1/built-verification.json",
+      "sha256": "5bb62b84c7d76d5ca67914ba79db34fc13f09818f6f006b429284cf70bd8bbb7"
+    },
+    {
+      "path": "execution-v1/execute-once.py",
+      "sha256": "2e0fbcdf752f22fcdd5019f5e08b9451c217241ce26e3e1c6d00e3b7877b4ce9"
+    },
+    {
+      "path": "execution-v1/approval.json",
+      "sha256": "cec206bced6215c53221f137df3497227fb90d582e29f07099cac0740b54b690"
+    },
+    {
+      "path": "execution-v1/host-attempt.json",
+      "sha256": "ecb18cf80ee699e1b4b5497ebddb084a6f4fcd817b5f368ad42ebd4755811981"
+    },
+    {
+      "path": "execution-v1/preflight.json",
+      "sha256": "1df1fdd701a6051bc76ee5d2b3227d5dc0cc93d02219c650f47a3df947553dac"
+    },
+    {
+      "path": "execution-v1/feature-v2-error-diagnostic.json",
+      "sha256": "741ebde1f1b84fc6adf0075a01121741fe2545d12d9e8fe5f1fe188a3c8082fc"
+    },
+    {
+      "path": "execution-v1/controller-result.json",
+      "sha256": "70ad5e5c106c14837e25a4b9d123011a93db37d2507a59b871635ca00bf1d4f6"
+    },
+    {
+      "path": "execution-v1/diagnostic-outcome.json",
+      "sha256": "0e4788b9f9d84542393c75765ea2bdc46ba1662edff9d8abfdd6559dfad2aac2"
+    },
+    {
+      "path": "execution-v1/report-copy.json",
+      "sha256": "0cb05e710fbf1797e25c1756fa48d2e6dffe65670eb39dfa58b10169868d0ac1"
+    },
+    {
+      "path": "execution-v1/cleanup-state.json",
+      "sha256": "68aea73ed9dc3db305e889914db4f21ad7b1bba42c19839df0bffebee3867d43"
+    },
+    {
+      "path": "diagnosis-update.json",
+      "sha256": "a153fd6a63886a9e01cb1ad9d2b1e9047fa1815b61a69c1fa473804c1217bfca"
+    },
+    {
+      "path": "apple-route-research/SUPPORTED-ROUTE.json",
+      "sha256": "730afe4630f1791226be5e5ec2337efea92582bf67501be0a3b3c0eac98049e4"
+    },
+    {
+      "path": "apple-route-research/SDK-EXCERPTS.txt",
+      "sha256": "e940cb662fa8d0e91cf4f4ec39082c3a993597a49e1b14e7318af10d64fff8cf"
+    }
+  ]
+}

@@ -34,3 +34,9 @@ The applied View change matches the tested expression exactly. The existing “Y
 [check-20261024.json](check-20261024.json) pins the frozen protocol, independent review, raw native results and applied-source receipt. Its artifact base resolves **from this JSON’s directory** to external local output files. Those files are not redistributed in this repository and are not reproducible from the public summary alone.
 
 Exact artifact, build, render and distribution evidence is separate in [delivery-20261024.json](delivery-20261024.json). This heading check makes no upload, app-render, device, full-journey, clinical or submission-readiness claim.
+
+## Historical build-8 actual UI follow-up
+
+A separate iOS 26.5 Simulator ran the exact build-8 app through actual Device Hub/CUA controls. The [historical UI record](native-ui-20261024.json) separates a successful bundled Practice confirmation → saved Review → history/detail → relaunch check from a canceled synthetic checked-amount form and an unselected native photo picker. One new Practice record persisted alongside two older records; no deletion was performed.
+
+All six retained screenshots were viewed before labeling. The entry-return frame is mid-Back with Photo selected; the saved frame is after Save, and the detail frame is a real sheet with content continuing below the viewport. The two history PNGs are byte-identical, so the separate relaunch commands/operator observations support persistence. This is light/current-text-setting evidence without category readback; it verifies neither the non-Practice final heading nor build 9, the iOS 27 image model, full photo/manual-commit journey, accessibility or physical offline use.

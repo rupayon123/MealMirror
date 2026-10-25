@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "curatedAtUTC": "2026-10-25T00:26:51.437676+00:00",
+  "scope": "Observed build-8 input-tab restoration defect and applied parent-draft binding correction. Source-fidelity evidence only for the correction; actual build-9 navigation acceptance was pending at this source curation.",
+  "baselineObservation": {
+    "build": "1.0 (8)",
+    "zipSHA256": "a18495071b632ca42a505d88617d17438e2203f54d109f5a99a93b38655a1b85",
+    "runtime": "iOS 26.5 Simulator",
+    "installed17FilesMatchedExactBuild8": true,
+    "sequence": [
+      "Home Start meal opens Photo.",
+      "Select Description and enter an unfamiliar synthetic meal description.",
+      "Build local review reaches the unknown/no-reliable-range state.",
+      "Open checked-amount form, enter synthetic item/37, then Cancel; no amount is committed.",
+      "Back to Add a meal returns with Photo selected while retained description still enables Build."
+    ],
+    "basis": "Root CUA actions and returned AX/pixels summarized in the operator record. Not an automated replay.",
+    "screenshot": {
+      "path": "outputs/native-ui-build8-20261024/entry-return-photo-transition.png",
+      "sha256": "f99cbe166cd89563e7e7dedbf2462ff9f77e94082b75d029ebc39f6b6f2613a5",
+      "scope": "Back-transition pixels show Photo selected and an enabled Build action; transition edges are clipped. This is not a layout or full-journey pass. The screenshot alone does not establish all preceding actions or show the retained hidden description."
+    },
+    "dataLimit": "Presentation-state reset rather than demonstrated draft-text loss. The canceled form created no checked amount in this observed sequence. No meal-photo AI or real meal nutrition was evaluated."
+  },
+  "sourceCause": {
+    "file": "MealMirror.swiftpm/ContentView.swift",
+    "baselineSHA256": "4ddf23a998ee3496644873c30db8b8acade200c244667b4a1bcc38c48f030419",
+    "entryState": "showsPhotoInput was child-local @State, while mealDescription remained parent-owned.",
+    "appearanceAssignment": "AddMealView.task always assigned showsPhotoInput = !startsWithDescription before checking initialPhotoSource.",
+    "initialPreference": "Home Start used the default initial preference for Photo; tapping Description did not change that parent initial preference.",
+    "navigationBoundary": "Returning from Estimate leaves the addMeal route in the path. Existing clearMealDraft runs when the meal-flow path becomes empty, so description text is retained.",
+    "eligibility": "canBuildLocalReview accepts nonempty description or a food photo independently of the visible tab; its behavior was not changed."
+  },
+  "appliedCorrection": {
+    "buildTarget": "1.0 (9)",
+    "candidateSourceSHA256": "b28eb2390c6b1883379978564b05e3439ce16a80c03f0ec42d49cb55e7d9e1d3",
+    "diffSHA256": "8fd7c1853c6070e3c852b530a8a0c3829839d6aba47fe14befbbacaed714711c",
+    "changes": [
+      "Move showsPhotoInput into ContentView meal-draft @State and pass a binding into AddMealView.",
+      "Set the initial mode only when beginning a draft; clear-draft resets Photo.",
+      "Parent Practice selection explicitly sets Description before existing immediate estimate navigation.",
+      "Remove the AddMealView appearance-time mode assignment."
+    ],
+    "sourceDeltaAccountedFor": true,
+    "explicitSourceReplacementCount": 8,
+    "onlyAppSourceFileChangedByThisFix": "MealMirror.swiftpm/ContentView.swift",
+    "separatePackageAndDeliveryOwnedByRoot": true
+  },
+  "sourceInvariants": {
+    "unchangedFragments": {
+      "initialPhotoSourceTask": {
+        "sha256": "dd9fdbd6717f04c95ca52eb1d067c4d6dda36bd0863ada70c01f540b67e7dbdd",
+        "bytes": 484,
+        "equal": true
+      },
+      "teardownCallback": {
+        "sha256": "aa534ad32363e9025898c887d61f7f05a3a3d5faafbf97ccabafe994189a38bb",
+        "bytes": 110,
+        "equal": true
+      },
+      "inputTabs": {
+        "sha256": "998b589fc870a4830a1abdecbcc4f89fef297c8457423245cd87880721ffb34f",
+        "bytes": 738,
+        "equal": true
+      },
+      "buildEligibilityAndAnalysis": {
+        "sha256": "1895b8a0d4177ace276f342fd7a1d13d73bd82769724d77b6a501b178bef7a58",
+        "bytes": 1059,
+        "equal": true
+      },
+      "practiceChildActionAndTokens": {
+        "sha256": "06905764a94bdbb45e2d7aaacff72af6614980ff945467e228c6058aab7c4a62",
+        "bytes": 3487,
+        "equal": true
+      }
+    },
+    "meaning": [
+      "Tab controls still perform the same mode selection through the new binding.",
+      "Initial camera/library intent consumption, its delay and cancellation check are unchanged.",
+      "Meal-entry onDisappear still cancels analysis and invalidates pending photo loading.",
+      "Build eligibility, analysis call and child Practice/token actions retain identical bytes.",
+      "Approved theme, model/engine, amount/range and history logic are not changed by this presentation-state fix."
+    ],
+    "method": "Complete captured before/after files and exact diff with static source comparison. No constructed-state fixture or model/engine test was run to claim UI restoration."
+  },
+  "acceptanceStatusAtSourceCuration": {
+    "actualBuild9BackNavigationVerified": false,
+    "runtimePassClaimedByThisRecord": false,
+    "remainingCases": [
+      "Repeat the baseline Description/unknown/checked-form Cancel/Back sequence on build 9; Description and original text must remain, with no amount/history from cancellation.",
+      "Photo return preserves chosen mode/attachments; explicit switching remains usable.",
+      "Practice returns in Description with its actual source and values intact.",
+      "Return Home and begin a fresh draft: Photo default and cleared old details.",
+      "Camera/library initial intent remains single-use; cover dismissal/reappearance does not overwrite the chosen tab."
+    ],
+    "deliveryRecord": "delivery-20261024.json",
+    "deliveryScope": "Root separately records exact artifact/build/signing/runtime/upload evidence. Later delivery evidence supersedes the pending runtime status of this source-only snapshot."
+  },
+  "localArtifactReferencesBase": "../../../..",
+  "localArtifactReferencesResolution": "Resolve this base relative to the directory containing this JSON, then append each path. External local artifacts are not redistributed here; hashes pin source/operator evidence without copying private paths, device identifiers or pixels.",
+  "localArtifactReferences": [
+    {
+      "path": "outputs/input-mode-restoration-20261024/BASELINE.json",
+      "sha256": "46a45c460d891b2d5339b0dad0c94df253bfcfad9f9e6a5de25cacccbc18c890"
+    },
+    {
+      "path": "outputs/input-mode-restoration-20261024/ContentView.baseline.swift",
+      "sha256": "4ddf23a998ee3496644873c30db8b8acade200c244667b4a1bcc38c48f030419"
+    },
+    {
+      "path": "outputs/input-mode-restoration-20261024/ContentView.candidate.swift",
+      "sha256": "b28eb2390c6b1883379978564b05e3439ce16a80c03f0ec42d49cb55e7d9e1d3"
+    },
+    {
+      "path": "outputs/input-mode-restoration-20261024/baseline-working-tree.diff",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/input-mode-restoration-20261024/candidate.diff",
+      "sha256": "8fd7c1853c6070e3c852b530a8a0c3829839d6aba47fe14befbbacaed714711c"
+    },
+    {
+      "path": "outputs/input-mode-restoration-20261024/SOURCE-FIDELITY.json",
+      "sha256": "7e2559d0112344bdbcbb3982957b1dfd4e909bece48808e71e37ea2ff9d4720c"
+    },
+    {
+      "path": "outputs/input-mode-restoration-20261024/SOURCE-EXPLANATION.md",
+      "sha256": "b414b887805d297b0e1370116a687e37370166b835b5127bbde57f48b756a2e2"
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/walkthrough-observation.json",
+      "sha256": "259c4f5dbb19eb56903592249908013e677553cfd5b902f0dcc2fbbaaf6b860a"
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/installed-verification.json",
+      "sha256": "9bed3f1634c3915ad0ffd70fdd40087628c7345691ea45798efb71306770d418"
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/entry-return-photo-transition.png",
+      "sha256": "f99cbe166cd89563e7e7dedbf2462ff9f77e94082b75d029ebc39f6b6f2613a5"
+    }
+  ],
+  "limits": [
+    "Observed baseline is one operator-driven iOS 26.5 Simulator sequence, not an automated replay, physical-device or full photo-to-history acceptance.",
+    "The Back-transition screenshot is clipped and establishes no layout/accessibility/animation pass.",
+    "Correction evidence here is source-only. Actual build 9 navigation, camera/library lifetime and draft-reset behavior require a separate app check.",
+    "No new model, engine, amount, nutrition, insulin, storage-flow, physical offline, performance or submission-readiness claim.",
+    "No code, Package, build, test, runtime, app/UI, commit or push action occurred while writing these public records."
+  ]
+}

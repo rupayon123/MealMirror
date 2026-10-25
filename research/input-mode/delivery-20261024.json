@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUTC": "2026-10-25T00:30:46.193664+00:00",
+  "build": {
+    "version": "1.0(9)",
+    "cleanSimulatorExit": 0,
+    "signedArchiveExit": 0,
+    "codesignVerificationExit": 0,
+    "archiveSDK": "iphoneos27.1",
+    "minimumIOS": "17.0",
+    "all59PackagedFilesUnchangedAfterBuildArchive": true,
+    "EnglishOnly": true,
+    "installed17FilesEqualBuilt": true,
+    "actualInstallLaunchRuntime": "iOS26.5 Simulator",
+    "noDataResetOrUninstall": true
+  },
+  "scope": "Exact package/build/sign/install/launch, actual bounded CUA draft-navigation checks on iOS26.5 and signed internal-only upload. Not full photo/model/manual-commit journey or submission acceptance.",
+  "zip": {
+    "appVersion": "1.0 (9)",
+    "bytes": 12203935,
+    "sha256": "a4ceb44fb3e3f1255768400035fb67539d632a636d99e19921f411fdc3d0e1e8",
+    "files": 59,
+    "Swift": 17,
+    "twoGenerationsEqual": true,
+    "allSwiftEqualCurrentSource": true,
+    "EnglishOnly": true,
+    "changedFromBuild8": [
+      "MealMirror.swiftpm/ContentView.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ]
+  },
+  "change": "Parent-owned draft input mode binds into AddMealView. Appearance no longer resets selected tab; begin/clear initialize Photo and Practice initializes Description. Separate build number9.",
+  "unchanged": "Model143feea0\u2026, engine369703be\u2026, name/amount separation, camera/library intent consumption, photo teardown guards, storage, theme/resources.",
+  "actualUI": {
+    "mechanism": "Root CUA actions; actual returned AX states/pixels. Operator receipt, not replay/independent human validation.",
+    "cases": {
+      "descriptionAfterCanceledAmount": "Passed: same synthetic description and canceled37 form -> unknown/no range -> Back retains Description and text, Build enabled.",
+      "photoReturn": "Passed: switched same draft Photo -> Build using retained description -> unknown -> Back retains Photo. No attached photos; attachment retention not tested.",
+      "practiceReturn": "Passed: actual biryani Practice -> Estimate -> Back retains Description and prepared Practice text.",
+      "newDraft": "Passed: Home -> Start resets Photo, zero attachments, Build disabled."
+    },
+    "image": "description-restored.png, root viewed; selectedDescription/exactQAtext/Buildvisible.",
+    "appearance": "Light/current text setting; no category readback or broad layout/a11y claim.",
+    "savedOrDeletedDuringBuild9Checks": 0,
+    "finalHistoryCount": 3,
+    "keyboardCaptureFinal": "off",
+    "originalInteractivePickerUntouched": true,
+    "runtime27ImageAIExercised": false,
+    "open": [
+      "Photo/label picker selection and camera return, attachments and actual manualAdd commit/save/delete.",
+      "Current complete photo-to-history/relaunch journey, errors, VoiceOver/dark/large/RTL and full layout.",
+      "Phone, network-isolated offline and performance."
+    ]
+  },
+  "historicalBuild8UI": {
+    "publicRecord": "../review-heading/native-ui-20261024.json",
+    "scope": "Practice confirm/Review/Save/history/detail/relaunch and synthetic37 cancellation were checked on build8, not transferred to9. One Practice record retained;2prior records untouched."
+  },
+  "distribution": {
+    "testingOnly": true,
+    "uploadExit": 0,
+    "testFlightInternalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "appleReported": "Uploaded package is processing.",
+    "processingCompleteComplianceServerInternalAndGroupTestingVerified": false,
+    "phoneInstallVerified": false,
+    "lastVerifiedTestingBuild": "1.0(2), historical check",
+    "AppStoreReviewReleaseOrExternalBetaAction": false,
+    "manualReleaseSettingUnchangedByThisDelivery": true
+  },
+  "limits": [
+    "Passed navigation cases are specific CUA observations, not all SwiftUI lifecycle ordering or camera/library timing.",
+    "Source invariants are not runtime evidence; the model and amount logic were not changed by this patch.",
+    "No food/name/nutrition/clinical accuracy, arbitrary-meal precision, insulin output, award or submission-readiness claim.",
+    "Prepared native-host4state QA remains inert; no new heading/lightdark/accessibility render pass is claimed from it."
+  ],
+  "localArtifactReferencesBase": "../../../../outputs/input-mode-delivery-20261024-build9/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. External local evidence is not included in this repository; no private command paths, account/device identifiers or binary archives copied.",
+  "localArtifactReferences": [
+    {
+      "path": "candidate-verification.json",
+      "sha256": "6c29ff06bf335a958a036ffb843730b876aa2b746748750545d50f59727554eb"
+    },
+    {
+      "path": "candidate-first-command.json",
+      "sha256": "9a5895f8b2e6fc93f8a929bc08784db27df1cb94db66b914749aee8968794423"
+    },
+    {
+      "path": "candidate-second-command.json",
+      "sha256": "94d1a88c9d0b94bb3caf473ed41bca7683ab599c2cc8a93f4d848dcdae6eddd2"
+    },
+    {
+      "path": "exact-build-intent.json",
+      "sha256": "6200907ed27155521b31b0afd3a4bba425abb8e2ed6b35829aee1d71dda8362a"
+    },
+    {
+      "path": "exact-build-result.json",
+      "sha256": "b27abc487a02a052d2f7d46e45a1f3e8daa16f1b04722e39ce2e50bba86f05c0"
+    },
+    {
+      "path": "built-verification.json",
+      "sha256": "b819db0b0d0561745b02a2f4f2173f3c594ff6fb0f43b189d8d069c5da075939"
+    },
+    {
+      "path": "installed-verification.json",
+      "sha256": "08604f00536dcbbac109c61f11e3b79be29888f173fa5a8f0658e9509c51a0f9"
+    },
+    {
+      "path": "qa-devices.json",
+      "sha256": "1bb3fb83d45245d8ec39d50f08c62adee9ad4db4b15e07d10cc3f34becc1a361"
+    },
+    {
+      "path": "install.json",
+      "sha256": "2b5683cc93a38ac368cc866b8d4756e9dd12e330a9ac6284693f5b81275de3cc"
+    },
+    {
+      "path": "launch.json",
+      "sha256": "b224bafa6f2071344ba9b7cb681902c8081d0ba69fdc48ae95be4f05adaf8ec0"
+    },
+    {
+      "path": "ui-regression.json",
+      "sha256": "1a9fe19aea941c0381301625a7d35e5d5237ad13e576a2dc89cf3de31d8697b1"
+    },
+    {
+      "path": "description-restored.png",
+      "sha256": "3e7ef4283449a35bb4b521644dd22e5fe0b1c1672ecd426350c6081f00207da5"
+    },
+    {
+      "path": "archive-result.json",
+      "sha256": "eab738e80bdfbee110d8e57429e43f9e1d939925a670c6148a8573ce27a1e797"
+    },
+    {
+      "path": "archive-verification.json",
+      "sha256": "81d23dcda3f4a62b52b1c5a964df3cc307055141138c005c0c3b1fb0fafbf0a7"
+    },
+    {
+      "path": "upload-intent.json",
+      "sha256": "fe07e9f1c289aaed98ec5dbb5c446baa6b5f3352fc9c797e53ec442972eb50ed"
+    },
+    {
+      "path": "upload-result.json",
+      "sha256": "23bb3bbbad1ec7428cc826e69e63309998af5355c31ff27aaa778cd3ac1f8085"
+    },
+    {
+      "path": "Internal-ExportOptions.plist",
+      "sha256": "043de9791e4a4f0afc6cbce10480237301f799316fd2ee382f8e93f87df357f9"
+    }
+  ]
+}

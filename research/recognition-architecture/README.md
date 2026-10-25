@@ -1,6 +1,6 @@
 # Offline recognition: next architecture
 
-October 24, 2026. **Research decision, not a new recognizer.** Current app 1.0 (8) retains the default local Apple model and `143feea0…` prompt source. Its title-only correction does not repair recognition. The neutral-wording, content-tagging and typed-presence proposals were rejected; no further tuning against the exposed twelve is proposed.
+October 24, 2026. **Research decision, not a new recognizer.** Current app 1.0 (9) retains the default local Apple model and `143feea0…` prompt source. Its draft-mode correction does not repair recognition; build 8’s final-heading change remains. The neutral-wording, content-tagging and typed-presence proposals were rejected; no further tuning against the exposed twelve is proposed.
 
 ## Decision
 
@@ -16,7 +16,7 @@ Primary sources: [Apple multimodal prompting](https://developer.apple.com/docume
 
 ## First experiment
 
-A separate explicit-revision-2 diagnostic uses three generated geometric images and one identical-input repeat on iOS 27.1 Simulator. It checks only finite, nonconstant 768-value features, differences between these three inputs and repeat consistency. It uses no food labels, LLM calls, training or production processing. Its numerical tolerances are diagnostic tolerances, not food-confidence thresholds. The corrected runner compiled, but its first extraction stopped with `NSOSStatusErrorDomain -1` before returning a vector. The other three steps were unrun. This does not evaluate noncollapse or repeatability, identify the cause, or establish physical-device incompatibility. The owned QA Simulator was shut down with its evidence retained. See [the probe receipt](feature-v2-20261024.json) for compile corrections and limits. Diagnose this failure before training or adoption.
+A separate explicit-revision-2 diagnostic uses three generated geometric images and one identical-input repeat on iOS 27.1 Simulator. It checks only finite, nonconstant 768-value features, differences between these three inputs and repeat consistency. It uses no food labels, LLM calls, training or production processing. Its numerical tolerances are diagnostic tolerances, not food-confidence thresholds. The corrected runner compiled, but its first extraction stopped with `NSOSStatusErrorDomain -1` before returning a vector. The other three steps were unrun. This does not evaluate noncollapse or repeatability, identify the cause, or establish physical-device incompatibility. The owned QA Simulator was shut down with its evidence retained. See [the probe receipt](feature-v2-20261024.json) for compile corrections and limits. A [separate one-call error diagnostic](error-observability-20261024.json) then captured “Failed to create espresso context.” before any vector. That identifies the failing stage, not the underlying cause or the prior call’s cause. A documented direct Vision per-stage CPU route is a later, unexecuted hypothesis; it is not a proven Espresso bypass. No training or adoption follows.
 
 ## Work after feature feasibility
 
@@ -25,6 +25,6 @@ A separate explicit-revision-2 diagnostic uses three generated geometric images 
 3. Train/calibrate one fixed head externally only after features and rights are suitable. Evaluate the gate together with actual model names; reject suppression that hides foods while leaving wrong names unresolved.
 4. Before adoption, verify the exact package, actual photo-to-history journey, error recovery, accessibility and physical network-isolated behavior. Name clues must still create no amount, portion, total, readiness or dose automatically.
 
-The current 12,203,944-byte ZIP leaves **12,796,056 bytes** under a conservative 25,000,000-byte planning cap. No new head, labels or notices have been exported or sized. An OS feature extractor avoids importing an encoder, but this alone does not prove offline availability. Apple's [published policy](https://developer.apple.com/swift-student-challenge/policy/) still identifies 2026; recheck 2027 rules before submission.
+The current 12,203,935-byte ZIP leaves **12,796,065 bytes** under a conservative 25,000,000-byte planning cap. No new head, labels or notices have been exported or sized. An OS feature extractor avoids importing an encoder, but this alone does not prove offline availability. Apple's [published policy](https://developer.apple.com/swift-student-challenge/policy/) still identifies 2026; recheck 2027 rules before submission.
 
 The source research and SDK metadata are retained outside the repository under `outputs/recognition-architecture-20261024/`; public receipts pin selected evidence without redistributing datasets or model weights. No trained gate, improved recognition, worldwide accuracy, clinical validation or submission-readiness claim follows.

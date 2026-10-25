@@ -38,7 +38,7 @@ struct ContentView: View {
     @State private var inputSource: MealInputSource = .manual
     @State private var analysis = MealAnalysis.empty()
     @State private var initialPhotoSource: InitialPhotoSource = .none
-    @State private var initialDescriptionMode = false
+    @State private var showsPhotoInput = true
     @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.colorScheme) private var colorScheme
     @State private var didApplyInitialLibrary = false
@@ -63,8 +63,8 @@ struct ContentView: View {
                         referenceItemPresent: $referenceItemPresent,
                         mealPhotos: $mealPhotos,
                         inputSource: $inputSource,
+                        showsPhotoInput: $showsPhotoInput,
                         initialPhotoSource: initialPhotoSource,
-                        startsWithDescription: initialDescriptionMode,
                         onInitialPhotoSourceConsumed: { initialPhotoSource = .none },
                         onSelectMeal: selectMeal,
                         onAnalyze: { newAnalysis in
@@ -133,18 +133,19 @@ struct ContentView: View {
         mealDescription = localization.text(meal.prompt)
         mealPhotos = []
         inputSource = .demo
+        showsPhotoInput = false
     }
 
     private func beginMealReview(photoSource: InitialPhotoSource, prefersDescription: Bool = false) {
         clearMealDraft()
         initialPhotoSource = photoSource
-        initialDescriptionMode = prefersDescription
+        showsPhotoInput = !prefersDescription
         navigation.beginMealReview()
     }
 
     private func clearMealDraft() {
         initialPhotoSource = .none
-        initialDescriptionMode = false
+        showsPhotoInput = true
         selectedMeal = DemoMeal.library[0]
         mealDescription = ""
         referenceItemPresent = false
@@ -416,9 +417,9 @@ private struct AddMealView: View {
     @Binding var referenceItemPresent: Bool
     @Binding var mealPhotos: [MealPhoto]
     @Binding var inputSource: MealInputSource
+    @Binding var showsPhotoInput: Bool
 
     let initialPhotoSource: InitialPhotoSource
-    let startsWithDescription: Bool
     let onInitialPhotoSourceConsumed: () -> Void
     let onSelectMeal: (DemoMeal) -> Void
     let onAnalyze: (MealAnalysis) -> Void
@@ -426,7 +427,6 @@ private struct AddMealView: View {
     @State private var foodPickerItems: [PhotosPickerItem] = []
     @State private var labelPickerItems: [PhotosPickerItem] = []
     @State private var isAnalyzing = false
-    @State private var showsPhotoInput = true
     @State private var isPreparingPhoto = false
     @State private var photoLoadError: String?
     @State private var photoLoadToken = UUID()
@@ -587,7 +587,6 @@ private struct AddMealView: View {
             invalidatePendingPhotoLoad()
         }
         .task {
-            showsPhotoInput = !startsWithDescription
             let source = initialPhotoSource
             guard source != .none else { return }
             onInitialPhotoSourceConsumed()

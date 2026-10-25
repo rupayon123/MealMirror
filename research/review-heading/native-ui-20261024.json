@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "curatedAtUTC": "2026-10-25T00:26:17.224848+00:00",
+  "status": "HISTORICAL EXACT BUILD8 PARTIAL ACTUAL-APP UI EVIDENCE; NOT CURRENT BUILD9 ACCEPTANCE",
+  "build": "1.0 (8)",
+  "sourceZIP": {
+    "sha256": "a18495071b632ca42a505d88617d17438e2203f54d109f5a99a93b38655a1b85",
+    "bytes": 12203944
+  },
+  "surface": {
+    "runtime": "iOS 26.5 Simulator",
+    "application": "Actual exact build8 production app, updated over an earlier local build without reset/uninstall",
+    "controlAndCapture": "Root CUA operated Device Hub; screenshots were saved asynchronously by its Screenshot command. Curator viewed all six retained PNGs; no live UI action by curator.",
+    "style": "Light appearance observed; current text category was not read back. No dark/large/RTL or direct VoiceOver coverage."
+  },
+  "identity": {
+    "rootRecordedAll17InstalledFilesEqualExactBuild8": true,
+    "intent17FileHashesMatchRetainedExact8BuiltReceipt": true,
+    "installedVersionRecorded": "8",
+    "curatorQueriedCurrentDeviceOrContainer": false,
+    "limit": "Identity is the retained install/verification/operator record. Later device state is not silently substituted for this historical walkthrough."
+  },
+  "startup": {
+    "initialCommandObservation": "Root recorded a 45 second launch-command observation timeout. Subsequent CUA AX/pixels established Home with 2 prior reviews; the timeout does not prove app startup failed.",
+    "explicitLaterRestarts": "One root restart left the separate unselected picker; a later terminate/relaunch checked Practice record persistence. Retained command receipts for both restarts exit 0. These are explicit operations, not an inferred automatic retry or reset."
+  },
+  "photoAttempt": {
+    "pickerOpened": true,
+    "seededPhotosVisibleToRoot": true,
+    "selectedImageCount": 0,
+    "coordinateSelection": "Failed noWindowsAvailable; picker items were absent from the bridge AX tree. Escape did not dismiss it.",
+    "interpretation": "Control-route limitation, not a demonstrated product photo-selection bug or a successful photo journey.",
+    "originalInteractivePickerUntouchedAccordingToRoot": true
+  },
+  "unknownCheckedAmountAttempt": {
+    "operatorObservedUnknownDescription": "An unfamiliar synthetic description reached no reliable range, then Add a checked amount.",
+    "syntheticFormFieldsEntered": {
+      "name": "QA synthetic checked item",
+      "wholeGramsText": "37"
+    },
+    "addVisibleInPixels": true,
+    "AddCommitVerified": false,
+    "formCanceled": true,
+    "operatorObservedNoRangeAfterCancel": true,
+    "newManualHistoryRecordCreated": false,
+    "limit": "No manual checked-amount commit/save was performed. The visible form and successful cancel do not prove the inaccessible toolbar Add action worked or failed."
+  },
+  "practiceJourney": {
+    "operatorObservedConfirmationGate": "Review disabled before confirmation and enabled after confirming parts.",
+    "actualReviewAndSaveObserved": true,
+    "illustrativeRange": {
+      "low": 49,
+      "high": 66
+    },
+    "includedComponentCount": 3,
+    "PracticeOriginAndTitlePreservedInViewedSavedReview": true,
+    "savedHistoryOpened": true,
+    "actualDetailSheetViewed": true,
+    "explicitRelaunchObserved": true,
+    "newPracticeRecordVisibleAfterRelaunch": true,
+    "recordCounts": {
+      "beforeAccordingToRoot": 2,
+      "afterObserved": 3,
+      "newPracticeRecord": 1,
+      "priorRecordsStillVisible": 2,
+      "deleted": 0
+    },
+    "priorRecordLimit": "No delete operation was performed and two older records remained visible. No byte-for-byte before/after review-store comparison is claimed.",
+    "duplicateHistoryPNGLimit": "The two history files are byte-identical; separate relaunch commands/operator observations, not byte identity alone, support the persistence observation."
+  },
+  "captureTimingCorrections": [
+    "entry-return-photo-transition.png is a mid-Back transition to Photo, not the unknown-result screen.",
+    "practice-saved.png is after Save, not before Save Review.",
+    "practice-detail.png is an actual saved-review detail sheet; its third item extends beyond the viewport."
+  ],
+  "imageEvidence": {
+    "files": [
+      {
+        "localArtifact": "outputs/native-ui-build8-20261024/checked-amount-form.png",
+        "sha256": "a2b89181d75811afd1dc79821de6c4e42c6a67e234514dfbfbcd055d42344eea",
+        "bytes": 223835,
+        "pixelDimensions": [
+          1206,
+          2622
+        ],
+        "curatorViewedActualPNG": true,
+        "state": "Filled checked-amount form, before any Add commit",
+        "visible": "Actual Add item sheet shows synthetic QA item name, whole-gram text 37, visible green Add and Cancel, and trusted-source/no-insulin reminder.",
+        "limits": "Pixels do not verify activation. Operator recorded absent toolbar actions in the accessibility bridge, then canceled using an exposed secondary Cancel; no checked amount was committed or saved."
+      },
+      {
+        "localArtifact": "outputs/native-ui-build8-20261024/entry-return-photo-transition.png",
+        "sha256": "f99cbe166cd89563e7e7dedbf2462ff9f77e94082b75d029ebc39f6b6f2613a5",
+        "bytes": 486913,
+        "pixelDimensions": [
+          1206,
+          2622
+        ],
+        "curatorViewedActualPNG": true,
+        "state": "Back-navigation transition to meal-entry Photo mode",
+        "visible": "Photo tab is selected, attachment counts are0/3 and0/1, no photo selected, Build action is visible, with a sliver of the outgoing page at the right edge.",
+        "limits": "This is a mid-transition capture, not the settled unknown-result screen. It cannot be used as a clipping/layout regression or proof that the Description tab remained selected. Mode persistence is addressed separately after build8."
+      },
+      {
+        "localArtifact": "outputs/native-ui-build8-20261024/practice-saved.png",
+        "sha256": "76e938772d2af2be1ee210432fdb1108451d8c07ba204305fe8399646687d597",
+        "bytes": 269558,
+        "pixelDimensions": [
+          1206,
+          2622
+        ],
+        "curatorViewedActualPNG": true,
+        "state": "Practice Review after successful Save",
+        "visible": "Saved privately, Practice meal label, Chicken biryani plate, illustrative 49–66 g range, no-insulin recommendation boundary, description/reference note and 3 meal parts are visible.",
+        "limits": "This is after Save, not a before Save screenshot. It verifies the Practice title branch only; no non-Practice final heading or image-derived amount is shown."
+      },
+      {
+        "localArtifact": "outputs/native-ui-build8-20261024/practice-history.png",
+        "sha256": "0a66d101312aee0e3ba38cbd9c33b8d397deafd2988ec6f2165b15d57a0dcf4e",
+        "bytes": 344730,
+        "pixelDimensions": [
+          1206,
+          2622
+        ],
+        "curatorViewedActualPNG": true,
+        "state": "Local history after Practice Save",
+        "visible": "Three records: a new Practice biryani49–66g record above two older photo-origin37g records. View details/Delete controls are visible.",
+        "limits": "No Delete action was performed. This PNG is byte-identical to the post-relaunch history PNG and is not an independent second pixel observation."
+      },
+      {
+        "localArtifact": "outputs/native-ui-build8-20261024/practice-detail.png",
+        "sha256": "df1cd64fd61ad39f3a7b6102be46052324770392256dfd262f622bde4708426f",
+        "bytes": 354333,
+        "pixelDimensions": [
+          1206,
+          2622
+        ],
+        "curatorViewedActualPNG": true,
+        "state": "Actual saved-review detail sheet",
+        "visible": "Saved review sheet identifies Chicken biryani plate, Practice origin/example warning,49–66g range and no reference note. Basmati rice 42–55 g and Raita 5–7 g sources/portions appear; the third Cucumber salad name begins at the lower edge.",
+        "limits": "The whole three-item detail does not fit this viewport; root operator AX observations report 3 components. This is a real detail sheet, not a history-list image or full accessibility assessment."
+      },
+      {
+        "localArtifact": "outputs/native-ui-build8-20261024/persisted-history.png",
+        "sha256": "0a66d101312aee0e3ba38cbd9c33b8d397deafd2988ec6f2165b15d57a0dcf4e",
+        "bytes": 344730,
+        "pixelDimensions": [
+          1206,
+          2622
+        ],
+        "curatorViewedActualPNG": true,
+        "state": "History observed after explicit terminate/relaunch",
+        "visible": "The same three-record history is visible, including the new Practice record and two older photo records.",
+        "limits": "Byte identity with practice-history.png does not alone establish persistence; persistence is supported by the retained terminate/launch receipts and root post-relaunch AX/pixel observation."
+      }
+    ],
+    "retainedPNGCount": 6,
+    "uniquePNGByteIdentities": 5,
+    "allSixViewedByCurator": true,
+    "pixelsRedistributedInRepository": false
+  },
+  "stateBoundaries": {
+    "appDataResetOrUninstall": false,
+    "recordDeletionPerformed": false,
+    "keyboardCaptureRestoredOffAccordingToRoot": true,
+    "sourceChangeFromThisCuration": false,
+    "nativeHostQARouteRunByThisEvidence": false
+  },
+  "limits": [
+    "Historical build8 only; no transfer to build9 or another source/ZIP.",
+    "The iOS 27 Foundation Models image path was not exercised on iOS 26.5; no photo selected, no imageAI/OCR/nutrition/recognition result.",
+    "Practice values are illustrative bundled data, not measurements or validation of a real meal.",
+    "The changed non-Practice final heading was not reached; its six-case native value check remains separate.",
+    "No manual Add commit, complete photo/label/camera journey, delete, fallback-photo recovery, direct accessibility, dark/large/RTL, phone, network-isolated offline, calibrated performance or submission readiness acceptance.",
+    "A screenshot can be captured after the triggering action; labels here follow viewed pixels plus the retained operator timeline, not filename/trigger ordering alone."
+  ],
+  "localArtifactReferencesBase": "../../../..",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory, then append each relative path. Local command/PNG artifacts remain outside the public repository; hashes are provenance only. No private paths or device/account identifiers are copied here.",
+  "localArtifactReferences": [
+    {
+      "path": "outputs/native-ui-build8-20261024/intent.json",
+      "sha256": "b8f07754d4940033d9453abd6a2dbfaa6b8512818a2303b705fb490095ebc447",
+      "bytes": 2153
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/installed-verification.json",
+      "sha256": "9bed3f1634c3915ad0ffd70fdd40087628c7345691ea45798efb71306770d418",
+      "bytes": 129
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/install.json",
+      "sha256": "85d1a4b5bd1a77f113bf882e1f0fb74cdd59ea39a6031fe886069122c3b8cb15",
+      "bytes": 274
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/bootstatus.json",
+      "sha256": "a612554095182445b8d9fe3c079dc4d4ce5766958f852f7c25e42047ca40491b",
+      "bytes": 1605
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/prior-info.json",
+      "sha256": "ebf2f170cd04e81cc1811f490f31487620486d2053d05ae7826b86d62296df9e",
+      "bytes": 125
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/startup-observation.json",
+      "sha256": "15806bbd2a48bc430d933a5afd2568d382e03d59da20912f74e2886921ad60dd",
+      "bytes": 514
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/walkthrough-observation.json",
+      "sha256": "259c4f5dbb19eb56903592249908013e677553cfd5b902f0dcc2fbbaaf6b860a",
+      "bytes": 3186
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/form-screenshot-source.json",
+      "sha256": "aed2a1c36bd545b51b126b7be432d49ad296c407e267719bc8ef12944e88d2c1",
+      "bytes": 391
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/restart-terminate.json",
+      "sha256": "203a53e2fe3dacb46e8febd1271cf28f97f1d35b6690b1923ee70f324847392a",
+      "bytes": 210
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/restart-launch.json",
+      "sha256": "355da878e41639bbdcfc34c5759ea218f96ea79f83396e310b03c0220d399814",
+      "bytes": 245
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/persistence-terminate.json",
+      "sha256": "203a53e2fe3dacb46e8febd1271cf28f97f1d35b6690b1923ee70f324847392a",
+      "bytes": 210
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/persistence-launch.json",
+      "sha256": "55da012257f3c0f95a02843dff7a5788cb6b3a05ba410829af044b747d5d73a3",
+      "bytes": 245
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/persistence-observation.json",
+      "sha256": "5d3ead9a6af95650db71e598ec584137ddcf42bde908465c157204d02ffb949c",
+      "bytes": 404
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/checked-amount-form.png",
+      "sha256": "a2b89181d75811afd1dc79821de6c4e42c6a67e234514dfbfbcd055d42344eea",
+      "bytes": 223835
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/entry-return-photo-transition.png",
+      "sha256": "f99cbe166cd89563e7e7dedbf2462ff9f77e94082b75d029ebc39f6b6f2613a5",
+      "bytes": 486913
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/practice-saved.png",
+      "sha256": "76e938772d2af2be1ee210432fdb1108451d8c07ba204305fe8399646687d597",
+      "bytes": 269558
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/practice-history.png",
+      "sha256": "0a66d101312aee0e3ba38cbd9c33b8d397deafd2988ec6f2165b15d57a0dcf4e",
+      "bytes": 344730
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/practice-detail.png",
+      "sha256": "df1cd64fd61ad39f3a7b6102be46052324770392256dfd262f622bde4708426f",
+      "bytes": 354333
+    },
+    {
+      "path": "outputs/native-ui-build8-20261024/persisted-history.png",
+      "sha256": "0a66d101312aee0e3ba38cbd9c33b8d397deafd2988ec6f2165b15d57a0dcf4e",
+      "bytes": 344730
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/exact-build-verification.json",
+      "sha256": "a4e08d9b977bdb36f6e35b080d0de57d5f6b9eb24d46326aa562691039115a9d"
+    }
+  ],
+  "curationOnly": "Read existing records, verified hashes/metadata and viewed retained PNGs. No app actions, model calls, builds, capture, install, restart, OS events or source edits by curator."
+}
