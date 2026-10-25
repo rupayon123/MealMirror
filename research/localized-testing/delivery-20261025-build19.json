@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "Build19 packaging correction: full-language internal testing archive kept separate from English-only ChallengeZIP. No meal-processing or UI source change.",
+  "baselineMain": "5b1a45a78842f1b68a47a406701bfc8de566fd64",
+  "candidate": {
+    "build": 19,
+    "bytes": 12207536,
+    "sha256": "3c55b1bf656815eaf6a34c52398bfd0a09b989523411d3895811155c093a0e16",
+    "fileCount": 60,
+    "swiftCount": 18,
+    "locales": [
+      "en"
+    ],
+    "twoRepacksIdentical": true,
+    "diffFrom18": [
+      "MealMirror.swiftpm/AI-AND-ASSET-DISCLOSURE.md",
+      "MealMirror.swiftpm/Package.swift"
+    ]
+  },
+  "variants": {
+    "build": 19,
+    "swiftSources": 18,
+    "swiftSourceHashesIdentical": true,
+    "challengeFiles": 60,
+    "internalFiles": 94,
+    "challengeLocales": [
+      "en"
+    ],
+    "internalLocales": [
+      "ar",
+      "bn",
+      "en",
+      "es",
+      "fa",
+      "fil",
+      "fr",
+      "gu",
+      "hi",
+      "hu",
+      "ja",
+      "ko",
+      "pa",
+      "pt",
+      "ta",
+      "ur",
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "challengeZIPBytes": 12207536,
+    "challengeZIPSHA256": "3c55b1bf656815eaf6a34c52398bfd0a09b989523411d3895811155c093a0e16",
+    "twoRepacksIdentical": true,
+    "boundsSeconds": {
+      "eachBuildArchive": 600,
+      "codesign": 30,
+      "resourceCheck": 90,
+      "upload": 300
+    },
+    "distribution": "Fullsource internal-only testing archive, separate resource variant from English ChallengeZIP; no AppStore/external/publicbeta/GitHubbinaryrelease.",
+    "resourceDifference": "Only Info.plist localization declaration, app_strings catalog and17extra language dirs differ; all other Challengefiles identical."
+  },
+  "currentAppCode": {
+    "engineSHA256": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+    "localPhotoAISHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "contentViewSHA256": "814e1325bdfcfbc5301bcece926af9a08505158a181bbfc9f5acaa8161e70745",
+    "languageSourceUnchanged": true,
+    "modelPromptThemeAssetsStringsUnchanged": true,
+    "appFilesChanged": [
+      "Package.swift build18to19",
+      "AI-AND-ASSET-DISCLOSURE.md packaging assistance record"
+    ]
+  },
+  "sourceAudit": {
+    "exitCode": 0,
+    "catalogCount": 18,
+    "englishKeys": 487,
+    "englishIdenticalNonEnglishValuesRange": [
+      32,
+      97
+    ],
+    "qualification": "Audit excludes nonalphabetic keys; includes intentional names/loanwords and untranslated fallback. Not a translation-quality score."
+  },
+  "negativeControl": {
+    "build": "18",
+    "languages": [
+      "ar",
+      "bn",
+      "en",
+      "es",
+      "fa",
+      "fil",
+      "fr",
+      "gu",
+      "hi",
+      "hu",
+      "ja",
+      "ko",
+      "pa",
+      "pt",
+      "ta",
+      "ur",
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "languageCount": 18,
+    "englishKeyCount": 487,
+    "sourceCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "builtCatalogSHA256": "5eab59cfef5b5d0a8b52a01afb3e529bf3446c959830af1c7f7236d92d23d906",
+    "passed": false,
+    "errors": [
+      "App catalog differs from the full source catalogs",
+      "App declared languages differ from the full source catalogs",
+      "App language directories differ from the full source catalogs",
+      "ar: missing Localizable.strings",
+      "ar: missing InfoPlist.strings",
+      "bn: missing Localizable.strings",
+      "bn: missing InfoPlist.strings",
+      "es: missing Localizable.strings",
+      "es: missing InfoPlist.strings",
+      "fa: missing Localizable.strings",
+      "fa: missing InfoPlist.strings",
+      "fil: missing Localizable.strings",
+      "fil: missing InfoPlist.strings",
+      "fr: missing Localizable.strings",
+      "fr: missing InfoPlist.strings",
+      "gu: missing Localizable.strings",
+      "gu: missing InfoPlist.strings",
+      "hi: missing Localizable.strings",
+      "hi: missing InfoPlist.strings",
+      "hu: missing Localizable.strings",
+      "hu: missing InfoPlist.strings",
+      "ja: missing Localizable.strings",
+      "ja: missing InfoPlist.strings",
+      "ko: missing Localizable.strings",
+      "ko: missing InfoPlist.strings",
+      "pa: missing Localizable.strings",
+      "pa: missing InfoPlist.strings",
+      "pt: missing Localizable.strings",
+      "pt: missing InfoPlist.strings",
+      "ta: missing Localizable.strings",
+      "ta: missing InfoPlist.strings",
+      "ur: missing Localizable.strings",
+      "ur: missing InfoPlist.strings",
+      "yue-Hant: missing Localizable.strings",
+      "yue-Hant: missing InfoPlist.strings",
+      "zh-Hans: missing Localizable.strings",
+      "zh-Hans: missing InfoPlist.strings"
+    ],
+    "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+  },
+  "phases": {
+    "challenge-sim-build": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 284.854685333
+    },
+    "internal-sim-build": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 139.31170816600002
+    },
+    "internal-sim-locales": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.764146291999964
+    },
+    "internal-archive": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 88.69214008299997
+    },
+    "codesign": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.09043662500005212
+    },
+    "internal-archive-locales": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.7191212500000574
+    },
+    "archive-build-metadata": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.031245750000039152
+    },
+    "internal-upload": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 79.36590179200005
+    }
+  },
+  "archive": {
+    "build": "19",
+    "sdk": "iphoneos27.1",
+    "minimumOS": "17.0",
+    "binarySHA256": "1039df7f90450457b90808a633943ef1cf572a0227548749f7cd7cfe192f6deb",
+    "internalLocales": 18,
+    "sourceVariantsSwiftIdentical": 18,
+    "signedCodesignExit": 0,
+    "sourceSnapshotsUnchanged": true
+  },
+  "builtInternalLocales": {
+    "simulator": {
+      "build": "19",
+      "languages": [
+        "ar",
+        "bn",
+        "en",
+        "es",
+        "fa",
+        "fil",
+        "fr",
+        "gu",
+        "hi",
+        "hu",
+        "ja",
+        "ko",
+        "pa",
+        "pt",
+        "ta",
+        "ur",
+        "yue-Hant",
+        "zh-Hans"
+      ],
+      "languageCount": 18,
+      "englishKeyCount": 487,
+      "sourceCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+      "builtCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+      "passed": true,
+      "errors": [],
+      "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+    },
+    "archive": {
+      "build": "19",
+      "languages": [
+        "ar",
+        "bn",
+        "en",
+        "es",
+        "fa",
+        "fil",
+        "fr",
+        "gu",
+        "hi",
+        "hu",
+        "ja",
+        "ko",
+        "pa",
+        "pt",
+        "ta",
+        "ur",
+        "yue-Hant",
+        "zh-Hans"
+      ],
+      "languageCount": 18,
+      "englishKeyCount": 487,
+      "sourceCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+      "builtCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+      "passed": true,
+      "errors": [],
+      "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+    }
+  },
+  "bindings": {
+    "sourceManifestSHA256": "51e1b23c215e0e60adb80871ba6fc7f23db311ba2b2aa51d93eb93385a0bda0d",
+    "simulatorArtifactManifestSHA256": "6a11c3fb3b969dcae7056192253b7485c745035983268a360bf6e2999381d3f3",
+    "archiveFileManifestSHA256": "63475750bce27319c50e893b4e4de8228b37b409eb885d8a927055b0cf4ef81d",
+    "resourceVerifierSHA256": "ed93e4e5cf7e7da7bec20ab1495c34e076bef1154f6e7d9457af1793339cc43a",
+    "archiveScriptSHA256": "74a070b70a628a5c601bfb219785015240811c46742f454f8d183812e4b4f518",
+    "pipelineSHA256": "aedbb0c470c33f8998ee6e48d3362eb798cd31d261d11c404f51d222eef91e91",
+    "exportOptionsSHA256": "043de9791e4a4f0afc6cbce10480237301f799316fd2ee382f8e93f87df357f9"
+  },
+  "simulatorBinaries": {
+    "challenge": {
+      "MealMirror": {
+        "architectures": [
+          "x86_64",
+          "arm64"
+        ],
+        "sha256": "e4962d04fe24ee55a812fb58a949374f817db3e1652d12cbf576a8c6c07ef19a"
+      },
+      "MealMirror.debug.dylib": {
+        "architectures": [
+          "x86_64",
+          "arm64"
+        ],
+        "sha256": "33d946f103523918e6af0a851a9dc0f1267af17f133d5be3dd190edc237b0033"
+      }
+    },
+    "internal": {
+      "MealMirror": {
+        "architectures": [
+          "x86_64",
+          "arm64"
+        ],
+        "sha256": "1abbdbdd6e273c054e31e956768a381835cba56d7b5a0939339781c0749dcca7"
+      },
+      "MealMirror.debug.dylib": {
+        "architectures": [
+          "x86_64",
+          "arm64"
+        ],
+        "sha256": "260f9f79d56b7b717806854e23c311e1ac56c715d72ffbddd27804b414bed7d8"
+      }
+    }
+  },
+  "distribution": {
+    "internalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "uploadExit": 0,
+    "appleResponse": [
+      "Uploaded package is processing.",
+      "Upload succeeded.",
+      "EXPORT SUCCEEDED"
+    ],
+    "serverProcessingCompleteVerified": false,
+    "serverComplianceVerified": false,
+    "existingInternalGroupTestingVerified": false,
+    "phoneInstallationVerified": false,
+    "AppStoreSubmissionOrRelease": false,
+    "externalGroupsOrPublicBetaLinks": false,
+    "GitHubBinaryRelease": false,
+    "manualReleaseSetting": "No App Store Connect setting action; preserve existing manual setting."
+  },
+  "preservation": {
+    "snapshotFilesUnchanged": {
+      "challenge": 60,
+      "internal": 94
+    },
+    "swiftSourcesByteIdenticalAcrossVariants": 18,
+    "sharedFileDifferences": [
+      "Info.plist localization declaration",
+      "Resources/app_strings.json"
+    ],
+    "extraInternalResources": "17 additional language directories, two .strings files each.",
+    "simulatorInstallLaunchPhotoStoreOrSettingsOperations": false,
+    "originalQADeviceActions": false,
+    "ownedOrphanCompiler": "A previously timed-out diagnostic compiler was checked against its exact source/PPID1, terminated and verified absent before builds; no unrelated process signalled."
+  },
+  "limits": [
+    "Full-language testing archive is not the exact English-only ChallengeZIP binary; Swift source identity and resource differences explicitly verified.",
+    "Both Simulator launch stubs AND actual debug libraries contain arm64/x86_64; main executable hash alone is not app-code identity.",
+    "Resource/catalog/key/placeholder parity does not establish translation correctness, rendered RTL/long-text/accessibility or language-specific model support.",
+    "No fresh build19 install/full-native journey or physical/network-isolated offline/camera test occurred. Latest full native journey remains build13.",
+    "Meal/photo-model/prompt logic unchanged; broader qualified food recognition and abstention remain open.",
+    "2027 Challenge rules and applicant-owned code/eligibility/rights/essays checks remain open."
+  ],
+  "pipeline": {
+    "complete": true,
+    "scope": "BothresourcevariantSimcompile;full18languageinternalarchive/sign/resourceverification/upload. EnglishChallengeZIPnotarchived/uploaded. NoactualUI/iPhone/serverTesting/translationqualityacceptance."
+  },
+  "independentReview": {
+    "result": "No material issue found in source, built-resource, archive/signing or upload evidence.",
+    "scope": "Read-only independent rehash of both snapshots/currentfullsource, actual built18-language native strings, launchstub/debuglibrary architectures, archive metadata/hash, codesign results and internal-only upload command/options/log. No repeat workload/account/UI action.",
+    "limits": "Server processing/group availability, phone install, freshnativejourney, translation correctness and UI/accessibility unverified."
+  }
+}

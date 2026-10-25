@@ -29,4 +29,6 @@ Use the [stress-test plan](STRESS-TEST-PLAN.md). AI accuracy requires qualified 
 
 After app changes, Full Stack regenerates and verifies the exact English-only ZIP against the applicable published rules, builds it, exercises affected flows and pushes reviewed source. Direct development installs and the existing internal TestFlight group remain the only app distribution authorized. Manual release setting stays unchanged. Physical phone testing remains applicant-deferred.
 
+Keep the two resource variants explicit. The Challenge ZIP contains English resources; the internal testing build preserves the source language catalogs so the applicant can test the language menu. Match all Swift source hashes between their frozen snapshots, compile each variant, and run `verify-testing-localizations.py` on the full-language built app/archive before internal upload. A full-language TestFlight archive is not the exact English-only ZIP binary. Resource parity does not establish translation quality, rendered layout, accessibility, recognition accuracy or physical offline operation.
+
 The active goal remains submission readiness. Neither setting up chats nor passing a narrow test completes it; current Apple rules, applicant eligibility/code review/AI disclosure/essays and all remaining technical gates still apply.

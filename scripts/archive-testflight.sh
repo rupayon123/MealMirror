@@ -27,6 +27,9 @@ xcodebuild -scheme MealMirror -destination 'generic/platform=iOS' \
 
 app_path="$archive_path/Products/Applications/MealMirror.app"
 codesign --verify --deep --strict "$app_path"
+# Internal testers need the existing source languages. Do not silently archive
+# the English-only judging variant as the full internal testing build.
+python3 "$repo_root/scripts/verify-testing-localizations.py" "$app_path"
 python3 - "$app_path" "$sdk_version" <<'PY'
 import plistlib
 import re
