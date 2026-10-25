@@ -1,6 +1,6 @@
 # RxFood public recon for MealMirror
 
-Reviewed October 4, 2026. This is a clean-room feature map from public pages, not an account-based walkthrough or an accuracy study. Screen details that are not publicly visible are marked inferred. The goal is an original Swift Student Challenge experience for newly diagnosed people with Type 1 diabetes, children and caregivers, centered on an offline meal photo and a trustworthy review.
+Initial recon October 4, 2026; selected official RxFood pages and implementation status refreshed October 25. This is a clean-room feature map from public pages, not an account-based walkthrough or an accuracy study. Screen details that are not publicly visible are marked inferred. The goal is an original Swift Student Challenge experience for newly diagnosed people with Type 1 diabetes, children and caregivers, centered on an offline meal photo and a trustworthy review.
 
 ## Public sources
 
@@ -47,8 +47,10 @@ No reliable public screen-by-screen inventory of loading, failure, denied-permis
 3. **Low burden and food freedom:** a child or caregiver can start with one photo, recover from an unknown result, and discuss any chosen meal without shame. Measure completion time, mistakes and comprehension, not aesthetic preference alone.
 4. **Accessibility:** verify VoiceOver, large text, reduced motion, contrast and right-to-left layouts on the actual app and final package.
 
-The current MealMirror build has not proved superiority on recognition, nutrition accuracy, clinical outcomes or breadth. Existing Vision results were unreliable in Simulator, and no validated any-meal model is bundled.
+The current MealMirror build has not proved superiority on recognition, nutrition accuracy, clinical outcomes or breadth. The older Vision fallback was unreliable in the tested iOS26.5 Simulator. Apple Foundation Models image prompting is now integrated with availability checks, but one exposed build13 full journey is not qualified worldwide recognition evidence. No validated any-meal nutrition model is bundled.
 
 ## Scope and hard parts
 
 The Challenge slice is S02/S03/S04 as an original three-minute offline experience, plus a local history and concise learning moment. Dexcom/Libre live connections, clinician networks, a comprehensive recipe library and personalized insulin dosing require online services, licensing or clinical validation outside this offline artifact. The broader product can address them in separately verified workstreams. Hard parts: reliable open-world meal recognition with abstention; medically meaningful nutrition validation; clinical-grade dosing and CGM safety. Overall size: XL for the full RxFood-like service, M/L for a carefully scoped Challenge playground.
+
+For the four-page current-source refresh, four-review thin sample and corrected Apple API implementation status, see [October25 research](../research/competitive-refresh-20261025.md). Public page claims do not establish comparative accuracy or current RxFood defects.

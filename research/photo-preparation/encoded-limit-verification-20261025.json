@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "sourceCommits": {
+    "baseline": "fa3c8a3512d9a1ae3f74028aaee823ee4dd5b374",
+    "fixed": "7f32e5a573aa5eed95f0a68fe169a48ade7d2cb4"
+  },
+  "scope": "Bounded independent macOS ImageIO adapter verification on one existing synthetic orientation1 320x240 JPEG only; no production edits, app/Simulator/model/large image or network calls.",
+  "compile": {
+    "exitCode": 0,
+    "timedOut": false,
+    "seconds": 11.029856500000001,
+    "attempts": 1,
+    "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "baseline": {
+    "execution": {
+      "exitCode": 6,
+      "timedOut": false,
+      "seconds": 0.34447537500000003,
+      "attempts": 1,
+      "logSHA256": "372551bc3868187cb11f9050c0e7be2f28f0ace33cdc51f6cb89c21d05f0a17d"
+    },
+    "caseCount": 10,
+    "contractFailures": 2,
+    "observed": "Zero and -1 returned320x240 full fixture rather than desired nil. These remain recorded as failed rejection assertions; eight other cases passed."
+  },
+  "fixed": {
+    "execution": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.020125375,
+      "attempts": 1,
+      "logSHA256": "986514bbd4f4f71a1074caf9793a1469df91dc3b922c60ca23e293edff2d047f"
+    },
+    "caseCount": 14,
+    "contractFailures": 0,
+    "invalidLimitsRejected": [
+      "Int.min",
+      -1,
+      0,
+      2401,
+      10000,
+      "Int.max"
+    ],
+    "emptyAndTruncatedRejected": true,
+    "positiveBoundedValidLimits": [
+      1,
+      40,
+      768,
+      1800,
+      2400
+    ],
+    "default1800MatchedExplicitDimensions": true
+  },
+  "sourceFidelity": {
+    "frozenFilesUnchangedThroughAfterRun": true,
+    "functionBodiesAreExactCommittedByteSlices": true,
+    "functionIdentities": {
+      "baseline": {
+        "sha256": "91086a865b18f5b3e98d97605f9f42196a242a6815a982a8f08e1408f2b1f06e",
+        "bytes": 647
+      },
+      "fixed": {
+        "sha256": "17de222d69335098ef4d4f8bea84818093b3cc48dddbdcb4d23c468a755b7514",
+        "bytes": 1008
+      }
+    },
+    "extractionBoundary": "From exact static Data function marker through bytes immediately preceding newline introducing next UIImage overload; separate enum namespace wraps each unchanged slice.",
+    "adapter": "UIImage stores returned CGImage only. No UIKit/image metadata or async scheduling emulation."
+  },
+  "materialCodeConcerns": [],
+  "limits": [
+    "Small macOS ImageIO only; no iOS Photos UI or UIKit orientation/scale/async/token behavior pass.",
+    "No malformed-format matrix beyond empty and first16 JPEG bytes, no48MP inputs or memory/latency conclusions.",
+    "Unrelated host compiler job was live; durations are execution records only.",
+    "One shared compile, one baseline process and one fixed process; no retries or changed criteria after results."
+  ],
+  "date": "2026-10-25",
+  "callGraph": {
+    "library": "ContentView.loadSelectedPhotos loads Data and calls async Data preparation at food1800/label2400; wrapper calls guarded sync Data preparation.",
+    "camera": "Separate UIImage overload, unchanged.",
+    "priorUnusedClaimWithdrawn": true
+  },
+  "integration": {
+    "build": "16; exact ZIP clean build, signed archive/codesign and internal-only upload exited0; Apple processing",
+    "currentEngineSHA256": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+    "testedToIntegratedRuntimeDelta": "None: later engine change alters only the explanatory comment.",
+    "policy": "Requested Int limit must be1...2400; invalid/empty input returns nil and returned longest edge must fit. Current positive UI limits unchanged.",
+    "notClaimed": "Encoded-byte cap, decoding resource/peak-memory bound, UIKit metadata, PhotosUI/native/physical, arbitrary-meal recognition or clinical validation."
+  },
+  "appleDocumentation": {
+    "url": "https://developer.apple.com/documentation/imageio/kcgimagesourcethumbnailmaxpixelsize",
+    "checked": "2026-10-25",
+    "scope": "Documents maximum pixel width/height and unbounded size if key omitted. Zero/negative behavior here is an observed Mac fixture result, not a documented cross-platform guarantee."
+  },
+  "localArtifactReferences": [
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/SOURCE-FREEZE.json",
+      "sha256": "96f6a5e118b6cf37639306fb18d863c6b80216cd1f3f7271a611998aa16196a7"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/PROTOCOL.json",
+      "sha256": "d1f326ce308048de0973d1332752628ad66ba1e50215e96e1df96878b0400b7c"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/CALLGRAPH-REVIEW.json",
+      "sha256": "9d5de81ed1ff114ec50882a529983b4d7a6e0fd3e2c9bd076f47b6aafb8f6dff"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/source/function-only.diff",
+      "sha256": "5cd84ee22d0af82c26109abe06768328ed6fbe6904891713817de4f2f22d206d"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/compile-v1/intent.json",
+      "sha256": "64bbeaf72a027d47fca5648448ebe6aa5f23a550f2500fc76ccffd2f27aaf0c4"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/compile-v1/result.json",
+      "sha256": "66ba436c6a5190d3cd183835ac52061dacc789309c258b2b15235163cf116267"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/compile-v1/command.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/baseline-run-v1/intent.json",
+      "sha256": "56da4f6f309448c01f5924cc5d76fba8ea9d1a838c52586cf0215c9befcc7e7f"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/baseline-run-v1/result.json",
+      "sha256": "ee8bcb204aca2296d908d19c6fbe01d63ebe6559254b59e19cfec890bcf401d0"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/baseline-run-v1/command.log",
+      "sha256": "372551bc3868187cb11f9050c0e7be2f28f0ace33cdc51f6cb89c21d05f0a17d"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/baseline-run-v1/report.json",
+      "sha256": "746bc51314f08ca9d6515b2c6545ccd29d726c63eb5f24209604e1ee17b1655a"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/fixed-run-v1/intent.json",
+      "sha256": "ac64b0d26920828ac6d9a6fa0ae5ca7fb50336b5454d12e072d89783353ccdca"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/fixed-run-v1/result.json",
+      "sha256": "36723f2e17e57ca9218b51318eb76a1ce2fd628ef71629be0cfab1e64ee3767a"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/fixed-run-v1/command.log",
+      "sha256": "986514bbd4f4f71a1074caf9793a1469df91dc3b922c60ca23e293edff2d047f"
+    },
+    {
+      "privateRelativePath": "encoded-limit-review-20261025-v1/fixed-run-v1/report.json",
+      "sha256": "efee5e460f9232bbe2bb4e5a8a8149eb7ff4c7d3f0eb034b768fca405ab7dc8b"
+    }
+  ]
+}

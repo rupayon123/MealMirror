@@ -141,6 +141,9 @@ enum MealPhotoPreparation {
     }
 
     static func downsampledImage(from data: Data, maxPixelSize: Int = 1_800) -> UIImage? {
+        // Reject invalid limits and keep decoded previews within the app's
+        // largest intentional label-photo size.
+        guard !data.isEmpty, (1...2_400).contains(maxPixelSize) else { return nil }
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else { return nil }
         let options: CFDictionary = [
             kCGImageSourceCreateThumbnailFromImageAlways: true,
@@ -149,7 +152,9 @@ enum MealPhotoPreparation {
             kCGImageSourceShouldCacheImmediately: true
         ] as CFDictionary
 
-        guard let cgImage = CGImageSourceCreateThumbnailAtIndex(source, 0, options) else { return nil }
+        guard let cgImage = CGImageSourceCreateThumbnailAtIndex(source, 0, options),
+              cgImage.width > 0, cgImage.height > 0,
+              max(cgImage.width, cgImage.height) <= maxPixelSize else { return nil }
         return UIImage(cgImage: cgImage)
     }
 

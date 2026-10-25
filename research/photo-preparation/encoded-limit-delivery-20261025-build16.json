@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "candidate": {
+    "version": "1.0 (16)",
+    "zipSHA256": "3f967785bc8f5de774e936a10c8ad0a411a84818614aca17aa7b711b645f7f0b",
+    "zipBytes": 12205430,
+    "packagedFiles": 59,
+    "matchingSwiftSources": 17,
+    "languages": [
+      "en"
+    ]
+  },
+  "change": "Reject empty encoded data or requested thumbnail limits outside1...2400; verify positive output dimensions and longest edge within the requested size. Current library food1800/label2400 limits unchanged; cameraUIImage route unchanged.",
+  "verification": {
+    "MacDataAdapterAssertions": 14,
+    "baselineContractFailures": 2,
+    "baselineExit": 6,
+    "fixedExit": 0,
+    "MacScope": "One synthetic320x240 orientation1 JPEG with a CGImage-only UIImage adapter; no UIKit/native/photo/model/memory acceptance.",
+    "evidence": "encoded-limit-verification-20261025.json",
+    "repackByteIdentical": true,
+    "exactExtractedFilesUnchanged": 59,
+    "nativeCandidate16Cases": 0,
+    "build": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 123.157057042
+    },
+    "archive": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 65.869995708
+    },
+    "upload": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 86.34019850000001
+    },
+    "actualSimulator": {
+      "build": "16",
+      "SDK": "iphonesimulator27.1",
+      "minimumOS": "17.0",
+      "matchingExtractedFiles": 59,
+      "binarySHA256": "ed059a082556c05d0dbf6587f12646c3b595999266c152fa19322bb30b5d4b34"
+    },
+    "actualSignedArchive": {
+      "build": "16",
+      "SDK": "iphoneos27.1",
+      "minimumOS": "17.0",
+      "codesignExit": 0,
+      "archiveBinarySHA256": "1255e75b0626814325116a44c87778ad2a5623e8d2059cf9cd5116fac4ae712b",
+      "extractedFilesUnchanged": 59
+    },
+    "candidate15To16ZIPDelta": [
+      "MealMirror.swiftpm/AI-AND-ASSET-DISCLOSURE.md",
+      "MealMirror.swiftpm/MealAnalysisEngine.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ]
+  },
+  "distribution": {
+    "scope": "Existing internal TestFlight testing only",
+    "AppleReported": "Uploaded package is processing.",
+    "testFlightInternalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "processingCompletionComplianceExistingGroupTestingOrPhoneInstallVerified": false,
+    "AppStoreReviewReleaseExternalBetaPublicLinkOrAppReleaseAction": false,
+    "releaseSettingActionPerformed": false
+  },
+  "remaining": [
+    "Fresh current-candidate native photo/UI/error/retry and rendered accessibility/animations.",
+    "Encoded-photo hostedUIKit cases and physical camera/airplane-mode tests.",
+    "Qualified varied-food recognition/abstention evaluation and individualized clinical validation for any future dose feature.",
+    "2027 rules and applicant-owned eligibility/code review/disclosure/essays."
+  ],
+  "localArtifactReferences": [
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/PACKAGE.json",
+      "sha256": "91487657fd902168c6015f00ef487443cbd2c10797180f263a3226f5dd233aac"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/BUILD-VERIFICATION.json",
+      "sha256": "cbe13a87cbbb872e845ff5c68e92f5f43396a37681ce69bee80d9e66286c3f7b"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/ARCHIVE-VERIFICATION.json",
+      "sha256": "71f13f2ae2f090fd92a16d93903d99939bc7caa550e552f11050eec6a5b2e7b9"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/exact16-build-result.json",
+      "sha256": "796a05ffad2e3b195fddc10d475638b2d35df4530a7bee6666748fc842e5019c"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/exact16-archive-result.json",
+      "sha256": "fc9f2e6d300b407e51439c8d819070627d24865b5fbf0396dcd352e76316b915"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/codesign-result.json",
+      "sha256": "8084aaaa2ecc68db48ffb61ba862f519038df44d94b7278c4c7d6f3449fd9639"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/exact16-upload-result.json",
+      "sha256": "8a66c89706890c3b1929fb14eacbeaa67e4c0ec2fa522e186047fc9d6a672b7e"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/PIPELINE-RESULT.json",
+      "sha256": "f3796523ea8f8066e623d7f813a9b2880718348709a3dce4316204728e130aae"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/exact16-build.log",
+      "sha256": "a607fb12a73d30dc153b9c54f9d6f27a21398a5bf824b6a60c50459c653a2076"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/exact16-archive.log",
+      "sha256": "a04f052c349687c7e869614e3ee32af4945d92db2d5674757b836a761dd89e35"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/codesign.log",
+      "sha256": "8a96f6b120c2348d570b21e78352cb1d01686e9bf6f2ae7f3920d341fd7e9b7e"
+    },
+    {
+      "privateRelativePath": "encoded-limit-build16-20261025-v1/exact16-upload.log",
+      "sha256": "6e7f9794a7849b2968834f26899e5e3be51555aafe9400faeeab3a6a370bae32"
+    }
+  ]
+}
