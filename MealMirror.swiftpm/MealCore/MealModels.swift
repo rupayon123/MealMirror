@@ -9,6 +9,33 @@ public struct CarbRange: Hashable, Codable, Sendable {
         self.high = max(self.low, high)
     }
 
+    private enum CodingKeys: String, CodingKey {
+        case low
+        case high
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let low = try container.decode(Int.self, forKey: .low)
+        let high = try container.decode(Int.self, forKey: .high)
+        // Decoding does not call the normalizing initializer. Reject damaged
+        // saved bounds rather than silently changing a person's checked amount.
+        guard low >= 0 else {
+            throw DecodingError.dataCorruptedError(
+                forKey: .low, in: container,
+                debugDescription: "A carbohydrate range cannot have a negative lower bound."
+            )
+        }
+        guard high >= low else {
+            throw DecodingError.dataCorruptedError(
+                forKey: .high, in: container,
+                debugDescription: "A carbohydrate range cannot end below its lower bound."
+            )
+        }
+        self.low = low
+        self.high = high
+    }
+
     public func display(locale: Locale, format: String = "%lld–%lld g") -> String {
         String(
             format: format,

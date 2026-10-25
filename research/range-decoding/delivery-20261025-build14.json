@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "candidate": {
+    "version": "1.0 (14)",
+    "ZIP_SHA256": "331959607a2edb08bd698fb89f701654067cb5da3b6d5f494f6142fd623aef60",
+    "ZIPBytes": 12204911,
+    "packagedFiles": 59,
+    "matchingSwiftSources": 17,
+    "languages": [
+      "en"
+    ],
+    "repackByteIdentical": true
+  },
+  "issue": {
+    "location": "MealMirror.swiftpm/MealCore/MealModels.swift:CarbRange",
+    "cause": "Synthesized decoding assigns stored bounds directly and does not call the normalizing initializer.",
+    "baseline": {
+      "compileExit": 0,
+      "runExit": 1,
+      "negativeAccepted": [
+        -10,
+        -5
+      ],
+      "reversedAccepted": [
+        40,
+        10
+      ],
+      "validControlPreserved": [
+        30,
+        40
+      ]
+    },
+    "change": "Custom decoding rejects a negative lower bound or an upper bound below the lower bound with DecodingError. No silent repair or clinical maximum added.",
+    "unchanged": "Public constructor normalization, valid low/high encoding, aggregate checked-overflow handling, food AI/model/prompt, theme and assets."
+  },
+  "verification": {
+    "sourceBeforeSHA256": "ce1c8eb5114471f08f84049c7492396981f78ac7f1674575699d457109ae1303",
+    "sourceAfterSHA256": "4a37e11824d122728ef4798482cd44c3d61c78b1321345a8c83b93099b303493",
+    "unchangedOriginalProbeAfterFix": {
+      "compileExit": 0,
+      "runExit": 0,
+      "negativeAndReversedRejected": true,
+      "validControlPreserved": true
+    },
+    "portableRegression": {
+      "command": "bash scripts/verify-range-decoding.sh",
+      "exit": 0,
+      "checks": 532,
+      "passed": 532,
+      "breakdown": {
+        "malformedInputs": 12,
+        "explicitValidBoundarySchemaRoundTripChecks": 15,
+        "manualWholeGramValueRoundTrips": 501,
+        "constructorAndTotalControls": 4
+      },
+      "scope": "Exact production CarbRange on macOS; not real-store, iOS UI or clinical validation."
+    },
+    "retainedHarnessFailure": "First expanded harness compile failed because two throwing decoder calls were passed to a nonthrowing autoclosure. Corrected harness evaluates decode before asserting. App fix unchanged.",
+    "independentReview": {
+      "materialFindings": 0,
+      "scope": "Read-only source and retained-evidence review, no repeated tests or real store access.",
+      "saveDeleteAndErrorUI": "Existing store reads fail before save/delete writes, and History shows Review needed. These call paths were source-reviewed, not newly runtime-exercised.",
+      "tradeoff": "One invalid range leaves the complete stored array unreadable until explicit user action. Raw history is not automatically normalized, overwritten or deleted."
+    },
+    "exactSimulatorBuild": {
+      "exit": 0,
+      "timedOut": false,
+      "seconds": 118.895739166
+    },
+    "exactSignedArchive": {
+      "exit": 0,
+      "timedOut": false,
+      "seconds": 120.45026250000001
+    },
+    "codesignExit": 0,
+    "exactExtractedFilesUnchangedAfterBuildAndArchive": 59,
+    "SDK": "27.1",
+    "minimumIOS": "17.0",
+    "newNativeAppJourneyExecuted": false
+  },
+  "distribution": {
+    "scope": "Existing internal testing only",
+    "uploadExit": 0,
+    "uploadSeconds": 92.59267758300001,
+    "AppleReported": "Uploaded package is processing.",
+    "testFlightInternalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "processingCompletionVerified": false,
+    "complianceAndExistingGroupTestingVerified": false,
+    "physicalInstallVerified": false,
+    "AppStoreReviewReleaseExternalBetaPublicLinkOrAppReleaseActions": false,
+    "releaseSettingActionPerformed": false
+  },
+  "nativeEncodedFollowup": {
+    "scope": "Existing root-owned processing QA target, standalone probe only; no app install, media/store/preference/model action.",
+    "bootStatusExit": 0,
+    "terminalMigrationWarningRetained": true,
+    "validNoArgumentControlExpectedExit2Observed": false,
+    "controlBoundSeconds": 30,
+    "subsequentCleanupObservationTimeoutSeconds": 10,
+    "encodedIOSCasesExecuted": 0,
+    "shutdownExit": 0,
+    "freshOwnedStateShutdown": true,
+    "ownedLaunchdAbsent": true,
+    "priorQAFilesPreserved": 322,
+    "priorFileDifferences": 0,
+    "deviceStateDifferences": 0,
+    "limit": "Zero input cases ran; bootstatus0 and a migration warning do not prove a healthy app/runtime. Earlier fresh-target failures remain separately retained."
+  },
+  "remaining": [
+    "Fresh candidate14 native persistence/error/full journey, rendered accessibility and animations.",
+    "Encoded-photo iOS execution, multi-photo large-input app flow and physical offline/camera.",
+    "Qualified varied-food recognition/abstention evaluation; no arbitrary-meal accuracy.",
+    "Apple processing/compliance/existing internal group state and applicant-owned 2027 requirements."
+  ],
+  "privacy": "Synthetic model inputs and curated metadata/hashes only public. No actual user store changed; raw logs, QA identifiers, pictures and private paths remain local.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "range-decoding-20261025-v1/BASELINE-FREEZE.json",
+      "sha256": "5fd3bc63381ce510ef1908015700e9d4c331d751ebc11f45acfb449f7fd1b99c"
+    },
+    {
+      "path": "range-decoding-20261025-v1/BASELINE-RESULT.json",
+      "sha256": "3cc0fb68e692bd721b482b1e9496f48170158fc509cb2e203f080ec14f60c2d9"
+    },
+    {
+      "path": "range-decoding-20261025-v1/baseline-run.log",
+      "sha256": "b3876261334d3875577a6807fb26d3e51fcaa29f113752f49ccc8dc0ebdccdf0"
+    },
+    {
+      "path": "range-decoding-20261025-v1/main.swift",
+      "sha256": "95fe46f4a611de942387ea26a6b2e8979ea3c646c24acff7e384f5505ef2f6fd"
+    },
+    {
+      "path": "range-decoding-20261025-v1/fixed-original-run.log",
+      "sha256": "ce5cca48f200cf85d232b436590803106968bcd00316d9f5c364f744e8b30b27"
+    },
+    {
+      "path": "range-decoding-20261025-v1/FIXED-RESULTS.json",
+      "sha256": "132b0abc77b00a2550c083223048c2ee2c4cea22177c1ffd0c4b109b86bad05a"
+    },
+    {
+      "path": "range-decoding-20261025-v1/regression.log",
+      "sha256": "5419827f08f59c18304b616150d1c49a2915eca75166282e97d4e0618c907767"
+    },
+    {
+      "path": "range-decoding-20261025-v1/regression-v2.log",
+      "sha256": "65347c322fec14b4b0b90fcafa31ba47e5244e10696fce91849a7283d94e6778"
+    },
+    {
+      "path": "range-decoding-20261025-v1/regression-v2-result.json",
+      "sha256": "8ff6d69e7f05c30d145ef2ac1929146eac62e3c1dc817e0b123a2aba2150e1bb"
+    },
+    {
+      "path": "range-decoding-20261025-v1/INDEPENDENT-REVIEW.json",
+      "sha256": "841765498864d875b5d4f1cccfacc0e15dfe8d5bb8fc2137167655c1a8f27822"
+    },
+    {
+      "path": "range-decoding-20261025-v1/candidate14-identity.json",
+      "sha256": "83cea6580f24e9da8d5cc0d7e9019256083c934dc1b373cb006c59b40b19219b"
+    },
+    {
+      "path": "range-decoding-20261025-v1/candidate14-repack-verification.json",
+      "sha256": "fe4af6d859386315f9527183f6907aaf52daf003bad5598e9a12ddbe59f98320"
+    },
+    {
+      "path": "range-decoding-20261025-v1/exact14-build-intent.json",
+      "sha256": "6fd9434a078e298ab1a5bdb6dd9b4ac102faeddfd349222e24735e88a0952248"
+    },
+    {
+      "path": "range-decoding-20261025-v1/exact14-build-result.json",
+      "sha256": "b405d7eadefe6470852f9db2ecdc0b31b0dded44fed04d1383b0dc0d218fd467"
+    },
+    {
+      "path": "range-decoding-20261025-v1/exact14-postbuild-verification.json",
+      "sha256": "8353af7724c0eb9186d2d004338425a51624dd4bc34008c0dd37ce76847fb289"
+    },
+    {
+      "path": "range-decoding-20261025-v1/exact14-archive-intent.json",
+      "sha256": "631f86ba97144a8dbddcebaa091f6b881484e3e8d67a01b9f41a384406b81017"
+    },
+    {
+      "path": "range-decoding-20261025-v1/exact14-archive-result.json",
+      "sha256": "f70d691eebaaf87e004792ce7e94ba4c7cf45bf871e09264cc59399769496cc7"
+    },
+    {
+      "path": "range-decoding-20261025-v1/exact14-archive-verification.json",
+      "sha256": "25f75829a2d1e00e65eeb095408d86da954e9cb8da008b223bbaa6e3e911ba5b"
+    },
+    {
+      "path": "range-decoding-20261025-v1/exact14-archive-platform.txt",
+      "sha256": "14c39e9df3d134630ca34ca75cc0e2712403faf3602e7b74e8ceb34eb694b525"
+    },
+    {
+      "path": "range-decoding-20261025-v1/exact14-upload-intent.json",
+      "sha256": "38199a0b5349e882b86c98f5900e8287d6be4c0a94259effd08755dba4298247"
+    },
+    {
+      "path": "range-decoding-20261025-v1/exact14-upload-result.json",
+      "sha256": "1e18b17241cd2df4829b2f35617576146a92a83b66dd67d7fbb37965e919ca74"
+    },
+    {
+      "path": "range-decoding-20261025-v1/exact14-upload.log",
+      "sha256": "dea5f871a882b55046142c38f8ccf845a07f757e35f3ea79833597b641100a2b"
+    },
+    {
+      "path": "range-decoding-20261025-v1/Internal-ExportOptions.plist",
+      "sha256": "043de9791e4a4f0afc6cbce10480237301f799316fd2ee382f8e93f87df357f9"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/native-existing-target-v1/BASELINE-PROTOCOL.json",
+      "sha256": "947c9f6e4f94b7644d5de07b9527ba1e45026756b8e48ba3a90626f60dcfa16f"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/native-existing-target-v1/bootstatus-result.json",
+      "sha256": "0ec67eccd0c8a2f1817869d6dd4bea535c350021ec045a6784ded9fc869a81a8"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/native-existing-target-v1/bootstatus.log",
+      "sha256": "a3f8007d2b18a295dc71259ab00c4627ea5c0077a3536522fda97f5bc6cb68de"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/native-existing-target-v1/argument-control-timeout-retained.json",
+      "sha256": "12e4c6a9eaaf94e3e914967e062e7270975e11c257cbf86a326b01d44190d834"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/native-existing-target-v1/shutdown-result.json",
+      "sha256": "3c492db8acc876a5e311534de1ea09a12b824b892741b6bc0edf9df2323a9a3c"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/native-existing-target-v1/FINAL-PRESERVATION.json",
+      "sha256": "704ad0d173353298b71d980d7b83d10bef11494545079eaae25c2bedc31b6f3b"
+    }
+  ]
+}
