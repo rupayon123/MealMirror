@@ -144,3 +144,7 @@ The **500 rule** (`500 ÷ total daily insulin dose`) can estimate starting grams
 4. Review the final ownership, AI/asset, eligibility, and personal-essay obligations before any application is submitted. The applicant said they will personally review the code and write the required answers.
 
 No implementation or medical recommendation was added by this planning document. No award outcome is guaranteed.
+
+## Parallel delivery ownership
+
+Use [TEAM-WORKFLOW.md](TEAM-WORKFLOW.md) for frontend/local-engine/integration ownership and [STRESS-TEST-PLAN.md](STRESS-TEST-PLAN.md) for bounded functional, visual and failure coverage. The coordinator retains final exact-package and public-main responsibility. Chat setup and planned tests do not close any submission gate.
