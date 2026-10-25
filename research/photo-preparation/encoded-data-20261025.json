@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "Unchanged ImageIO encoded-data function executed on macOS with a CGImage-only UIImage result adapter; failed native startup/control attempts retained separately. No production change.",
+  "source": {
+    "engineSHA256": "ef15ea5bb8ea00b5b0ce4dbd642e0c43ee931d9cba90e95d401173ad23beef55",
+    "exactEnumSHA256": "5dc72ee41905c5d8b7abcbe94ada61a00aae8625023b5f106523c5dd5d739dae",
+    "exactEnumBytes": 3471,
+    "dataFunctionSHA256": "96e6bdb1d432ae12a1652144cb737641a2fead9e010aeddd227918ab943d0145",
+    "dataFunctionBytes": 648,
+    "dataFunctionCopiedUnchanged": true
+  },
+  "macAdapter": {
+    "platform": "macOS27",
+    "UIImage": "CGImage result container only; UIKit import and metadata assertions excluded.",
+    "scopeLimit": "Does not establish iOS ImageIO/UIKit behavior or app integration.",
+    "compileFirstAttempt": {
+      "exit": -15,
+      "timedOut": true,
+      "seconds": 60.087238791000004
+    },
+    "compileDiagnosticAttempt": {
+      "exit": 0,
+      "timedOut": false,
+      "seconds": 14.054401417
+    },
+    "compilerTiming": "Main function type-check timing203.70ms observed after prior60second build timeout; changed diagnostics and host bound. No cause or optimization claim."
+  },
+  "fixtures": {
+    "synthetic": true,
+    "largePixels": [
+      8000,
+      6000
+    ],
+    "pattern": "Four colored quadrants; low visual complexity, not real camera/meal/compressed-size coverage.",
+    "sourceCorners": [
+      "blue",
+      "yellow",
+      "red",
+      "green"
+    ],
+    "allFourGenerationProcessesExit0": true
+  },
+  "macResults": {
+    "cases": 16,
+    "passed": 16,
+    "failed": 0,
+    "largeFormats": [
+      {
+        "format": "jpeg",
+        "encodedBytes": 770761,
+        "outputPixels": [
+          1800,
+          1350
+        ],
+        "bounded": true,
+        "peakRSSBytesAfterPreparation": 51576832,
+        "beforeDataPeakRSSBytes": 8208384,
+        "hostExit": 0
+      },
+      {
+        "format": "png",
+        "encodedBytes": 854990,
+        "outputPixels": [
+          1800,
+          1350
+        ],
+        "bounded": true,
+        "peakRSSBytesAfterPreparation": 57475072,
+        "beforeDataPeakRSSBytes": 8159232,
+        "hostExit": 0
+      },
+      {
+        "format": "heic",
+        "encodedBytes": 26671,
+        "outputPixels": [
+          1800,
+          1350
+        ],
+        "bounded": true,
+        "peakRSSBytesAfterPreparation": 22888448,
+        "beforeDataPeakRSSBytes": 8208384,
+        "hostExit": 0
+      }
+    ],
+    "orientationCases": {
+      "passed": 8,
+      "encodedPixels": [
+        320,
+        240
+      ],
+      "EXIFValues": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "expectedDimensionsAndFixedQuadrantPermutationsMatch": true,
+      "orientationPermutations": {
+        "1": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "2": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "3": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "4": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "5": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "6": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "7": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "8": [
+          1,
+          3,
+          0,
+          2
+        ]
+      },
+      "reference": "https://developer.apple.com/documentation/imageio/cgimagepropertyorientation",
+      "referenceVerification": "Read Apple iOS27.1 SDK CGImageProperties.h after web Markdown retrieval failed; header hash retained locally."
+    },
+    "invalidCases": {
+      "passed": 5,
+      "expectedNil": [
+        "empty bytes",
+        "arbitrary deterministic128bytes",
+        "JPEG first16bytes",
+        "PNG first8bytes",
+        "HEIC first16bytes"
+      ],
+      "limit": "No claim that every partially damaged or truncated file is rejected."
+    }
+  },
+  "resourceLimits": {
+    "sequentialFreshProcessPerCase": true,
+    "watchdogSeconds": 45,
+    "hostBoundSeconds": 60,
+    "memoryAcceptanceThresholdApplied": false,
+    "interpretation": "Standalone Mac peaks only. Not comparable with earlier eager CG/CI fixtures, a phone memory budget or an optimization. Host16GB RAM/18.3GB swap/high I/O observed; timing is not calibrated."
+  },
+  "nativeAttempt": {
+    "standaloneIOSSIMULATORBinaryCompiled": true,
+    "sdk": "27.1",
+    "minimumOS": "17.0",
+    "compiledEnumMatchesProduction": true,
+    "initialCompileTimeoutSeconds": 60,
+    "orphanCompilerTargetedTerminationRetained": true,
+    "laterCompileExit": 0,
+    "laterCompileSeconds": 22.920766208,
+    "startupObservationBoundsSeconds": [
+      60,
+      180
+    ],
+    "startupWasNotProvenReady": true,
+    "lateStartupObserverExit": -15,
+    "invalidInitialHealthControlExcluded": "The first health command referenced an unavailable runtime executable; its failure is not runtime-health evidence.",
+    "validBinaryNoArgumentControl": "Expected source guard exit2 was not observed within20seconds; host observer was terminated. No image case ran.",
+    "encodedIOSCasesExecuted": 0,
+    "cleanup": {
+      "shutdownObserverTimedOut": true,
+      "freshOwnedRawState": 1,
+      "ownedLaunchdProcessesAbsent": true,
+      "existingDeviceStateDifferences": 0,
+      "onlyNewRootQATargetOperated": true
+    }
+  },
+  "relatedCorePolicy": {
+    "exactProductionMacSources": true,
+    "compileExit": 0,
+    "runExit": 0,
+    "checksPassed": 47,
+    "scope": "Strict whole-gram syntax/range/localized decimal digits and bounded clue display policy; not food semantics, UIKit or clinical accuracy."
+  },
+  "candidate": {
+    "version": "1.0 (13)",
+    "ZIP_SHA256": "383bd8054f32996cdaf8624669e42904208bed311b4131afecc028d54373655a",
+    "ZIPBytes": 12204431,
+    "appSourcesZIPAndDistributionUnchanged": true
+  },
+  "remaining": [
+    "Encoded-data iOS execution and UIKit metadata after usable assigned runtime is available.",
+    "Multi-attachment/48MP app journey and physical camera/airplane-mode.",
+    "Broader damaged formats, repeated retained inputs and resource bounds on hardware.",
+    "Storage failures, UI/accessibility/animations and qualified recognition evaluation."
+  ],
+  "privacy": "Curated checks/hashes only public; raw records, images, QA identifiers and private paths remain local.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "encoded-photo-preparation-20261025-v1/SOURCE-FREEZE.json",
+      "sha256": "d24c01734f21a3cea2e915977ba46d687c32d6a2a33ed20acc8276da48b8b406"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/PROTOCOL.json",
+      "sha256": "9eec7d3a14a8b9c55fc6a6abbc70731b62cb485cc8ba6a9456fe1c5e905d546e"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/compile-timeout-retained.json",
+      "sha256": "8a8d0732eb8a345a1d1c40df1cdcca8f7e13d0d32825aa9262fef013c4449639"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/orphan-compiler-cleanup.json",
+      "sha256": "8d5ef3c2950573fc1b47ff2c62bca9a2d053a79c83731d090e98b9861297f516"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/compile-v2-result.json",
+      "sha256": "d6a9fc68b6d7e3f861b5ce313266208d9863ec52807252ae845e44984345ed58"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/boot-result.json",
+      "sha256": "511c01fcd8f784595f9a3b5f22c67700ac011a492021a65d4409cf81a51ae0d1"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/boot-v2-result.json",
+      "sha256": "39b504cccd0a16662bcf26e28aed877ac7a9635eaa55fab46ededf17510c60f4"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/spawn-control-result.json",
+      "sha256": "25a4060df78eb1c76b1cc4eae67805d8b5a97271f39dd612b796d7e299d6a7a3"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/binary-control-result.json",
+      "sha256": "0d3bed03de0a511c1ee3ba24dc8016adb6f753ce995652b90f5d285ae1d91f5b"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/shutdown-final-result.json",
+      "sha256": "5fc790ac56189b8d4d953f1d635f225fce5a6099a7aacf7b9de11c8446029c14"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/post-shutdown-state.json",
+      "sha256": "bfe756bfa632af5e87e7ec88ea19680c70cb15eb5fb2ee816bc0b72cea07add3"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/orientation-reference.json",
+      "sha256": "543cf945aa1c74ddfe9460c106b67f296c9cedf35e9f66f2cb1da07151d7317e"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/mac-imageio-v1/SOURCE-FREEZE.json",
+      "sha256": "0e190f4fc559b0a3fc73e00c55b56a807459bcd574ee2791b9e8ca4b07f883a5"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/mac-imageio-v1/PROTOCOL.json",
+      "sha256": "2cffcf65cf83f966af50c78321572a47e50d9d9e608e650dd8e016131bd2f6c6"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/mac-imageio-v1/compile-result.json",
+      "sha256": "3595ba455f71dcd8b217264ca21e05c2766c5343e09b438d4a725bf917dead8d"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/mac-imageio-v1/compile-v2-result.json",
+      "sha256": "b197e9d7eb9048be7b5e9196ae30cc32d011e89c120ed90569ccf468758665a3"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/mac-imageio-v1/generation-summary.json",
+      "sha256": "cf95a64c5536d82ce13bf40a5e04bd4313f473cd6c5bed167038c47e42cf428c"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/mac-imageio-v1/frozen-preparation-cases.json",
+      "sha256": "05c21db4614391fde69c618f816dad0086eda4dc4e6e4987deac018c7ac7c6d5"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/mac-imageio-v1/preparation-summary.json",
+      "sha256": "aae0461a825cd192ca506d53a455057cdd24c69e17b104dae65a8b3a647d687c"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/mac-imageio-v1/DataPreparation.mac-shim.swift",
+      "sha256": "7b80980e773565703c28dbda2dd4eec6bd8067cf9e51ca41ef7bddc1a0c0215f"
+    },
+    {
+      "path": "encoded-photo-preparation-20261025-v1/mac-imageio-v1/EncodedProbe.mac.swift",
+      "sha256": "fb14d8db9aeb96b6488568f193fb73ce76145d49d07c5940c308b3e2a261eb8d"
+    },
+    {
+      "path": "mealmirror-team-20261025/core-policy-receipt.json",
+      "sha256": "22490b679598403a777d8be03c85b206a704cc8a5bb54ee44e2265c0a0a0ad8d"
+    },
+    {
+      "path": "mealmirror-team-20261025/main.swift",
+      "sha256": "1218475ea6d1378ce21d60a551d1966c14232363ad24535e697c033922241efa"
+    }
+  ]
+}

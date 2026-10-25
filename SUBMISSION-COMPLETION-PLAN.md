@@ -148,3 +148,7 @@ No implementation or medical recommendation was added by this planning document.
 ## Parallel delivery ownership
 
 Use [TEAM-WORKFLOW.md](TEAM-WORKFLOW.md) for frontend/local-engine/integration ownership and [STRESS-TEST-PLAN.md](STRESS-TEST-PLAN.md) for bounded functional, visual and failure coverage. The coordinator retains final exact-package and public-main responsibility. Chat setup and planned tests do not close any submission gate.
+
+### Encoded-photo first batch — October 25
+
+[Sixteen macOS ImageIO adapter cases passed](research/photo-preparation/encoded-data-20261025.json), with explicit UIKit/iOS exclusions; the separate core syntax/display-policy probe passed 47 checks. Native startup/control did not establish a usable new QA runtime, so encoded iOS execution remains open. Keep the original native failures, use a verified assigned runtime before the next iOS batch, and continue the isolated store and accessibility work in parallel. No production or candidate change resulted.

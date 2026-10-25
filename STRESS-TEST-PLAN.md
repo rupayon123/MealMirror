@@ -19,3 +19,9 @@ October 25, 2026. This is a coverage plan, not a passing result. Read [current r
 Record baseline state and free disk space; use one heavy runtime/memory job at a time. Keep source/UI/runtime responsibilities separate so tests do not fight over the Mac. Each process has an explicit timeout and saves its first failure/partial evidence. Do not delete original media or personal app data. Restore owned test settings and shut down only the assigned QA target.
 
 First follow-ups: Frontend checks the complete core screens at large text and Reduce Motion; Backend checks encoded large-image preparation and isolated malformed-store/error handling. Full Stack integrates their evidence, schedules device access and verifies the resulting exact package. Track passed, failed, blocked and unrun separately. “Works perfectly” is an objective, not a claim made from a finite test batch.
+
+## Recorded first-batch results
+
+The [October 25 encoded-data investigation](research/photo-preparation/encoded-data-20261025.json) passed 16 frozen **macOS ImageIO adapter** cases: three 48 MP formats, all eight EXIF quadrant/dimension checks and five invalid inputs. The UIKit metadata assertions were removed from that adapter. A separate exact-source Mac parser/name-policy probe passed 47 checks. These are narrower than the iOS/app/device rows above.
+
+The native probe compiled, but new-target startup and a valid argument-guard control did not reach their expected outcomes within their bounds; **zero encoded iOS cases ran**. Initial failures and a withdrawn invalid health-control command remain retained. Fresh state/process checks verified only the new root target shut down and existing device states unchanged. Complete encoded-data native/runtime verification before closing that gap. Production source, current ZIP and distribution are unchanged.
