@@ -1235,8 +1235,12 @@ private struct EstimateView: View {
     let onReview: () -> Void
 
     @State private var showIngredientEditor = false
-    @State private var showManualEntry = false
-    @State private var proposedFoodName = ""
+    private struct ManualEntryRequest: Identifiable {
+        let id = UUID()
+        let initialName: String
+    }
+
+    @State private var manualEntryRequest: ManualEntryRequest?
     @State private var hasConfirmedMealParts = false
     @State private var showReviewTrail = false
     @Environment(\.locale) private var locale
@@ -1307,7 +1311,7 @@ private struct EstimateView: View {
                     .accessibilityIdentifier("carbin.estimate.adjust")
                 } else {
                     Button {
-                        showManualEntry = true
+                        manualEntryRequest = ManualEntryRequest(initialName: "")
                     } label: {
                         Label("Add item", systemImage: "plus.circle")
                     }
@@ -1337,8 +1341,8 @@ private struct EstimateView: View {
         .sheet(isPresented: $showIngredientEditor) {
             IngredientEditorSheet(analysis: $analysis)
         }
-        .sheet(isPresented: $showManualEntry, onDismiss: { proposedFoodName = "" }) {
-            ManualCarbEntrySheet(initialName: proposedFoodName) { component in
+        .sheet(item: $manualEntryRequest) { request in
+            ManualCarbEntrySheet(initialName: request.initialName) { component in
                 analysis.components.append(component)
             }
         }
@@ -1361,8 +1365,7 @@ private struct EstimateView: View {
                 Button {
                     // Prefill only an editable name. A checked amount is still
                     // required before anything can enter the carbohydrate total.
-                    proposedFoodName = name
-                    showManualEntry = true
+                    manualEntryRequest = ManualEntryRequest(initialName: name)
                 } label: {
                     HStack(spacing: 12) {
                         Text(verbatim: name)
@@ -1520,7 +1523,7 @@ private struct EstimateView: View {
                     .foregroundStyle(CarbInTheme.mutedInk)
             }
             Button {
-                showManualEntry = true
+                manualEntryRequest = ManualEntryRequest(initialName: "")
             } label: {
                 Label("Add amount from label", systemImage: "plus.circle")
             }
@@ -1627,7 +1630,7 @@ private struct EstimateView: View {
                 .buttonStyle(PrimaryActionStyle())
                 .accessibilityIdentifier("carbin.estimate.reviewCandidates")
             } else {
-                Button(action: { showManualEntry = true }) {
+                Button(action: { manualEntryRequest = ManualEntryRequest(initialName: "") }) {
                     Label {
                         Text(LocalizedStringKey(labelImage == nil ? "Add a checked amount" : "Add amount from label"))
                     } icon: {

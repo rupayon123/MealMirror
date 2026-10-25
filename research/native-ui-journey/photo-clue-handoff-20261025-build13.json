@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "Exact-app iOS27.1 photo-model integration and selected-name handoff repair. Same compiled native case failed on build12 name prefill, passed on build13 through Review. No Save or accuracy/physical-offline acceptance.",
+  "source": {
+    "candidateVersion": "1.0 (13)",
+    "candidateZIP_SHA256": "383bd8054f32996cdaf8624669e42904208bed311b4131afecc028d54373655a",
+    "candidateZIPBytes": 12204431,
+    "packagedFiles": 59,
+    "matchingSwiftSources": 17,
+    "installedAppFiles": 17,
+    "ContentViewSHA256": "5fabb6967a62d35062691bf28bac145defce2de58b0e01e214627e0c88dc83e3",
+    "LocalPhotoAI_SHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "engineSHA256": "ef15ea5bb8ea00b5b0ce4dbd642e0c43ee931d9cba90e95d401173ad23beef55",
+    "testSourceSHA256": "7184490ac59d3e6cd3b3120c88d8bbaf8f2391ed0af572e4b7b62016f2d6f62c",
+    "xctestrunSHA256": "af1736cc8ab417b14dcc5d43527547068e33d074cbe50ad99a908d6c079b2392",
+    "compiledTestAndAssertionsUnchangedFor12To13": true
+  },
+  "repair": {
+    "observedBefore": "After the first observed food-clue button activation, the exact12 form had an empty name placeholder, empty grams and disabled Add.",
+    "change": "One Identifiable request carries initialName and sheet presentation together. All three generic entry sites create explicit blank requests; the clue site carries the selected name.",
+    "reference": "https://developer.apple.com/documentation/SwiftUI/View/sheet%28item%3AonDismiss%3Acontent%3A%29",
+    "interpretation": "The narrower handoff behavior is repaired in the same-case comparison. Tap coordinates alone do not establish action delivery or SwiftUI internal ordering.",
+    "modelPromptAssetsAmountValidationAndPersistenceUnchanged": true,
+    "independentSourceReview": "No findings in the two-file diff; runtime evidence is scoped below."
+  },
+  "retainedAttempts": {
+    "setupV1": "OpenStep listapps parsing failed after boot, before app installation/import/model use; owned target shut down. Corrected parser used plutil in a separate recorded setup.",
+    "discovery12": {
+      "exit": 0,
+      "bodySeconds": 21.99,
+      "scope": "Natural first Welcome to public Photos picker; no photo selection/model/Save."
+    },
+    "photo12V1": {
+      "testExit": 65,
+      "bodySeconds": 65.414,
+      "scope": "Model-success detail and unconfirmed names observed; test then failed because XCTest shorthand identifier exceeded128characters. OCR/manual assertions were not reached.",
+      "diagnostics": "Only the exact owned automatic diagnostic child was interrupted after the body finished; raw log and finalized result retained. No complete verbose-diagnostic capture claim."
+    },
+    "photo12V2": {
+      "testExit": 65,
+      "bodySeconds": 80.534,
+      "scope": "Test-only query fixes retained the full model-detail assertion, restricted inherited clue IDs to actual Buttons, then observed model names/OCR/no amount. It failed expecting rice in the empty name field. No typed amount/Review/Save."
+    },
+    "exact13Comparison": {
+      "testExit": 0,
+      "bodySeconds": 135.269,
+      "testCommandSeconds": 141.28519408300002,
+      "scope": "Same compiled V2 case and assertions; one model request, photo/label through manually checked Review. No Save."
+    },
+    "blank13Regression": {
+      "testExit": 65,
+      "bodySeconds": 30.16,
+      "scope": "Description text-field visibility guard failed before typing, Analyze or either manual-entry opening. Cancel/reopen remains unverified; no new app regression or cause is established."
+    }
+  },
+  "localImageModel": {
+    "actualFullAppRouteObserved": true,
+    "runtime": "iOS27.1 Simulator, owned Duo target",
+    "descriptionBlank": true,
+    "foodPhotos": 1,
+    "separateSyntheticLabelPhotos": 1,
+    "fullSuccessfulDetailRequired": true,
+    "unconfirmedDisplayedNames": [
+      "rice",
+      "salad",
+      "meat",
+      "drink"
+    ],
+    "chosenNamePrefill": "rice",
+    "totalModelRequestsAcrossRetainedCases": 3,
+    "previouslyExposedMealInputSHA256": "cee3f05992ab04e403dbafd8843214bc1fec9cf8d366d7fd31e93564b9d9e7fb",
+    "freshFoodAccuracyEvaluation": false,
+    "worldwideRecognitionOrClinicalAcceptance": false
+  },
+  "amountAndOCRBoundaries": {
+    "beforeManualEntry": "No reliable range yet; no final Review action.",
+    "clueForm": "Selected name is in a TextField; grams empty; Add disabled. In-field name replacement was not exercised.",
+    "actualOCR": "Total Carbohydrate 37 g",
+    "syntheticLabelInput": "Total Carbohydrate 37 g",
+    "unitMisreadRetained": false,
+    "OCRTestLimit": "Native assertions require Carbohydrate and37 only. Separate full AX readback matches this synthetic fixture; neither establishes broad transcription or nutrient accuracy.",
+    "amountAutofill": false,
+    "typedAmount": "Synthetic37g typed separately; not nutrition truth about this meal.",
+    "componentSource": "Your entry",
+    "reviewBeforePartsConfirmation": "Disabled",
+    "reviewAfterPartsConfirmation": "Enabled; final Review and Save control observed, Save not activated.",
+    "insulinOrPortionInference": false,
+    "visualDiagnosisCorrection": "Initial q-substitution diagnosis withdrawn: the glyph looked q-like in the screenshot, but all four retained AX snapshots say g. No OCR substitution is established."
+  },
+  "rootVisualReview": {
+    "framesViewed": 3,
+    "confirmed": [
+      "Prefilled rice, empty grams and disabled Add.",
+      "Actual OCR AX text matches the synthetic fixture; successful local-model detail observed.",
+      "Neutral final Review heading and synthetic37g; Save visible."
+    ],
+    "limits": "English/light/standard-size Duo Simulator. Count1 is below captured initial Review viewport. Other widths, text sizes, dark/RTL, motion, speech and physical offline remain unverified."
+  },
+  "preservation": {
+    "freshFinalCurrentAppAndDataLookup": true,
+    "installedExact13FilesMatch": true,
+    "reviewStoreAbsent": true,
+    "zeroQAReviewsSavedByTheseCases": true,
+    "allEightMediaOriginalsPreservedIncludingSixStock": true,
+    "ownedSimulatorShutdown": true,
+    "allOtherDeviceStatesUnchanged": true,
+    "protectedInteractiveSimulatorNotOperated": true,
+    "blankEntryRegression": "Failed before input/model/manual-form reachability on TextView visibility guard after Description activation. Not a manual-entry-state pass or established new source regression."
+  },
+  "warnings": [
+    "Retained SDK-format warnings from Xcode.",
+    "First harness failure retains intentionally interrupted verbose diagnostic collection.",
+    "Separate blank-entry case stopped before exercising cancellation."
+  ],
+  "privacy": "Only curated metadata and hashes are public. Raw logs, hierarchies, photos, form content, QA identifiers, binaries and private paths remain local. Testing distribution only.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "manual-entry-handoff-20261025-build13/hypothesis.json",
+      "sha256": "fa77341ad96fe70508fbbdf2976882cbfeaab42e707008f700e9fdd88353945b"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/package-verification.json",
+      "sha256": "fd029be86716735f1090a7e684886ef9ab2001279579b1dcdb7066ed9149d052"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/built-app-verification.json",
+      "sha256": "2cbfe0ac84d8604178444ce55f326f111825b9570c7f9397070360570908a5e9"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/install-v1/result.json",
+      "sha256": "3ca506070bf49dce1e8c291dc4081a1b79b048e28c23db9ae1698dd04a2cd108"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/comparison-v1/intent.json",
+      "sha256": "e66bea77412cbaf3a0d611a41839e508da9da5b48a87c810b4ae42067c7eccfb"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/comparison-v1/result.json",
+      "sha256": "f06c269ff1ee69421f4d06f2f7ec7d2c4ba9b97dc9c8afa987a88c7fc10deec2"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/comparison-v1/command.log",
+      "sha256": "7804a22de0529df982d9ce0e87a10c314c94455c4752d4261464a91ea79ec794"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/root-visual-review.json",
+      "sha256": "71cfbdd7832f6ddbce66d19bace8b10229066223a4ab1a630a50f5d4bec3c74c"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/post-comparison-v1/result.json",
+      "sha256": "511acb0e7feea6a9c34d3e32b1b136b8a878b233621fa0f584726e383f902b57"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/runtime-final-v1/result.json",
+      "sha256": "acf5932dd918c8c525f87e71e7d6aeb3e6637288c6b0606f5f3c19d23182229c"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/blank-entry-regression-v1/source-freeze.json",
+      "sha256": "175451cb0bd3dc0c3a163cba316b6a52f731afcddec1be5f30ea383b3b7396b4"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/blank-entry-regression-v1/execution-v1/result.json",
+      "sha256": "33d0a7510171e9e73d59cb3d9b62750264d5c7003606cb9a6b5f0f8663c60bec"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/blank-entry-regression-v1/execution-v1/command.log",
+      "sha256": "f3db9666018a146d62079117b68807d6dd682dc4dc47303f1d4c813da795cb08"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/setup/result.json",
+      "sha256": "773def4dbc10272896bebb2279921e54acd304389ef6f92c70648d3887aa40fa"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/setup-v2/result.json",
+      "sha256": "3ab973eac4ba4f66c4b2922acc46e26ac9aa3f59642cc96130c6e00cb6476128"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/discovery-v1/source-freeze.json",
+      "sha256": "960c799bd08b9aa993223032ca2dfc60b9ba074b50c199e17b823596ba72d941"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/discovery-v1/execution-v1/result.json",
+      "sha256": "42161eca1eb2dff679ccf42f1acec6a08d8857b755acfdbf0239328ef57ab56c"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/photo-model-v1/source-freeze.json",
+      "sha256": "b5fb6b1d3e7390f60138286c011cf62a091d098e7467646345f79753813f38b1"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/photo-model-v1/execution-v1/result.json",
+      "sha256": "eaacddee1af27bfdf87322c6dad45f4f63d0ce20178284cd95e5e9c9d33b0c8a"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/photo-model-v1/execution-v1/diagnostics-stop-intent.json",
+      "sha256": "4de2f8d7592900aae8bd2c881b406e7881a2159faebb5af7912c582e975aa61b"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/photo-model-v1/execution-v1/command.log",
+      "sha256": "e909ba83c7ef01a3c0b64510fc844ed57b3c7272cc5e829e410cf9337bd5af7a"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/photo-model-v2/source-freeze.json",
+      "sha256": "649e7c1f31251127677bc883325a9f1df3a0f6c0205c2e9f1e4b701c3c746ed7"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/photo-model-v2/execution-v1/result.json",
+      "sha256": "38f7cfd7df42e577df11cfad94b79198959977006c10bf104095b123eb66858b"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-ios27-native-v1/photo-model-v2/execution-v1/command.log",
+      "sha256": "dbd1317629fc8edb0530400c69f855c70fddb91e131f0226021feec8c42215ee"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/root-visual-review-v1-withdrawn-OCR-diagnosis.json",
+      "sha256": "6cb1c8cd6a7c2ed35cc350a6d5cebfa92886398fb4423fb7f274bd0c89ea3069"
+    }
+  ]
+}

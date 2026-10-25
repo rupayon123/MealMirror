@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "candidate": {
+    "version": "1.0 (13)",
+    "ZIPPath": "candidate/MealMirror-SSC2027.zip",
+    "bytes": 12204431,
+    "SHA256": "383bd8054f32996cdaf8624669e42904208bed311b4131afecc028d54373655a",
+    "packagedFiles": 59,
+    "matchingSwiftSources": 17,
+    "EnglishOnly": true,
+    "twoGenerationsByteIdentical": true
+  },
+  "change": "EstimateView presents manual entry from one identified request carrying the selected food name. Generic/label amount entry requests carry an explicit blank name. Only ContentView and Package build number differ from exact12.",
+  "unchanged": [
+    "Model and prompt",
+    "Vision/OCR and photo preparation",
+    "Fonts, artwork and theme",
+    "Amount validation, clinical boundary and source attribution",
+    "Local persistence and schema"
+  ],
+  "verification": {
+    "exactArm64SimulatorBuildExit": 0,
+    "exactBuildSeconds": 32.373213792,
+    "installedExact13AppFiles": 17,
+    "signedArchiveExit": 0,
+    "archiveSeconds": 35.449720334,
+    "codeSignVerifyExit": 0,
+    "archiveMainSDK": "27.1",
+    "minimumOS": "17.0",
+    "all59ExtractedFilesUnchangedAfterBuildArchiveUpload": true,
+    "nativeEvidence": "photo-clue-handoff-20261025-build13.json"
+  },
+  "distribution": {
+    "scope": "Existing internal testing only",
+    "uploadExit": 0,
+    "uploadSeconds": 75.578733334,
+    "AppleReported": "Uploaded package is processing.",
+    "testFlightInternalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "processingCompletionVerified": false,
+    "complianceAndExistingGroupTestingVerified": false,
+    "lastVerifiedExistingInternalTestingBuild": 2,
+    "physicalInstallVerified": false,
+    "AppStoreReviewReleaseExternalBetaPublicLinkOrAppReleaseActions": false,
+    "releaseSettingActionPerformed": false
+  },
+  "warnings": [
+    "Duplicate Brand.xcassets compile-source warning.",
+    "Simulator incompatible sysroot warning retained; not an SDK-wide header equality claim.",
+    "AppIntents metadata extraction skipped because dependency absent.",
+    "Native tests retain SDK-format warnings."
+  ],
+  "remaining": "Not submission-ready. Blank cancel/reopen case did not reach forms; general interactions, semantic/worldwide food and OCR quality, current full save/relaunch/delete, full accessibility/animation/camera/physical offline, future2027rules and applicant-owned requirements remain open.",
+  "privacy": "Curated hashes/metadata only; signing data, binaries, raw logs, images and paths remain local. Public source backup is separate from app distribution.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "manual-entry-handoff-20261025-build13/package-verification.json",
+      "sha256": "fd029be86716735f1090a7e684886ef9ab2001279579b1dcdb7066ed9149d052"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/packaged-file-hashes.json",
+      "sha256": "c46676fdb3a52dd264f99961495972c6d1e7cfa164c429a45c6022ea0d093c9e"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/exact-build-v1/intent.json",
+      "sha256": "dbb14cd07ba27af6022c6a8bb1be0a4ddbd914180aaa320d6a7b76db48af40de"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/exact-build-v1/result.json",
+      "sha256": "af730e7079f84a21c56d826647abcf084c9ef72734c2e0605ac46bc9b5fa2a1f"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/built-app-verification.json",
+      "sha256": "2cbfe0ac84d8604178444ce55f326f111825b9570c7f9397070360570908a5e9"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/archive-v1/intent.json",
+      "sha256": "00aa4bb927101e11abdc25d5ed21c745bd2c09f7ccef68961585b4d1c7665e07"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/archive-v1/result.json",
+      "sha256": "88fde82a9ec54a7c3edc4df89476f25b90f563b60a9e15a27f3da942e40046ed"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/archive-verification.json",
+      "sha256": "a4d09d83c11e85138861bced17770feadb5668ce410b65ca8db0adaa80c8283e"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/archive-vtool.txt",
+      "sha256": "62479586aeffc4b2beac3b87d5ca2cadd6740cc483960193c13cbd487f4836e7"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/upload-v1/intent.json",
+      "sha256": "fcc9dec8d0ab6a3a7b3dbcb86bb5311f02c332302b9c1dd0f6a86f8c469d7770"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/upload-v1/result.json",
+      "sha256": "f7644a21813014e47302d7d4c4d78d95a73766e7e5813c1dbf1f2eaeee9a741c"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/upload-verification.json",
+      "sha256": "ea9951f1fe415aac580d3b755970247b99b3c807d1190c2742b75c8de310034a"
+    },
+    {
+      "path": "manual-entry-handoff-20261025-build13/Internal-ExportOptions.plist",
+      "sha256": "043de9791e4a4f0afc6cbce10480237301f799316fd2ee382f8e93f87df357f9"
+    }
+  ]
+}

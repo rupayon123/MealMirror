@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "Corrective read-only review of one previously retained exact-build12 Saved review frame. Original earlier diagnosis and receipt remain preserved.",
+  "source": {
+    "candidateVersion": "1.0 (12)",
+    "candidateZIP_SHA256": "f7a9b0c032aee8ca67fd1b114adbf5f32ac83bbb1c477dc74303c654c6cdbe07",
+    "ContentViewSHA256": "cfdfa043242dbeed5f2db9f79aa05a4284597f25b698f586b2b640da8d9519fb"
+  },
+  "correction": {
+    "earlierDiagnosis": "Saved-detail metadata values overflow the compact card to the right.",
+    "status": "Withdrawn for this frame after independent root and curator visual recheck.",
+    "observed": "All four metadata values fit visibly inside the card. Date and Reference note are tight; this image does not establish crossing, overlap or truncation.",
+    "AXMetadataRowsRightEdgePoints": 368,
+    "nominalCardHorizontalBoundsPoints": [
+      16,
+      386
+    ],
+    "nominalContentHorizontalBoundsPoints": [
+      34,
+      368
+    ],
+    "geometryLimit": "Nominal card/content geometry is source/AX-derived and corroborated by retained pixel stroke samples. Combined AX row bounds alone do not prove glyph visibility.",
+    "appFixJustifiedByThisFrame": false,
+    "sourceOrZIPChanged": false
+  },
+  "scopeLimits": {
+    "platform": "iOS26.5 Simulator",
+    "language": "English",
+    "theme": "Light",
+    "textSize": "Standard",
+    "viewportPoints": [
+      402,
+      874
+    ],
+    "unverified": [
+      "Larger Dynamic Type, other compact widths and landscape",
+      "RTL and other localized labels, values or date lengths",
+      "Dark theme and saved metadata combinations beyond the pictured record",
+      "Direct VoiceOver speech/order/label-value association",
+      "General interaction reliability or physical-device behavior"
+    ]
+  },
+  "privacy": "Only curated metadata and hashes are public. Original pixels, hierarchy, QA record content and private paths remain local.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "native-ui-journey-20261025/metadata-visual-recheck-v1/corrective-review.json",
+      "sha256": "3e491478107484dfeba8eb5625eb33cf6cc7478fb9736a38c214de349a26cc86"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/execution-v1/root-attachments-v1/35E5B9E0-F392-49EF-838E-0C260862894C.png",
+      "sha256": "e65648f8c95bd4e30b4816e7d44104762c6b7ccf612f4981646426eb640664f1"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/execution-v1/root-attachments-v1/04975E2A-590F-4DDF-8434-B6EE03B52EB9.txt",
+      "sha256": "750213fe9dbde6ad55a287b90b9e340f9073211d0f87a2b7b77a733f2accda28"
+    }
+  ]
+}
