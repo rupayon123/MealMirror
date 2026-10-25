@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "Current exact13 Description-to-blank-manual-entry cancel/reopen regression, with separately retained earlier failed visibility-guard case. No app change.",
+  "candidate": {
+    "version": "1.0 (13)",
+    "sourceCommit": "0309abfe8a31fca53644b68974099f9cccc6834b",
+    "ZIP_SHA256": "383bd8054f32996cdaf8624669e42904208bed311b4131afecc028d54373655a",
+    "ZIPBytes": 12204431
+  },
+  "diagnosis": {
+    "earlierAttempt": "Failed before forms at whole-TextView exposure guard; retained as failed in the earlier handoff receipt.",
+    "separateDiscovery": {
+      "testExit": 0,
+      "bodySeconds": 14.688,
+      "hostSeconds": 43.03643575,
+      "DescriptionSelected": true,
+      "PhotoUnselected": true,
+      "editorExistsAndHittable": true,
+      "editorFramePoints": [
+        44,
+        487.3333333333333,
+        294,
+        150
+      ],
+      "pinnedAnalyzeFramePoints": [
+        14.5,
+        578.5,
+        353,
+        57
+      ]
+    },
+    "interpretation": "Description activation worked. The old helper rejected the entire TextView rectangle because its lower part intersected the pinned action, then scrolled past it. This supports a test interaction correction, not a production tab repair.",
+    "changedHarness": "Require unique editor, selected mode, hittability and an actual unobscured point inside editor/app, below nav and above Analyze. Focus once without reveal swipes and require exact typed value. Other amount/cancellation assertions retained.",
+    "productionCodeChanged": false
+  },
+  "blankCancelReopen": {
+    "testExit": 0,
+    "bodySeconds": 78.135,
+    "hostSeconds": 86.19166412499999,
+    "firstForm": "Blank name and grams, Add disabled.",
+    "typedButNotCommitted": "Synthetic item name and37 typed; Add enabled, then Cancel used.",
+    "secondIndependentForm": "Opened through the secondary Add item entry; blank name/grams, Add disabled.",
+    "secondCancel": "Estimate retains no reliable range, no final Review action.",
+    "SaveActivated": false,
+    "modelOrPhotoExercised": false
+  },
+  "preservation": {
+    "freshCurrentAppFilesMatch": 17,
+    "reviewStoreAbsentAfterCase": true,
+    "mediaOriginalsUnchanged": 8,
+    "noInstallResetInjectionRestoreOrPreferenceMutation": true,
+    "protectedInteractiveSimulatorExcluded": true
+  },
+  "rootVisualReview": {
+    "framesViewed": 3,
+    "confirmed": [
+      "Description is visibly selected and upper text editor region is available above pinned Analyze. Lower editor portion continues beneath the pinned action; no missing-tab action established.",
+      "Reopened manual form visibly has blank item/grams placeholders and disabled Add.",
+      "Post-cancel Estimate retains checked-amount entry action and no committed component/total in the recorded native assertions."
+    ],
+    "limits": "No other width/appearance/text size, direct VoiceOver, physical device, model accuracy or broad layout pass follows."
+  },
+  "limits": [
+    "One Simulator, English/light/standard size; no general interaction reliability or accessibility claim.",
+    "This does not replace the earlier separate selected-clue prefill comparison.",
+    "Photo/label persistence is a separate new case, not part of this result."
+  ],
+  "privacy": "Only curated metadata and hashes are public. Raw logs, hierarchies, screenshots, QA text and device/private paths stay local.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "description-entry-20261025-build13/setup-v1/result.json",
+      "sha256": "df3c20cb24d44f178569f9832d09f7cb5e573fe0c4d7c074f55d7e4a8139d4cf"
+    },
+    {
+      "path": "description-entry-20261025-build13/discovery-v1/source-freeze.json",
+      "sha256": "1a50c3c6e18fc78f12866e281865a8bed82c24aa07df5528da43804f7bf40dcf"
+    },
+    {
+      "path": "description-entry-20261025-build13/discovery-v1/build-v1/result.json",
+      "sha256": "44704f2e3b5109cab91125705b5b10d1b5c9717f78778d449e1fe73435ac2771"
+    },
+    {
+      "path": "description-entry-20261025-build13/discovery-v1/execution-v1/result.json",
+      "sha256": "6aa1e5aadcf0a3a12b1a161a4865addc6906849f4960ec0ffe7f660c289a532e"
+    },
+    {
+      "path": "description-entry-20261025-build13/discovery-v1/execution-v1/command.log",
+      "sha256": "1911bddbd7ea270a898d0fc9406f1d40519fff1a0f3496a6ae23d80bf31235e4"
+    },
+    {
+      "path": "description-entry-20261025-build13/blank-entry-regression-v2/source-freeze.json",
+      "sha256": "c8eb3e88baee415e3bc9b7ee68fdec26b56d217a56c0bd225e1b5628874f1f19"
+    },
+    {
+      "path": "description-entry-20261025-build13/blank-entry-regression-v2/build-v1/result.json",
+      "sha256": "dca8edfe37486db55bdfbbe051bb192f1406dac20631c97dfb8ed77992a415ff"
+    },
+    {
+      "path": "description-entry-20261025-build13/blank-entry-regression-v2/execution-v1/result.json",
+      "sha256": "ab4c0c7f6b10cb90b05dc1d25826acb7ad09fa97b36539be9945b92613b0a6e4"
+    },
+    {
+      "path": "description-entry-20261025-build13/blank-entry-regression-v2/execution-v1/command.log",
+      "sha256": "a8c053d79174a1f37121c5f21ec0af848658ee7d130ad75cbe2bf9affcb19216"
+    },
+    {
+      "path": "description-entry-20261025-build13/root-blank-entry-visual-review.json",
+      "sha256": "3042f2c43e4c883564e494363b642ebf06e642fa4d01bbf6b62879c5a6a64ff4"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-v1/baseline-v1/result.json",
+      "sha256": "418d39dfc2704208f2451fda049ca73c3985f17f1d6c91252a75b0ad67e885d3"
+    },
+    {
+      "path": "description-entry-20261025-build13/discovery-attachments-v1/4EA5626E-366D-45F0-AD10-437B4A6D0F45.png",
+      "sha256": "3de3b23f7f61b8038e1386cb58c9905ce27979f6ffef4388683d81d190791a34"
+    },
+    {
+      "path": "description-entry-20261025-build13/blank-entry-attachments-v2/533E54A2-FBA5-4383-A0D2-94361B0A0A04.png",
+      "sha256": "8866a74fb7cf0bae1d7451972c1d065ec62186e452d224d17dcef2fc127d929b"
+    },
+    {
+      "path": "description-entry-20261025-build13/blank-entry-attachments-v2/963B6E52-61D0-46DF-A4ED-51B944FF1E44.png",
+      "sha256": "9e024cf692872e844ad2c88d2e81ca64f36c669bd8669ea3b23cf89e381d5a67"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Offline recognition: next architecture
 
-Decision started October 24, 2026; updated October 25. **Research decision, not a new recognizer.** Current app 1.0 (11) retains the default local Apple model and `143feea0…` prompt source. Its draft-mode correction does not repair recognition; build 8’s final-heading change remains and build 11 adds fixed debug photo diagnostics. The neutral-wording, content-tagging and typed-presence proposals were rejected; no further tuning against the exposed twelve is proposed.
+Decision started October 24, 2026; updated October 25. **Research decision, not a new recognizer.** Current app 1.0 (13) retains the default local Apple model and `143feea0…` prompt source. Its selected-name handoff repair does not repair recognition; model, prompt and engine remain unchanged. The neutral-wording, content-tagging and typed-presence proposals were rejected; no further tuning against the exposed twelve is proposed.
 
 ## Decision
 
@@ -82,3 +82,9 @@ The [regression receipt](direct-coreml-exposed-photos-20261025.json) records one
 Against the prior full-frame AI appearance notes, outputs often favor plate/vessel/cookware classes or unconfirmed dish/ingredient/species names: meatloaf alternatives on several meals, crab species instead of a broad dumpling clue, and popsicle/eel/chocolate-sauce alternatives on inputs annotated as nonfood. P07 remains materially ambiguous; neither the model nor its source caption resolves edibility. Some broad family overlap exists, but the notes are not human truth, center crop may remove peripheral components, and no accuracy percentage was calculated. Top-five classes are alternatives, not a multi-food list or calibrated food confidence.
 
 Do not adopt this current general ImageNet classifier for broad meal naming or nonfood/unknown abstention. Keep it external as a research baseline; no cutoff, label filter, prompt or model was tuned against these outputs. Earlier Vision failures remain unchanged. No ingredient/nutrition/insulin, clinical, fresh-evaluation, physical-offline, portability or submission acceptance follows.
+
+## Compact MobileCLIP eligibility: no adoption
+
+The [bounded S0 eligibility screen](mobileclip-eligibility-20261025.json) rejects the inspected current MobileCLIP/MobileCLIP2 checkpoints for this app: research-only model terms explicitly exclude product development, and no student/testing app exception was established. The older official V1 Core ML package has insufficient artifact-specific rights evidence; a model-card tag and broken historical license link do not clear it or establish a retroactive change.
+
+Apple publishes a separate V1 image encoder, whose raw package metadata totals 22,871,573 bytes. The current candidate leaves 12,795,569 bytes under the conservative 25 MB planning cap. No quantized, compiled or compressed candidate was produced, so final ZIP fit is unestablished. The V2 combined checkpoint is 299,864,852 bytes and is not an image-only Core ML export. A matching precomputed text-vector bank is technically possible, but does not clear licensing or establish food accuracy. No weights were downloaded, converted, evaluated or added; the default Apple model and reserved inputs remain unchanged.

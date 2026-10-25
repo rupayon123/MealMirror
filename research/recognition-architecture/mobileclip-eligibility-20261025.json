@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "Read-only eligibility screen of Apple MobileCLIP-S0 / MobileCLIP2-S0 image encoders with a hypothetical precomputed text-vector bank. Local evidence only; no model adoption or food evaluation.",
+  "decision": {
+    "currentCheckpoints": "Rejected for current MealMirror app delivery under the inspected research-only model terms; no artifact-specific product permission was established.",
+    "olderOfficialV1CoreMLPackage": "Insufficient rights evidence. Its apple-ascl model-card label links a historical license filename that returned HTTP 404. Do not infer retroactive license replacement, continuing permission or permission from the tag alone.",
+    "noAdoption": true,
+    "nextBoundedDecision": "An artifact-specific rights clarification would be required before revisiting these packages. Do not convert or evaluate them as the next delivery slice on the present evidence. No further candidate screen is requested by this report."
+  },
+  "context": {
+    "currentMealMirror": "1.0 (13)",
+    "currentZIPBytes": 12204431,
+    "conservativePlanningCapBytes": 25000000,
+    "remainingPlanningBytes": 12795569,
+    "capLimit": "Existing conservative planning budget only; not confirmation of unpublished 2027 Challenge rules.",
+    "productionDefaultModelUnchanged": true,
+    "reservedEightInputsUnrun": true
+  },
+  "rights": {
+    "currentCheckpoints": "Inspected S0 and V2 S0 terms restrict models/derivatives to research purposes and explicitly exclude product development; no app-use exception was established. This is a conservative eligibility decision, not legal clearance.",
+    "olderV1CoreMLArtifact": "The older official Core ML artifact and model card must be assessed against artifact-specific applicable terms. This report does not decide whether a later license change retroactively governs an earlier artifact.",
+    "codeLicense": "MIT code permission does not grant weight rights.",
+    "precomputedTextVectors": "Precomputing text vectors avoids runtime text-encoder storage technically. This does not clear image-model rights, and rights to redistribute the generated vector bank were not separately established."
+  },
+  "artifactEvidence": {
+    "V1CoreML": {
+      "repository": "https://huggingface.co/apple/coreml-mobileclip",
+      "inspectedMainRevision": "3e0a7bfb9fe83da8a3efaa3fd8f7df24214bb947",
+      "modelUploadRevision": "55c8098c12ba8f928e37e26b2e1dd097777c3f98",
+      "package": "mobileclip_s0_image.mlpackage",
+      "files": [
+        {
+          "path": "Data/com.apple.CoreML/weights/weight.bin",
+          "bytes": 22717696,
+          "providerLFS_SHA256": "87d8f63997bbd2f38ba7defeaaa2c571928bdece56aa9629542198b3ce906ed6"
+        },
+        {
+          "path": "Data/com.apple.CoreML/model.mlmodel",
+          "bytes": 153260,
+          "providerLFS_SHA256": "2c1afa132c41c6535817cc67894bd7484bc2cbd084ed5e2f12b24f611af17591"
+        },
+        {
+          "path": "Manifest.json",
+          "bytes": 617,
+          "providerLFS_SHA256": null
+        }
+      ],
+      "rawPackageBytes": 22871573,
+      "calculation": "22,717,696 + 153,260 + 617 = 22,871,573 bytes.",
+      "rawBytesOverRemainingPlanningBudget": 10076004,
+      "evidenceScope": "Provider file metadata and the official upload commit's LFS pointers; not self-hashes of downloaded model binaries or a measured compiled/ZIP artifact."
+    },
+    "V2": {
+      "repository": "https://huggingface.co/apple/MobileCLIP2-S0",
+      "inspectedMainRevision": "3136ea51c8ed56b9f9abfab04cb816735aaad6cb",
+      "file": "mobileclip2_s0.pt",
+      "providerPointerBytes": 299864852,
+      "providerPointerSHA256": "bc3bc861baa680df2f9e3dc1aa0acbe5a21af21032df385026dda70c33505aa6",
+      "checkpointScope": "Published combined image/text checkpoint, not an image-only Core ML artifact.",
+      "pointerOnlyRead": true
+    }
+  },
+  "fit": {
+    "imageParametersMillions": 11.4,
+    "parametersAreMeasuredArtifactSize": false,
+    "remainingConservativePlanningBytes": 12795569,
+    "V1RawImagePackageBytes": 22871573,
+    "quantizedCompiledOrCompressedArtifactMeasured": false,
+    "finalZIPFitEstablished": false
+  },
+  "contract": {
+    "V1": "Official native sample takes256-pixel image input and reads final_emb_1; config specifies512 dimensions. Matching normalized model/text embeddings would be required.",
+    "V2": "Config specifies256-pixel input/512 dimensions; eval and reparameterization are required before export. Exact native Core ML contract remains unverified.",
+    "scores": "Cosine/softmax rankings are not calibrated food or nutrition confidence."
+  },
+  "performed": {
+    "publicSourceAndMetadataReadsOnly": true,
+    "fullWeightOrModelBinaryDownload": false,
+    "repositoryOrModelCodeExecuted": false,
+    "installBuildConversionPredictionTrainingOrCalibration": false,
+    "newDatasetOrReservedImageUse": false,
+    "appRepositoryGitModelAssetsOrOSChanged": false,
+    "createdOnlyThisLocalReport": true
+  },
+  "sources": [
+    {
+      "url": "https://huggingface.co/apple/MobileCLIP-S0/raw/main/LICENSE",
+      "use": "Current S0 checkpoint model terms."
+    },
+    {
+      "url": "https://huggingface.co/apple/MobileCLIP2-S0/blob/main/LICENSE",
+      "use": "Current V2 S0 checkpoint model terms."
+    },
+    {
+      "url": "https://huggingface.co/apple/coreml-mobileclip/blob/main/README.md",
+      "use": "Official V1 image/text Core ML exports and older apple-ascl metadata with historical license link."
+    },
+    {
+      "url": "https://huggingface.co/apple/coreml-mobileclip/commit/55c8098c12ba8f928e37e26b2e1dd097777c3f98",
+      "use": "Official upload commit; exact S0 image specification/weight LFS sizes and SHA256 pointers."
+    },
+    {
+      "url": "https://huggingface.co/apple/MobileCLIP2-S0/commit/3136ea51c8ed56b9f9abfab04cb816735aaad6cb",
+      "use": "Observed V2 main revision and eval/reparameterization correction."
+    },
+    {
+      "url": "https://huggingface.co/apple/MobileCLIP2-S0/raw/main/mobileclip2_s0.pt",
+      "use": "Three-line Git LFS pointer text only; bytes and SHA256, not weight contents."
+    },
+    {
+      "url": "https://huggingface.co/apple/MobileCLIP2-S0/raw/main/README.md",
+      "use": "Parameter table, returned preprocessing, eval/export instructions and normalized matching."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/apple-aiml-research/ml-mobileclip/main/ios_app/MobileCLIPExplore/Models.swift",
+      "use": "Official V1 native S0 image buffer/output adapter."
+    }
+  ],
+  "limits": "This is a conservative engineering eligibility decision from primary-source terms/metadata, not legal clearance, recognition evaluation or a claim that another model is eligible. Provider pointers were not verified against model binary contents.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "mobileclip-eligibility-20261025-v1/ELIGIBILITY.json",
+      "sha256": "e9252d04c7ff5da9dea9f7a64b25f7ed5ddd3132b6278d9a8a43e7b39d01e001"
+    }
+  ]
+}

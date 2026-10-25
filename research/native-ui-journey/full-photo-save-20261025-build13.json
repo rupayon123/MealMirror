@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "One passing current exact-app photo/label/local-model/checked-amount/Save/relaunch/History/detail/delete/second-relaunch case. Separate from the earlier selected-name-to-Review comparison and blank cancellation test.",
+  "candidate": {
+    "version": "1.0 (13)",
+    "sourceCommit": "0309abfe8a31fca53644b68974099f9cccc6834b",
+    "ZIP_SHA256": "383bd8054f32996cdaf8624669e42904208bed311b4131afecc028d54373655a",
+    "ZIPBytes": 12204431,
+    "appSourceAndZIPUnchangedThisSlice": true
+  },
+  "execution": {
+    "testExit": 0,
+    "buildExit": 0,
+    "bodySeconds": 191.019,
+    "hostSeconds": 197.813851875,
+    "timedOut": false,
+    "retries": 0,
+    "durationLimit": "Automation and assertion time, not human completion time or model latency.",
+    "runtime": "iOS27.1 Simulator, owned Duo target",
+    "exactAppFilesMatchedBeforeAndAfter": 17
+  },
+  "journey": {
+    "baseline": "Fresh host read verified absent review store and unchanged8mediaoriginals.",
+    "input": "One already-exposed meal photo and one separate synthetic label; description blank.",
+    "model": "Actual full successful local-model detail observed; namesStatus true, emptyStatus false. One request in this case.",
+    "tentativeNames": [
+      "rice",
+      "salad",
+      "meat",
+      "drink"
+    ],
+    "OCR": "AX readback contains Total Carbohydrate 37 g matching this synthetic fixture; no automatic amount conversion.",
+    "beforeEntry": "No reliable range and no final Review. Separate label amount form initially blank, Add disabled.",
+    "checkedEntry": "Unique synthetic QA item typed, grams remained blank/Add disabled; synthetic 37 typed separately, Add enabled and committed as Your entry.",
+    "confirmation": "Review disabled until explicit parts confirmation, then enabled.",
+    "Save": "One local review saved; photo-not-copied caption observed.",
+    "firstRelaunch": "One history row, neutral Your meal review title, photo provenance and synthetic 37 g.",
+    "detail": "Unique QA item, Your entry and37g read back in the displayed Saved review; explicit combined Meal source/Your on-device photo also retained and visually confirmed.",
+    "delete": "Only owned QA detail eligible. Two nested confirmation aliases had identical identifier,label,frame and hittability; one guarded action activated. No Delete All.",
+    "secondRelaunch": "Zero indexed rows, No saved reviews yet, Delete All disabled. Host store absent after final-record deletion."
+  },
+  "matcherLimit": "The native exact standalone photo-source query can match the History layer behind the sheet. Root separately verified the combined detail-specific AX label and the actual displayed detail screenshot; no claim that the standalone assertion alone proves detail provenance. Frozen harness unchanged during execution.",
+  "preservation": {
+    "freshInstalledExact13FilesMatch": 17,
+    "reviewStoreAbsentAfterOneSaveAndQADelete": true,
+    "allEightOriginalMediaFilesPreservedIncludingSixStock": true,
+    "noRestoreInjectionResetOrMediaMutation": true,
+    "ownedSimulatorShutdown": true,
+    "otherDeviceStateDifferences": [],
+    "allOtherDeviceStatesUnchanged": true,
+    "protectedInteractiveSimulatorNotOperated": true
+  },
+  "artifactRecheck": {
+    "integrityPassed": true,
+    "packagedFilesMatchRetainedExactExtraction": 59,
+    "SwiftSourcesMatchCheckout": 17,
+    "ChallengeLanguages": [
+      "en"
+    ],
+    "ZIPUnchanged": true,
+    "initialCheck": "A naive raw-checkout equality check stopped at intentionally English-only Info.plist. That failed check is retained; corrected comparison uses exact extraction plus Swift source equality. No source or package corruption was established."
+  },
+  "rootVisualReview": {
+    "framesViewed": 5,
+    "confirmed": [
+      "Full successful local-model detail and separate synthetic label text are visible.",
+      "A manually typed QA item has blank grams and disabled Add before separate amount entry.",
+      "Final Review has neutral title, manually entered37g, no-insulin boundary and Save action.",
+      "Saved detail shows personal-photo provenance,37g, unique QA item and Your entry; metadata values fit this captured card.",
+      "Second relaunch shows0records, empty history and disabled Delete All."
+    ],
+    "limits": "No general recognition/OCR accuracy, other width/text-size/dark/RTL, direct VoiceOver, animation, physical offline or human three-minute completion claim."
+  },
+  "limits": [
+    "One exposed meal and synthetic label, not human-labeled fresh accuracy or worldwide coverage.",
+    "No inferred recipe, portion, carbohydrate amount or insulin dose.",
+    "Physical camera/airplane-mode, broader accessibility/layout, multi-view/large-image and other model/error/cancel routes remain open.",
+    "No App Store/external/public beta or app release; internal upload processing/group state remains separately unverified.",
+    "No new binary or duplicate upload because app bytes did not change."
+  ],
+  "warnings": [
+    "Retained Xcode SDK-format diagnostics; no causal claim."
+  ],
+  "privacy": "Only curated metadata/hashes public; raw logs, pictures, QA identifiers, review content and private paths stay local.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-v1/source-freeze.json",
+      "sha256": "2104216af7ab042054fdb31c86fd90c8b81b94bceb0c6deaeeb90d5496db7aa1"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-v1/baseline-v1/result.json",
+      "sha256": "418d39dfc2704208f2451fda049ca73c3985f17f1d6c91252a75b0ad67e885d3"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-v1/build-v1/result.json",
+      "sha256": "79a14cb8a15f823d68842b03f320df5145d5cd0ac8b5cc4fa630322b82de1a76"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-v1/execution-v1/result.json",
+      "sha256": "11ef0410ced1de8201dde123473e111ef606024b6d726b9f5fcb64f750a2eeed"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-v1/execution-v1/command.log",
+      "sha256": "e183e40b030d056b2cf4cb06445f911a82535f86686763ee14ac21a53b91124d"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-v1/DerivedData/Build/Products/UITests_iphonesimulator27.1-arm64.xctestrun",
+      "sha256": "0b4ac423fceb9de33d23fbf69aee1e9e8f108a2bae730544f036e02e39a38392"
+    },
+    {
+      "path": "description-entry-20261025-build13/root-full-photo-visual-review.json",
+      "sha256": "6b68bae5eb729bae3ceea584b4d8d8672ab1be5774909ac711c3da8813075594"
+    },
+    {
+      "path": "description-entry-20261025-build13/runtime-final-v1/result.json",
+      "sha256": "8b50c5518d614cf4ff22981ea754b9c05de8b508db3f098d595ca487ed87961d"
+    },
+    {
+      "path": "description-entry-20261025-build13/package-recheck.json",
+      "sha256": "5b606f1d4e5c77b60043c576386027468b357b3b4e77a224d68161d489a692e7"
+    },
+    {
+      "path": "description-entry-20261025-build13/package-recheck-initial-assumption-failure.json",
+      "sha256": "3f8fc89198d931326f6114ffd9d91e2b320a413a8020cffa5c9a67552d920f0f"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-attachments-v1/9EA103D2-5181-460A-AD7F-CA74C2B1E208.png",
+      "sha256": "3c132d47c8081e54f2813ec27ea3f9649bd6ae888823aa90fbed16cc3991ab11"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-attachments-v1/825D3379-88D8-4B88-AFF6-F4912A846FCE.png",
+      "sha256": "587d627436aac75a9f1b364f9758ad0dd42760394ce3bca7a8abcee026f53add"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-attachments-v1/D3D89FE7-EE7D-4A61-A590-9B350B82B541.png",
+      "sha256": "ae72f2c02cbf110bfa677b38c03746aad8463b68c9ea18229ea512118e9ea16f"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-attachments-v1/20C1F672-7B2E-4F4F-A6AE-A97BEE547A18.png",
+      "sha256": "6757447ceca311e56fec97d6d6575d7b092b69727d2e3b255ff6957189a01189"
+    },
+    {
+      "path": "description-entry-20261025-build13/full-photo-save-attachments-v1/8239EC59-0D0A-4528-BAF5-63C734296227.png",
+      "sha256": "19d95616b282ae2ec62d4dec0a928b2eed651fd36657e83be2574d88200d49b4"
+    }
+  ]
+}
