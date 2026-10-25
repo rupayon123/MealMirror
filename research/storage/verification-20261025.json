@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "baselineCommit": "64e8378338b19153677346b45e9f8ef93dd39353",
+  "backendPatchCommit": "2e3e71d5d0225d64b909b89b9d432fd59cbc46fb",
+  "integratedPatchCommit": "abf5e34",
+  "modelsSHA256": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e",
+  "baseline": {
+    "cases": 20,
+    "harnessFailures": 0,
+    "duplicateFileAccepted": true,
+    "oneDeleteRemovedMatchingRecords": 2,
+    "interpretation": "Case17 recorded existing unsafe malformed-identity behavior; a harness pass did not approve that behavior."
+  },
+  "postChange": {
+    "compile": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 7.063853333,
+      "attempts": 1,
+      "logSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runtime": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.6505995,
+      "attempts": 1,
+      "logSHA256": "86bfdfadd79486fc14d21eed66a631e33b3457e21ff8cc4e61a3023e92b90ab7"
+    },
+    "cases": 20,
+    "failures": 0,
+    "skips": 0,
+    "observations": {
+      "duplicateIDCase": {
+        "duplicateIDsRejected": true,
+        "id": "17-duplicate-ids-rejected",
+        "inputSHA256": "3eb76585ba5a87f09eeffe468fe1319029488187fc971d5011454308e22353ae",
+        "loadEmpty": true,
+        "originalBytesPreserved": true,
+        "passed": true,
+        "saveAndDeleteFailed": true
+      },
+      "currentAndLegacyRecordsReadable": true,
+      "malformedRangeAndJSONFailedOperationsPreserveBytes": true,
+      "validSaveTargetedAndFinalDeletePassed": true,
+      "writeFailureCasesPreserveBytes": true,
+      "serialStress": {
+        "finalFileAbsent": true,
+        "id": "20-bounded-30-save-delete-stress",
+        "passed": true,
+        "saves": 30,
+        "specificDeletes": 30,
+        "uniqueIDs": 30
+      },
+      "finalTemporaryStoreFileAbsent": true
+    },
+    "adapters": [
+      "Models import MealCore removed because exact MealCore source is compiled in the same executable.",
+      "Only directoryURL expression replaced with fixed validated temporary-root provider; no call to Application Support.",
+      "Mac createDirectory omits iOS .complete protection attribute; device-only setAttributes branch excluded on Mac.",
+      "Mac security helper follows Simulator backup-exclusion-only branch; actual Mac backup flag remains set and verified. No iOS file-protection assertion."
+    ],
+    "unchangedOtherCases": 19
+  },
+  "priorScratchFailures": {
+    "reportedBy": "Parent task and committed backend research/storage/duplicate-id-guard-20261025.md",
+    "scope": "Separate prior /tmp scratch run retained unresolved valid-save and 30-save failures; initial missing case-evidence directory failure also retained by backend. Those artifacts were not changed.",
+    "reproducedHere": false,
+    "limits": "This one fixed external-root run passed both unchanged write cases. It does not establish the cause of prior scratch failures or prove general environment equivalence; no app-regression claim from those failures."
+  },
+  "independentSourceReview": {
+    "materialFindings": 0,
+    "scope": "Read-only review, no runtime checks. Existing save/delete guards and History error presentation confirmed."
+  },
+  "limitations": [
+    "Mac-only path and file-protection adapters; iOS complete file protection, physical lock/unlock and device backup behavior unverified.",
+    "No actual app/UI persistence, concurrent writers, crash/power-loss/disk-full or process-race acceptance.",
+    "No duplicate item-ID, every historical item schema or top-level range-versus-item-sum validation.",
+    "30 serial writes/deletes are a bounded mechanics check, not a broad stress, speed or memory benchmark."
+  ],
+  "nativeBuild14LaunchAttempt": {
+    "harnessBuildExit": 0,
+    "harnessBuildSeconds": 80.453692584,
+    "bootExit": 0,
+    "bootstatusExit": 0,
+    "installTimedOutSeconds": 60,
+    "XCTestCasesExecuted": 0,
+    "actualInstalledBuildAfterAttempt": "8",
+    "shutdownExit": 0,
+    "finalOwnedStateShutdown": true,
+    "preservedOriginalAppFiles": 316,
+    "preservedOriginalAppDataFiles": 340,
+    "preservedOriginalDCIMFiles": 6,
+    "changedPhotoDataCacheFiles": 3,
+    "scope": "No app test ran. PhotoData WAL/SHM/cache changed during runtime lifecycle; original app/data/DCIM hashes unchanged. No healthy-runtime or app-launch-failure diagnosis follows."
+  },
+  "testFlightBrowserRead": {
+    "existingTabControlFailed": "Debugger unattached",
+    "nativeBrowserFallbackSucceeded": true,
+    "observedState": "App Store Connect Sign In page; empty account field and disabled Continue",
+    "authenticatedBuildPageRead": false,
+    "credentialsEntered": false,
+    "appConfigurationChanged": false
+  },
+  "artifactReferences": [
+    {
+      "privateRelativePath": "storage-source14-20261025-v1/RESULT-SUMMARY.json",
+      "sha256": "c52d186b39f157bbb514811ea0bc9076a16dfc0368213af5cdf3b90444b8b2b0"
+    },
+    {
+      "privateRelativePath": "storage-source14-20261025-v1/runtime-v1/report.json",
+      "sha256": "e02df2561316f316cae2fadd2c7d337ee7616597827b32310ba13746724b94f1"
+    },
+    {
+      "privateRelativePath": "storage-source14-20261025-v1/SOURCE-FIDELITY.json",
+      "sha256": "c87bdfe4d23d28a347ae8b6d770a0890ddc5c1fcb02ac9d68b7663576c50697c"
+    },
+    {
+      "privateRelativePath": "storage-duplicate-guard-20261025-v1/RESULT-SUMMARY.json",
+      "sha256": "7ba8c2b773ceeb5b1ac304353bafdb7e3efbe368cd84bfceeeab9e967fecd3ac"
+    },
+    {
+      "privateRelativePath": "storage-duplicate-guard-20261025-v1/runtime-v1/report.json",
+      "sha256": "17f70a62aa8e7057b9d87f3b09ef8d42165c0a6f43e994199cba928a4a2f70e6"
+    },
+    {
+      "privateRelativePath": "storage-duplicate-guard-20261025-v1/SOURCE-FIDELITY.json",
+      "sha256": "f9e4792930f6b49c8f21e23365ee6f0059416b4e802bc057e6b62223e249dd92"
+    },
+    {
+      "privateRelativePath": "storage-duplicate-guard-20261025-v1/harness-only.diff",
+      "sha256": "b5e0b2aad67240277b7c37561d782999886c90481ddc3711209c755fd80f284f"
+    },
+    {
+      "privateRelativePath": "storage-duplicate-guard-20261025-v1/source/platform-path-adapter.diff",
+      "sha256": "926027c1c4c6b07e1a93084e4b9170a2765ea879cf47263783803e7d0b4819c4"
+    },
+    {
+      "privateRelativePath": "native-launch-build14-20261025-v1/harness-build-result.json",
+      "sha256": "71a0c2a46fc3189a4b0c5ef3c80b56e178004a487cd71daca81855309a12e8b0"
+    },
+    {
+      "privateRelativePath": "native-launch-build14-20261025-v1/boot-result.json",
+      "sha256": "8ee5e86a59c6fddb2bb4fbb9a87419d76e56de920517c6b45b46c0f64293860d"
+    },
+    {
+      "privateRelativePath": "native-launch-build14-20261025-v1/bootstatus-result.json",
+      "sha256": "06e1ef3fae6a35fe630aabc44a80037e8b7bc0668c293c96b67513e109c092b0"
+    },
+    {
+      "privateRelativePath": "native-launch-build14-20261025-v1/install-result.json",
+      "sha256": "d39aa48b237f80a05974dd00f9d05a85d55b7d0663d3ff40b4b24aa559d5efa9"
+    },
+    {
+      "privateRelativePath": "native-launch-build14-20261025-v1/shutdown-result.json",
+      "sha256": "49e7003c372a46fef9bb26fcd1bd81cf240911f5873bfc75b417ab0c34b0ad87"
+    },
+    {
+      "privateRelativePath": "native-launch-build14-20261025-v1/FINAL-PRESERVATION.json",
+      "sha256": "228996472cd1b10db8a5df0aedc417c5fb08a355175083bffc4f2342190c8062"
+    }
+  ]
+}

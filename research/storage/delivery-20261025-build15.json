@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "candidate": {
+    "version": "1.0 (15)",
+    "zipSHA256": "fdd76fdd34390acb1106a9192835605e45ef6f20f5aff4b50475fd92b8052f34",
+    "zipBytes": 12205146,
+    "packagedFiles": 59,
+    "matchingSwiftSources": 17,
+    "languages": [
+      "en"
+    ],
+    "repackByteIdentical": true
+  },
+  "source": {
+    "backendPatchCommit": "2e3e71d5d0225d64b909b89b9d432fd59cbc46fb",
+    "integratedPatchCommit": "abf5e34",
+    "modelsSHA256": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e"
+  },
+  "change": "Reject duplicate stored review UUIDs before returning records, save or specific deletion. Preserve malformed file bytes. No automatic deduplication or clinical change.",
+  "verification": {
+    "storageEvidence": "verification-20261025.json",
+    "postChangeMacCases": 20,
+    "postChangeMacFailures": 0,
+    "otherCasesUnchanged": 19,
+    "repackByteIdentical": true,
+    "cleanExactSimulatorBuild": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 108.391902625
+    },
+    "signedArchive": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 143.42912987499997
+    },
+    "nativeCandidate15Cases": 0,
+    "codesignExit": 0,
+    "SDK": "iphoneos27.1",
+    "minimumOS": "17.0",
+    "extractedFilesUnchangedAfterBuildAndArchive": 59,
+    "unchangedCandidatePackageDelta": [
+      "Models.swift duplicate-ID guard",
+      "Package.swift bundle version15",
+      "AI-AND-ASSET-DISCLOSURE.md assistance entry"
+    ]
+  },
+  "distribution": {
+    "scope": "Existing internal testing only",
+    "candidate15Upload": "succeeded; Apple reports processing",
+    "processingGroupAndPhysicalInstallVerified": false,
+    "AppStoreReleaseExternalTestingPublicLinkOrPublicAppArtifact": false,
+    "releaseSettingActionPerformed": false,
+    "uploadExit": 0,
+    "uploadSeconds": 127.43826241599999,
+    "testFlightInternalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "authenticatedTestingPageRead": false,
+    "currentBrowserState": "Apple sign-in page"
+  },
+  "remaining": [
+    "Fresh exact15 native launch/persistence/error journey, rendered accessibility and animations.",
+    "Encoded-photo native tests and varied-food qualified recognition/abstention evaluation.",
+    "Physical offline/camera test deferred to applicant; 2027 rules and applicant eligibility/code review/disclosures/essays."
+  ],
+  "privacy": "No raw QA store, image, device identifier or credential is included.",
+  "localArtifactReferences": [
+    {
+      "privateRelativePath": "storage-build15-20261025-v1/PACKAGE.json",
+      "sha256": "1faa52542073007111566a0744e1bd8f3913a5b851bc237d97fd4fc9eef16d4d"
+    },
+    {
+      "privateRelativePath": "storage-build15-20261025-v1/BUILD-VERIFICATION.json",
+      "sha256": "818ccea03929ae21b66b7a88b7fca0f5283853a77fb19d506ae38fb67bf49590"
+    },
+    {
+      "privateRelativePath": "storage-build15-20261025-v1/ARCHIVE-VERIFICATION.json",
+      "sha256": "a2419a8cc957a4fcf3df2095068b3c315d33c4decbbe8775dd1dcaba8759b1b8"
+    },
+    {
+      "privateRelativePath": "storage-build15-20261025-v1/exact15-build-result.json",
+      "sha256": "2fe7bd3e07f1e78e809542037ad2182b82eff6a628a5c0d58302d28d0b2f3994"
+    },
+    {
+      "privateRelativePath": "storage-build15-20261025-v1/exact15-archive-result.json",
+      "sha256": "f0ff9d8961ad74cafb3a19ce0b3444c6ee4a802a72012164f5a4e15f70be928a"
+    },
+    {
+      "privateRelativePath": "storage-build15-20261025-v1/exact15-upload-result.json",
+      "sha256": "d3685f348bf4756e77217d0b03e5fc99d48e40d7b543b27a80d3ea5af6286706"
+    },
+    {
+      "privateRelativePath": "storage-build15-20261025-v1/codesign.log",
+      "sha256": "c97a2ddfd2ae2a4557e2d7dd156d8df81e01c12cdff202263960a1373e877c0c"
+    },
+    {
+      "privateRelativePath": "storage-build15-20261025-v1/exact15-build.log",
+      "sha256": "db333e844d9a022a0f845218fd6d6e53aa754f5b105d07efe34167b2ff7e5ebf"
+    },
+    {
+      "privateRelativePath": "storage-build15-20261025-v1/exact15-archive.log",
+      "sha256": "ccfb6a6bbcd5cc51b25299d0355a04dc4ece2dc29cfeee778193bad431c7c2bc"
+    },
+    {
+      "privateRelativePath": "storage-build15-20261025-v1/exact15-upload.log",
+      "sha256": "213b777097ca4d80863b9f086b8cf59d20a98eee2acbadb3f64ff9644326e3bb"
+    }
+  ]
+}
