@@ -64,3 +64,7 @@ Include multiple lighting conditions, phone cameras, containers, visual accessib
 Before expanding the local model or catalog, record per-group and overall correct food clues, wrong clues, safe abstentions, latency, memory, battery and thermal behavior, ZIP size, and failures on nonfood images. Decide pass thresholds with qualified nutrition and clinical reviewers before looking at held-out results. Review mistakes by dish and context; a high average must not hide a group that performs poorly. Never infer insulin units or a carbohydrate number from a photo-only classifier. If a view is unclear or a dish falls outside validated coverage, ask for a correction or a trusted value.
 
 Nutrition-label OCR needs a separate evaluation across languages, serving formats, curved packages, glare, small print, and multiple products in one image. Its current output is transcription only. It must not silently select a number, multiply servings, or imply that a label describes the entire pictured meal.
+
+## Dataset preparation guard
+
+The [data protocol](research/recognition-architecture/DATA-PROTOCOL.md) and metadata checker enforce declared partition and permission constraints. The synthetic 24-test suite passes after two retained policy gaps were corrected. This is bookkeeping preparation only; qualified data, recognition quality and physical offline acceptance remain open. App and candidate ZIP build 19 are unchanged.

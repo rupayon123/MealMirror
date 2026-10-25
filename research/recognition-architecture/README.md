@@ -102,3 +102,7 @@ Do not adopt this current general ImageNet classifier for broad meal naming or n
 The [bounded S0 eligibility screen](mobileclip-eligibility-20261025.json) rejects the inspected current MobileCLIP/MobileCLIP2 checkpoints for this app: research-only model terms explicitly exclude product development, and no student/testing app exception was established. The older official V1 Core ML package has insufficient artifact-specific rights evidence; a model-card tag and broken historical license link do not clear it or establish a retroactive change.
 
 Apple publishes a separate V1 image encoder, whose raw package metadata totals 22,871,573 bytes. The current candidate leaves 12,795,569 bytes under the conservative 25 MB planning cap. No quantized, compiled or compressed candidate was produced, so final ZIP fit is unestablished. The V2 combined checkpoint is 299,864,852 bytes and is not an image-only Core ML export. A matching precomputed text-vector bank is technically possible, but does not clear licensing or establish food accuracy. No weights were downloaded, converted, evaluated or added; the default Apple model and reserved inputs remain unchanged.
+
+## Dataset preparation guard
+
+The [data protocol](DATA-PROTOCOL.md) and metadata checker enforce declared partition and permission constraints. The synthetic 24-test suite passes after two retained policy gaps were corrected. This is bookkeeping preparation only; qualified data, recognition quality and physical offline acceptance remain open. App and candidate ZIP build 19 are unchanged.

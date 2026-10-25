@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-25",
+  "scope": "Synthetic metadata integrity only",
+  "sourceSHA256": {
+    "scripts/validate-recognition-manifest.py": "5c37e0b8c2534571d73ff966c1710e5a005f881cdda7062835aabf8a2b87db40",
+    "scripts/test-recognition-manifest.py": "77485e49b6406edc2898d282d3a1ebb633833e5efe11e52effe33e297d427c54"
+  },
+  "testMethods": 24,
+  "testExitCode": 0,
+  "elapsedSeconds": 4.431028292000001,
+  "history": [
+    {
+      "version": 1,
+      "testMethods": 20,
+      "testExitCode": 0,
+      "reviewFinding": "Explicit permission false passed draft; separate calibration permission was not checked. Both baseline failures retained privately."
+    },
+    {
+      "version": 2,
+      "correction": "Explicit applicable denial fails both modes; separate calibration permission and distribution assertion required. Added four regression methods."
+    }
+  ],
+  "appChanged": false,
+  "candidateBuild": 19,
+  "candidateSHA256": "3c55b1bf656815eaf6a34c52398bfd0a09b989523411d3895811155c093a0e16",
+  "limitations": [
+    "No images acquired or evaluated",
+    "No actual rights or human labels accepted",
+    "No training or accuracy acceptance",
+    "No app or ZIP changes"
+  ],
+  "independentReview": {
+    "result": "No material remaining defect found after corrections",
+    "verified": "Source/test hashes, protocol/result binding and retained 24-test output",
+    "scope": "Read-only review; no additional tests or inference"
+  }
+}
