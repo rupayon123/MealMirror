@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "curatedAtUTC": "2026-10-25T13:48:38.562360+00:00",
+  "scope": "Two separate failed native XCTest attempts on actual build 9 in iOS 26.5 Simulator. System Photos navigation and loaded public image labels were observed; neither attempt selected a photo or reached transfer, analysis, OCR or persistence.",
+  "app": {
+    "version": "1.0 (9)",
+    "exactZIP_SHA256": "a4ceb44fb3e3f1255768400035fb67539d632a636d99e19921f411fdc3d0e1e8",
+    "ZIPBytes": 12203935,
+    "sourceOrZIPChangedForTheseAttempts": false
+  },
+  "inspectorAttempt": {
+    "testCommandExit": 65,
+    "hostTimedOut": false,
+    "testCases": 1,
+    "failures": 1,
+    "testBodySeconds": 35.687,
+    "wholeCommandSeconds": 171.32256212500002,
+    "observedBeforeFailure": "Home Library opened the public Photos navigation. Picker pixels and hierarchy were retained; the tree exposed nine photo labels, disabled Done, Cancel and Search.",
+    "failure": "Source line 36 read an index-bound Image proxy while enumerating labels/frames. XCTest re-resolved index 10 against a later ten-image query and reported no matching element.",
+    "interpretation": "The live query changed during inspector enumeration; why its image set changed is unknown. The enumeration did not complete or emit its planned JSON listing. This was not the Photos-navigation assertion and is not an established product loading defect.",
+    "cancelBranchReached": false,
+    "photoSelectionReached": false,
+    "attachmentsRetained": 17,
+    "independentReviewSHA256": "3e68c13e90f38e9ff0fe00a2c27bbba3bbf2d8cda17e11c01188845cc38c724f",
+    "independentReviewBlockers": [],
+    "visualEvidenceAttribution": "The retained independent review records viewing the picker PNG and source hierarchy. Loaded thumbnails and lack of visible selections were observed; visual resemblance does not prove asset bytes."
+  },
+  "knownLabelAttempt": {
+    "testCommandExit": 65,
+    "hostTimedOut": false,
+    "testCases": 1,
+    "failures": 1,
+    "testBodySeconds": 29.101,
+    "wholeCommandSeconds": 158.55476375,
+    "caseAllowanceSeconds": 360,
+    "hostBoundSeconds": 900,
+    "publicMealLabel": "Photo, August 05, 10:52 PM",
+    "labelWhitespace": "U+202F narrow no-break space before PM.",
+    "requiredMatchingImages": 2,
+    "matchingCountAssertionPassed": true,
+    "selectedBoundByPlanned": 0,
+    "firstImageHittable": false,
+    "failureSourceLine": 32,
+    "failure": "XCTAssertTrue(firstMeal.isHittable) failed before the following firstMeal.tap statement. With continueAfterFailure=false, the case stopped before selection.",
+    "photoTapExecuted": false,
+    "pickerDoneExecuted": false,
+    "labelPickerReached": false,
+    "photoTransferReached": false,
+    "AnalyzeReached": false,
+    "OCRReached": false,
+    "manualEntryReached": false,
+    "ReviewOrSaveReached": false,
+    "historyDeleteReached": false,
+    "attachmentsRetained": 10,
+    "failureMeaning": "The expected two public label matches were found, but this attempt could not establish a hittable first image. It does not prove why hit testing failed or that the photo could not be selected by another authorized interaction route.",
+    "rootReviewedRecordingFrame": {
+      "relativeLocalPath": "photo-label-v1/execution-v1/picker-at-26s.png",
+      "sha256": "9f4ed58df54f7c7ef67c5987bf51c47540969e669e984294dc8453b0e9907c90",
+      "requestedRecordingSeconds": 26,
+      "actualRecordingSecondsRootReported": 25.57,
+      "attribution": "Root viewed the extracted failed-run recording frame. This curator hashes the retained frame without re-extracting or replaying it.",
+      "observation": "Nine loaded thumbnails are visible, including a label-like and two meal-like QA thumbnails on the first row, with no visible selection marks. Pixel resemblance does not prove original asset bytes."
+    }
+  },
+  "preservation": {
+    "inspector": {
+      "all17RetainedInstalledFilesExact": true,
+      "storeByteIdentical": true,
+      "savedRecordCount": 3,
+      "ownedQAShutdownRecorded": true
+    },
+    "knownLabel": {
+      "all17RetainedPreflightPathFilesExact": true,
+      "currentContainerLookupExit": 149,
+      "currentInstalledIdentityEstablishedByThatLookup": false,
+      "currentContainerFollowupRequired": true,
+      "storeBeforeAndAfterSHA256": "1f2d71b181e07e08d8cbeba3f54b1ebec32f34c6b11570a086730341ea8aedb5",
+      "storeByteIdentical": true,
+      "storeSemanticEqualsBaseline": true,
+      "semanticDifferenceCount": 0,
+      "savedRecordCount": 3,
+      "remainingQARecordCount": 0,
+      "baselineRestoredOrInjected": false,
+      "ownedQAShutdownRecorded": true
+    },
+    "originalInteractiveDuoOrPhoneOperated": false,
+    "originalInteractiveDuoRecordedStillBooted": true,
+    "meaning": "These are retained controller observations. Retained-path file equality is distinct from a successful fresh current-container lookup; no new Simulator/container or OS action was performed for this curation."
+  },
+  "limits": [
+    "Neither failed attempt establishes a product photo-transfer/loading fault, successful selection/decoding, Vision/OCR behavior, or a complete meal journey. The source-derived loading-spy checks remain a separate scope.",
+    "The planned photo-label persistence steps were not reached. No photo-model, arbitrary-meal, amount/nutrition/clinical, physical offline, accessibility or submission-readiness claim follows. iOS 26.5 cannot exercise the iOS 27 FoundationModels image path.",
+    "No private picker identifiers or coordinate taps were used by these attempts. No source fix, selection workaround, retry, data reset, baseline restoration or new execution proposal is adopted here.",
+    "Test and host durations are retained observations, not performance benchmarks."
+  ],
+  "privacy": "No pixels, recordings, raw hierarchy text, private absolute paths, account/device identifiers or saved-record contents are copied into the repository. Local references identify selected retained evidence only.",
+  "localArtifactReferencesBase": "../../../../outputs/native-ui-journey-20261025/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. Evidence remains outside the submission package.",
+  "localArtifactReferences": [
+    {
+      "path": "picker-inspection-v1/INTENT-AND-SOURCE-HASHES.json",
+      "sha256": "28ffffcdceefbeb269b4c537139610bb884eb00de0ceebe7bbf2c970fb912cc3"
+    },
+    {
+      "path": "picker-inspection-v1/UITests/MealMirrorUITests.swift",
+      "sha256": "9fdbddb065d738b041c13e026ad0ead2c6e286281ffdb048841af154009b20fa"
+    },
+    {
+      "path": "picker-inspection-v1/execution-v1/test-result.json",
+      "sha256": "e8acb4b03201f852e566d990122d03d644100cdd9f62b4bf4e2eaa583c11116c"
+    },
+    {
+      "path": "picker-inspection-v1/execution-v1/test.log",
+      "sha256": "8e74e8991c138cf3ce41f8e37defe42a42e6eda0dc7b9025c0db5897fae6c56a"
+    },
+    {
+      "path": "picker-inspection-v1/execution-v1/attachments/manifest.json",
+      "sha256": "83e54777ca68f8225a4c44eb4b91c03a6076ee66d2d229f8e6d4f09c0afa0311"
+    },
+    {
+      "path": "picker-inspection-v1/execution-v1/attachments/F4271471-F37F-4B1F-A9A8-A7D0640F81C1.txt",
+      "sha256": "f2afb0579c056e110a639fb686fd88f7312c3cec7089ff6943a59ba8a159b0aa"
+    },
+    {
+      "path": "picker-inspection-v1/execution-v1/independent-review.json",
+      "sha256": "3e68c13e90f38e9ff0fe00a2c27bbba3bbf2d8cda17e11c01188845cc38c724f"
+    },
+    {
+      "path": "photo-label-v1/INTENT-AND-SOURCE-HASHES.json",
+      "sha256": "deca71d3b55691bee37dc2717b81735ee0cd71ae6e08dd21fb73bec0d555a829"
+    },
+    {
+      "path": "photo-label-v1/UITests/MealMirrorUITests.swift",
+      "sha256": "b78a7dde0be62fdefc10bb05c97dac1512a1a4cfa8e5d671d12f071759775242"
+    },
+    {
+      "path": "photo-label-v1/root-review.json",
+      "sha256": "67453424c43094ca582b7a6b6b91ca0721b78119afc26887c41a6f6b53d359dd"
+    },
+    {
+      "path": "photo-label-v1/execution-v1/test-intent.json",
+      "sha256": "18a2d55a6f58507ba0e49350fe71d449e15f6e1a203f9d8a69f91cc4960991c9"
+    },
+    {
+      "path": "photo-label-v1/execution-v1/test-result.json",
+      "sha256": "8f1ebe56456f65fd961fd45d46bf5dc106c6ea62f7e303a12584335d82c0ef42"
+    },
+    {
+      "path": "photo-label-v1/execution-v1/test.log",
+      "sha256": "ba5cece4caf328e8aa7d26184c2076082f1186ab7146cb145bef86a5c51bbb00"
+    },
+    {
+      "path": "photo-label-v1/execution-v1/attachments/manifest.json",
+      "sha256": "0bbcae109a048096110032af3193f058e6c96bf865b14c59031df1ffd4e8844f"
+    },
+    {
+      "path": "photo-label-v1/execution-v1/picker-at-26s.png",
+      "sha256": "9f4ed58df54f7c7ef67c5987bf51c47540969e669e984294dc8453b0e9907c90"
+    }
+  ]
+}

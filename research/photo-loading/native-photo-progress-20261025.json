@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "curatedAtUTC": "2026-10-25T14:16:38.579275+00:00",
+  "scope": "Current partial actual-app photo progress on build 9, iOS 26.5 Simulator. One later center-selection attempt attached a meal photo and then reached Estimate unexpectedly; a separate visibility-guard attempt stopped earlier at its baseline Home-history step. Both full cases failed.",
+  "app": {
+    "version": "1.0 (9)",
+    "exactZIP_SHA256": "a4ceb44fb3e3f1255768400035fb67539d632a636d99e19921f411fdc3d0e1e8",
+    "ZIPBytes": 12203935,
+    "productionSourceOrZIPChangedForTheseAttempts": false
+  },
+  "priorScope": "native-picker-20261025.json retains the earlier inspector and nonhittable-image failures. They remain historical failed attempts; the later attachment below does not rewrite their outcomes.",
+  "centerAttempt": {
+    "testCommandExit": 65,
+    "hostTimedOut": false,
+    "testCases": 1,
+    "failures": 1,
+    "bodySeconds": 64.897,
+    "wholeCommandSeconds": 195.007061958,
+    "mealPhotoProgress": "The public matched first meal image was selected through its guarded normalized center. Enabled Done and picker dismissal were observed, then Selected meal photo 1 passed and the image was displayed.",
+    "attachedSlots": {
+      "food": "1/3",
+      "nutritionLabel": "0/1"
+    },
+    "lastRequestedAction": "Tap the public labelLibrary button. No scroll was recorded because the helper accepted isHittable=true.",
+    "recordedGeometry": {
+      "labelLibraryFrameXYWH": [
+        205.2,
+        820.9,
+        163.5,
+        47.5
+      ],
+      "pinnedAnalyzeFrameXYWH": [
+        14.5,
+        774.5,
+        373.0,
+        57.0
+      ],
+      "intersectionHeightPoints": 10.6
+    },
+    "subsequentObservedRoute": "Your estimate, with Photo selected; inspection unavailable and No reliable range yet. The expected second Photos navigation did not appear.",
+    "plannedAnalyzeAndDescriptionStepsReached": false,
+    "unexpectedEstimateNavigationObserved": true,
+    "labelSelectionOrOCRReached": false,
+    "manualAmountReviewSaveDeleteReached": false,
+    "interpretation": "The requested action and subsequent route mismatch, together with recorded frame overlap, support an occlusion/interaction problem. The exact hit-dispatch cause is not established. The unavailable-inspection UI is an observation without an internal API-error diagnosis.",
+    "independentResultReview": {
+      "sha256": "e99864e0071ae19bd77e7aeecc4f99a6a1e960dc15c17292a89d79132310ede8",
+      "blockers": [],
+      "scope": "Read-only source/log, hierarchy geometry and two retained PNGs; no replay or runtime actions."
+    },
+    "reviewedFrames": [
+      {
+        "path": "execution-v1/attachments/166C8EE7-840A-4473-8740-EE1264207A51.png",
+        "sha256": "bd1942be43f8a059c9a6a109795639f53fd32177d65fbdb4966e2806e4fcb288",
+        "observation": "Add a meal shows one attached meal thumbnail, Food view 1/3 and Nutrition label 0/1; the fixed Build my local review action is visible at the bottom. This is not original asset-byte identity proof."
+      },
+      {
+        "path": "execution-v1/after-label-action-at-55s.png",
+        "sha256": "08943948e41bcb4d0f889a71c4e4c9a4d45eb79cea43b2a9b86d99a0a8ecea11",
+        "requestedRecordingSeconds": 55,
+        "actualRecordingSecondsRootReported": 43.6433,
+        "observation": "Your estimate shows Photo selected; inspection unavailable and No reliable range yet. The failure hierarchy independently confirms this route. Reviewer viewed retained PNG only, without re-extracting or replaying."
+      }
+    ],
+    "preservation": {
+      "all17RetainedPreflightPathFilesExact": true,
+      "currentContainerLookupExit": 149,
+      "freshCurrentContainerIdentityEstablished": false,
+      "currentIdentityFollowupRequired": true,
+      "storeByteIdentical": true,
+      "storeSemanticEqualsBaseline": true,
+      "semanticDifferenceCount": 0,
+      "savedRecords": 3,
+      "remainingQARecords": 0,
+      "noStoreRestoreOrInjection": true,
+      "ownedQAShutdownRecorded": true,
+      "originalInteractiveDuoOrPhoneOperated": false,
+      "originalInteractiveDuoRecordedStillBooted": true
+    },
+    "reviewedFramesPathBase": "photo-label-center-v1/ relative to localArtifactReferencesBase"
+  },
+  "visibilityGuardAttempt": {
+    "testCommandExit": 65,
+    "hostTimedOut": false,
+    "testCases": 1,
+    "failures": 1,
+    "bodySeconds": 31.102,
+    "wholeCommandSeconds": 156.599258292,
+    "failureSourceLine": 171,
+    "failure": "The baseline openHistory wait for history.item.0 failed after a requested Home history tap. The failure hierarchy still shows Home and three saved reviews.",
+    "recordedHomeHistoryFrameXYWH": [
+      14.500000000000028,
+      671.1666666666666,
+      373.0,
+      94.0
+    ],
+    "recordedSynthesizedTapPointXY": [
+      201.00000000000003,
+      718.1666666666666
+    ],
+    "recordedPointWithinRecordedHistoryRectangle": true,
+    "geometryMeaning": "A point inside the recorded rectangle does not establish which SwiftUI view handled the event or explain the unchanged route.",
+    "PhotosReachedInThisAttempt": false,
+    "newPhotoSelectionOrTransferReached": false,
+    "intendedLabelVisibilityGuardExercised": false,
+    "OCRManualReviewSaveDeleteReached": false,
+    "preservation": {
+      "all17RetainedPreflightPathFilesExact": true,
+      "currentContainerLookupExit": 149,
+      "freshCurrentContainerIdentityEstablished": false,
+      "currentIdentityFollowupRequired": true,
+      "storeByteIdentical": true,
+      "storeSemanticEqualsBaseline": true,
+      "semanticDifferenceCount": 0,
+      "savedRecords": 3,
+      "remainingQARecords": 0,
+      "noStoreRestoreOrInjection": true,
+      "ownedQAShutdownRecorded": true,
+      "originalInteractiveDuoOrPhoneOperated": false,
+      "originalInteractiveDuoRecordedStillBooted": true
+    }
+  },
+  "currentInterpretation": [
+    "Actual Photos selection and display of one meal attachment now have a narrow native UI checkpoint. No label/OCR/manual-amount/save journey completed in these two attempts.",
+    "The visibility-guard case failed before reaching Photos or the label action; it cannot validate or reject the intended label guard on the basis of this attempt.",
+    "Retained installed-file equality and store preservation remain separate from a successful fresh current-container lookup. Both lookup commands exited 149; root follow-up is pending.",
+    "No product fix, successful recognition, useful food-name quality, iOS27 FoundationModels, clinical value, physical offline, broad accessibility or submission-readiness conclusion follows. Test/host durations are observations rather than performance benchmarks."
+  ],
+  "nextStatus": {
+    "sourceHitAreaHypothesis": "A new focused source hit-area investigation is being prepared separately by root.",
+    "confirmedCause": false,
+    "appFixConfirmedOrAdopted": false,
+    "executionApprovedByThisReceipt": false,
+    "limits": "No new case or proposed fix is blended into these retained outcomes."
+  },
+  "privacy": "No source contents, pixels, recordings, private absolute paths, account/device identifiers or saved-record contents are copied into the repository. Frame paths/hashes identify local evidence only.",
+  "localArtifactReferencesBase": "../../../../outputs/native-ui-journey-20261025/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. Selected raw evidence remains outside the repository and submission package.",
+  "localArtifactReferences": [
+    {
+      "path": "photo-label-center-v1/INTENT-AND-SOURCE-HASHES.json",
+      "sha256": "b983aeab6717316c5e9e296eb2564e925b41fad50d986818c33bf156edcfdba1"
+    },
+    {
+      "path": "photo-label-center-v1/execution-v1/test-result.json",
+      "sha256": "ba390aab40904bb6b18edb5db9b0002b68f82f5eab4dbe618ad4eac381c5d9ba"
+    },
+    {
+      "path": "photo-label-center-v1/execution-v1/test.log",
+      "sha256": "a65f6fc7aad4c682b28ec9c8c2f864bcd9f53ea35e3c6fb5331a16aded5bda57"
+    },
+    {
+      "path": "photo-label-center-v1/execution-v1/result-review.json",
+      "sha256": "e99864e0071ae19bd77e7aeecc4f99a6a1e960dc15c17292a89d79132310ede8"
+    },
+    {
+      "path": "photo-label-center-v1/execution-v1/attachments/C3C6C752-9371-4957-A83E-3CA00D1A80C1.txt",
+      "sha256": "a5fde1c5980b6d744d1cdf6660e5f599d2e6d9459dac3ba4a5d28f4c91a64039"
+    },
+    {
+      "path": "photo-label-visible-v1/INTENT-AND-SOURCE-HASHES.json",
+      "sha256": "676ae4f86f8f13f037f4d5bdf328871eff18377f1bc70516dc5aa23759b7d491"
+    },
+    {
+      "path": "photo-label-visible-v1/root-review.json",
+      "sha256": "353d745f9e9052bdd93200693d6489a2a22c1030224bf59f60b6d01e5e53f254"
+    },
+    {
+      "path": "photo-label-visible-v1/execution-v1/test-intent.json",
+      "sha256": "afd210d98163f1bbdd0ca4058c02138d794407a64836601d4d9c7937cb039963"
+    },
+    {
+      "path": "photo-label-visible-v1/execution-v1/test-result.json",
+      "sha256": "f93a906c8fba6cb0907dd5137f425a99e3e994aef613c40bb9f02e462f30bd66"
+    },
+    {
+      "path": "photo-label-visible-v1/execution-v1/test.log",
+      "sha256": "fecde3e2bf531bf62480c352ba8cb1683b74901c02ef645e30ba87475a515d27"
+    },
+    {
+      "path": "photo-label-visible-v1/execution-v1/attachments/8A988C34-8EE9-4114-AFC0-FDE0B72317EF.txt",
+      "sha256": "ca21552a9d28c29a9941c0e74a63280cfdcbd84dd086c066e66da7c5e185f825"
+    },
+    {
+      "path": "photo-label-visible-v1/execution-v1/attachments/51310E21-0A6F-4E64-B5DC-C1118FEE2003",
+      "sha256": "a2d461e943ce9041613435507df2ed6d5931aeaa6ecbd3f81708f77a63b2662e"
+    },
+    {
+      "path": "photo-label-visible-v1/execution-v1/current-app-container.json",
+      "sha256": "255ead884e85da6a3fe0fe3b4f0ccb463b4fa08d0163eb9f3c4184180a3e92fc"
+    }
+  ]
+}

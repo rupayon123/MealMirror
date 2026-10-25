@@ -350,9 +350,10 @@ private struct HomeView: View {
                     .accessibilityHidden(true)
             }
             .frame(maxWidth: .infinity, minHeight: 54, alignment: .leading)
+            .workbenchSurface(inset: 14)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .workbenchSurface(inset: 14)
         .accessibilityIdentifier("carbin.home.history")
     }
 

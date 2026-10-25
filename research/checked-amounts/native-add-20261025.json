@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 1,
+  "curatedAtUTC": "2026-10-25T13:27:42.933439+00:00",
+  "scope": "One completed native XCTest of the actual build-9 app on an existing iOS 26.5 Simulator: English, light, standard-size Description to checked-amount Add and resulting Estimate. This is a partial journey, not a photo/model, Save or full submission-readiness pass.",
+  "app": {
+    "version": "1.0 (9)",
+    "exactZIP_SHA256": "a4ceb44fb3e3f1255768400035fb67539d632a636d99e19921f411fdc3d0e1e8",
+    "ZIPBytes": 12203935,
+    "productionSourceOrZIPChangedForThisCheck": false,
+    "sourceSHA256": {
+      "MealMirror.swiftpm/ContentView.swift": "b28eb2390c6b1883379978564b05e3439ce16a80c03f0ec42d49cb55e7d9e1d3",
+      "MealMirror.swiftpm/MealMirrorApp.swift": "80e18c4ba5a354e806a2bd35561303247d2fe86e93d3dd64ebfa70ac749161c9",
+      "MealMirror.swiftpm/MealAnalysisEngine.swift": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+      "MealMirror.swiftpm/Localization.swift": "18ee8f08a6b01baa0efd7bac9bf5f82bcff6fbd39e1aa1a503437655c6a08877",
+      "MealMirror.swiftpm/MealCore/MealModels.swift": "ce1c8eb5114471f08f84049c7492396981f78ac7f1674575699d457109ae1303",
+      "MealMirror.swiftpm/Package.swift": "7dbd0c68c86ed8ee8ae78dbef05d8d37fb875c043d390fba67bb34bcb4acd866"
+    }
+  },
+  "fixedTest": {
+    "sourceSHA256": "afcd921edc2f0a4da5829646eb9e9258ec9e655e831a90389bf99571c1662eb3",
+    "nativeTestMethod": "testManualCheckedAmountAdd",
+    "input": {
+      "description": "QA native unknown meal",
+      "itemName": "QA native checked item",
+      "wholeGrams": "37"
+    },
+    "launchArguments": [],
+    "launchEnvironmentOverrides": {},
+    "localDataResetFlagPassed": false,
+    "caseAllowanceSeconds": 150,
+    "hostBoundSeconds": 600,
+    "repetitionOrRetryFlags": false,
+    "scopeLimit": "The same case and assertions were retained across the interrupted and completed actual executions; the host observation allowance changed, not production code or assertions."
+  },
+  "completedExecution": {
+    "attempt": "execution-v3",
+    "testCommandExit": 0,
+    "hostTimedOut": false,
+    "testCasesCompleted": 1,
+    "failures": 0,
+    "testBodySeconds": 55.307,
+    "wholeCommandSeconds": 150.576470791,
+    "timingMeaning": "Recorded XCTest and host-command durations, not an app or model performance benchmark.",
+    "eventLoopIdleWarningInThisRun": false,
+    "idleDiagnosticCaptureNeeded": false,
+    "observedAssertions": [
+      "Already-onboarded Home opened the Description route; a fixed synthetic unknown-meal description reached Estimate.",
+      "The checked-amount form initially disabled Add. Entering the fixed synthetic item name and 37 enabled Add.",
+      "The native Add action dismissed the name/grams form. The combined component label contained the fixed item name, Your entry and 37 g.",
+      "Estimate displayed the fixed 37 g range. Unconfirmed Review was present but disabled; the test stopped before parts confirmation or final Review."
+    ],
+    "partsConfirmed": false,
+    "finalReviewOpened": false,
+    "saveAttempted": false,
+    "historyOrDeletionExercised": false,
+    "PhotosOrCameraSelectionExercised": false,
+    "OCRorPhotoModelExercised": false,
+    "physicalDeviceExercised": false
+  },
+  "attachments": {
+    "retainedCount": 10,
+    "PNGs": 5,
+    "hierarchyTexts": 5,
+    "allFilesPresent": true,
+    "manifestSHA256": "a5861833df08e0485aeb09a902dbcce4646ac32ef1ca55d06dfabf09fc280006",
+    "visuallyReviewedRelevantFrames": [
+      {
+        "logicalName": "03-checked-form-before-add",
+        "sha256": "107a6a2954aa57d5a3671b2d5bc4b4f1303a96adfbb075219ee8b1177d4ae741"
+      },
+      {
+        "logicalName": "04-checked-item-and-range",
+        "sha256": "3af71641b5ce5a2847e78354ac0cb9a6bf7af1b47410858cfcca568ad08f7c75"
+      }
+    ],
+    "visualReviewAttribution": "Root reported viewing these two frames; the retained independent review also records viewing them. This curator checked the records and file identities without replaying the test or claiming all five PNGs were visually reviewed.",
+    "pixelConclusion": "The form shows the synthetic item and 37 with Add available; the subsequent Estimate shows 37 g and Amount you entered / Your entry after the sheet is gone."
+  },
+  "identityAndStore": {
+    "initialPostTestLookup": "The immediate result retained an installedVerificationError after the container lookup was attempted with the target shut down. This was a lookup failure, not an established app-identity mismatch.",
+    "laterCurrentContainerLookupExit": 0,
+    "laterCurrentInstalledFileCount": 17,
+    "all17CurrentInstalledFilesMatchedExpected": true,
+    "postCheckLaunchedAppOrResetData": false,
+    "savedStoreByteIdentical": true,
+    "savedStoreRecordCount": 3,
+    "storeContentsPublished": false,
+    "ownedQAShutdownRecorded": true,
+    "originalPickerOrPhoneOperated": false
+  },
+  "priorAttempts": [
+    {
+      "attempt": "execution-v1",
+      "testCommandExit": 64,
+      "testMethodRan": false,
+      "observation": "xcodebuild rejected the test-iterations value 1 before running the test method. The repetition flag was removed; the command failure is retained."
+    },
+    {
+      "attempt": "execution-v2",
+      "testCommandExit": null,
+      "hostTimedOut": true,
+      "hostBoundSeconds": 240,
+      "observation": "The actual test reached the Analyze action, then recorded an event-loop idle warning and was interrupted by the host bound. Its evidence and unchanged three-record store were retained.",
+      "resolvedCauseOrAppFixEstablished": false
+    }
+  ],
+  "independentReview": {
+    "sha256": "8fd0710ca55737297d8f505b652729f719bc2c6797c752a165c8b48c1420ffd0",
+    "blockers": [],
+    "scope": "Read-only source, log, attachment and stored-file evidence review; no app/OS/test/build action by the reviewer.",
+    "identityScope": "That review verified the retained original installed-file bytes after the shutdown lookup failure. The separately pinned later current-container exit 0 and 17-file record provide the stronger current installed-identity observation.",
+    "notClaimed": "The completed later test does not explain or repair the earlier idle stall."
+  },
+  "interpretation": [
+    "The standard English light manual route now has actual native evidence for the 37 g Add action into Estimate and sheet dismissal. This closes only that narrow gap in the historical build-4 evidence, whose invalid-input checks were canceled before Add.",
+    "No saved meal was created or deleted; the saved three-record store remained byte-identical. Adding an in-memory checked component is not a Save/history/full-journey verification.",
+    "No Photos, camera, OCR, image-model, model-accuracy, arbitrary-meal, physical-device offline, localized keyboard, RTL, VoiceOver, broad accessibility or clinical nutrition validation follows. The 37 g value is synthetic test input, not inferred nutrition or a dose.",
+    "The larger startup-aware host allowance preserved the same test/assertions. This is not a production fix or a performance improvement; the earlier command rejection and interrupted run remain distinct."
+  ],
+  "privacy": "No screenshots, hierarchy contents, saved-record contents, private absolute paths, device/account identifiers or binaries are copied into the repository. References pin selected external records only.",
+  "localArtifactReferencesBase": "../../../../outputs/native-ui-journey-20261025/manual-add-v1/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. Raw local evidence remains outside the submitted playground and repository.",
+  "localArtifactReferences": [
+    {
+      "path": "INTENT-AND-SOURCE-HASHES.json",
+      "sha256": "ff52b077036a6dd5185947f9b77213aa30a26b0eac22550302327810788c0818"
+    },
+    {
+      "path": "UITests/MealMirrorUITests.swift",
+      "sha256": "afcd921edc2f0a4da5829646eb9e9258ec9e655e831a90389bf99571c1662eb3"
+    },
+    {
+      "path": "observed-execution-protocol.json",
+      "sha256": "4589585e7537896b6e04c76a1b0d251677f0a91c3aba6bfb5c85e89bf9648d72"
+    },
+    {
+      "path": "command-correction.json",
+      "sha256": "e9078c97e70670e7fdd8141d4748c41bf63e3ecad1c14ae3cfbf63751d3a1e5d"
+    },
+    {
+      "path": "execution-v2/test-result.json",
+      "sha256": "35840ba9b4634e3928bc8f67dbfe742af99c3be7ace14ad6501a0bb20cc503a3"
+    },
+    {
+      "path": "execution-v3/test-intent.json",
+      "sha256": "1d946bbefa33c1a24c89bc35b448cc8d565770af778df45c5abec37a8bf35a10"
+    },
+    {
+      "path": "execution-v3/test-result.json",
+      "sha256": "bff8e668bc626479e199768a36c35d64f52f3fd330a7d29db3e434c852e834cd"
+    },
+    {
+      "path": "execution-v3/test.log",
+      "sha256": "84193de515a706e7aa5eea5a98fcf969290ee45ab3282c10607460212ba12634"
+    },
+    {
+      "path": "execution-v3/attachments/manifest.json",
+      "sha256": "a5861833df08e0485aeb09a902dbcce4646ac32ef1ca55d06dfabf09fc280006"
+    },
+    {
+      "path": "execution-v3/independent-review.json",
+      "sha256": "8fd0710ca55737297d8f505b652729f719bc2c6797c752a165c8b48c1420ffd0"
+    },
+    {
+      "path": "post-identity-lookup-v1/result.json",
+      "sha256": "5f2c998c42aa640b7f354bedd4a63c6b68082d66833cccdb29cbcacdf62e3218"
+    },
+    {
+      "path": "post-identity-lookup-v1/current-container.json",
+      "sha256": "bc281cbd1b54d5d2d31ea915ea4535c26898648639e1453833a1faa154b329c1"
+    }
+  ]
+}

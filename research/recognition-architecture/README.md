@@ -36,7 +36,7 @@ The app report stopped at `identicalRepeatCriterion` with exit 6. Console/contro
 
 A separately frozen CI-only input/render witness was subsequently attempted, as recorded below. No head is trained or adopted; useful names, calibrated abstention, representation equivalence, physical offline behavior and actual app integration remain open. The production source and ZIP are unchanged.
 
-## CI-only witness: startup attempt failed
+## Original CI-only witness: startup attempt failed
 
 The [CI-only witness receipt](ci-input-witness-20261025.json) keeps the same F01/F02 bytes and planned ImageIO → CIImage sRGB → default-CIContext RGBA8 route. It contains no Vision, CoreML, FoundationModels or training call. The first Xcode build timed out; direct typechecking then passed with an empty diagnostic log, and an incremental second build succeeded with all eight frozen files unchanged. This does not explain the first build timeout.
 
@@ -54,3 +54,11 @@ The `Data Migration Failed` boot warning and terminate warning remain recorded; 
 The current 12,203,935-byte ZIP leaves **12,796,065 bytes** under a conservative 25,000,000-byte planning cap. No new head, labels or notices have been exported or sized. An OS feature extractor avoids importing an encoder, but this alone does not prove offline availability. Apple's [published policy](https://developer.apple.com/swift-student-challenge/policy/) still identifies 2026; recheck 2027 rules before submission.
 
 The source research and SDK metadata are retained outside the repository under `outputs/recognition-architecture-20261024/` and `outputs/recognition-architecture-20261025/`; public receipts pin selected evidence without redistributing datasets or model weights. No trained gate, improved recognition, worldwide accuracy, clinical validation or submission-readiness claim follows.
+
+## Fresh-target controls and CGImage route: repeat still failed
+
+The [follow-up receipt](fresh-target-and-cgimage-20261025.json) keeps the original CI startup failure as a separate historical result with its cause unresolved. The same compiled startup-only app and flag failed on the earlier QA environment, then returned four checkpoints with all six guards passing on a fresh owned iOS 27.1 Simulator. Target state and a new installation differed; this does not establish an earlier cause or fix.
+
+The original compiled CI-only witness then returned two distinct 518400-byte RGBA8 buffers, differing at 372606 byte positions. Independent review recomputed their hashes and fixed summaries. This describes that CI render route, not pixels consumed by Vision.
+
+The unchanged CI-handler CPU batch and the separately built direct-CGImage-handler batch each returned all three observations but failed the same fixed identical-input repeat criterion. Every CGImage case was byte-identical to its counterpart in both retained CI-handler batches; B and A2 remained identical. App reports stopped with exit 6; console/controller exits 0 mean the failure was retained, not a numeric pass. No criterion was relaxed, no head is trained or adopted, and no recognition or production change follows. Warnings and recorded owned-QA shutdown remain part of the evidence.

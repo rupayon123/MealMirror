@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "One known blank-spacer history-card hit on the actual app in English/light/standard-size iOS 26.5 Simulator, compared between exact build 9 and local candidate 10. This is testing-only and not a submission-readiness or whole-app accessibility claim.",
+  "candidate": {
+    "version": "1.0 (10)",
+    "exactZIP_SHA256": "ff82519efe1b6c2af74708abc9e09c0d88cb2fee7c1fe058d90414ce8fdd4a28",
+    "ZIPBytes": 12203953,
+    "packagedFiles": 59,
+    "SwiftFiles": 17,
+    "changedFromExactBuild9": [
+      "MealMirror.swiftpm/ContentView.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ],
+    "other57PackagedMembersUnchanged": true,
+    "sourceSHA256": {
+      "MealMirror.swiftpm/ContentView.swift": "63b4afb3d39b794fba2e51fc5e6aa727827ee27ac7c6ffabe354571880af8a70",
+      "MealMirror.swiftpm/Package.swift": "6d774de3e62a180fc533819dc66b654f8ce11d43c81a87bb8f3e67ce575082de",
+      "MealMirror.swiftpm/Theme.swift": "ce6385c5c955c4bde1ab0baea35a547ed2c9d2148c3d7bd99c1185e53f62030d",
+      "MealMirror.swiftpm/MealAnalysisEngine.swift": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+      "MealMirror.swiftpm/LocalPhotoAI.swift": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c"
+    },
+    "finalDeliveryOrPublicReleaseClaimed": false
+  },
+  "sourceCorrection": "The existing history-card workbenchSurface(inset: 14) moved inside the plain Button label after its unchanged frame; contentShape(Rectangle) now includes blank Spacer/card padding in the hit region. Action/navigation, text, accessibility identifier, appearance values and other controls are unchanged. Package changes only the build number from 9 to 10.",
+  "fixedTest": {
+    "sourceSHA256": "092b8104910cc4f756e1b6d482db14bc697e4a0957cb7ba014c26bf3ff8f0ea5",
+    "method": "testHistoryCardSpacerTap",
+    "lines": 49,
+    "nativeRelativeTap": [
+      0.85,
+      0.5
+    ],
+    "guard": "Unique public history button, finite positive whole frame inside actual app viewport, hittable/enabled and clear of HomeStart primary action. At most 6 reveal swipes before one tap.",
+    "afterTap": "Wait for indexed history item 0 up to 10 seconds, retain screenshot/tree before assertion, then require 3 indexed rows.",
+    "sameSourceAssertionsCompiledRunnerAndXctestrun": true,
+    "compiledRunnerFilesCompared": 9,
+    "caseAllowanceSeconds": 120,
+    "hostBoundSeconds": 600,
+    "launchOverrides": [],
+    "automaticRetries": false,
+    "dataWrites": "No row/detail, Save, delete, photo/model, reset, restore or injection action."
+  },
+  "baseline9": {
+    "exactZIP_SHA256": "a4ceb44fb3e3f1255768400035fb67539d632a636d99e19921f411fdc3d0e1e8",
+    "testCommandExit": 65,
+    "hostTimedOut": false,
+    "caseSeconds": 22.055,
+    "wholeCommandSeconds": 299.03935408300003,
+    "observation": "The method entered and synthesized the guarded relative spacer tap. The after-tree remained Home with a summary of three reviews; item 0 was absent after the wait, and the assertion at line 29 failed. Before/after frames are retained.",
+    "historyAXFrameXYWH": [
+      14.5,
+      671.1666666667,
+      373,
+      94
+    ],
+    "rawEventPointerPointXY": [
+      331.55,
+      718.1666666667
+    ],
+    "eventTargetMatchedApp": true
+  },
+  "candidate10": {
+    "testCommandExit": 0,
+    "cases": 1,
+    "failures": 0,
+    "hostTimedOut": false,
+    "caseSeconds": 25.848,
+    "wholeCommandSeconds": 142.499636208,
+    "observation": "The same relative spacer action opened actual Local review history with indexed items 0/1/2; all assertions passed. Root viewed retained before/after frames.",
+    "historyAXFrameXYWH": [
+      16,
+      672.6666666667,
+      370,
+      91
+    ],
+    "pointImpliedByDocumentedFrameCalculationXY": [
+      330.5,
+      718.1666666667
+    ],
+    "rawPointerEventExported": false,
+    "controllerExitReportedByRoot": 1,
+    "controllerReason": "Immediate post-test current-container lookup returned exit 149 because the target was Shutdown. The native test case passed, but the controller current-identity gate remained unresolved at that checkpoint."
+  },
+  "comparisonLimits": [
+    "AX geometry changed by an inward 1.5-point inset and 3-point width/height reduction. The normalized point is unchanged; an identical absolute screen point is not established.",
+    "Durations are recorded test/host observations, not app/model performance benchmarks.",
+    "One failed baseline and one passing candidate are consistent with this narrow hit-region correction; they do not establish every card point, every layout or general reliability."
+  ],
+  "pixelComparison": {
+    "rootArtifactAnalysisOnly": true,
+    "imageDimensionsPixels": [
+      1206,
+      2622
+    ],
+    "regionPixelsXYWH": [
+      30,
+      2000,
+      1146,
+      310
+    ],
+    "scope": "Retained baseline 9 and candidate 10 BEFORE-tap card region including border/shadow; both raw frames were reviewed by root.",
+    "RGBA8_SHA256_Baseline": "73a3fee3aeca3622b09bd1cc66a9dcfcaa1ba7085dfcea63b0e8765e4f977a12",
+    "RGBA8_SHA256_Candidate": "73a3fee3aeca3622b09bd1cc66a9dcfcaa1ba7085dfcea63b0e8765e4f977a12",
+    "differingBytePositions": 0,
+    "regionPixelsEqual": true,
+    "notClaimed": "Full PNG equality, identical AX geometry, pressed-state appearance, other regions/screens, all fonts or broad accessibility. Animated hero is outside this comparison."
+  },
+  "identityAndStore": {
+    "preCaseCurrentAppAndDataLookup": "Fresh retained pre-case current-container v3 record matched all 17 candidate 10 files and original 3-record store.",
+    "installHistoryScope": "A retained v2 install returned 0 and matched 17 files; checking the old pre-upgrade data path then failed. The v3 root-intent correction explicitly fixes the earlier summary. Old path absence is not proof of lost data.",
+    "casePostLookupExit": 149,
+    "freshPostCaseCurrentLookupPending": false,
+    "all17RetainedCandidatePathFilesRechecked": true,
+    "originalStore3ByteAndSemanticEqualityRechecked": true,
+    "savedRecordsCreatedOrDeletedByTheseHistoryTests": false,
+    "ownedShutdownRecorded": true,
+    "originalInteractivePickerOrPhoneOperated": false,
+    "caution": "The immediate test-controller lookup exit 149 remains in its raw record. The separate v4 current app/data lookup establishes installed candidate-10 identity and unchanged original store after both completed cases; it does not convert the failed photo case into a pass.",
+    "postCaseCurrentLookupFollowup": {
+      "record": "Separate current-container v4 follow-up after both completed cases; earlier raw lookup-exit-149 records remain unchanged.",
+      "all17CurrentInstalledFilesExactCandidate10": true,
+      "currentStoreCount": 3,
+      "currentStoreByteAndSemanticEquality": true,
+      "helperAppLaunchResetInstallOrStoreWrite": false,
+      "ownedShutdownExit": 0,
+      "originalInteractiveSessionPreserved": true
+    }
+  },
+  "independentReviews": {
+    "baselineResultSHA256": "1e75c5d75e1f643de84ffe92c97260e4794bd76890d8b64acbc834cb186a854a",
+    "candidateResultSHA256": "46d91502265448db5a5ea67d8721be262b614ac347aa92f891c1c0ca2b76da87",
+    "sourceControllerSHA256": "d93d9a186984410cad967925762179abeb2472a66c9c2f219ac21fe2c2b99992",
+    "scope": "Read-only source/log/artifact/file checks and xcresult attachment export; no Simulator/app operation by reviewer. Root owns pixel review and runtime."
+  },
+  "remainingGates": [
+    "Full photo/label/model/checked-amount/save/history/delete journey is separate and is not claimed here.",
+    "Global accessibility, VoiceOver/scroll reachability, other layouts/RTL, physical-device offline, clinical validation, applicant work and current Challenge rules remain separate.",
+    "No archive/upload/server Testing/submission/public-release readiness claim from this receipt."
+  ],
+  "privacy": "No pixels, saved-record contents, device/account identifiers, private absolute paths or compiled binaries are copied into this repository. Selected external evidence references/hashes only.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; evidence remains outside repository and submitted playground.",
+  "localArtifactReferences": [
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/INTENT-AND-SOURCE-HASHES.json",
+      "sha256": "78c195a4df204130cf6b8c607af6fd64dbd758f8be105d14afdce0ce1049ec51"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/UITests/MealMirrorUITests.swift",
+      "sha256": "092b8104910cc4f756e1b6d482db14bc697e4a0957cb7ba014c26bf3ff8f0ea5"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/history-card-hit-area.proposed.diff",
+      "sha256": "79ad5573c3b057294e5657ab19f5b4999184c263c2df72d2cf6e4e3a5d41568f"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/candidate-build10-source-controller-review.json",
+      "sha256": "d93d9a186984410cad967925762179abeb2472a66c9c2f219ac21fe2c2b99992"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-v1/test-intent.json",
+      "sha256": "c87a19825cf7da9f94c99b1a9b081f9c200d9b074efefa20a2c67575b053682e"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-v1/test-result.json",
+      "sha256": "53a3d1ccb9c25bf63196df9a0eebc0634708b10c067a3d3ac58603955269b2e2"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-v1/test.log",
+      "sha256": "3e56dbd0f55fb16dc8dbb5c5573ab474238dbadd19282245fedd0dabdff69530"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-v1/result-review.json",
+      "sha256": "1e75c5d75e1f643de84ffe92c97260e4794bd76890d8b64acbc834cb186a854a"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-v1/result-review-attachments-v1/manifest.json",
+      "sha256": "df8ad29b0e193adc7447147b182ef2b294c7316a2e34f34ac828370e37ec992f"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-candidate-build10-v1/test-intent.json",
+      "sha256": "7e5f2c4f822d2ceb539bd205f8a99f3c93208184a6713bea18f6f92b10334b9f"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-candidate-build10-v1/test-result.json",
+      "sha256": "632ff08ed300d8a6b05fd0054bc362094940945301cb87114d86351995dde30e"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-candidate-build10-v1/test.log",
+      "sha256": "e5511af7f3d70177d1916ae642e2784eada8c37ee630160d6c419e8bc86760f0"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-candidate-build10-v1/result-review.json",
+      "sha256": "46d91502265448db5a5ea67d8721be262b614ac347aa92f891c1c0ca2b76da87"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-candidate-build10-v1/result-review-attachments-v1/manifest.json",
+      "sha256": "7042d4b18fc059725309372366674dece49dee0287516192519e5d5c5d4191a6"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-candidate-build10-v1/current-app-container.json",
+      "sha256": "255ead884e85da6a3fe0fe3b4f0ccb463b4fa08d0163eb9f3c4184180a3e92fc"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/card-pixel-comparison.json",
+      "sha256": "a6ac2e0b1066a9446753c865d9c52c38ab63dae77117195a163ce82bd4b8a740"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/compare-card-pixels.swift",
+      "sha256": "aa6f25452ce961ee09c1992e1aa42e23fdf9c4039dc90049316ec0c15fc40f99"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/candidate-verification.json",
+      "sha256": "a9cf254ed60ed00bf3018d2f26cce5fcc329ae3783c6324f10b3492db1e64587"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/exact-build-result.json",
+      "sha256": "be17abc32ca7fdf50607501932678abcb94e06e0f0ff7ca7737a45fd56547eaf"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/install-v2/result.json",
+      "sha256": "d9987df5d9f23b63bb0875df0960dd1d95b016f156dfffe3ebd9ef1a783c434f"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/current-container-identity-v3/result.json",
+      "sha256": "9be912b4b3377da606f05b97397965c6b8aca9f67762484d862b5391fe46b22e"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/current-container-identity-v3/root-intent-correction.json",
+      "sha256": "165a4ecda3a5b3601e7d5a5be1f6a37470d1388a215fdf36a064acd36de7397b"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-history-photo-identity-v4/result.json",
+      "sha256": "3a71533b422bde0040f919ed885b6158b52315e3d4ef38f7625807651c74f024"
+    }
+  ]
+}

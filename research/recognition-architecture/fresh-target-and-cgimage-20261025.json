@@ -1,0 +1,219 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "Separately scoped startup, CI-render and fixed A1-B-A2 feature diagnostics on an owned iOS 27.1 Simulator. No training, food evaluation or production recognition change is approved.",
+  "historicalCIStartupFailure": {
+    "receipt": "ci-input-witness-20261025.json",
+    "sha256": "fa3d23082d4d63a35bea34369e9d7c0d74b2e428633b5c33ef2bb1c11625a316",
+    "retained": true,
+    "causeOrFixEstablished": false,
+    "actualAppEntryExitAndRenderCounts": "Unobserved in that original attempt; absent files are not observed zero counts."
+  },
+  "startupComparison": {
+    "sameCompiledStartupOnlyAppAndFlag": true,
+    "earlierEnvironmentAttempt": {
+      "consoleCommandExit": 3,
+      "controllerExit": 1,
+      "applicationEntryEstablished": false,
+      "actualAppExit": null,
+      "actualStageCheckpoints": null
+    },
+    "freshEnvironmentControl": {
+      "consoleCommandExit": 0,
+      "controllerExit": 0,
+      "applicationEntryEstablished": true,
+      "checkpointFiles": 4,
+      "allSixGuardsPassed": true,
+      "ProcessInfoOS": "27.1",
+      "UIDeviceOS": "27.1",
+      "terminalRecordedPlannedExit": 0,
+      "workerRenderModelCallsInEntrySource": 0
+    },
+    "limit": "Target state and a new installation differed. Success on the fresh target does not identify or fix the earlier launch failure."
+  },
+  "CIOnlyRenderWitness": {
+    "sameOriginalCompiledWitnessAndFrozenTwoInputs": true,
+    "phase": "completed",
+    "appReportedExit": 0,
+    "consoleCommandExit": 0,
+    "controllerExit": 0,
+    "decodeEntryCheckpoints": 2,
+    "renderEntryCheckpoints": 2,
+    "renderReturnCount": 2,
+    "bytesPerRGBA8Buffer": 518400,
+    "renderedBuffersDiffer": true,
+    "differingBytePositions": 372606,
+    "independentByteReview": "Both hashes, all channel ranges, the four predeclared corner positions and full-buffer differing-byte count were recomputed from retained bytes. Pixel values and buffers are not copied here.",
+    "limit": "This establishes distinction in the declared CI render witness only; it does not observe pixels consumed by Vision."
+  },
+  "freshCIHandlerFeatureComparison": {
+    "sameOriginalCompiledAppInputsAndCriteria": true,
+    "orderedCases": [
+      "A1/F01",
+      "B/F02",
+      "A2/F01"
+    ],
+    "supportDiscoveryEntryCheckpoints": 3,
+    "performEntryCheckpoints": 3,
+    "returnedCases": 3,
+    "everyCaseByteIdenticalToItsEarlierCounterpart": true,
+    "appReportedExit": 6,
+    "consoleCommandExit": 0,
+    "controllerExit": 0,
+    "stop": "identicalRepeatCriterion",
+    "numericDiagnosticBatchPassed": false
+  },
+  "directCGImageHandlerDiagnostic": {
+    "sourceFreezeReferenceCount": 9,
+    "route": "ImageIO decoded CGImage directly to VNImageRequestHandler(cgImage:orientation:.up,options:[:]).",
+    "CIImageOrCIContextConstructedByHelper": false,
+    "decodedDimensionsEach": [
+      360,
+      360
+    ],
+    "decodedColorSpaceNameEach": "kCGColorSpaceSRGB",
+    "orderedCases": [
+      "A1/F01",
+      "B/F02",
+      "A2/F01"
+    ],
+    "supportDiscoveryEntryCheckpoints": 3,
+    "performEntryCheckpoints": 3,
+    "returnedCases": 3,
+    "descriptorEach": {
+      "revision": 2,
+      "type": "Float32",
+      "elements": 768,
+      "bytes": 3072
+    },
+    "returnedMainStageAssignment": "CPU and GPU were advertised; a returned CPU was selected and assignment readback matched in every case. This is not kernel-execution proof.",
+    "all2304ScalarByteRoundtripsVerified": true,
+    "everyCaseByteIdenticalToItsCounterpartInBothRetainedCIHandlerBatches": true,
+    "appReportedExit": 6,
+    "consoleCommandExit": 0,
+    "controllerExit": 0,
+    "stop": "identicalRepeatCriterion",
+    "numericDiagnosticBatchPassed": false
+  },
+  "unchangedNumericResult": {
+    "finiteAndNonconstantWithinEachVector": true,
+    "A1VersusB": {
+      "maxAbs": 0.0003711208701133728,
+      "l2": 0.0017806017870063094,
+      "floors": {
+        "maxAbsAtLeast": 0.0001,
+        "l2AtLeast": 0.001
+      },
+      "passed": true
+    },
+    "A1VersusA2": {
+      "maxAbs": 0.0003711208701133728,
+      "l2": 0.0017806017870063094,
+      "ceilings": {
+        "maxAbsAtMost": 1e-05,
+        "l2AtMost": 0.0001
+      },
+      "binaryIdentical": false,
+      "passed": false
+    },
+    "BAndA2ByteIdentical": true,
+    "meaning": "Across-input floors pass while identical-input repeat ceilings fail. Across-floor passage therefore does not establish useful input sensitivity. Console/controller exits 0 means the numeric failure was observed and retained, not accepted."
+  },
+  "controlsAndCleanup": {
+    "oneLaunchPerSeparatelyDeclaredScope": true,
+    "automaticRetries": 0,
+    "originalNumericThresholdsRetained": true,
+    "priorFailuresRetained": true,
+    "ownedQARecordedShutdownAfterRetainedRuns": true,
+    "bootAndTerminateWarningsRetained": true,
+    "warningsEstablishedAsCause": false,
+    "OSComputeReleaseEstablished": false
+  },
+  "decision": {
+    "numericFeatureFeasibilityPassed": false,
+    "trainingOrAdoptionApproved": false,
+    "nextGate": "Resolve feature behavior with separately scoped evidence before any head training or adoption; retain the fixed failures and uncertainty."
+  },
+  "nonClaims": [
+    "No retroactive startup or feature-failure cause/fix; no CI witness proof of Vision-consumed pixels.",
+    "Matching these procedural observations is not general equivalence across handlers, wrappers, backends, revisions or platforms.",
+    "No food/name/edibility, head/calibration/training, physical-device, network-isolated offline, actual production UI, performance or submission-readiness result."
+  ],
+  "privacy": "No pixels, buffers, feature scalars or binaries, raw private errors, absolute paths, process handles, or account/device identifiers are copied into this receipt. Selected references identify local evidence without redistributing its contents.",
+  "localArtifactReferencesBase": "../../../../outputs/recognition-architecture-20261025/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. Eighteen selected source/build/review/outcome references; raw arrays and binaries remain outside the repository.",
+  "localArtifactReferences": [
+    {
+      "path": "startup-observability-v1/PREPARATION-FREEZE.json",
+      "sha256": "42246cc592190b0e54f32f48ab347eef87c55e07d92737ca526f66af33bcba68"
+    },
+    {
+      "path": "startup-observability-v1/build-v1/built-verification.json",
+      "sha256": "16e6923d2e3df6ffe049b6d8a23a9b5324ce868b12d92f2b109d288488aee9af"
+    },
+    {
+      "path": "startup-observability-v1/execution-v1/result-review.json",
+      "sha256": "ea1d7c300adc651b422b6616089eab8ec7be3e3c9f7c01d575b8b2c4987a4a6f"
+    },
+    {
+      "path": "startup-observability-v1/fresh-target-control-v1/execution-v1/result-review.json",
+      "sha256": "3a60c44724dc6be90f3eb5c1ad0b41f57b2a84a939c33440bee9deb61e4af0f1"
+    },
+    {
+      "path": "ci-input-witness-v1/PREPARATION-FREEZE.json",
+      "sha256": "685ccc245660c9db953b0136783085bc3295c163447a485af7aa76a52964c421"
+    },
+    {
+      "path": "ci-input-witness-v1/build-v1/built-verification.json",
+      "sha256": "8723e357de084ac41b2299bd6559af857e4317f7035b81ec239a8dd68d1b36cc"
+    },
+    {
+      "path": "ci-input-witness-v1/fresh-target-control-v1/PROTOCOL.json",
+      "sha256": "8ae60626e9560c897a90960c970ad8c25bad3441adbeabeb64e7c0a0161b70e5"
+    },
+    {
+      "path": "ci-input-witness-v1/fresh-target-control-v1/result-review.json",
+      "sha256": "ef4068f1f99714dc6dc7be0f64a061adcb31c76ab82bab33792153f0e1144c3b"
+    },
+    {
+      "path": "direct-vision-multi-v1/PREPARATION-FREEZE.json",
+      "sha256": "15d4ea732c5c7dd0dea1a8f3670e238428c9d1841fed245d5eb18e4356454245"
+    },
+    {
+      "path": "direct-vision-multi-v1/build-v1/built-verification.json",
+      "sha256": "2b1c03560aacbdcbf694fede6d0cf4fe7699b209a382eadb2e2862f8b210889a"
+    },
+    {
+      "path": "direct-vision-multi-v1/fresh-target-control-v1/PROTOCOL.json",
+      "sha256": "7e08d1c77dc8969fc5ba6c1c7cac3fa380d6aa0ba371ea7a9bc9e328c97e5457"
+    },
+    {
+      "path": "direct-vision-multi-v1/fresh-target-control-v1/result-review.json",
+      "sha256": "b49187671d2fff7d1e3a4a98e90d3d1b605a8f26a03c3f42c39013eb2905ad49"
+    },
+    {
+      "path": "direct-cgimage-multi-v1/PREPARATION-FREEZE.json",
+      "sha256": "70cc836c71c99eda88307fdb0190a21b3cd5cf9c189fcd84ee7ab2d9e66f4eb4"
+    },
+    {
+      "path": "direct-cgimage-multi-v1/SOURCE-API.json",
+      "sha256": "6afa976f27b5465b6f58598e0a25c39b8870454fc11f949f027c085c0aa4c0eb"
+    },
+    {
+      "path": "direct-cgimage-multi-v1/independent-source-review.json",
+      "sha256": "b6345bb7a6117dbf13b22b54b327e4726bf8e504fe96997d84e48f6a2b52534b"
+    },
+    {
+      "path": "direct-cgimage-multi-v1/build-v1/built-verification.json",
+      "sha256": "316719a37627454e8e4f09126008a8cd98876be317ebcdc25d9dc1da16323e25"
+    },
+    {
+      "path": "direct-cgimage-multi-v1/execution-v1/controller-result.json",
+      "sha256": "c289a95e8b8f4ceb4b439fe137c5d18fd1221be3eb2339c3272ccc051143652b"
+    },
+    {
+      "path": "direct-cgimage-multi-v1/execution-v1/result-review.json",
+      "sha256": "ecc15f908bd7a495e4187c914638f4e2a400151b9e8e6676274f917eb5e6940d"
+    }
+  ]
+}

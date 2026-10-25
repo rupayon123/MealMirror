@@ -29,3 +29,15 @@ The separate [delivery receipt](delivery-20261024.json) records the deterministi
 ## Meal-entry exit guard, build 7
 
 [Teardown source evidence](teardown-20261024.md) records five fixed native surrogate cases/30 checks, with 17 overlapping original failures and zero candidate failures. It does not establish actual SwiftUI state lifetime or camera/navigation sequencing. [Build-7 delivery](teardown-delivery-20261024.json) separately records the exact package and testing scope.
+
+## Build 9 native picker attempts, October 25
+
+The [native picker receipt](native-picker-20261025.json) records two failed actual-app XCTest attempts on iOS 26.5. The inspector reached loaded Photos pixels and a public image-label tree, then failed while a live index-bound enumeration changed; its listing and Cancel branch were not completed. A separate fixed-label case found the expected two matching public images, but the first image failed `isHittable` before any photo tap. It stopped before selection, transfer, label OCR, manual entry or Save. Root’s reviewed failed-run recording frame shows nine loaded thumbnails without visible selection marks; this does not establish the underlying asset bytes.
+
+Both retained three unchanged saved records and owned-QA shutdown; the original interactive Duo and phone were not operated. The later case retained all 17 preflight-path files unchanged, while its fresh container lookup exited 149 and remains a separate identity-follow-up gate. These outcomes do not establish a product loading defect or a successful photo flow, and no selector workaround or new execution is approved by this receipt. The earlier method-level spy evidence remains distinct.
+
+## Current build-9 photo progress
+
+The [subsequent photo-progress receipt](native-photo-progress-20261025.json) records one successful meal-photo selection, Done and displayed attachment in the center-selection attempt. Its later label-button request was followed by unexpected Estimate navigation; the recorded label-action frame overlapped the pinned Analyze action, but the exact hit cause remains unknown. Label selection/OCR, checked entry and Save were not reached.
+
+A separate visibility-guard case stopped earlier: after a recorded Home-history tap inside the reported button rectangle, the app still showed Home and three saved reviews. That attempt never reached Photos or exercised the intended label guard. Both cases failed with unchanged three-record stores and no QA record; retained 17-file equality is separate from their failed current-container lookups. A focused source hit-area investigation is being prepared separately; no app fix or full photo journey is confirmed or adopted.

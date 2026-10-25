@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "curatedAtUTC": "2026-10-25T14:52:42.929666+00:00",
+  "scope": "Testing-only source-playground delivery for the narrow History card hit-area correction. No whole-photo-flow, reliable recognition, physical, server-testing or submission-ready claim.",
+  "candidate": {
+    "appVersion": "1.0 (10)",
+    "bytes": 12203953,
+    "sha256": "ff82519efe1b6c2af74708abc9e09c0d88cb2fee7c1fe058d90414ce8fdd4a28",
+    "files": 59,
+    "Swift": 17,
+    "twoGenerationsEqual": true,
+    "allSwiftEqualCurrentSource": true,
+    "EnglishOnly": true,
+    "changedFromBuild9": [
+      "MealMirror.swiftpm/ContentView.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ]
+  },
+  "change": "Only the ContentView history surface placement inside the label, rectangular contentShape, and Package build number 9 to 10 changed. The other 57 packaged members are unchanged, including theme, assets, model, engine and prompt.",
+  "package": {
+    "twoGenerationsEqual": true,
+    "integrityPassed": true,
+    "EnglishOnly": true,
+    "all17SwiftEqualCheckout": true,
+    "all59ExtractedFilesUnchangedAfterArchive": true
+  },
+  "simulator": {
+    "cleanArm64BuildExit": 0,
+    "warnings": [
+      "Generated project duplicate Brand.xcassets compile-file entry was skipped.",
+      "Simulator incompatible-sysroot warning retained; signed iOS archive has no corresponding sysroot warning.",
+      "AppIntents metadata extraction skipped because no AppIntents dependency."
+    ],
+    "historyTestCommandExit": 0,
+    "historyCases": 1,
+    "historyFailures": 0,
+    "cardRegionPixelsEqual": true,
+    "AXFrameUnchanged": false,
+    "currentPostCaseLookup": {
+      "all17CurrentInstalledFilesExact": true,
+      "baselineRecords": 3,
+      "storeByteIdentical": true,
+      "storeSemanticEqualsOriginalBaseline": true,
+      "ownedShutdownConfirmed": true,
+      "originalInteractivePickerOrPhoneOperated": false
+    },
+    "installHistory": "The first install client timed out after 60 seconds; an independent lookup still matched build 9 and its three-record store. A separate v2 install returned exit 0 and matched all 17 candidate-10 files; checking the stale pre-upgrade data path then raised FileNotFoundError. Fresh v3 and post-case v4 current-data lookups confirmed the original three-record store was byte-identical. The root intent correction is retained; no reset, restore or uninstall occurred."
+  },
+  "signedArchive": {
+    "exit": 0,
+    "signatureVerificationExit": 0,
+    "version": "1.0(10)",
+    "SDK": "iphoneos27.1",
+    "minimumIOS": "17.0",
+    "EnglishOnlyCatalog": true
+  },
+  "internalUpload": {
+    "exit": 0,
+    "timedOut": false,
+    "internalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "appleResponse": "Uploaded package is processing.",
+    "serverProcessingComplianceInternalGroupTestingVerified": false,
+    "lastVerifiedInternalTestingBuild": 2,
+    "phoneInstallationVerified": false,
+    "externalGroupPublicBetaAppStoreReviewOrReleasePerformed": false,
+    "manualAppStoreReleaseSettingChanged": false
+  },
+  "separatePhotoCase": {
+    "testCommandExit": 65,
+    "bodySeconds": 111.846,
+    "wholeCommandSeconds": 325.15335849999997,
+    "hostTimedOut": false,
+    "observed": "Opened history with three records, attached one food photo, revealed the label button clear of the pinned Analyze action, opened the Photos label picker and found one exact public label-image match.",
+    "stop": "The helper expected one Done button but observed zero at line 140, before label selection. No OCR, manual amount, Review, Save or delete step followed.",
+    "rootReviewedLabelPickerFrame": {
+      "requestedSeconds": 110,
+      "actualSeconds": 109.91,
+      "observation": "Nine images loaded; no Done button visible. Single-selection auto-dismiss is still unobserved until separately scoped corrected test."
+    },
+    "harnessContractCorrectionPreparedSeparately": true
+  },
+  "recognition": "The retained xcresult console route had no available console log; the retained text and system-archive inspection found no app Vision terminal reason. This does not establish that the app emitted no DEBUG output. Related system messages do not identify the unavailable cause. Public source statuses and amount boundaries are unchanged; the metadata-only observability proposal remains unapplied.",
+  "remaining": [
+    "Current complete photo/label/OCR/checked-amount/save/history/delete flow.",
+    "Useful reliable image clues on varied real meals, honest uncertainty and corrections.",
+    "Physical offline, compact/iPad/dark/accessibility/VoiceOver/motion and native-speaker checks.",
+    "Applicant code review/disclosure/own essays and published 2027 rules.",
+    "Apple processing/compliance/internal-group Testing and physical installation of build 10."
+  ],
+  "privacy": "No app binaries, pixels, private absolute paths, device/account IDs or saved-record contents copied into repository. Local evidence references/hashes only.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory; retained evidence is outside repo and playground.",
+  "localArtifactReferences": [
+    {
+      "path": "history-hit-delivery-20261025-build10/candidate-verification.json",
+      "sha256": "a9cf254ed60ed00bf3018d2f26cce5fcc329ae3783c6324f10b3492db1e64587"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/candidate-adoption.json",
+      "sha256": "2e8707459fdc8ae9fe558cb7951754119f47820ee53d096f63b58df7e9561f1a"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/exact-build-intent.json",
+      "sha256": "1e6591294737f07a1ee0fc10abab2bc94761c796d72d31ffd4ec6205f577c50e"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/exact-build-result.json",
+      "sha256": "be17abc32ca7fdf50607501932678abcb94e06e0f0ff7ca7737a45fd56547eaf"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/built-verification.json",
+      "sha256": "d5dda9446bc65fc4136565236274766d3faa48ae6186c17f2586a53cb0e52147"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-timeout-identity-v1/preceding-install-failure.json",
+      "sha256": "374408a74ba13140b618965ceac4550a00ce600ac8dd3d42364f9cb9bd3e03c9"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-timeout-identity-v1/result.json",
+      "sha256": "7ba3e31bdaa9d19f8f6bdc5f999008f5a945a41527f459f6fe7973b7f60f2d22"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/install-v2/result.json",
+      "sha256": "d9987df5d9f23b63bb0875df0960dd1d95b016f156dfffe3ebd9ef1a783c434f"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/current-container-identity-v3/result.json",
+      "sha256": "9be912b4b3377da606f05b97397965c6b8aca9f67762484d862b5391fe46b22e"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/current-container-identity-v3/root-intent-correction.json",
+      "sha256": "165a4ecda3a5b3601e7d5a5be1f6a37470d1388a215fdf36a064acd36de7397b"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-history-photo-identity-v4/result.json",
+      "sha256": "3a71533b422bde0040f919ed885b6158b52315e3d4ef38f7625807651c74f024"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-history-photo-identity-v4/current-app-container.json",
+      "sha256": "ec08726c4bee3b67f68d2ec1a30c361383f4731a015e17174c92ed289ebaedbe"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/post-history-photo-identity-v4/current-data-container.json",
+      "sha256": "54ec4f5040d33ede6698a738ae3123ec6085f77261e0ece02d0679680668b180"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/archive-result.json",
+      "sha256": "3c4745a8fce3661ae6aa7b44b380dd61e1f19eac2549aaa1c377d575b39871ac"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/archive-verification.json",
+      "sha256": "b74b063eae4058aa7102a9e6efd4d66f17eae6257de0c590434cbe61a42f0220"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/upload-intent.json",
+      "sha256": "8e332b9c255cd7586fa108b30f2af0f8e1a973466a29ac5eb07bfedc7ea47bfe"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/upload-result.json",
+      "sha256": "b82bf4cfda63af8669552576db06d91c007a8bea453b2c71df03602b39ccb43d"
+    },
+    {
+      "path": "history-hit-delivery-20261025-build10/upload.log",
+      "sha256": "315cdcb57b282fdc9b7c527a0acabd3bdef8937a02b0e0149e56e87d60e3df97"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/execution-candidate-build10-v1/test-result.json",
+      "sha256": "632ff08ed300d8a6b05fd0054bc362094940945301cb87114d86351995dde30e"
+    },
+    {
+      "path": "native-ui-journey-20261025/history-hit-v1/card-pixel-comparison.json",
+      "sha256": "a6ac2e0b1066a9446753c865d9c52c38ab63dae77117195a163ce82bd4b8a740"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-visible-v1/execution-candidate-build10-v1/test-result.json",
+      "sha256": "8bcb5dedf1f3384e1ea9777cd22fe375a24b23aa8e09a4ff48eaae011ce05212"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-visible-v1/execution-candidate-build10-v1/test.log",
+      "sha256": "1968a9ccbe073dce2434a5a034712658d6d2d730e6e8e9ff31c4b020075f7ae1"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-visible-v1/execution-candidate-build10-v1/label-picker-requested110.png",
+      "sha256": "2cf95485b85f6cc6566bc06b1fbc153fb5eb58977bad23a7e99c47017cd4dfed"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-center-v1/retained-console-inspection-v1/inspection-result.json",
+      "sha256": "6529c01a477a59f7641e099b087568425eeda5a21c452c3b02b4c0314eda53fb"
+    },
+    {
+      "path": "native-ui-journey-20261025/photo-label-center-v1/retained-console-inspection-v1/OBSERVABILITY-PROPOSAL.md",
+      "sha256": "1fc8089a37a0c10eef8353965fbb99f1b8e5033e01f4d5400a9b4b386537c113"
+    }
+  ]
+}
