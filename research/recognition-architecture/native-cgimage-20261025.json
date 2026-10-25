@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "One fixed native macOS CGImage route A1-B-A2 procedural-feature diagnostic. Independently recomputed diagnostic criteria passed; not a food recognizer, trained gate or app integration.",
+  "baselineMain": "2216c55cd6b7e453ae5f4343c68b493ca216039b",
+  "productionSourceOrCandidateChanged": false,
+  "candidate19SHA256": "3c55b1bf656815eaf6a34c52398bfd0a09b989523411d3895811155c093a0e16",
+  "protocol": {
+    "purpose": "Native macOS direct CGImage route comparison after first CIImage handler-construction SIGABRT; diagnostic only, not causal isolation.",
+    "orderedCases": [
+      {
+        "caseID": "A1",
+        "fixture": "F01.png"
+      },
+      {
+        "caseID": "B",
+        "fixture": "F02.png"
+      },
+      {
+        "caseID": "A2",
+        "fixture": "F01.png"
+      }
+    ],
+    "inferenceRoute": "ImageIO decode each same 360x360 PNG to CGImage, VNImageRequestHandler(cgImage:orientation:.up,options:[:]), VNGenerateImageFeaturePrintRequest revision2, centerCrop, full ROI, request-specific returned typed CPU at every exposed stage with readback; one perform maximum per case.",
+    "criteria": {
+      "type": "Float32",
+      "count": 768,
+      "bytes": 3072,
+      "allFinite": true,
+      "normGreaterThan": 1e-08,
+      "spanGreaterThan": 1e-06,
+      "acrossA1B": {
+        "maxAbsAtLeast": 0.0001,
+        "l2AtLeast": 0.001
+      },
+      "repeatA1A2": {
+        "maxAbsAtMost": 1e-05,
+        "l2AtMost": 0.0001,
+        "byteEqualityRequired": false
+      }
+    },
+    "stops": "First hash/decode/config/support/request/descriptor/IO/numeric error; preserve checkpoints and unrun cases. No retries, fallback, threshold changes, model/training/app/Simulator changes.",
+    "claims": "Native Mac procedural-image feature mechanics only; no food recognition, iOS, device, production acceptance, or CI option root-cause claim.",
+    "sourceSHA256": "17e974eca787448e722285a9c37027191c9031b3953da03453f2e48002bdaa31",
+    "fixturesSHA256": {
+      "F01.png": "aa0718f05333bfb35a1f5accf9e49d9e6a1d6ba6a2aa33c0cf43f0786db1d890",
+      "F02.png": "662eda49e795ad974be204a46f231a9e63bedff074fff80d4c4ecec8b6f6a4a5"
+    },
+    "sourceChangesFromWorkerFrozenCG": false,
+    "boundsSeconds": {
+      "compile": 180,
+      "wholeBatchApp": 45,
+      "hostRuntime": 60,
+      "termGrace": 5,
+      "killGrace": 5
+    },
+    "environment": "Normal root execution with the private SDK module cache prepared by successful import and type checks. Earlier permission, timeout and resource-abort results are retained. This is not a causal comparison.",
+    "maximumPerforms": 3,
+    "maximumSupportQueries": 3,
+    "attemptsPerCase": 1,
+    "automaticRetries": 0,
+    "preflight": "The controller rejects compilation or execution when another heavy build or UI test process is live.",
+    "productionChange": false
+  },
+  "bindings": {
+    "probeSourceSHA256": "17e974eca787448e722285a9c37027191c9031b3953da03453f2e48002bdaa31",
+    "controllerSHA256": "7f745b8dd5725aa61de0a2a9cafeedb98f26fcc361c86e21c9912959312a6aab",
+    "protocolSHA256": "6314eae6892d032aff08310957fd678e7fbbbd17d579e64517cd899e7253f2d4",
+    "binarySHA256": "c87a473942a7805539fafc0fcbd664d84a4c64697b21f393439426467ec4bdc4",
+    "rawReportSHA256": "c5dda1362f1443e436e89688c850a45da587eec3c5cc8d3e62c75d1fe337680c",
+    "independentReadbackSHA256": "fc436fdfa06cd40429f6cd5c691e942eef504216f9ed6bb6886c64c566456311",
+    "compilerStdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compilerStderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeStdoutSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtimeStderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "compile": {
+    "exitCode": 0,
+    "timedOut": false,
+    "seconds": 4.001216333
+  },
+  "execute": {
+    "exitCode": 0,
+    "timedOut": false,
+    "seconds": 1.7357718340000003
+  },
+  "rawTopLevel": {
+    "phase": "completed",
+    "exitCode": 0,
+    "diagnosticCriteriaPassed": true,
+    "returnedCaseCount": 3,
+    "performEntryCheckpoints": 3,
+    "supportDiscoveryEntryCheckpoints": 3,
+    "unrunCaseIDs": [],
+    "numericCriteria": {
+      "acrossL2MinimumInclusive": 0.001,
+      "acrossMaxAbsMinimumInclusive": 0.0001,
+      "expectedCount": 768,
+      "minimumNormExclusive": 1e-08,
+      "minimumSpanExclusive": 1e-06,
+      "repeatL2MaximumInclusive": 0.0001,
+      "repeatMaxAbsMaximumInclusive": 1e-05
+    },
+    "acrossInputComparison": {
+      "first": "A1",
+      "l2": 1.016788235586429,
+      "maxAbs": 0.28969237953424454,
+      "passed": true,
+      "second": "B"
+    },
+    "identicalInputComparison": {
+      "binaryIdentical": true,
+      "first": "A1",
+      "l2": 0,
+      "maxAbs": 0,
+      "passed": true,
+      "second": "A2"
+    },
+    "vectorMetrics": [
+      {
+        "allFinite": true,
+        "caseID": "A1",
+        "count": 768,
+        "norm": 0.9999999680439863,
+        "passed": true,
+        "span": 0.6200954467058182
+      },
+      {
+        "allFinite": true,
+        "caseID": "B",
+        "count": 768,
+        "norm": 1.0000001284037585,
+        "passed": true,
+        "span": 0.8118231892585754
+      },
+      {
+        "allFinite": true,
+        "caseID": "A2",
+        "count": 768,
+        "norm": 0.9999999680439863,
+        "passed": true,
+        "span": 0.6200954467058182
+      }
+    ]
+  },
+  "rawCaseFields": [
+    {
+      "caseID": "A1",
+      "inputID": "F01",
+      "inputSHA256": "aa0718f05333bfb35a1f5accf9e49d9e6a1d6ba6a2aa33c0cf43f0786db1d890",
+      "observationRevision": 2,
+      "elementCount": 768,
+      "elementTypeRawValue": 1,
+      "observationDataBytes": 3072,
+      "observationDataSHA256": "de4b98a5c161260761d98adf060c24440302daae9872732beed262fbb17c2fa6",
+      "observationReturned": true,
+      "performReturnedSuccessfully": true,
+      "allExposedStagesReportedCPU": true,
+      "allExposedStagesAssignedCPU": true,
+      "numericalViabilityPassed": false
+    },
+    {
+      "caseID": "B",
+      "inputID": "F02",
+      "inputSHA256": "662eda49e795ad974be204a46f231a9e63bedff074fff80d4c4ecec8b6f6a4a5",
+      "observationRevision": 2,
+      "elementCount": 768,
+      "elementTypeRawValue": 1,
+      "observationDataBytes": 3072,
+      "observationDataSHA256": "eb3013bc55c63cae07c8ac8ab909ce6350bb798ecfdab01ff3873266a2f60902",
+      "observationReturned": true,
+      "performReturnedSuccessfully": true,
+      "allExposedStagesReportedCPU": true,
+      "allExposedStagesAssignedCPU": true,
+      "numericalViabilityPassed": false
+    },
+    {
+      "caseID": "A2",
+      "inputID": "F01",
+      "inputSHA256": "aa0718f05333bfb35a1f5accf9e49d9e6a1d6ba6a2aa33c0cf43f0786db1d890",
+      "observationRevision": 2,
+      "elementCount": 768,
+      "elementTypeRawValue": 1,
+      "observationDataBytes": 3072,
+      "observationDataSHA256": "de4b98a5c161260761d98adf060c24440302daae9872732beed262fbb17c2fa6",
+      "observationReturned": true,
+      "performReturnedSuccessfully": true,
+      "allExposedStagesReportedCPU": true,
+      "allExposedStagesAssignedCPU": true,
+      "numericalViabilityPassed": false
+    }
+  ],
+  "rootReview": {
+    "sourceSHA256": "17e974eca787448e722285a9c37027191c9031b3953da03453f2e48002bdaa31",
+    "binarySHA256": "c87a473942a7805539fafc0fcbd664d84a4c64697b21f393439426467ec4bdc4",
+    "reportSHA256": "c5dda1362f1443e436e89688c850a45da587eec3c5cc8d3e62c75d1fe337680c",
+    "scalarByteRoundtrips": 2304,
+    "cases": [
+      {
+        "caseID": "A1",
+        "count": 768,
+        "norm": 0.9999999680439863,
+        "span": 0.6200954467058182,
+        "binarySHA256": "de4b98a5c161260761d98adf060c24440302daae9872732beed262fbb17c2fa6"
+      },
+      {
+        "caseID": "B",
+        "count": 768,
+        "norm": 1.0000001284037585,
+        "span": 0.8118231892585754,
+        "binarySHA256": "eb3013bc55c63cae07c8ac8ab909ce6350bb798ecfdab01ff3873266a2f60902"
+      },
+      {
+        "caseID": "A2",
+        "count": 768,
+        "norm": 0.9999999680439863,
+        "span": 0.6200954467058182,
+        "binarySHA256": "de4b98a5c161260761d98adf060c24440302daae9872732beed262fbb17c2fa6"
+      }
+    ],
+    "across": {
+      "maxAbs": 0.28969237953424454,
+      "l2": 1.016788235586429
+    },
+    "repeat": {
+      "maxAbs": 0.0,
+      "l2": 0.0
+    },
+    "repeatByteIdentical": true,
+    "ownedRuntimeProcessAbsent": true,
+    "initialObserverErrorRetained": "The first process observer used a regular expression unsupported by BSD pgrep. Its error is retained. Only that read-only observer was replaced with an exact ps executable comparison; image inference was not repeated.",
+    "scope": "Independent Python readback of retained vectors, configuration and results; no food, physical-device, network isolation, representation-equivalence or OS-dispatch claim."
+  },
+  "compilerDiagnosis": {
+    "imports": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 22.674387875
+    },
+    "unchangedSourceTypecheck": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 1.0934899169999994
+    },
+    "sourceChanged": false,
+    "method": "Import-only control followed by type-checking the unchanged CGImage source with module-loading remarks, reusing the partial private cache after the resource-aborted attempt.",
+    "interpretation": "Successful SDK preparation followed by fast type-checking of unchanged source permits the next compile. Different cache, environment, resource state and bounds do not identify the cause of the earlier 90-second timeout."
+  },
+  "retainedFailures": [
+    {
+      "kind": "earlierNativeCIHandlerInitialization",
+      "receipt": "native-mac-platform-20261025.json",
+      "outcome": "SIGABRT before any vector; no cause orfix established."
+    },
+    {
+      "kind": "CGbuild1",
+      "outcome": "Module-cache permission error; source unchanged; no binary or inference."
+    },
+    {
+      "kind": "CGbuild2",
+      "outcome": "90.168-second timeout with empty diagnostics. The owned orphan compiler was later verified and terminated; no binary or inference."
+    },
+    {
+      "kind": "rootImportsV1",
+      "exitCode": -15,
+      "seconds": 71.05774675,
+      "timedOut": false,
+      "outcome": "Competing-build preflight failed but unguarded launcher still started import control. Root stopped only its owned compiler; no payload/inference. First cleanup guard rejected swiftc name because driver execed swift-frontend; corrected exact-source/cache/PGID guard then stopped it. Newv2 controller enforces preflight itself."
+    },
+    {
+      "kind": "rootReadbackObserver",
+      "outcome": "Initial BSDpgrep observer used unsupported regex; retained error. Replaced only observer with exact ps executable comparison; no inference rerun."
+    }
+  ],
+  "interpretation": [
+    "All three768-value Float32 descriptors are finite/nonconstant; recomputed norms/spans and fixed A1-B/A1-A2 thresholds match. A1/A2 bytes are identical.",
+    "The raw per-case numericalViabilityPassed fields remain false; they are not rewritten. The pass claim refers to the top-level frozen diagnostic conditions and independent byte/metric readback, not each raw case acceptance flag.",
+    "This native CGImage route differs from both the earlier native CIImage failure and iOS Simulator. It does not isolate .ciContext as a cause, fix Simulator repeat failures, or establish representation equivalence.",
+    "Typed CPU discovery/assignment/readback is API configuration evidence, not proof of underlying kernel dispatch or stopped OS compute.",
+    "Two procedural images and one planned identical repeat establish no food/semantic usefulness, calibrated unknown band, worldwide coverage, rights-cleared training data or image/insulin accuracy.",
+    "No model/head is trained or added, no images/probe/binary bundled, no UI/Simulator/device/network-isolated/offline-physical test or app distribution action occurred."
+  ],
+  "nextGate": "Establish lawful, separate training, calibration and evaluation data with qualified labels before appearance-head training. Independently evaluate useful names and abstention, then verify physical iOS behavior before adoption.",
+  "independentReview": "A second read-only reviewer verified the bindings, all 2,304 scalar byte round-trips, every metric and threshold, and the absence of owned processes. No workload was repeated."
+}

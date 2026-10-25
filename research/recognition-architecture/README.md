@@ -1,6 +1,6 @@
 # Offline recognition: next architecture
 
-Decision started October 24, 2026; updated October 25. **Research decision, not a new recognizer.** Current app 1.0 (13) retains the default local Apple model and `143feea0…` prompt source. Its selected-name handoff repair does not repair recognition; model, prompt and engine remain unchanged. The neutral-wording, content-tagging and typed-presence proposals were rejected; no further tuning against the exposed twelve is proposed.
+Decision started October 24, 2026; updated October 25. **Research decision, not a new recognizer.** Current app 1.0 (19) retains the default local Apple model and `143feea0…` prompt source. Its selected-name handoff repair does not repair recognition; model, prompt and engine remain unchanged. The neutral-wording, content-tagging and typed-presence proposals were rejected; no further tuning against the exposed twelve is proposed.
 
 ## Decision
 
@@ -49,6 +49,14 @@ The `Data Migration Failed` boot warning and terminate warning remain recorded; 
 A [separately frozen native macOS comparison](native-mac-platform-20261025.json) retained the original two procedural PNGs, A1–B–A2 order, revision-2 CIImage/context route, CPU discovery/readback and numeric criteria. Only the native host, explicit input/output locations and environment metadata were adapted. Compile passed. The sole process exited by SIGABRT after 0.969 seconds during A1 request-handler initialization; the stack reached Vision image-option conversion with an uncaught nil-object dictionary exception. No vector returned, so B/A2 and the numerical comparison remained unrun. The checkpoint named perform was persisted **before handler construction** and does not prove perform or CPU dispatch. Original freeze/output hashes were independently checked; no retry occurred.
 
 This identifies a failing initialization boundary on this Mac, not the cause of the earlier Simulator repeat failure. Review documented input/options support before any new route diagnostic. No gate, training or production recognition change follows.
+
+## Native Mac CGImage route: numerical diagnostic passed
+
+The [separately frozen native CGImage comparison](native-cgimage-20261025.json) completed A1–B–A2 once using the original two procedural PNGs, revision 2, returned-CPU assignment/readback and unchanged numeric thresholds. Compile exited 0; the one process exited 0 after 1.736 seconds. Each descriptor has 768 finite, nonconstant Float32 values. A1–B maximum absolute difference is `0.28969237953424454` and L2 is `1.016788235586429`; A1–A2 has zero difference and identical bytes. Root and an independent reviewer recomputed all 2,304 scalar byte round-trips and the metrics.
+
+Only the **top-level numerical diagnostic** passes. Raw per-case `numericalViabilityPassed=false` fields remain retained, not rewritten. Earlier CI-handler initialization, cache-permission, compile-timeout and resource/observer failures are preserved. Successful import preparation and unchanged-source typecheck do not establish their causes. The source is retained as [an external research probe](../vision/NativeMacCGFeatureProbe.swift); it is not bundled in the app.
+
+This provides a native Mac route for further feature research. It does not establish food semantics, a trained/validated appearance gate, image-representation equivalence, an iOS/physical-device result or an improvement to current meal names. No production model or prompt change follows. Data rights, separate partitions, qualified labels and useful-name evaluation remain required before adoption.
 
 ## Work after feature feasibility
 

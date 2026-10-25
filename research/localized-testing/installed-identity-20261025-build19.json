@@ -1,0 +1,21 @@
+{
+  "build": 19,
+  "expectedAppFilesMatched": 51,
+  "missingFiles": [],
+  "differentFiles": [],
+  "additionalInstalledFiles": [],
+  "originalMediaFilesPreserved": 8,
+  "onboardingStillComplete": true,
+  "scope": "Read-only retained-install and current filesystem identity check; no Simulator command, app lifecycle, UI, saved-review or settings operation. This is not a fresh-install, full-journey or physical-device result.",
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "sourceDelivery": "delivery-20261025-build19.json",
+  "sourceVariant": "Full source with 18 language catalogs for internal testing",
+  "publicMainAtCheck": "2216c55cd6b7e453ae5f4343c68b493ca216039b",
+  "evidenceBasis": "The frontend task retained a successful simulator installation. Root independently rehashed all 51 installed app files against the delivered Simulator artifact, eight baseline media files and the onboarding preference, without lifecycle or UI commands.",
+  "limits": [
+    "Not a fresh install or full UI journey.",
+    "Installed launchstub/debuglibrary/resource identity is distinct from App Store Connect status or phone installation.",
+    "No saved review or media reset, restoration, launch, settings change or UI interaction was performed by root."
+  ]
+}
