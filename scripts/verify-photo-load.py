@@ -21,11 +21,12 @@ import sys
 
 
 BASELINE_PROTOCOL_SHA256 = "5d2674bdfd9af0ec51a8798c84c59fb03cab49fbb98eafe0773897deb93eca5d"
-FROZEN_FIXTURE_BODY_SHA256 = "95ca37322bae73d7f00200d98e8a9c9cd30b7e34ab1eb1317738e1dae9a23057"
+FROZEN_FIXTURE_BODY_SHA256 = "00e4cc341cf7cce7225b5ab5d5312d665e268471674de4b94ac2008499786940"
 CASE_CONTRACT = json.loads(r'''{
   "scope": "Foundation-only native Mac deterministic photo loading algorithm mechanics with declared transfer, image, preparation and append spies. No Simulator, UIImage/CoreImage implementation, image decoding, model, UI lifecycle, production data or memory/performance proof.",
   "instrumentation": "One external outer capturedTask = assignment before the original Task expression; entire Task expression/closure and following function bytes unchanged. invalidatePendingPhotoLoad copied exactly.",
   "declaredSpies": {
+    "PhotoDataTransfer": "Declared facade forwards to the ID-only transfer spy; actual deadline/Progress mechanics are verified separately by verify-photo-transfer.py.",
     "PhotosPickerItem": "Transfers are fixed per ID and may await explicit continuations, return encoded ID Data, nil or throw. No PhotosUI or real image.",
     "UIImage": "Sendable ID-only value.",
     "MealPhotoPreparation": "Records ID/maxPixelSize, then fixed success/nil behind explicit continuations. Does not decode images.",

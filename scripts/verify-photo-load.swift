@@ -112,6 +112,14 @@ private struct PhotosPickerItem: Sendable {
     }
 }
 
+// Loading-method tests keep their ID-only transfer spy. The actual deadline and
+// Progress mechanics are tested separately by verify-photo-transfer.py.
+private enum PhotoDataTransfer {
+    static func load(_ item: PhotosPickerItem) async throws -> Data? {
+        try await item.loadTransferable(type: Data.self)
+    }
+}
+
 private enum MealPhotoPreparation {
     static func downsampledImageAsync(from data: Data, maxPixelSize: Int) async -> UIImage? {
         await backend.prepare(data, maxPixelSize: maxPixelSize)

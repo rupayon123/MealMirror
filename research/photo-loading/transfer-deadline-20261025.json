@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "startingCommit": "4afcca29f21e03187ad54ffba1fc6423e7fa8e23",
+  "change": "Bound PhotosPicker encoded-data transfer with configured15s utility deadline, cancellable Progress, first-terminal continuation gate and late-result rejection. View uses the existing error/reset/token path.",
+  "priorGap": "The actual previous loading method directly awaited the async provider with no application deadline. A real offline/iCloud stall is not reproduced or claimed.",
+  "actualHelper": {
+    "sourceSHA256": "07c85daae645c63d64c59b071d76d5984defcbae92dfd26dc95592cb0ddd879c",
+    "fixtureSHA256": "9de243d270e91aded25544cc991bea792c8b8c457e065a185b4a70fad9554c75",
+    "driverSHA256": "f24ff1e677e53c99047955d2d54bebe315b722b3b33efb226c7622a7330e07e2",
+    "assembledSHA256": "5564ec1b7aa75387b9cacb62feebaf993fe6c06fc8319dc9e52f35c7dcd48932",
+    "compileExit": 0,
+    "executionExit": 0,
+    "cases": 10,
+    "checks": 19,
+    "failures": 0,
+    "resultsSHA256": "fda9bcf68c194b947b8c6cfe7000bc2fedef027e212bb95c2981caa955e900dc",
+    "configuredDeadlineSeconds": 15,
+    "observedSyntheticDeadlineSeconds": 15.997538124909624,
+    "caseIDs": [
+      "synchronousData",
+      "synchronousNil",
+      "providerError",
+      "duplicateReply",
+      "preCancelled",
+      "cancelBeforeProgressReturns",
+      "blockingCancellationHandler",
+      "actualFifteenSecondDeadline",
+      "timeoutBeforeRegistration",
+      "successBeforeCancellation"
+    ],
+    "sourceTransformation": "None: complete helper bytes + newline + fixture, same-file access for private gate tests. PhotosUI/SwiftUI wrapper compiles; only synthetic provider overload executes."
+  },
+  "loadingIntegration": {
+    "sourceSHA256": "814e1325bdfcfbc5301bcece926af9a08505158a181bbfc9f5acaa8161e70745",
+    "loadMethodSHA256": "15cb0ba10c66d4310a779f89e8dae3cda3fd53dcd7d5f772979851e707b26e12",
+    "fixtureSHA256": "3ad06d6638fba1791465958b965b63afb34e82914d2d45e507938043490cebda",
+    "compileExit": 0,
+    "executionExit": 0,
+    "cases": 14,
+    "checks": 66,
+    "failures": 0,
+    "resultsSHA256": "8e937313570c5015d550039f5b1c9d01b20d850c8d7e38b2b4225059afe1e37c",
+    "facade": "Declared PhotoDataTransfer facade calls the ID-only async provider spy. It checks current/stale view-algorithm writes and failure resets, not the real helper deadline. Actual helper is tested separately."
+  },
+  "sourceReview": {
+    "firstWinner": "Terminal state, continuation, deadline and Progress references are guarded by NSLock. Resume and cancellation side effects occur after unlocking.",
+    "callerRecovery": "Provider start runs off caller. Finish resumes before scheduling registered Progress.cancel off caller; a blocking provider/cancellation handler does not need to finish for caller recovery.",
+    "dataLifetime": "A terminal gate stores only a pre-continuation result; a successful post-registration Data payload is not retained. This is source review, not a measured memory budget.",
+    "lateProgress": "A Progress that appears after cancellation/timeout is cancelled on factory worker.",
+    "limits": "Provider start can race cancellation after the pending check. A permanently blocked provider/handler can retain its worker; caller recovery does not stop OS computation."
+  },
+  "retainedFailures": [
+    "Initial isolated typecheck failed because PhotosPickerItem requires the SwiftUI overlay import; corrected before final checks.",
+    "Contract-run1 failed Swift6 fixture compilation at a non-Sendable outcome closure; no cases executed. The sole fixture correction adds @Sendable, with assertions unchanged. Contract-run2 compiled/executed once successfully."
+  ],
+  "independentReview": "Read-only source and actual-run review confirmed current hashes, all19checks and observed15.998s timer result. No material gate race or scope issue found.",
+  "ui": "One await changed; approved theme, layout and strings unchanged. Existing failure error clears busy and transient selections. Native alert recovery remains unverified.",
+  "sources": [
+    "https://developer.apple.com/documentation/photosui/photospickeritem/loadtransferable(type:completionhandler:)",
+    "https://developer.apple.com/documentation/foundation/progress/cancel()"
+  ],
+  "limits": [
+    "No PhotosPicker item/provider was invoked in the Mac checks; no real photo library, image decoding, UI, model or clinical data.",
+    "The configured15s deadline is subject to OS scheduling; observed15.998s is not a hard maximum or physical performance claim.",
+    "Successful source-method spy regression is not full SwiftUI lifecycle or native picker validation.",
+    "Progress cancellation requests cancellation; no OS work-stop or bounded-worker lifetime guarantee."
+  ]
+}

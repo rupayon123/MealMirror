@@ -1,0 +1,101 @@
+{
+  "version": "1.0 (18)",
+  "zipSHA256": "146527309fdfad75faf2ae9e114cbe5ac7e6c01d5bc2114cf505f359c63061ae",
+  "zipBytes": 12207404,
+  "packagedFiles": 60,
+  "matchingSwiftSources": 18,
+  "languages": [
+    "en"
+  ],
+  "twoRepacksByteIdentical": true,
+  "changedFrom17": [
+    "MealMirror.swiftpm/AI-AND-ASSET-DISCLOSURE.md",
+    "MealMirror.swiftpm/ContentView.swift",
+    "MealMirror.swiftpm/Package.swift",
+    "MealMirror.swiftpm/PhotoDataTransfer.swift"
+  ],
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "startingCommit": "4afcca29f21e03187ad54ffba1fc6423e7fa8e23",
+  "packagedSwiftSHA256": {
+    "MealMirror.swiftpm/AppShell.swift": "547945bf60ec6317552ef8d2bbf5efb1ef4d17e223b09314ad49b10accd70db1",
+    "MealMirror.swiftpm/CameraCapture.swift": "0c3693c12a525324082d81e84f434b6ba9e9487f963cb3d1aaa85d98a80fc434",
+    "MealMirror.swiftpm/ContentView.swift": "814e1325bdfcfbc5301bcece926af9a08505158a181bbfc9f5acaa8161e70745",
+    "MealMirror.swiftpm/LegalViews.swift": "70f4ea15ba78f26b1963b9cd5fdc253abd82db4f679ae00e998bcc4cd17b04eb",
+    "MealMirror.swiftpm/LocalPhotoAI.swift": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "MealMirror.swiftpm/Localization.swift": "18ee8f08a6b01baa0efd7bac9bf5f82bcff6fbd39e1aa1a503437655c6a08877",
+    "MealMirror.swiftpm/MealAnalysisEngine.swift": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+    "MealMirror.swiftpm/MealCore/MealModels.swift": "4a37e11824d122728ef4798482cd44c3d61c78b1321345a8c83b93099b303493",
+    "MealMirror.swiftpm/MealCore/PhotoNamePolicy.swift": "e905f098a2e56eead569aee895dc3c75d323379e83ae77c704208cf49188a4c4",
+    "MealMirror.swiftpm/MealMirrorApp.swift": "80e18c4ba5a354e806a2bd35561303247d2fe86e93d3dd64ebfa70ac749161c9",
+    "MealMirror.swiftpm/Models.swift": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e",
+    "MealMirror.swiftpm/NavigationCore/AppNavigationState.swift": "4225b686041e8f6d450e0baaadd88c32549e99c3e35d1bd4ea681c62f75a390b",
+    "MealMirror.swiftpm/OnboardingCore/OnboardingState.swift": "dd0f78fd9de863b8f3ea001f9d3904c1a5662bc21d190633a7c8ae0c8fb4fd85",
+    "MealMirror.swiftpm/Package.swift": "8ab305079fa5d1250ccd0b51115e9fdcc08ff7a902f1d321393146aa0fa59a6e",
+    "MealMirror.swiftpm/PhotoCluePolicy.swift": "644110f7872461dc27e2c458d594a5b0cd9a64935063522db26c2c9ca7b1a959",
+    "MealMirror.swiftpm/PhotoDataTransfer.swift": "07c85daae645c63d64c59b071d76d5984defcbae92dfd26dc95592cb0ddd879c",
+    "MealMirror.swiftpm/PixelKitchenIcon.swift": "c533e25f0ec9b65517fb886a50c4701da84faa77b1409bfe2b7d649c5dfbdec7",
+    "MealMirror.swiftpm/Theme.swift": "ce6385c5c955c4bde1ab0baea35a547ed2c9d2148c3d7bd99c1185e53f62030d"
+  },
+  "transferEvidence": "transfer-deadline-20261025.json",
+  "phases": {
+    "simulatorIncrementalBuild": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 211.82885166699998
+    },
+    "archive": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 140.431924375
+    },
+    "codesign": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.10737025000003086
+    },
+    "internalUpload": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 89.260743875
+    }
+  },
+  "initialSimulatorBuild": {
+    "exitCode": -15,
+    "timedOut": true,
+    "seconds": 300.149957333
+  },
+  "simulatorBuildInterpretation": "Fresh extraction/DerivedData cold attempt stopped at300s while compiling, with no compiler errors. After verifying no owned build/compiler process remained and60 input hashes unchanged, one full-destination incremental diagnostic with timing summary passed. Do not report the initial cold attempt as passing.",
+  "retainedLauncherError": "Initial pipeline launcher used parent directory, exit2/script not found. Compiler never started; working directory corrected without source/case changes.",
+  "simulatorBinary": {
+    "architectures": [
+      "x86_64",
+      "arm64"
+    ],
+    "binarySHA256": "756f9436ef4ca64ef4e50e914bc90c091516c665ab795cd4b4b82862c602974f",
+    "lipoExit": 0
+  },
+  "archiveVerification": {
+    "build": "18",
+    "SDK": "iphoneos27.1",
+    "minimumOS": "17.0",
+    "codesignExit": 0,
+    "archiveBinarySHA256": "7f78cd7745cde086ca7e39db10aa9dde30bf406668ac3f552f54e9dead71b187",
+    "extractedFilesUnchanged": 60
+  },
+  "encryptionMetadata": {
+    "ITSAppUsesNonExemptEncryption": false,
+    "sourceValueUnchanged": true,
+    "serverComplianceStatusVerified": false
+  },
+  "sourceFilesUnchangedThroughPipeline": 60,
+  "internalOnly": true,
+  "manageAppVersionAndBuildNumber": false,
+  "appleAcknowledgment": "Uploaded package is processing. Upload succeeded. EXPORT SUCCEEDED.",
+  "serverProcessingCompleteVerified": false,
+  "existingInternalGroupTestingVerified": false,
+  "nativePickerRecoveryVerified": false,
+  "fresh18FullAppJourneyVerified": false,
+  "physicalOfflineVerified": false,
+  "distribution": "Internal testing upload only; no App Store review/release, external/public beta group/link or public binary release."
+}

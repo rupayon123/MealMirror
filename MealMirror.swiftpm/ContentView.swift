@@ -1094,7 +1094,7 @@ private struct AddMealView: View {
                 var prepared: [UIImage] = []
                 for item in items {
                     guard photoLoadToken == token else { return }
-                    let data = try await item.loadTransferable(type: Data.self)
+                    let data = try await PhotoDataTransfer.load(item)
                     guard photoLoadToken == token else { return }
                     let image: UIImage?
                     if let data {
