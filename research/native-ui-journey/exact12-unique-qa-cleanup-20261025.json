@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "Separate exact-build12 public-UI deletion and relaunch check for only the previously created synthetic QA record; not a replay or pass of the full photo case.",
+  "appVersion": "1.0 (12)",
+  "priorAttempts": {
+    "controllerPreflight": "First controller stopped before OS/UI because root receipt preparation used an incorrect evidence path and approval was missing. That output remains retained.",
+    "firstNativeCleanup": "One case then opened History but did not open View details after its default activation; test65, body34.446 seconds, unchanged four-record store. No deletion was reached.",
+    "labelingNote": "The first cleanup result field originalThreeSemanticDifferenceCount compared the entire four-record store to the original-three baseline; its nonzero value does not mean the original records changed. The unchanged four-record hash preserves that earlier state."
+  },
+  "laterScopedCase": {
+    "sourceFreezeSHA256": "21f4e39f1a7729a355625ba8f7abac87c3d7f24bb47bac0f7e8f1a8867fbebd9",
+    "testSourceSHA256": "98c392b44c7266e5820b6f354b20092cd85d2dde75acb692bd3365d5bdb7aad0",
+    "controllerSHA256": "b3c521238f002926b83c22414abbac1b82482c2695c86667fe60ec31d1995e13",
+    "runnerBuildExit": 0,
+    "testExit": 0,
+    "controllerExit": 0,
+    "cases": 1,
+    "failures": 0,
+    "bodySeconds": 71.468,
+    "testCommandSeconds": 147.763480459,
+    "hostTimedOut": false,
+    "activation": "One guarded normalized text-region point (0.85,0.5) on the verified QA View details button; then exact QA name/photo source/checked item and amount before detail deletion. One Cancel plus two identical-frame nested Delete review nodes were checked before one confirmation activation.",
+    "noRetryWithinCase": true,
+    "noAppInstallOrSourceChange": true
+  },
+  "result": {
+    "originalThreeRecordsFieldsAndOrderEqual": true,
+    "strictSemanticDifferenceCount": 0,
+    "finalRecords": 3,
+    "remainingQARecords": 0,
+    "rawStoreBytesChangedAfterLegitimateWrites": true,
+    "rawByteEqualityNotRequired": true,
+    "exactInstalledAppFiles": 17,
+    "ownedShutdownConfirmed": true,
+    "otherTargetStatesUnchanged": true,
+    "noStoreSeedResetRestoreInjectionOrDeleteAll": true
+  },
+  "limits": [
+    "Earlier missed default activation and the full-case selector failure remain retained; this text-point success establishes no cause, production fix or general reliability.",
+    "English/light/standard compact Simulator only; no recognition, food/medical accuracy, iOS27 image-model UI, physical offline or submission acceptance."
+  ],
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v1/preflight-correction.json",
+      "sha256": "a81299c34bb12a2a5cc4445e9390c9ce8881465672e798168e2eb8c26b2751f2"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v1/execution-v1/controller-result.json",
+      "sha256": "0bc2f3f78956c3f591c8e0582f025decf6b83b5de0c2a100f26aa9d1058b4e69"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v1/execution-v2/controller-result.json",
+      "sha256": "a8ece416ab908849ddca8a12d0de2b0595b693c40898362130619fc073ba0c8a"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v1/execution-v2/test.stdout",
+      "sha256": "90664e47ccfd7bfee4eba3e9a5b639c7a80ab7660cf4284d63bb3329d3f7e47c"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/SOURCE-FREEZE.json",
+      "sha256": "21f4e39f1a7729a355625ba8f7abac87c3d7f24bb47bac0f7e8f1a8867fbebd9"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/source-change.diff",
+      "sha256": "b94e279d58061eae4bcff2a202132b1833898431841fd6df21a2f11b6eb54746"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/execute-once.py",
+      "sha256": "b3c521238f002926b83c22414abbac1b82482c2695c86667fe60ec31d1995e13"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/root-built-verification.json",
+      "sha256": "8fd2aa9a9f9487a7e0e3a40078412172f2a912115fb52f05951fadbcb48b18d1"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/root-approval.json",
+      "sha256": "3b8e42cd0d94f1777b98dd166c13654db4e4e379854f6b72eb20f7a0b87dbd41"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/build-v1/build-result.json",
+      "sha256": "c556c98b5595bd5d8f6b7143b2a09813783f947fcafcc54e9549c31dba229730"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/outer-result.json",
+      "sha256": "85fc72cb428816433f19e69c67f9ac08a25782af8153f3e04dadf694a2f7393f"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/execution-v1/controller-result.json",
+      "sha256": "598f36492d12887052e71cdc6fc29ead01be0ef1c5ab832ba310e10285e45dd5"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/execution-v1/test.stdout",
+      "sha256": "861e0ec5cb9e4b9078737a5d89af4d6b67f341f974ae99e2f1c2174739c81cac"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/execution-v1/root-post-readback-and-visual.json",
+      "sha256": "f72c3a5dbd4b96b87a2ffb6e8ab47ec3284b630ad67e1f2b7ef415030f4f49d2"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/execution-v1/root-attachments-v1/manifest.json",
+      "sha256": "b6b8b712066dd81e1620a4b7a8b2568c67a43c29067fcdec427d11a778cd2251"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/execution-v1/root-attachments-v1/423A8D6B-D24D-493A-A0B1-89B9876B06B9.png",
+      "sha256": "b20e4314f4d3ef59c37e0c27d2f08dcdf42e79339081a6152926776b976b77c5"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-unique-qa-cleanup-v2/execution-v1/root-attachments-v1/7CBC4B5C-D12B-479F-9562-0E4A861F417C.png",
+      "sha256": "77ad6cdc5a04ae21ef0702a3601e37a9c4092169f182070bd67318e46126adbe"
+    }
+  ]
+}

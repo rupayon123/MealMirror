@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "status": "Reviewed retained result; operational completion only; current model not adopted",
+  "scope": "Known exposed P01-P12 development/regression photos only. This is not fresh or untouched evaluation and uses no reserved eight, new collection, training or tuning.",
+  "mechanics": {
+    "compilerExit": 0,
+    "controllerExit": 0,
+    "probeExit": 0,
+    "launches": 1,
+    "retries": 0,
+    "modelCompileEntriesAndReturns": 1,
+    "loadEntriesAndReturns": 1,
+    "serialPredictionEntriesAndReturns": 12,
+    "CPU": "Requested/read-back CPU-only configuration; no independent kernel proof",
+    "witnessPassed": true,
+    "Float64JSONByteRoundtripsIndependentlyVerified": 12000,
+    "operationalCompletion": true,
+    "adoptionPass": false
+  },
+  "artifactAndPreprocessing": {
+    "model": "Exact official Apple MobileNetV2 INT8-LUT artifact retained externally",
+    "modelBytes": 6257335,
+    "modelSHA256": "ee53bca4c5042d77aed5c093cba31c2ef229d1cc4c027300af9cc8bf9e240409",
+    "route": "ImageIO orientation transform, native oriented decode, explicit sRGB BGRA with white compositing and centered continuous aspect-fill to 224 square; model normalization stays embedded. Encoded/canonical/prepared hashes retained privately.",
+    "witness": "Before any model access, a fixed orientation6 lossless RGB TIFF passed full canonical reported hash and complete 224 BGRA byte comparison.",
+    "witnessLimit": "Actual full canonical witness bytes were not retained; its reported hash matches the frozen oracle. The 1:1 witness does not validate resizing interpolation, fractional crops, every orientation/profile or Vision/app preprocessing equivalence."
+  },
+  "outputPolicy": {
+    "positionalLabels": 1001,
+    "uniqueDictionaryKeys": 1000,
+    "duplicate": "crane remains one dictionary key; no separate positional values or merge rule invented and no renormalization.",
+    "alternatives": "All 1000 values retained privately; top 5 below are ranked class alternatives, including alias strings, not five served foods or ingredients. Scores are not calibrated food confidence.",
+    "thresholdOrAccuracyTuning": false,
+    "accuracyPercentageComputed": false
+  },
+  "qualitativeBasis": "Existing full-frame pixel annotations were written by AI agents, not qualified humans. They are qualitative context, not food/edibility/ingredient ground truth. No fresh pixel review here; center crop may remove peripheral components, so missing whole-frame components cannot be scored as recall errors.",
+  "cases": [
+    {
+      "id": "P01",
+      "priorAIClassification": "food",
+      "top5UniqueClassAlternatives": [
+        "plate",
+        "meat loaf, meatloaf",
+        "burrito",
+        "mashed potato",
+        "potpie"
+      ],
+      "qualitativeObservation": "Plate leads. Meatloaf/burrito/potato/potpie alternatives do not provide the notes’ broad rice/slaw clue and add unconfirmed specific foods."
+    },
+    {
+      "id": "P02",
+      "priorAIClassification": "nonfood",
+      "top5UniqueClassAlternatives": [
+        "pitcher, ewer",
+        "vase",
+        "mortar",
+        "teapot",
+        "water jug"
+      ],
+      "qualitativeObservation": "Vessel/object labels broadly match the notes’ pottery-like appearance. This is not an explicit or validated empty-food/unknown response."
+    },
+    {
+      "id": "P03",
+      "priorAIClassification": "food",
+      "top5UniqueClassAlternatives": [
+        "pizza, pizza pie",
+        "meat loaf, meatloaf",
+        "potpie",
+        "mashed potato",
+        "burrito"
+      ],
+      "qualitativeObservation": "Baked-food family overlap is plausible, but pizza/meatloaf/potpie identities are unconfirmed against the broad casserole-like notes."
+    },
+    {
+      "id": "P04",
+      "priorAIClassification": "food",
+      "top5UniqueClassAlternatives": [
+        "dough",
+        "carbonara",
+        "bagel, beigel",
+        "head cabbage",
+        "plastic bag"
+      ],
+      "qualitativeObservation": "Dough does not establish uncooked dough or the notes’ browned flatbread-like rounds; carbonara/bagel/cabbage are unconfirmed alternatives."
+    },
+    {
+      "id": "P05",
+      "priorAIClassification": "food",
+      "top5UniqueClassAlternatives": [
+        "meat loaf, meatloaf",
+        "plate",
+        "mashed potato",
+        "broccoli",
+        "guacamole"
+      ],
+      "qualitativeObservation": "Meatloaf/potato/broccoli/guacamole do not establish the noted fritter/patty appearance or its ingredients. The plate clue describes a container."
+    },
+    {
+      "id": "P06",
+      "priorAIClassification": "nonfood",
+      "top5UniqueClassAlternatives": [
+        "bath towel",
+        "rubber eraser, rubber, pencil eraser",
+        "wool, woolen, woollen",
+        "purse",
+        "ice lolly, lolly, lollipop, popsicle"
+      ],
+      "qualitativeObservation": "Most alternatives are utility/textile objects, broadly compatible with a nonfood context; popsicle also appears. No food-abstention policy was tested."
+    },
+    {
+      "id": "P07",
+      "priorAIClassification": "uncertain",
+      "top5UniqueClassAlternatives": [
+        "meat loaf, meatloaf",
+        "chocolate sauce, chocolate syrup",
+        "ice cream, icecream",
+        "candle, taper, wax light",
+        "ice lolly, lolly, lollipop, popsicle"
+      ],
+      "qualitativeObservation": "Keep ambiguous: meatloaf/chocolate/ice cream and candle alternatives do not resolve material or edibility. A candle label is compatible with the wick-like note but does not prove the object is inedible."
+    },
+    {
+      "id": "P08",
+      "priorAIClassification": "food",
+      "top5UniqueClassAlternatives": [
+        "hot pot, hotpot",
+        "Dutch oven",
+        "caldron, cauldron",
+        "ladle",
+        "wooden spoon"
+      ],
+      "qualitativeObservation": "Hotpot plus vessel/utensil alternatives give cooking context, without a useful broad grain/porridge clue for the notes. Exact dish/utensil identities remain unconfirmed."
+    },
+    {
+      "id": "P09",
+      "priorAIClassification": "food",
+      "top5UniqueClassAlternatives": [
+        "plate",
+        "corn",
+        "grocery store, grocery, food market, market",
+        "wok",
+        "Dutch oven"
+      ],
+      "qualitativeObservation": "Plate/market/cookware dominate alternatives; corn is unconfirmed and the notes’ poultry/vegetable/oval-side presentation remains unresolved."
+    },
+    {
+      "id": "P10",
+      "priorAIClassification": "food",
+      "top5UniqueClassAlternatives": [
+        "potpie",
+        "Dungeness crab, Cancer magister",
+        "bagel, beigel",
+        "king crab, Alaska crab, Alaskan king crab, Alaska king crab, Paralithodes camtschatica",
+        "plate"
+      ],
+      "qualitativeObservation": "Potpie/crab/bagel alternatives do not establish the notes’ crescent dumplings. Crab species and concealed filling are unsupported by those notes."
+    },
+    {
+      "id": "P11",
+      "priorAIClassification": "food",
+      "top5UniqueClassAlternatives": [
+        "plate",
+        "Dungeness crab, Cancer magister",
+        "carbonara",
+        "burrito",
+        "crayfish, crawfish, crawdad, crawdaddy"
+      ],
+      "qualitativeObservation": "Carbonara has a broad noodle relation but the recipe is unconfirmed; plate leads, while crab/crayfish species do not establish the notes’ shrimp-like appearance."
+    },
+    {
+      "id": "P12",
+      "priorAIClassification": "nonfood",
+      "top5UniqueClassAlternatives": [
+        "jigsaw puzzle",
+        "flatworm, platyhelminth",
+        "shower curtain",
+        "eel",
+        "chocolate sauce, chocolate syrup"
+      ],
+      "qualitativeObservation": "Object/animal labels do not establish the notes’ yarn/string identity. Eel/chocolate sauce alternatives do not support safe food abstention."
+    }
+  ],
+  "decision": {
+    "adoptCurrentArtifactForBroadMealNamesOrNonfoodAbstention": false,
+    "reason": "This known-data screen often returns container/cookware clues or unconfirmed specific dish/ingredient/species labels. Food-like alternatives occur for annotated nonfood/ambiguous cases; no explicit calibrated unknown/food-abstention policy was tested. The closed general ImageNet vocabulary and these observations do not clear MealMirror’s broad naming/abstention goal.",
+    "retainAs": "External research baseline only; no app/model integration or tuning against these outputs performed."
+  },
+  "limits": [
+    "No accuracy estimate or broad/world-cuisine generalization, human validation, edibility/safety, clinical/nutrient/portion/insulin truth.",
+    "No fresh evaluation, calibration, physical network-isolated offline, device/iOS portability, performance/final-package or submission acceptance. Prior Vision failures and synthetic Mac/iOS mechanics remain separate.",
+    "Source photos/credits/provenance remain private external evidence. No photo/model/compiled file, prepared image, probability vector, raw private error/path or identifier is included here."
+  ],
+  "localArtifactReferencesBase": "../../../../outputs/recognition-architecture-20261025/direct-coreml-exposed-photos-v1/",
+  "localArtifactReferencesResolution": "Resolve these paths from this repository JSON directory; raw evidence remains outside the repository/playground.",
+  "localArtifactReferences": [
+    {
+      "path": "PREPARATION-FREEZE.json",
+      "sha256": "467845a7dda925de5d96402afe4d3886053db25fb114e0572a6cfd9e6777ea70"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "16dc9a0ad743d936f55c936bc199026aae6755e631f75c413d0bf1f5a9ae62d3"
+    },
+    {
+      "path": "INPUTS.json",
+      "sha256": "68db9b36ac6b1019a4346c0902892a6ca03b7599a75391b3e03d1aa1ae827453"
+    },
+    {
+      "path": "CREDITS-PRIVATE.json",
+      "sha256": "c39e3c27d4c9f2fbb140c7017d3908cc54e8069ead0add3095d573582be6c402"
+    },
+    {
+      "path": "independent-source-review.json",
+      "sha256": "74ee597509f0747b6cf13e91c4504b46da9fd460a2903039192ebb3c45c6acdd"
+    },
+    {
+      "path": "build-v1/build-result.json",
+      "sha256": "e400ce5dadeb0966b60e6236697958cbdcae149525e245d31e801ac5c03f4c17"
+    },
+    {
+      "path": "build-v1/root-approval.json",
+      "sha256": "7159e37169456ea598e1e9e01cf4d0b7d295124ed4f215429cb3e1f1112eff9c"
+    },
+    {
+      "path": "build-v1/outer-result.json",
+      "sha256": "abffd4bbbb4e59dcab494903d44dc99ae9bc46e95fb76e77fdeffcdf7fa18982"
+    },
+    {
+      "path": "execution-v1/controller-result.json",
+      "sha256": "bd33c267fa2026150e6c972a70ce03ce32c5fd9824a6b0fb1788f52a6bcb65f1"
+    },
+    {
+      "path": "execution-v1/report.json",
+      "sha256": "68a617611a7bd3ef617e9d4b13f5ba28708200d6ce1ac3556b686e7127fbbee5"
+    },
+    {
+      "path": "execution-v1/schema.json",
+      "sha256": "c946d8b7acedc5b691cee8a4d91e5133d1c4b764f4b7035a816aa3232f5a1e58"
+    },
+    {
+      "path": "execution-v1/witness-actual.json",
+      "sha256": "d1038a197634782169bd45973b6785eb45217d492e683af537fcf071baff5a44"
+    },
+    {
+      "path": "witness/EXPECTED.json",
+      "sha256": "7e323ac59a69a4a3ca7e82ad252c4277a8bcc672cbf04870da9840a31ad0772e"
+    },
+    {
+      "path": "execution-v1/result-review.json",
+      "sha256": "4c339460fd4c562c28aa30f74a66809201d8ebe340ca9af06c2a3011979489a5"
+    },
+    {
+      "path": "../../world-meal-next-protocol-20261024/frozen-v1/EXPECTATIONS.json",
+      "sha256": "4a83ee168b4fd8b1673222b9c35cb4b782e1e389a7fa85c0eda5df786a57a905"
+    },
+    {
+      "path": "execution-v1/root-independent-readback.json",
+      "sha256": "1080f512c89746ba9b9f520ab2dbf3783c12992e85185b750540482b61550cb0"
+    }
+  ]
+}

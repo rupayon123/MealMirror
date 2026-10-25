@@ -301,9 +301,10 @@ private struct HomeView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             .frame(maxWidth: .infinity, minHeight: 78)
+            .workbenchSurface(inset: 12)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .workbenchSurface(inset: 12)
         .disabled(!enabled)
         .opacity(enabled ? 1 : 0.58)
     }
@@ -1769,7 +1770,7 @@ private struct ReviewView: View {
             ReviewFact(
                 symbol: "list.bullet",
                 title: "Included components",
-                value: localization.text("%lld meal parts", arguments: Int64(analysis.includedComponents.count)),
+                value: analysis.includedComponents.count.formatted(.number.locale(localization.language.locale)),
                 valueTreatment: .formattedLocalized
             )
         }

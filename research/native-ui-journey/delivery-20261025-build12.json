@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "status": "Internal testing candidate; not submission-ready",
+  "candidate": {
+    "version": "1.0 (12)",
+    "bytes": 12204364,
+    "sha256": "f7a9b0c032aee8ca67fd1b114adbf5f32ac83bbb1c477dc74303c654c6cdbe07",
+    "files": 59,
+    "matchingSwiftSources": 17,
+    "twoGenerationsByteIdentical": true,
+    "EnglishOnly": true,
+    "changedFromBuild11": [
+      "MealMirror.swiftpm/ContentView.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ],
+    "supersedesUnbuiltCountOnlyDraft": true
+  },
+  "sourceChanges": [
+    "Move existing Home Camera/Photos card surface inside each plain Button label and define its rectangular hit region.",
+    "Display a selected-locale number below Included components instead of grammatically incorrect singular wording.",
+    "Increment build number to 12. Model, prompt, assets, amount rules and storage source are unchanged."
+  ],
+  "verification": {
+    "exactSimulatorBuildExit": 0,
+    "archiveExit": 0,
+    "codesignVerifyExit": 0,
+    "archiveSDK": "iPhoneOS 27.1",
+    "minimumIOS": "17.0",
+    "packagedSource59UnchangedAfterArchive": true,
+    "localizationAuditExit": 0,
+    "localizationCatalogs": 18,
+    "matchingKeysPerCatalog": 487,
+    "nativeFlow": "Photo/label/OCR/manually checked 37 g/confirmation/Save/relaunch/detail reached in a retained failing full case. Separate guarded cleanup passed deletion and relaunch; original three preserved. Neither is broad reliability or recognition acceptance."
+  },
+  "distribution": {
+    "internalOnlyUploadExit": 0,
+    "automaticBuildNumberChanges": false,
+    "appleMessage": "Uploaded package is processing.",
+    "serverProcessingComplianceGroupTestingVerified": false,
+    "lastVerifiedInternalTestingBuild": 2,
+    "physicalInstallationVerified": false,
+    "appStoreReviewReleaseExternalGroupsPublicBetaOrPublicAppReleaseActions": false,
+    "manualReleaseSettingChanged": false
+  },
+  "warnings": {
+    "simulatorBuild": [
+      "Duplicate asset-catalog source",
+      "Incompatible-sysroot warning",
+      "AppIntents metadata extraction skipped"
+    ],
+    "archive": [
+      "Duplicate asset-catalog source",
+      "AppIntents metadata extraction skipped"
+    ],
+    "scope": "Warnings remain retained; no all-binaries SDK equivalence or causal claim."
+  },
+  "remaining": [
+    "Reliable food-name/unknown handling and qualified diverse-meal evaluation; generic CoreML model not adopted.",
+    "Missed default History detail activation, compact saved-detail metadata wrapping and remaining accessibility/iPad/motion checks.",
+    "Physical camera/network-isolated offline walkthrough, server internal Testing verification, applicant review/disclosure/essays and 2027 rules."
+  ],
+  "evidence": [
+    "exact11-full-photo-failure-20261025.json",
+    "exact12-photo-save-progress-20261025.json",
+    "exact12-unique-qa-cleanup-20261025.json",
+    "../recognition-architecture/direct-coreml-exposed-photos-20261025.json"
+  ],
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "review-count-delivery-20261025-build12/hit-area-v2/zip-verification.json",
+      "sha256": "2aca74049906f13e7f402623d267466e26f636d3eeadf8b2c75272d310b29af2"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/hit-area-v2/packaged-file-hashes.json",
+      "sha256": "97d72d3349aa90c7e8a1a0e04743477e19807a622cddaa66d85240d581570203"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/hit-area-v2/exact-build-result.json",
+      "sha256": "d55d0ce3c77335d21c55e3ef142b0fbd256ca6eaf6a8e08c0e067659eb5cd64c"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/hit-area-v2/built-app-verification.json",
+      "sha256": "5fa5162aa40d4aedea44ef2a46f6438b7a1e4f3fe7bcf0d826ae1215a62c9431"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/hit-area-v2/archive-result.json",
+      "sha256": "de083bc4a680d5c38ed757e6ffdf5b31c76911b815ec5259ac73843f96be73f6"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/hit-area-v2/archive-verification.json",
+      "sha256": "bf6030ded122ecc76be7e3b684436beab1e9043020d74992d570da1cbc5b7701"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/hit-area-v2/upload-intent.json",
+      "sha256": "cf073ea44ef2c836a276b6c0aa98c4afc2a4355d70201aee07ae9bb1c77da95a"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/hit-area-v2/upload-result.json",
+      "sha256": "3a6ad9a1283a934be4caa625be4e00022b7908abe53c938b937bbbf7cabe792c"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/hit-area-v2/upload.log",
+      "sha256": "b141d793380e7079251242665d1e38c571718ba9bb57157424e16ba8c942ae86"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/hit-area-v2/Internal-ExportOptions.plist",
+      "sha256": "043de9791e4a4f0afc6cbce10480237301f799316fd2ee382f8e93f87df357f9"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/localizations-result.json",
+      "sha256": "5446fac1dd01dc81ac439bf91a9191cbd43f878cc3d3eaa3a721f13e7442cdea"
+    },
+    {
+      "path": "review-count-delivery-20261025-build12/source-v2.diff",
+      "sha256": "e4b789cd7c08da50f834df6d5f949cf4eb0411fa35e387f8454f714915ef8a05"
+    }
+  ]
+}

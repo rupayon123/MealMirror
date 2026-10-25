@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "One failed exact candidate 11 native photo-to-save journey on iOS 26.5 Simulator. The first Photos presentation gate failed; downstream stages remain unverified by this case.",
+  "source": {
+    "candidateVersion": "1.0 (11)",
+    "candidateZIP_SHA256": "af99929a1a1a7019a01a92aa2773e4ab9e563415d8273bdc8e1bda903b69955d",
+    "candidateZIPBytes": 12204356,
+    "sourceFilesPinned": 59,
+    "SwiftFiles": 17,
+    "originalBuiltAppFiles": 17,
+    "standaloneRunnerFiles": 8,
+    "testSourceSHA256": "a8d75d289e83868ee7aea133677360ede7f19b443c4e02a58f312bc48c1f2bce",
+    "freezeSHA256": "0e3975a7eecc394b7134111a081a95be6a15880dc61ede5bc8f21fe806b8f921",
+    "controllerSHA256": "6714cfdf115f7ce8ca97d351efc2d187419f4c950479c59a9ae93e28d6b6eb40",
+    "exactOriginalAppInstalledForThisCase": true,
+    "notAnInstrumentedAppResult": true
+  },
+  "nativeCase": {
+    "caseCount": 1,
+    "failures": 1,
+    "unexpectedFailures": 0,
+    "standaloneRunnerBuildExit": 0,
+    "testCommandExit": 65,
+    "controllerExit": 1,
+    "hostTimedOut": false,
+    "installs": 1,
+    "testLaunchAttempts": 1,
+    "retries": 0,
+    "bodySeconds": 36.021,
+    "testCommandSeconds": 116.09541712499998,
+    "outerWrapperSeconds": 183.762043125,
+    "firstFailure": "After one default activation of Home Photos, the expected Photos navigation bar did not appear within 20 seconds. The assertion failed at test-source line 189.",
+    "durationScope": "Observed automation durations, not performance benchmarks."
+  },
+  "observedBoundary": {
+    "homePhotosActivationCount": 1,
+    "synthesizedTapPoint": [
+      296,
+      241
+    ],
+    "photosAXFrame": [
+      204.5,
+      162.5,
+      183,
+      105
+    ],
+    "tapPointInsideReportedFrame": true,
+    "coordinateInterpretation": "Decoded retained synthesized event and curated failure hierarchy geometry only; these do not establish delivery, action entry or cause.",
+    "rootAndCuratorViewedFrames": 2,
+    "frameDimensions": [
+      1206,
+      2622
+    ],
+    "requestedVideoFrameSeconds": [
+      12,
+      32
+    ],
+    "framesShow": "Home remains visible in both retained frames; the failure hierarchy still exposes its Photos button.",
+    "continuousBehaviorOrCauseClaim": false
+  },
+  "photoTerminalLogging": {
+    "captureStartedBeforeCase": true,
+    "observedTerminalEvents": 0,
+    "analysisContextMarkers": 0,
+    "analysisProcessBindingResolved": false,
+    "status": "Inconclusive because Analysis was never reached. Event absence is not recognition, abstention or an observed analysis error reason.",
+    "permanentOrLosslessRetentionClaim": false
+  },
+  "preservationAndCleanup": {
+    "installedExact17FilesMatchedAfterTest": true,
+    "originalStoreCountBeforeAndAfter": 3,
+    "storeByteIdentical": true,
+    "storeSemanticEqualsBaseline": true,
+    "semanticDifferenceCount": 0,
+    "remainingQARecords": 0,
+    "storeSeedCopyResetRestore": false,
+    "ownedSimulatorShutdownConfirmed": true,
+    "otherTargetStatesUnchanged": true,
+    "protectedInteractiveTargetRemainedBooted": true,
+    "streamStop": "Intentional owned-group TERM produced leader exit 143; the subsequent group KILL found the group gone.",
+    "runnerTermination": "Exit 3 reported nothing to terminate; app termination and owned shutdown exited 0.",
+    "systemServiceCleanupClaim": false
+  },
+  "warnings": [
+    "Xcode retained scheme SDK invalidDigitCount warnings and three duplicate Objective-C class warnings from the Simulator environment. No causal assignment is made.",
+    "Standalone runner build retained traditional-headermap and skipped-AppIntents metadata warnings. Build exited 0.",
+    "Stream stderr retained an account-lookup warning and intentional termination notice; raw details remain local."
+  ],
+  "interpretation": "This exact-build attempt did not establish the photo-to-save journey. It neither diagnoses the missed presentation nor validates a production fix. A separately prepared hit-area change must be evaluated with its own later-build evidence.",
+  "notExercised": [
+    "Meal or label selection",
+    "OCR or model inference",
+    "Manual amount entry or final Review",
+    "Save, persistence mutation, relaunch-to-History, saved detail or deletion",
+    "Broad accessibility, physical-device offline behavior or submission readiness"
+  ],
+  "privacy": "Only curated metadata and hashes are included in the repository. No pixels, raw logs or hierarchies, saved-record content, process/device/account identifiers, private absolute paths, binaries or public app releases are included.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this repository JSON directory; raw evidence remains outside the repository/playground.",
+  "localArtifactReferences": [
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/FROZEN-INVENTORY.json",
+      "sha256": "0e3975a7eecc394b7134111a081a95be6a15880dc61ede5bc8f21fe806b8f921"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/PROTOCOL.json",
+      "sha256": "1914fbe4f08fcae6d8f0fe8291f0132e68aaa620e7e949512de36017189686a4"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execute-once.py",
+      "sha256": "6714cfdf115f7ce8ca97d351efc2d187419f4c950479c59a9ae93e28d6b6eb40"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/APP-AND-BASELINE.json",
+      "sha256": "622c9c2aee5c7556940a2227e73e0a0201f171b7566f543446d3cd1f543ec61c"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/UITests/MealMirrorUITests.swift",
+      "sha256": "a8d75d289e83868ee7aea133677360ede7f19b443c4e02a58f312bc48c1f2bce"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/build-v1/root-built-verification.json",
+      "sha256": "a071dd13ab39696af34aa95e38f81c334dc98db39daa9e8664657fc11a33d06a"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/build-v1/build-result.json",
+      "sha256": "29cffb50c9811bad8750cd0fb95f1f2e2d23c31332fbf70ebb5cb27e8a0d22cc"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/build-v1/build.log",
+      "sha256": "345e5675fcc8f30aef7a5cda63b9d2394f5ccdc413592ad2542d3628545d058e"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/build-v1/outer-result.json",
+      "sha256": "d670c4ae3563e63d294eb6ece0fb8a2c15f14c94a49c81510c91b806f18ef557"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/controller-result.json",
+      "sha256": "1df8b3f6229fdf931aa8844ad294b799a9bbc4e6efba4a1fce2c07f984978f75"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/test-intent.json",
+      "sha256": "48e115ad2f6f1578ae892856590295107f188c736b5cb7c81c1f5d01c968574e"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/test.log",
+      "sha256": "bca5eb9f074d086d4d42e4bf3e3940566703578e336ec8e51d0a218825ee91e3"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/photo-terminal-events.json",
+      "sha256": "4593c3cc11064fb62228358678c8aa0a3458a0cab9f69c327da4efc8e1ada2c7"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/stream.ndjson",
+      "sha256": "bb15e1944658dab07044e0306b167787bea5c30d8ed3019a1a72e6f808b4bad2"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/stream.stderr",
+      "sha256": "f30123762d3a937fa1f042f9e15a8b038101e3988b9c2557b745f9975cb6a797"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/preinstall-baseline.json",
+      "sha256": "77ec480a151a787ebc68938016eb2eec74a2f89bc4b3ad58a89847bc935b8323"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/devices-before.stdout",
+      "sha256": "a4b32b6566a4b1dcb4d0dd86df9cdd8acf46f3738ff955ecccf93f76f0ad9e2e"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/devices-after.stdout",
+      "sha256": "0ce85a8295ebe33fc62154803745c45c35b7e0cd2dda3a598c68e44e7fea7de5"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/terminate-app-command-result.json",
+      "sha256": "22469f2530ad61e84a3fffffdea1c5e0067805b326e4ac24f9c60a6fc82bc0ab"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/terminate-runner-command-result.json",
+      "sha256": "b22b96f610045bd195b64c9fa5d03948db5d567ce3eea847bd9f24761029da9b"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/shutdown-command-result.json",
+      "sha256": "a126735629a87c758dc814f6a93328abbb26241e1c762936665bde5592280725"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/root-attachments-v1/manifest.json",
+      "sha256": "04ddd9a5a50fe0113f00227ff771a7c87a12022b61b4644a22cf540c76cf3e15"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/root-attachments-v1/video-12s.png",
+      "sha256": "8c02c7e2fc839fb7ec0bc5bc02e9641d73a24f0c148dc98a13cc7f5a7db44448"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/execution-v1/root-attachments-v1/video-32s.png",
+      "sha256": "1dbd3f8273061a44a743ac8c47a6b710874f95fec338969f4f36d5095731463b"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/draft-v1/attachment-review.json",
+      "sha256": "e15bc961615707eb21e4809f29316a9fa5016b50233899356e771b3ec5faaa95"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact11-full-photo-save-v1/draft-v1/result-review.json",
+      "sha256": "6c4484427b057c153654e1c882053c064ddcc002361e0e7c18b9428db6762196"
+    }
+  ]
+}

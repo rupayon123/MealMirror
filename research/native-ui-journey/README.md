@@ -1,0 +1,15 @@
+# Native photo and local review verification
+
+These cases retain exact app/test identities, failures and data-preservation evidence. Simulator coverage does not establish physical offline use or submission readiness.
+
+### Exact build 11 full-flow attempt — October 25, 2026
+
+One frozen native case on iOS 26.5 Simulator failed at the first Photos presentation gate: after a single default Home Photos activation, the Photos navigation bar was absent after 20 seconds. The case stopped before selecting a meal or label, running OCR or inference, entering an amount, saving, relaunching into History or deleting a review. The case had one failure, Xcode exit 65 and controller exit 1, without a timeout or retry. Both retained video frames show Home; the synthesized tap falls within the reported Photos accessibility frame, which does not establish action delivery or explain the failure. The three original reviews remained byte and semantically unchanged, no QA record remained, all 17 installed app files matched exact build 11, and only the owned Simulator was shut down. No terminal photo event was captured; Analysis was never reached, so that absence is inconclusive. SDK-format and duplicate-class warnings remain recorded without a causal claim. A later production hit-area change requires separate evidence; this attempt proves neither a fix nor general reliability. [Curated receipt](exact11-full-photo-failure-20261025.json).
+
+### Exact build 12 photo-to-saved-detail progress — October 25, 2026
+
+Using the unchanged compiled build 11 case, exact build 12 reached one meal photo plus one label, local OCR, separately typed synthetic 37 g, explicit confirmation, Review, Save, and a relaunched four-record History with the unique QA photo detail. The case then failed before delete confirmation because its single-element query found two nested confirmation buttons (test exit 65; controller exit 1; no retry). The three original records remained unchanged when excluding the one newly saved QA record; that record still required separate cleanup evidence at the end of this case. One process-bound terminal event reported `known_simulator_result_rejected` with code 0 within the case window. This records an observed fallback reason, not recognition or abstention acceptance; the iOS 27 model branch was not exercised. Root's seven-frame review confirmed the corrected count **1** and found saved-detail metadata overflowing its compact card, which needs follow-up. Final deletion, post-delete relaunch, broader accessibility and physical offline behavior remain outside this result. [Curated receipt](exact12-photo-save-progress-20261025.json).
+
+### Separate unique QA cleanup
+
+The [separate cleanup](exact12-unique-qa-cleanup-20261025.json) passed one guarded text-region activation, exact QA detail checks, deletion confirmation and post-delete relaunch. The original three records, fields and order were preserved; zero QA records remain. The earlier preflight error and missed default detail activation stay retained. This confirms scoped deletion, not general interaction reliability or a passing uninterrupted photo case.

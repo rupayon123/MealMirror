@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "One exact build 12 native Simulator case reached photo/manual review, Save and relaunched History detail, then failed before delete confirmation. This is partial flow evidence, not a completed journey.",
+  "source": {
+    "candidateVersion": "1.0 (12)",
+    "candidateZIP_SHA256": "f7a9b0c032aee8ca67fd1b114adbf5f32ac83bbb1c477dc74303c654c6cdbe07",
+    "candidateZIPBytes": 12204364,
+    "packagedSourceFiles": 59,
+    "SwiftFiles": 17,
+    "appFiles": 17,
+    "sameCompiledBuild11TestReused": true,
+    "runnerFiles": 8,
+    "testSourceSHA256": "a8d75d289e83868ee7aea133677360ede7f19b443c4e02a58f312bc48c1f2bce",
+    "xctestrunSHA256": "a2996a1ae2ced03568002269036c6a9c11f958596d7c14926cf990850c3c024c",
+    "freezeSHA256": "c0b8ac2d6781c61925402e6743e499e4cd3bd8d498f920f9e5d2369987e1fca2",
+    "analysisEngineSHA256": "ef15ea5bb8ea00b5b0ce4dbd642e0c43ee931d9cba90e95d401173ad23beef55"
+  },
+  "nativeCase": {
+    "platform": "iOS 26.5 Simulator",
+    "cases": 1,
+    "failures": 1,
+    "testCommandExit": 65,
+    "controllerExit": 1,
+    "hostTimedOut": false,
+    "installs": 1,
+    "testLaunchAttempts": 1,
+    "retries": 0,
+    "bodySeconds": 209.583,
+    "testCommandSeconds": 278.748608042,
+    "outerWrapperSeconds": 343.03893550000004,
+    "reached": [
+      "Home Photos and one meal image",
+      "Single label attachment and actual local OCR disclosure",
+      "Separately typed synthetic 37 g and explicit component confirmation",
+      "Final Review and one Save",
+      "Terminate/relaunch, four-row History and unique QA photo detail"
+    ],
+    "firstFailure": "The delete-confirmation query matched two nested confirmation buttons; the unchanged test required a single element and failed at line 130 before activating confirmation.",
+    "durationScope": "Observed automation durations, not performance benchmarks."
+  },
+  "photoProcessing": {
+    "boundTerminalEvents": 1,
+    "terminalReason": "known_simulator_result_rejected",
+    "errorCode": 0,
+    "rootVerifiedAnalysisProcessBindingAndCaseWindow": true,
+    "displayedFallback": "Photo inspection unavailable with no reliable range; manually checked input remained available.",
+    "recognitionOrAbstentionAcceptance": false,
+    "iOS27FoundationModelsBranchExercised": false,
+    "amountScope": "37 g was synthetic UI input typed separately. It was not predicted from a meal or label and is not a validated nutritional value."
+  },
+  "rootVisualReview": {
+    "attribution": "Root viewed seven retained frames; this curation verified their hashes without replaying the flow.",
+    "frames": 7,
+    "confirmed": [
+      "Review shows Included components with localized count 1, clear of Save.",
+      "Saved caption states selected photos were not copied into History.",
+      "Relaunched History and QA detail show photo provenance and manually entered amount."
+    ],
+    "openFinding": "Saved-detail metadata values overflow the compact card to the right; wrapping needs follow-up.",
+    "limits": "English, light theme and standard compact-phone Simulator only. VoiceOver association, larger text, dark theme, motion and physical offline behavior were not accepted."
+  },
+  "preservationAtCaseEnd": {
+    "exactInstalled17FilesMatch": true,
+    "originalThreePreservedExcludingOnlyQA": true,
+    "wholeStoreEqualsOriginalBaseline": false,
+    "finalStoreRecords": 4,
+    "remainingOwnedQARecords": 1,
+    "uniqueQARemovalStillRequiredAfterThisCase": true,
+    "storeSeedCopyResetRestore": false,
+    "ownedSimulatorShutdownConfirmed": true,
+    "otherTargetStatesUnchanged": true,
+    "cleanupOutcomeScope": "Separate cleanup evidence is required; no later outcome is assumed or linked here."
+  },
+  "warnings": [
+    "Xcode retained scheme SDK-format and three duplicate Objective-C class warnings from the Simulator environment. No causal assignment is made.",
+    "The owned log stream ended through intentional TERM (leader exit 143); the subsequent group KILL found it gone. This does not establish system-service cleanup."
+  ],
+  "interpretation": "The later exact build reached the photo and saved-detail path using the unchanged compiled case. This single attempt does not diagnose the earlier missed presentation, establish a hit-area fix or demonstrate general reliability. Final deletion and post-delete relaunch were not completed by this case.",
+  "privacy": "Only curated metadata and hashes are included. Raw logs, hierarchies, images, saved-record contents, private paths, identifiers and binaries remain local. Distribution is development and existing internal testing only.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferencesResolution": "Resolve from this repository JSON directory; raw evidence stays outside the repository/playground.",
+  "localArtifactReferences": [
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/FROZEN-INVENTORY.json",
+      "sha256": "c0b8ac2d6781c61925402e6743e499e4cd3bd8d498f920f9e5d2369987e1fca2"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/APP-AND-BASELINE.json",
+      "sha256": "44bddc0e4d70012614baea0fc8e1353fa608278cf3658b61f3247abda59507f7"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/REUSED-TEST.json",
+      "sha256": "8b541ef87809bea04eb00178cb44b20818a8ab804973dbf5dd9b9458f1aa8bc8"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/root-built-reuse-verification.json",
+      "sha256": "04837577143843a8bc667d92facadbf7c9d2f1d7b69d5e60e08f06bef29ac6c7"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/root-source-review.json",
+      "sha256": "e374c6339d3425dcf3405c760da886425b492a5fad54d26ecaf48a654c1c96b7"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/outer-result.json",
+      "sha256": "93ad26d6ed667606521c103088efd12335f65904b698bc972852e7304a448243"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/execution-v1/controller-result.json",
+      "sha256": "a945fdf510121d3ab1a11bcab6674c67dd20357a67cd001669528cbd258af816"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/execution-v1/test.log",
+      "sha256": "8186cd53386ad6d4d8d960240e52f5f2f42860bb15d6284bca37aaa609e83eaa"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/execution-v1/photo-terminal-events.json",
+      "sha256": "cc55f1598bd3fee2db8e1e4d8fcf08f4bec4e770f9bdeab6cf0640940d48fa4d"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/execution-v1/root-terminal-review.json",
+      "sha256": "a4e5a109e9bed15a8d1ff2514f731613c611ad5dd59264c66b38371462d8918b"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/execution-v1/root-visual-review.json",
+      "sha256": "b29d8781d456a0c304b319158b59ad13788f67467bffe91b6f4763d3430ea5a3"
+    },
+    {
+      "path": "native-ui-journey-20261025/exact12-comparison-v1/execution-v1/stream.ndjson",
+      "sha256": "dce880bffeda385b2bfeda7175fcd9c7513aa04b463093608c54644d646d8ec1"
+    }
+  ]
+}
