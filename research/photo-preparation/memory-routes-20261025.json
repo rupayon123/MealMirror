@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "Same eager 48 MP procedural raster through unchanged CG/CI preparation in two fresh processes; one subsequent explicitRGBA8CI scratch observation. No app source, ZIP or model change.",
+  "source": {
+    "parentEngineSHA256": "ef15ea5bb8ea00b5b0ce4dbd642e0c43ee931d9cba90e95d401173ad23beef55",
+    "exactEnumSHA256": "5dc72ee41905c5d8b7abcbe94ada61a00aae8625023b5f106523c5dd5d739dae",
+    "exactEnumBytes": 3471,
+    "unchangedCodeForCGAndCI": true
+  },
+  "preparationFailureRetained": {
+    "beforeCompile": true,
+    "parentFileMatched": true,
+    "actualCopyMatchedSource": true,
+    "mismatch": "V1 declared 3470-byte/hash metadata omitted the terminal LF; actual source and copy are 3471 bytes and match. V2 corrects declarations only.",
+    "withdrawnHypothesis": "The copied implementation was trimmed; direct byte comparison disproved this. The second root assertion on that hypothesis also stopped before compile.",
+    "compileAndRunBeforeCorrection": false
+  },
+  "protocol": {
+    "fixturePixels": [
+      8000,
+      6000
+    ],
+    "nominalRGBABytes": 192000000,
+    "fixture": "Same eager CGContext-filled four quadrants/asymmetric marker; no CI render, encoding or reference drawing before preparation.",
+    "limitPixels": 1800,
+    "execution": "One fresh standalone iOS27.1 Simulator process per route, sequential, no retries.",
+    "lifetime": "Base/UIImage/output held through afterPreparation; local pool scope ends before afterPool snapshot.",
+    "memoryMetrics": "getrusage cumulative peakRSS and separate current resident/physical footprint snapshots; all API statuses 0. No memory threshold.",
+    "functionalChecks": "All three observations returned 1800 x 1350, scale 1, orientation up with expected input backing. This is metadata/dimension acceptance, not full pixel fidelity."
+  },
+  "unchangedRouteObservations": [
+    {
+      "mode": "cg",
+      "result": {
+        "expected1800x1350": true,
+        "expectedInputBacking": true,
+        "orientationRawValue": 0,
+        "outcome": "prepared",
+        "pixels": [
+          1800,
+          1350
+        ],
+        "positiveAndBounded": true,
+        "scale": 1,
+        "scaleAndOrientationMetadataPreserved": true
+      },
+      "measurements": {
+        "beforeFixtureMemory": {
+          "getrusageStatus": 0,
+          "maxRSSBytes": 66781184,
+          "physicalFootprintBytes": 4917336,
+          "residentBytes": 66797568,
+          "taskInfoStatus": 0
+        },
+        "afterFixtureMemory": {
+          "getrusageStatus": 0,
+          "maxRSSBytes": 261111808,
+          "physicalFootprintBytes": 5228680,
+          "residentBytes": 70090752,
+          "taskInfoStatus": 0
+        },
+        "afterPreparationMemory": {
+          "getrusageStatus": 0,
+          "maxRSSBytes": 283230208,
+          "physicalFootprintBytes": 197363968,
+          "residentBytes": 264142848,
+          "taskInfoStatus": 0
+        },
+        "afterPoolMemory": {
+          "getrusageStatus": 0,
+          "maxRSSBytes": 283230208,
+          "physicalFootprintBytes": 5212248,
+          "residentBytes": 72171520,
+          "taskInfoStatus": 0
+        }
+      }
+    },
+    {
+      "mode": "ci",
+      "result": {
+        "expected1800x1350": true,
+        "expectedInputBacking": true,
+        "orientationRawValue": 0,
+        "outcome": "prepared",
+        "pixels": [
+          1800,
+          1350
+        ],
+        "positiveAndBounded": true,
+        "scale": 1,
+        "scaleAndOrientationMetadataPreserved": true
+      },
+      "measurements": {
+        "beforeFixtureMemory": {
+          "getrusageStatus": 0,
+          "maxRSSBytes": 66781184,
+          "physicalFootprintBytes": 4917336,
+          "residentBytes": 66797568,
+          "taskInfoStatus": 0
+        },
+        "afterFixtureMemory": {
+          "getrusageStatus": 0,
+          "maxRSSBytes": 261111808,
+          "physicalFootprintBytes": 5294216,
+          "residentBytes": 70762496,
+          "taskInfoStatus": 0
+        },
+        "afterPreparationMemory": {
+          "getrusageStatus": 0,
+          "maxRSSBytes": 664485888,
+          "physicalFootprintBytes": 208029952,
+          "residentBytes": 291110912,
+          "taskInfoStatus": 0
+        },
+        "afterPoolMemory": {
+          "getrusageStatus": 0,
+          "maxRSSBytes": 664485888,
+          "physicalFootprintBytes": 6146160,
+          "residentBytes": 89440256,
+          "taskInfoStatus": 0
+        }
+      }
+    }
+  ],
+  "scratchRGBA8": {
+    "singleCandidateChange": "Explicit workingFormat NSNumber(CIFormat.RGBA8.rawValue), with cacheIntermediates false and color-space/scaling/render route unchanged; one context binding and readback print.",
+    "workingFormatReadbackRawValue": 264,
+    "result": {
+      "expected1800x1350": true,
+      "expectedInputBacking": true,
+      "orientationRawValue": 0,
+      "outcome": "prepared",
+      "pixels": [
+        1800,
+        1350
+      ],
+      "positiveAndBounded": true,
+      "scale": 1,
+      "scaleAndOrientationMetadataPreserved": true
+    },
+    "measurements": {
+      "beforeFixtureMemory": {
+        "getrusageStatus": 0,
+        "maxRSSBytes": 66879488,
+        "physicalFootprintBytes": 4917336,
+        "residentBytes": 66895872,
+        "taskInfoStatus": 0
+      },
+      "afterFixtureMemory": {
+        "getrusageStatus": 0,
+        "maxRSSBytes": 261226496,
+        "physicalFootprintBytes": 5277832,
+        "residentBytes": 70844416,
+        "taskInfoStatus": 0
+      },
+      "afterPreparationMemory": {
+        "getrusageStatus": 0,
+        "maxRSSBytes": 664649728,
+        "physicalFootprintBytes": 207980824,
+        "residentBytes": 290914304,
+        "taskInfoStatus": 0
+      },
+      "afterPoolMemory": {
+        "getrusageStatus": 0,
+        "maxRSSBytes": 664649728,
+        "physicalFootprintBytes": 6097032,
+        "residentBytes": 89260032,
+        "taskInfoStatus": 0
+      }
+    },
+    "observedPeakDifferenceBytesVersusUnchangedCI": 163840,
+    "adopted": false,
+    "decision": "No observed peak reduction in this single pair; unchanged CI 664,485,888 bytes versus scratch 664,649,728 bytes. Keep production unchanged.",
+    "precisionLimit": "Apple documentsRGBA8 as 4 bytes per pixel SDR/lower precision versus modern default RGBAh at 8 bytes per pixel HDR. No gradient/HDR/alpha/color-quality validation was performed; raw size cannot predict process allocation."
+  },
+  "conclusion": "Unchanged CG peak 283,230,208 bytes was lower than unchanged CI 664,485,888 bytes for this fixture. Both prepared successfully and their after-pool current footprints were much lower than peakRSS. CI transient peak remains unresolved. These observations do not identify full-resolution allocations, rendering-internal cause, a leak, phone memory budget or performance improvement.",
+  "references": [
+    "https://developer.apple.com/documentation/coreimage/cicontextoption/workingformat",
+    "https://developer.apple.com/documentation/coreimage/cicontextoption/workingcolorspace",
+    "https://developer.apple.com/documentation/uikit/uiimage/preparingthumbnail(of:)"
+  ],
+  "preservation": "Procedural processes outside production app only; root final app/media/state receipt is linked by the separate interruption result. Owned QA target shut down; protected interactive target excluded.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "photo-preparation-memory-20261025-v1/PROTOCOL.json",
+      "sha256": "d11984a250a2b6f92bd5a37e345167256e107aba136f4bbc3e4cc131a533b8b7"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v1/SOURCE-FIDELITY.json",
+      "sha256": "1071b3905e15d5b5c66fb582133c82cda7b9f8fb693e695417a0b26c6dc65bf1"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v1/root-precompile-fidelity-failure.json",
+      "sha256": "cb6618e60dff807785e2cf08fa005ad313317969ebf492c20a52777a5934e89b"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v2/ROOT-FREEZE.json",
+      "sha256": "34dd95b46884e98772273bf52d100d1ae9221437ef71b2d56987f5c7a7ff7837"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v2/compile-v1/result.json",
+      "sha256": "8aa258f95d6b0eed8586aa6f09a4b9132865f94f81871f84c2666cc5105c8b19"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v2/binary-platform.txt",
+      "sha256": "32af7d428cb94000218b45197b0909cb4179c85c3c50fb035d33eb3cff7fa2c5"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v2/binary-identity.json",
+      "sha256": "ceb31679263c05f8a07c64ccf5b2adea6384fe9a9930332a89057281f5a6c270"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v2/cg-execution-v1/result.json",
+      "sha256": "29819387627704d0ea7a2186bfef990206ca1c2db80fcdabf828f1ef10515c72"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v2/ci-execution-v1/result.json",
+      "sha256": "f79f5c36f674851ec246177d8fcaffce5387f834f7ae5cde7dc1359464b3565a"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v2/cg/report.json",
+      "sha256": "5ba4f48bff36489c3b5fd7dd91e5fc8134dc209dbca9938a8e21290744bbdbe7"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v2/ci/report.json",
+      "sha256": "ce18d614b969c9b24456fc397e2e589578bef0dc361695bb75eb81796cddf584"
+    },
+    {
+      "path": "photo-preparation-memory-20261025-v2/comparison.json",
+      "sha256": "ba62f2f0aac8d7807ffe7ed13f2d18e2380d12ce89b3fc05809947de153beaa3"
+    },
+    {
+      "path": "photo-preparation-memory-rgba8-20261025-v1/ROOT-FREEZE.json",
+      "sha256": "f41785282bd04a0f278b74fc2f2f3bdfb81ca9819bb5af1cb07ae80ca399f822"
+    },
+    {
+      "path": "photo-preparation-memory-rgba8-20261025-v1/PROTOCOL.json",
+      "sha256": "96c49388e8e9a6202993da80a7616137bfe6d434e883773327fa3d1be966453b"
+    },
+    {
+      "path": "photo-preparation-memory-rgba8-20261025-v1/compile-v1/result.json",
+      "sha256": "a4480b2f9f197d7316d863b5f0b4906dbd0c4719f80dbcb83e1e7b496ec0201b"
+    },
+    {
+      "path": "photo-preparation-memory-rgba8-20261025-v1/ci-execution-v1/result.json",
+      "sha256": "cad1c7642f561d29e80eab4e5cd9b2c987a6d06efb2c30fa0ccc7925bef128f7"
+    },
+    {
+      "path": "photo-preparation-memory-rgba8-20261025-v1/ci-execution-v1/command.log",
+      "sha256": "992bf66a7cf032427f865fad4e5e396829abf62497088632a165a4a092dee266"
+    },
+    {
+      "path": "photo-preparation-memory-rgba8-20261025-v1/ci/report.json",
+      "sha256": "5c6f6d8d8f1e36ccc7b8c6b449ee4ce0fc1233a197f56688adf14a697004d272"
+    }
+  ]
+}

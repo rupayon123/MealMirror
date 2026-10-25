@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "curatedDate": "2026-10-25",
+  "scope": "One current exact13 real native meal-analysis interruption and new-draft recovery case. No production or artifact change.",
+  "candidate": {
+    "version": "1.0 (13)",
+    "appSourceCommit": "0309abfe8a31fca53644b68974099f9cccc6834b",
+    "latestEvidenceCommitBeforeThisSlice": "6eeb9f6db63bc4d1c050599d6606a479f5792042",
+    "ZIP_SHA256": "383bd8054f32996cdaf8624669e42904208bed311b4131afecc028d54373655a",
+    "ZIPBytes": 12204431
+  },
+  "execution": {
+    "testExit": 0,
+    "bodySeconds": 53.671,
+    "hostSeconds": 86.908263542,
+    "timedOut": false,
+    "retries": 0,
+    "surface": "English/light/standard-size iOS27.1 owned Duo Simulator",
+    "input": "One already-exposed meal photo; no label, description entry, carbohydrate entry or Save."
+  },
+  "observations": {
+    "busyBeforeLeaving": "Analyze disabled and accessibility value Analysis in progress observed before one Back action.",
+    "HomeReached": true,
+    "postBackWindowSeconds": 20,
+    "lateEstimateAppearedInWindow": false,
+    "newDraft": "Photo tab selected, no selected meal/label images, Analyze disabled; no Estimate, final Review or Save.",
+    "rootImagesViewed": 2,
+    "renderedState": "Home after window and fresh Photo draft with food 0/3, label 0/1,disabled Build."
+  },
+  "sourceSupport": "AddMealView cancels analysis and invalidates photo loading on disappearance; completion checks cancellation and runID before navigation. Review found no concrete source defect; native case verifies the bounded UI outcome.",
+  "limits": [
+    "Busy UI does not prove model generation began or OS inference compute stopped.",
+    "No late Estimate in 20 seconds is a bounded observation, not every possible future schedule.",
+    "Completion may race with Back; a different failed Home gate would need evidence before a cancellation-defect claim.",
+    "No direct inspection of every hidden description/reference field, rendered loading animation, other error/cancel branch, physical device/offline or recognition accuracy.",
+    "No full-photo Save case is rerun here; its passing receipt stays separate."
+  ],
+  "preservation": {
+    "freshInstalledExact13FilesMatch": 17,
+    "reviewStoreAbsent": true,
+    "eightOriginalMediaFilesUnchanged": true,
+    "noAppInstallResetDataInjectionRestorePreferenceOrMediaMutation": true,
+    "nativeCaseSavedNoRecord": true,
+    "memoryProbesUsedOnlyProceduralFixturesOutsideApp": true,
+    "ownedSimulatorShutdown": true,
+    "allOtherDeviceStatesUnchanged": true,
+    "otherDeviceStateDifferences": [],
+    "protectedInteractiveTargetNotOperated": true
+  },
+  "privacy": "Curated metadata/hashes only. Raw logs, hierarchies, images, device identifiers and private paths stay local.",
+  "localArtifactReferencesBase": "../../../../outputs/",
+  "localArtifactReferences": [
+    {
+      "path": "analysis-interruption-20261025-build13/setup-v1/result.json",
+      "sha256": "af2b8fbecd9755bdc26ad3a5345a8655f1944fa53b5938c70f712584fbd68512"
+    },
+    {
+      "path": "analysis-interruption-20261025-build13/native-v1/source-freeze.json",
+      "sha256": "ea8c43d9b6bd0966c50ad821fbe69a75779982bbeed9935391df4c232796319d"
+    },
+    {
+      "path": "analysis-interruption-20261025-build13/native-v1/build-v1/result.json",
+      "sha256": "1fcc30aa9e531d96db34072e393b04b9a66d60ea70824ddb8c155de2f186d761"
+    },
+    {
+      "path": "analysis-interruption-20261025-build13/native-v1/execution-v1/result.json",
+      "sha256": "ec6d00c8ea1630fb3b16158e44ca02dc1e7e621934e162998c35704e759cd1d0"
+    },
+    {
+      "path": "analysis-interruption-20261025-build13/native-v1/execution-v1/command.log",
+      "sha256": "85229d0824d6dd45eb9ae97783f7b30e1ed5e8960fe32c79a87039b61262adce"
+    },
+    {
+      "path": "analysis-interruption-20261025-build13/root-visual-review.json",
+      "sha256": "284c55beb27fdc22d8a60e29b0f04a95bc900b120eaf6143d6705a34a00b587e"
+    },
+    {
+      "path": "analysis-interruption-20261025-build13/runtime-final-v1/result.json",
+      "sha256": "89c0afd8a8f565624c5ccc0e1f14a9bd72e4b0207172e11f88c750d47e7d8011"
+    },
+    {
+      "path": "analysis-interruption-20261025-build13/attachments-v1/0E1E50C6-C846-4FC7-AC2E-5768B24F193C.png",
+      "sha256": "8b208d6607ab64d920db2951ce52657dbcbf592cddbf198b8dcf2651c287d352"
+    },
+    {
+      "path": "analysis-interruption-20261025-build13/attachments-v1/2E3BAA0E-383A-45E9-B63E-664427255235.png",
+      "sha256": "4145b97e0dd67a2fb16f177a4c58366d094bb047ce2c864ce5811dab53a9f678"
+    }
+  ],
+  "preservationScope": "MealMirror app and original media; standard XCTest runner setup is separate."
+}

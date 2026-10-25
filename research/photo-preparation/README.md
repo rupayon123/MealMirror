@@ -32,6 +32,20 @@ The original stress measurement's raw receipt was not located. Fresh 48 MP proce
 
 These checks do not validate real camera/Photos decoding, physical-device behavior, complete app UI, network isolation or meal recognition. They are not submission-package or distribution evidence.
 
+## Same-fixture route comparison — October 25, 2026
+
+The [controlled follow-up](memory-routes-20261025.json) used the same eagerly filled 8000 x 6000 bitmap in separate CG-backed and CI-wrapped UIImage processes, with unchanged production preparation and the same retained input/output lifetime. Both returned 1800 x 1350, scale 1 and up orientation. Every memory API returned success.
+
+| Route | Peak RSS, including fixture creation | Current footprint after pool |
+| --- | ---: | ---: |
+| Unchanged CG | 283,230,208 bytes | 5,212,248 bytes |
+| Unchanged CI | 664,485,888 bytes | 6,146,160 bytes |
+| Scratch CI with explicit RGBA8 | 664,649,728 bytes | 6,097,032 bytes |
+
+The scratch setting read back raw format 264 and showed no peak reduction in this single comparison. It is not adopted. Apple documents RGBA8 as lower-precision/SDR-only compared with the modern HDR-capable RGBAh default; no HDR, gradient, alpha or full-pixel validation occurred. These values do not identify internal buffer allocations, prove a leak, establish a phone memory ceiling or show an optimization. The CI transient peak remains unresolved. No app/model/ZIP change followed.
+
+The first preparation guard stopped before compilation because declared enum metadata excluded a terminal LF, while the actual source copy already matched all 3471 bytes. The corrected metadata and withdrawn copy-trimming hypothesis are retained. No failed check is treated as a runtime pass.
+
 ## Exact build-5 delivery
 
 The [delivery receipt](delivery-20261024.json) records the deterministic English-only ZIP, clean arm64 Simulator build/install/launch and initial Welcome rendering, verified signed archive and successful internal-only upload. Apple reported processing; compliance, processing completion, existing-group Testing and phone installation remain unverified. The separate [combined photo/label processing check](../foundation-models/combined-label-20261024.json) retained tentative names and raw OCR outside amounts. Neither check completes the actual app’s photo-to-history journey or physical offline validation.
