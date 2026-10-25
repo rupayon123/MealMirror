@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "sourceCommit": "80ef198045bdc5c8256edf8de75e0a41fe14e110",
+  "decision": "Reject this experimental three-way food-presence gate. Do not add it to production or claim the architecture solves false-food clues.",
+  "scope": "Native Mac gate-only structured classification on a previously exposed development image. Not the production processing engine, a paired baseline or recognition-accuracy evaluation.",
+  "hypothesis": "Explicit clearlyFood/notFood/uncertain output might give the model an abstention route for ambiguous material; structured categories constrain format, not truth.",
+  "schemaCases": [
+    "clearlyFood",
+    "notFood",
+    "uncertain"
+  ],
+  "route": {
+    "model": "SystemLanguageModel.default",
+    "defaultGuardrails": true,
+    "locale": "en",
+    "visionAndGuidedGenerationChecked": true,
+    "temperature": 0,
+    "maximumResponseTokens": 32,
+    "imagesPerCall": 1,
+    "imageIOTransformedMaximumPixels": 768,
+    "inProcessWatchdogSeconds": 20,
+    "perProcessHostBoundSeconds": 40
+  },
+  "platform": {
+    "macOS": "27.0.1",
+    "build": "26A434",
+    "Xcode": "27.1 (27A9275)"
+  },
+  "compile": {
+    "exitCode": 0,
+    "timedOut": false,
+    "seconds": 2.383472167
+  },
+  "controller": {
+    "exitCode": 1,
+    "timedOut": false,
+    "seconds": 7.174958166
+  },
+  "actual": {
+    "id": "P07",
+    "inputSHA256": "44ba50e454e96b8214090a20125be64f56a29cf6a496073dc2e2e1b82a2ffafe",
+    "childExitCode": 0,
+    "status": "inspected",
+    "category": "clearlyFood",
+    "generationReportedStarted": true,
+    "dimensions": [
+      768,
+      652
+    ],
+    "requiredCategory": "uncertain",
+    "gatePassed": false,
+    "processSeconds": 7.101263542,
+    "reportedElapsedProcessSeconds": 6.826390416827053
+  },
+  "attemptedProcesses": 1,
+  "inspectedGenerationResults": 1,
+  "unrunExposedIDs": [
+    "P02",
+    "P06",
+    "P12",
+    "P01",
+    "P04",
+    "P10",
+    "P03",
+    "P05",
+    "P08",
+    "P09",
+    "P11"
+  ],
+  "reservedImagesUsed": 0,
+  "ordering": "One serial P07 call; stopped at first failed frozen gate. No retry, replacement, prompt adjustment or additional generation.",
+  "controllerRepairsBeforeInference": [
+    "Exclusive no-replay marker; classified per-case preflight/parse failures with persisted attempted/unrun state. No model/prompt/semantic-gate/input changes."
+  ],
+  "fidelity": {
+    "allFrozenFilesUnchanged": true,
+    "probeSourceSHA256": "0b578af25cd45e916e415deb2eeba34fbef47befe84bb4c688f233a8e9a5b1e7",
+    "protocolSHA256": "0e37dd94071d797a8fe94c8344e0470ee57ff18c328f1b1cb69852f50c9564bd",
+    "controllerSHA256": "40c8ca60d1ccc4f1ffba3bc2ec42cf26a6f00a1d360148c59e40a97e74a463aa",
+    "binarySHA256": "a126871035bfd11e86a45ca0a65ef2a289cc0af1b774411c15b69b594b09fb45",
+    "resultSHA256": "9aed64719a869743efc54391822b04ce876e91814a44c4f366f3a72c172fbf37",
+    "rawResultSHA256": "eab18a4f3f07d19b15fc6237b23d0f33fe540361794c2b50a8b83e7188296e55"
+  },
+  "review": "Independent read-only source/protocol/controller review before inference and actual-report/hash review afterward found no material scope mismatch. Reviewer did not poll processes; root terminal check found zero owned workload matches.",
+  "production": {
+    "appSourceChanged": false,
+    "promptChanged": false,
+    "candidateVersion": "1.0 (17)",
+    "candidateSHA256": "4c7dd201926ddd3b7e91d7b3e1f217c7cc900411439534197849918f0eac090f",
+    "distributionChanged": false
+  },
+  "limits": [
+    "P07 expectations are fallible prior AI visual annotations; root viewed this already-exposed image. No qualified human/material/edibility truth is established.",
+    "The required uncertain decision is a frozen diagnostic criterion. Category correctness or population accuracy is not measured.",
+    "No food-name, amount, full engine/UI, nutrition, clinical, latency-budget, physical or measured network-isolation acceptance follows.",
+    "The Mac/image preparation/session differs from previous iOS name-generation experiments; no causal improvement comparison.",
+    "Selecting the local provider and making no app-authored network requests is not physical airplane-mode proof."
+  ],
+  "sources": [
+    "https://developer.apple.com/documentation/foundationmodels/generable",
+    "https://developer.apple.com/documentation/foundationmodels/analyzing-images-with-multimodal-prompting"
+  ]
+}

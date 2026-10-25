@@ -1,0 +1,9 @@
+# Three-way presence gate: rejected
+
+October 25, 2026. This was an unapplied, gate-only Mac experiment using Apple’s default on-device model. A fixed `@Generable` enum offered `clearlyFood`, `notFood` and `uncertain`; one image and neutral instructions entered a session with default guardrails. No meal-name generation, saved-review storage, UI or nutrition pipeline ran. The [exact diagnostic source](typed-presence-probe-20261025.swift) is outside the app package.
+
+The compiled probe exited 0 and returned **clearlyFood** on the first, already-exposed ambiguous P07 image. The frozen requirement was **uncertain**, so the controller exited 1 and stopped. This was an inspected semantic failure, not an unavailable model, refusal or timeout. The other eleven exposed inputs and eight reserved inputs remain unrun. No prompt adjustment or retry followed. [Exact receipt and hashes](typed-presence-20261025.json).
+
+**Do not adopt this gate.** An explicit uncertainty case did not itself produce abstention on this input. [Apple documents typed image classification](https://developer.apple.com/documentation/foundationmodels/analyzing-images-with-multimodal-prompting), which constrains generated categories; that is not food correctness. The result does not establish a general impossibility or isolate the cause of earlier iOS naming failures. The source, image preparation and platform differ from the production app, and prior AI visual annotations are not qualified material, food-safety or clinical truth.
+
+Build 17’s production model, prompt, UI and exact ZIP are unchanged. Broader recognition quality, independent human-reviewed data, native accessibility, current full-app runtime and physical offline behavior remain open. Continue the documented correction/manual path and runtime verification; do not replace failures with reserved images or treat repeated prompt variants as validation.
