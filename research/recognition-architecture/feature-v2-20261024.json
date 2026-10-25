@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUTC": "2026-10-25T00:00:03.175000+00:00",
+  "scope": "Standalone numerical SDK viability probe, not MealMirror processing, recognition or app UI. No production recognizer change.",
+  "production": "1.0 (8), unchanged default model143feea0… and engine369703be…",
+  "predeclaredProtocol": {
+    "revision": 2,
+    "cropAndScale": "centerCrop",
+    "context": "CIContext() default",
+    "inputs": "Three generated upright360×360 RGB PNGs: quadrants, diagonal stripes and circles. No foods/text or semantic expectations. Root viewed all3 before run.",
+    "orderedSteps": [
+      "F01",
+      "F02",
+      "F03",
+      "F01-repeat"
+    ],
+    "maximumCalls": 4,
+    "diagnosticVectorCriteria": {
+      "scalarCount": 768,
+      "finite": true,
+      "l2NormGreaterThan": 1e-08,
+      "componentRangeGreaterThan": 1e-06
+    },
+    "distinctPairs": "All3 pairs: maxabs≥1e-4 AND L2≥1e-3.",
+    "identicalRepeat": "Maxabs≤1e-5 AND L2≤1e-4.",
+    "stopPolicy": "Stop on first error/diagnostic failure. No replacement, retry, configuration or threshold adjustment.",
+    "bounds": "45-second in-app watchdog and75-second host console cutoff with bounded owned-target cleanup. Operational bounds, not inference latency/OScompute-release proof."
+  },
+  "compileHistory": {
+    "v1": {
+      "exit": 65,
+      "runtimeCalls": 0,
+      "cause": "QA resource lookup used unavailable Bundle.module in this AppleProductTypes app.",
+      "metadataCorrection": "Pinned SDK explicitly marks ImageFeaturePrint Sendable conformance unavailable; the initial receipt incorrectly marked it available. This metadata error did not cause the compile failure.",
+      "originalEvidencePreserved": true
+    },
+    "v2": {
+      "narrowCorrections": "Bundle.main resource lookup, distinctQA identity and corrected Sendable metadata. Same3PNGbytes/4steps/criteria/configuration/bounds.",
+      "compileExit": 0,
+      "independentSourceReviewBlockers": [],
+      "frozenReferenceCount": 14,
+      "actualBuiltFiles": 8,
+      "installedAll8EqualBuilt": true,
+      "SDK": "iphonesimulator27.1",
+      "debugDylibSDK": "27.0",
+      "minimumIOS": "17.0"
+    }
+  },
+  "actualOutcome": {
+    "decision": "STOPPED / NOT A DIAGNOSTIC PASS",
+    "launchAttempts": 1,
+    "all3FixturesPreflighted": true,
+    "configuredRevision": 2,
+    "entryCheckpoints": 1,
+    "attemptedStep": "F01",
+    "returnedVectors": 0,
+    "pairComparisons": 0,
+    "repeatCompared": false,
+    "unrunSteps": [
+      "F02",
+      "F03",
+      "F01-repeat"
+    ],
+    "rawReportPhase": "stopped",
+    "rawReportExit": 6,
+    "stopReason": "extractionOrIOError",
+    "errorDomain": "NSOSStatusErrorDomain",
+    "errorCode": -1,
+    "consoleCommandExit": 0,
+    "controllerExit": 1,
+    "hostTimedOut": false,
+    "automaticRetries": 0,
+    "largeLanguageModelCalls": 0,
+    "classifierTrainingCalls": 0,
+    "reportAndMarkerCopiesMatchContainer": true,
+    "ownedQAShutdownConfirmed": true,
+    "dataPreserved": true,
+    "originalInteractivePickerAccessed": false,
+    "OSComputeReleaseEstablished": false
+  },
+  "interpretation": [
+    "The first API request returned an error before any feature vector. Neither noncollapse nor repeatability was evaluated.",
+    "Console command exit0 is not the app outcome; its persisted report records exit6 and the host rejected the run.",
+    "An entry checkpoint immediately precedes the call but does not prove internal OS dispatch.",
+    "The generic domain/code alone does not identify the root cause or establish physical-device incompatibility. Prior boot migration warnings remain a confound, not a demonstrated cause.",
+    "No training, food/nonfood/dish/edibility accuracy, nutrition/clinical validation, orientation invariance, production flow, physical offline, performance or adoption evidence follows."
+  ],
+  "next": "Diagnose the retained API failure using narrowly scoped existing evidence before a justified separate experiment. Do not train/adopt a gate on unverified features or keep tuning known-photo prompts.",
+  "localArtifactReferencesBase": "../../../../outputs/recognition-architecture-20261024/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. External local evidence is not included in the public repository; no model weights, datasets, private command paths or account/device identifiers copied.",
+  "localArtifactReferences": [
+    {
+      "path": "ARCHITECTURE-DECISION-DRAFT.md",
+      "sha256": "97eaf4dfe22be6eaa50a0097ad95617f4e566af0a32a051ef0206d6c87a05373"
+    },
+    {
+      "path": "SOURCES.json",
+      "sha256": "2a6cdfd7d2b1ebee21d1b06a83f79fef057ac0641283ab0df21f7f72d34be782"
+    },
+    {
+      "path": "coreml-research/feasibility.md",
+      "sha256": "a110df9d382d2a8a9f2f3c5fd1b9f9d3930b459e5f0e2ce1d2b8e1ff8a4df242"
+    },
+    {
+      "path": "feature-v2-probe-v1/PREPARATION-FREEZE.json",
+      "sha256": "229639bcb99e05b8bf0a3c09b7da5c5f9be932a9d6161bf7866d54a74794d901"
+    },
+    {
+      "path": "feature-v2-probe-v1/build-v1/build-result.json",
+      "sha256": "eebfa573e70af45a98a9c46c10d06ddd8f1edc0240c5248a14f317afa0a91ba8"
+    },
+    {
+      "path": "feature-v2-probe-v1/API-CORRECTION.json",
+      "sha256": "b3f0fbdf6017ceb962053df1f2783b97934536ac3e2300c78d561dd60ebfa74b"
+    },
+    {
+      "path": "feature-v2-probe-v2/PREPARATION-FREEZE.json",
+      "sha256": "a00834392c3e4a2b87fbcbc45b28fabb17b03ebdb01f50a2c9a64c0a346ddb0a"
+    },
+    {
+      "path": "feature-v2-probe-v2/PROTOCOL.json",
+      "sha256": "fc238dbb19db851ffc05120ee6007ace795f36a35fdf2e2d86c4a4b60bfb4f3d"
+    },
+    {
+      "path": "feature-v2-probe-v2/FIXTURES.json",
+      "sha256": "d3c4da1e837640f034a02c6a3f4c943218057903573238d0f26a463044f89647"
+    },
+    {
+      "path": "feature-v2-probe-v2/independent-review.json",
+      "sha256": "40b8ce602a9e09c28ba4a8c0174ebaf05209f08f12c97543d1be92fe82aea063"
+    },
+    {
+      "path": "feature-v2-probe-v2/build-v1/build-result.json",
+      "sha256": "f6e01b83b444137dda88227a33fdb089ff9c9caac034e916b6b71a3e4c7a8fdf"
+    },
+    {
+      "path": "feature-v2-probe-v2/build-v1/built-verification.json",
+      "sha256": "d75852b2f2ccdd12b5f9b302f1af38b1dfb031bef680167131a7558e30740a1e"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/execute-once.py",
+      "sha256": "a3450e352fc61ab08930b36898075e1b45107cfa6abe52012f117e563f5636c4"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/approval.json",
+      "sha256": "73aa496c6739789139060f0d7aacc884f7ab3299542cb1e53c10df725749804c"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/preflight.json",
+      "sha256": "20fa9afbba757673dd2dc3e33535da984feeeb4842921a5d2d3bf6663c7a2570"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/host-attempt.json",
+      "sha256": "6e20791b128201061e60ba1f5a5d6290558d21070a10f1f932ae50aa91473e19"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/feature-v2-probe.json",
+      "sha256": "527504712ee31a80054e9f9b7e3f028676d1a576493bee26bdb28703762cca8d"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/feature-v2-probe.attempt",
+      "sha256": "d5d1fdbfc78b62a0845792524fe178f7d9cd5a25a651e0a61534c158a3a3ad22"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/controller-result.json",
+      "sha256": "6a00d11424c9306b47740746c60a9d91835f51b4fda84227c47fb020003fd3e0"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/recomputed-criteria.json",
+      "sha256": "a66683a8c250f5f25e98c35f13087e31cc1911680c3cbe90706b2e642b904781"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/report-copy.json",
+      "sha256": "1a0b4a755be03cda7d29835135b81f34fcfc76d584e839d7590c9e7382f0ffc0"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/cleanup-shutdown.json",
+      "sha256": "6b8fb336cbfffbe4b33df140651570fac19c7adb2dd4017d1bbf0e62f1836159"
+    },
+    {
+      "path": "feature-v2-probe-v2/execution-v1/cleanup-state.json",
+      "sha256": "6c86dde40df56bd0202e33126f177f923f482214e4fa92f39e892be3bad17736"
+    }
+  ]
+}

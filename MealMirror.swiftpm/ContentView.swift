@@ -1810,7 +1810,7 @@ private struct ReviewView: View {
                                     .padding(.vertical, 6)
                                     .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
                             }
-                            Text(LocalizedStringKey(analysis.title))
+                            Text(LocalizedStringKey(analysis.source == .demo ? analysis.title : "Your meal review"))
                                 .font(CarbInTheme.display(.headline, size: 16))
                                 .foregroundStyle(CarbInTheme.ink)
                             Text(localization.text(

@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUTC": "2026-10-24T23:42:51.925174+00:00",
+  "scope": "Applied final ReviewView heading-expression correction, supported by one native comparison of six constructed cases using actual extracted value types. Not actual application rendering or a processing pipeline.",
+  "issue": "A checked component can make a non-Practice analysis ready while its original analysis.title remains an earlier instruction. The final ReviewView previously displayed that unchanged title argument.",
+  "change": {
+    "sourceFile": "MealMirror.swiftpm/ContentView.swift",
+    "location": "ReviewView.reviewSummary",
+    "before": "analysis.title",
+    "after": "analysis.source == .demo ? analysis.title : \"Your meal review\"",
+    "functionalDiff": "One display/title expression. Actual Practice titles retained; non-Practice final review uses the existing canonical heading key.",
+    "appliedBuild": "1.0 (8)",
+    "separateVersionChange": "Package.swift bundleVersion changed to 8 for delivery identity.",
+    "exactAppliedExpressionMatchesTestedCandidate": true,
+    "ContentViewSHA256": "4ddf23a998ee3496644873c30db8b8acade200c244667b4a1bcc38c48f030419",
+    "PackageSHA256": "ddacd86316ee9f4d2f6fc86c7bde65314cd55db381e87d381ccef3a81b737547",
+    "modelEngineCoreAndStorageChangeFromThisFix": false
+  },
+  "nativeEvidence": {
+    "platform": "Native Mac command-line Swift 6 value/title-argument probe. No SwiftUI or UIKit.",
+    "attempts": "One baseline compile/run and one candidate compile/run after one actual MealCore module compilation; no automatic retries recorded.",
+    "caseCount": 6,
+    "checksPerVariant": 28,
+    "baseline": {
+      "exit": 1,
+      "failedChecks": 3,
+      "failedCheckKind": "heading",
+      "failedCaseIDs": [
+        "photo-empty-clue-checked37",
+        "photo-name-clue-checked37",
+        "manual-unknown-checked37"
+      ]
+    },
+    "candidate": {
+      "exit": 0,
+      "passedChecks": 28,
+      "failedChecks": 0
+    },
+    "caseScope": "Three constructed ready states after appending a manually constructed checked 37 component; three actual bundled Practice values. These are source-bound value fixtures, not form input or real meal nutrition.",
+    "stateBoundary": "Checks compare whole MealAnalysis value, amount range/inclusion, source, readiness and photo-name arrays around the pure title-expression evaluation. No storage or asynchronous state lifetime is exercised.",
+    "cases": [
+      {
+        "id": "photo-empty-clue-checked37",
+        "baselineTitleArgument": "Add a little more detail",
+        "candidateTitleArgument": "Your meal review",
+        "expectedHeading": "Your meal review",
+        "source": "personalPhoto",
+        "wholeAnalysisUnchanged": true,
+        "amountRangeAndInclusionUnchangedBetweenVariants": true,
+        "readinessAndPhotoNamesUnchangedBetweenVariants": true
+      },
+      {
+        "id": "photo-name-clue-checked37",
+        "baselineTitleArgument": "Possible foods to check",
+        "candidateTitleArgument": "Your meal review",
+        "expectedHeading": "Your meal review",
+        "source": "personalPhoto",
+        "wholeAnalysisUnchanged": true,
+        "amountRangeAndInclusionUnchangedBetweenVariants": true,
+        "readinessAndPhotoNamesUnchangedBetweenVariants": true
+      },
+      {
+        "id": "manual-unknown-checked37",
+        "baselineTitleArgument": "Add a little more detail",
+        "candidateTitleArgument": "Your meal review",
+        "expectedHeading": "Your meal review",
+        "source": "manual",
+        "wholeAnalysisUnchanged": true,
+        "amountRangeAndInclusionUnchangedBetweenVariants": true,
+        "readinessAndPhotoNamesUnchangedBetweenVariants": true
+      },
+      {
+        "id": "practice-biryani",
+        "baselineTitleArgument": "Chicken biryani plate",
+        "candidateTitleArgument": "Chicken biryani plate",
+        "expectedHeading": "Chicken biryani plate",
+        "source": "demo",
+        "wholeAnalysisUnchanged": true,
+        "amountRangeAndInclusionUnchangedBetweenVariants": true,
+        "readinessAndPhotoNamesUnchangedBetweenVariants": true
+      },
+      {
+        "id": "practice-grain-bowl",
+        "baselineTitleArgument": "Lentil grain bowl",
+        "candidateTitleArgument": "Lentil grain bowl",
+        "expectedHeading": "Lentil grain bowl",
+        "source": "demo",
+        "wholeAnalysisUnchanged": true,
+        "amountRangeAndInclusionUnchangedBetweenVariants": true,
+        "readinessAndPhotoNamesUnchangedBetweenVariants": true
+      },
+      {
+        "id": "practice-breakfast",
+        "baselineTitleArgument": "Toast and berry breakfast",
+        "candidateTitleArgument": "Toast and berry breakfast",
+        "expectedHeading": "Toast and berry breakfast",
+        "source": "demo",
+        "wholeAnalysisUnchanged": true,
+        "amountRangeAndInclusionUnchangedBetweenVariants": true,
+        "readinessAndPhotoNamesUnchangedBetweenVariants": true
+      }
+    ]
+  },
+  "sourceFidelity": {
+    "preparationFreezeSHA256": "f8e13d4cbad579c323f7e4163256d196c4f70b819278f6d52e69bd574d3b1590",
+    "independentReadOnlyReviewSHA256": "ed487fba5366046f28a23192a55c4718d4c1c6fca7642394f8e36e8197989242",
+    "appliedSourceCheckSHA256": "0296232801c8905b9c6ee073cb5afde9193e69f2416fae8d88885450f7e83f34",
+    "productionViewChangeMatchesOneExpressionReplacement": true,
+    "unchangedProductionSourceSHA256": {
+      "LocalPhotoAI.swift": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+      "MealAnalysisEngine.swift": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+      "MealCore/MealModels.swift": "ce1c8eb5114471f08f84049c7492396981f78ac7f1674575699d457109ae1303",
+      "Models.swift": "00b5a4a331a7427dbac3aded9ee904f09c3b491d4a03e3cc6ee188b6489caff3"
+    },
+    "independentReviewHadNoBlockers": true
+  },
+  "localizationKeyPresence": {
+    "existingKey": "Your meal review",
+    "catalogCount": 18,
+    "nonemptyInAll18": true,
+    "catalogFile": "MealMirror.swiftpm/Resources/app_strings.json",
+    "catalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "scope": "Source-only key-presence check. No translation review, language quality, RTL layout or runtime localization resolution."
+  },
+  "protocolWordingClarification": "The preserved protocol/result phrase after rendering means after evaluating the title expression in this native fixture. No rendering API was called by this probe; the frozen artifacts explicitly exclude SwiftUI rendering.",
+  "separateDeliveryRecord": {
+    "path": "delivery-20261024.json",
+    "scope": "Separate artifact, build, render or distribution evidence belongs to the delivery record. None is established by this native probe or claimed in this check."
+  },
+  "localArtifactReferencesBase": "../../../../outputs/review-heading-20261024/",
+  "localArtifactReferencesResolution": "Resolve this base relative to the directory containing this JSON, then append each reference path. These external local artifacts are not copied into the repository and cannot be reproduced from this public record alone.",
+  "localArtifactReferences": [
+    {
+      "path": "PREPARATION-FREEZE.json",
+      "sha256": "f8e13d4cbad579c323f7e4163256d196c4f70b819278f6d52e69bd574d3b1590"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "33252437f570c940bb98cefdf8e502ba5b4a21f26857cc64fe57e1945d3fae4a"
+    },
+    {
+      "path": "source-fidelity.json",
+      "sha256": "71162e2aa424b7192754744a3c29b45137fa1250a42d5fdab44d2109b71008d9"
+    },
+    {
+      "path": "candidate.diff",
+      "sha256": "7729476b8aedc7377700b059212a02e7bfc14dc7302c7ed49918d3fb959a75f4"
+    },
+    {
+      "path": "independent-review.json",
+      "sha256": "ed487fba5366046f28a23192a55c4718d4c1c6fca7642394f8e36e8197989242"
+    },
+    {
+      "path": "run-once.py",
+      "sha256": "bf02b4faee24c967b3714eece45fe4080393717bed2b308765db4d0a43e34788"
+    },
+    {
+      "path": "assembled/baseline.swift",
+      "sha256": "21660c84d4ada9206336700d0752ae3c81ee1faf9643dfcf01452fd88792fbbb"
+    },
+    {
+      "path": "assembled/candidate.swift",
+      "sha256": "9c58c790562857e279bce893ff2a0db46ef4d9e1c7afde6d89e9fb3560b784b4"
+    },
+    {
+      "path": "execution-v1/RESULTS.json",
+      "sha256": "50ce863780ea50eae1efa30cf16992433361450c48ed73f43941c06bab39e126"
+    },
+    {
+      "path": "execution-v1/baseline-result.json",
+      "sha256": "f090f6cd1abdb177c2364a0fa323e24a35c7009eed610dc5af321111023be7a4"
+    },
+    {
+      "path": "execution-v1/candidate-result.json",
+      "sha256": "216539769641fa5d34b5c92a6d3ff19c1d301fa971dcac523bee4aff5ebba3a2"
+    },
+    {
+      "path": "applied-source-check.json",
+      "sha256": "0296232801c8905b9c6ee073cb5afde9193e69f2416fae8d88885450f7e83f34"
+    }
+  ],
+  "limits": [
+    "No SwiftUI/UIKit rendering, form interaction, picker/camera, navigation, asynchronous state or lifecycle evidence from this probe.",
+    "No runtime localization, translation quality, RTL layout, accessibility or animation evidence from this probe.",
+    "No LocalReviewStore, save/history/delete or other app storage-flow evidence. The fix changes the displayed review heading only, not analysis.title or previously saved meal names.",
+    "No engine, photo AI, OCR, model selection, image processing, nutrition, clinical or dosing validation. Existing amount and Practice behavior is unchanged by the one display expression; the fixtures are not nutrition accuracy evidence.",
+    "No exact app build/install, upload, render, physical device, full journey or Swift Challenge readiness claim is made here."
+  ]
+}

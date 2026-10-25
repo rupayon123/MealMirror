@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "curatedAtUTC": "2026-10-24T23:56:30.361143+00:00",
+  "build": "1.0 (8)",
+  "scope": "Exact build-8 delivery and retained native-heading/offscreen-render evidence. Command, archive and upload success are separate from unverified server Testing, actual heading rendering and full app interaction.",
+  "zip": {
+    "sha256": "a18495071b632ca42a505d88617d17438e2203f54d109f5a99a93b38655a1b85",
+    "bytes": 12203944,
+    "fileCount": 59,
+    "swiftFileCount": 17,
+    "twoGenerationsEqual": true,
+    "allSwiftEqualCurrentSource": true,
+    "EnglishOnlyPackagedCatalog": true,
+    "changedFromBuild7": [
+      "MealMirror.swiftpm/ContentView.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ],
+    "localArtifact": "outputs/review-heading-delivery-20261024-build8/candidate-first.zip"
+  },
+  "sourceScope": {
+    "change": "Only the tested final ReviewView title argument plus Package.swift build number 8. Non-Practice uses Your meal review; actual Practice titles are preserved.",
+    "titleExpression": "analysis.source == .demo ? analysis.title : \"Your meal review\"",
+    "appliedExpressionMatchesTestedCandidate": true,
+    "ContentViewSHA256": "4ddf23a998ee3496644873c30db8b8acade200c244667b4a1bcc38c48f030419",
+    "PackageSHA256": "ddacd86316ee9f4d2f6fc86c7bde65314cd55db381e87d381ccef3a81b737547",
+    "modelSHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "engineSHA256": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+    "amountModelEngineStorageThemeChangedByThisFix": false,
+    "storedTitleLimit": "The display correction does not replace analysis.title or repair historical saved meal names."
+  },
+  "nativeHeadingEvidence": {
+    "publicRecord": "check-20261024.json",
+    "scope": "Native Mac source-bound value/title-expression probe; six constructed cases including actual bundled Practice values. Not form or SwiftUI execution.",
+    "checksPerVariant": 28,
+    "baselineFailedHeadingChecks": 3,
+    "baselineExit": 1,
+    "candidatePassedChecks": 28,
+    "candidateFailedChecks": 0,
+    "candidateExit": 0,
+    "automaticRetries": 0,
+    "protocolWordingClarification": "Preserved phrase after rendering means after evaluating the title expression, not rendering API execution.",
+    "localizationPresenceOnly": "Existing key is nonempty in all 18 source catalogs; no translation/runtime-localization review. The exact packaged catalog is English-only."
+  },
+  "exactSimulator": {
+    "cleanBuildExit": 0,
+    "arm64": true,
+    "mainSDK": "27.1",
+    "debugDylibSDK": "27.0",
+    "minimumIOS": "17.0",
+    "builtAppFileCount": 17,
+    "installExit": 0,
+    "launchExit": 0,
+    "installedAll17FilesEqualExactBuiltApp": true,
+    "scope": "Command install/launch and installed-inventory comparison on separate owned QA Simulator. No current Review heading render, controls, navigation, photo analysis or full flow established.",
+    "bootMigrationWarningRetained": true,
+    "bootLimit": "Boot/status exit0 does not establish healthy model readiness or migration success.",
+    "originalInteractivePickerAccessed": false,
+    "dataResetOrUninstallPerformed": false,
+    "warningsRetained": [
+      "Duplicate asset compile-source entry skipped.",
+      "macOS 27.0 sysroot warning while targeting iOS 17 Simulator.",
+      "AppIntents metadata extraction skipped because no dependency is present."
+    ]
+  },
+  "signedArchive": {
+    "archiveExit": 0,
+    "codesignVerificationExit": 0,
+    "version": "1.0",
+    "build": "8",
+    "SDK": "iphoneos27.1",
+    "minimumIOS": "17.0",
+    "all59ExtractedPackagedFilesUnchangedAfterBuildAndArchive": true,
+    "EnglishOnlyArchivedCatalog": true,
+    "limit": "Signing/archive success is not server, phone or UI acceptance."
+  },
+  "distribution": {
+    "testingOnly": true,
+    "exportUploadExit": 0,
+    "testFlightInternalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "appleReported": "Uploaded package is processing.",
+    "processingCompleteVerified": false,
+    "serverInternalIndicatorComplianceAndExistingGroupTestingVerified": false,
+    "testerPhoneInstallVerified": false,
+    "AppStoreReviewOrReleaseActionRecordedInThisDelivery": false,
+    "externalGroupOrPublicBetaLinkCreatedByThisDelivery": false,
+    "limit": "Internal-only export/upload acceptance is not a verified Testing badge, group availability or phone install. No App Store review, release or public beta is authorized by this evidence."
+  },
+  "renderingAttempts": {
+    "overallDecision": "INCOMPLETE / NO CURRENT HEADING OR LAYOUT ACCEPTANCE",
+    "v1": {
+      "compileExit": 65,
+      "failure": "QA host attempted to assign read-only EnvironmentValues.accessibilityReduceMotion; writable-key-path compiler requirement failed.",
+      "installLaunchOrPNGs": false,
+      "scope": "Harness compile failure, not production app or visual regression."
+    },
+    "v2": {
+      "compileExit": 0,
+      "scope": "Separate source-derived QA app: actual ReviewView in offscreen ImageRenderer with same-file appended host and separate entry/identity; production root not exercised.",
+      "fixedAttemptCount": 4,
+      "uniquePNGCount": 2,
+      "framePixels": [
+        440,
+        956
+      ],
+      "language": "English",
+      "appearances": [
+        "light/standard Large",
+        "dark/accessibility5"
+      ],
+      "mechanicalImagesReturned": true,
+      "mechanicalImageChecksDoNotProveContent": true,
+      "pixelObservation": "Light output shows patterned background and Save this local review bar; dark accessibility5 output shows patterned background. Neither unique image shows the scroll body, final heading, summary amount or Practice identity. Photo and Practice files are byte-identical within each appearance.",
+      "pixelReviewSHA256": "2a45ee11932072e256182a3a20594423366f2f00e38d7f5a46a338f2b7f4d4f4",
+      "curatorAlsoViewedTwoUniquePNGs": true,
+      "reduceMotionForcedOrVerified": false,
+      "animationsAssessed": false,
+      "controlsOrHistoryOperationsInvoked": false,
+      "acceptance": false,
+      "next": "Stop this offscreen route. Actual native UI or separately designed native hosting capture is required before visual acceptance; no automatic rerender or retry.",
+      "cleanupTerminateExit": 3,
+      "cleanupObservation": "Nothing to terminate was reported after the QA app returned its final report. No data deletion or original-picker access is established by that cleanup receipt."
+    },
+    "interpretation": "The preserved nonuniform PNGs passed mechanical checks but omitted expected content. That is an incomplete capture, not evidence the heading rendered correctly or proof of a production UI regression. Native title-expression 28/28 evidence remains separate."
+  },
+  "open": [
+    "Actual current Review heading rendering, layout and accessibility at standard and large text sizes.",
+    "Exact photo-to-clue/unknown-to-checked-amount-to-review-to-save/history/relaunch/delete journey, including error/fallback/camera flows.",
+    "Tester phone installation and physical network-isolated offline/performance checks.",
+    "Server processing, compliance/internal indicator and existing internal-group Testing availability.",
+    "Food-category/uncertainty reliability and broader qualified evaluation; this heading delivery changes no recognition model.",
+    "Applicant review/ownership/eligibility/answers and applicable published Swift Student Challenge rules; no readiness or award claim."
+  ],
+  "localArtifactReferencesBase": "../../../..",
+  "localArtifactReferencesResolution": "Resolve this base from the directory containing this JSON, then append each path. These unreproduced local artifacts are not included in the public repository; hashes pin cited evidence without copying private command paths, target/account identifiers, binary archives or pixels.",
+  "localArtifactReferences": [
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/candidate-verification.json",
+      "sha256": "4cf736d134b3ca3cf70949b7c5f7501a20a179c5ec3c5c2c020dcc8c8ad7255a"
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/exact-build-result.json",
+      "sha256": "688b22bd65896a7805a41210ec8d728ab26766ea6d3065caa8621fa9a46e986a"
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/exact-build-verification.json",
+      "sha256": "a4e08d9b977bdb36f6e35b080d0de57d5f6b9eb24d46326aa562691039115a9d"
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/exact-runtime-verification.json",
+      "sha256": "e3d650f644b65d342f98e3051a990962e1d65372a82f10f6b341309f8047486a"
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/archive-result.json",
+      "sha256": "e0eede8c08cb4d9ffca95ab4f0727d56604fcf9fd3f111e0c21afa88e91573a3"
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/archive-verification.json",
+      "sha256": "3e27191edcb3e8f76e108dc762614bba2974e2eeb2269f4bf66117ad9d210705"
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/install-command.json",
+      "sha256": "43709ab30996b9fcedc7faaa4107b35d2ffb3b5855bcdb66edc559c35c209757"
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/launch-command.json",
+      "sha256": "cb0a1e64efa0dba2d4b3497e5bd07ce97c51ff161d8dffbce4cf6c7a3e6b259a"
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/upload-result.json",
+      "sha256": "b565c9bc35502b45087e6e94ba7eeeda1c10e0faabadfef226745c02ac10feec"
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/Internal-ExportOptions.plist",
+      "sha256": "043de9791e4a4f0afc6cbce10480237301f799316fd2ee382f8e93f87df357f9"
+    },
+    {
+      "path": "outputs/review-heading-delivery-20261024-build8/qa-bootstatus.json",
+      "sha256": "3d756d1ddf07b01b0cc33a4c594be1ce40eb1188529020323dc626276f23bf25"
+    },
+    {
+      "path": "outputs/review-heading-20261024/execution-v1/RESULTS.json",
+      "sha256": "50ce863780ea50eae1efa30cf16992433361450c48ed73f43941c06bab39e126"
+    },
+    {
+      "path": "outputs/review-heading-20261024/applied-source-check.json",
+      "sha256": "0296232801c8905b9c6ee073cb5afde9193e69f2416fae8d88885450f7e83f34"
+    },
+    {
+      "path": "outputs/review-heading-20261024/independent-review.json",
+      "sha256": "ed487fba5366046f28a23192a55c4718d4c1c6fca7642394f8e36e8197989242"
+    },
+    {
+      "path": "outputs/review-heading-20261024/render-qa-v1/build-v1/build-result.json",
+      "sha256": "0ff018df0d3acc765fb341b1b20c0de286560a58a4211aa04570354e0815e926"
+    },
+    {
+      "path": "outputs/review-heading-20261024/render-qa-v2/V1-FAILURE-REFERENCE.json",
+      "sha256": "01210dcb51cf15bec67d534a635934428e38c707eae7ea3ec16ce09475674a53"
+    },
+    {
+      "path": "outputs/review-heading-20261024/render-qa-v2/PROTOCOL.json",
+      "sha256": "07100e1a0d93a4544b5cff3aad577f16427e2c957ae8a1ecc0331127bfc0b60e"
+    },
+    {
+      "path": "outputs/review-heading-20261024/render-qa-v2/build-v1/build-result.json",
+      "sha256": "d7abceb4b9ce7ab610a1e860191a75d9b94115a753a0cc9b1e0a45d694e373e4"
+    },
+    {
+      "path": "outputs/review-heading-20261024/render-qa-v2/execution-v1/render-report.json",
+      "sha256": "3ff561a395680c7f2e2970320ebf38a9afe9cb4e736a64faf4a8cba6bbccc6cf"
+    },
+    {
+      "path": "outputs/review-heading-20261024/render-qa-v2/pixel-review.json",
+      "sha256": "2a45ee11932072e256182a3a20594423366f2f00e38d7f5a46a338f2b7f4d4f4"
+    },
+    {
+      "path": "outputs/review-heading-20261024/render-qa-v2/cleanup-terminate.json",
+      "sha256": "380faa838ea1040d9bd513d10b92462954e5c0655acf79b19305ace1b2b21c9d"
+    },
+    {
+      "path": "outputs/review-heading-20261024/render-qa-v2/source-fidelity.json",
+      "sha256": "255f57b049ee90bf0b91477b3f8f33dc6bd6fcdf070e88ccee3754b7583f552d"
+    }
+  ],
+  "curationOnly": "This record was assembled by read-only source/ZIP/hash/receipt inspection and two existing PNG views. No builds, apps, model calls, installs, uploads or runtime checks were executed by this curation."
+}
