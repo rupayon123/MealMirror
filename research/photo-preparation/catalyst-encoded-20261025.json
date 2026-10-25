@@ -1,0 +1,260 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-25",
+  "scope": "Real Mac Catalyst UIKit/ImageIO command-line small encoded-photo API checks. This is not a UIApplication/XCTest app host, iOS Simulator or physical-device result.",
+  "productionChange": false,
+  "baselineMain": "323309bb78f894f914bf518fb0d1c9d259f2f9e5",
+  "candidate": {
+    "build": 18,
+    "bytes": 12207404,
+    "sha256": "146527309fdfad75faf2ae9e114cbe5ac7e6c01d5bc2114cf505f359c63061ae",
+    "unchanged": true
+  },
+  "environment": {
+    "macOS": "27.0.1 (26A434)",
+    "binaryPlatform": "MACCATALYST",
+    "binaryMinimum": "17.0",
+    "binarySDK": "27.0",
+    "swiftLanguageMode": "5",
+    "linkedUIKit": "/System/iOSSupport/System/Library/Frameworks/UIKit.framework/Versions/A/UIKit"
+  },
+  "bindings": {
+    "engineSHA256": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+    "functionSHA256": "d2c1007456e26eb394fba30c8d4d33676460a4dc8ad160b92eba7afd05b110e9",
+    "fixtureSHA256": "c42d9f56f8221d15e2b9aba27f93d3ebf19ef6168a4f2fb1cd499c097d867637",
+    "assembledSHA256": "6ded78b8bf9e1f1b5338a346a2953a39556e772f470bb65b9a087f6b951de406",
+    "driverSHA256": "89603b773df5a8f3be3022717b182cd278c5f645167eaeaa1935f07d5d0e9ca3",
+    "inputsSHA256": {
+      "fixture-o1.jpeg": "9cd8660cd18d598eee23b43ed16dcca1e076b3d641adcda03e1831080ba025b5",
+      "fixture-o2.jpeg": "e0f1ff1f2f6f436e1fc588a7f09d417e1d7ad2410906d48a5761ba21a97893f7",
+      "fixture-o6.jpeg": "ad133b58cfa5cf5d3c4bc627dcaf53881b4d6bc69f0ae4f7fb8f279bdd4b31c5",
+      "fixture-o8.jpeg": "1ec0a0c5a425dff39bbf83ef6d7799236f49a81946ede08b4827a0345ac55e4f"
+    }
+  },
+  "control": {
+    "scope": "Separate command-line real UIImage scale2/leftMirrored and32x16 dimensions; no UIApplication host",
+    "sourceSHA256": "5cb6f52b4c735ff1bacbf8d400028742ccfb1bbfd7f85ee90d4c8e7ade7a7389",
+    "binarySHA256": "563cdf0ecd30c906a2188d478dd01cd956319338afdb9cad5d92984686e0080f",
+    "compile": {
+      "exitCode": 0,
+      "seconds": 20.942749334
+    },
+    "execution": {
+      "exitCode": 0,
+      "seconds": 0.7854460409999999,
+      "binarySHA256": "563cdf0ecd30c906a2188d478dd01cd956319338afdb9cad5d92984686e0080f"
+    },
+    "result": {
+      "appHost": false,
+      "height": 16,
+      "macCatalyst": true,
+      "orientation": 6,
+      "passed": true,
+      "scale": 2,
+      "width": 32
+    }
+  },
+  "execution": {
+    "compile": {
+      "exitCode": 0,
+      "seconds": 1.6608197500000002
+    },
+    "execute": {
+      "exitCode": 0,
+      "seconds": 0.31423079099999973
+    }
+  },
+  "result": {
+    "appHosted": false,
+    "caseGroups": 3,
+    "checkCount": 35,
+    "checks": [
+      {
+        "id": "limit.-1.nil",
+        "passed": true
+      },
+      {
+        "id": "limit.0.nil",
+        "passed": true
+      },
+      {
+        "id": "limit.2401.nil",
+        "passed": true
+      },
+      {
+        "id": "limit.1.image",
+        "passed": true
+      },
+      {
+        "id": "limit.1.width",
+        "passed": true
+      },
+      {
+        "id": "limit.1.height",
+        "passed": true
+      },
+      {
+        "id": "limit.1.bound",
+        "passed": true
+      },
+      {
+        "id": "limit.40.image",
+        "passed": true
+      },
+      {
+        "id": "limit.40.width",
+        "passed": true
+      },
+      {
+        "id": "limit.40.height",
+        "passed": true
+      },
+      {
+        "id": "limit.40.bound",
+        "passed": true
+      },
+      {
+        "id": "limit.2400.image",
+        "passed": true
+      },
+      {
+        "id": "limit.2400.width",
+        "passed": true
+      },
+      {
+        "id": "limit.2400.height",
+        "passed": true
+      },
+      {
+        "id": "limit.2400.bound",
+        "passed": true
+      },
+      {
+        "id": "empty.nil",
+        "passed": true
+      },
+      {
+        "id": "truncated.nil",
+        "passed": true
+      },
+      {
+        "id": "exif.2.image",
+        "passed": true
+      },
+      {
+        "id": "exif.2.width",
+        "passed": true
+      },
+      {
+        "id": "exif.2.height",
+        "passed": true
+      },
+      {
+        "id": "exif.2.up",
+        "passed": true
+      },
+      {
+        "id": "exif.2.scale",
+        "passed": true
+      },
+      {
+        "id": "exif.2.corners",
+        "passed": true
+      },
+      {
+        "id": "exif.6.image",
+        "passed": true
+      },
+      {
+        "id": "exif.6.width",
+        "passed": true
+      },
+      {
+        "id": "exif.6.height",
+        "passed": true
+      },
+      {
+        "id": "exif.6.up",
+        "passed": true
+      },
+      {
+        "id": "exif.6.scale",
+        "passed": true
+      },
+      {
+        "id": "exif.6.corners",
+        "passed": true
+      },
+      {
+        "id": "exif.8.image",
+        "passed": true
+      },
+      {
+        "id": "exif.8.width",
+        "passed": true
+      },
+      {
+        "id": "exif.8.height",
+        "passed": true
+      },
+      {
+        "id": "exif.8.up",
+        "passed": true
+      },
+      {
+        "id": "exif.8.scale",
+        "passed": true
+      },
+      {
+        "id": "exif.8.corners",
+        "passed": true
+      }
+    ],
+    "failureCount": 0,
+    "macCatalyst": true,
+    "ruMaxRSSRaw": 23691264,
+    "rusageStatus": 0,
+    "seconds": 0.03881899989210069
+  },
+  "binarySHA256": "0248867f91f3911cde228ed7ca31c9a74f4fb47c11b68703178bc554f0455150",
+  "criteria": {
+    "origin": "Three hosted small-image cases ported into explicit Boolean checks with the same original synthetic JPEGs and fixed size/orientation/corner expectations. Added UIImage.scale == 1 checks; previous hosted control not relabeled as passing.",
+    "bounds": "Three invalid limits; three valid limits with image/width/height/bound checks; empty and16-byte truncated inputs; EXIF2/6/8 image/width/height/up/scale/corners.",
+    "expectedGroups": 3,
+    "expectedChecks": 35,
+    "timeoutsSeconds": {
+      "compile": 90,
+      "execution": 30,
+      "internalWatchdog": 20
+    }
+  },
+  "preservation": {
+    "actualDataFunction": "Extracted unchanged; imports and enum shell only, no UIImage surrogate.",
+    "engineSHA256": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+    "fixturesMatchPriorHostedBatch": true,
+    "allSourceFixtureAndAssembledBytesRechecked": true,
+    "simulatorActions": false,
+    "appInstallOrLaunch": false,
+    "modelOrNetworkOrPhotoLibraryCalls": false,
+    "userDataOrSettingsAccess": false
+  },
+  "limits": [
+    "Only four small synthetic JPEGs; not all orientations/formats/48MP/extreme aspects or a memory-budget result.",
+    "ruMaxRSSRaw is one process counter, not input allocation or device memory acceptance.",
+    "Native iOS/physical UIKit behavior, actual PhotosPicker/camera and current full-app/UI/offline journey remain open.",
+    "Prior iOS hosted build/control failures and zero executed image cases remain separately retained; Catalyst is a different surface.",
+    "No recognition accuracy, carbohydrate estimate or insulin inference follows."
+  ],
+  "reproduction": "python3 scripts/verify-encoded-catalyst.py --output /absolute/new/external/path",
+  "references": [
+    "https://developer.apple.com/documentation/uikit/mac-catalyst",
+    "https://developer.apple.com/documentation/xcode/running-tests-and-interpreting-results"
+  ],
+  "priorEvidence": "hosted-native-control-20261025.json",
+  "independentReview": {
+    "result": "No material harness or oracle issue found.",
+    "verified": "Retained terminal results;35 unique Boolean checks; current source/block/fixture/driver/assembled/input/binary bindings; original hosted fixture equality and unchanged expected sizes/corners; Mach-O Mac Catalyst/UIKit/ImageIO linkage.",
+    "workloadsRunByReviewer": false,
+    "scope": "Read-only source and retained evidence review; not an independent runtime repeat."
+  }
+}

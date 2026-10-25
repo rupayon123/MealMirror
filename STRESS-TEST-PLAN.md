@@ -47,3 +47,7 @@ The exact loading-method check now seeds transient picker IDs and keeps them in 
 ## Library transfer recovery — build 18
 
 The actual new helper passed ten synthetic-provider cases with 19 native Foundation checks: immediate data/nil/error, duplicate callbacks, pre-cancellation, held factory/late Progress, blocked cancellation handler, real configured15s timer, early timeout and terminal winner preservation. The timer returned after15.998s; no strict15s or phone performance bound follows. The first fixture compile failure and @Sendable-only correction are retained. A separate view-loading ID-spy facade passed14cases/66checks; it does not execute PhotosUI or the new deadline. Actual native picker and full-app recovery remain open. [Scoped evidence](research/photo-loading/transfer-deadline-20261025.json), [exact18 delivery including initial cold-build timeout](research/photo-loading/transfer-delivery-20261025-build18.json).
+
+## Mac Catalyst encoded-photo follow-up
+
+**Mac Catalyst UIKit follow-up:** Three small encoded-photo groups passed **35 checks** against the unchanged actual Data function using real UIKit/ImageIO in a Mac Catalyst command-line process. This adds `UIImage` scale/orientation and fixed EXIF corner checks using the four original synthetic JPEGs. It is not an app-host, iOS or physical-device result; the earlier hosted Simulator control failure remains retained. Candidate 18 is unchanged. [Evidence and reproduction](research/photo-preparation/catalyst-encoded-20261025.json).
