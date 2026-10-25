@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-24",
+  "status": "Partial native QA capture evidence; not production journey or accessibility acceptance.",
+  "source": {
+    "appVersion": "1.0 (9)",
+    "zipSHA256": "a4ceb44fb3e3f1255768400035fb67539d632a636d99e19921f411fdc3d0e1e8",
+    "zipBytes": 12203935,
+    "sourceCommit": "ca264d6",
+    "packagedFiles": 59,
+    "packagedSwiftFiles": 17,
+    "ContentViewSHA256": "b28eb2390c6b1883379978564b05e3439ce16a80c03f0ec42d49cb55e7d9e1d3",
+    "completeContentViewPrefixPreserved": true,
+    "ReviewViewSHA256": "469479ab4482db76787062679f0701df92924e0d8c306fbc9a557955528ac1f7",
+    "QAChanges": "Append native host after the full source file; separate UIKit entry, QA identity and scene manifest. All other55 original files unchanged. No production source/theme/model/ZIP change."
+  },
+  "nativeRoute": {
+    "hierarchy": "UIWindow(windowScene:) → UIHostingController → NavigationStack → actual ReviewView/ScrollView. No ImageRenderer or simulated body.",
+    "fixture": "One constructed personal-photo analysis with one person-entered fixed 37 g item and empty AI clues. This is not form entry, a processed photo or nutrition validation.",
+    "runtime": "Separate owned iOS27.1 Simulator; no original picker or physical phone action.",
+    "buildExit": 0,
+    "installedAppFilesEqualBuilt": 17,
+    "frozenPreparationMembers": 128,
+    "forcedViewFrame": false,
+    "actualWindowPoints": [
+      466,
+      678
+    ],
+    "actualScreenPixels": [
+      1398,
+      2034
+    ],
+    "screenScale": 3,
+    "selectedDisplay": "Explicit1, matching native receipt geometry. No power/fold/geometry adjustment.",
+    "actualBuiltSceneManifest": "AppleProductTypes generated SupportsMultipleScenes=true with empty configurations despite source false. Explicit app delegate supplies scene configuration; no built single-scene-disablement claim."
+  },
+  "partialRun": {
+    "plannedCases": 8,
+    "capturedCases": [
+      {
+        "case": "photo-light-Large",
+        "appearance": "light",
+        "SwiftUIDynamicTypeWitness": "large",
+        "nativeTraitsMatched": true,
+        "dimensionsPixels": [
+          1398,
+          2034
+        ],
+        "framebufferSHA256": "1c0eeddda4e634e3bf899fd947ccfc4f1396c3bca40c265a3a1cd386f5616358",
+        "receiptSHA256": "0e98bc8a469f280b334e02ca8e62e6a821152270da70aa348193ed2e3b45190f",
+        "bodyPresent": true,
+        "boundedPixelObservation": "Neutral Your meal review heading and constructed37 g amount visible; source/body/safety content present. No form commit, inference or save action.",
+        "saveActionObservation": "Visible at Large; not activated."
+      },
+      {
+        "case": "photo-dark-Large",
+        "appearance": "dark",
+        "SwiftUIDynamicTypeWitness": "large",
+        "nativeTraitsMatched": true,
+        "dimensionsPixels": [
+          1398,
+          2034
+        ],
+        "framebufferSHA256": "cbb46f73ce4b7a50bc2e07fa4c5feb9f398d89bbd1c4372e0c7a8ba06a3c60f0",
+        "receiptSHA256": "c3ec376a999943a0608873c8b1b5ef491188567f0582f928555cbfba320296b2",
+        "bodyPresent": true,
+        "boundedPixelObservation": "Neutral Your meal review heading and constructed37 g amount visible; source/body/safety content present. No form commit, inference or save action.",
+        "saveActionObservation": "Visible at Large; not activated."
+      },
+      {
+        "case": "photo-light-accessibility5",
+        "appearance": "light",
+        "SwiftUIDynamicTypeWitness": "accessibility5",
+        "nativeTraitsMatched": true,
+        "dimensionsPixels": [
+          1398,
+          2034
+        ],
+        "framebufferSHA256": "753435515d3bd45d1952e2a1b16c4c5349f58a7b255a86b39c3f3371646c33a9",
+        "receiptSHA256": "ba2f53c3441b938583948758adb02218bb1f7f7b9bd0d6968f3c7ab693eae67d",
+        "bodyPresent": true,
+        "boundedPixelObservation": "Neutral Your meal review heading and constructed37 g amount visible; source/body/safety content present. No form commit, inference or save action.",
+        "saveActionObservation": "Below initial viewport; scrolling/reachability untested."
+      }
+    ],
+    "unrunCases": [
+      "photo-dark-accessibility5",
+      "practice-light-Large",
+      "practice-dark-Large",
+      "practice-light-accessibility5",
+      "practice-dark-accessibility5"
+    ],
+    "stop": "Root initially used a Python environment without Pillow and then invoked the next dependent case without checking that failure. The missing-prior-manual-review guard stopped the fourth case before launch; no fourth case folder exists. Five cases remained unrun.",
+    "failureScope": "Root QA workflow failure, not an app failure. The original STOP remains; later correction/reviews were written after cleanup and did not resume the batch.",
+    "cleanup": "Finish exited0 and confirmed shutdown of only the owned QA target; no reset/uninstall, data retained. This is not an OS compute-release proof.",
+    "actions": "One isolated install and three case launches; no Save/history/delete, model/OCR, camera/picker, input events or scrolling.",
+    "reviewer": "Root and companion AI-agent pixel/source review, not qualified human accessibility validation."
+  },
+  "priorAliasAttempt": {
+    "separateAttempt": true,
+    "caseLaunches": 1,
+    "unrunCases": 7,
+    "observation": "The ready app window was466×678 at 3× / native 1398×2034, but internal alias captured a black2007×2853 image. Actual enumeration listed display 1 / LCD / primary at 1398×2034 and display 3 / LCD-1 / primary-1 at 2007×2853.",
+    "interpretation": "Capture/display binding failure; no actual body/app-failure conclusion. Geometry gate stopped, cleanup completed, evidence retained and no retry of that attempt. A new QA identity was prepared for explicit display1."
+  },
+  "correctiveIconCheck": {
+    "initialConcern": "Dark preview appeared to omit pending-record detail.",
+    "withdrawal": "Complete raw108×108 RGB sprite region was byte-identical in retained light/dark Large PNGs. Fixed-RGB sprite source agrees; no dark icon defect or production fix is established.",
+    "rectanglePixelsExclusive": [
+      906,
+      933,
+      1014,
+      1041
+    ],
+    "RGBBytesSHA256Both": "377014c3e528b8d17e12f94b228f24c9d3fd4e900fd0b21688d22a781c50e71d",
+    "scope": "Two retained Large regions only; preview discrepancy cause unverified."
+  },
+  "accessibilityFindingPending": {
+    "observed": "Under scene/host/SwiftUI accessibility5 overrides, decorative SF symbols grow outside fixed slots and crowd neighboring labels. Sampled custom-text glyph geometry remains the same as Large.",
+    "source": "ReviewFact leaves its SF Image font implicit with a fixed 20-point width. SafetyRail uses an implicit SF font in 24×24. Theme custom-font helpers call UIFontMetrics.scaledFont(for:) without explicit compatibleWith traits or SwiftUI size input.",
+    "notEstablished": "Actual global OS preferred content-size category and UIFont point-size witnesses were not recorded. The custom-font mismatch is consistent with an ambient UIKit/global versus per-scene override difference; cause and production global-AX5 behavior remain unverified.",
+    "nextRequired": "Use a separately approved owned-Simulator protocol with global content_size set/readback and UIApplication/current/scene/host/SwiftUI categories plus default-versus-explicit-trait UIFontMetrics point sizes. Reproduce overflow under correct typography before a local decorative-symbol sizing or broader font-bridge fix. No body-text cap or production patch is approved."
+  },
+  "limits": [
+    "Three initial personal-photo QA viewports are not the full eight-case matrix or a Practice render pass.",
+    "A real hosted View with a constructed value and separate lifecycle is not the exact production photo→clue→checked amount→Review→save/history/delete journey.",
+    "No global-font, scrolling/control reachability, VoiceOver, general accessibility/contrast, translation, model/accuracy, physical-device, network-isolated offline or performance pass.",
+    "No binary or screenshot pixels are redistributed here; references only pin retained local evidence."
+  ],
+  "localArtifactReferencesBase": "../../../../outputs/review-heading-20261024/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. External local artifacts are not part of the public repository.",
+  "localArtifactReferences": [
+    {
+      "path": "native-host-build9-display1-v1/PREPARATION-FREEZE.json",
+      "sha256": "42b664a64467ca06ca1fb7adafc10584f96bfb4588cd75f71f15439926a32fef"
+    },
+    {
+      "path": "native-host-build9-display1-v1/PROTOCOL.json",
+      "sha256": "578b04e2c603eea8a193851dc410b755556e199af0ef769c4b854db25458baa5"
+    },
+    {
+      "path": "native-host-build9-display1-v1/source-fidelity.json",
+      "sha256": "5efedc2c203fbadefc5d7befd47aa52b5556088d95450700e9e274ccf53eca5a"
+    },
+    {
+      "path": "native-host-build9-display1-v1/root-source-review.json",
+      "sha256": "ddaf4de06fd6210f4e356e33a9b087456bc1a8688c10178b13715268be2e2d02"
+    },
+    {
+      "path": "native-host-build9-display1-v1/build-v1/build-result.json",
+      "sha256": "0e8a41e5fafa324944d6f0a27ebca723dd2c7a63a10bd213d8225feeb8464293"
+    },
+    {
+      "path": "native-host-build9-display1-v1/build-v1/built-verification.json",
+      "sha256": "54095fe518b2e0d87c178681686ac6ede133552b798daab90d1056f8d75ff2d4"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/CONTROLLER-FREEZE.json",
+      "sha256": "c8d1cfdb6ac512f83c76cb69eedb52b2fe2dfbaf542af3beec5dc2baa9f329a2"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/root-approval.json",
+      "sha256": "48389ff0b9cf0e76dafebb41404fb25aa72beee6ed7023ce3436199192985d6f"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/setup-complete.json",
+      "sha256": "fb517b5c3380f3ba259c7aed267c4c34190fa847387efa367bdfb5ede39e0bc0"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/display-enumeration-command.json",
+      "sha256": "6587d697d80019bf9848d77706d0701c23521216f0c8c53882c653eb272e3141"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/STOP.json",
+      "sha256": "ae04aca08babbe955b4cb59bdacbd00b588c7d5c5503e9f071bba8842a666085"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/root-batch-outcome.json",
+      "sha256": "3a183187349cee85f89b9239e1cebc5f7b7e276c5ea7190ea81a541d8c5b1e54"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/finish-complete.json",
+      "sha256": "817e417a4b878d5bb0fb808e1805d4a304dc7ce8e4672810142eed400a6ece5b"
+    },
+    {
+      "path": "native-host-build9-display1-v1/icon-pixel-comparison.json",
+      "sha256": "206cc674090ae5872bcc534ff351638f6281e825f39b5a195b07799b27822bbe"
+    },
+    {
+      "path": "native-host-build9-display1-v1/accessibility-trait-diagnosis.json",
+      "sha256": "82752acb547fc549a9a13e4ef994178360bcca2a800390699755ad5ef7d1ac32"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-light-Large/native-window-receipt.json",
+      "sha256": "0e98bc8a469f280b334e02ca8e62e6a821152270da70aa348193ed2e3b45190f"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-light-Large/capture-complete.json",
+      "sha256": "7db276bf5fbc7e9a2c334c07b44558f8ed54eac5bfa65c80f9c19ddc92d22650"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-light-Large/pixel-review.json",
+      "sha256": "e00c2ecd258f0acd6210635bd16bd12c3ecb9ec209a4ce8fe8923f4ab981dcc2"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-light-Large/framebuffer.png",
+      "sha256": "1c0eeddda4e634e3bf899fd947ccfc4f1396c3bca40c265a3a1cd386f5616358"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-light-Large/display-match.json",
+      "sha256": "2b2019440e2085f93baed01ecb538dec449016bd739a59eb6582dd1395269328"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-dark-Large/native-window-receipt.json",
+      "sha256": "c3ec376a999943a0608873c8b1b5ef491188567f0582f928555cbfba320296b2"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-dark-Large/capture-complete.json",
+      "sha256": "c516b97920cd8e935dab17e6a06f0e33f187ce0423e401256404e65bd9a3462c"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-dark-Large/pixel-review.json",
+      "sha256": "26f680e5dcd3dc33de3465c4e62e3164e590ce3ba4d1e1152cdd483729f95b57"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-dark-Large/framebuffer.png",
+      "sha256": "cbb46f73ce4b7a50bc2e07fa4c5feb9f398d89bbd1c4372e0c7a8ba06a3c60f0"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-dark-Large/display-match.json",
+      "sha256": "2b2019440e2085f93baed01ecb538dec449016bd739a59eb6582dd1395269328"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-light-accessibility5/native-window-receipt.json",
+      "sha256": "ba2f53c3441b938583948758adb02218bb1f7f7b9bd0d6968f3c7ab693eae67d"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-light-accessibility5/capture-complete.json",
+      "sha256": "956f9943ca242c3e3cb756d5b9f816b52b6f610716ffebaa2f23fb2d260e7e55"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-light-accessibility5/pixel-review.json",
+      "sha256": "78fef21927be532f82bd9d8868165831d006d5d100242b084fcdeaa3f582f899"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-light-accessibility5/framebuffer.png",
+      "sha256": "753435515d3bd45d1952e2a1b16c4c5349f58a7b255a86b39c3f3371646c33a9"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-light-accessibility5/display-match.json",
+      "sha256": "2b2019440e2085f93baed01ecb538dec449016bd739a59eb6582dd1395269328"
+    },
+    {
+      "path": "native-host-build9-display1-v1/execution-v1/run-v1/cases/photo-dark-Large/pixel-review-correction.json",
+      "sha256": "083926ec223dc64e82645408de8c95a2008f8b42ad50a5227e3b86f06ec31dbc"
+    },
+    {
+      "path": "native-host-build9-v1/execution-v1/run-v1/display-enumeration-command.json",
+      "sha256": "7fc5b4f82b86eb1e13cca84e9a45b382df3e4a8dc9bcf0d46b9fb38487a04d85"
+    },
+    {
+      "path": "native-host-build9-v1/execution-v1/run-v1/cases/photo-light-Large/native-window-receipt.json",
+      "sha256": "259716075c7a6256689f7b56930a33f88048749b3a4cf5714ffa184ae43642d3"
+    },
+    {
+      "path": "native-host-build9-v1/execution-v1/run-v1/cases/photo-light-Large/framebuffer.png",
+      "sha256": "fcff7a2e8fa497896c052294baebf0359f7c3055768d0b8b60dd8b7749f9ad0e"
+    },
+    {
+      "path": "native-host-build9-v1/execution-v1/run-v1/cases/photo-light-Large/display-match.json",
+      "sha256": "6fb095138b536c8198245239f0ef90162f2a7f232ecd3245c1fd0bf1c49cf9b7"
+    },
+    {
+      "path": "native-host-build9-v1/execution-v1/run-v1/cases/photo-light-Large/failure.json",
+      "sha256": "57178b382a83fed98506a1a0e3e12306a4edee787974474d949e41d22b08e34e"
+    },
+    {
+      "path": "native-host-build9-v1/execution-v1/run-v1/finish-complete.json",
+      "sha256": "fdd6010f1fb71bcad1844999ebe8d12d6893392d0358726caf7a78f78e89614d"
+    }
+  ]
+}

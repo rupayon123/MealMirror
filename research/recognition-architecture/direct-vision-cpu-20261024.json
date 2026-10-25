@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "curatedAtUTC": "2026-10-25T00:54:44.356748+00:00",
+  "scope": "One separately frozen direct Vision CPU-assignment route diagnostic on a procedural image in iOS 27.1 Simulator. Not a production meal-analysis run, causal comparison, learned gate or recognition acceptance.",
+  "production": {
+    "appVersion": "1.0 (9)",
+    "candidateSHA256": "a4ceb44fb3e3f1255768400035fb67539d632a636d99e19921f411fdc3d0e1e8",
+    "candidateBytes": 12203935,
+    "LocalPhotoAISHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+    "MealAnalysisEngineSHA256": "369703be50c97dea189fe1b462b876684ba73cf2b00e92231f16953ee42536e9",
+    "sourceOrZIPChangedByThisExperiment": false,
+    "gateAdopted": false
+  },
+  "lineage": {
+    "priorComponentProbe": "feature-v2-20261024.json",
+    "separateErrorCapture": "error-observability-20261024.json",
+    "scope": "The same F01 had earlier component-route attempts. This protocol permits one new route request with no retry or fallback; it is not a claim of one F01 request across the whole investigation. The earlier context-creation error and its unknown cause remain unchanged."
+  },
+  "fixedInput": {
+    "ID": "F01",
+    "sha256": "aa0718f05333bfb35a1f5accf9e49d9e6a1d6ba6a2aa33c0cf43f0786db1d890",
+    "bytes": 1387,
+    "dimensions": [
+      360,
+      360
+    ],
+    "origin": "Retained generated colored quadrants, no food labels, text, real meal or personal image.",
+    "decode": "Same ImageIO CGImage to CIImage with explicit sRGB; upright orientation, centerCrop, full normalized region of interest.",
+    "renderingContext": "Default CIContext passed through VNImageOption.ciContext; no software-renderer option or CGImage handler substitution."
+  },
+  "actual": {
+    "compileExit": 0,
+    "frozenSourceFiles": 7,
+    "priorPinnedEvidenceFiles": 7,
+    "builtAndInstalledFiles": 6,
+    "oneRecordedLaunch": true,
+    "supportDiscoveryEntryCheckpoints": 1,
+    "performEntryCheckpoints": 1,
+    "automaticRetries": 0,
+    "workerIsMainThread": false,
+    "requestedAndConfiguredRevision": 2,
+    "exposedStages": [
+      {
+        "stage": "VNComputeStageMain",
+        "reportedDeviceKinds": [
+          "gpu",
+          "cpu"
+        ],
+        "selectedReturnedDeviceKind": "cpu",
+        "assignmentReadbackMatched": true
+      }
+    ],
+    "allExposedStagesAssignedCPU": true,
+    "assignmentIsNotKernelDispatchProof": true,
+    "phase": "observationReturned",
+    "observationCount": 1,
+    "observationRevision": 2,
+    "elementType": "IEEE 754 Float32",
+    "elementCount": 768,
+    "dataBytes": 3072,
+    "dataSHA256": "fdd4b8a0f11ae4261303d990a4b6f33afc280b81949493f78575d2ed7e99764d",
+    "allScalarsFinite": true,
+    "nonconstantWithinThisVector": true,
+    "appReportExit": 0,
+    "consoleCommandRecordedExit": 0,
+    "controllerRecordedExit": 0,
+    "hostTimedOut": false,
+    "bootStatusExit": 0,
+    "bootStatusLoggedDataMigrationFailed": true,
+    "ownedQARecordedShutdown": true,
+    "reportMarkerAndDataCopiesMatchedContainer": true,
+    "dataPreserved": true,
+    "FoundationModelsOrFoodNamingCalls": 0,
+    "trainingCalls": 0
+  },
+  "independentReview": {
+    "checkedCount": 52,
+    "allMechanicalChecksPassed": true,
+    "blockers": [],
+    "sha256": "ffc22320cb2cd3fa0015df7f9678d078cd73d0f1bb6cb2e15d3d2c43dbaa1fb4",
+    "method": "Filesystem hashes, source/approval/controller/built and installed inventories, saved cleanup records, retained-container byte comparison, independent Float32 decode and all 768 JSON-to-Float32 byte roundtrips. No controller import, API call, rerun or Simulator action by the reviewer.",
+    "meaning": "Mechanical and descriptive-data verification, not numerical, semantic or food-recognition acceptance."
+  },
+  "interpretation": [
+    "The configured direct Vision route returned one observation for this one procedural image. Its one exposed stage reported CPU and GPU support; a returned CPU device was selected and read back before perform. This establishes the recorded support/configuration and returned data, not instrumented proof of actual kernel/device execution.",
+    "The 768 values are finite and not all equal within this vector. This does not establish variation across different images, repeated-input consistency, useful visual separation or a calibrated gate.",
+    "The direct request wrapper and explicit device route differ from the failed component route. The outcome does not show that CPU alone caused the difference, that Espresso was bypassed, or what caused either earlier failure.",
+    "Agreement with the documented component revision-2 feature count does not establish bitwise or semantic equivalence to MLShapedArray features across APIs, preprocessing, operating systems or devices. Training representations must not be mixed on this basis.",
+    "The bootstatus command exited zero while still logging Data Migration Failed. The warning is retained; the returned observation and recorded shutdown do not erase it or prove environment health.",
+    "The app, console and controller zero exits mean this bounded data observation completed. Console wait includes process startup/exit and is not a model-latency benchmark. No performance, memory, battery, physical-device, network-isolated offline, production UI/full-journey, food/name/nutrition/clinical or submission-readiness pass follows."
+  ],
+  "nextStep": {
+    "status": "Not run or authorized by this receipt.",
+    "proposal": "Freeze and independently review a separate multi-input and repeated-input direct Vision diagnostic, retaining the same supported-device gates and bounded stop rules, before any requests. Declare numerical criteria before that run; do not turn this vector into an output-selected threshold.",
+    "stillOpen": "Feature variation across inputs, repeatability, lawful training/calibration/evaluation partitions, useful meal names, false-food and false-abstention behavior, broad cultural coverage, physical offline behavior and exact app integration. No training, gate or production change is approved here."
+  },
+  "privacy": "No scalar values, observation binary, fixture pixels, raw errors, private absolute paths, account/device identifiers or model weights are copied into the repository. Local artifacts remain outside it.",
+  "localArtifactReferencesBase": "../../../../outputs/recognition-architecture-20261024/direct-vision-cpu-v1/",
+  "localArtifactReferencesResolution": "Resolve from this JSON directory. Paths and hashes identify selected local evidence, not redistributed data or binaries.",
+  "localArtifactReferences": [
+    {
+      "path": "PREPARATION-FREEZE.json",
+      "sha256": "8cb9f5f4f57f865b142ba90122aafb4bb735f9fdefd6b9d14bd7b88b5e591bb4"
+    },
+    {
+      "path": "PROTOCOL.json",
+      "sha256": "82825c036b1a4fd9b776c498b5572f42c1cd36fa504e9d20e5520e13dc31d6fb"
+    },
+    {
+      "path": "SOURCE-API.json",
+      "sha256": "8dcad4635603eac70b6d7cabb8704d76088ba3908da6526c6d05281abb2d8880"
+    },
+    {
+      "path": "independent-review.json",
+      "sha256": "054a35b373a70d10e44a93f16681b7f7a943a3dfd59c9f71b379f84a24ddc4ac"
+    },
+    {
+      "path": "root-source-review.json",
+      "sha256": "99d43b60ee78cbe9132ac9ecff590690709b6eef967114ad77191e6dd43420bd"
+    },
+    {
+      "path": "build-v1/build-result.json",
+      "sha256": "7c14f61baace2403dafab272e2cb8ec5b79b81c06a894090afdaafeba165308d"
+    },
+    {
+      "path": "build-v1/built-verification.json",
+      "sha256": "e5565a745302d827b44772290ee7d45c940aaec438f39ae7fa03a0f0f8c0ff06"
+    },
+    {
+      "path": "execution-v1/execute-once.py",
+      "sha256": "abc8fdee6bae63bab666e7b027dbc64c39dad5806c464e0310b6a24bcf62210b"
+    },
+    {
+      "path": "execution-v1/approval.json",
+      "sha256": "940e9d5bdfbe8c5da21835c4c022c5ecbc97f23fae90571c8ad6a637d53e660d"
+    },
+    {
+      "path": "execution-v1/host-attempt.json",
+      "sha256": "d6fd62883fc80f5e6c277d6e32d01402c87682f8a92e0b5385b83359d4886da4"
+    },
+    {
+      "path": "execution-v1/preflight.json",
+      "sha256": "1df1fdd701a6051bc76ee5d2b3227d5dc0cc93d02219c650f47a3df947553dac"
+    },
+    {
+      "path": "execution-v1/direct-vision-cpu.json",
+      "sha256": "9ec4d8519accc5dcf52dc3f0c9e1f6ce4b5324ba2f98936da07fb62a1886ccd3"
+    },
+    {
+      "path": "execution-v1/diagnostic-outcome.json",
+      "sha256": "5d253ff9b79d2152292a0f607c38d2afe2cb5da390ad8c270513735711056219"
+    },
+    {
+      "path": "execution-v1/controller-result.json",
+      "sha256": "081a1cc069e932647c950715fcd857e9498c24d056d790e740c85346416113d3"
+    },
+    {
+      "path": "execution-v1/report-copy.json",
+      "sha256": "017a143f0468db7fd6f3da6298d01ab95d915a016449c112eeb528d151330553"
+    },
+    {
+      "path": "execution-v1/bootstatus.json",
+      "sha256": "dc6b63516d44328bbb5942450f829a3164627b912d4d5cf553b315aad3d6f2c1"
+    },
+    {
+      "path": "execution-v1/cleanup-terminate.json",
+      "sha256": "c3cf61ef831e4e5fa84c5f7c19c3e63edcd8d8aa7e51b40bd84a01e3394b99ab"
+    },
+    {
+      "path": "execution-v1/cleanup-shutdown.json",
+      "sha256": "6b8fb336cbfffbe4b33df140651570fac19c7adb2dd4017d1bbf0e62f1836159"
+    },
+    {
+      "path": "execution-v1/cleanup-state.json",
+      "sha256": "046280ebd4112c842c209874468bfd49d65bdd17d19a01d81b0b9a9f6d665d04"
+    },
+    {
+      "path": "execution-v1/independent-execution-review.json",
+      "sha256": "ffc22320cb2cd3fa0015df7f9678d078cd73d0f1bb6cb2e15d3d2c43dbaa1fb4"
+    }
+  ]
+}
