@@ -36,6 +36,8 @@ Build25 applies a further AI-assisted presentation refinement from the UI design
 
 Build26 applies an AI-assisted photo-role layout refinement: food thumbnails render only under the meal-photo area and the separate label thumbnail appears under its own heading. The repeated in-card label amount button is removed; the existing primary checked-amount action remains, pinned at normal text sizes and inline at accessibility sizes. Selection, removal, limits, analysis inputs, calculation and storage are unchanged. Verification and remaining native accessibility gates are recorded separately.
 
+Build27 applies two AI-assisted visual fixes reviewed with the UI/front-end chats: selected nutrition-label thumbnails fit the whole image within the existing stepped frame while food thumbnails retain their original fill/crop; the vertical photo-source divider is a separate child between rows rather than a midpoint overlay across unequal-height text. Strings, control identifiers, selection, preparation, AI, calculation, storage, assets and horizontal tray behavior are unchanged. Verification is recorded separately.
+
 ## Applicant-owned checks
 
 - Inspect the final `.swiftpm` and archive and confirm each listed AI-assisted change and asset. Update this record if the final files or project history differ.

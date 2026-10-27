@@ -882,11 +882,20 @@ private struct AddMealView: View {
 
         return VStack(alignment: .leading, spacing: 5) {
             GeometryReader { geometry in
-                Image(uiImage: photo.image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .clipped()
+                if photo.role == .label {
+                    Image(uiImage: photo.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .background(CarbInTheme.surface)
+                        .clipped()
+                } else {
+                    Image(uiImage: photo.image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                        .clipped()
+                }
             }
             .frame(height: dynamicTypeSize.isAccessibilitySize ? 144 : 104)
             .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))

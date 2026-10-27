@@ -313,14 +313,12 @@ struct PixelPhotoSourceTray<First: View, Second: View>: View {
     private var verticalChoices: some View {
         VStack(spacing: 0) {
             first.frame(maxWidth: .infinity)
-            second.frame(maxWidth: .infinity)
-        }
-        .overlay {
             CarbInTheme.line.opacity(0.35)
                 .frame(height: 1)
                 .padding(.horizontal, 14)
                 .allowsHitTesting(false)
                 .accessibilityHidden(true)
+            second.frame(maxWidth: .infinity)
         }
     }
 }
