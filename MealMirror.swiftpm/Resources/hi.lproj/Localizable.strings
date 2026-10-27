@@ -238,6 +238,7 @@
 "Not recorded" = "दर्ज नहीं";
 "Not run for this Practice meal" = "इस अभ्यास भोजन के लिए नहीं चला";
 "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "स्थानीय सूची में अभी कोई मेल खाता खाना नहीं मिला। केवल वही खाना जोड़ें जिसे आप पहचानते हैं या भरोसेमंद कार्बोहाइड्रेट मात्रा।";
+"Nutrition label" = "पोषण संबंधी लेबल";
 "OK" = "ठीक";
 "ON DEVICE" = "डेविस";
 "Oats" = "ओट्स";
@@ -332,6 +333,7 @@
 "Scrambled eggs" = "स्क्रैम्बल्ड अंडे";
 "See how it works" = "यह कैसे काम करता है";
 "Selected meal photo" = "चयनित भोजन फोटो";
+"Selected nutrition label photo" = "पोषण संबंधी लेबल की चुनी हुई फ़ोटो";
 "Selected photos remain only for the active review. Saved reviews remain until you delete local review history in MealMirror or remove the app. Uninstalling MealMirror removes its local app data under iOS controls." = "चयनित फ़ोटो केवल सक्रिय समीक्षा के लिए ही रहती हैं। सेव्ड समीक्षाएं तब तक रहती हैं जब तक आप MealMirror में स्थानीय समीक्षा इतिहास को हटा नहीं सकते हैं या ऐप को हटा नहीं सकते। MealMirror की स्थापना रद्द करने से iOS नियंत्रण के तहत अपने स्थानीय ऐप डेटा को हटा दिया जाता है।";
 "Settings" = "सेटिंग";
 "Settings, language, privacy, and safety" = "सेटिंग्स, भाषा, गोपनीयता और सुरक्षा";
@@ -395,6 +397,7 @@
 "Verified amount you entered" = "Amount you entered";
 "Version" = "संस्करण";
 "View details" = "विवरण देखें";
+"View full label" = "पूरा लेबल देखें";
 "Visible main portion" = "दृश्यमान मुख्य भाग";
 "Visible side portion" = "दृश्यमान साइड";
 "WELCOME" = "वेलकम";

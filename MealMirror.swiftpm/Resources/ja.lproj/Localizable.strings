@@ -238,6 +238,7 @@
 "Not recorded" = "記録されていません";
 "Not run for this Practice meal" = "この練習用食事では未実行";
 "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "ローカルリストに一致する食べ物がまだありません。分かる食べ物、または信頼できる炭水化物量だけを追加してください。";
+"Nutrition label" = "栄養成分表示";
 "OK" = "OK";
 "ON DEVICE" = "デバイス上";
 "Oats" = "オーツ";
@@ -332,6 +333,7 @@
 "Scrambled eggs" = "スクランブルエッグ";
 "See how it works" = "仕組みを見る";
 "Selected meal photo" = "選択した食事の写真";
+"Selected nutrition label photo" = "選択した栄養成分表示の写真";
 "Selected photos remain only for the active review. Saved reviews remain until you delete local review history in MealMirror or remove the app. Uninstalling MealMirror removes its local app data under iOS controls." = "選択した写真は、アクティブなレビュー時のみ残ります。保存されたレビューは、MealMirrorのローカルレビュー履歴を削除するか、アプリを削除するまで残ります。MealMirrorをアンインストールすると、iOSの管理下でそのローカルアプリデータが削除されます。";
 "Settings" = "設定";
 "Settings, language, privacy, and safety" = "設定、言語、プライバシー、安全性";
@@ -395,6 +397,7 @@
 "Verified amount you entered" = "Amount you entered";
 "Version" = "バージョン";
 "View details" = "詳細を表示";
+"View full label" = "ラベル全体を見る";
 "Visible main portion" = "表示される主要部分";
 "Visible side portion" = "表示される側面部分";
 "WELCOME" = "ようこそ";

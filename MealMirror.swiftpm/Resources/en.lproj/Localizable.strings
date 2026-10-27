@@ -238,6 +238,7 @@
 "Not recorded" = "Not recorded";
 "Not run for this Practice meal" = "Not run for this Practice meal";
 "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value.";
+"Nutrition label" = "Nutrition label";
 "OK" = "OK";
 "ON DEVICE" = "ON DEVICE";
 "Oats" = "Oats";
@@ -332,6 +333,7 @@
 "Scrambled eggs" = "Scrambled eggs";
 "See how it works" = "See how it works";
 "Selected meal photo" = "Selected meal photo";
+"Selected nutrition label photo" = "Selected nutrition label photo";
 "Selected photos remain only for the active review. Saved reviews remain until you delete local review history in MealMirror or remove the app. Uninstalling MealMirror removes its local app data under iOS controls." = "Selected photos remain only for the active review. Saved reviews remain until you delete local review history in MealMirror or remove the app. Uninstalling MealMirror removes its local app data under iOS controls.";
 "Settings" = "Settings";
 "Settings, language, privacy, and safety" = "Settings, language, privacy, and safety";
@@ -395,6 +397,7 @@
 "Verified amount you entered" = "Amount you entered";
 "Version" = "Version";
 "View details" = "View details";
+"View full label" = "View full label";
 "Visible main portion" = "Visible main portion";
 "Visible side portion" = "Visible side portion";
 "WELCOME" = "WELCOME";

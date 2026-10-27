@@ -238,6 +238,7 @@
 "Not recorded" = "Nincs rögzítve";
 "Not run for this Practice meal" = "Ennél a gyakorló étkezésnél nem futott le";
 "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "A helyi listában még nincs egyező étel. Csak az általad felismert ételt vagy megbízható szénhidrátértéket adj hozzá.";
+"Nutrition label" = "Tápértékjelölés";
 "OK" = "Rendben";
 "ON DEVICE" = "ESZKÖZÖN";
 "Oats" = "Zabok";
@@ -332,6 +333,7 @@
 "Scrambled eggs" = "Rántotta";
 "See how it works" = "Nézze meg, hogyan működik";
 "Selected meal photo" = "Kiválasztott ételfotó";
+"Selected nutrition label photo" = "Kiválasztott fotó a tápértékjelölésről";
 "Selected photos remain only for the active review. Saved reviews remain until you delete local review history in MealMirror or remove the app. Uninstalling MealMirror removes its local app data under iOS controls." = "A kiválasztott fotók csak az aktív értékeléshez maradnak meg. A mentett értékelések addig maradnak, amíg nem törli a helyi értékelési előzményeket a MealMirror-ben, vagy el nem távolítja az alkalmazást. A MealMirror eltávolítása törli az iOS irányítás alatt álló helyi alkalmazásadatokat.";
 "Settings" = "Beállítások";
 "Settings, language, privacy, and safety" = "Beállítások, nyelv, adatvédelem és biztonság";
@@ -395,6 +397,7 @@
 "Verified amount you entered" = "Amount you entered";
 "Version" = "Verzió";
 "View details" = "Részletek megtekintése";
+"View full label" = "Teljes címke megtekintése";
 "Visible main portion" = "Látható fő rész";
 "Visible side portion" = "Látható oldalsó rész";
 "WELCOME" = "ÜDVÖZÖLJÜK";

@@ -238,6 +238,7 @@
 "Not recorded" = "ثبت نشده";
 "Not run for this Practice meal" = "برای این وعده تمرینی اجرا نشد";
 "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "هنوز غذایی در فهرست محلی پیدا نشد. فقط غذاهایی را اضافه کنید که می‌شناسید یا مقدار کربوهیدرات از منبعی قابل اعتماد.";
+"Nutrition label" = "برچسب اطلاعات تغذیه‌ای";
 "OK" = "خوب";
 "ON DEVICE" = "روی دستگاه";
 "Oats" = "جوها";
@@ -332,6 +333,7 @@
 "Scrambled eggs" = "تخم‌مرغ همزده";
 "See how it works" = "ببینید چگونه کار می‌کند";
 "Selected meal photo" = "عکس وعده غذایی انتخاب شده";
+"Selected nutrition label photo" = "عکس انتخاب‌شده از برچسب اطلاعات تغذیه‌ای";
 "Selected photos remain only for the active review. Saved reviews remain until you delete local review history in MealMirror or remove the app. Uninstalling MealMirror removes its local app data under iOS controls." = "عکس‌های انتخاب شده فقط برای بازبینی فعال باقی می‌مانند. بازبینی‌های ذخیره شده تا زمانی که تاریخچه بازبینی محلی را در MealMirror حذف نکنید یا برنامه را پاک نکنید، باقی می‌مانند. حذف نصب MealMirror داده‌های محلی برنامه را تحت کنترل‌های iOS حذف می‌کند.";
 "Settings" = "تنظیمات";
 "Settings, language, privacy, and safety" = "تنظیمات، زبان، حریم خصوصی، و ایمنی";
@@ -395,6 +397,7 @@
 "Verified amount you entered" = "Amount you entered";
 "Version" = "نسخه";
 "View details" = "مشاهده جزئیات";
+"View full label" = "مشاهده کامل برچسب";
 "Visible main portion" = "بخش اصلی قابل مشاهده";
 "Visible side portion" = "بخش جانبی قابل مشاهده";
 "WELCOME" = "خوش آمدید";

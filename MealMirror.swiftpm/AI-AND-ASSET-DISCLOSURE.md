@@ -45,3 +45,7 @@ Build27 applies two AI-assisted visual fixes reviewed with the UI/front-end chat
 - Confirm the right to use the supplied emblem and every other bundled resource. Explain the user-supplied logo and AI-assisted visual edit, generated practice images, any third-party or open-source material, and applicable rights or license where Apple's form requires it.
 - Disclose every AI tool and its project use accurately, including the three generated Practice images and the discarded logo exploration if Apple's question covers the development process.
 - Make substantial individual contributions and ensure the final playground is the applicant's own individual work under the rules for the applicable Challenge year. Write all application essays personally. Verify eligibility and enrollment proof before submitting.
+
+## Build 28 label inspection
+
+AI assistance prepared the local label-viewing SwiftUI changes and initial translations of “Nutrition label,” “View full label,” and “Selected nutrition label photo” interface keys. The coordinator reviewed and adjusted image fitting and retained the existing selected-photo accessibility role. The non-English additions are draft translations, not qualified language-review evidence. This change does not infer an amount or dose from the label. Native build and interaction evidence must be checked separately.

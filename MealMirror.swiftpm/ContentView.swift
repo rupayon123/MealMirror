@@ -427,6 +427,7 @@ private struct AddMealView: View {
     @State private var photoLoadToken = UUID()
     @State private var showCamera = false
     @State private var showPhotoPicker = false
+    @State private var showLabelInspection = false
     @State private var cameraRole: MealPhotoRole = .food
     @State private var cameraError: String?
     @State private var analysisTask: Task<Void, Never>?
@@ -576,6 +577,9 @@ private struct AddMealView: View {
                 }
             )
             .ignoresSafeArea()
+        }
+        .fullScreenCover(isPresented: $showLabelInspection) {
+            if let image = labelPhoto?.image { LabelInspectionView(image: image) }
         }
         .onDisappear {
             cancelPendingAnalysis()
@@ -881,25 +885,20 @@ private struct AddMealView: View {
         } ?? localization.text("Selected nutrition label photo")
 
         return VStack(alignment: .leading, spacing: 5) {
-            GeometryReader { geometry in
-                if photo.role == .label {
-                    Image(uiImage: photo.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .background(CarbInTheme.surface)
-                        .clipped()
-                } else {
-                    Image(uiImage: photo.image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .clipped()
+            if photo.role == .label {
+                Button { showLabelInspection = true } label: {
+                    VStack(alignment: .leading, spacing: 5) {
+                        photoThumbnail(photo)
+                        Label("View full label", systemImage: "arrow.up.left.and.arrow.down.right")
+                            .font(CarbInTheme.reading(.footnote, size: 13, weight: .semibold))
+                    }
                 }
+                .buttonStyle(.plain)
+                .accessibilityLabel(localization.text("Nutrition label") + ", " + localization.text("View full label"))
+                .accessibilityIdentifier("carbin.meal.viewLabel")
+            } else {
+                photoThumbnail(photo)
             }
-            .frame(height: dynamicTypeSize.isAccessibilitySize ? 144 : 104)
-            .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
-            .accessibilityHidden(true)
 
             Label {
                 Text(verbatim: numberedRole)
@@ -925,6 +924,28 @@ private struct AddMealView: View {
         .frame(maxWidth: dynamicTypeSize.isAccessibilitySize ? .infinity : nil, alignment: .leading)
         .accessibilityElement(children: .contain)
         .accessibilityLabel(selectedRole)
+    }
+
+    private func photoThumbnail(_ photo: MealPhoto) -> some View {
+        GeometryReader { geometry in
+            if photo.role == .label {
+                Image(uiImage: photo.image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .background(CarbInTheme.surface)
+                    .clipped()
+            } else {
+                Image(uiImage: photo.image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .clipped()
+            }
+        }
+        .frame(height: dynamicTypeSize.isAccessibilitySize ? 144 : 104)
+        .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
+        .accessibilityHidden(true)
     }
 
     private func localizedNumber(_ value: Int) -> String {
@@ -1224,6 +1245,104 @@ private struct AddMealView: View {
     }
 }
 
+private struct LabelInspectionView: View {
+    let image: UIImage
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @State private var zoom: CGFloat = 1
+    @State private var pinchStartZoom: CGFloat?
+
+    var body: some View {
+        VStack(spacing: 0) {
+            Group {
+                if dynamicTypeSize.isAccessibilitySize {
+                    VStack(alignment: .leading, spacing: 8) { viewerTitle; closeButton }
+                } else {
+                    HStack(alignment: .top, spacing: 12) { viewerTitle; closeButton }
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 10)
+            GeometryReader { viewport in
+                let fitScale = min(
+                    max(1, viewport.size.width) / max(1, image.size.width),
+                    max(1, viewport.size.height) / max(1, image.size.height)
+                )
+                ScrollView([.horizontal, .vertical]) {
+                    Image(uiImage: image)
+                        .resizable()
+                        .interpolation(.high)
+                        .scaledToFit()
+                        .frame(width: image.size.width * fitScale * zoom, height: image.size.height * fitScale * zoom)
+                        .frame(minWidth: max(1, viewport.size.width), minHeight: max(1, viewport.size.height))
+                        .accessibilityLabel("Nutrition label")
+                }
+                .background(CarbInTheme.canvas)
+                .accessibilityIdentifier("carbin.labelViewer.image")
+                .simultaneousGesture(
+                    MagnifyGesture()
+                        .onChanged { value in
+                            if pinchStartZoom == nil { pinchStartZoom = zoom }
+                            zoom = min(4, max(1, (pinchStartZoom ?? zoom) * value.magnification))
+                        }
+                        .onEnded { _ in pinchStartZoom = nil }
+                )
+            }
+            .safeAreaInset(edge: .bottom) {
+                Group {
+                    if dynamicTypeSize.isAccessibilitySize {
+                        VStack(spacing: 8) { zoomOut; zoomIn }
+                    } else {
+                        HStack(spacing: 8) { zoomOut; zoomIn }
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .background(CarbInTheme.canvas)
+            }
+        }
+        .background(CarbInTheme.canvas)
+        .tint(CarbInTheme.moss)
+    }
+
+    private var viewerTitle: some View {
+        Text("Nutrition label")
+            .font(CarbInTheme.reading(.headline, size: 18, weight: .bold))
+            .foregroundStyle(CarbInTheme.ink)
+            .fixedSize(horizontal: false, vertical: true)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityAddTraits(.isHeader)
+    }
+
+    private var closeButton: some View {
+        Button("Close") { dismiss() }
+            .font(CarbInTheme.reading(.body, size: 17, weight: .semibold))
+            .padding(.horizontal, 12)
+            .frame(minWidth: 44, minHeight: 44)
+            .background(CarbInTheme.surface, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.field))
+            .fixedSize(horizontal: true, vertical: true)
+            .accessibilityIdentifier("carbin.labelViewer.close")
+    }
+
+    private var zoomOut: some View {
+        Button { zoom = max(1, zoom - 0.5) } label: {
+            Label("Smaller", systemImage: "minus.magnifyingglass")
+        }
+        .buttonStyle(CompactActionStyle())
+        .disabled(zoom <= 1)
+        .accessibilityIdentifier("carbin.labelViewer.smaller")
+    }
+
+    private var zoomIn: some View {
+        Button { zoom = min(4, zoom + 0.5) } label: {
+            Label("Larger", systemImage: "plus.magnifyingglass")
+        }
+        .buttonStyle(CompactActionStyle())
+        .disabled(zoom >= 4)
+        .accessibilityIdentifier("carbin.labelViewer.larger")
+    }
+}
+
 private struct EstimateView: View {
     @Binding var analysis: MealAnalysis
     let fallbackMeal: DemoMeal
@@ -1232,6 +1351,7 @@ private struct EstimateView: View {
     let onReview: () -> Void
 
     @State private var showIngredientEditor = false
+    @State private var showLabelInspection = false
     private struct ManualEntryRequest: Identifiable {
         let id = UUID()
         let initialName: String
@@ -1337,6 +1457,9 @@ private struct EstimateView: View {
         .toolbarBackground(.visible, for: .navigationBar)
         .sheet(isPresented: $showIngredientEditor) {
             IngredientEditorSheet(analysis: $analysis)
+        }
+        .fullScreenCover(isPresented: $showLabelInspection) {
+            if let labelImage { LabelInspectionView(image: labelImage) }
         }
         .sheet(item: $manualEntryRequest) { request in
             ManualCarbEntrySheet(initialName: request.initialName) { component in
@@ -1487,12 +1610,20 @@ private struct EstimateView: View {
                 .foregroundStyle(CarbInTheme.mutedInk)
                 .fixedSize(horizontal: false, vertical: true)
             if let labelImage {
-                Image(uiImage: labelImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: 250, maxHeight: 250)
-                    .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
-                    .accessibilityLabel("Selected nutrition label photo")
+                Button { showLabelInspection = true } label: {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Image(uiImage: labelImage)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: 250, maxHeight: 250)
+                            .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
+                        Label("View full label", systemImage: "arrow.up.left.and.arrow.down.right")
+                            .font(CarbInTheme.reading(.footnote, size: 13, weight: .semibold))
+                    }
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(localization.text("Nutrition label") + ", " + localization.text("View full label"))
+                .accessibilityIdentifier("carbin.estimate.viewLabel")
             }
             switch analysis.labelTextStatus {
             case .notRun:

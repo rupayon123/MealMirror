@@ -238,6 +238,7 @@
 "Not recorded" = "Hindi naitala";
 "Not run for this Practice meal" = "Hindi isinagawa para sa pagkaing pangsanay na ito";
 "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "Wala pang katugmang pagkain sa lokal na listahan. Idagdag lamang ang pagkaing nakikilala mo o mapagkakatiwalaang dami ng carbohydrate.";
+"Nutrition label" = "Label ng nutrisyon";
 "OK" = "OK";
 "ON DEVICE" = "SA DEVICE";
 "Oats" = "Oats";
@@ -332,6 +333,7 @@
 "Scrambled eggs" = "Nilagang itlog na hinahalo";
 "See how it works" = "Tingnan kung paano ito gumagana";
 "Selected meal photo" = "Napiling larawan ng pagkain";
+"Selected nutrition label photo" = "Napiling larawan ng label ng nutrisyon";
 "Selected photos remain only for the active review. Saved reviews remain until you delete local review history in MealMirror or remove the app. Uninstalling MealMirror removes its local app data under iOS controls." = "Ang mga napiling larawan ay mananatili lamang para sa aktibong pagsusuri. Ang mga nai-save na pagsusuri ay mananatili hanggang sa burahin mo ang lokal na kasaysayan ng pagsusuri sa MealMirror o alisin ang app. Ang pag-uninstall ng MealMirror ay aalisin ang lokal na data ng app sa ilalim ng kontrol ng iOS.";
 "Settings" = "Mga Setting";
 "Settings, language, privacy, and safety" = "Mga setting, wika, privacy, at kaligtasan";
@@ -395,6 +397,7 @@
 "Verified amount you entered" = "Amount you entered";
 "Version" = "Bersyon";
 "View details" = "Tingnan ang mga detalye";
+"View full label" = "Tingnan ang buong label";
 "Visible main portion" = "Nakikitang pangunahing bahagi";
 "Visible side portion" = "Nakikitang bahagi sa gilid";
 "WELCOME" = "MALIGAYANG PAGDATING";

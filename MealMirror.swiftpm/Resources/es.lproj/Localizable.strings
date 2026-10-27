@@ -238,6 +238,7 @@
 "Not recorded" = "No registrado";
 "Not run for this Practice meal" = "No se realizó para esta comida de práctica";
 "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "Aún no hay alimentos coincidentes en la lista local. Añade solo alimentos que reconozcas o una cantidad fiable de carbohidratos.";
+"Nutrition label" = "Etiqueta nutricional";
 "OK" = "OK";
 "ON DEVICE" = "EN EL DISPOSITIVO";
 "Oats" = "Avena";
@@ -332,6 +333,7 @@
 "Scrambled eggs" = "Huevos revueltos";
 "See how it works" = "Ver cómo funciona";
 "Selected meal photo" = "Foto de la comida seleccionada";
+"Selected nutrition label photo" = "Foto de etiqueta nutricional seleccionada";
 "Selected photos remain only for the active review. Saved reviews remain until you delete local review history in MealMirror or remove the app. Uninstalling MealMirror removes its local app data under iOS controls." = "Las fotos seleccionadas permanecen solo para la revisión activa. Las revisiones guardadas permanecen hasta que elimines el historial de revisiones local en MealMirror o desinstales la aplicación. Desinstalar MealMirror elimina sus datos de app locales bajo los controles de iOS.";
 "Settings" = "Configuración";
 "Settings, language, privacy, and safety" = "Configuración, idioma, privacidad y seguridad";
@@ -395,6 +397,7 @@
 "Verified amount you entered" = "Amount you entered";
 "Version" = "Versión";
 "View details" = "Ver detalles";
+"View full label" = "Ver etiqueta completa";
 "Visible main portion" = "Porción principal visible";
 "Visible side portion" = "Porción lateral visible";
 "WELCOME" = "BIENVENIDO";

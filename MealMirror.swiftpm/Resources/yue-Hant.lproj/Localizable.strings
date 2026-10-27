@@ -238,6 +238,7 @@
 "Not recorded" = "未記錄";
 "Not run for this Practice meal" = "呢個練習餐點未有執行";
 "Nothing matched a food in the local list yet. Add only foods you recognize or a trusted carbohydrate value." = "本地食物清單暫時搵唔到相符項目。只加入你認得嘅食物，或者可信來源嘅碳水化合物含量。";
+"Nutrition label" = "營養標籤";
 "OK" = "好";
 "ON DEVICE" = "裝置上";
 "Oats" = "燕麥";
@@ -332,6 +333,7 @@
 "Scrambled eggs" = "炒蛋";
 "See how it works" = "查看運作方式";
 "Selected meal photo" = "已選擇的餐食照片";
+"Selected nutrition label photo" = "已選取嘅營養標籤相片";
 "Selected photos remain only for the active review. Saved reviews remain until you delete local review history in MealMirror or remove the app. Uninstalling MealMirror removes its local app data under iOS controls." = "已選擇的照片只會保留於當前檢視中。已儲存的檢視會保留，直到你在 MealMirror 刪除本地檢視歷史或移除應用程式。卸載 MealMirror 會移除其在 iOS 控制下的本地應用數據。";
 "Settings" = "設定";
 "Settings, language, privacy, and safety" = "設定、語言、隱私及安全";
@@ -395,6 +397,7 @@
 "Verified amount you entered" = "Amount you entered";
 "Version" = "版本";
 "View details" = "查看詳情";
+"View full label" = "睇完整標籤";
 "Visible main portion" = "可見主要部分";
 "Visible side portion" = "可見側面部分";
 "WELCOME" = "歡迎";
