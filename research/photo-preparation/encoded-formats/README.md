@@ -1,0 +1,7 @@
+# PNG and HEIC photo preparation
+
+The [receipt](../png-heic-catalyst-20261027.json) records the unchanged production encoded-Data downsampler running with real Mac Catalyst UIKit/ImageIO. One procedural 3200×2400 upright PNG and one HEIC made from it passed four serial cases: food limit 1800 → 1800×1350, label limit 2400 → 2400×1800, for each format. All 28 predeclared checks passed, including dimensions, bound, upright orientation, scale and four-corner order.
+
+The [exact probe](../../vision/EncodedFormatsCatalystProbe.swift) includes the source-derived function. The [PNG generator](GeneratePNG.py) creates only synthetic colored patches; no personal or remote photos were used. PNG and HEIC generation, compilation and execution were separately bounded, with no retry. Actual exits were all 0; compilation took 120.621 seconds, execution 3.610 seconds (probe internal work 2.032 seconds). The PNG was 28,283 bytes and HEIC 12,545 bytes. Their hashes are in the receipt.
+
+Probe process highwater was 103,170,048 bytes, about 98.4 MiB, including inputs, four serial calls and harness work. Shared caches/highwater prevent per-case allocation conclusions. This does not establish an iPhone budget, arbitrary HEIF/HEIC variants, camera/PhotosUI ingestion, food identification, OCR accuracy, or physical offline acceptance. Successful process groups ended; timeout cleanup was not exercised. Candidate 21 and production app source are unchanged.

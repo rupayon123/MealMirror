@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "sourceMain": "78cb817f1e35f3155dd79ef066cedb60b6144260",
+  "candidateBuild": "21",
+  "productionFunctionSHA256": "97ac5224109c0c7b5b942deed199ba90448380751d965d7c5c01ede819bdda93",
+  "protocolSHA256": "424b197b27af1e63e092c63c69f2c6268e7447f0c8ce39134721497a98722571",
+  "evidenceHashes": {
+    "STATIC-FREEZE.json": "58b0253de1a955d20d748fd7fff3e141be53d50089bea5d7ebf9045b2e860d03",
+    "INPUT-FREEZE.json": "7cb8c9f49504faa83c9803056e5dbcaa2d8fda4b05ed1048d1fdb4dd9e709645",
+    "BINARY-FREEZE.json": "7d6a7675db56c5d8bd2b08d073434488c0954874787955f176580514851ab350",
+    "results.json": "382a0ae6f867eecf1bcd4f5f4457405c5ac0afe8bc76278721efef4e0c200404",
+    "Probe.swift": "bd34de44a48fd93c17c6d764f90426257ee8b2e596866e6e600f8c785bd68aba",
+    "generate_png.py": "f405753adf09c1b934c8a8973041384d5779e2d8a226e7c21ddc900060946995",
+    "run_bounded.py": "42af91cebbda00c1f7a8c2cf3cdc190ef623ece3e2907ae1555e39faa7849077"
+  },
+  "stages": {
+    "png-generate": {
+      "childMaxRSSRaw": 56262656,
+      "childSystemSeconds": 0.049774,
+      "childUserSeconds": 0.13162,
+      "cleanupSignals": [],
+      "exitCode": 0,
+      "groupMembershipInspectionError": null,
+      "hostSeconds": 0.586,
+      "leaderReaped": true,
+      "limitSeconds": 25,
+      "orphanedAtReturn": false,
+      "ownedGroupPresentAtReturn": false,
+      "ownedGroupPresentBeforeSnapshot": false,
+      "timedOut": false
+    },
+    "heic-generate": {
+      "childMaxRSSRaw": 98091008,
+      "childSystemSeconds": 0.207756,
+      "childUserSeconds": 0.10575,
+      "cleanupSignals": [],
+      "exitCode": 0,
+      "groupMembershipInspectionError": null,
+      "hostSeconds": 0.803,
+      "leaderReaped": true,
+      "limitSeconds": 40,
+      "orphanedAtReturn": false,
+      "ownedGroupPresentAtReturn": false,
+      "ownedGroupPresentBeforeSnapshot": false,
+      "timedOut": false
+    },
+    "compile": {
+      "childMaxRSSRaw": 367280128,
+      "childSystemSeconds": 9.038406,
+      "childUserSeconds": 28.745333,
+      "cleanupSignals": [],
+      "exitCode": 0,
+      "groupMembershipInspectionError": null,
+      "hostSeconds": 120.621,
+      "leaderReaped": true,
+      "limitSeconds": 180,
+      "orphanedAtReturn": false,
+      "ownedGroupPresentAtReturn": false,
+      "ownedGroupPresentBeforeSnapshot": false,
+      "timedOut": false
+    },
+    "execute": {
+      "childMaxRSSRaw": 103170048,
+      "childSystemSeconds": 0.42449299999999995,
+      "childUserSeconds": 0.373594,
+      "cleanupSignals": [],
+      "exitCode": 0,
+      "groupMembershipInspectionError": null,
+      "hostSeconds": 3.61,
+      "leaderReaped": true,
+      "limitSeconds": 45,
+      "orphanedAtReturn": false,
+      "ownedGroupPresentAtReturn": false,
+      "ownedGroupPresentBeforeSnapshot": false,
+      "timedOut": false
+    }
+  },
+  "results": {
+    "appHosted": false,
+    "caseRows": [
+      {
+        "actualCorners": [
+          "blue",
+          "yellow",
+          "red",
+          "green"
+        ],
+        "actualPixels": [
+          1800,
+          1350
+        ],
+        "apiSeconds": 0.313071999931708,
+        "checks": {
+          "cornerOrientation": true,
+          "height": true,
+          "longEdgeBound": true,
+          "orientationUp": true,
+          "returnedImage": true,
+          "scaleOne": true,
+          "width": true
+        },
+        "expectedCorners": [
+          "blue",
+          "yellow",
+          "red",
+          "green"
+        ],
+        "expectedPixels": [
+          1800,
+          1350
+        ],
+        "format": "png",
+        "limit": 1800,
+        "passed": true,
+        "ruMaxRSSAfterRaw": 68485120,
+        "ruMaxRSSBeforeRaw": 19480576
+      },
+      {
+        "actualCorners": [
+          "blue",
+          "yellow",
+          "red",
+          "green"
+        ],
+        "actualPixels": [
+          2400,
+          1800
+        ],
+        "apiSeconds": 0.34282458340749145,
+        "checks": {
+          "cornerOrientation": true,
+          "height": true,
+          "longEdgeBound": true,
+          "orientationUp": true,
+          "returnedImage": true,
+          "scaleOne": true,
+          "width": true
+        },
+        "expectedCorners": [
+          "blue",
+          "yellow",
+          "red",
+          "green"
+        ],
+        "expectedPixels": [
+          2400,
+          1800
+        ],
+        "format": "png",
+        "limit": 2400,
+        "passed": true,
+        "ruMaxRSSAfterRaw": 92520448,
+        "ruMaxRSSBeforeRaw": 68485120
+      },
+      {
+        "actualCorners": [
+          "blue",
+          "yellow",
+          "red",
+          "green"
+        ],
+        "actualPixels": [
+          1800,
+          1350
+        ],
+        "apiSeconds": 0.9948597915936261,
+        "checks": {
+          "cornerOrientation": true,
+          "height": true,
+          "longEdgeBound": true,
+          "orientationUp": true,
+          "returnedImage": true,
+          "scaleOne": true,
+          "width": true
+        },
+        "expectedCorners": [
+          "blue",
+          "yellow",
+          "red",
+          "green"
+        ],
+        "expectedPixels": [
+          1800,
+          1350
+        ],
+        "format": "heic",
+        "limit": 1800,
+        "passed": true,
+        "ruMaxRSSAfterRaw": 92520448,
+        "ruMaxRSSBeforeRaw": 92520448
+      },
+      {
+        "actualCorners": [
+          "blue",
+          "yellow",
+          "red",
+          "green"
+        ],
+        "actualPixels": [
+          2400,
+          1800
+        ],
+        "apiSeconds": 0.1615408333018422,
+        "checks": {
+          "cornerOrientation": true,
+          "height": true,
+          "longEdgeBound": true,
+          "orientationUp": true,
+          "returnedImage": true,
+          "scaleOne": true,
+          "width": true
+        },
+        "expectedCorners": [
+          "blue",
+          "yellow",
+          "red",
+          "green"
+        ],
+        "expectedPixels": [
+          2400,
+          1800
+        ],
+        "format": "heic",
+        "limit": 2400,
+        "passed": true,
+        "ruMaxRSSAfterRaw": 92520448,
+        "ruMaxRSSBeforeRaw": 92520448
+      }
+    ],
+    "formatOrder": [
+      "png",
+      "heic"
+    ],
+    "inputRows": [
+      {
+        "bytes": 28283,
+        "format": "png",
+        "imageIOType": "public.png",
+        "pixels": [
+          3200,
+          2400
+        ],
+        "ruMaxRSSAfterInputRaw": 19480576,
+        "sha256": "eb36ef534cf6c56ede442bf055472dbd3cf9a539882c011ef926fc05f99ca86a",
+        "sourceOrientation": 1
+      },
+      {
+        "bytes": 12545,
+        "format": "heic",
+        "imageIOType": "public.heic",
+        "pixels": [
+          3200,
+          2400
+        ],
+        "ruMaxRSSAfterInputRaw": 92520448,
+        "sha256": "804218845232b820be4433e36d8a0b2fb3abc46bc330924edb16ae3d61d214a6",
+        "sourceOrientation": 1
+      }
+    ],
+    "limitOrderPerFormat": [
+      1800,
+      2400
+    ],
+    "macCatalyst": true,
+    "passed": true,
+    "processSeconds": 2.0317685417830944,
+    "resourceLimit": "Single serial probe process; raw peak includes input reads and all API calls. Not per-case decoder allocation or iPhone memory acceptance.",
+    "ruMaxRSSAtEndRaw": 103170048,
+    "ruMaxRSSAtStartRaw": 18022400,
+    "schemaVersion": 1
+  },
+  "checksPassed": 28,
+  "attemptsPerPhase": 1,
+  "appAndCandidateUnchanged": true,
+  "limits": [
+    "Synthetic upright PNG/public.png and HEIC/public.heic only; not generic HEIF or rotated HEIC coverage.",
+    "Mac Catalyst direct API, no app-host, camera, PhotosUI, Simulator or physical iPhone verification.",
+    "No food recognition, OCR, carbohydrate or insulin accuracy tested.",
+    "Raw process memory highwater includes serial calls, input reads and harness; not per-call allocation or an iPhone memory budget.",
+    "No timeout branch exercised; successful stages had reaped leaders and absent owned process groups."
+  ]
+}
