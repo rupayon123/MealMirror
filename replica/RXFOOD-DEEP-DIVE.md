@@ -2,6 +2,24 @@
 
 Reviewed October 27, 2026 against MealMirror main `05340bf`, source candidate 21. This is a public-source product investigation, not an authenticated RxFood walkthrough, clinical assessment or comparative accuracy test. The detailed [capability matrix](rxfood-capabilities.csv), [recon](recon.md), [review sample](reviews.csv) and [fix plan](fixes.md) make the gaps inspectable. No RxFood code, model, private endpoint, account or traffic was examined.
 
+## Current delivery update: build 27
+
+The original investigation below retains its candidate-21 baseline. This update ties subsequent MealMirror progress to source commit `27c24885223d09eab5c18c27870935d328cb97e4` and the [exact build-27 receipt](../research/native-ui-journey/label-fit-20261027-build27.json); it does not silently turn the historical matrix into current parity evidence.
+
+RxFood's [Dexcom page](https://rxfood.com/dexcom) and [FAQ](https://rxfood.com/faq) were rechecked October 27, 2026. They still advertise photo-based food/portion/carbohydrate estimates and connected food/glucose context. The Dexcom page explicitly restricts its estimated carbohydrate values to education rather than treatment or dosing. The FAQ describes a connection-dependent tablet workflow; the historical offline-tier counterexample below remains relevant. No current authenticated RxFood session or matched comparative test was performed.
+
+| Product job | Concrete MealMirror progress | Remaining acceptance work |
+| --- | --- | --- |
+| Food photos plus a separate label | Native build-27 tests cover cancellation, label-only and food-only states, mixed attachments, removal and the three-food-view limit. | Physical camera/offline checks, representative real meals and intended-user comprehension. |
+| Read the selected label | Whole wide and tall labels now fit their thumbnail; inspected normal/light and maximum-text/dark frames retain the full image. The wrapped photo-action divider no longer crosses text in the inspected case. | A full-size local inspection view; fitting the entire image does not make small text readable. |
+| Correct an uncertain result | One exposed native meal path generated tentative names, read a synthetic label and required a separate checked manual amount before Review. | Diverse independent naming/abstention evaluation; current settled OCR disclosure capture. No automatic carbohydrate accuracy is established. |
+| Keep control of a saved review | The exact native path saved one uniquely identified test review, reopened it after relaunch, then deleted only that record and confirmed empty history after another relaunch. | Broader persistence/recovery, physical offline operation, safe recent-review reuse and selective local export. |
+| Consistent, useful visuals | The dedicated **UI designs - MealMirror** chat has resumed a per-screen asset/contact-sheet batch against build-27 frames, with shared component changes coordinated through Front end. | Review original proposed art, integrate deliberately, then inspect native dark/light, large text, compact/iPad, RTL and reduced-motion behavior. A proposal is not shipped acceptance. |
+
+Four build-27 native test cases and the exact ZIP/resource/signing evidence are recorded in the linked receipt. Their scope is limited; automation duration is not a human three-minute demonstration or a speed comparison. Recent-review reuse, export, qualified content/language review, live vendor-supported CGM and current-year Challenge eligibility gates remain open.
+
+The next visual batch must improve the food-photo action, food-versus-label distinction, unknown/correction states, Review provenance, empty History and Settings using one original Pixel Kitchen grammar. Worldwide food artwork should broaden representation without implying that illustrated dishes are validated recognition classes. More decoration alone is not a competitive advantage.
+
 ## What the earlier analysis missed
 
 The earlier report identified the broad photo/CGM/clinician offering, but did not adequately separate current product claims, user complaints, historical research and unknown behavior. It did not establish superiority. This revision adds public promotional screen inspection, version context, eleven deduplicated review observations, a historical offline-mode counterexample, primary pilot-study context, and explicit delivery/acceptance decisions.
