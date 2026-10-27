@@ -752,7 +752,7 @@ private struct AddMealView: View {
             mealPhotoActions
 
             if inputSource != .demo {
-                photoSlotSummary
+                photoSlotStatus("Food view", count: foodPhotos.count, total: 3, kind: .foodView)
             }
 
             if inputSource == .demo {
@@ -764,16 +764,10 @@ private struct AddMealView: View {
                     emptyState: .mealEntry
                 )
             } else if mealPhotos.isEmpty {
-                Label {
-                    Text("No photo selected")
-                } icon: {
-                    PixelKitchenIcon(kind: .photos)
-                        .frame(width: 24, height: 24)
-                }
-                    .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
+                Text("No photo selected")
+                    .font(CarbInTheme.reading(.footnote, size: 13, weight: .semibold))
                     .foregroundStyle(CarbInTheme.mutedInk)
-                    .frame(maxWidth: .infinity, minHeight: 70, alignment: .center)
-                    .insetControlGroup(inset: 10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             } else {
                 if dynamicTypeSize.isAccessibilitySize {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 220), spacing: 10)], alignment: .leading, spacing: 12) {
@@ -793,6 +787,8 @@ private struct AddMealView: View {
                     .scrollIndicators(.visible)
                 }
             }
+
+            nutritionLabelHeading
 
             if labelPhoto == nil {
                 labelPhotoActions
@@ -833,14 +829,24 @@ private struct AddMealView: View {
         .mealTicket()
     }
 
-    private var photoSlotSummary: some View {
+    private var nutritionLabelHeading: some View {
         let layout = dynamicTypeSize.isAccessibilitySize
-            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8))
-            : AnyLayout(HStackLayout(alignment: .top, spacing: 8))
+            ? AnyLayout(VStackLayout(alignment: .leading, spacing: 4))
+            : AnyLayout(HStackLayout(alignment: .firstTextBaseline, spacing: 8))
         return layout {
-            photoSlotStatus("Food view", count: foodPhotos.count, total: 3, kind: .foodView)
-            photoSlotStatus("Nutrition label", count: labelPhoto == nil ? 0 : 1, total: 1, kind: .nutritionLabel)
+            Text("Nutrition label")
+                .font(CarbInTheme.display(.title3, size: 19))
+            if inputSource != .demo {
+                if !dynamicTypeSize.isAccessibilitySize {
+                    Spacer(minLength: 4)
+                }
+                Text(verbatim: localizedSlotCount(labelPhoto == nil ? 0 : 1, total: 1))
+                    .font(CarbInTheme.display(.subheadline, size: 15))
+                    .monospacedDigit()
+            }
         }
+        .foregroundStyle(CarbInTheme.ink)
+        .accessibilityElement(children: .combine)
     }
 
     private func photoSlotStatus(_ title: LocalizedStringKey, count: Int, total: Int, kind: PixelKitchenIconKind) -> some View {
@@ -857,8 +863,8 @@ private struct AddMealView: View {
                 .monospacedDigit()
         }
         .foregroundStyle(CarbInTheme.ink)
-        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-        .insetControlGroup(inset: 8)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 3)
         .accessibilityElement(children: .combine)
     }
 
@@ -1178,19 +1184,21 @@ private struct AddMealView: View {
 
     private var labelCameraAction: some View {
         Button { openCamera(for: .label) } label: {
-            PixelPhotoChoiceLabel(title: "Label camera", kind: .camera)
+            PixelPhotoChoiceLabel(title: "Camera", kind: .camera)
         }
         .buttonStyle(.plain)
         .disabled(isPreparingPhoto || !CameraAccess.isAvailable)
+        .accessibilityLabel(Text(LocalizedStringKey("Label camera")))
         .accessibilityIdentifier("carbin.meal.labelCamera")
     }
 
     private var labelLibraryAction: some View {
         PhotosPicker(selection: $labelPickerItems, maxSelectionCount: 1, matching: .images) {
-            PixelPhotoChoiceLabel(title: "Add label photo", kind: .photos)
+            PixelPhotoChoiceLabel(title: "Library", kind: .photos)
         }
         .buttonStyle(.plain)
         .disabled(isPreparingPhoto)
+        .accessibilityLabel(Text(LocalizedStringKey("Add label photo")))
         .accessibilityIdentifier("carbin.meal.labelLibrary")
     }
 
@@ -1958,9 +1966,6 @@ private struct ManualCarbEntrySheet: View {
                 CountertopBackdrop()
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
-                    Text(initialComponent == nil ? "Add item" : "Adjust ingredients")
-                        .font(CarbInTheme.display(.title3, size: 19))
-                        .foregroundStyle(CarbInTheme.ink)
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Item name")
                             .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))

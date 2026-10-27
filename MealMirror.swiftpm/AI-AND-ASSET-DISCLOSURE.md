@@ -32,6 +32,8 @@ Codex also wrote a shared stepped surface shape for existing controls, cards, fo
 
 Build24 adds the UI design chat’s isolated native SwiftUI pass: shared panel/card/field/chip corner tiers, separate Camera/Photos controls within one tray, fewer nested frames, explicit manual-entry field borders, and a visible Settings word where space permits. It preserves the intrinsic-height accessibility caption fix. The original procedural Settings gear was redrawn as a regular eight-tooth object; its three exports match the handoff and the other 57 full-family PNG exports remain unchanged. These are AI-assisted source and asset changes, not evidence of complete native interaction or human comprehension acceptance.
 
+Build25 applies a further AI-assisted presentation refinement from the UI design chat: repeated Settings and item-form body headings are removed while native navigation titles and toolbar actions remain; passive photo counters and empty-state text use quieter presentation; the separate nutrition-label controls gain a visible role heading and retain full role-specific accessibility labels. Existing string keys, control identifiers, selection limits, actions, disabled rules and data/AI/storage logic are preserved. Native verification is recorded separately.
+
 ## Applicant-owned checks
 
 - Inspect the final `.swiftpm` and archive and confirm each listed AI-assisted change and asset. Update this record if the final files or project history differ.

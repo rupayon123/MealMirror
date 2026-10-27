@@ -4,24 +4,18 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 
 **Testing only. Not submission-ready or clinically validated.** No Android version, required account, server or cloud-model endpoint.
 
-## Current source candidate: 1.0 (24)
+## Current source candidate: 1.0 (25)
 
-| Artifact or check | Result |
-| --- | --- |
-| [English Challenge source ZIP](candidate/MealMirror-SSC2027.zip) | 12,269,942 bytes; 138 files; two byte-identical repacks |
-| ZIP SHA-256 | `760ac1ecb07b718a34e72e782e8499fcdd4195be714299e8d578875b1e179dbb` |
-| Pixel UI | 20 full roles + six compact roles; 52 light/dark PNGs; stepped surfaces and grouped Home/Settings rows |
-| Simulator source builds | English and full-language variants passed for arm64; incremental builds, not clean/universal |
-| Full-language integrity | All 18 catalogs/native strings match source; 488 English keys; translation/layout quality still open |
-| Outline geometry | 363 macOS SwiftUI checks pass, including the new corner tiers; not native app visual proof |
-| Internal archive/upload | Build 24 signed archive/internal-only upload passed; confirmed Testing |
-| Existing internal TestFlight group | Build 24 Testing; builds 23, 22, 19, 2 preserved; one tester |
+**Current source candidate 1.0 (25):** Quieter photo status, a visible separate nutrition-label heading, and single Settings/item-form headings are integrated while preserving the Pixel Kitchen theme and role-specific accessibility labels.
 
-The current UI uses consistent stepped corners, adaptive photo-source trays, quieter grouped surfaces, clearer entry fields and a regular-tooth Settings gear. [Source/package checks](research/visual/delivery-20261027-build24.json) and [native interaction/archive/internal-testing evidence](research/visual/native-navigation-20261027-build24.json) retain exact scope and earlier failures. One native case passed safety/help scrolling, Settings, photo-source controls, description entry and unsaved amount cancel/reopen. It did not select photos, run AI, save a review or test the physical phone. Further visual refinement and broad accessibility/offline verification remain open.
+- **Package:** English ZIP **12,270,103 bytes**, 138 files, SHA-256 `d4014d8e322299047b351c7b6575ec3f69dbeed4b898a492ee2774c262ad26b6`; two byte-identical packs and 18 matching Swift sources across English/full-language snapshots.
+- **Verified:** Both incremental arm64 Simulator builds, 18 catalogs/488 English keys, signed device archive and strict signing checks passed. The actual full-language app in English passed photo selection, separate-label OCR, real local-model names, separately typed37g, explicit confirmation, Save, relaunch, History/detail, unique QA deletion and empty relaunch. All eight media files and installed app files were preserved. A separate focused case passed readable settled label text and single Settings heading.
+- **Internal testing:** Build25 has not been uploaded. Last confirmed server status is build24 **Testing** in the existing MealMirror Internal group, one tester, with23/22/19/2 preserved. No public app release or physical installation is claimed.
+- **Open:** Physical offline, camera, multiple distinct views, other sizes/languages/accessibility, independent food recognition, recent-meal reuse/export and applicant gates. One exposed generated meal and synthetic label are not accuracy or human3minute evidence. **Not submission-ready.**
 
-The internal resource variant retains 18 languages, while the judging ZIP is English-only. All 18 Swift source bytes match; resources and binaries differ. Catalog integrity does not establish translation or native layout quality.
+[Exact source/package, native journey, preservation and limits](research/native-ui-journey/photo-label-save-20261027-build25.json).
 
-Current exact-source runtime checks exercised real Foundation Models and separate-label OCR in an isolated iOS test host; all eight narrow coordinator checks passed. The Mac command-line OCR case failed and remains recorded. [Results and limits](research/foundation-models/coordinator-host-20261027.json). Full MealMirror UI and physical offline gates remain open.
+**Previous candidate24:** [Source/package checks](research/visual/delivery-20261027-build24.json) and [navigation, retained harness failures and internal Testing receipt](research/visual/native-navigation-20261027-build24.json) remain historical evidence.
 
 ## What the app does
 
