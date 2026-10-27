@@ -479,10 +479,20 @@
     "MealMirror.swiftpm/Theme.swift": "b362cd8893732d3d219e2de6eb11df1c672f48253473b4d9502f38f2cdfb2f07"
   },
   "distribution": {
-    "build25Uploaded": false,
+    "build25Uploaded": true,
     "lastConfirmedInternalTestingBuild": "24",
     "testingOnly": true,
-    "publicAppRelease": false
+    "publicAppRelease": false,
+    "uploadMethod": "TestFlight Internal Only",
+    "organizerResult": "Uploaded with warnings",
+    "warnings": [
+      "A non-validation error occurred during validation. Skipping validation.",
+      "Account credentials have expired."
+    ],
+    "serverStatus": "Processing",
+    "internalGroup25TestingConfirmed": false,
+    "organizerProofSHA256": "494f0115e2b9c04abc245b7a11f97d1319845fb40c3817de75753063118c92da",
+    "processingProofSHA256": "fe73790224dcb9bb344ad75f46ffc8a8445170f1d4e2288c4061e6431e5af0db"
   },
   "scope": [
     "Full18-language arm64 Simulator app in English; judging ZIP English-only.18Swift sources match; resources/binaries differ.",
