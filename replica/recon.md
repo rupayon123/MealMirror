@@ -1,6 +1,8 @@
 # RxFood public recon for MealMirror
 
-Initial recon October 4, 2026; selected official RxFood pages and implementation status refreshed October 25. This is a clean-room feature map from public pages, not an account-based walkthrough or an accuracy study. Screen details that are not publicly visible are marked inferred. The goal is an original Swift Student Challenge experience for newly diagnosed people with Type 1 diabetes, children and caregivers, centered on an offline meal photo and a trustworthy review.
+Initial recon October 4, 2026; expanded public investigation and candidate-21 status refreshed October 27. This is a clean-room feature map from public pages, not an account-based walkthrough or an accuracy study. Screen details that are not publicly visible are marked inferred. The goal is an original Swift Student Challenge experience for newly diagnosed people with Type 1 diabetes, children and caregivers, centered on an offline meal photo and a trustworthy review.
+
+The [October 27 deep dive](RXFOOD-DEEP-DIVE.md), [43-capability matrix](rxfood-capabilities.csv), [sampled feedback](feedback.md) and [fix plan](fixes.md) expand this map. Two promotional frames were inspected; their example date is September 2023 and they are not a current native walkthrough. Historical packaging advertises offline mode, leaving its current scope unknown.
 
 ## Public sources
 
@@ -42,7 +44,7 @@ No reliable public screen-by-screen inventory of loading, failure, denied-permis
 
 ## What MealMirror should beat, and how to prove it
 
-1. **Offline completion:** finish the photo → honest clue or unknown → correction → saved review path in airplane mode, with no account. RxFood's public FAQ describes a connected tablet path; this is a testable product distinction, not a blanket claim that RxFood never works offline.
+1. **Offline completion:** finish the photo → honest clue or unknown → correction → saved review path in airplane mode, with no account. RxFood's public FAQ describes a connected tablet path but historical packaging lists offline mode. Current competitor coverage remains unknown; prove MealMirror's own specific behavior rather than asserting exclusivity.
 2. **Visible uncertainty:** every food and carbohydrate value shows its source; no unconfirmed image label enters a total. Evaluate this with real users and varied meals, including mixed and hidden-ingredient dishes.
 3. **Low burden and food freedom:** a child or caregiver can start with one photo, recover from an unknown result, and discuss any chosen meal without shame. Measure completion time, mistakes and comprehension, not aesthetic preference alone.
 4. **Accessibility:** verify VoiceOver, large text, reduced motion, contrast and right-to-left layouts on the actual app and final package.
@@ -54,3 +56,8 @@ The current MealMirror build has not proved superiority on recognition, nutritio
 The Challenge slice is S02/S03/S04 as an original three-minute offline experience, plus a local history and concise learning moment. Dexcom/Libre live connections, clinician networks, a comprehensive recipe library and personalized insulin dosing require online services, licensing or clinical validation outside this offline artifact. The broader product can address them in separately verified workstreams. Hard parts: reliable open-world meal recognition with abstention; medically meaningful nutrition validation; clinical-grade dosing and CGM safety. Overall size: XL for the full RxFood-like service, M/L for a carefully scoped Challenge playground.
 
 For the four-page current-source refresh, four-review thin sample and corrected Apple API implementation status, see [October25 research](../research/competitive-refresh-20261025.md). Public page claims do not establish comparative accuracy or current RxFood defects.
+
+
+## Expanded inventory and exclusions
+
+S09 recipes, S10 learning, S11 expert/AI support and S12 recent-meal reuse are advertised concepts, not newly observed native screens. S13 label/barcode and restaurant-assisted entry are user-reported; their current layouts are unknown. The promotional meal/overview frames directly show date/search, Edit, photo summary, glucose context and icon-plus-text navigation only. No loading, permission-denial, timeout or fresh offline state was operated. Original stable S01–S08 IDs are preserved. The inferred entities remain conceptual; no real vendor schema or endpoints are known.

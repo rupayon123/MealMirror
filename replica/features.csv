@@ -1,10 +1,10 @@
 feature,area,priority,original,clone,notes
-Photo-first meal entry,core,must,yes,partial,Up to three food views plus a separate label; latest full exact native photo/save/delete case is build13; current16 runtime open
+Photo-first meal entry,core,must,yes,partial,Up to three food views plus a separate label; latest full exact native photo/save/delete case is build13; current21 runtime open
 Food candidates from photo,core,must,yes,partial,Availability-gated local Foundation Models names plus Vision/manual fallback; no photo-derived amounts; qualified varied-food evaluation open
 Approximate portion from photo,core,should,yes,no,Do not infer portion without validated model and reference
 Estimated carbohydrate review,core,must,yes,partial,Local references and user values need clinical review; not photo-derived
-Edit or remove individual foods,core,must,yes,yes,MealMirror permits review correction; regression walkthrough open
-Delete whole meal,core,should,yes,yes,Exact build13 single QA save/relaunch/specific-delete journey passed; build15 protects duplicate stored IDs; current16 native verification open
+Edit or remove individual foods,core,must,yes,partial,Before-save review correction exists; saved-review item editing remains absent; current21 native regression open
+Delete whole meal,core,should,yes,yes,Exact build13 single QA save/relaunch/specific-delete journey passed; build15 protects duplicate stored IDs; current21 native verification open
 Text meal entry,core,should,yes,yes,MealMirror description/manual value path exists
 Recent meal reuse,core,could,yes,no,Potential offline speed improvement after core trust work
 SMS meal logging,service,could,yes,skip,External messaging conflicts with offline Challenge slice
@@ -16,8 +16,19 @@ GI fibre and whole-grain report,insights,could,yes,no,Clinician-facing claims; r
 Food substitutions and recipes,learning,could,yes,no,Can build original optional offline education after core flow
 Expert and AI companion,service,could,yes,skip,Requires experts/network; no fabricated medical advice
 Clinician report/portal,service,could,yes,skip,Licensed service and clinical workflow outside Challenge
-Offline no-account core loop,differentiator,must,limited,partial,Bundled local code/resources and manual recovery; exact current package physical airplane-mode test open
+Offline no-account core loop,differentiator,must,unverified,partial,FAQ describes connected workflow but historical RxExec table advertises offline mode; current competitor scope unknown; MealMirror physical offline proof open
 Source trail for every carbohydrate number,differentiator,must,unverified,partial,Review and new saved records retain item sources; older saved records may contain only a total
 Uncertain photo result with useful recovery,differentiator,must,unverified,partial,Editable tentative names and checked-amount route exist; additional error/retry and current-build usability checks open
 Accessible short child/caregiver flow,differentiator,must,unverified,partial,Need fresh multi-device visual and user checks
-Personalized insulin dose,treatment,should,no,skip,Clinical protocol validation and applicable review required before real dose output
+Personalized insulin dose,treatment,should,unverified,skip,Reviewed RxFood estimates explicitly exclude dosing; no calculator established; individualized clinical validation required for real units
+Nutrition-label capture and review,core,must,unverified,partial,RxFood user report; MealMirror separate OCR/manual entry; no automatic grams
+Barcode nutrition lookup,core,could,unverified,no,"User-reported RxFood feature; needs licensed records, not barcode recognition alone"
+Restaurant-assisted logging,core,could,unverified,no,Public reviews describe restaurant context; exact current native flow unverified
+Favourite foods or meals,core,could,unverified,no,Review complaint has developer-reported fix; current runtime unverified
+Edit saved review,core,should,yes,no,Promotional Edit control; MealMirror history currently read-only
+Personal local review export,sharing,should,unverified,no,Two sampled review observations request export; developer offers support-assisted sharing
+Custom pinned nutrient display,insights,could,unverified,no,Single review request; validate data before adding nutrient values
+Meal/calendar search,core,could,yes,no,Visible promotional search/calendar controls; actual behavior unknown
+Goals and motivation,learning,could,yes,no,Historical packaging advertises it; avoid coercive food scores
+Number-source and uncertainty comprehension,differentiator,must,unverified,partial,Require intended-user comprehension and traceable saved values
+Consistent original icon and state art,design,must,yes,partial,First UI designs proposal rejected as unclear; replacement pending; no integrated native pass

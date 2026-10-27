@@ -1,0 +1,55 @@
+{
+  "request_patterns": [],
+  "themes": [
+    {
+      "id": "account",
+      "label": "Access and invitation friction",
+      "kind": "complaint",
+      "patterns": [
+        "email",
+        "invite"
+      ]
+    },
+    {
+      "id": "reliability",
+      "label": "Favourites and availability reliability",
+      "kind": "complaint",
+      "patterns": [
+        "favourites",
+        "outages"
+      ]
+    },
+    {
+      "id": "latency",
+      "label": "Waiting during a meal",
+      "kind": "complaint",
+      "patterns": [
+        "cold"
+      ]
+    },
+    {
+      "id": "accuracy",
+      "label": "Reported nutrient mismatch",
+      "kind": "complaint",
+      "patterns": [
+        "underestimates"
+      ]
+    },
+    {
+      "id": "export",
+      "label": "Personal export control",
+      "kind": "request",
+      "patterns": [
+        "export"
+      ]
+    },
+    {
+      "id": "custom",
+      "label": "Nutrient display customization",
+      "kind": "request",
+      "patterns": [
+        "nutrients"
+      ]
+    }
+  ]
+}

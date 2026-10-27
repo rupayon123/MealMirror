@@ -1,5 +1,7 @@
 # Meal-photo diabetes apps: public feature review
 
+**October 27 expanded investigation:** Read the [full RxFood product breakdown](replica/RXFOOD-DEEP-DIVE.md), [43-capability matrix](replica/rxfood-capabilities.csv), [11-observation review sample](replica/reviews.csv) and [ordered fix plan](replica/fixes.md). These supersede incomplete scope in the older notes below. Historical RxFood packaging advertises an offline mode; current scope is unknown, so no blanket offline-exclusivity claim is supported. Current MealMirror source candidate is 21; signing, language parity and fresh UI remain open. [Research receipt](research/competitive-refresh-20261027.json).
+
 RxFood public sources refreshed October 25, 2026; other-product notes remain the October 15 snapshot. This compares public product descriptions and a small number of public user reports. It is not a hands-on product audit, a clinical assessment, or a head-to-head accuracy study. The current [RxFood recon](replica/recon.md) and [feature matrix](replica/features.csv) track the wider product separately from the Challenge slice.
 
 ## RxFood: strongest direct comparison

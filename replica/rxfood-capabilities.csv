@@ -1,0 +1,44 @@
+id,capability,rxfood_evidence_kind,source_ids,mealmirror21,priority,delivery_scope,acceptance_or_limit
+C01,Photo capture/library,vendor_claim,"P01,P02",partial,must,Challenge,Cold local photo-to-reviewed-save journey on exact current ZIP.
+C02,Multiple food views,unknown,"P01,P02",partial,must,Challenge,Three views are one meal; replacement/removal and cancellation preserve draft identity.
+C03,Separate label photograph,user_report,P07,partial,must,Challenge,Label remains separate from food model; readable OCR plus user-checked value.
+C04,Food identification,vendor_claim,"P01,P02",partial,must,Challenge,Qualified independent naming and abstention evaluation; correctable tentative names.
+C05,Photo portion estimate,vendor_claim,P02,no,should,Validation gated,Do not infer portions without validated method and adequate reference.
+C06,Estimated net carbohydrates,vendor_claim,P02,partial,must,Challenge,Current checked values and illustrative references are not validated photo estimates.
+C07,Text meal entry,vendor_claim,P01,yes,should,Challenge,Description/manual amount route works without an image or connectivity.
+C08,Recent meal reuse,vendor_claim,P01,no,should,Challenge follow-up,New editable draft; current amounts explicitly reconfirmed; original preserved.
+C09,Favourite foods/meals,user_report,P07,no,could,Product backlog,Persistence/migration and relaunch checks; no stale amount presented as current.
+C10,SMS logging,vendor_claim,P01,skip,could,Connected product,Requires external messaging; not part of required offline judging loop.
+C11,Voice entry,policy_reference_only,P09,no,could,Product backlog,Verify actual desired flow and offline language support before adding.
+C12,Barcode product lookup,user_report,P07,no,could,Licensed data,Detection alone is not a nutrition lookup; licensed dated records and portion checks.
+C13,Restaurant-assisted logging,user_report,"P01,P07",no,could,Licensed data,No invented restaurant nutrition; verify official item/portion and current source.
+C14,Remove individual food,vendor_help,P06,partial,must,Challenge,Before-save adjustment exists; saved-review individual-item editing is open.
+C15,Delete saved meal,vendor_help,P06,yes,must,Challenge,Guarded specific deletion and relaunch; corrupted files are preserved.
+C16,Edit saved meal,promotional_control,"P13,P14",no,should,Challenge follow-up,Explicit revision semantics and source/confirmation preservation.
+C17,Meal/calendar search,promotional_control,"P13,P14",no,could,Product backlog,Search/filter only saved local notes; zero records and localized query tested.
+C18,Dexcom food/glucose overlay,vendor_claim,"P02,P03",skip,should,Connected product,"Official approved access, consent, timestamps, units, freshness and gaps."
+C19,Libre connection,unverified,none,skip,should,Connected product,Vendor-supported access must be established; never claim RxFood has it.
+C20,Logged insulin events,vendor_claim,"P02,P03",skip,could,Clinical product,A recorded event is not a dose recommendation; rigorous units/privacy review.
+C21,Exercise events/wearables,vendor_claim,P03,skip,could,Connected product,Permission scope and event provenance; separate from meal inference.
+C22,Sleep/other health context,policy_reference_only,P09,no,could,Connected product,Policy category is not proof of a specific native screen or sync behavior.
+C23,Filter glucose-range periods,vendor_claim,P02,skip,could,Connected product,Freshness and period definitions reviewed; no decorative fake live chart.
+C24,Macro/micronutrient assessment,vendor_claim,"P02,P03",no,could,Nutrition validation,"Qualified database, portions and provenance before numerical claims."
+C25,GI/fibre/whole-grain insights,vendor_claim,P03,no,could,Nutrition validation,Dietitian-reviewed interpretation and content; no inference from colour alone.
+C26,Pinned nutrient customization,user_report,P07,no,could,Product backlog,First validate underlying nutrients; request is not proof of present UI limit.
+C27,Goals/motivations/diet scoring,historical_packaging,P08,no,could,Learning design,"Optional support without shame, restrictive food labels or fabricated outcomes."
+C28,Recipes and substitutions,vendor_claim,"P01,P03",no,could,Content validation,"Original/licensed, reviewed food-freedom content with clear source and date."
+C29,Education modules,vendor_claim,P01,partial,should,Challenge,Practice exists; one short reviewed learning moment and comprehension checks.
+C30,Expert support,vendor_claim,P01,skip,could,Clinical service,Actual qualified service and operations; no fabricated professional access.
+C31,AI companion,vendor_claim,P01,no,could,Product backlog,MealMirror image model is not a validated medical conversation assistant.
+C32,Clinician reports/portal,vendor_claim,"P03,P05",skip,could,Clinical service,"Secure clinician access and licensed workflow, not a mock portal."
+C33,Logging periods/reports,vendor_help,P05,no,could,Clinical service,Clear inclusion windows and status; provider requirements separate from local history.
+C34,Personal export/sharing,user_request_and_response,P07,no,should,Challenge follow-up,Local selective preview; explicit user action; no auto-send or retained photos.
+C35,Offline feature coverage,conflicting_historical_scope,"P05,P08",partial,must,Challenge,Cold launch/save/recovery without network; competitor current offline tier unknown.
+C36,Account-free local core,competitor_account_route,"P02,P04,P10",partial,must,Challenge,No account dependency in source; exact physical offline path remains open.
+C37,Number source and uncertainty trail,competitor_unknown,"P02,P13,P14",partial,must,Challenge,Trace every current/saved value; unknown legacy source remains unknown.
+C38,English/French and additional languages,vendor_declared,P01,partial,must,Challenge and testing,English judging ZIP; 18 internal catalogs need qualified language and RTL checks.
+C39,Accessibility/child-caregiver ease,current_unknown_historical_study,"P01,P11",partial,must,Challenge,"Direct VoiceOver, large text, motion and intended-user task evidence."
+C40,Retention/control/privacy,published_policy,"P09,P10",partial,must,Challenge,Local store source review plus physical security/network and selective-sharing validation.
+C41,Clinical outcomes evidence,research_links,"P11,P12",no,could,Clinical validation,Cannot transfer historical pilot findings to MealMirror or current RxFood version.
+C42,Insulin dose recommendation,not_supported_by_reviewed_claims,"P02,P09",skip,should,Individual clinical validation,Published estimates exclude dosing use; no universal or image-derived units.
+C43,Coherent icons/state illustrations,promotional_reference,"P13,P14",partial,must,Challenge,Original theme-consistent assets; current rendered hierarchy and accessibility checks.

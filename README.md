@@ -52,7 +52,7 @@ Remaining gates include dependable food naming/abstention on qualified independe
 | [Team workflow](TEAM-WORKFLOW.md) · [Stress-test plan](STRESS-TEST-PLAN.md) | Frontend/backend ownership and evidence requirements |
 | [Worldwide evaluation plan](WORLDWIDE-MEAL-EVALUATION.md) · [Recognition research](research/recognition-architecture/README.md) | Qualified data, naming/unknown failures and rejected prototypes |
 | [Foundation Models evidence](research/foundation-models/README.md) | Development results, limitations and retained failures |
-| [Competitive review](COMPETITIVE-REVIEW.md) · [REA review](replica/rea-review-20261022.md) | Public competitor evidence; no head-to-head accuracy claim |
+| [RxFood deep dive](replica/RXFOOD-DEEP-DIVE.md) · [43-capability matrix](replica/rxfood-capabilities.csv) · [Fix plan](replica/fixes.md) | Public evidence, actual gaps and proposed acceptance; no head-to-head accuracy claim |
 | [CGM plan](CGM-INTEGRATION-PLAN.md) | Vendor access limits and the separate connected product path |
 | [AI and asset disclosure](MealMirror.swiftpm/AI-AND-ASSET-DISCLOSURE.md) | Working assistance/provenance record for applicant reconciliation |
 
