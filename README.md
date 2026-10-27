@@ -4,13 +4,13 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 
 **Testing only. Not submission-ready or clinically validated.** No Android version, required account, server or cloud-model endpoint.
 
-## Current source candidate: 1.0 (27)
+## Current source candidate: 1.0 (28)
 
 **Current source candidate 1.0 (28):** Selected nutrition labels can open in a full-screen local viewer from Add Meal or Estimate. Pinch or the Larger/Smaller controls zoom from 1× to 4×; the image pans in both directions. A fixed Close header stays outside the scrolling image and stacks at accessibility text sizes. Food previews, removal, analysis, calculations and storage are unchanged.
 
 - **Package:** English ZIP **12,271,696 bytes**, 138 files, SHA-256 `a7551a36fd26c2be73bd6b3f6658b254f2e2c509bc4d1472c69254fd6534ac53`; two byte-identical packs and 18 matching Swift sources across English/full-language snapshots.
 - **Verified:** Both incremental arm64 Simulator builds, signed archive, strict signing and 18-language resource integrity passed. Native tall-label inspection passed in maximum-text/dark settings. The normal/light full photo/label journey passed both viewer entry points, pinch, zoom limits, pan, Close, separate checked amount, Save, relaunch/detail and guarded deletion. Root inspected the relevant native frames. All nine media files, installed app files and original absent history were preserved; display settings were restored. Prior app and harness failures are retained in the evidence.
-- **Internal testing:** Build 28 uploaded through TestFlight Internal Only without warnings shown. Apple reports **Processing**; build 27 remains the latest confirmed **Testing** build in the existing MealMirror Internal group. No public app release or physical installation is claimed.
+- **Internal testing:** Build 28 uploaded through TestFlight Internal Only without warnings shown. Build 28 is confirmed **Testing** in the existing MealMirror Internal group (one tester; eight builds: 28, 27, 25, 24, 23, 22, 19 and 2). No public app release or physical installation is claimed.
 - **Open:** Physical offline/camera, broader accessibility/viewport/language acceptance, independent recognition, safe meal reuse/export and applicant gates. Three new interface keys have draft non-English translations requiring review. The six-screen visual portfolio remains a proposal. **Not submission-ready.**
 
 [Exact build 28 package, native inspection cases and retained failures](research/native-ui-journey/label-inspection-20261027-build28.json). [Prior build 27 evidence](research/native-ui-journey/label-fit-20261027-build27.json).
