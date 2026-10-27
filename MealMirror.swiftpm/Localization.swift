@@ -229,12 +229,12 @@ struct LanguagePickerMenu: View {
             .foregroundStyle(CarbInTheme.ink)
             .frame(maxWidth: showsCurrentLanguage ? .infinity : nil, minHeight: 44, alignment: .leading)
             .padding(.horizontal, 12)
-            .background(CarbInTheme.ticket, in: RoundedRectangle(cornerRadius: 9, style: .continuous))
+            .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: 9))
             .overlay {
-                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 9)
                     .stroke(CarbInTheme.line.opacity(0.7), lineWidth: 1)
             }
-            .contentShape(RoundedRectangle(cornerRadius: 9, style: .continuous))
+            .contentShape(PixelRoundedRectangle(cornerRadius: 9))
         }
         .accessibilityHint(localization.text("Choose the language used throughout MealMirror."))
         .accessibilityIdentifier(accessibilityIdentifier)

@@ -24,8 +24,12 @@ struct SettingsView: View {
                     brandCard
 
                     sectionHeading("Learn")
-                    actionRow("How MealMirror works", icon: .info, identifier: "carbin.settings.how", action: onHowItWorks)
-                    actionRow("Replay the welcome guide", icon: .replay, identifier: "carbin.settings.replayOnboarding", action: onReplayOnboarding)
+                    VStack(spacing: 0) {
+                        actionRow("How MealMirror works", icon: .info, identifier: "carbin.settings.how", action: onHowItWorks)
+                        Divider().overlay(CarbInTheme.line.opacity(0.35)).padding(.horizontal, 14)
+                        actionRow("Replay the welcome guide", icon: .replay, identifier: "carbin.settings.replayOnboarding", action: onReplayOnboarding)
+                    }
+                    .workbenchSurface(inset: 0)
 
                     if localization.availableLanguages.count > 1 {
                         sectionHeading("Language")
@@ -36,9 +40,14 @@ struct SettingsView: View {
                     }
 
                     sectionHeading("Legal and safety")
-                    actionRow("Local data and deletion", icon: .history, identifier: "carbin.settings.history", action: onLocalPrivacy)
-                    actionRow("Privacy Policy", icon: .privacy, identifier: "carbin.settings.legal.privacy", action: onPrivacyPolicy)
-                    actionRow("Medical Safety", icon: .medical, identifier: "carbin.settings.legal.medical", action: onMedicalSafety)
+                    VStack(spacing: 0) {
+                        actionRow("Local data and deletion", icon: .history, identifier: "carbin.settings.history", action: onLocalPrivacy)
+                        Divider().overlay(CarbInTheme.line.opacity(0.35)).padding(.horizontal, 14)
+                        actionRow("Privacy Policy", icon: .privacy, identifier: "carbin.settings.legal.privacy", action: onPrivacyPolicy)
+                        Divider().overlay(CarbInTheme.line.opacity(0.35)).padding(.horizontal, 14)
+                        actionRow("Medical Safety", icon: .medical, identifier: "carbin.settings.legal.medical", action: onMedicalSafety)
+                    }
+                    .workbenchSurface(inset: 0)
 
                     sectionHeading("About")
                     VStack(alignment: .leading, spacing: 12) {
@@ -143,10 +152,10 @@ struct SettingsView: View {
                 }
             }
             .frame(maxWidth: .infinity, minHeight: 56, alignment: .leading)
+            .padding(14)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .workbenchSurface(inset: 14)
         .accessibilityIdentifier(identifier)
     }
 

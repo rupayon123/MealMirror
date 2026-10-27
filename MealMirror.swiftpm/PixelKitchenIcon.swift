@@ -1,95 +1,22 @@
 import SwiftUI
 
-// Small, hand-plotted utility sprites share the loading ring's 12 × 12 grid.
-// They carry no text, so every language keeps its own readable button label.
-enum PixelKitchenIconKind {
+// Original floating pixel objects; compact roles have separate drawings rather
+// than downscaled detailed art. Native appearance selects the bundled variant.
+enum PixelKitchenIconKind: String, CaseIterable {
     case camera, photos, history, info, settings, check, adjust, review
     case replay, privacy, medical, details, delete, save
     case foodView, nutritionLabel, addPhoto, removePhoto
     case reviewPendingRecord, reviewSavedRecord
 
-    var rows: [String] {
+    var assetName: String { "MMObject_" + rawValue }
+
+    var compactAssetName: String? {
         switch self {
-        case .camera:
-            ["............", "...kkkk.....", "..krrrrk....", ".krrrrrrkkkk",
-             "krrwwrrrrrrk", "krrwkkkkrrrk", "krrwkYYkrrrk", "krrwkYYkrrrk",
-             "krrwkkkkrrrk", "krrrrrrrrrrk", ".kkkkkkkkkk.", "............"]
-        case .photos:
-            ["...kkkkkkkk.", "...kwwwwwwk.", "...kwywwBBk.", "...kwwggBBk.",
-             ".kkkkkkkkkk.", ".kwwwwwwwwk.", ".kwwYwwwwwk.", ".kwwwgggwwk.",
-             ".kwggGGggwk.", ".kggGGGGggk.", ".kkkkkkkkkk.", "............"]
-        case .history:
-            ["...kkkkkk...", "...kwwwwk...", "...kwggwk...", "...kwwwwk...",
-             "...kwwwwk...", "..kkkkkkkk..", ".kggggggggk.", "kggggggggggk",
-             "kgggkkkkgggk", "kggggggggggk", ".kkkkkkkkkk.", "............"]
-        case .info:
-            ["...kkkkkk...", "..kggggggk..", ".kggggggggk.", "kgggkkkkgggk",
-             "kgggkYYkgggk", "kggggYYggggk", "kggggkkggggk", "kggggYYggggk",
-             "kggggYYggggk", ".kggggggggk.", "..kggggggk..", "...kkkkkk..."]
-        case .settings:
-            ["....kkkk....", "..kkggggkk..", ".kgggkkgggk.", "kgggkkkkgggk",
-             "kggkkwwkkggk", "kggkwYYwkggk", "kggkwYYwkggk", "kggkkwwkkggk",
-             "kgggkkkkgggk", ".kgggkkgggk.", "..kkggggkk..", "....kkkk...."]
-        case .check:
-            ["............", ".........kk.", "........kGk.", ".......kGGk.",
-             "..kk..kGGk..", ".kGGkkGGk...", "kGGGGGGk....", ".kGGGGk.....",
-             "..kGGk......", "...kk.......", "............", "............"]
-        case .adjust:
-            ["............", "...rr.......", ".kkrrkkkkkk.", "...rr.......",
-             "............", ".......GG...", ".kkkkkkGGkk.", ".......GG...",
-             "............", "..YY........", ".kYYkkkkkkk.", "..YY........"]
-        case .review:
-            ["...kkkk.....", "..kBBBBk....", ".kBwwwwBk...", "kBwwrrwwBk..",
-             "kBwwwwwwBk..", ".kBwwwwBk...", "..kBBBBk....", "...kkkkkk...",
-             ".......kYYk.", "........kYYk", ".........kYk", "..........kk"]
-        case .replay:
-            ["....kkkk....", "..kkGGGGkk..", ".kGG....GGk.", "..kr.....GGk",
-             ".krrG.....Gk", "krrrG.....Gk", ".krrG.....Gk", "..kr.....GGk",
-             "........GGk.", "....GGGGkk..", "....kkkk....", "............"]
-        case .privacy:
-            ["...kkkkkk...", "..kggggggk..", ".kggggggggk.", ".kgggkkgggk.",
-             ".kggkwwkggk.", ".kggkwwkggk.", "..kggkkggk..", "..kgkYYkgk..",
-             "...kkYYkk...", "...kgYYgk...", "....kggk....", ".....kk....."]
-        case .medical:
-            ["....kkkk....", "...kwwwwk...", "...kkkkkk...", ".kkkkkkkkkk.",
-             "krrrrrrrrrrk", "krrrrwwrrrrk", "krrwwwwwwrrk", "krrwwwwwwrrk",
-             "krrrrwwrrrrk", "krrrrrrrrrrk", ".kkkkkkkkkk.", "............"]
-        case .details:
-            ["..kkkkkk....", ".kwwwwwwk...", ".kwrrrrwk...", ".kwwwwwwk...",
-             ".kwkkkkwk...", ".kwwwwwkkk..", ".kwkkkkBwBk.", ".kwwwwkBBBk.",
-             ".kwwwwkBBBk.", ".kwwwwwkkkk.", "..kkkkkk..Yk", "...........k"]
-        case .delete:
-            ["....kkkk....", "...krrrrk...", ".kkkkkkkkkk.", ".krrrrrrrrk.",
-             "..kkkkkkkk..", "..krrrrrrk..", "..krwrrwrk..", "..krwrrwrk..",
-             "..krwrrwrk..", "..krwrrwrk..", "..krrrrrrk..", "...kkkkkk..."]
-        case .save:
-            [".kkkkkkkkkk.", "krrrrrrrrrrk", "krkkkkkkrrrk", "krkwwwwkrrrk",
-             "krkwwwwkrrrk", "krkkkkkkrrrk", "krrrrrrrrrrk", "krkkkkkkkkrk",
-             "krkwwwwwwkrk", "krkwwwwwwkrk", "krkkkkkkkkrk", ".kkkkkkkkkk."]
-        case .foodView:
-            ["....kkkk....", "..kkwwwwkk..", ".kwwwwwwwwk.", ".kwYYwwwwwk.",
-             "kwwYYYwrrwwk", "kwwYYYwrrwwk", "kwwwYYwrgwwk", ".kwwwgggwwk.",
-             ".kwwwwwwwwk.", "..kkwwwwkk..", "....kkkk....", "............"]
-        case .nutritionLabel:
-            ["..kkkkkkkk..", ".kwwwwwwwwk.", ".kwrrrrrrwk.", ".kwwwwwwwwk.",
-             ".kwkkkkkkwk.", ".kwwwwwwwwk.", ".kwkkkkwkwk.", ".kwwwwwwwwk.",
-             ".kwkkkkkkwk.", ".kwkwkwkkwk.", ".kwwwwwwwwk.", "..kkkkkkkk.."]
-        case .addPhoto:
-            [".kkkkkkkk...", "kBBBBBBBBk..", "kBBBBBBYBk..", "kBBBBBBYBk..",
-             "kBBBBBBBBk..", "kBBgBBBBBk..", "kwgwgwwgwk..", "kgwwwggwkkk.",
-             "kggggggkGwGk", "kggggggkwwwk", ".kkkkkkkGwGk", "........kkk."]
-        case .removePhoto:
-            [".kkkkkkkk...", "kBBBBBBBBk..", "kBBBBBBYBk..", "kBBBBBBYBk..",
-             "kBBBBBBBBk..", "kBBgBBBBBk..", "kwgwgwwgwk..", "kgwwwggwkkk.",
-             "kggggggkrwrk", "kggggggkwrwk", ".kkkkkkkrwrk", "........kkk."]
-        case .reviewPendingRecord:
-            ["..kkkkkk....", ".kwwwwwwk...", ".kwrrrrwk...", ".kwwwwwwk...",
-             ".kwkkkkwk...", ".kwwwwwkkk..", ".kwkkkkBwBk.", ".kwwwwkBBBk.",
-             ".kwwwwkBBBk.", ".kwwwwwkkkk.", "..kkkkkk..Yk", "...........k"]
-        case .reviewSavedRecord:
-            ["..kkkkkk....", ".kwwwwwwk...", ".kwrrrrwk...", ".kwwwwwwk...",
-             ".kwkkkkwk...", ".kwwwwwkkk..", ".kwkkkkgggk.", ".kwwwkgggggk",
-             ".kwwwkwgggwk", ".kwwwkgwgwgk", "..kkkkkgwgk.", ".......kkk.."]
+        case .camera, .photos, .foodView, .nutritionLabel,
+             .reviewPendingRecord, .reviewSavedRecord:
+            assetName + "_compact"
+        default:
+            nil
         }
     }
 }
@@ -98,51 +25,27 @@ struct PixelKitchenIcon: View {
     let kind: PixelKitchenIconKind
 
     var body: some View {
-        Canvas { context, size in
-            let cell = min(size.width, size.height) / 12
-            for (rowIndex, row) in kind.rows.enumerated() {
-                for (columnIndex, symbol) in row.enumerated() where symbol != "." {
-                    let rect = CGRect(
-                        x: CGFloat(columnIndex) * cell,
-                        y: CGFloat(rowIndex) * cell,
-                        width: cell,
-                        height: cell
-                    )
-                    context.fill(Path(rect), with: .color(color(for: symbol)))
-                }
-            }
+        GeometryReader { geometry in
+            let side = min(geometry.size.width, geometry.size.height)
+            let asset = side < 32 ? (kind.compactAssetName ?? kind.assetName) : kind.assetName
+            Image(asset)
+                .resizable()
+                .interpolation(.none)
+                .scaledToFit()
+                .frame(width: geometry.size.width, height: geometry.size.height)
         }
         .accessibilityHidden(true)
     }
-
-    private func color(for symbol: Character) -> Color {
-        switch symbol {
-        case "k": Color(red: 0.196, green: 0.118, blue: 0.165)
-        case "r": Color(red: 0.804, green: 0.239, blue: 0.282)
-        case "w": Color(red: 1.000, green: 0.980, blue: 0.898)
-        case "Y": Color(red: 1.000, green: 0.796, blue: 0.243)
-        case "y": Color(red: 0.929, green: 0.620, blue: 0.125)
-        case "g": Color(red: 0.137, green: 0.482, blue: 0.286)
-        case "G": Color(red: 0.333, green: 0.733, blue: 0.369)
-        case "B": Color(red: 0.380, green: 0.725, blue: 0.780)
-        default: .clear
-        }
-    }
 }
 
+// Kept as a call-site wrapper; the artwork floats without another badge border.
 struct PixelKitchenIconBadge: View {
     let kind: PixelKitchenIconKind
     var size: CGFloat = 44
 
     var body: some View {
         PixelKitchenIcon(kind: kind)
-            .frame(width: size - 8, height: size - 8)
             .frame(width: size, height: size)
-            .background(Color(red: 1.000, green: 0.980, blue: 0.898), in: RoundedRectangle(cornerRadius: 6))
-            .overlay {
-                RoundedRectangle(cornerRadius: 6)
-                    .stroke(CarbInTheme.line, lineWidth: 2)
-            }
             .accessibilityHidden(true)
     }
 }
@@ -156,7 +59,7 @@ struct PixelKitchenActionLabel: View {
             Text(title)
                 .fixedSize(horizontal: false, vertical: true)
         } icon: {
-            PixelKitchenIconBadge(kind: kind, size: 32)
+            PixelKitchenIconBadge(kind: kind, size: 40)
         }
     }
 }

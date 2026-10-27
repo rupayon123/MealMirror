@@ -1,5 +1,7 @@
 # MealMirror verification and stress-test plan
 
+**Current candidate 1.0 (22):** First native-source integration of the floating pixel UI: 20 full icon roles plus six compact roles, 52 light/dark PNGs, shared stepped surfaces, grouped Home/Settings rows and clipped safety accents. The English ZIP is **12,269,540 bytes**, 138 files, SHA-256 `5ed5aad7ac090b4623172e171487c0bce95bd62ba3e17fbe9be149aeafbbbc2d`; two repacks are byte-identical. All 18 Swift source files match the full-language snapshot. Both arm64 Simulator builds passed (incremental, not clean); all 18 catalogs and 487 English keys match source. The same 243 geometry checks passed after an unpublished outline prototype failed 20, and all 78 source artwork PNGs reproduce exactly. Engine, AI prompts, storage and string catalogs are unchanged. Native visual/accessibility/physical offline checks, build-22 archive and upload remain open. Build 21 is the last verified signed archive; its upload failed for Xcode account access. Build 19 remains confirmed Testing in the existing internal group. **Not submission-ready.** [Build-22 evidence](research/visual/delivery-20261027-build22.json) · [Artwork/source](design/pixel-kitchen/README.md).
+
 October 25, 2026. This is a coverage plan, not a passing result. Read [current readiness](CHALLENGE-READINESS.md) for actual evidence. Tests run in bounded, recorded batches; never use unlimited retries or an open-ended model loop.
 
 | Layer / owner | Cases to cover | Required evidence |

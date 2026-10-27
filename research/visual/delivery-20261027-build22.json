@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "baselineMain": "f65eff93c8ecc5377b3bcc08948e0e93069d70af",
+  "build": "22",
+  "candidate": {
+    "build": "22",
+    "bytes": 12269540,
+    "sha256": "5ed5aad7ac090b4623172e171487c0bce95bd62ba3e17fbe9be149aeafbbbc2d",
+    "files": 138,
+    "sourceFilesInternal": 172,
+    "matchingSwiftSources": 18,
+    "imageSets": 26,
+    "iconPNGs": 52,
+    "englishOnly": true,
+    "twoRepackIdentical": true,
+    "documentedResourceTransformsVerified": 2,
+    "otherPackagedFileHashesMatchRoot": 136,
+    "identities": {
+      "english": {
+        "binaries": {
+          "MealMirror": {
+            "architectures": [
+              "arm64"
+            ],
+            "sha256": "be5355088ef6f4e11ca6e4a9a89b8386729aede08fbaf4d9357b299d888d501b"
+          },
+          "MealMirror.debug.dylib": {
+            "architectures": [
+              "arm64"
+            ],
+            "sha256": "bb409feb1cd3a3f07274fa0ead3e9c627a3c6e039feff4d80f2c39631af1677d"
+          }
+        },
+        "assetCatalogSHA256": "e7c6fa8ef2a61f6a971636ea5300697d42bbc2f0c4a9381b687292ce6f6d9baa",
+        "build": "22"
+      },
+      "internal": {
+        "binaries": {
+          "MealMirror": {
+            "architectures": [
+              "arm64"
+            ],
+            "sha256": "209941fbbaa1cd357f9da4643c64bb8e62c90806798b523f74a96dd3655d7ae9"
+          },
+          "MealMirror.debug.dylib": {
+            "architectures": [
+              "arm64"
+            ],
+            "sha256": "f577de71314fc091b32e5d6c67b8c554a42cbf20b923d2f6a3bf5fb85f3cb52b"
+          }
+        },
+        "assetCatalogSHA256": "e7c6fa8ef2a61f6a971636ea5300697d42bbc2f0c4a9381b687292ce6f6d9baa",
+        "build": "22"
+      }
+    }
+  },
+  "stages": {
+    "parse": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 4.773,
+      "limitSeconds": 30,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    },
+    "package": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 6.183,
+      "limitSeconds": 60,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    },
+    "build": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 181.151,
+      "limitSeconds": 600,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    },
+    "internal-build": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 390.803,
+      "limitSeconds": 600,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    },
+    "internal-locales": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 2.375,
+      "limitSeconds": 90,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    },
+    "full-render": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.652,
+      "limitSeconds": 30,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    },
+    "compact-render": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.326,
+      "limitSeconds": 30,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    }
+  },
+  "localizations": {
+    "build": "22",
+    "languages": [
+      "ar",
+      "bn",
+      "en",
+      "es",
+      "fa",
+      "fil",
+      "fr",
+      "gu",
+      "hi",
+      "hu",
+      "ja",
+      "ko",
+      "pa",
+      "pt",
+      "ta",
+      "ur",
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "languageCount": 18,
+    "englishKeyCount": 487,
+    "sourceCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "builtCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "passed": true,
+    "errors": [],
+    "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+  },
+  "geometry": {
+    "rejectedUnpublishedPrototype": {
+      "checks": 243,
+      "failed": 20,
+      "cause": "Path.addLines replaced the intended initial move; the closed path cut diagonally across the top."
+    },
+    "fixed": {
+      "checks": 243,
+      "failures": [],
+      "passed": true,
+      "scope": "Exact extracted SwiftUI shape geometry on macOS; no iOS visual, text/layout, accessibility or human comprehension acceptance."
+    },
+    "fix": "Explicit addLine calls preserve the starting point. Same unchanged243checks passed.",
+    "scope": "Source-extracted SwiftUI geometry on macOS only; not rendered iOS app, content layout or accessibility acceptance."
+  },
+  "assets": {
+    "expectedImages": 78,
+    "mismatches": [],
+    "passed": true,
+    "scope": "Portable original generators reproduced exact pixel assets; no app UI/comprehension acceptance."
+  },
+  "unchangedCoreSources": [
+    "Models.swift",
+    "MealAnalysisEngine.swift",
+    "LocalPhotoAI.swift",
+    "PhotoCluePolicy.swift",
+    "MealCore/MealModels.swift",
+    "MealCore/PhotoNamePolicy.swift",
+    "NavigationCore/AppNavigationState.swift"
+  ],
+  "literalAccessibilityIdentifierCountsUnchanged": {
+    "ContentView.swift": 40,
+    "AppShell.swift": 6,
+    "LegalViews.swift": 0,
+    "Localization.swift": 0
+  },
+  "staticReview": {
+    "initialPeerFindings": [
+      "Square safety callouts",
+      "Home/Settings separate cards instead of grouped rows",
+      "Secondary symbol backplates"
+    ],
+    "addressedInSource": true,
+    "followupPeerAcceptance": false,
+    "nativeAcceptance": false
+  },
+  "verifierCorrection": {
+    "failure": "Assertion expected every English packaged file to equal multilingual root bytes",
+    "cause": "Verifier wrongly included documented Info.plist/app_strings English transformations in byte-identical shared-file predicate",
+    "scope": "Verification-script error; repack equality passed before assertion. No app source, ZIP bytes or acceptance predicate changed."
+  },
+  "evidenceHashes": {
+    "VERIFICATION.json": "9decba1abf552d8ed4a5e31c50de1811ea89582ac2da5773902382f7d34f6200",
+    "SOURCE-MANIFEST.json": "c0217f216bb82de7526c65fe220961b4a9d469355a9a5a492af9e5ba69f48afb",
+    "INTERNAL-SOURCE-MANIFEST.json": "b09c3facf34bd74eb0682ec8ea3c88f2f29704a8cf313822fb16ae8f8456d3c1",
+    "build.json": "5b3e6ead93d6014699b489a88de09a2b0a33fa50f6dae9c9a029bdf7dd3dae25",
+    "internal-build.json": "1bea118b5cf6febf484b59b5b1ed61ba44068916c2531c9c6686df3455c340e3",
+    "internal-locales-report.json": "d4a7a076c3dd4fed9c1f73954bbcc5ce0644976546ee5fa43245672466874433",
+    "ASSET-REPRODUCTION.json": "770fdb6da5fca9dffd33b313d75c0124c50981e46a6d6776709b0c0a45b26026"
+  },
+  "limits": [
+    "Incremental arm64 Simulator builds reused prior DerivedData; no clean/universal build claim.",
+    "Build22 has no signed device archive, upload, installation, rendered native UI or physical offline validation.",
+    "Full-language source build is separate from English-only Challenge ZIP;18Swift source bytes match, resources/binaries differ.",
+    "Actual recognition, OCR recovery, translation quality, VoiceOver, RTL, large-text layouts and human comprehension remain open.",
+    "Build21 signed archive remains historical; its internal upload failed70. Build19 remains last confirmed existing-group Testing. No App Store/public beta/release action."
+  ]
+}

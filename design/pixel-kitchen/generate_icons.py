@@ -1,8 +1,8 @@
-"""Original MealMirror pixel icon studies. 48px master, nearest-neighbour exports."""
+"""Original floating MealMirror objects: 48px masters and light/dark 3x PNGs."""
 from pathlib import Path
 import os
 import json
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 OUT = Path(os.environ.get('MEALMIRROR_ICON_OUT', str(Path(__file__).resolve().parent/'icons')))
 OUT.mkdir(parents=True, exist_ok=True)
@@ -19,49 +19,37 @@ C = {
     'slate':'#637593', 'slate_hi':'#B5CCDC', 'slate_lo':'#38455E',
 }
 
-PALETTES = {
-    'coral':('red_hi','red','red_lo'),
-    'sky':('blue_hi','blue','blue_lo'),
-    'gold':('yellow_hi','yellow','orange_lo'),
-    'mint':('mint_hi','mint','mint_lo'),
-    'violet':('violet_hi','violet','violet_lo'),
-    'pink':('pink_hi','pink','pink_lo'),
-    'orange':('orange_hi','orange','orange_lo'),
-    'slate':('slate_hi','slate','slate_lo'),
-}
-
 def rgb(x): return C.get(x,x)
 
 class Sprite:
     def __init__(self, palette):
         self.im = Image.new('RGBA',(48,48),(0,0,0,0))
         self.d = ImageDraw.Draw(self.im)
-        self.tile(palette)
+        # The object stands alone. Colour belongs to the object, not a square tile.
     def box(self, xy, c): self.d.rectangle(xy, fill=rgb(c))
     def poly(self, xy, c): self.d.polygon(xy, fill=rgb(c))
     def ellipse(self, xy, c): self.d.ellipse(xy, fill=rgb(c))
     def line(self, xy, c, w=1): self.d.line(xy, fill=rgb(c), width=w, joint='curve')
-    def tile(self, palette):
-        hi, mid, lo = PALETTES[palette]
-        # Square, stepped rim and a deliberate lower-right hard shadow.
-        self.poly([(5,3),(42,3),(42,5),(45,5),(45,40),(43,40),(43,44),(6,44),(6,42),(3,42),(3,6),(5,6)],'deep')
-        self.poly([(6,6),(41,6),(41,8),(43,8),(43,39),(41,39),(41,41),(7,41),(7,39),(5,39),(5,8),(6,8)],mid)
-        self.box((7,7,40,11),hi)
-        self.box((7,12,40,34),mid)
-        self.box((7,35,40,39),lo)
-        self.box((8,8,25,9),'white')
-        self.box((8,10,10,15),hi)
-        self.box((37,14,39,32),lo)
-        self.box((11,41,39,43),'deep')
-        self.box((43,11,45,38),'deep')
-        self.box((8,39,12,40),hi)
     def glint(self, x=12,y=12):
         self.box((x,y,x+3,y+1),'white')
         self.box((x,y+2,x+1,y+3),'white')
     def export(self, name):
-        self.im.save(OUT/f'{name}-48.png')
-        self.im.resize((144,144),Image.Resampling.NEAREST).save(OUT/f'{name}-144.png')
-        return self.im
+        bounds=self.im.getchannel('A').getbbox()
+        if not bounds: raise ValueError(name)
+        art=self.im.crop(bounds)
+        scale=min(40/art.width,40/art.height)
+        size=(max(1,round(art.width*scale)),max(1,round(art.height*scale)))
+        art=art.resize(size,Image.Resampling.NEAREST)
+        master=Image.new('RGBA',(48,48),(0,0,0,0))
+        master.alpha_composite(art,((48-size[0])//2,(48-size[1])//2))
+        master.save(OUT/f'{name}-48.png')
+        master.resize((144,144),Image.Resampling.NEAREST).save(OUT/f'{name}-144.png')
+        alpha=master.getchannel('A').filter(ImageFilter.MaxFilter(3))
+        dark=Image.new('RGBA',(48,48),'#FFF1DB')
+        dark.putalpha(alpha)
+        dark.alpha_composite(master)
+        dark.resize((144,144),Image.Resampling.NEAREST).save(OUT/f'{name}-dark-144.png')
+        return master
 
 def camera(p='coral'):
     s=Sprite(p)
@@ -116,17 +104,18 @@ def history():
     s=Sprite('mint')
     s.ellipse((9,10,38,39),'deep');s.ellipse((12,13,35,36),'yellow')
     s.ellipse((15,16,32,33),'cream');s.box((22,18,24,25),'ink')
-    s.box((23,24,29,26),'ink');s.box((21,23,25,27),'red')
+    s.box((23,24,30,26),'ink');s.box((22,23,25,27),'red')
     s.box((21,15,25,16),'white');s.box((32,23,34,25),'orange_lo')
     s.box((22,32,24,34),'orange_lo');s.glint(14,15);return s
 
 def review():
     s=Sprite('sky')
-    s.box((10,12,30,36),'deep');s.box((12,14,28,33),'cream')
-    s.box((14,17,25,18),'slate');s.box((14,21,23,22),'slate');s.box((14,25,21,26),'slate')
-    s.ellipse((23,22,38,37),'deep');s.ellipse((25,24,35,34),'blue_hi')
-    s.ellipse((28,27,32,31),'white');s.line([(36,35),(40,39)],'deep',4)
-    s.line([(36,35),(39,38)],'yellow',2);s.glint(13,15);return s
+    s.box((11,13,35,38),'deep');s.box((13,15,33,35),'cream')
+    s.box((17,10,29,17),'deep');s.box((19,12,27,15),'blue_hi')
+    s.poly([(16,26),(21,21),(27,20),(32,26),(27,31),(21,31)],'deep')
+    s.poly([(18,26),(22,23),(27,22),(30,26),(26,29),(22,29)],'white')
+    s.ellipse((22,23,27,28),'blue');s.ellipse((24,24,26,26),'deep')
+    s.box((16,33,29,34),'slate');s.glint(14,17);return s
 
 def save():
     s=Sprite('pink')
@@ -147,11 +136,24 @@ def privacy():
     s.box((22,25,24,27),'ink');s.box((14,16,16,23),'white');return s
 
 def settings():
-    s=Sprite('violet')
-    for xy in [(21,10,27,37),(10,21,37,27),(14,14,33,33)]:s.box(xy,'deep')
-    s.ellipse((13,13,34,34),'deep');s.ellipse((16,16,31,31),'slate_hi')
-    s.ellipse((20,20,27,27),'deep');s.ellipse((22,22,25,25),'yellow')
-    s.box((17,16,20,17),'white');s.box((14,23,15,26),'violet_hi')
+    s=Sprite('slate')
+    # Eight stepped teeth and a hollow hub keep this unmistakably a gear.
+    outer=[(20,6),(28,6),(29,11),(33,12),(37,9),(42,15),(38,19),(40,21),
+           (45,21),(45,28),(40,28),(38,31),(42,35),(36,41),(32,37),
+           (29,39),(28,44),(20,44),(19,39),(16,37),(12,41),(6,35),
+           (10,31),(8,28),(3,28),(3,21),(8,21),(10,18),(6,15),
+           (12,9),(16,12),(19,11)]
+    s.poly(outer,'deep')
+    inner=[(21,9),(27,9),(28,14),(32,15),(36,12),(39,15),(35,19),
+           (37,23),(42,23),(42,26),(37,26),(35,30),(39,35),(36,38),
+           (31,34),(27,37),(26,41),(22,41),(21,37),(16,34),(12,38),
+           (9,35),(13,30),(11,26),(6,26),(6,23),(11,23),(13,19),
+           (9,15),(12,12),(16,15),(20,14)]
+    s.poly(inner,'blue')
+    s.poly([(12,14),(16,16),(21,12),(27,12),(31,16),(35,14),(32,18),
+            (34,22),(30,19),(25,16),(19,18),(15,21)],'blue_hi')
+    s.ellipse((16,16,32,32),'deep');s.ellipse((19,19,29,29),'slate_hi')
+    s.ellipse((22,22,26,26),'cream');s.box((19,17,22,18),'white')
     return s
 
 def info():
@@ -163,12 +165,12 @@ def info():
 
 def replay():
     s=Sprite('mint')
-    s.ellipse((12,13,36,37),'deep');s.ellipse((16,17,32,33),'mint')
-    s.box((18,14,29,17),'cream');s.box((31,19,34,28),'cream')
-    s.box((20,33,29,36),'yellow');s.box((13,22,16,29),'yellow')
-    s.poly([(10,17),(21,11),(20,23)],'deep')
-    s.poly([(13,17),(19,14),(19,20)],'yellow_hi')
-    s.box((30,31,32,33),'cream');return s
+    s.d.arc((10,10,37,38),45,317,fill=rgb('deep'),width=9)
+    s.d.arc((13,13,34,35),45,317,fill=rgb('mint'),width=4)
+    s.poly([(37,9),(40,24),(26,18)],'deep')
+    s.poly([(36,13),(37,20),(31,17)],'yellow_hi')
+    s.box((12,20,14,24),'mint_hi')
+    return s
 
 def medical():
     s=Sprite('coral')
@@ -243,20 +245,26 @@ NAMES = {
 
 def main():
     icons={k: maker().export(k) for k,maker in MAKERS.items()}
-    atlas=Image.new('RGB',(1200,1220),'#221B29');d=ImageDraw.Draw(atlas)
     try:
         font=ImageFont.truetype(str(Path(__file__).resolve().parents[2]/'MealMirror.swiftpm/Fonts/Nunito.ttf'),22)
         head=ImageFont.truetype(str(Path(__file__).resolve().parents[2]/'MealMirror.swiftpm/Fonts/PixelifySans.ttf'),44)
     except OSError: font=ImageFont.load_default();head=font
-    d.text((42,24),'PIXEL KITCHEN / ICON FAMILY',font=head,fill='#FFF1DB')
-    d.text((44,83),'Original MealMirror concepts  •  48-pixel masters  •  source labels remain essential',font=font,fill='#CDBFD1')
-    for i,(k,im) in enumerate(icons.items()):
-        x=42+(i%5)*232;y=144+(i//5)*260
-        d.rounded_rectangle((x,y,x+215,y+238),radius=12,fill='#FFF7E2')
-        d.rounded_rectangle((x+2,y+2,x+213,y+236),radius=11,outline='#846675',width=2)
-        atlas.paste(im.resize((156,156),Image.Resampling.NEAREST),(x+30,y+16),im.resize((156,156),Image.Resampling.NEAREST))
-        d.text((x+14,y+187),NAMES[k],font=font,fill='#32202C')
-    atlas.save(OUT.parent/'pixel-kitchen-icon-atlas.png')
+    for dark in (False,True):
+        atlas=Image.new('RGB',(1200,1220),'#211B27' if dark else '#FFF6D8');d=ImageDraw.Draw(atlas)
+        ink='#FFF1DB' if dark else '#32202C'
+        muted='#DBC9D1' if dark else '#6A4C50'
+        d.text((42,24),'PIXEL KITCHEN / ICON FAMILY',font=head,fill=ink)
+        d.text((44,83),'Original objects  •  no icon backplates  •  visible labels',font=font,fill=muted)
+        for row in range(1,4):
+            y=136+row*260
+            d.line((42,y,1158,y),fill='#6F5868' if dark else '#D4B8A7',width=2)
+        for i,(k,im) in enumerate(icons.items()):
+            x=42+(i%5)*232;y=144+(i//5)*260
+            if dark:im=Image.open(OUT/f'{k}-dark-144.png')
+            else:im=im.resize((144,144),Image.Resampling.NEAREST)
+            atlas.paste(im,(x+35,y+19),im)
+            d.text((x+13,y+184),NAMES[k],font=font,fill=ink)
+        atlas.save(OUT.parent/('pixel-kitchen-icon-atlas-dark.png' if dark else 'pixel-kitchen-icon-atlas.png'))
     semantics={k:{'label':NAMES[k],'asset':f'{k}-144.png','master':f'{k}-48.png','role':'status' if k in ('foodView','nutritionLabel','reviewPendingRecord','reviewSavedRecord') else 'action','visible_text_required':True} for k in icons}
     (OUT/'icon-map.json').write_text(json.dumps(semantics,indent=2)+'\n')
     print(len(icons), 'icons at',OUT)

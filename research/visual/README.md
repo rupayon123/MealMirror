@@ -1,0 +1,7 @@
+# Pixel UI source verification
+
+Build 22 integrates 20 full floating-object roles and six separate compact roles, with 52 light/dark PNGs, grouped Home/Settings rows and shared stepped surfaces. See the [delivery receipt](delivery-20261027-build22.json), [asset source/provenance](../../design/pixel-kitchen/README.md), and current readiness.
+
+An unpublished outline prototype compiled but failed 20 of 243 source-derived geometry checks. Path inspection showed that `addLines` replaced the intended initial move; closing the path cut across its top. Explicit `addLine` calls fixed it, and the same 243 checks passed. [Rejected prototype](PixelSurfaceAddLinesBaseline.swift) and [fixed probe](PixelSurfaceGeometryChecks.swift) are standalone macOS SwiftUI checks; compile one at a time with `xcrun swiftc -swift-version 6 -parse-as-library FILE.swift -o /absolute/new/probe`, then run it. The prototype intentionally exits 1. Neither file is part of the app/ZIP.
+
+The tests check bounds, center/outside containment, a closed contour, stepped segments, mirror symmetry and inset/empty geometry. They do not prove native text layout, small-icon comprehension, dark appearance, accessibility, iPad/phone rendering, clinical performance or device operation. English/full-language source builds passed; current native runtime checks remain open after the retained Simulator readiness failures. No production source test failure was converted into a pass.

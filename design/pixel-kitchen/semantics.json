@@ -3,13 +3,17 @@
   "status": "Original design concept; native app not integrated",
   "master_grid": "48 x 48 pixels",
   "exports": {
-    "master": "48 x 48 PNG",
-    "retina": "144 x 144 PNG, nearest-neighbor 3x"
+    "master": "48 x 48 transparent PNG",
+    "retina": "144 x 144 transparent PNG, nearest-neighbor 3x",
+    "dark": "144 x 144 PNG with a one-pixel cream silhouette edge",
+    "compact": "Separate 24 x 24 transparent master and 72 x 72 3x PNG for six small roles"
   },
   "use": {
+    "icon_backplates": "None. The object floats directly on the surrounding surface.",
+    "surface_geometry": "Use stepped rounded pixel corners on cards, grouped rows, controls and buttons in both appearances.",
     "primary_icon_size": "48 pt in major photo/action cards",
     "row_icon_size": "32–40 pt when the row remains legible",
-    "small_role_size": "Prefer text-only below 32 pt; make a separate compact variant before use at 24 pt",
+    "small_role_size": "Use the separate 24-pixel compact drawing where needed, not the scaled 48-pixel master",
     "minimum_touch_target": "44 x 44 pt",
     "label_rule": "Visible localized text is required; VoiceOver announces the parent action/status, not the decorative image",
     "photo_rule": "Images never prove an ingredient, portion, carbohydrate amount, OCR accuracy, or dose"
@@ -23,8 +27,12 @@
       "visual_object": "Camera body and blue lens",
       "placement": "photo source",
       "asset_3x": "icons/camera-144.png",
+      "asset_dark_3x": "icons/camera-dark-144.png",
       "asset_master": "icons/camera-48.png",
-      "accessible_label_required": true
+      "accessible_label_required": true,
+      "compact_master": "icons/compact/camera-24.png",
+      "compact_3x": "icons/compact/camera-72.png",
+      "compact_dark_3x": "icons/compact/camera-dark-72.png"
     },
     "photos": {
       "display_label": "Library",
@@ -34,8 +42,12 @@
       "visual_object": "Overlapping landscape photos",
       "placement": "photo source",
       "asset_3x": "icons/photos-144.png",
+      "asset_dark_3x": "icons/photos-dark-144.png",
       "asset_master": "icons/photos-48.png",
-      "accessible_label_required": true
+      "accessible_label_required": true,
+      "compact_master": "icons/compact/photos-24.png",
+      "compact_3x": "icons/compact/photos-72.png",
+      "compact_dark_3x": "icons/compact/photos-dark-72.png"
     },
     "history": {
       "display_label": "Local history",
@@ -45,6 +57,7 @@
       "visual_object": "Yellow clock face",
       "placement": "home and history",
       "asset_3x": "icons/history-144.png",
+      "asset_dark_3x": "icons/history-dark-144.png",
       "asset_master": "icons/history-48.png",
       "accessible_label_required": true
     },
@@ -56,6 +69,7 @@
       "visual_object": "Information mark in cream disc",
       "placement": "home and settings",
       "asset_3x": "icons/info-144.png",
+      "asset_dark_3x": "icons/info-dark-144.png",
       "asset_master": "icons/info-48.png",
       "accessible_label_required": true
     },
@@ -67,6 +81,7 @@
       "visual_object": "Gear with a warm centre",
       "placement": "home header",
       "asset_3x": "icons/settings-144.png",
+      "asset_dark_3x": "icons/settings-dark-144.png",
       "asset_master": "icons/settings-48.png",
       "accessible_label_required": true
     },
@@ -78,6 +93,7 @@
       "visual_object": "Check inside a cream disc",
       "placement": "how-it-works step only unless user has confirmed",
       "asset_3x": "icons/check-144.png",
+      "asset_dark_3x": "icons/check-dark-144.png",
       "asset_master": "icons/check-48.png",
       "accessible_label_required": true
     },
@@ -89,6 +105,7 @@
       "visual_object": "Clipboard with a yellow pencil",
       "placement": "review and item editor",
       "asset_3x": "icons/adjust-144.png",
+      "asset_dark_3x": "icons/adjust-dark-144.png",
       "asset_master": "icons/adjust-48.png",
       "accessible_label_required": true
     },
@@ -97,9 +114,10 @@
       "semantic_role": "Action",
       "intended_meaning": "Open review of possible clues",
       "suggested_accessibility_label": "Review possible food clues",
-      "visual_object": "Paper with a blue magnifier",
+      "visual_object": "Clipboard with an eye",
       "placement": "review",
       "asset_3x": "icons/review-144.png",
+      "asset_dark_3x": "icons/review-dark-144.png",
       "asset_master": "icons/review-48.png",
       "accessible_label_required": true
     },
@@ -111,6 +129,7 @@
       "visual_object": "Circular arrow with arrowhead",
       "placement": "review and settings",
       "asset_3x": "icons/replay-144.png",
+      "asset_dark_3x": "icons/replay-dark-144.png",
       "asset_master": "icons/replay-48.png",
       "accessible_label_required": true
     },
@@ -122,6 +141,7 @@
       "visual_object": "Shield with a lock",
       "placement": "welcome and settings",
       "asset_3x": "icons/privacy-144.png",
+      "asset_dark_3x": "icons/privacy-dark-144.png",
       "asset_master": "icons/privacy-48.png",
       "accessible_label_required": true
     },
@@ -133,6 +153,7 @@
       "visual_object": "First-aid case with red cross",
       "placement": "settings",
       "asset_3x": "icons/medical-144.png",
+      "asset_dark_3x": "icons/medical-dark-144.png",
       "asset_master": "icons/medical-48.png",
       "accessible_label_required": true
     },
@@ -144,6 +165,7 @@
       "visual_object": "Paper with magnifier",
       "placement": "history",
       "asset_3x": "icons/details-144.png",
+      "asset_dark_3x": "icons/details-dark-144.png",
       "asset_master": "icons/details-48.png",
       "accessible_label_required": true
     },
@@ -155,6 +177,7 @@
       "visual_object": "Red-lidded trash bin",
       "placement": "history",
       "asset_3x": "icons/delete-144.png",
+      "asset_dark_3x": "icons/delete-dark-144.png",
       "asset_master": "icons/delete-48.png",
       "accessible_label_required": true
     },
@@ -166,6 +189,7 @@
       "visual_object": "Pink storage disk",
       "placement": "review",
       "asset_3x": "icons/save-144.png",
+      "asset_dark_3x": "icons/save-dark-144.png",
       "asset_master": "icons/save-48.png",
       "accessible_label_required": true
     },
@@ -177,8 +201,12 @@
       "visual_object": "Food on a cream plate",
       "placement": "selected photo role",
       "asset_3x": "icons/foodView-144.png",
+      "asset_dark_3x": "icons/foodView-dark-144.png",
       "asset_master": "icons/foodView-48.png",
-      "accessible_label_required": true
+      "accessible_label_required": true,
+      "compact_master": "icons/compact/foodView-24.png",
+      "compact_3x": "icons/compact/foodView-72.png",
+      "compact_dark_3x": "icons/compact/foodView-dark-72.png"
     },
     "nutritionLabel": {
       "display_label": "Nutrition label",
@@ -188,8 +216,12 @@
       "visual_object": "Label paper with lines and barcode",
       "placement": "selected photo role",
       "asset_3x": "icons/nutritionLabel-144.png",
+      "asset_dark_3x": "icons/nutritionLabel-dark-144.png",
       "asset_master": "icons/nutritionLabel-48.png",
-      "accessible_label_required": true
+      "accessible_label_required": true,
+      "compact_master": "icons/compact/nutritionLabel-24.png",
+      "compact_3x": "icons/compact/nutritionLabel-72.png",
+      "compact_dark_3x": "icons/compact/nutritionLabel-dark-72.png"
     },
     "addPhoto": {
       "display_label": "Add photo",
@@ -199,6 +231,7 @@
       "visual_object": "Photo stack with plus badge",
       "placement": "photo tray",
       "asset_3x": "icons/addPhoto-144.png",
+      "asset_dark_3x": "icons/addPhoto-dark-144.png",
       "asset_master": "icons/addPhoto-48.png",
       "accessible_label_required": true
     },
@@ -210,6 +243,7 @@
       "visual_object": "Photo stack with minus badge",
       "placement": "selected photo",
       "asset_3x": "icons/removePhoto-144.png",
+      "asset_dark_3x": "icons/removePhoto-dark-144.png",
       "asset_master": "icons/removePhoto-48.png",
       "accessible_label_required": true
     },
@@ -218,22 +252,30 @@
       "semantic_role": "Status",
       "intended_meaning": "Review has not been saved",
       "suggested_accessibility_label": "Review not saved",
-      "visual_object": "Paper with magnifier and yellow pending badge",
+      "visual_object": "Review document with yellow pending badge",
       "placement": "review status",
       "asset_3x": "icons/reviewPendingRecord-144.png",
+      "asset_dark_3x": "icons/reviewPendingRecord-dark-144.png",
       "asset_master": "icons/reviewPendingRecord-48.png",
-      "accessible_label_required": true
+      "accessible_label_required": true,
+      "compact_master": "icons/compact/reviewPendingRecord-24.png",
+      "compact_3x": "icons/compact/reviewPendingRecord-72.png",
+      "compact_dark_3x": "icons/compact/reviewPendingRecord-dark-72.png"
     },
     "reviewSavedRecord": {
       "display_label": "Saved locally",
       "semantic_role": "Status",
       "intended_meaning": "Review is saved on this device",
       "suggested_accessibility_label": "Review saved locally",
-      "visual_object": "Paper with magnifier and check badge",
+      "visual_object": "Review document with green check badge",
       "placement": "review status",
       "asset_3x": "icons/reviewSavedRecord-144.png",
+      "asset_dark_3x": "icons/reviewSavedRecord-dark-144.png",
       "asset_master": "icons/reviewSavedRecord-48.png",
-      "accessible_label_required": true
+      "accessible_label_required": true,
+      "compact_master": "icons/compact/reviewSavedRecord-24.png",
+      "compact_3x": "icons/compact/reviewSavedRecord-72.png",
+      "compact_dark_3x": "icons/compact/reviewSavedRecord-dark-72.png"
     }
   }
 }

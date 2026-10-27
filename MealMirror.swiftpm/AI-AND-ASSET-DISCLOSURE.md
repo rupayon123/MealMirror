@@ -22,6 +22,12 @@ This is a project-history checklist for the applicant, not a Challenge essay. Ap
 - On October 3, 2026, the user requested a Japanese-curry brown broth, a circular in-app treatment with small star accents, and a ring of different foods around the loading mark. OpenAI image editing changed the broth color in the supplied emblem, produced a transparent cutout for the native circular badge, and produced a circular app-icon composition. Codex generated the food ring as SwiftUI pixel sprites. Pixelify Sans and Nunito are bundled under their SIL Open Font Licenses in `Fonts/PixelifySans-OFL.txt` and `Fonts/Nunito-OFL.txt`. Pixelify Sans is used for short Latin-script display text; Nunito is used for Latin-script reading text. Other scripts use native system type.
 - The Swift package has no external Swift package dependency. Recheck asset provenance, source history, and any prior tools, templates, or third-party material that are not listed here.
 
+## October 27 pixel UI integration, build 22
+
+Codex integrated an original floating-object pixel icon family supplied by the companion design workflow: 20 full-size roles and six separately drawn compact roles, with bundled light/dark appearance exports (26 imagesets, 52 PNGs). Codex-assisted Pillow drawing code produced these shapes; Pillow is design tooling and is not required by the app. Third-party icon references supplied by the applicant informed the visual grammar; their logos and images were not copied or bundled. The previous square-backplate proposal and monochrome SF Symbol trial are not used. The selected pot/MM emblem, fonts and Practice illustrations remain unchanged.
+
+Codex also wrote a shared stepped surface shape for existing controls, cards, forms, language selection and photo frames, removed extra icon badge borders, grouped related Home and Settings rows, clipped safety-callout accents to the shared outline, and kept photo-source and selected-label meanings distinct. Existing text, accessibility action labels, meal/AI/storage logic and numeric safety boundaries are unchanged. This records assistance and provenance, not native visual, comprehension or clinical acceptance. The applicant must inspect and understand the actual final code/assets.
+
 ## Applicant-owned checks
 
 - Inspect the final `.swiftpm` and archive and confirm each listed AI-assisted change and asset. Update this record if the final files or project history differ.

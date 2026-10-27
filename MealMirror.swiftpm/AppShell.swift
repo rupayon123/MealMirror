@@ -74,8 +74,8 @@ private struct LaunchExperienceView: View {
                     }
                     .frame(maxWidth: 300)
                     .padding(14)
-                    .background(CarbInTheme.surface, in: RoundedRectangle(cornerRadius: 9, style: .continuous))
-                    .overlay { RoundedRectangle(cornerRadius: 9, style: .continuous).stroke(CarbInTheme.line, lineWidth: 3) }
+                    .background(CarbInTheme.surface, in: PixelRoundedRectangle(cornerRadius: 9))
+                    .overlay { PixelRoundedRectangle(cornerRadius: 9).stroke(CarbInTheme.line, lineWidth: 3) }
                     .shadow(color: CarbInTheme.line.opacity(0.55), radius: 0, x: 0, y: 4)
                 }
                 .padding(.horizontal, 24)
@@ -120,10 +120,10 @@ private struct OnboardingIllustration: View {
     var body: some View {
         ZStack {
             if page != 0 {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 18)
                     .fill(CarbInTheme.surface)
                     .overlay {
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        PixelRoundedRectangle(cornerRadius: 18)
                             .stroke(CarbInTheme.basil, lineWidth: 3)
                     }
             }
@@ -152,7 +152,7 @@ private struct OnboardingIllustration: View {
                     .font(CarbInTheme.display(.title2, size: 22))
                     .foregroundStyle(CarbInTheme.surface)
                     .frame(width: 54, height: 54)
-                    .background(CarbInTheme.tomato, in: RoundedRectangle(cornerRadius: 9, style: .continuous))
+                    .background(CarbInTheme.tomato, in: PixelRoundedRectangle(cornerRadius: 9))
                     .offset(x: 68, y: 65)
             }
 
@@ -168,9 +168,9 @@ private struct OnboardingIllustration: View {
             Rectangle().fill(CarbInTheme.basil).frame(width: width * 0.72, height: 3)
         }
         .padding(7)
-        .background(CarbInTheme.ticket, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+        .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: 5))
         .overlay {
-            RoundedRectangle(cornerRadius: 5, style: .continuous)
+            PixelRoundedRectangle(cornerRadius: 5)
                 .stroke(CarbInTheme.line.opacity(0.7), lineWidth: 1)
         }
     }

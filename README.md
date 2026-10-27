@@ -4,20 +4,22 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 
 **Testing only. Not submission-ready or clinically validated.** No Android version, required account, server or cloud-model endpoint.
 
-## Current source candidate: 1.0 (21)
+## Current source candidate: 1.0 (22)
 
 | Artifact or check | Result |
 | --- | --- |
-| [English Challenge source ZIP](candidate/MealMirror-SSC2027.zip) | 12,208,090 bytes; 60 files; two byte-identical repacks |
-| ZIP SHA-256 | `8690e3a64f3f8fdefd4f764490709c6af7defcc368571d8b8135b7ed681181d6` |
-| Simulator builds | English and full-language variants passed for arm64, including executable and debug library |
-| Internal archive | Build 21 signed full-language archive passed; codesign, all 18 catalogs, actual SDK 27.1/minimum iOS 17 verified |
-| Internal TestFlight upload | Build 21 internal-only attempt failed with exit 70 because Xcode requires App Store Connect account access |
-| Latest previously uploaded build | Build 19 is confirmed Testing in the existing internal group; older build 2 preserved |
+| [English Challenge source ZIP](candidate/MealMirror-SSC2027.zip) | 12,269,540 bytes; 138 files; two byte-identical repacks |
+| ZIP SHA-256 | `5ed5aad7ac090b4623172e171487c0bce95bd62ba3e17fbe9be149aeafbbbc2d` |
+| Pixel UI | 20 full roles + six compact roles; 52 light/dark PNGs; stepped surfaces and grouped Home/Settings rows |
+| Simulator source builds | English and full-language variants passed for arm64; incremental builds, not clean/universal |
+| Full-language integrity | All 18 catalogs/native strings match source; 487 English keys; translation/layout quality still open |
+| Outline geometry | Same 243 macOS SwiftUI checks pass after 20 failures in an unpublished prototype; not native app visual proof |
+| Internal archive/upload | Build 22 unrun; last signed archive is 21, whose upload failed for Xcode account access |
+| Existing internal TestFlight group | Build 19 confirmed Testing; this has the earlier appearance |
 
-Build 21 delivers the local-model gate's chosen result before asynchronously requesting worker/timer cancellation, including late registration. The same 15 controlled checks pass after four baseline ordering failures. The first cold build was interrupted; a distinct incremental recovery passed. A verifier path mistake was corrected, then full-language verification timed out. These failures remain retained. Separate later resource and signed-archive checks passed; the internal upload failed70. Fresh UI and physical acceptance remain open. [Delivery evidence](research/vision-diagnostics/delivery-20261027-build21.json) · [Controlled comparison](research/vision-diagnostics/photo-ai-cancellation-20261027.json).
+Build 22 integrates the revised floating pixel family and shared surfaces while preserving the pot/MM emblem, fonts, photos, local AI, storage and numeric boundaries. The original artwork sources and provenance are [reviewable here](design/pixel-kitchen/README.md). Source parse/build, exact package, asset reproduction and geometry evidence are in the [delivery receipt](research/visual/delivery-20261027-build22.json). Native rendering, accessibility, human comprehension and physical offline operation remain open after the recorded Simulator readiness failure; no installation/launch of build 22 is claimed.
 
-The internal testing resource variant retains 18 languages; build 21's complete language verifier remains open. The separate Challenge ZIP is English-only; all 18 Swift source files match between variants. These are different resource variants, not identical binaries. Catalog parity does not establish translation or layout quality.
+The internal resource variant retains 18 languages, while the judging ZIP is English-only. All 18 Swift source bytes match; resources and binaries differ. Catalog integrity does not establish translation or native layout quality.
 
 ## What the app does
 

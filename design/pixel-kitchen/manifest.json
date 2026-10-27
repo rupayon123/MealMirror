@@ -1,72 +1,13 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "date": "2026-10-27",
-  "status": "Selected original design direction; NOT integrated into native app or submission ZIP",
-  "roles": 20,
-  "pngFiles": 40,
-  "originalGeneratorSHA256": "c84b538600816cf5e4e3527016f2019175107b3f61b717de36a4bef67d1d7d62",
-  "portableGeneratorSHA256": "c19041a2c67f779e3e86e9107d6a632a802ec9efd32631dd8f947a95cee85ad8",
-  "generatorChanges": "Output and bundled-font paths made repository-relative only; drawing/export logic unchanged. Not regenerated in this integration batch.",
+  "revision": "Floating objects plus separately drawn compact family",
+  "sourceIntegrationBuild": "22",
+  "nativeAcceptance": false,
   "files": {
-    "icons/camera-48.png": {
-      "sha256": "33f7759ed096c1c5f3ccf1368724f643fa44453fb701c7c53cb9ddd51c138e8d",
-      "bytes": 489,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/camera-144.png": {
-      "sha256": "878aa1223b178e9894855a0fcd4d5a4e5871ecbe8695be800a4f8344a7e58de6",
-      "bytes": 795,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/photos-48.png": {
-      "sha256": "ec522806429dcac297ecf71834de761e21ada61b920828483b9b0b7b5f967cd2",
-      "bytes": 373,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/photos-144.png": {
-      "sha256": "9b4dcaf7c7ab2f5e9671e9d25bf4e2e1ae81395fd647a1fe09f1f9ef73b6f299",
-      "bytes": 667,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/history-48.png": {
-      "sha256": "2267772652b9ec2beb77f4a5598597b26395ead0dee826ce974c2fa10815b40a",
-      "bytes": 488,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/history-144.png": {
-      "sha256": "5f5b40aaa37130bc9814651584295cf2e8df0012837e83c00f5a4c19ff9681ea",
-      "bytes": 884,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/info-48.png": {
-      "sha256": "9239bdc70fe97e8a48fee44a1db80143861cc87365690e90945fe7ad85ff97b8",
-      "bytes": 395,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/info-144.png": {
-      "sha256": "68a6cdb7ee4255e4add6e8e93ac7958e17b77519e41e620bcf78ef440ffc0955",
-      "bytes": 756,
+    "icons/reviewSavedRecord-144.png": {
+      "sha256": "5a3fab2a1fb232768c3bd5897ddfe5d01e1dd1430545d3e51148161cc5fcd02d",
+      "bytes": 845,
       "pixels": [
         144,
         144
@@ -80,121 +21,33 @@
         48
       ]
     },
-    "icons/settings-144.png": {
-      "sha256": "9ceb350fc1ae6fbaa5d64e0d4933044e4652cfc4ddee8b091261dac103d00e6b",
-      "bytes": 966,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/check-48.png": {
-      "sha256": "7b19959d9c7bcbc336fd1c1fdd72b4715bba3acb05cec3eeb0ffefe1511981e3",
-      "bytes": 473,
+    "icons/foodView-48.png": {
+      "sha256": "66bba8de1dc9de9597b6a8724b40987c99e3f277c5094f2602d7f8bd65f16bc1",
+      "bytes": 587,
       "pixels": [
         48,
         48
       ]
     },
-    "icons/check-144.png": {
-      "sha256": "512b5ee8f8f1e85fe666950a6a206c886b25c78abb2a5aea4fa54fcff8dafdfd",
-      "bytes": 835,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/adjust-48.png": {
-      "sha256": "df03bb40bb09d25754394e364c6c4e59a3a4c9cd628bba9db01913181ad3ed13",
-      "bytes": 443,
+    "icons/removePhoto-48.png": {
+      "sha256": "fb657aba1ae64f1a18bfae04abdc3815b48a6bb42ea85138a825d012bb8c16a2",
+      "bytes": 422,
       "pixels": [
         48,
         48
       ]
     },
-    "icons/adjust-144.png": {
-      "sha256": "efc43b96df05d5e4f2e3464f830c9327e197b7e222df86aee306cbc667672fd0",
-      "bytes": 762,
+    "icons/reviewPendingRecord-144.png": {
+      "sha256": "f721ec9658009d00ae06a60da8defcde266ed6df37debb9f39d4b59937b6e500",
+      "bytes": 819,
       "pixels": [
         144,
         144
       ]
     },
-    "icons/review-48.png": {
-      "sha256": "e9a506e0d1a8a7c85f65b1fa37cc287d04123921d8e2caf41a885de951bf996b",
-      "bytes": 441,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/review-144.png": {
-      "sha256": "a0a9940bf9b467e693941e70068ac2907745bff66f26c5b955b1c3f542eac8bc",
-      "bytes": 714,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/replay-48.png": {
-      "sha256": "3ea8043f0f172746322222980a62193e3a8611c8c66664f4090f8423d726c2f7",
-      "bytes": 442,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/replay-144.png": {
-      "sha256": "00a9d78b2327e3a09492dee663df9107a11b4f8584699153f42a60499a080616",
-      "bytes": 754,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/privacy-48.png": {
-      "sha256": "9726a27d1d51353380c082b10075b97904a1a352ce42a4c4d7c59e66d70d0669",
-      "bytes": 484,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/privacy-144.png": {
-      "sha256": "3a4800b70f0147c2d42979640328f0b12e4b6fc3b9d379be1e54d1e6de85c505",
-      "bytes": 841,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/medical-48.png": {
-      "sha256": "51b6c09714b48bf12346f9ebf3a0ffb4f616e45e08ccaa26c752216997f21e49",
-      "bytes": 317,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/medical-144.png": {
-      "sha256": "63c71370ec9d120a09b5a1729bee55f5566cfd66856507ee3dc3f12754916f10",
-      "bytes": 560,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/details-48.png": {
-      "sha256": "035479875864e5f94448c59c3ff81fef40107e551aad8f2ad9f27e59ee86d4a5",
-      "bytes": 386,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/details-144.png": {
-      "sha256": "14961dd8e57ac5edf3ef1d9d3f2d57d434d4a05aaf016d86bb7a1b0e0d5a8f22",
-      "bytes": 684,
+    "icons/delete-144.png": {
+      "sha256": "8f2bdc4345504da74057559153506c8e5577d7b240df6e4b8b081a9a522e2dda",
+      "bytes": 545,
       "pixels": [
         144,
         144
@@ -208,81 +61,17 @@
         48
       ]
     },
-    "icons/delete-144.png": {
-      "sha256": "8f2bdc4345504da74057559153506c8e5577d7b240df6e4b8b081a9a522e2dda",
-      "bytes": 545,
+    "icons/details-144.png": {
+      "sha256": "14961dd8e57ac5edf3ef1d9d3f2d57d434d4a05aaf016d86bb7a1b0e0d5a8f22",
+      "bytes": 684,
       "pixels": [
         144,
         144
       ]
     },
-    "icons/save-48.png": {
-      "sha256": "cca0d1d5278e6fe924bc0ca60a052c3c0cbf2b8a1f4f682cce143123d684db73",
-      "bytes": 327,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/save-144.png": {
-      "sha256": "38988a1ecba8b25cb7bb048667eeb529ce1f4f61f38ef93042d596491540e439",
-      "bytes": 579,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/foodView-48.png": {
-      "sha256": "66bba8de1dc9de9597b6a8724b40987c99e3f277c5094f2602d7f8bd65f16bc1",
-      "bytes": 587,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/foodView-144.png": {
-      "sha256": "cd82c5486af15a7233dfb2e4e377616e859f0e9275f0c289a1fe681ea96c5adf",
-      "bytes": 957,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/nutritionLabel-48.png": {
-      "sha256": "d486401119935dc4cf6dc1d7bfe40a5247c3b7a5b6b261ce6b38d2766639cc1f",
-      "bytes": 316,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/nutritionLabel-144.png": {
-      "sha256": "22fcb1b4b8da972c8c7adbb0c052576ad1ba8ba088c23a6ceb09c940fb2a2f51",
-      "bytes": 597,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/addPhoto-48.png": {
-      "sha256": "2378a4651475eb5c54557a621b07e43f096efedee5a84ae1cc104cd0e925c508",
-      "bytes": 427,
-      "pixels": [
-        48,
-        48
-      ]
-    },
-    "icons/addPhoto-144.png": {
-      "sha256": "f6d2ea8130917a7ab97084ef105f6abd23b63947a251a8feab7c8098f505e7d9",
-      "bytes": 735,
-      "pixels": [
-        144,
-        144
-      ]
-    },
-    "icons/removePhoto-48.png": {
-      "sha256": "fb657aba1ae64f1a18bfae04abdc3815b48a6bb42ea85138a825d012bb8c16a2",
-      "bytes": 422,
+    "icons/reviewPendingRecord-48.png": {
+      "sha256": "16123c3013ea74a9052a08715c4e8886f813654d7b837bbd5cbabfe1308d294a",
+      "bytes": 483,
       "pixels": [
         48,
         48
@@ -296,38 +85,562 @@
         144
       ]
     },
-    "icons/reviewPendingRecord-48.png": {
-      "sha256": "5a032937dfcc7586aa826a264138d0a6215b7f1a02918d884b789e8c41e58c9f",
-      "bytes": 419,
+    "icons/review-dark-144.png": {
+      "sha256": "c51087da3b15eae117af8ade3aa388910db065bec3c92c99c6af9f185a87c67f",
+      "bytes": 880,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/review-144.png": {
+      "sha256": "891573c37f9e21f8fc799d08e715dc076f47c6b2f987230e2358273633386e3f",
+      "bytes": 795,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/reviewSavedRecord-dark-144.png": {
+      "sha256": "5e06f71f45fa5183a7e0be7412e1cc87b42f7e96eea4f7f44f13034d350c645d",
+      "bytes": 973,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/photos-dark-144.png": {
+      "sha256": "6941eb5bfca7b109813b860fdf717bda1985941e7d78b91777a7f5915fb5bfe8",
+      "bytes": 768,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/history-48.png": {
+      "sha256": "8df12299ce244eac32095be922e880b818a2fc9ab203c3a6cc8764ef9f7b2d2d",
+      "bytes": 489,
       "pixels": [
         48,
         48
       ]
     },
-    "icons/reviewPendingRecord-144.png": {
-      "sha256": "e58947e94f3b129aa49376d52adb6eef6dbff0fc1668ebf7e67951adfd927759",
-      "bytes": 715,
+    "icons/adjust-48.png": {
+      "sha256": "df03bb40bb09d25754394e364c6c4e59a3a4c9cd628bba9db01913181ad3ed13",
+      "bytes": 443,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/foodView-144.png": {
+      "sha256": "cd82c5486af15a7233dfb2e4e377616e859f0e9275f0c289a1fe681ea96c5adf",
+      "bytes": 957,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/photos-144.png": {
+      "sha256": "9b4dcaf7c7ab2f5e9671e9d25bf4e2e1ae81395fd647a1fe09f1f9ef73b6f299",
+      "bytes": 667,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/addPhoto-144.png": {
+      "sha256": "f6d2ea8130917a7ab97084ef105f6abd23b63947a251a8feab7c8098f505e7d9",
+      "bytes": 735,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/addPhoto-48.png": {
+      "sha256": "2378a4651475eb5c54557a621b07e43f096efedee5a84ae1cc104cd0e925c508",
+      "bytes": 427,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/check-dark-144.png": {
+      "sha256": "6b90b0d32d0f86a97eb3a50a4c6fa2fbd890d10cb2fd260ea6827f3edae0e7b1",
+      "bytes": 1041,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/check-48.png": {
+      "sha256": "7b19959d9c7bcbc336fd1c1fdd72b4715bba3acb05cec3eeb0ffefe1511981e3",
+      "bytes": 473,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/nutritionLabel-dark-144.png": {
+      "sha256": "305cd066acbf604b69427df885240286769cd98c6bfde313efafd9ab8fd866fa",
+      "bytes": 673,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/privacy-144.png": {
+      "sha256": "3a4800b70f0147c2d42979640328f0b12e4b6fc3b9d379be1e54d1e6de85c505",
+      "bytes": 841,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/save-48.png": {
+      "sha256": "cca0d1d5278e6fe924bc0ca60a052c3c0cbf2b8a1f4f682cce143123d684db73",
+      "bytes": 327,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/photos-48.png": {
+      "sha256": "ec522806429dcac297ecf71834de761e21ada61b920828483b9b0b7b5f967cd2",
+      "bytes": 373,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/medical-dark-144.png": {
+      "sha256": "f67c953489b26de932460d15a372aafc5efc4e9caa2d26846088525b45a22c26",
+      "bytes": 672,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/details-48.png": {
+      "sha256": "035479875864e5f94448c59c3ff81fef40107e551aad8f2ad9f27e59ee86d4a5",
+      "bytes": 386,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/nutritionLabel-48.png": {
+      "sha256": "d486401119935dc4cf6dc1d7bfe40a5247c3b7a5b6b261ce6b38d2766639cc1f",
+      "bytes": 316,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/medical-144.png": {
+      "sha256": "63c71370ec9d120a09b5a1729bee55f5566cfd66856507ee3dc3f12754916f10",
+      "bytes": 560,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/replay-48.png": {
+      "sha256": "9c3f1773ae8f2434937036f2a8290018c68386cad63489c898cb067f42c80493",
+      "bytes": 446,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/info-dark-144.png": {
+      "sha256": "d58393e6f6f9923d8a9d0f691ca4c1bc36dfb00755fcb774304d925eb06ff9a9",
+      "bytes": 921,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/review-48.png": {
+      "sha256": "da973d363a650df7d490d9622372718eca2a6dca4ab79ff3774525031b0de490",
+      "bytes": 462,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/replay-144.png": {
+      "sha256": "3db7b2509728ecb3bb4d73982a65b4dbe27f77800a73872fd4d191fa30e7d146",
+      "bytes": 793,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/save-144.png": {
+      "sha256": "38988a1ecba8b25cb7bb048667eeb529ce1f4f61f38ef93042d596491540e439",
+      "bytes": 579,
       "pixels": [
         144,
         144
       ]
     },
     "icons/reviewSavedRecord-48.png": {
-      "sha256": "2e33bccb5ce4756763bdc4dc2acc70269ac2e622c2c5498f6743eee8782cc466",
-      "bytes": 447,
+      "sha256": "cbd5d12a81eab6a77267ae8403a77af2be29ed3d7535df7aad3d7ebe33c56a66",
+      "bytes": 514,
       "pixels": [
         48,
         48
       ]
     },
-    "icons/reviewSavedRecord-144.png": {
-      "sha256": "24e2ced91726bda2efd8832e3fe12c9b22954b94b4e1caa61f874739d71c40b7",
-      "bytes": 751,
+    "icons/history-144.png": {
+      "sha256": "8b3fc1fca3f6bfc386edeb52257833c8b4531bfeb1b873612389e7b1cbca49e2",
+      "bytes": 881,
       "pixels": [
         144,
         144
       ]
+    },
+    "icons/camera-144.png": {
+      "sha256": "878aa1223b178e9894855a0fcd4d5a4e5871ecbe8695be800a4f8344a7e58de6",
+      "bytes": 795,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/privacy-dark-144.png": {
+      "sha256": "c6f6fed84e25929d3daf8d8eab1923dc1696401985f55fdb101177e98c1829ad",
+      "bytes": 987,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/nutritionLabel-144.png": {
+      "sha256": "22fcb1b4b8da972c8c7adbb0c052576ad1ba8ba088c23a6ceb09c940fb2a2f51",
+      "bytes": 597,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/replay-dark-144.png": {
+      "sha256": "141604fd9b9097bfd79127527659eecc8c841989aa96124929c21ce0f7b57717",
+      "bytes": 1045,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/privacy-48.png": {
+      "sha256": "9726a27d1d51353380c082b10075b97904a1a352ce42a4c4d7c59e66d70d0669",
+      "bytes": 484,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/foodView-dark-144.png": {
+      "sha256": "100eddbbc299bf0dd8d30394bdc168a5fa41c92b0bbb00f94527d2ddc5224454",
+      "bytes": 1150,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/info-48.png": {
+      "sha256": "9239bdc70fe97e8a48fee44a1db80143861cc87365690e90945fe7ad85ff97b8",
+      "bytes": 395,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/settings-144.png": {
+      "sha256": "9ceb350fc1ae6fbaa5d64e0d4933044e4652cfc4ddee8b091261dac103d00e6b",
+      "bytes": 966,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/history-dark-144.png": {
+      "sha256": "45b34aa0f1dd21f5949b225727892643942e0747019efc688c52d0e0d7a2ee42",
+      "bytes": 1062,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/info-144.png": {
+      "sha256": "68a6cdb7ee4255e4add6e8e93ac7958e17b77519e41e620bcf78ef440ffc0955",
+      "bytes": 756,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/check-144.png": {
+      "sha256": "512b5ee8f8f1e85fe666950a6a206c886b25c78abb2a5aea4fa54fcff8dafdfd",
+      "bytes": 835,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/adjust-dark-144.png": {
+      "sha256": "a5770a6cb1bfcf7ce7105134dab242221cd3a30bda0c8d0fea03f87945e584b1",
+      "bytes": 924,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/medical-48.png": {
+      "sha256": "51b6c09714b48bf12346f9ebf3a0ffb4f616e45e08ccaa26c752216997f21e49",
+      "bytes": 317,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/adjust-144.png": {
+      "sha256": "efc43b96df05d5e4f2e3464f830c9327e197b7e222df86aee306cbc667672fd0",
+      "bytes": 762,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/settings-dark-144.png": {
+      "sha256": "0719d6a8f0ceac8b8b1b73ec195950ba9d30eb819ad285bdaf830d782b165b8e",
+      "bytes": 1179,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/reviewPendingRecord-dark-144.png": {
+      "sha256": "530dc8c1a52b6da8cc8fd0654e4f031cb407cc2434c373b5cd8938c212d658f8",
+      "bytes": 939,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/camera-dark-144.png": {
+      "sha256": "b42b5693e2dfbf83a79149e83715ffb2c0346ffaad66f2a051de09059d32e514",
+      "bytes": 918,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/camera-48.png": {
+      "sha256": "33f7759ed096c1c5f3ccf1368724f643fa44453fb701c7c53cb9ddd51c138e8d",
+      "bytes": 489,
+      "pixels": [
+        48,
+        48
+      ]
+    },
+    "icons/details-dark-144.png": {
+      "sha256": "d56f4c6f351f204f41bb677adeeba45d877277e9448a7a17763871c7b6120a97",
+      "bytes": 789,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/addPhoto-dark-144.png": {
+      "sha256": "5baa6e6da63ed0e704130989f0597871206f5a397a22e9fda83ddcc124ae6c5e",
+      "bytes": 849,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/save-dark-144.png": {
+      "sha256": "89878fb31191c9a7f9c5d938cc55643196124c79352b173f74e4f9c806cd710b",
+      "bytes": 682,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/removePhoto-dark-144.png": {
+      "sha256": "7cdf290d966b34ff70e57344f7f30a4ea482e2e65c0d660995920ed75f49f0db",
+      "bytes": 840,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/delete-dark-144.png": {
+      "sha256": "c628d36000084238d0f5da2ad00192d47f8db088411bab9a0a54b8cf8cef5de3",
+      "bytes": 629,
+      "pixels": [
+        144,
+        144
+      ]
+    },
+    "icons/compact/foodView-72.png": {
+      "sha256": "37da9ee3be4937999f9d0c738d72c6f146c7b1ae7eab754f9af15be3ef012293",
+      "bytes": 498,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/foodView-dark-72.png": {
+      "sha256": "9baa32b814df4216839fe39f83ffdfdc751a02a856c05be607f999da9f0b7d75",
+      "bytes": 572,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/reviewPendingRecord-72.png": {
+      "sha256": "4d0633429e46e2baeed45d0bd7b45cfa809d80262dd692ec71e1a5faaf38b261",
+      "bytes": 406,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/nutritionLabel-72.png": {
+      "sha256": "02f70ad4432791638c5cd996423900e2eafb525a900db7fa3f1b36647d355f35",
+      "bytes": 342,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/camera-dark-72.png": {
+      "sha256": "af1cdbea6cb46e7c4bac72937bf828ef38c003c5a26b3fc1826ffc7acba0d30e",
+      "bytes": 472,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/camera-24.png": {
+      "sha256": "c93e0f653a187ce77b46846ebcfe1fa81adf3a31e630bde18c1b4d8d53b674cb",
+      "bytes": 239,
+      "pixels": [
+        24,
+        24
+      ]
+    },
+    "icons/compact/reviewSavedRecord-72.png": {
+      "sha256": "d0c08cc226b695d866b6afdc7a8c7d33a55607b98a90974959b77fa5ff966fe5",
+      "bytes": 410,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/reviewPendingRecord-dark-72.png": {
+      "sha256": "e31f144eb3a93680672f19f78660bdb9fe93a113ac4e94e8a38343c0dfca7546",
+      "bytes": 467,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/nutritionLabel-dark-72.png": {
+      "sha256": "36e89dc09915a48cfed69e9fe0d45aee3bbb5b647ac167809692debce1a97cd4",
+      "bytes": 387,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/photos-72.png": {
+      "sha256": "6d459b3d4b6beacb788edbb6fc05322416b047a6288e919fc9cef3f60cd75b55",
+      "bytes": 402,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/reviewSavedRecord-dark-72.png": {
+      "sha256": "715e7f1f8d02489dc9189c4267e2257d723a5b52e6aecd52e5134a0528c8c5eb",
+      "bytes": 461,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/foodView-24.png": {
+      "sha256": "6e45d45880e749af5011d553966149ad6468b2a939d159f46d43ea4a696a8cd4",
+      "bytes": 333,
+      "pixels": [
+        24,
+        24
+      ]
+    },
+    "icons/compact/reviewPendingRecord-24.png": {
+      "sha256": "25651fc176c8afda855750621931a7ab6e01532af49bff316f42d0db61ffa812",
+      "bytes": 245,
+      "pixels": [
+        24,
+        24
+      ]
+    },
+    "icons/compact/nutritionLabel-24.png": {
+      "sha256": "58a53268efc6e008e090b49e6f2142552c6cd387c848ab241f77b1815f94a7e9",
+      "bytes": 193,
+      "pixels": [
+        24,
+        24
+      ]
+    },
+    "icons/compact/camera-72.png": {
+      "sha256": "a939c74a3de19004c1cdf7880e0ca33fb653ebe128d7ff4474f60e3eeba0ddc1",
+      "bytes": 375,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/reviewSavedRecord-24.png": {
+      "sha256": "0793acc8cf103b8203a7a3b46054ab2310f43c8f57d19791417ebaea86343360",
+      "bytes": 251,
+      "pixels": [
+        24,
+        24
+      ]
+    },
+    "icons/compact/photos-dark-72.png": {
+      "sha256": "1074969dad160716b48db3e6f9238de2b1964b50b2d4eadc3835f3db1552954d",
+      "bytes": 459,
+      "pixels": [
+        72,
+        72
+      ]
+    },
+    "icons/compact/photos-24.png": {
+      "sha256": "ac9eea0513e1892a7b899c51f5b38d4d20982ba183f0d6e091f1c409757345d6",
+      "bytes": 245,
+      "pixels": [
+        24,
+        24
+      ]
     }
   },
-  "reviewScope": "Coordinator viewed atlas and source semantics; PNG header/dimensions/hash checks. No native placement, optical-size, VoiceOver or human-comprehension acceptance."
+  "scripts": {
+    "generate_icons.py": {
+      "originalSHA256": "f84f4d4d7a6e18b7058b47a5825ba28df1ab4f1c77fe7cb2427af4daa4f862b6",
+      "portableSHA256": "556eab04004949ae7b6802736d6106f0078a81df9ca36f892b901f40c68e9250",
+      "changes": "Output/font paths made portable; compact script adds environment override. Drawing/export logic unchanged."
+    },
+    "generate_compact.py": {
+      "originalSHA256": "846141edbbfce11a731a1640615f80cf21a6fa7c6a653ca7fa3d5e487294a3be",
+      "portableSHA256": "4a9a014633e3e6f91a3126e38ea6a8e6c88e9605ee1305bc4e5cb50efb34974e",
+      "changes": "Output/font paths made portable; compact script adds environment override. Drawing/export logic unchanged."
+    }
+  },
+  "scope": "Exact copied original PNG bytes, current generator provenance and portable path changes. Native rendering/human comprehension remain open; older square proposal remains in Git history."
 }

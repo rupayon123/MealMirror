@@ -96,6 +96,53 @@ enum CarbInTheme {
     }
 }
 
+// A continuous stepped outline shared by cards, controls and photo frames.
+// Insets move every edge together so strokeBorder stays closed at each corner.
+struct PixelRoundedRectangle: InsettableShape {
+    var cornerRadius: CGFloat = 12
+    private var insetAmount: CGFloat = 0
+
+    init(cornerRadius: CGFloat = 12) { self.cornerRadius = cornerRadius }
+
+    func inset(by amount: CGFloat) -> Self {
+        var copy = self
+        copy.insetAmount += amount
+        return copy
+    }
+
+    func path(in rect: CGRect) -> Path {
+        let box = rect.insetBy(dx: insetAmount, dy: insetAmount)
+        guard box.width > 0, box.height > 0 else { return Path() }
+        let u = min(max(0, floor((cornerRadius - insetAmount) / 3)), min(box.width, box.height) / 4)
+        let x = box.minX, y = box.minY, right = box.maxX, bottom = box.maxY
+        return Path { path in
+            path.move(to: CGPoint(x: x + 2 * u, y: y))
+            for point in [
+                CGPoint(x: right - 2 * u, y: y),
+                CGPoint(x: right - 2 * u, y: y + u),
+                CGPoint(x: right - u, y: y + u),
+                CGPoint(x: right - u, y: y + 2 * u),
+                CGPoint(x: right, y: y + 2 * u),
+                CGPoint(x: right, y: bottom - 2 * u),
+                CGPoint(x: right - u, y: bottom - 2 * u),
+                CGPoint(x: right - u, y: bottom - u),
+                CGPoint(x: right - 2 * u, y: bottom - u),
+                CGPoint(x: right - 2 * u, y: bottom),
+                CGPoint(x: x + 2 * u, y: bottom),
+                CGPoint(x: x + 2 * u, y: bottom - u),
+                CGPoint(x: x + u, y: bottom - u),
+                CGPoint(x: x + u, y: bottom - 2 * u),
+                CGPoint(x: x, y: bottom - 2 * u),
+                CGPoint(x: x, y: y + 2 * u),
+                CGPoint(x: x + u, y: y + 2 * u),
+                CGPoint(x: x + u, y: y + u),
+                CGPoint(x: x + 2 * u, y: y + u)
+            ] { path.addLine(to: point) }
+            path.closeSubpath()
+        }
+    }
+}
+
 struct CountertopBackdrop: View {
     var body: some View {
         Canvas { context, size in
@@ -146,12 +193,12 @@ struct PrimaryActionStyle: ButtonStyle {
             .frame(minHeight: 54)
             .padding(.horizontal, 18)
             .background {
-                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 9)
                     .fill(isEnabled ? CarbInTheme.tomatoAction : CarbInTheme.inset)
                     .shadow(color: CarbInTheme.ink.opacity(isEnabled ? 0.35 : 0.16), radius: 0, x: 0, y: configuration.isPressed ? 1 : 4)
             }
             .overlay {
-                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 9)
                     .stroke(CarbInTheme.line, lineWidth: 3)
             }
             .offset(y: configuration.isPressed ? 3 : 0)
@@ -168,12 +215,12 @@ struct SecondaryActionStyle: ButtonStyle {
             .frame(minHeight: 52)
             .padding(.horizontal, 18)
             .background {
-                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 9)
                     .fill(CarbInTheme.surface)
                     .shadow(color: CarbInTheme.ink.opacity(0.22), radius: 0, x: 0, y: configuration.isPressed ? 1 : 3)
             }
             .overlay {
-                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 9)
                     .stroke(CarbInTheme.line, lineWidth: 3)
             }
             .offset(y: configuration.isPressed ? 2 : 0)
@@ -190,12 +237,12 @@ struct CompactActionStyle: ButtonStyle {
             .frame(minHeight: 46)
             .padding(.horizontal, 12)
             .background {
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 8)
                     .fill(CarbInTheme.ticket)
                     .shadow(color: CarbInTheme.ink.opacity(0.16), radius: 0, x: 0, y: configuration.isPressed ? 0 : 2)
             }
             .overlay {
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 8)
                     .stroke(CarbInTheme.line.opacity(0.90), lineWidth: 1.5)
             }
             .opacity(configuration.isPressed ? 0.70 : 1)
@@ -542,8 +589,12 @@ struct SafetyRail: View {
         }
         .padding(.vertical, 12)
         .padding(.trailing, 12)
-        .background(CarbInTheme.ticket)
-            .overlay { Rectangle().stroke(CarbInTheme.ink.opacity(0.78), lineWidth: 2) }
+        .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: 12))
+        .clipShape(PixelRoundedRectangle(cornerRadius: 12))
+        .overlay {
+            PixelRoundedRectangle(cornerRadius: 12)
+                .strokeBorder(CarbInTheme.ink.opacity(0.78), lineWidth: 2)
+        }
     }
 }
 
@@ -651,12 +702,12 @@ extension View {
     func workbenchSurface(inset: CGFloat = 18, fill: Color = CarbInTheme.surface) -> some View {
         self.padding(inset)
             .background {
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 8)
                     .fill(fill)
                     .shadow(color: CarbInTheme.line.opacity(0.48), radius: 0, x: 4, y: 5)
             }
             .overlay {
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 8)
                     .stroke(CarbInTheme.line, lineWidth: 3)
             }
     }
@@ -664,22 +715,22 @@ extension View {
     func mealTicket(inset: CGFloat = 18) -> some View {
         self.padding(inset)
             .background {
-                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 9)
                     .fill(CarbInTheme.surface)
                     .shadow(color: CarbInTheme.line.opacity(0.48), radius: 0, x: 4, y: 5)
             }
             .overlay(alignment: .top) { TicketEdge() }
             .overlay {
-                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 9)
                     .stroke(CarbInTheme.line, lineWidth: 3)
             }
     }
 
     func insetControlGroup(inset: CGFloat = 14) -> some View {
         self.padding(inset)
-            .background(CarbInTheme.butter.opacity(0.20), in: RoundedRectangle(cornerRadius: 9, style: .continuous))
+            .background(CarbInTheme.butter.opacity(0.20), in: PixelRoundedRectangle(cornerRadius: 9))
             .overlay {
-                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 9)
                     .stroke(CarbInTheme.line.opacity(0.72), lineWidth: 1.5)
             }
     }

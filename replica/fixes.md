@@ -17,7 +17,7 @@ The sample has 11 unique App Store observations, three explicitly positive Canad
 | --- | --- | --- | --- | --- |
 | 1 | Finish reliable current-package local review/recovery | Full Stack + Backend | M | Exact package, resource/signing proof, failed/unavailable route and cold offline save/relaunch/delete; first failures retained. |
 | 2 | Evaluate useful names and calibrated unknowns | Backend + qualified reviewers | L | Lawful diverse split-controlled data, clear error/abstention/correction results; numeric quantities remain separate. |
-| 3 | Complete Pixel Kitchen icons and state art | UI designs + Frontend | M | Original source/provenance, contact sheet, coherent placements and actual native accessibility/viewport checks. |
+| 3 | Complete Pixel Kitchen icons and state art | UI designs + Frontend | M | Original source/provenance, contact sheet, coherent placements and actual native accessibility/viewport checks. Build 22 now integrates the floating/compact family and shared surfaces; native acceptance remains open. |
 | 4 | Make mixed/hidden meals easy to correct | Frontend + Backend | M | Label, added view and typed detail remain distinguishable; nothing hidden is invented. |
 | 5 | Add recent-review reuse | Frontend + Backend | M | New draft/identity, current-value confirmation, older incomplete records handled, original unchanged. |
 | 6 | Add selective local review export | joint | M | Explicit preview and share action, source/date/units retained, no automatic send/photos/diagnosis. |

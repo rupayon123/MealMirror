@@ -189,22 +189,17 @@ private struct HomeView: View {
                 if dynamicTypeSize.isAccessibilitySize {
                     quickActions
                     homeHero
-                    historyTicket
-                    howItWorksTicket
+                    supportTickets
                 } else if horizontalSizeClass == .regular {
                     homeHero
                     HStack(alignment: .top, spacing: 16) {
                         quickActions
-                        VStack(spacing: 14) {
-                            historyTicket
-                            howItWorksTicket
-                        }
+                        supportTickets
                     }
                 } else {
                     quickActions
                     homeHero
-                    historyTicket
-                    howItWorksTicket
+                    supportTickets
                 }
 
                 SafetyRail(
@@ -259,9 +254,9 @@ private struct HomeView: View {
         }
         .padding(14)
         .background { CheckerboardSurface() }
-        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .clipShape(PixelRoundedRectangle(cornerRadius: 10))
         .overlay {
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
+            PixelRoundedRectangle(cornerRadius: 10)
                 .stroke(CarbInTheme.line, lineWidth: 3)
         }
         .shadow(color: CarbInTheme.line.opacity(0.38), radius: 0, x: 4, y: 5)
@@ -294,7 +289,7 @@ private struct HomeView: View {
     private func quickAction(_ title: LocalizedStringKey, icon: PixelKitchenIconKind, enabled: Bool, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             VStack(spacing: 8) {
-                PixelKitchenIconBadge(kind: icon)
+                PixelKitchenIconBadge(kind: icon, size: 48)
                 Text(title)
                     .font(CarbInTheme.display(.headline, size: 17))
                     .foregroundStyle(CarbInTheme.ink)
@@ -307,6 +302,15 @@ private struct HomeView: View {
         .buttonStyle(.plain)
         .disabled(!enabled)
         .opacity(enabled ? 1 : 0.58)
+    }
+
+    private var supportTickets: some View {
+        VStack(spacing: 0) {
+            historyTicket
+            Divider().overlay(CarbInTheme.line.opacity(0.35)).padding(.horizontal, 14)
+            howItWorksTicket
+        }
+        .workbenchSurface(inset: 0)
     }
 
     private var howItWorksTicket: some View {
@@ -324,9 +328,10 @@ private struct HomeView: View {
                     .accessibilityHidden(true)
             }
             .frame(minHeight: 54)
+            .padding(14)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .workbenchSurface(inset: 14)
         .accessibilityIdentifier("carbin.home.how")
     }
 
@@ -351,7 +356,7 @@ private struct HomeView: View {
                     .accessibilityHidden(true)
             }
             .frame(maxWidth: .infinity, minHeight: 54, alignment: .leading)
-            .workbenchSurface(inset: 14)
+            .padding(14)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -667,9 +672,9 @@ private struct AddMealView: View {
             inputTab("Photo", isSelected: showsPhotoInput) { showsPhotoInput = true }
         }
         .padding(4)
-        .background(CarbInTheme.inset, in: RoundedRectangle(cornerRadius: 8))
+        .background(CarbInTheme.inset, in: PixelRoundedRectangle(cornerRadius: 8))
         .overlay {
-            RoundedRectangle(cornerRadius: 8)
+            PixelRoundedRectangle(cornerRadius: 8)
                 .stroke(CarbInTheme.line, lineWidth: 2)
         }
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.18), value: showsPhotoInput)
@@ -685,9 +690,9 @@ private struct AddMealView: View {
         }
         .buttonStyle(.plain)
         .padding(.horizontal, 4)
-        .background(isSelected ? CarbInTheme.surface : Color.clear, in: RoundedRectangle(cornerRadius: 6))
+        .background(isSelected ? CarbInTheme.surface : Color.clear, in: PixelRoundedRectangle(cornerRadius: 6))
         .overlay {
-            RoundedRectangle(cornerRadius: 6)
+            PixelRoundedRectangle(cornerRadius: 6)
                 .stroke(isSelected ? CarbInTheme.line : Color.clear, lineWidth: 2)
         }
         .accessibilityAddTraits(isSelected ? [.isSelected] : [])
@@ -716,9 +721,9 @@ private struct AddMealView: View {
                 .frame(minHeight: 150)
                 .padding(10)
                 .scrollContentBackground(.hidden)
-                .background(CarbInTheme.ticket, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: 10))
                 .overlay {
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    PixelRoundedRectangle(cornerRadius: 10)
                         .stroke(CarbInTheme.basil, lineWidth: isMealDescriptionFocused ? 2 : 1)
                 }
                 .accessibilityLabel("Meal description")
@@ -895,7 +900,7 @@ private struct AddMealView: View {
                     .clipped()
             }
             .frame(height: dynamicTypeSize.isAccessibilitySize ? 144 : 104)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .clipShape(PixelRoundedRectangle(cornerRadius: 8))
             .accessibilityHidden(true)
 
             Label {
@@ -911,13 +916,8 @@ private struct AddMealView: View {
             Button {
                 removePhoto(photo.id)
             } label: {
-                Label {
-                    Text("Remove photo")
-                        .fixedSize(horizontal: false, vertical: true)
-                } icon: {
-                    PixelKitchenIcon(kind: .removePhoto)
-                        .frame(width: 24, height: 24)
-                }
+                Text("Remove photo")
+                    .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
             }
             .foregroundStyle(CarbInTheme.tomato)
@@ -1180,7 +1180,7 @@ private struct AddMealView: View {
                 Text(LocalizedStringKey(hasFoodPhotos ? "Add food photos" : "Library"))
                     .fixedSize(horizontal: false, vertical: true)
             } icon: {
-                PixelKitchenIcon(kind: hasFoodPhotos ? .addPhoto : .photos)
+                PixelKitchenIcon(kind: .photos)
                     .frame(width: 24, height: 24)
             }
         }
@@ -1210,7 +1210,7 @@ private struct AddMealView: View {
                 Text("Add label photo")
                     .fixedSize(horizontal: false, vertical: true)
             } icon: {
-                PixelKitchenIcon(kind: .nutritionLabel)
+                PixelKitchenIcon(kind: .photos)
                     .frame(width: 24, height: 24)
             }
         }
@@ -1420,7 +1420,7 @@ private struct EstimateView: View {
                     .foregroundStyle(CarbInTheme.basil)
                     .padding(.horizontal, 9)
                     .padding(.vertical, 6)
-                    .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+                    .background(CarbInTheme.basilSoft, in: PixelRoundedRectangle(cornerRadius: 5))
             }
             Text(localization.carbohydrateRange(range))
                 .font(CarbInTheme.display(.largeTitle, size: dynamicTypeSize.isAccessibilitySize ? 36 : 48))
@@ -1470,7 +1470,7 @@ private struct EstimateView: View {
                 .foregroundStyle(CarbInTheme.surface)
                 .padding(.horizontal, 9)
                 .padding(.vertical, 6)
-                .background(CarbInTheme.tomato, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+                .background(CarbInTheme.tomato, in: PixelRoundedRectangle(cornerRadius: 5))
                 .padding(10)
                 .accessibilityLabel(Text(LocalizedStringKey(analysis.source == .demo ? "Practice meal review" : "On-device photo inspection")))
         }
@@ -1498,7 +1498,7 @@ private struct EstimateView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: 250, maxHeight: 250)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .clipShape(PixelRoundedRectangle(cornerRadius: 8))
                     .accessibilityLabel("Selected nutrition label photo")
             }
             switch analysis.labelTextStatus {
@@ -1816,7 +1816,7 @@ private struct ReviewView: View {
                                     .foregroundStyle(CarbInTheme.basil)
                                     .padding(.horizontal, 9)
                                     .padding(.vertical, 6)
-                                    .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+                                    .background(CarbInTheme.basilSoft, in: PixelRoundedRectangle(cornerRadius: 5))
                             }
                             Text(LocalizedStringKey(analysis.source == .demo ? analysis.title : "Your meal review"))
                                 .font(CarbInTheme.display(.headline, size: 16))
@@ -1832,13 +1832,7 @@ private struct ReviewView: View {
 
     private var reviewStatusIcon: some View {
         PixelKitchenIcon(kind: saved ? .reviewSavedRecord : .reviewPendingRecord)
-            .frame(width: 36, height: 36)
-            .frame(width: 52, height: 52)
-            .background(CarbInTheme.actionInk, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .stroke(CarbInTheme.line, lineWidth: 2)
-            }
+            .frame(width: 48, height: 48)
             .accessibilityHidden(true)
     }
 
@@ -2326,9 +2320,9 @@ private struct SavedReviewRow: View {
             }
         }
         .padding(12)
-        .background(CarbInTheme.elevatedSurface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(CarbInTheme.elevatedSurface, in: PixelRoundedRectangle(cornerRadius: 16))
         .overlay {
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
+            PixelRoundedRectangle(cornerRadius: 16)
                 .stroke(CarbInTheme.line.opacity(0.7), lineWidth: 1)
         }
     }
@@ -2581,7 +2575,7 @@ private struct MealChoiceCard: View {
                 DemoMealImage(meal: meal)
                     .frame(width: cardWidth - 20, height: dynamicTypeSize.isAccessibilitySize ? 128 : 108)
                     .clipped()
-                    .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
+                    .clipShape(PixelRoundedRectangle(cornerRadius: 7))
                     .accessibilityHidden(true)
 
                 Text(localization.text(meal.name))
@@ -2596,9 +2590,9 @@ private struct MealChoiceCard: View {
             .frame(width: cardWidth, alignment: .topLeading)
             .frame(minHeight: dynamicTypeSize.isAccessibilitySize ? 260 : 205, alignment: .topLeading)
             .padding(10)
-            .background(isSelected ? CarbInTheme.basilSoft : CarbInTheme.ticket, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+            .background(isSelected ? CarbInTheme.basilSoft : CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: 8))
             .overlay {
-                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                PixelRoundedRectangle(cornerRadius: 8)
                     .stroke(isSelected ? CarbInTheme.tomato : CarbInTheme.line, lineWidth: isSelected ? 3 : 1)
             }
         }
@@ -2686,7 +2680,7 @@ private struct PhotoPreview: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .clipShape(PixelRoundedRectangle(cornerRadius: 12))
         .pixelCorners(color: selectedPhoto == nil ? CarbInTheme.basil : CarbInTheme.tomato, inset: 10)
         .accessibilityLabel(
             selectedPhoto != nil
@@ -2824,7 +2818,6 @@ private struct EvidenceRow: View {
                 .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                 .foregroundStyle(isActive ? CarbInTheme.moss : CarbInTheme.mutedInk)
                 .frame(width: 32, height: 32)
-                .background(isActive ? CarbInTheme.basilSoft : CarbInTheme.inset, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 2) {
                 Text(localization.text(title))
@@ -2881,7 +2874,6 @@ private struct ComponentRow: View {
             .font(CarbInTheme.reading(.body, size: 17, weight: .medium))
             .foregroundStyle(CarbInTheme.basil)
             .frame(width: 38, height: 38)
-            .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
             .accessibilityHidden(true)
     }
 
@@ -3022,8 +3014,7 @@ private struct PrivacyRow: View {
                 .font(.body.weight(.semibold))
                 .foregroundStyle(CarbInTheme.basil)
                 .frame(width: 38, height: 38)
-                .background(CarbInTheme.basilSoft, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
-                .accessibilityHidden(true)
+                    .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 4) {
                 Text(localization.text(title))
                     .font(CarbInTheme.display(.headline, size: 16))
