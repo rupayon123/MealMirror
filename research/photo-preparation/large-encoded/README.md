@@ -1,0 +1,9 @@
+# Large encoded photo preparation check
+
+The [receipt](../48mp-catalyst-20261027.json) records one separately generated 8000×6000 JPEG with EXIF orientation 6, followed by two serial calls to the unchanged production Data downsampler using actual Mac Catalyst UIKit/ImageIO. Both production limits passed all 14 fixed checks: food limit 1800 produced 1350×1800 and label limit 2400 produced 1800×2400, orientation up, scale 1, and the predeclared red/blue/green/yellow corner order.
+
+The [exact tested probe](../../vision/LargeEncodedCatalystProbe.swift) includes the extracted function and harness. The [exact generator](GenerateFixture.py) requires Pillow 12.3.0 for this recorded environment; it is research tooling, not an app dependency. The generated original remains private with SHA-256 `aa3914e6af9be321775619d725b999c22122d4e57801c61a93fddc9e9d177581`, 1,631,272 bytes. Generator/compiler/probe ran in separate processes with 60/180/60-second controller bounds and a 40-second probe watchdog. No retries occurred. Static and input/binary freezes preceded their respective phases.
+
+Pre-run review corrected small corner patches whose edges coincided with oracle sample positions and cleanup that could miss an owned descendant after its leader exited. Those preparations never ran. The successful v3 exits report reaped leaders and absent owned groups; TERM/KILL timeout handling remains unexercised.
+
+Probe highwater was 150,781,952 bytes (about 143.8 MiB). It includes input, both serial calls and harness/oracle work; the second case shares the first case's caches and highwater. This is not decoder-only memory, a cold-start/per-call comparison, an iPhone budget, a PhotosPicker/camera test, or broad JPEG/HEIF/PNG acceptance. No image recognition or meal amount was evaluated. App source and candidate 20 are unchanged.

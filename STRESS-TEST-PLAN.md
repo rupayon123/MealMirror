@@ -67,3 +67,8 @@ The [single native Mac control](research/photo-preparation/native-mac-label-2026
 ## Vision cancellation responsiveness, build 20
 
 The same six-assertion gate probe failed two responsiveness expectations before the change and passed all six afterward. A declared request spy holds cancellation while the observer checks fallback delivery and caller return; releasing the handler also verifies cleanup and late/duplicate-result rejection. Production now resumes the claimed fallback before dispatching cancellation to a utility worker. This verifies source-derived gate ordering, not real Vision latency, cancellation of OS work, an OCR fix or whole-app UI behavior. Swift5 observer semaphore warnings remain retained. [Comparison](research/vision-diagnostics/cancellation-responsiveness-20261026.json) · [Actual SDK/signing and failed-upload scope](research/vision-diagnostics/delivery-20261027-build20.json).
+
+
+## Large encoded JPEG preparation
+
+**Large encoded input check — October 27:** The unchanged production Data preparation function passed all 14 fixed dimension, orientation, scale and corner checks on one procedural 8000×6000 JPEG in a direct Mac Catalyst probe. Food limit 1800 returned 1350×1800; label limit 2400 returned 1800×2400. The separate probe peaked at 143.8 MiB including both serial cases and harness work. This does not verify PhotosUI, the native camera route, HEIF/PNG, iPhone memory, or recognition quality. App source and candidate 20 are unchanged. [Exact scope and receipt](research/photo-preparation/48mp-catalyst-20261027.json) · [Tested source](research/photo-preparation/large-encoded/README.md).
