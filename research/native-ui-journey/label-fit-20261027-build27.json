@@ -564,10 +564,13 @@
   "remaining": [
     "Physical offline, native camera and physical release testing.",
     "VoiceOver speech/swipe, Reduce Motion, RTL, compactphone/iPad and whole-app language/visual acceptance.",
-    "Explicit full-size label inspection; current27 settled-transcription follow-up.",
+    "Explicit full-size label inspection.",
     "Independent diverse-food recognition and intended-user comprehension evaluation.",
     "Safe recent-meal reuse and optional local export.",
     "Applicant review/eligibility/essays and actual-year published Apple requirements."
   ],
-  "submissionReady": false
+  "submissionReady": false,
+  "followUpEvidence": {
+    "settledLabel": "settled-label-20261027-build27.json"
+  }
 }

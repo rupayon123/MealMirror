@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "build": "27",
+  "sourceMain": "b57ce2a44bb1eb6cf736ee1212435f54478a1ce2",
+  "case": "testExact27SettledLabelTranscription",
+  "sourceSHA256": "9298e4d0c3597d15a33cf23e76927d94482616a813dc6639c6dd8a210375c604",
+  "execution": {
+    "exitCode": 0,
+    "timedOut": false,
+    "limitSeconds": 480,
+    "hostSeconds": 133.857,
+    "leaderReaped": true,
+    "ownedGroupPresentAtReturn": false,
+    "orphanedAtReturn": false
+  },
+  "caseSeconds": 105.537,
+  "captures": {
+    "09-settled-label-source-guidance": "418e9f1da56e98ed388b8e794145d969a408e7ff3fd003ef04849dbbc336bdd7",
+    "08-settled-ocr-line-fully-exposed": "418e9f1da56e98ed388b8e794145d969a408e7ff3fd003ef04849dbbc336bdd7"
+  },
+  "preservation": {
+    "installedFilesUnchanged": true,
+    "historyFilesUnchanged": true,
+    "testExitCode": 0,
+    "testTimedOut": false,
+    "scope": "Current app-file identity and original owned-QA history bytes only; not UI acceptance."
+  },
+  "allNineMediaUnchanged": true,
+  "artifactRecheck": {
+    "sourceFiles": 172,
+    "allFrozenSourcesMatch": true,
+    "zipBytes": 12270472,
+    "zipSHA256": "dae250d0572bc14e877f27b97bbc6b8327582031456bc5fbca1357847dc1993e",
+    "zipFileCount": 138,
+    "zipDirectoryCount": 41,
+    "zipIntegrityPassed": true,
+    "preparationCorrections": [
+      "Initial Python3 system interpreter was too old for bounded helper; rerun used bundled Python3.12 before any build output existed.",
+      "Ad hoc ZIP check initially counted directory entries as files. Corrected to non-directory count138; size/hash unchanged."
+    ],
+    "appSourceChanged": false
+  },
+  "observations": [
+    "Actual local model supplied tentative names on one exposed generated meal.",
+    "Actual OCR read the separate procedural synthetic37g label; after1.2s animation settle its carbohydrate37 line and guidance were wholly exposed and clear of pinned actions.",
+    "Root inspected the settled image: all3 transcription lines and guidance remain visible; two requested captures are pixel-identical because both targets fit simultaneously.",
+    "No amount entered; Review unavailable; no Save/Delete action invoked."
+  ],
+  "scope": [
+    "Full-language build27 in English, owned iPhone Duo Simulator, normal/light only. Temporary onboarding launch argument.",
+    "Not independent nutrition/recognition accuracy, physical offline, VoiceOver, largest-text or whole-app acceptance.",
+    "App/ZIP unchanged; previous build27 four-case receipt remains separately scoped."
+  ],
+  "submissionReady": false
+}
