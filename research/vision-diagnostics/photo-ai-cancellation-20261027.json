@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "baselineMain": "115d038fca959845e1c8b7828061cf0dc0023dda",
+  "scope": "Exact source-extracted PhotoAIContinuationGate with a declared PhotoAIStatus surrogate, native Foundation and real Swift Task cancellation handlers. No Foundation Models inference.",
+  "freezes": {
+    "first": {
+      "baselineCommit": "115d038fca959845e1c8b7828061cf0dc0023dda",
+      "productionSHA256": "143feea02ca5918360904cdbbfc4f17d8ea6acd87eda8edf2e4f2ba60ee0290c",
+      "gateSHA256": "9bfe116f0eedcf8df64b93fab5a78b4a591791037655111df537a47d067723a9",
+      "harnessSHA256": "a6687e5a016938e92d3eddd6f00a4e6bd73bfe80810b9beb3a330432ecfbd786",
+      "baselineProbeSHA256": "26bcee47df189d0d2c9168212e4b53d4faa713fb9bcd92641ce6e9c0a55dbfa9",
+      "compileBoundSeconds": 90,
+      "runtimeBoundSeconds": 20,
+      "criteria": "Seven fixed Boolean checks; the cancellation handler remains held during the two responsiveness observations. Exact extracted gate, declared status surrogate, real Swift Task cancellation; no Foundation Models inference."
+    },
+    "late": {
+      "reason": "Additional late worker and timer registration paths found in source after the original seven-check baseline; criteria frozen before late baseline or production changes.",
+      "harnessSHA256": "101b0fa05c0f7df395c522cefcd0cec60952e5467e610dd29643813f902257fc",
+      "probeSHA256": "1b056308dfb611eac63c949a53edb3f2efa06894201517d35b670520d1686b11",
+      "checksPerPath": 4
+    }
+  },
+  "sourceBindings": {
+    "baselineGateSHA256": "9bfe116f0eedcf8df64b93fab5a78b4a591791037655111df537a47d067723a9",
+    "fixedGateSHA256": "dad1e3938c8fb2d5fb61bfffe01699765a3a6dbd91cba017e472d94fe1fa5f53",
+    "productionAfterSHA256": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "harnessSHA256": "a6687e5a016938e92d3eddd6f00a4e6bd73bfe80810b9beb3a330432ecfbd786",
+    "lateHarnessSHA256": "101b0fa05c0f7df395c522cefcd0cec60952e5467e610dd29643813f902257fc"
+  },
+  "cases": {
+    "Baseline": {
+      "probeSHA256": "26bcee47df189d0d2c9168212e4b53d4faa713fb9bcd92641ce6e9c0a55dbfa9",
+      "stages": {
+        "compile": {
+          "exitCode": 0,
+          "timedOut": false,
+          "seconds": 5.20439275,
+          "boundSeconds": 90
+        },
+        "execute": {
+          "exitCode": 1,
+          "timedOut": false,
+          "seconds": 2.7193640830000003,
+          "boundSeconds": 20
+        }
+      },
+      "result": {
+        "checks": {
+          "cancellationHandlerEntered": true,
+          "cancellationHandlerReleased": true,
+          "fallbackDeliveredBeforeCancellationRelease": false,
+          "finishReturnedBeforeCancellationRelease": false,
+          "lateRegistrationReturnsOriginalResult": true,
+          "originalFallbackPreserved": true,
+          "workerExitedAfterOperationReleased": true
+        },
+        "passed": false
+      },
+      "compileDiagnosticsEmpty": true,
+      "runtimeDiagnosticsEmpty": true
+    },
+    "Fixed": {
+      "probeSHA256": "337ec3ad8c55fe49a634ca785740e9ea4c8cd169f3c6b58c8b69daf5d9943f43",
+      "stages": {
+        "compile": {
+          "exitCode": 0,
+          "timedOut": false,
+          "seconds": 3.307784792,
+          "boundSeconds": 90
+        },
+        "execute": {
+          "exitCode": 0,
+          "timedOut": false,
+          "seconds": 0.22225612499999992,
+          "boundSeconds": 20
+        }
+      },
+      "result": {
+        "checks": {
+          "cancellationHandlerEntered": true,
+          "cancellationHandlerReleased": true,
+          "fallbackDeliveredBeforeCancellationRelease": true,
+          "finishReturnedBeforeCancellationRelease": true,
+          "lateRegistrationReturnsOriginalResult": true,
+          "originalFallbackPreserved": true,
+          "workerExitedAfterOperationReleased": true
+        },
+        "passed": true
+      },
+      "compileDiagnosticsEmpty": true,
+      "runtimeDiagnosticsEmpty": true
+    },
+    "BaselineLate": {
+      "probeSHA256": "1b056308dfb611eac63c949a53edb3f2efa06894201517d35b670520d1686b11",
+      "stages": {
+        "compile": {
+          "exitCode": 0,
+          "timedOut": false,
+          "seconds": 3.710794667,
+          "boundSeconds": 90
+        },
+        "execute": {
+          "exitCode": 1,
+          "timedOut": false,
+          "seconds": 2.308846334,
+          "boundSeconds": 20
+        }
+      },
+      "result": {
+        "passed": false,
+        "timer": {
+          "cancellationHandlerEntered": true,
+          "handlerReleased": true,
+          "registrationReturnedBeforeRelease": false,
+          "taskExitedAfterOperationRelease": true
+        },
+        "worker": {
+          "cancellationHandlerEntered": true,
+          "handlerReleased": true,
+          "registrationReturnedBeforeRelease": false,
+          "taskExitedAfterOperationRelease": true
+        }
+      },
+      "compileDiagnosticsEmpty": true,
+      "runtimeDiagnosticsEmpty": true
+    },
+    "FixedLate": {
+      "probeSHA256": "b5e5e24618d60733995881a177df2c4cc276ca6eb5ab4c916f33bd97482a11fd",
+      "stages": {
+        "compile": {
+          "exitCode": 0,
+          "timedOut": false,
+          "seconds": 10.6848535,
+          "boundSeconds": 90
+        },
+        "execute": {
+          "exitCode": 0,
+          "timedOut": false,
+          "seconds": 0.3973792499999984,
+          "boundSeconds": 20
+        }
+      },
+      "result": {
+        "passed": true,
+        "timer": {
+          "cancellationHandlerEntered": true,
+          "handlerReleased": true,
+          "registrationReturnedBeforeRelease": true,
+          "taskExitedAfterOperationRelease": true
+        },
+        "worker": {
+          "cancellationHandlerEntered": true,
+          "handlerReleased": true,
+          "registrationReturnedBeforeRelease": true,
+          "taskExitedAfterOperationRelease": true
+        }
+      },
+      "compileDiagnosticsEmpty": true,
+      "runtimeDiagnosticsEmpty": true
+    }
+  },
+  "change": "Claim/clear under the existing lock, resume the result outside the lock, then request worker/timer cancellation asynchronously on a utility queue. Late task registrations also schedule cancellation asynchronously.",
+  "assertions": {
+    "baselineFailed": 4,
+    "fixedPassed": 15,
+    "sameHarnessWithinEachPair": true,
+    "criteriaRelaxed": false
+  },
+  "independentReview": "Read-only review verified exact baseline/current gate bindings, unchanged harness pairs and actual results. No material issue in locking, single-result delivery, late registration or recorded scope. No reviewer workloads.",
+  "limitations": [
+    "The held handler is deliberately controlled, not an Apple inference latency measurement.",
+    "No proof the OS stops compute, of all concurrent interleavings, app navigation, recognition quality or physical offline behavior.",
+    "Two late-registration cases were separately frozen before running their baseline, after source review of the first baseline. No post-result change to either harness.",
+    "Successful runs do not exercise controller timeout cleanup; no process-absence claim.",
+    "Serial wall-clock values are observations, not benchmark comparisons."
+  ]
+}

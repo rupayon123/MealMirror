@@ -72,3 +72,8 @@ The same six-assertion gate probe failed two responsiveness expectations before 
 ## Large encoded JPEG preparation
 
 **Large encoded input check — October 27:** The unchanged production Data preparation function passed all 14 fixed dimension, orientation, scale and corner checks on one procedural 8000×6000 JPEG in a direct Mac Catalyst probe. Food limit 1800 returned 1350×1800; label limit 2400 returned 1800×2400. The separate probe peaked at 143.8 MiB including both serial cases and harness work. This does not verify PhotosUI, the native camera route, HEIF/PNG, iPhone memory, or recognition quality. App source and candidate 20 are unchanged. [Exact scope and receipt](research/photo-preparation/48mp-catalyst-20261027.json) · [Tested source](research/photo-preparation/large-encoded/README.md).
+
+
+## Local-model cancellation responsiveness, build 21
+
+The exact source-extracted gate and real Swift Task handlers passed 15 fixed checks after four baseline ordering failures across result delivery and late worker/timer registration. The status enum is a declared test surrogate. Production now resumes the locked-in result outside the lock, then schedules cancellation on a utility queue; late task registration also schedules cancellation. This establishes controlled gate ordering, not Apple inference latency, immediate OS compute cancellation, UI recovery, recognition or physical offline quality. Both Simulator resource variants compiled, but the retained interruption/path-error/verification-timeout sequence leaves the signed archive and resource parity open. [Gate evidence](research/vision-diagnostics/photo-ai-cancellation-20261027.json) · [Delivery](research/vision-diagnostics/delivery-20261027-build21.json).

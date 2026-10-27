@@ -4,20 +4,20 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 
 **Testing only. Not submission-ready or clinically validated.** No Android version, required account, server or cloud-model endpoint.
 
-## Current build: 1.0 (20)
+## Current source candidate: 1.0 (21)
 
 | Artifact or check | Result |
 | --- | --- |
-| [English Challenge source ZIP](candidate/MealMirror-SSC2027.zip) | 12,207,766 bytes; 60 files; two byte-identical repacks |
-| ZIP SHA-256 | `b9daf26bea860e94bbca27a139dc18658f40fc75495bb135383f517a0ebc1269` |
+| [English Challenge source ZIP](candidate/MealMirror-SSC2027.zip) | 12,208,090 bytes; 60 files; two byte-identical repacks |
+| ZIP SHA-256 | `8690e3a64f3f8fdefd4f764490709c6af7defcc368571d8b8135b7ed681181d6` |
 | Simulator builds | English and full-language variants passed for arm64, including executable and debug library |
-| Internal archive | Signed iPhoneOS 27.1 archive; iOS 17 minimum; all 18 language catalogs/native strings passed integrity checks |
-| Internal TestFlight upload | Failed: Xcode requires App Store Connect account access. Build 20 has not been confirmed uploaded |
+| Internal archive | Build 21 unrun after language-verifier timeout; build 20 remains the last verified signed archive |
+| Internal TestFlight upload | Build 21 not attempted; build 20 failed because Xcode requires App Store Connect account access |
 | Latest previously uploaded build | 19; build 2 remains the last independently verified existing-group Testing state |
 
-Build 20 returns the shared Vision gate's fallback before requesting cancellation on a utility worker. The same six controlled checks now pass after two baseline responsiveness failures. This does not establish Apple's cancellation latency or fix OCR. The earlier universal Simulator build timed out; the separate arm64 pass does not explain that failure. [Exact delivery evidence](research/vision-diagnostics/delivery-20261027-build20.json) · [Controlled comparison](research/vision-diagnostics/cancellation-responsiveness-20261026.json).
+Build 21 delivers the local-model gate's chosen result before asynchronously requesting worker/timer cancellation, including late registration. The same 15 controlled checks pass after four baseline ordering failures. The first cold build was interrupted; a distinct incremental recovery passed. A verifier path mistake was corrected, then full-language verification timed out. These failures remain retained; no build-21 archive, upload, fresh UI or physical acceptance is claimed. [Delivery evidence](research/vision-diagnostics/delivery-20261027-build21.json) · [Controlled comparison](research/vision-diagnostics/photo-ai-cancellation-20261027.json).
 
-The internal testing archive retains 18 languages. The separate Challenge ZIP is English-only; all 18 Swift source files match between variants. These are different resource variants, not identical binaries. Catalog parity does not establish translation or layout quality.
+The internal testing resource variant retains 18 languages; build 21's complete language verifier remains open. The separate Challenge ZIP is English-only; all 18 Swift source files match between variants. These are different resource variants, not identical binaries. Catalog parity does not establish translation or layout quality.
 
 ## What the app does
 
@@ -40,7 +40,7 @@ Keep distribution to development installs and the existing internal TestFlight g
 
 ## Evidence and remaining work
 
-The latest completed full native photo-to-save/delete journey is [build 13](research/native-ui-journey/full-photo-save-20261025-build13.json): one exposed meal, separate synthetic label and manually checked amount on iOS Simulator. It is not fresh build-20, worldwide recognition, accessibility or physical airplane-mode acceptance. Command-line OCR failures remain recorded separately; they do not invalidate that version-specific iOS observation. Physical iPhone testing is deferred to the applicant.
+The latest completed full native photo-to-save/delete journey is [build 13](research/native-ui-journey/full-photo-save-20261025-build13.json): one exposed meal, separate synthetic label and manually checked amount on iOS Simulator. It is not fresh build-21, worldwide recognition, accessibility or physical airplane-mode acceptance. Command-line OCR failures remain recorded separately; they do not invalidate that version-specific iOS observation. Physical iPhone testing is deferred to the applicant.
 
 Remaining gates include dependable food naming/abstention on qualified independent data, fresh native journeys and recovery cases, large-image resource checks, accessibility/RTL/iPad/motion and translation review, physical offline validation, internal account/server verification, current Challenge rules, and applicant-owned code review/disclosures/answers. The broad companion redesign remains paused; the approved Pixel Kitchen theme is preserved.
 

@@ -204,7 +204,7 @@ private final class PhotoAIContinuationGate: @unchecked Sendable {
         let pending = result == nil
         if pending { worker = newWorker }
         lock.unlock()
-        if !pending { newWorker.cancel() }
+        if !pending { Self.cancelAsynchronously(newWorker) }
     }
 
     func register(timer newTimer: Task<Void, Never>) {
@@ -212,7 +212,7 @@ private final class PhotoAIContinuationGate: @unchecked Sendable {
         let pending = result == nil
         if pending { timer = newTimer }
         lock.unlock()
-        if !pending { newTimer.cancel() }
+        if !pending { Self.cancelAsynchronously(newTimer) }
     }
 
     func finish(_ value: PhotoAIStatus) {
@@ -226,8 +226,15 @@ private final class PhotoAIContinuationGate: @unchecked Sendable {
         worker = nil
         timer = nil
         lock.unlock()
-        currentWorker?.cancel()
-        currentTimer?.cancel()
         currentContinuation?.resume(returning: value)
+        Self.cancelAsynchronously(currentWorker)
+        Self.cancelAsynchronously(currentTimer)
+    }
+
+    private static func cancelAsynchronously(_ task: Task<Void, Never>?) {
+        guard let task else { return }
+        // Cancellation handlers can run synchronously. Never make delivery or
+        // late registration wait for a worker's cancellation handler to return.
+        DispatchQueue.global(qos: .utility).async { task.cancel() }
     }
 }

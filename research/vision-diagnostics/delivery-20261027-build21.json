@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "baselineMain": "115d038fca959845e1c8b7828061cf0dc0023dda",
+  "build": "21",
+  "candidate": {
+    "sha256": "8690e3a64f3f8fdefd4f764490709c6af7defcc368571d8b8135b7ed681181d6",
+    "bytes": 12208090,
+    "repackIdentical": true,
+    "files": 60,
+    "swiftSources": 18
+  },
+  "sourceFiles": {
+    "challenge": 60,
+    "internal": 94
+  },
+  "matchingSwiftSources": 18,
+  "swiftSourceHashes": {
+    "MealMirrorApp.swift": "80e18c4ba5a354e806a2bd35561303247d2fe86e93d3dd64ebfa70ac749161c9",
+    "Localization.swift": "18ee8f08a6b01baa0efd7bac9bf5f82bcff6fbd39e1aa1a503437655c6a08877",
+    "PixelKitchenIcon.swift": "c533e25f0ec9b65517fb886a50c4701da84faa77b1409bfe2b7d649c5dfbdec7",
+    "LegalViews.swift": "70f4ea15ba78f26b1963b9cd5fdc253abd82db4f679ae00e998bcc4cd17b04eb",
+    "PhotoDataTransfer.swift": "07c85daae645c63d64c59b071d76d5984defcbae92dfd26dc95592cb0ddd879c",
+    "Models.swift": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e",
+    "Package.swift": "12679e55e3fea9931487c27745c0e2259a211aa0c5f89114217ec3ecb59a521b",
+    "Theme.swift": "ce6385c5c955c4bde1ab0baea35a547ed2c9d2148c3d7bd99c1185e53f62030d",
+    "MealAnalysisEngine.swift": "cc98672ad35ae928c8419157567488125e8fbd83b57aa5bf2e1dcdd5af3835da",
+    "AppShell.swift": "547945bf60ec6317552ef8d2bbf5efb1ef4d17e223b09314ad49b10accd70db1",
+    "ContentView.swift": "814e1325bdfcfbc5301bcece926af9a08505158a181bbfc9f5acaa8161e70745",
+    "PhotoCluePolicy.swift": "644110f7872461dc27e2c458d594a5b0cd9a64935063522db26c2c9ca7b1a959",
+    "LocalPhotoAI.swift": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "CameraCapture.swift": "0c3693c12a525324082d81e84f434b6ba9e9487f963cb3d1aaa85d98a80fc434",
+    "NavigationCore/AppNavigationState.swift": "4225b686041e8f6d450e0baaadd88c32549e99c3e35d1bd4ea681c62f75a390b",
+    "MealCore/PhotoNamePolicy.swift": "e905f098a2e56eead569aee895dc3c75d323379e83ae77c704208cf49188a4c4",
+    "MealCore/MealModels.swift": "4a37e11824d122728ef4798482cd44c3d61c78b1321345a8c83b93099b303493",
+    "OnboardingCore/OnboardingState.swift": "dd0f78fd9de863b8f3ea001f9d3904c1a5662bc21d190633a7c8ae0c8fb4fd85"
+  },
+  "controlledGateReceipt": "photo-ai-cancellation-20261027.json",
+  "originalColdAttempt": {
+    "controllerExitCode": 1,
+    "controllerError": "[Errno 1] Operation not permitted",
+    "configuredBuildBoundSeconds": 900,
+    "xcodeExitCode": null,
+    "xcodeTerminalMarker": "BUILD INTERRUPTED",
+    "leaderPresentAtInspection": false,
+    "errorDiagnostics": [],
+    "laterStagesRun": false,
+    "scope": "Controller failed in first build stage; original leader/group absent at this inspection. Do not infer exact compiler exit, successful build, timeout cleanup mechanism, or fixed cause. No automatic retry."
+  },
+  "recovery": {
+    "condition": "One incremental recovery reused populated challenge DerivedData; source snapshots and criteria unchanged. This is not a clean-build result.",
+    "englishBuild": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 22.292029957999997
+    },
+    "fullLanguageBuild": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 364.23316412500003
+    }
+  },
+  "binaries": {
+    "challenge": {
+      "build": "21",
+      "binaries": {
+        "MealMirror": {
+          "architectures": [
+            "arm64"
+          ],
+          "sha256": "be5355088ef6f4e11ca6e4a9a89b8386729aede08fbaf4d9357b299d888d501b"
+        },
+        "MealMirror.debug.dylib": {
+          "architectures": [
+            "arm64"
+          ],
+          "sha256": "68ac77e7f2d5417e422f1f038e432104448e11392812212a15d81456888eb14f"
+        }
+      },
+      "catalogLanguages": 1,
+      "scope": "Actual binary/resource identity only; separate full language verifier timed out."
+    },
+    "internal": {
+      "build": "21",
+      "binaries": {
+        "MealMirror": {
+          "architectures": [
+            "arm64"
+          ],
+          "sha256": "209941fbbaa1cd357f9da4643c64bb8e62c90806798b523f74a96dd3655d7ae9"
+        },
+        "MealMirror.debug.dylib": {
+          "architectures": [
+            "arm64"
+          ],
+          "sha256": "012613cfe0b3e86e3970bf066b19ab5ed19ecc05ed3dbda4b513b5cf73ca6ccf"
+        }
+      },
+      "catalogLanguages": 18,
+      "scope": "Actual binary/resource identity only; separate full language verifier timed out."
+    }
+  },
+  "resourceVerifier": {
+    "firstExit": 2,
+    "firstCause": "Controller accidentally pointed to nonexistent SSC2127 repo; verifier did not execute.",
+    "correctedResult": {
+      "exitCode": -15,
+      "timedOut": true,
+      "seconds": 91.53114075
+    },
+    "correctedReportExists": false,
+    "scope": "Corrected verifier timed out; resource parity is unverified. No further verifier retry in this batch."
+  },
+  "archive": "Unrun after verifier failure",
+  "upload": "Not attempted. Build20 account-access failure remains; latest prior upload19, last independently verified internal-group Testing2. Browser sign-in alone does not establish Xcode access.",
+  "ui": "Build21 not installed or exercised; build13 remains latest full native journey.",
+  "limits": [
+    "No signed build21 archive or full-language parity acceptance.",
+    "No physical iPhone, complete UI, translation quality or recognition accuracy acceptance.",
+    "Retained original interruption/controller error, path error and corrected verifier timeout; no failure is converted into a pass.",
+    "One later process snapshot found original cold-build and corrected-verifier leaders/groups absent; it does not establish timeout cleanup mechanism.",
+    "Host load average observed about769 after these failures; no causal attribution or remediation success claimed."
+  ],
+  "finalPackageVerification": {
+    "thirdRepackIdentical": true,
+    "fileCount": 60,
+    "directoryEntryCount": 15,
+    "sourceMatches": 18,
+    "integrityPassed": true,
+    "englishCatalogOnly": true,
+    "scratchCheckCorrection": "An initial scratch assertion counted directory entries as files and failed. Corrected file-only count is 60; no ZIP bytes, source or required file count changed."
+  }
+}
