@@ -455,10 +455,17 @@
     "originalInteractiveSimulatorOperated": false
   },
   "distribution": {
-    "build28Uploaded": false,
+    "build28Uploaded": true,
     "lastConfirmedInternalTestingBuild": "27",
     "testingOnly": true,
-    "publicAppRelease": false
+    "publicAppRelease": false,
+    "method": "TestFlight Internal Only",
+    "organizerResult": "App upload complete",
+    "warnings": [],
+    "serverStatus": "Processing",
+    "group28TestingConfirmed": false,
+    "organizerProofSHA256": "9a90b1eaa45bcee05521ff22493b269926b1245551c588e1ee3965ac6d713697",
+    "processingProofSHA256": "3947c251ffef67fcd7aa2241dd518905ce4560eaf508e5f6e9648d9225828eb3"
   },
   "scope": [
     "Full18-language Simulator app in English; separate English ZIP built with18matching Swift sources, not executed as the native app. Incremental builds.",
