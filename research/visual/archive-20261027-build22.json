@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "sourceMain": "1b64787f35796733e4e18f9aab5fed08aa4395da",
+  "build": "22",
+  "archive": {
+    "passed": true,
+    "build": "22",
+    "sourceFiles": 172,
+    "sdk": "iphoneos27.1",
+    "minimumOS": "17.0",
+    "binarySHA256": "02e7455a626ce113c9998a5bd932b42161de897451429d94c22d359e16ab6878",
+    "assetCatalogSHA256": "a52e4c5cf0c02c36979b62209911310891127c82370f0c4dc53b5ac2636eb72e",
+    "scope": "Signed full-language archive; Organizer separately confirms internal-only upload completion. No installation, UI or physical offline evidence."
+  },
+  "stages": {
+    "archive": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 37.678,
+      "limitSeconds": 600,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    },
+    "codesign": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.142,
+      "limitSeconds": 30,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    },
+    "locales": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.447,
+      "limitSeconds": 90,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    },
+    "metadata": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.139,
+      "limitSeconds": 30,
+      "leaderReaped": true,
+      "orphanedAtReturn": false
+    }
+  },
+  "resources": {
+    "build": "22",
+    "languages": [
+      "ar",
+      "bn",
+      "en",
+      "es",
+      "fa",
+      "fil",
+      "fr",
+      "gu",
+      "hi",
+      "hu",
+      "ja",
+      "ko",
+      "pa",
+      "pt",
+      "ta",
+      "ur",
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "languageCount": 18,
+    "englishKeyCount": 487,
+    "sourceCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "builtCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "passed": true,
+    "errors": [],
+    "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+  },
+  "evidenceHashes": {
+    "PROTOCOL.json": "83af703e50d534095156fa5541131f0f85f8b85c00965d35cc49c0c18a8d9e8e",
+    "RESULT.json": "c1432c07bbf5bfa90aa62a8d70a30f2685607c6e870351cb5749531864afe799",
+    "archive.json": "0b62ca6a83f46453f06c969a4b32618395f73898f63e5a983f4e73d7900f455c",
+    "codesign.json": "c3bc36d78c4d3f431e298189e607f7ab2c2e20240743da10432135acbcec24f6",
+    "locales.json": "793a49e4ab18ac3cdddb992f443091199bb2535ed943d9e3303fdf502c54c413",
+    "locales-report.json": "d4a7a076c3dd4fed9c1f73954bbcc5ce0644976546ee5fa43245672466874433",
+    "metadata.json": "18566e2cb844a1dfeffec4b95d59b490f92ff9148f8b5876ad3e2d26dce2d2c2",
+    "metadata.stdout": "b8251a889fcfe9f457048b6f8cb25d27ba6aa7119d3e8319774bd7d453c27dcf",
+    "organizer-upload-complete.png": "6e1837a2e5ec326d5169f7fb4aa4eafb173cc46df9408e85e7207956ec7c2a57"
+  },
+  "distribution": {
+    "route": "Xcode Organizer",
+    "selectedMethod": "TestFlight Internal Only",
+    "observedState": "Xcode Organizer: MealMirror 1.0 (22) uploaded; App upload complete",
+    "appStoreReviewOrRelease": false,
+    "serverProcessingVerified": false,
+    "existingInternalGroupBuild22Verified": false,
+    "serverVerificationBlocker": "Existing MealMirror App Store Connect tab was discovered, but two attempts to connect timed out before page inspection. No browser-side mutation or group assignment was attempted."
+  },
+  "limits": [
+    "Signed full-language archive differs from English-only submission ZIP;18Swift source hashes match frozen variants.",
+    "No installation, native visual/accessibility acceptance, physical offline, recognition or translation quality proof.",
+    "Previous build21 CLI upload failure remains recorded; Organizer upload is a distinct authorized route using the existing account."
+  ]
+}

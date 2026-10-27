@@ -14,7 +14,7 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 | Simulator source builds | English and full-language variants passed for arm64; incremental builds, not clean/universal |
 | Full-language integrity | All 18 catalogs/native strings match source; 487 English keys; translation/layout quality still open |
 | Outline geometry | Same 243 macOS SwiftUI checks pass after 20 failures in an unpublished prototype; not native app visual proof |
-| Internal archive/upload | Build 22 unrun; last signed archive is 21, whose upload failed for Xcode account access |
+| Internal archive/upload | Build 22 signed archive and Organizer internal-only upload passed; server processing/group availability unverified |
 | Existing internal TestFlight group | Build 19 confirmed Testing; this has the earlier appearance |
 
 Build 22 integrates the revised floating pixel family and shared surfaces while preserving the pot/MM emblem, fonts, photos, local AI, storage and numeric boundaries. The original artwork sources and provenance are [reviewable here](design/pixel-kitchen/README.md). Source parse/build, exact package, asset reproduction and geometry evidence are in the [delivery receipt](research/visual/delivery-20261027-build22.json). Native rendering, accessibility, human comprehension and physical offline operation remain open after the recorded Simulator readiness failure; no installation/launch of build 22 is claimed.
@@ -60,4 +60,4 @@ Remaining gates include dependable food naming/abstention on qualified independe
 
 Historical build results remain in the readiness records and linked research receipts. The applicant must reconcile the final package against the published rules for the actual submission year and personally review the code and write the Challenge answers.
 
-Latest [signed archive and internal testing evidence](research/vision-diagnostics/archive-20261027-build21.json) retains the earlier controller/interpreter and verifier failures. The full-language internal archive is distinct from the English Challenge ZIP.
+Latest [signed archive and internal upload evidence](research/visual/archive-20261027-build22.json) records build 22; earlier controller/interpreter, verifier and CLI upload failures remain in their historical receipts. The full-language internal archive is distinct from the English Challenge ZIP.
