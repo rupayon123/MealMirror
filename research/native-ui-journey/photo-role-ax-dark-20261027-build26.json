@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "build": "26",
+  "sourceMain": "22305c876fd7c58e207f08a47d66fa198c413a89",
+  "candidateSHA256": "53e4dfac49af9b90fd75a5435fe55c49febb64bafb04afd4f21e80e828287ef9",
+  "appAndZIPChanged": false,
+  "displayTestState": {
+    "appearance": "dark",
+    "content_size": "accessibility-extra-extra-extra-large"
+  },
+  "displayRestored": {
+    "appearance": "light",
+    "content_size": "large"
+  },
+  "case": "testExact26PhotoRoleStatesAXDark",
+  "caseSeconds": 129.64,
+  "execution": {
+    "command": [
+      "xcodebuild",
+      "test-without-building",
+      "-collect-test-diagnostics",
+      "never",
+      "-xctestrun",
+      "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/states-ax-dark-v4/DerivedData/Build/Products/UITests_iphonesimulator27.1-arm64.xctestrun",
+      "-destination",
+      "platform=iOS Simulator,id=FA59E2FB-A2D6-4673-8025-9FB593BE9FEF",
+      "-resultBundlePath",
+      "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/states-ax-dark-v4/Result.xcresult",
+      "-parallel-testing-enabled",
+      "NO",
+      "-maximum-concurrent-test-simulator-destinations",
+      "1",
+      "-test-timeouts-enabled",
+      "YES",
+      "-maximum-test-execution-time-allowance",
+      "400",
+      "-default-test-execution-time-allowance",
+      "400",
+      "-only-testing:UITests/MealMirrorUITests/testExact26PhotoRoleStatesAXDark"
+    ],
+    "exitCode": 0,
+    "timedOut": false,
+    "limitSeconds": 480,
+    "hostSeconds": 142.245,
+    "pid": 62003,
+    "ownedPgid": 62003,
+    "leaderReaped": true,
+    "ownedGroupPresentBeforeSnapshot": false,
+    "ownedGroupPresentAtReturn": false,
+    "remainingOwnedGroupMembersAtReturn": [],
+    "groupMembershipInspectionError": null,
+    "orphanedAtReturn": false,
+    "childMaxRSSRaw": 147193856,
+    "childUserSeconds": 7.63123,
+    "childSystemSeconds": 9.394176999999999,
+    "cleanupSignals": []
+  },
+  "asserted": [
+    "Empty canceled picker disables analysis.",
+    "Label-only has no food photo and cannot analyze; role and Remove reachable.",
+    "Removing label restores label picker.",
+    "Food-only enables analysis; mixed photo roles remain ordered.",
+    "Removing food preserves label and disables analysis.",
+    "Each of three observed fixtures is explicitly selected in native PhotosUI; three food roles present and food picker disabled at limit."
+  ],
+  "sourceSHA256": "bc841c1cbb3833ab539d6a34e900b60078851d57f7bd54885fe2ea07568f50eb",
+  "captures": {
+    "99-final": {
+      "file": "captures/99-final.png",
+      "sha256": "e9db9f7439b99c37b8d9bdc58d950c723817d57eb5bcf68a81db16a657999bc6"
+    },
+    "05-three-layout-fixtures-and-separate-label": {
+      "file": "captures/05-three-layout-fixtures-and-separate-label.png",
+      "sha256": "e9db9f7439b99c37b8d9bdc58d950c723817d57eb5bcf68a81db16a657999bc6"
+    },
+    "picker-confirmed-selection-3": {
+      "file": "captures/picker-confirmed-selection-3.png",
+      "sha256": "252827f1bc2c2dcdd862dab9ff9cdcd752d08fa6fb81917eac00319852f6f2f7"
+    },
+    "picker-before-asset-readiness": {
+      "file": "captures/picker-before-asset-readiness.png",
+      "sha256": "e22dd2e9da42b0f8cc0225b8f2458195375b4c3e9a861fc611bd1aeb9ce560bd"
+    },
+    "picker-confirmed-selection-2": {
+      "file": "captures/picker-confirmed-selection-2.png",
+      "sha256": "21262c7ffc86ec9ec5c457d6d969598c1597901d8e8d756f5c24c9c19ced111f"
+    },
+    "picker-confirmed-selection-1": {
+      "file": "captures/picker-confirmed-selection-1.png",
+      "sha256": "0fc9e63f1459b49966a1f97e5f637a9449196faddd366ffbb6f9d282093502fe"
+    },
+    "04-food-above-separate-label": {
+      "file": "captures/04-food-above-separate-label.png",
+      "sha256": "6e7959f95ef1e4ebbd6eb2a1269471045b588b3cc68e163db9984bd5f024e585"
+    },
+    "03b-label-control-clear-of-pinned-action": {
+      "file": "captures/03b-label-control-clear-of-pinned-action.png",
+      "sha256": "50308e0e74e966ce7a303d0d6434116e4fbcdcb51224b64ee199a8f7e02804f9"
+    },
+    "03-food-only": {
+      "file": "captures/03-food-only.png",
+      "sha256": "25edcec3be5adc44b206b6a13951e3a5173ca24a42d77f1e3509ccda5dcce2bc"
+    },
+    "02-label-only-no-food-no-analysis": {
+      "file": "captures/02-label-only-no-food-no-analysis.png",
+      "sha256": "c95d9bf647c4a359e32512e15fdc04fde3b2406d02e3e503bdb5a0f66ffeaf5f"
+    },
+    "01-empty-after-picker-cancel": {
+      "file": "captures/01-empty-after-picker-cancel.png",
+      "sha256": "3184197a49e67edec2c7f851214f39db4cf3f72f0ec85ee8833ed061fa2e60fb"
+    }
+  },
+  "preservation": {
+    "installedFilesUnchanged": true,
+    "historyFilesUnchanged": true,
+    "testExitCode": 0,
+    "testTimedOut": false,
+    "scope": "Current app-file identity and original owned-QA history bytes only; not UI acceptance."
+  },
+  "mediaPreserved": true,
+  "originalInteractiveSimulatorOperated": false,
+  "retainedFailures": [
+    {
+      "attempt": "v1",
+      "execution": {
+        "command": [
+          "xcodebuild",
+          "test-without-building",
+          "-collect-test-diagnostics",
+          "never",
+          "-xctestrun",
+          "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/states-ax-dark-v1/DerivedData/Build/Products/UITests_iphonesimulator27.1-arm64.xctestrun",
+          "-destination",
+          "platform=iOS Simulator,id=FA59E2FB-A2D6-4673-8025-9FB593BE9FEF",
+          "-resultBundlePath",
+          "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/states-ax-dark-v1/Result.xcresult",
+          "-parallel-testing-enabled",
+          "NO",
+          "-maximum-concurrent-test-simulator-destinations",
+          "1",
+          "-test-timeouts-enabled",
+          "YES",
+          "-maximum-test-execution-time-allowance",
+          "400",
+          "-default-test-execution-time-allowance",
+          "400",
+          "-only-testing:UITests/MealMirrorUITests/testExact26PhotoRoleStatesAXDark"
+        ],
+        "exitCode": 65,
+        "timedOut": false,
+        "limitSeconds": 480,
+        "hostSeconds": 53.318,
+        "pid": 58690,
+        "ownedPgid": 58690,
+        "leaderReaped": true,
+        "ownedGroupPresentBeforeSnapshot": false,
+        "ownedGroupPresentAtReturn": false,
+        "remainingOwnedGroupMembersAtReturn": [],
+        "groupMembershipInspectionError": null,
+        "orphanedAtReturn": false,
+        "childMaxRSSRaw": 151273472,
+        "childUserSeconds": 1.6027529999999999,
+        "childSystemSeconds": 1.930216,
+        "cleanupSignals": []
+      },
+      "preservation": {
+        "installedFilesUnchanged": true,
+        "historyFilesUnchanged": true,
+        "testExitCode": 65,
+        "testTimedOut": false,
+        "scope": "Current app-file identity and original owned-QA history bytes only; not UI acceptance."
+      },
+      "restoredDisplay": {
+        "appearance": "light",
+        "content_size": "large"
+      },
+      "sourceSHA256": "c0db0ccb538dfd42562b67b5d0f080784dd064b53c7fa97f8888c5b52448f77c",
+      "reason": "Exact label asset count0 after Photos navigation. Uninspected cause initially."
+    },
+    {
+      "attempt": "v2",
+      "execution": {
+        "command": [
+          "xcodebuild",
+          "test-without-building",
+          "-collect-test-diagnostics",
+          "never",
+          "-xctestrun",
+          "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/states-ax-dark-v2/DerivedData/Build/Products/UITests_iphonesimulator27.1-arm64.xctestrun",
+          "-destination",
+          "platform=iOS Simulator,id=FA59E2FB-A2D6-4673-8025-9FB593BE9FEF",
+          "-resultBundlePath",
+          "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/states-ax-dark-v2/Result.xcresult",
+          "-parallel-testing-enabled",
+          "NO",
+          "-maximum-concurrent-test-simulator-destinations",
+          "1",
+          "-test-timeouts-enabled",
+          "YES",
+          "-maximum-test-execution-time-allowance",
+          "400",
+          "-default-test-execution-time-allowance",
+          "400",
+          "-only-testing:UITests/MealMirrorUITests/testExact26PhotoRoleStatesAXDark"
+        ],
+        "exitCode": 65,
+        "timedOut": false,
+        "limitSeconds": 480,
+        "hostSeconds": 72.16,
+        "pid": 59337,
+        "ownedPgid": 59337,
+        "leaderReaped": true,
+        "ownedGroupPresentBeforeSnapshot": false,
+        "ownedGroupPresentAtReturn": false,
+        "remainingOwnedGroupMembersAtReturn": [],
+        "groupMembershipInspectionError": null,
+        "orphanedAtReturn": false,
+        "childMaxRSSRaw": 135364608,
+        "childUserSeconds": 2.574355,
+        "childSystemSeconds": 3.190439,
+        "cleanupSignals": []
+      },
+      "preservation": {
+        "installedFilesUnchanged": true,
+        "historyFilesUnchanged": true,
+        "testExitCode": 65,
+        "testTimedOut": false,
+        "scope": "Current app-file identity and original owned-QA history bytes only; not UI acceptance."
+      },
+      "restoredDisplay": {
+        "appearance": "light",
+        "content_size": "large"
+      },
+      "sourceSHA256": "b594a9fce3b2ebdc294a1442741d2afb6d1cad2e648fa8db21c382aa47f34fa2",
+      "reason": "Waited15seconds for same asset; native screenshot/AX showed Private Access to Photos explanation filling viewport and pushing grid below926pt."
+    },
+    {
+      "attempt": "v3",
+      "execution": {
+        "command": [
+          "xcodebuild",
+          "test-without-building",
+          "-collect-test-diagnostics",
+          "never",
+          "-xctestrun",
+          "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/states-ax-dark-v3/DerivedData/Build/Products/UITests_iphonesimulator27.1-arm64.xctestrun",
+          "-destination",
+          "platform=iOS Simulator,id=FA59E2FB-A2D6-4673-8025-9FB593BE9FEF",
+          "-resultBundlePath",
+          "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/states-ax-dark-v3/Result.xcresult",
+          "-parallel-testing-enabled",
+          "NO",
+          "-maximum-concurrent-test-simulator-destinations",
+          "1",
+          "-test-timeouts-enabled",
+          "YES",
+          "-maximum-test-execution-time-allowance",
+          "400",
+          "-default-test-execution-time-allowance",
+          "400",
+          "-only-testing:UITests/MealMirrorUITests/testExact26PhotoRoleStatesAXDark"
+        ],
+        "exitCode": 65,
+        "timedOut": false,
+        "limitSeconds": 480,
+        "hostSeconds": 137.207,
+        "pid": 60053,
+        "ownedPgid": 60053,
+        "leaderReaped": true,
+        "ownedGroupPresentBeforeSnapshot": false,
+        "ownedGroupPresentAtReturn": false,
+        "remainingOwnedGroupMembersAtReturn": [],
+        "groupMembershipInspectionError": null,
+        "orphanedAtReturn": false,
+        "childMaxRSSRaw": 173178880,
+        "childUserSeconds": 5.4697379999999995,
+        "childSystemSeconds": 7.092793,
+        "cleanupSignals": []
+      },
+      "preservation": {
+        "installedFilesUnchanged": true,
+        "historyFilesUnchanged": true,
+        "testExitCode": 65,
+        "testTimedOut": false,
+        "scope": "Current app-file identity and original owned-QA history bytes only; not UI acceptance."
+      },
+      "restoredDisplay": {
+        "appearance": "light",
+        "content_size": "large"
+      },
+      "sourceSHA256": "77329959ce4bb5e100cb2e0e46b405538326d5ea912cb5018398b4e25cf7ee41",
+      "reason": "Dismissed only informational Close using observed aliases/frame/hittability; reached mixed roles/removal, then final app had2/3. Native right-column thumbnail overlaps floating Cancel/Done; fixed test hit region inV4 and added per-input selected assertion. The prior center point itself was outside the reported button rectangles; system hit-target interference is an inference, not a measured event-target result."
+    }
+  ],
+  "rootVisualReview": [
+    "Inspected maximum-system-text/dark label-only and three-photo frames. Per-role removal and count are readable.",
+    "Vertical tray divider crosses multiline Add food photos text: source places separator at total VStack midpoint, which is wrong when row heights differ. Visual gate remains open.",
+    "Selected label thumbnail crops wide label, matching normal-size finding. Fit patch is proposed separately, not integrated."
+  ],
+  "scope": [
+    "Actual full18-language app in English, owned Duo Simulator. English ZIP built separately with identical18Swift sources.",
+    "No AI/estimate/Save in this case. Stock flower/cliff images are attachment-layout fixtures, not recognition evidence.",
+    "Not whole-app AX, VoiceOver, RTL, Reduce Motion, physical offline, clinical, independent accuracy or human-comprehension acceptance."
+  ],
+  "next": [
+    "Move vertical divider between rows while retaining intrinsic heights.",
+    "Fit whole nutrition-label preview without changing food preview cropping.",
+    "Run current-source visual and interaction checks after those edits."
+  ],
+  "submissionReady": false
+}

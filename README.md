@@ -15,6 +15,8 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 
 [Exact package, native cases, retained verifier errors and limits](research/native-ui-journey/photo-role-20261027-build26.json). [Previous25 native checks and internal Testing](research/native-ui-journey/photo-label-save-20261027-build25.json).
 
+**Build26 maximum-text/dark follow-up:** The actual attachment-state case passed at the largest system text size in dark appearance: empty, label-only, food-only, mixed roles, removal and three confirmed PhotosUI selections. The display settings were restored and app/history/media files preserved. Three failed test attempts are retained: the native Photos privacy explanation hid the grid, then three attempted taps produced only two attachments while a right-column thumbnail overlapped floating system controls. The exact missed-tap cause is inferred, not measured. The corrected test handles only that observed explanation and verifies each selection. **Visual acceptance remains open:** the vertical photo-tray divider crosses the taller two-line action because it is centered over unequal-height rows; the wide label thumbnail is cropped. This is not whole-app accessibility, VoiceOver, RTL, physical offline or recognition acceptance. [Exact case, failures and screenshot identities](research/native-ui-journey/photo-role-ax-dark-20261027-build26.json).
+
 ## What the app does
 
 - Accepts up to three meal views and one separate nutrition-label photo.
