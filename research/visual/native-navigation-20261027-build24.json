@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "sourceMain": "31f4695f2bcc0a2ac98f92980c156a22f3334f23",
+  "build": "24",
+  "appSourceAndZIPChanged": false,
+  "candidateSHA256": "760ac1ecb07b718a34e72e782e8499fcdd4195be714299e8d578875b1e179dbb",
+  "variant": "Full18-language arm64 Simulator app from the candidate24 source snapshot, UI in English; judging ZIP separately English-only. All18Swift source files match.",
+  "actualNativeCase": {
+    "case": "testCurrent24NavigationAndUnsavedDraft",
+    "runnerBuild": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 9.522
+    },
+    "execution": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 225.343
+    },
+    "testCaseSeconds": 211.622,
+    "passed": true,
+    "sourceSHA256": "89462bcc836b98e580f8a3a725b7a61f681157d32a899f8342a3fa1db0e9308a",
+    "asserted": [
+      "Full Home safety detail exposed clear of pinned action.",
+      "Help control reachable and How it works navigation opens.",
+      "Settings opens and current English language label is present.",
+      "Meal/label camera and library controls exist; meal library enabled. No picker is opened.",
+      "Description input accepts unlisted synthetic item; estimate has no review/automatic total.",
+      "Manual amount form starts disabled; synthetic name and37wholegrams enable Add. Add is not tapped.",
+      "Cancel dismisses without enabling Review; reopening starts empty name/amount and disabled Add."
+    ],
+    "captures": {
+      "08-reopened-blank-draft": {
+        "file": "captures/08-reopened-blank-draft.png",
+        "sha256": "04338abe3576ed5731be3d55d1a02f5ea3aaf82419f863ecb6b16b7a916170a5"
+      },
+      "07-after-cancel-no-review": {
+        "file": "captures/07-after-cancel-no-review.png",
+        "sha256": "b179e0c5ecab851ec5f5dabe5f0a32ea58b908faf86fa8361ea4564bf95a6af4"
+      },
+      "06-unsaved-manual-amount": {
+        "file": "captures/06-unsaved-manual-amount.png",
+        "sha256": "4997cf8c33f5fd701c45cf1d36729df77e221ec9ef7046ac403cc99fee7241b0"
+      },
+      "05-add-meal-photo-sources": {
+        "file": "captures/05-add-meal-photo-sources.png",
+        "sha256": "345ade3235294253508cb0e837de65975364cb3a753b2e851532c18f8e51c188"
+      },
+      "04-settings-language-visible": {
+        "file": "captures/04-settings-language-visible.png",
+        "sha256": "4ab555686023c98c41a82b2a17275d288ee28b99182a9f234b6aa6d914b2f6a6"
+      },
+      "03-help-open": {
+        "file": "captures/03-help-open.png",
+        "sha256": "0a16deee35d5b1f9ee143890948e6c60492a31fe84b978e29ca78eb2aa98d3d5"
+      },
+      "02-home-help-visible": {
+        "file": "captures/02-home-help-visible.png",
+        "sha256": "045926f25d9934949ccc2e67591cb0c419b2aba6621669044ba5ba5786ceed9e"
+      },
+      "01-home-safety-visible": {
+        "file": "captures/01-home-safety-visible.png",
+        "sha256": "045926f25d9934949ccc2e67591cb0c419b2aba6621669044ba5ba5786ceed9e"
+      }
+    },
+    "visualReview": [
+      "Root inspected Settings, photo-source panel, entered37g form and reopened blank form. Visible fields/actions are readable; no clipping observed in these captures.",
+      "UI companion found duplicate page/sheet headings and too many passive nested photo borders, plus label role-heading clarity opportunity. Next UI refinement remains pending."
+    ],
+    "preservation": {
+      "installedFilesUnchanged": true,
+      "historyFilesUnchanged": true,
+      "testExitCode": 0,
+      "testTimedOut": false,
+      "scope": "Current app-file identity and original owned-QA history bytes only; not UI acceptance."
+    },
+    "ownedQAOrdinaryLaunchRestored": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 1.917
+    }
+  },
+  "retainedFailures": [
+    {
+      "variant": "English-only Challenge Simulator app",
+      "execution": {
+        "exitCode": 65,
+        "timedOut": false,
+        "hostSeconds": 61.466
+      },
+      "testCaseSeconds": 32.712,
+      "failure": "Harness expected language picker, but source deliberately hides it with only1catalog. Navigation/safety/help before this passed; later draft checks unrun.",
+      "preservation": {
+        "installedFilesUnchanged": true,
+        "historyFilesUnchanged": true,
+        "testExitCode": 65,
+        "testTimedOut": false,
+        "scope": "Current app-file identity and original owned-QA history bytes only; not UI acceptance."
+      }
+    },
+    {
+      "variant": "Full18-language internal Simulator app; same original test/runner",
+      "caseFailureSeconds": 85.615,
+      "failure": "Full-page scrolling helper overshot editor then selected wrong direction using nonfinite frame.",
+      "hostExecution": {
+        "exitCode": -15,
+        "timedOut": true,
+        "hostSeconds": 420.148
+      },
+      "hostFinalization": "Sample shows wait in collectSimulatorDiagnostics/simCtlDiagnose after test failure;420s bound ended owned process group with TERM. Leader reaped, group absent, no orphan at return. No service reset.",
+      "resultBundleExport": "Exit64; incomplete result bundle missing Info.plist after timeout. Raw log and post-failure screenshot retained.",
+      "preservation": {
+        "installedFilesUnchanged": true,
+        "historyFilesUnchanged": true,
+        "testExitCode": -15,
+        "testTimedOut": true,
+        "scope": "Current app-file identity and original owned-QA history bytes only; not UI acceptance."
+      }
+    }
+  ],
+  "diagnostic": {
+    "execution": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 50.645
+    },
+    "notLayoutAcceptance": true,
+    "outcome": "Editor initially hittable487.33..637.33 with pinned action580..634. One page swipe moved editor to inf/inf/0/0; old direction comparison kept upward scrolling. Final editor exposed=false.",
+    "correction": "V3 uses short measured drags above pinned controls and rejects nonfinite frames; original outcome assertions preserved. Automatic verbose system diagnostics disabled using documented Xcode option; logs, screenshots and assertions retained."
+  },
+  "signedArchive": {
+    "passed": true,
+    "build": "24",
+    "sdk": "iphoneos27.1",
+    "minimumOS": "17.0",
+    "binarySHA256": "b6a747b80b55478ac845f6b946d240ff3e27172186ba5ec55825a6def222347b"
+  },
+  "distribution": {
+    "method": "TestFlight Internal Only",
+    "organizerUploadComplete": true,
+    "organizerProofSHA256": "641872954e11691440500ca5d0410d6169f1614ef81e15d6bf793fe1a3a02922",
+    "serverStatus": "Testing",
+    "serverProcessingProofSHA256": "1e21162aeb68a6b75a64bc76da5f61816669c1d8cac354c395d5f6f8a4a2ab58",
+    "build24GroupTestingConfirmed": true,
+    "lastVerifiedInternalTestingBuild": "24",
+    "existingGroup": "MealMirror Internal",
+    "testerCount": 1,
+    "appStoreReviewOrRelease": false,
+    "publicBetaOrBinaryRelease": false,
+    "preservedBuilds": [
+      "23",
+      "22",
+      "19",
+      "2"
+    ],
+    "groupBuildCount": 5,
+    "serverTestingProofSHA256": "d2109fe3ba143328b3ff10a600fc92ffe2af2d2f07930a4a33a2ee2c0fcb76c4"
+  },
+  "remaining": [
+    "Current meal-photo selection, separate label OCR, actual AI and full Save/relaunch/history/delete journey.",
+    "Physical offline and physical release-build validation.",
+    "Onscreen keyboard, VoiceOver, Reduce Motion, RTL, compact phone/iPad and all states/languages.",
+    "Human comprehension, translations and qualified independent recognition evaluation.",
+    "Applicant authorship, eligibility, personal essays and actual-year Apple Challenge rules."
+  ],
+  "submissionReady": false
+}
