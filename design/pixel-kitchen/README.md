@@ -1,6 +1,6 @@
 # Pixel Kitchen icon direction
 
-**Selected design direction, October 27, 2026. Native integration pending.** The applicant rejected the monochrome SF Symbol trial. This original dimensional pixel family replaces that proposed direction; neither rejected trial is in the app. The current shipping/test source still uses its earlier utility sprites.
+**Dimensional pixel direction, October 27, 2026. This atlas is a review snapshot; native integration pending.** The applicant rejected the monochrome SF Symbol trial. This original dimensional pixel family replaces that proposed direction; neither rejected trial is in the app. The current shipping/test source still uses its earlier utility sprites.
 
 ![Twenty-role icon atlas](atlas.png)
 
@@ -8,7 +8,7 @@
 
 The design chat supplied these original drawings, created with AI coding assistance from primitive pixel shapes. User-supplied third-party app-icon references informed silhouette, stepped outlines, shade bands and hard shadows; their logos/artwork were not traced, copied or bundled. The selected MealMirror pot/MM emblem remains unchanged. The [manifest](manifest.json) pins the exact 20 masters and 20 nearest-neighbor exports. All PNG bytes were copied unchanged from the supplied design pack; no new raster edits were made in this batch. The portable [generator](generate_icons.py) changes output/font paths only. Pillow is research/design tooling, not an app dependency. Atlas typography uses the already-bundled OFL fonts; see the font licenses in `MealMirror.swiftpm/Fonts`.
 
-The assets are source design material, outside the Challenge package. They add zero bytes to the current candidate ZIP. The portfolio is a concept, not native UI evidence or a final comprehension sign-off.
+The assets are source design material, outside the Challenge package. They add zero bytes to the current candidate ZIP. The portfolio is a concept, not native UI evidence or a final comprehension sign-off. The design chat is actively revising the backplates and screen surfaces; do not treat this snapshot as the final approved asset set.
 
 ## Native integration contract
 

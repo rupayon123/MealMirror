@@ -29,10 +29,50 @@
     "timedOut": false,
     "ownedGroupAbsent": true,
     "newPlistVerified": true,
-    "bootOrInstallPerformed": false,
-    "scope": "One fresh empty isolated iOS27.1 iPhone Duo target; no clone/reset/user data or current app acceptance"
+    "bootOrInstallPerformed": true,
+    "scope": "Fresh isolated QA creation and boot request only; boot readiness later timed out. No clone/reset or app acceptance."
   },
   "selectedDesign": "../../design/pixel-kitchen/README.md",
   "nativePixelImplementation": "Pending compact assets, source integration and actual app checks.",
-  "appAndCandidateUnchanged": true
+  "appAndCandidateUnchanged": true,
+  "laterStartupAttempt": {
+    "sourceBuild": "21",
+    "sourceVariant": "Previously compiled English Challenge snapshot",
+    "binaryIdentitiesVerifiedBeforeAttempt": true,
+    "boot": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 9.866,
+      "orphanedAtReturn": false
+    },
+    "bootReadiness": {
+      "exitCode": -15,
+      "timedOut": true,
+      "hostSeconds": 66.869,
+      "limitSeconds": 60,
+      "leaderReaped": true,
+      "ownedGroupPresentAtReturn": false,
+      "orphanedAtReturn": null
+    },
+    "cleanup": "TERM sent to owned monitor group; later KILL denied. Leader reaped and owned group absent at return; process-membership snapshot timed out, so orphan status remains unknown. No further signal or retry.",
+    "installAttempted": false,
+    "launchAttempted": false,
+    "uiAcceptance": false,
+    "evidenceHashes": {
+      "boot.json": "b58b41436be7920c9a890879c8e0798976b4f9f7fe1a5d3f04c9d346d2e1490e",
+      "bootstatus.json": "30a91cd39d8d906cd9a4421a584104bf7bb837bb45abda9bb415e3a621fc741a",
+      "APP-START-INTENT.json": "639807c32decee7ad8cdbdce091674340e540c5e319c2541f3c5a941afeaf8ce"
+    }
+  },
+  "ownedQAShutdownAttempt": {
+    "exitCode": null,
+    "timedOut": true,
+    "hostSeconds": 26.697,
+    "limitSeconds": 20,
+    "leaderReaped": false,
+    "ownedGroupPresentAtReturn": true,
+    "orphanedAtReturn": true,
+    "scope": "Only fresh owned QA; shutdown not confirmed. TERM sent to owned monitor, later KILL denied; exiting child remained at return. No service reset, device delete, or further retry.",
+    "receiptSHA256": "9cae90d4cd5671995da634b84d5374214c170b8c05c2d7d477e70d033533ce71"
+  }
 }
