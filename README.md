@@ -4,18 +4,16 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 
 **Testing only. Not submission-ready or clinically validated.** No Android version, required account, server or cloud-model endpoint.
 
-## Current source candidate: 1.0 (25)
+## Current source candidate: 1.0 (26)
 
-**Current source candidate 1.0 (25):** Quieter photo status, a visible separate nutrition-label heading, and single Settings/item-form headings are integrated while preserving the Pixel Kitchen theme and role-specific accessibility labels.
+**Current source candidate 1.0 (26):** Selected meal photos and the nutrition-label thumbnail now appear in separate sections. The repeated in-card label amount button is removed; the primary checked-amount action remains. Approved artwork, theme, AI, calculation and storage are unchanged.
 
-- **Package:** English ZIP **12,270,103 bytes**, 138 files, SHA-256 `d4014d8e322299047b351c7b6575ec3f69dbeed4b898a492ee2774c262ad26b6`; two byte-identical packs and 18 matching Swift sources across English/full-language snapshots.
-- **Verified:** Both incremental arm64 Simulator builds, 18 catalogs/488 English keys, signed device archive and strict signing checks passed. The actual full-language app in English passed photo selection, separate-label OCR, real local-model names, separately typed37g, explicit confirmation, Save, relaunch, History/detail, unique QA deletion and empty relaunch. All eight media files and installed app files were preserved. A separate focused case passed readable settled label text and single Settings heading.
-- **Internal testing:** Build25 is confirmed **Testing** in the existing MealMirror Internal group, one tester and six builds, with24/23/22/19/2 preserved. Apple reports the binary Validated. The internal-only upload’s expired-account/skipped-validation warnings remain recorded. No public app release or physical installation is claimed.
-- **Open:** Physical offline, camera, multiple distinct views, other sizes/languages/accessibility, independent food recognition, recent-meal reuse/export and applicant gates. One exposed generated meal and synthetic label are not accuracy or human3minute evidence. **Not submission-ready.**
+- **Package:** English ZIP **12,270,251 bytes**, 138 files, SHA-256 `53e4dfac49af9b90fd75a5435fe55c49febb64bafb04afd4f21e80e828287ef9`; two byte-identical packs and 18 matching Swift sources across English/full-language snapshots.
+- **Verified:** Both incremental arm64 Simulator builds, signed device archive, strict signing and 18-language resource checks passed. Actual full26 app in English passed photo+label/local model/OCR/separately typed37g/confirmation/Save/relaunch/detail/unique deletion/empty relaunch. A separate normal-size attachment test passed empty, label-only, food-only, both roles, per-role removal and three-photo limit. Eight media files and app files were preserved; final history file absent.
+- **Internal testing:** Build26 is not uploaded. Last confirmed internal Testing build is25, in the existing one-tester/six-build MealMirror Internal group. Apple reports25 Validated; its earlier expired-account/skipped-validation upload warnings remain recorded. No public release or physical install is claimed.
+- **Open:** Dark/large-text/RTL/accessibility and other form factors, physical offline/camera, independent diverse-food recognition, recent-meal reuse/export and applicant gates. Intake label thumbnail cropping and current26 settled-transcription review remain follow-ups. Tests use an exposed generated meal and synthetic label; stock photos in the attachment test are layout fixtures only. **Not submission-ready.**
 
-[Exact source/package, native journey, preservation and limits](research/native-ui-journey/photo-label-save-20261027-build25.json).
-
-**Previous candidate24:** [Source/package checks](research/visual/delivery-20261027-build24.json) and [navigation, retained harness failures and internal Testing receipt](research/visual/native-navigation-20261027-build24.json) remain historical evidence.
+[Exact package, native cases, retained verifier errors and limits](research/native-ui-journey/photo-role-20261027-build26.json). [Previous25 native checks and internal Testing](research/native-ui-journey/photo-label-save-20261027-build25.json).
 
 ## What the app does
 

@@ -34,6 +34,8 @@ Build24 adds the UI design chat’s isolated native SwiftUI pass: shared panel/c
 
 Build25 applies a further AI-assisted presentation refinement from the UI design chat: repeated Settings and item-form body headings are removed while native navigation titles and toolbar actions remain; passive photo counters and empty-state text use quieter presentation; the separate nutrition-label controls gain a visible role heading and retain full role-specific accessibility labels. Existing string keys, control identifiers, selection limits, actions, disabled rules and data/AI/storage logic are preserved. Native verification is recorded separately.
 
+Build26 applies an AI-assisted photo-role layout refinement: food thumbnails render only under the meal-photo area and the separate label thumbnail appears under its own heading. The repeated in-card label amount button is removed; the existing primary checked-amount action remains, pinned at normal text sizes and inline at accessibility sizes. Selection, removal, limits, analysis inputs, calculation and storage are unchanged. Verification and remaining native accessibility gates are recorded separately.
+
 ## Applicant-owned checks
 
 - Inspect the final `.swiftpm` and archive and confirm each listed AI-assisted change and asset. Update this record if the final files or project history differ.

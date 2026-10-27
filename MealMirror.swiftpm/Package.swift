@@ -13,7 +13,7 @@ let package = Package(
             targets: ["AppModule"],
             bundleIdentifier: "com.mealmirror.swiftchallenge",
             displayVersion: "1.0",
-            bundleVersion: "25",
+            bundleVersion: "26",
             appIcon: .asset("AppIcon"),
             accentColor: .asset("AccentColor"),
             supportedDeviceFamilies: [.phone, .pad],

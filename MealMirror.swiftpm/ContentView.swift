@@ -763,7 +763,7 @@ private struct AddMealView: View {
                     aspectRatio: 1.6,
                     emptyState: .mealEntry
                 )
-            } else if mealPhotos.isEmpty {
+            } else if foodPhotos.isEmpty {
                 Text("No photo selected")
                     .font(CarbInTheme.reading(.footnote, size: 13, weight: .semibold))
                     .foregroundStyle(CarbInTheme.mutedInk)
@@ -771,14 +771,14 @@ private struct AddMealView: View {
             } else {
                 if dynamicTypeSize.isAccessibilitySize {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 220), spacing: 10)], alignment: .leading, spacing: 12) {
-                        ForEach(mealPhotos, id: \.id) { (photo: MealPhoto) in
+                        ForEach(foodPhotos, id: \.id) { (photo: MealPhoto) in
                             selectedPhotoCard(photo)
                         }
                     }
                 } else {
                     ScrollView(.horizontal) {
                         HStack(alignment: .top, spacing: 10) {
-                            ForEach(mealPhotos, id: \.id) { (photo: MealPhoto) in
+                            ForEach(foodPhotos, id: \.id) { (photo: MealPhoto) in
                                 selectedPhotoCard(photo)
                             }
                         }
@@ -790,13 +790,14 @@ private struct AddMealView: View {
 
             nutritionLabelHeading
 
-            if labelPhoto == nil {
-                labelPhotoActions
-            } else {
+            if let labelPhoto {
+                selectedPhotoCard(labelPhoto)
                 Text("Label text will be shown for your review. It will not set carbohydrate grams automatically.")
                     .font(CarbInTheme.reading(.footnote, size: 13))
                     .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
+            } else {
+                labelPhotoActions
             }
 
             if labelPhoto != nil && foodPhotos.isEmpty {
@@ -1509,13 +1510,6 @@ private struct EstimateView: View {
                 Text("Label text could not be read. You can still use the photo and enter a checked value.")
                     .foregroundStyle(CarbInTheme.mutedInk)
             }
-            Button {
-                manualEntryRequest = ManualEntryRequest(initialName: "")
-            } label: {
-                Label("Add amount from label", systemImage: "plus.circle")
-            }
-            .buttonStyle(SecondaryActionStyle())
-            .accessibilityIdentifier("carbin.estimate.addFromLabel")
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .mealTicket()

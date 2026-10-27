@@ -1,0 +1,479 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "build": "26",
+  "baselineMain": "19da366",
+  "candidate": {
+    "build": "26",
+    "zipBytes": 12270251,
+    "zipSHA256": "53e4dfac49af9b90fd75a5435fe55c49febb64bafb04afd4f21e80e828287ef9",
+    "twoRepacksIdentical": true,
+    "identities": {
+      "challenge": {
+        "build": "26",
+        "binaries": {
+          "MealMirror": "be5355088ef6f4e11ca6e4a9a89b8386729aede08fbaf4d9357b299d888d501b",
+          "MealMirror.debug.dylib": "d83d09c639bfdc56ba9d169d67e1c426f2c48bdef9abc1e67e1cfb94a5064e85",
+          "Assets.car": "d460f4c0b6b0fa6e116ae080f6af7bbe6dec7e0769934715b54fb03673bef33b"
+        }
+      },
+      "internal": {
+        "build": "26",
+        "binaries": {
+          "MealMirror": "209941fbbaa1cd357f9da4643c64bb8e62c90806798b523f74a96dd3655d7ae9",
+          "MealMirror.debug.dylib": "9adc64fac54f4b9a4b64996deb09a9d04c38afa25e3d57cb2e53c3943dd88b73",
+          "Assets.car": "0b42e9366d8546cb89d6ad70f13702318d3928af147a0714d8f6bf5586982618"
+        }
+      }
+    }
+  },
+  "sourceReview": {
+    "passed": true,
+    "baselineMain": "37e6271ef3e59cf01a6c3f8505bd20553f1ea412",
+    "sourceFiles": 172,
+    "matchingSwiftSources": 18,
+    "packagedFiles": 138,
+    "newUILiterals": false,
+    "removedID": "carbin.estimate.addFromLabel",
+    "remainingPrimaryID": "carbin.estimate.addAmount",
+    "onlyAppChanges": [
+      "ContentView.swift",
+      "Package.swift",
+      "AI-AND-ASSET-DISCLOSURE.md"
+    ],
+    "unchanged": "Engine/model/policy/storage/Theme/assets/catalogs/callbacks/select limits and per-photo removal."
+  },
+  "signedArchive": {
+    "passed": true,
+    "build": "26",
+    "sdk": "iphoneos27.1",
+    "minimumOS": "17.0",
+    "binarySHA256": "ff4199b7a7d0d6799857de5927feba2ea5d94320c0ac98a184c0b47a42aa3d7f"
+  },
+  "fullPhotoJourney": {
+    "case": "testExact26PhotoLabelSaveRelaunchDelete",
+    "execution": {
+      "command": [
+        "xcodebuild",
+        "test-without-building",
+        "-collect-test-diagnostics",
+        "never",
+        "-xctestrun",
+        "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/full/DerivedData/Build/Products/UITests_iphonesimulator27.1-arm64.xctestrun",
+        "-destination",
+        "platform=iOS Simulator,id=FA59E2FB-A2D6-4673-8025-9FB593BE9FEF",
+        "-resultBundlePath",
+        "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/full/Result.xcresult",
+        "-parallel-testing-enabled",
+        "NO",
+        "-maximum-concurrent-test-simulator-destinations",
+        "1",
+        "-test-timeouts-enabled",
+        "YES",
+        "-maximum-test-execution-time-allowance",
+        "400",
+        "-default-test-execution-time-allowance",
+        "400",
+        "-only-testing:UITests/MealMirrorUITests/testExact26PhotoLabelSaveRelaunchDelete"
+      ],
+      "exitCode": 0,
+      "timedOut": false,
+      "limitSeconds": 480,
+      "hostSeconds": 192.07,
+      "pid": 56785,
+      "ownedPgid": 56785,
+      "leaderReaped": true,
+      "ownedGroupPresentBeforeSnapshot": false,
+      "ownedGroupPresentAtReturn": false,
+      "remainingOwnedGroupMembersAtReturn": [],
+      "groupMembershipInspectionError": null,
+      "orphanedAtReturn": false,
+      "childMaxRSSRaw": 149389312,
+      "childUserSeconds": 7.059249,
+      "childSystemSeconds": 8.676379,
+      "cleanupSignals": []
+    },
+    "caseSeconds": 178.045,
+    "assertions": "Same actual PhotosUI/local-model/OCR/separately typed37/explicit parts confirmation/Save/relaunch/detail/guarded unique deletion/empty relaunch outcomes as25, now using retained primary addAmount action.",
+    "captures": {
+      "99-final": {
+        "file": "captures/99-final.png",
+        "sha256": "ee2a5672d7c0ce14370b45519f6d7bc32dfffa7966b4118f998a57d883a50bc2"
+      },
+      "17-relaunched-empty-history": {
+        "file": "captures/17-relaunched-empty-history.png",
+        "sha256": "ee2a5672d7c0ce14370b45519f6d7bc32dfffa7966b4118f998a57d883a50bc2"
+      },
+      "16-empty-after-QA-delete": {
+        "file": "captures/16-empty-after-QA-delete.png",
+        "sha256": "ee2a5672d7c0ce14370b45519f6d7bc32dfffa7966b4118f998a57d883a50bc2"
+      },
+      "15-one-confirmation-action-aliases": {
+        "file": "captures/15-one-confirmation-action-aliases.png",
+        "sha256": "0eeedef2c7ca4d4b62dc9799118f3b2a556e1c9a66f4e0b872fd7e5c7cc0ce60"
+      },
+      "14-unique-QA-item-photo-detail": {
+        "file": "captures/14-unique-QA-item-photo-detail.png",
+        "sha256": "40c2fa770a4337b7d0591799675c5df2be21dd88737d69b2d755efc17af57c8b"
+      },
+      "13-relaunched-one-photo-record": {
+        "file": "captures/13-relaunched-one-photo-record.png",
+        "sha256": "012234056993ea3cc4c12df6dd4dee22296634dcb725f61809862bffffdfe865"
+      },
+      "12-one-local-record-saved": {
+        "file": "captures/12-one-local-record-saved.png",
+        "sha256": "f7b99f15ccfd79c3a2a95108a9bc002fc0b35b9c8a7f25a338ee01179ab4ed14"
+      },
+      "11-final-Review-before-one-Save": {
+        "file": "captures/11-final-Review-before-one-Save.png",
+        "sha256": "a4136fc9a33bc214efef82c6fdb611d39f0eaf49ea76a414ee517be98f7dab5c"
+      },
+      "10-manual-amount-before-separate-parts-confirmation": {
+        "file": "captures/10-manual-amount-before-separate-parts-confirmation.png",
+        "sha256": "e98e9c091c1ead5452fbd6cec524b13d9e655a441824bb2e6dcbff079bd5cd03"
+      },
+      "09-separately-typed-synthetic37": {
+        "file": "captures/09-separately-typed-synthetic37.png",
+        "sha256": "d0f9459be9e5dbfe6be6fd0567a1a989b6f3baa2ea93675eb8c5c98b79fdb713"
+      },
+      "08-editable-name-empty-grams-disabled-Add": {
+        "file": "captures/08-editable-name-empty-grams-disabled-Add.png",
+        "sha256": "2d920110925404b98a5df815359fc7c27310079246550de52425129f0a5680a6"
+      },
+      "07-actual-label-transcription-not-amount": {
+        "file": "captures/07-actual-label-transcription-not-amount.png",
+        "sha256": "77007e6c358e7f8bd6bf89618d97980b4a5f2b74056d3f1b5eebec5ed89bf436"
+      },
+      "06-expanded-actual-model-status": {
+        "file": "captures/06-expanded-actual-model-status.png",
+        "sha256": "8256a5ecf200eeb87fc3d33ef0f8c6a9cd8b4246663b7fba075930192cef973f"
+      },
+      "05-no-automatic-carbohydrates": {
+        "file": "captures/05-no-automatic-carbohydrates.png",
+        "sha256": "b987325878e9f8d6e4be27e6a5a5c79dff28ba8fd7569f892a639b8305bd364e"
+      },
+      "04-meal-and-separate-label-description-blank": {
+        "file": "captures/04-meal-and-separate-label-description-blank.png",
+        "sha256": "b29049e0b8a828a81ac1659629cef07a80fc562e30b23ece2e2ac83048b748d7"
+      },
+      "03-observed-label-before-selection": {
+        "file": "captures/03-observed-label-before-selection.png",
+        "sha256": "eed14f6c33e38580060671657b3b0fa065ea7334d8964ea4976ef91324780fac"
+      },
+      "03b-label-control-clear-of-pinned-action": {
+        "file": "captures/03b-label-control-clear-of-pinned-action.png",
+        "sha256": "72386fa1a0958f6f37fbacbe6d11b8603bd13ee4921ad87b2e48dec93afe9a3d"
+      },
+      "02-meal-attached": {
+        "file": "captures/02-meal-attached.png",
+        "sha256": "6f6c639297e1e6bd2ad8dd52fe0e986a1217db3f0dc7c3b895c6ac1f5eb483f2"
+      },
+      "01-observed-meal-before-selection": {
+        "file": "captures/01-observed-meal-before-selection.png",
+        "sha256": "fd786507e6600ee421e5a9eadce96165b11c3dccb4f3003a3f0f6541696426d2"
+      }
+    },
+    "preservation": {
+      "installedFilesUnchanged": true,
+      "historyFilesUnchanged": true,
+      "testExitCode": 0,
+      "testTimedOut": false,
+      "scope": "Current app-file identity and original owned-QA history bytes only; not UI acceptance."
+    }
+  },
+  "attachmentStates": {
+    "case": "testExact26PhotoRoleStates",
+    "execution": {
+      "command": [
+        "xcodebuild",
+        "test-without-building",
+        "-collect-test-diagnostics",
+        "never",
+        "-xctestrun",
+        "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/states/DerivedData/Build/Products/UITests_iphonesimulator27.1-arm64.xctestrun",
+        "-destination",
+        "platform=iOS Simulator,id=FA59E2FB-A2D6-4673-8025-9FB593BE9FEF",
+        "-resultBundlePath",
+        "/Users/rh_mac/Documents/Codex/2026-10-01/rev/outputs/native-photo26-20261027-v1/states/Result.xcresult",
+        "-parallel-testing-enabled",
+        "NO",
+        "-maximum-concurrent-test-simulator-destinations",
+        "1",
+        "-test-timeouts-enabled",
+        "YES",
+        "-maximum-test-execution-time-allowance",
+        "400",
+        "-default-test-execution-time-allowance",
+        "400",
+        "-only-testing:UITests/MealMirrorUITests/testExact26PhotoRoleStates"
+      ],
+      "exitCode": 0,
+      "timedOut": false,
+      "limitSeconds": 480,
+      "hostSeconds": 94.858,
+      "pid": 57315,
+      "ownedPgid": 57315,
+      "leaderReaped": true,
+      "ownedGroupPresentBeforeSnapshot": false,
+      "ownedGroupPresentAtReturn": false,
+      "remainingOwnedGroupMembersAtReturn": [],
+      "groupMembershipInspectionError": null,
+      "orphanedAtReturn": false,
+      "childMaxRSSRaw": 155500544,
+      "childUserSeconds": 3.561499,
+      "childSystemSeconds": 4.340452,
+      "cleanupSignals": []
+    },
+    "caseSeconds": 75.658,
+    "asserted": [
+      "Cancel PhotosUI gives empty draft and disabled analysis.",
+      "Label only: no food selected, label role present, disabled analysis.",
+      "Remove label restores label-picker action.",
+      "Food only enables analysis.",
+      "Food and label exist in separate order.",
+      "Remove food leaves label and disables analysis.",
+      "Three distinct layout fixtures plus label; food picker disabled at limit; no inference or save."
+    ],
+    "captures": {
+      "99-final": {
+        "file": "captures/99-final.png",
+        "sha256": "2e8e75e2c5709f51008bbe90715d818bca131afd68082f8534bc9736f513df75"
+      },
+      "05-three-layout-fixtures-and-separate-label": {
+        "file": "captures/05-three-layout-fixtures-and-separate-label.png",
+        "sha256": "2e8e75e2c5709f51008bbe90715d818bca131afd68082f8534bc9736f513df75"
+      },
+      "04-food-above-separate-label": {
+        "file": "captures/04-food-above-separate-label.png",
+        "sha256": "b2be0681effc4704911b3594243b66ffb60d4f81985ed61123f5b22199617c50"
+      },
+      "03b-label-control-clear-of-pinned-action": {
+        "file": "captures/03b-label-control-clear-of-pinned-action.png",
+        "sha256": "9f159b2fa786e29203194270b699b3accaba13a9ffce19a7c3236d19f16c94f0"
+      },
+      "03-food-only": {
+        "file": "captures/03-food-only.png",
+        "sha256": "6829884a4da987597b4c8078adb3b3b1a9448f0d9dc660273819c0d67f7b8c47"
+      },
+      "02-label-only-no-food-no-analysis": {
+        "file": "captures/02-label-only-no-food-no-analysis.png",
+        "sha256": "f2037372f10c16b62127af09203b734ab36eb3af6faa10ea090ec875a26b11bb"
+      },
+      "01-empty-after-picker-cancel": {
+        "file": "captures/01-empty-after-picker-cancel.png",
+        "sha256": "b45e498b48edaa64291c79359685b46a7ae0c29581abfe674384536597174ac1"
+      }
+    },
+    "preservation": {
+      "installedFilesUnchanged": true,
+      "historyFilesUnchanged": true,
+      "testExitCode": 0,
+      "testTimedOut": false,
+      "scope": "Current app-file identity and original owned-QA history bytes only; not UI acceptance."
+    }
+  },
+  "finalPreservation": {
+    "eightMediaFilesByteUnchanged": true,
+    "finalHistoryFileAbsent": true,
+    "originalInteractiveSimulatorOperated": false
+  },
+  "visualReview": [
+    "Root inspected normal-light food+label and label-only frames: selected food remains above separate Nutrition label heading and label card.",
+    "Single primary label amount action retained; immediate label disclosure capture is not settled-layout acceptance.",
+    "Three-layout-fixture screenshot includes stock flowers/cliff and is not food-recognition evidence.",
+    "Selected label thumbnail still crops a wide label; larger reference/transcription appears in estimate. Follow-up fit/inspect design needed."
+  ],
+  "privateVerifierFailures": [
+    "Initial26 preparation used overbroad version replacement, changing bounded-helper date and sha256 symbol; imports/copy failed before any build. Corrected by explicit substitutions.",
+    "Exclusive output guard rejected reused package stdout; fresh v2 retains original errors and succeeds."
+  ],
+  "sourceManifest": {
+    "MealMirror.swiftpm/AI-AND-ASSET-DISCLOSURE.md": "78454b3e857e5a7124d28b63fbe6f1b1afeffff460e2ee263c01872fb8dec17f",
+    "MealMirror.swiftpm/AppShell.swift": "f03bd7a1b076d52d8564ec9b42870b328bf7e388e38ec068013814ed08d0fad7",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AccentColor.colorset/Contents.json": "21cf82533e2ead862de9d4c3c25659510a5748444113b6098ab859e63e1d0aec",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppBackground.colorset/Contents.json": "e19dabe674e50fe78b88126e75312fa4db2bc9d83ddc5c867b6bdd1c72efe9d0",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-AppStore-1024.png": "5fb061931d1627394528acafd9f8cdfdd73510c94eefde3de7fc3871ff438585",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPad-20.png": "398e38fc5de96914fdb4167157e428682d67cdd4f6d38d37c5b9c145099e44b9",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPad-20@2x.png": "74c5310407bd6542eccc13a6909cf81701f76cd91f1b48aa999c2caf4f8e9be1",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPad-29.png": "fc534e20017be564026e87441f5fca02df2ffa8fe0bcd9c1f909fe6a6c97dc2c",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPad-29@2x.png": "9d1709f04899c437389174e022d2670a8af5f8b39da92f92ba5a8eadbf040de4",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPad-40.png": "74c5310407bd6542eccc13a6909cf81701f76cd91f1b48aa999c2caf4f8e9be1",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPad-40@2x.png": "74fd6e0fcec91becc40eac47106469fcbde0a9fd93c784dab5728831953a20f5",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPad-76@2x.png": "c8f37f276af8b0fcf5a504cbf71e46139092c32d9a41d9b2a5183377e638f520",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPad-83.5@2x.png": "9beddd86268ee1ae3bea1fc09767bedece1423b269c91e53a97baf75527acd7f",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPhone-20@2x.png": "74c5310407bd6542eccc13a6909cf81701f76cd91f1b48aa999c2caf4f8e9be1",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPhone-20@3x.png": "e0eda232228fa2a0a1d9abab8ed12af340aae409583c99c4c3fd8d78d6d6d654",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPhone-29@2x.png": "9d1709f04899c437389174e022d2670a8af5f8b39da92f92ba5a8eadbf040de4",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPhone-29@3x.png": "8dc68f73bdcb0452fdf6c57da9923470895ec7c1ec00b7134129ade453d14b27",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPhone-40@2x.png": "74fd6e0fcec91becc40eac47106469fcbde0a9fd93c784dab5728831953a20f5",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPhone-40@3x.png": "043cff2e5ce4f8efee291d796c81ca062ea20590607a66076442f0ca22c2391f",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPhone-60@2x.png": "043cff2e5ce4f8efee291d796c81ca062ea20590607a66076442f0ca22c2391f",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/AppIcon-iPhone-60@3x.png": "1c4070fd2a2769e7b4fb6a8eff804eddccf7f44d8b1c37368acc37731914ec44",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/AppIcon.appiconset/Contents.json": "a76de1e4e65329f5ade3bf662e5f36731cc4deb4e85f18bf078a8b1c4b8bf1bf",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/Contents.json": "0fd49ba3c3585c709678e0046a821c3c60685ec7063720d30d3a3448be3a208b",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/CurryMarkCutout.imageset/Contents.json": "bc1faf48a7ceb5054f154ac16a572bef013bc47beaca8314bf787833da5ffd93",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/CurryMarkCutout.imageset/CurryMarkCutout.png": "1db13f149cd1232104184c21d414f9f39dbbcc32512a08e30c5538b524878cd1",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/LaunchBackground.colorset/Contents.json": "0f601022aebf9c3185cbab8b3680987950bb42708e478a506c98f28a433c57a7",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/LaunchMark.imageset/Contents.json": "47fd36416a3b6ae4385f226b8a578397d6cf07cb57e86aab0ae2fe864408c643",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/LaunchMark.imageset/LaunchMark.png": "d6e283d2a3184da97025560fcecd1aa27cabd02aa78774a66092f07c5f5512d6",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/LaunchMark.imageset/LaunchMark@2x.png": "4ae678abd2136945d64f909c6a47c2fc1a4340b9f6a61670ec32140cfe1948b3",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/LaunchMark.imageset/LaunchMark@3x.png": "02659781a450307b52b12da150a091858bd6df5c8f9732b57b02373c6d3d5b39",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_addPhoto.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_addPhoto.imageset/dark.png": "5baa6e6da63ed0e704130989f0597871206f5a397a22e9fda83ddcc124ae6c5e",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_addPhoto.imageset/light.png": "f6d2ea8130917a7ab97084ef105f6abd23b63947a251a8feab7c8098f505e7d9",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_adjust.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_adjust.imageset/dark.png": "a5770a6cb1bfcf7ce7105134dab242221cd3a30bda0c8d0fea03f87945e584b1",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_adjust.imageset/light.png": "efc43b96df05d5e4f2e3464f830c9327e197b7e222df86aee306cbc667672fd0",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_camera.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_camera.imageset/dark.png": "b42b5693e2dfbf83a79149e83715ffb2c0346ffaad66f2a051de09059d32e514",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_camera.imageset/light.png": "878aa1223b178e9894855a0fcd4d5a4e5871ecbe8695be800a4f8344a7e58de6",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_camera_compact.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_camera_compact.imageset/dark.png": "af1cdbea6cb46e7c4bac72937bf828ef38c003c5a26b3fc1826ffc7acba0d30e",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_camera_compact.imageset/light.png": "a939c74a3de19004c1cdf7880e0ca33fb653ebe128d7ff4474f60e3eeba0ddc1",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_check.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_check.imageset/dark.png": "6b90b0d32d0f86a97eb3a50a4c6fa2fbd890d10cb2fd260ea6827f3edae0e7b1",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_check.imageset/light.png": "512b5ee8f8f1e85fe666950a6a206c886b25c78abb2a5aea4fa54fcff8dafdfd",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_delete.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_delete.imageset/dark.png": "c628d36000084238d0f5da2ad00192d47f8db088411bab9a0a54b8cf8cef5de3",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_delete.imageset/light.png": "8f2bdc4345504da74057559153506c8e5577d7b240df6e4b8b081a9a522e2dda",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_details.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_details.imageset/dark.png": "d56f4c6f351f204f41bb677adeeba45d877277e9448a7a17763871c7b6120a97",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_details.imageset/light.png": "14961dd8e57ac5edf3ef1d9d3f2d57d434d4a05aaf016d86bb7a1b0e0d5a8f22",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_foodView.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_foodView.imageset/dark.png": "100eddbbc299bf0dd8d30394bdc168a5fa41c92b0bbb00f94527d2ddc5224454",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_foodView.imageset/light.png": "cd82c5486af15a7233dfb2e4e377616e859f0e9275f0c289a1fe681ea96c5adf",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_foodView_compact.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_foodView_compact.imageset/dark.png": "9baa32b814df4216839fe39f83ffdfdc751a02a856c05be607f999da9f0b7d75",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_foodView_compact.imageset/light.png": "37da9ee3be4937999f9d0c738d72c6f146c7b1ae7eab754f9af15be3ef012293",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_history.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_history.imageset/dark.png": "45b34aa0f1dd21f5949b225727892643942e0747019efc688c52d0e0d7a2ee42",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_history.imageset/light.png": "8b3fc1fca3f6bfc386edeb52257833c8b4531bfeb1b873612389e7b1cbca49e2",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_info.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_info.imageset/dark.png": "d58393e6f6f9923d8a9d0f691ca4c1bc36dfb00755fcb774304d925eb06ff9a9",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_info.imageset/light.png": "68a6cdb7ee4255e4add6e8e93ac7958e17b77519e41e620bcf78ef440ffc0955",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_medical.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_medical.imageset/dark.png": "f67c953489b26de932460d15a372aafc5efc4e9caa2d26846088525b45a22c26",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_medical.imageset/light.png": "63c71370ec9d120a09b5a1729bee55f5566cfd66856507ee3dc3f12754916f10",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_nutritionLabel.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_nutritionLabel.imageset/dark.png": "305cd066acbf604b69427df885240286769cd98c6bfde313efafd9ab8fd866fa",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_nutritionLabel.imageset/light.png": "22fcb1b4b8da972c8c7adbb0c052576ad1ba8ba088c23a6ceb09c940fb2a2f51",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_nutritionLabel_compact.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_nutritionLabel_compact.imageset/dark.png": "36e89dc09915a48cfed69e9fe0d45aee3bbb5b647ac167809692debce1a97cd4",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_nutritionLabel_compact.imageset/light.png": "02f70ad4432791638c5cd996423900e2eafb525a900db7fa3f1b36647d355f35",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_photos.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_photos.imageset/dark.png": "6941eb5bfca7b109813b860fdf717bda1985941e7d78b91777a7f5915fb5bfe8",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_photos.imageset/light.png": "9b4dcaf7c7ab2f5e9671e9d25bf4e2e1ae81395fd647a1fe09f1f9ef73b6f299",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_photos_compact.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_photos_compact.imageset/dark.png": "1074969dad160716b48db3e6f9238de2b1964b50b2d4eadc3835f3db1552954d",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_photos_compact.imageset/light.png": "6d459b3d4b6beacb788edbb6fc05322416b047a6288e919fc9cef3f60cd75b55",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_privacy.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_privacy.imageset/dark.png": "c6f6fed84e25929d3daf8d8eab1923dc1696401985f55fdb101177e98c1829ad",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_privacy.imageset/light.png": "3a4800b70f0147c2d42979640328f0b12e4b6fc3b9d379be1e54d1e6de85c505",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_removePhoto.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_removePhoto.imageset/dark.png": "7cdf290d966b34ff70e57344f7f30a4ea482e2e65c0d660995920ed75f49f0db",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_removePhoto.imageset/light.png": "de76f85d7205628fa10f04b858f8f3ce0e44b5511961bf2d5697f2db013b18cb",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_replay.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_replay.imageset/dark.png": "141604fd9b9097bfd79127527659eecc8c841989aa96124929c21ce0f7b57717",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_replay.imageset/light.png": "3db7b2509728ecb3bb4d73982a65b4dbe27f77800a73872fd4d191fa30e7d146",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_review.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_review.imageset/dark.png": "c51087da3b15eae117af8ade3aa388910db065bec3c92c99c6af9f185a87c67f",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_review.imageset/light.png": "891573c37f9e21f8fc799d08e715dc076f47c6b2f987230e2358273633386e3f",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewPendingRecord.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewPendingRecord.imageset/dark.png": "530dc8c1a52b6da8cc8fd0654e4f031cb407cc2434c373b5cd8938c212d658f8",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewPendingRecord.imageset/light.png": "f721ec9658009d00ae06a60da8defcde266ed6df37debb9f39d4b59937b6e500",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewPendingRecord_compact.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewPendingRecord_compact.imageset/dark.png": "e31f144eb3a93680672f19f78660bdb9fe93a113ac4e94e8a38343c0dfca7546",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewPendingRecord_compact.imageset/light.png": "4d0633429e46e2baeed45d0bd7b45cfa809d80262dd692ec71e1a5faaf38b261",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewSavedRecord.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewSavedRecord.imageset/dark.png": "5e06f71f45fa5183a7e0be7412e1cc87b42f7e96eea4f7f44f13034d350c645d",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewSavedRecord.imageset/light.png": "5a3fab2a1fb232768c3bd5897ddfe5d01e1dd1430545d3e51148161cc5fcd02d",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewSavedRecord_compact.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewSavedRecord_compact.imageset/dark.png": "715e7f1f8d02489dc9189c4267e2257d723a5b52e6aecd52e5134a0528c8c5eb",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_reviewSavedRecord_compact.imageset/light.png": "d0c08cc226b695d866b6afdc7a8c7d33a55607b98a90974959b77fa5ff966fe5",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_save.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_save.imageset/dark.png": "89878fb31191c9a7f9c5d938cc55643196124c79352b173f74e4f9c806cd710b",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_save.imageset/light.png": "38988a1ecba8b25cb7bb048667eeb529ce1f4f61f38ef93042d596491540e439",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_settings.imageset/Contents.json": "19c2873152eec222d6c2daf7345a67f5c4e64db928ffc67ced1428ed2d4670ef",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_settings.imageset/dark.png": "033df4120f60534ca91a3d2ec17df2fd932b78e1a0d573a34e03096825a97919",
+    "MealMirror.swiftpm/Assets/Brand.xcassets/MMObject_settings.imageset/light.png": "a8a6065a6cfe7a039e12bb42b2e463084a3cd6e0a7a7d654cd222791de4169da",
+    "MealMirror.swiftpm/Assets/biryani-demo.png": "e922bb400ee9fb0d93b3ca065bb2aa8bf3e7f12459a6c763c6f61ab991fd6c69",
+    "MealMirror.swiftpm/Assets/breakfast-demo.png": "e3d2bc9f9e53d30f7364dc97ad25c5d79520877b5756d5495e8fe2a656ecc353",
+    "MealMirror.swiftpm/Assets/grain-bowl-demo.png": "c0646bb5f28542891de42e5cb1ac3bdf698a7481028dd35444c58b090805c3eb",
+    "MealMirror.swiftpm/CameraCapture.swift": "0c3693c12a525324082d81e84f434b6ba9e9487f963cb3d1aaa85d98a80fc434",
+    "MealMirror.swiftpm/ContentView.swift": "6f9f6eff012d7249963a8ba08839273b66e20ca53bdb5e7dc7c9af4957db2ce9",
+    "MealMirror.swiftpm/Fonts/Nunito-OFL.txt": "580df76c95a1ec5ab878ceb25bb3d85c6a076804e9c970c8c6972aea775fdf65",
+    "MealMirror.swiftpm/Fonts/Nunito.ttf": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207",
+    "MealMirror.swiftpm/Fonts/PixelifySans-OFL.txt": "b66ba46f511a851ab09998b5a5a9fdbb102545a3864cb993095e1745996873a7",
+    "MealMirror.swiftpm/Fonts/PixelifySans.ttf": "9ba86cd010a4de309d263ceff8e8044092c9db7efda869620cb9ff1c4389e8a5",
+    "MealMirror.swiftpm/Info.plist": "6a01e4ac2aa43ea093f01fe1824c02c67235e566bf4e864927e19bf97387677b",
+    "MealMirror.swiftpm/LegalViews.swift": "4eeab75815ebb3f7fc4c01c6671066e0e6a9e490718a593770653e8825123219",
+    "MealMirror.swiftpm/LocalPhotoAI.swift": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "MealMirror.swiftpm/Localization.swift": "1f65ffadaea071302d419db8b2f828057b45e73ed2f1318f7d09917b99cf7906",
+    "MealMirror.swiftpm/MealAnalysisEngine.swift": "cc98672ad35ae928c8419157567488125e8fbd83b57aa5bf2e1dcdd5af3835da",
+    "MealMirror.swiftpm/MealCore/MealModels.swift": "4a37e11824d122728ef4798482cd44c3d61c78b1321345a8c83b93099b303493",
+    "MealMirror.swiftpm/MealCore/PhotoNamePolicy.swift": "e905f098a2e56eead569aee895dc3c75d323379e83ae77c704208cf49188a4c4",
+    "MealMirror.swiftpm/MealMirrorApp.swift": "80e18c4ba5a354e806a2bd35561303247d2fe86e93d3dd64ebfa70ac749161c9",
+    "MealMirror.swiftpm/Models.swift": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e",
+    "MealMirror.swiftpm/NavigationCore/AppNavigationState.swift": "4225b686041e8f6d450e0baaadd88c32549e99c3e35d1bd4ea681c62f75a390b",
+    "MealMirror.swiftpm/OnboardingCore/OnboardingState.swift": "dd0f78fd9de863b8f3ea001f9d3904c1a5662bc21d190633a7c8ae0c8fb4fd85",
+    "MealMirror.swiftpm/Package.swift": "0269f3d4d913b66bf275ce6a6f468c5ce746db1684cc7a1089a824504fc6fb1f",
+    "MealMirror.swiftpm/PhotoCluePolicy.swift": "644110f7872461dc27e2c458d594a5b0cd9a64935063522db26c2c9ca7b1a959",
+    "MealMirror.swiftpm/PhotoDataTransfer.swift": "07c85daae645c63d64c59b071d76d5984defcbae92dfd26dc95592cb0ddd879c",
+    "MealMirror.swiftpm/PixelKitchenIcon.swift": "9454489b298b0ba5ab5e5f3c7c5ddf86b5d64446b7328aebc27fde6122bd5823",
+    "MealMirror.swiftpm/README.md": "342ca2b0cad588a4161db4d4b20a72e669a382dbf041048427d456d12b289a68",
+    "MealMirror.swiftpm/Resources/PrivacyInfo.xcprivacy": "5c20dbcb4ab17c390d6c89c0d6c7f7a274f377c2304159f01bb2ebb88a2cd069",
+    "MealMirror.swiftpm/Resources/app_strings.json": "e39f8a6330e53c47d788d835997d582b43e95319ff7417494e4ca95b31db7d8f",
+    "MealMirror.swiftpm/Resources/ar.lproj/InfoPlist.strings": "52770a1967af743083d5fe2307739d9176b45f4e4c392507af8ffbd7abb3cd0c",
+    "MealMirror.swiftpm/Resources/ar.lproj/Localizable.strings": "894098706d144c134263d738c13ba1fe100392694186f2e64878d7bae6454625",
+    "MealMirror.swiftpm/Resources/bn.lproj/InfoPlist.strings": "f8796459687ee8eae12fc285bdd177baf2825978bcede3d80cd9684ee1c42a1c",
+    "MealMirror.swiftpm/Resources/bn.lproj/Localizable.strings": "cbf63b98cc68838f0ade43f9036a1d87415b99183f9b506ad3aa11a04944f02e",
+    "MealMirror.swiftpm/Resources/en.lproj/InfoPlist.strings": "270a50bf404d66cee909bcae219e29d6eda36cd98c8156f12ad6879262bb1ee4",
+    "MealMirror.swiftpm/Resources/en.lproj/Localizable.strings": "d608810a7ae050720f266d86463382d8dec8a8f754fe665b8bb7c5fae5dd7969",
+    "MealMirror.swiftpm/Resources/es.lproj/InfoPlist.strings": "0a6b949e6d72b9d9a0264b56735afbbf6de46f6b43a6fc5ee9497beae26e7bf0",
+    "MealMirror.swiftpm/Resources/es.lproj/Localizable.strings": "8555720c0b42eb746cc63b194d1248304c2cfa93a5d3343d6aee26c5e1488be2",
+    "MealMirror.swiftpm/Resources/fa.lproj/InfoPlist.strings": "e3e4c57df2c19ec0b07b04b852a9cf9c474d300595d8e542059bf84eba18163d",
+    "MealMirror.swiftpm/Resources/fa.lproj/Localizable.strings": "6a7ffcd31a7676732a7c72df62702499578d24d33539aaab81d88f94318bf722",
+    "MealMirror.swiftpm/Resources/fil.lproj/InfoPlist.strings": "e8c2e4dfd4a6871bae947c98daaf9acaf37caaa8db3323ce7766aa5f9cfa0146",
+    "MealMirror.swiftpm/Resources/fil.lproj/Localizable.strings": "b74163eb23214e2afc692b53d99ce2d90783f5ef3f8cfb2f164e10d2ac273fda",
+    "MealMirror.swiftpm/Resources/fr.lproj/InfoPlist.strings": "6b511c03b3f5562fa2eecadbc41c01cbfd0e1e22621a2da2114b0065603156c6",
+    "MealMirror.swiftpm/Resources/fr.lproj/Localizable.strings": "883876baa8a2e2a370d7301590d9b29d59db066d2d797b64179e54e16b5c47fc",
+    "MealMirror.swiftpm/Resources/gu.lproj/InfoPlist.strings": "906fc37e73f77335b04c0c452fd9f44eea1ac5e389337a549b323a5969decd65",
+    "MealMirror.swiftpm/Resources/gu.lproj/Localizable.strings": "1ac43c2135fb601c1348c61a2b3f98252d5e6c09098d8da2190f13f098bf2ce5",
+    "MealMirror.swiftpm/Resources/hi.lproj/InfoPlist.strings": "13b9a88e63372d1de653be833ce1365782eb276f3931c908af4b66a7302f66b6",
+    "MealMirror.swiftpm/Resources/hi.lproj/Localizable.strings": "bf60b874a8ad3d1b418ae81d8ea5dd0d814e48622ae7fe5f8e9621788b0211f8",
+    "MealMirror.swiftpm/Resources/hu.lproj/InfoPlist.strings": "1c981bab423df459c748731b27faad6829e9ab44307fc6c158e6e27cb18a75a7",
+    "MealMirror.swiftpm/Resources/hu.lproj/Localizable.strings": "6c75b9f9d0a5b0c2d0e60ba408585b86dadf9f24b758a0e1cc3b6e17ef7f88f2",
+    "MealMirror.swiftpm/Resources/ja.lproj/InfoPlist.strings": "a18982caecf4efea9858eda45ee4c605222a10cc596910163793ef4f79c41f8a",
+    "MealMirror.swiftpm/Resources/ja.lproj/Localizable.strings": "36b158d63731014b6b040dd493664eb6b29f0c0c10755f104729a69cccc7d253",
+    "MealMirror.swiftpm/Resources/ko.lproj/InfoPlist.strings": "06d6da808ac590255215aca37a2a9def72edbb913e54f5f3887dfea0fad42f83",
+    "MealMirror.swiftpm/Resources/ko.lproj/Localizable.strings": "12e1ed11a2fc24e678e0bba5437067dbd47d292f4e872c16bddd425cc865e6b7",
+    "MealMirror.swiftpm/Resources/pa.lproj/InfoPlist.strings": "a478fced499b1d16e4e2e429dfaaaeea6a53efd38ccddfaf8e31074ae8139bb1",
+    "MealMirror.swiftpm/Resources/pa.lproj/Localizable.strings": "54296049f60440861daa3ad97b1ac9e79d3f0e710d94d07fed2a44491a9b4420",
+    "MealMirror.swiftpm/Resources/pt.lproj/InfoPlist.strings": "e8dd5978816a90c3e5dc8cbdacd38eca39037c6dbbb552ddd227050c772d4f1d",
+    "MealMirror.swiftpm/Resources/pt.lproj/Localizable.strings": "ea20770683fa2c4453f3cde890873214a4a38773e47d2c4bab6dc5388c913f72",
+    "MealMirror.swiftpm/Resources/ta.lproj/InfoPlist.strings": "1fcd51abab44add84889dfa6fa41bdea7a5b2f7bb5f6c1f8fc56917b3e6dd02d",
+    "MealMirror.swiftpm/Resources/ta.lproj/Localizable.strings": "072287446a26c220eab5bb2506f0a935258e892d2d585770ca85113a0edcb8ec",
+    "MealMirror.swiftpm/Resources/ur.lproj/InfoPlist.strings": "8055ee203d5e8d0af4c3a9e9595041fa74230cb70deb046aee5f72b0f73502a0",
+    "MealMirror.swiftpm/Resources/ur.lproj/Localizable.strings": "74537ba2680009b59c26fce23a81934298ba839322b8d94ec6c707dadaca286a",
+    "MealMirror.swiftpm/Resources/yue-Hant.lproj/InfoPlist.strings": "f3011178eacfca58aaa03d65a8b1c1b6bb564db060e82bbd560f7aaf1b2608da",
+    "MealMirror.swiftpm/Resources/yue-Hant.lproj/Localizable.strings": "efa38fcb2e075388d591c04f61dde20f82db749f09d10ebf100d238b0d8a67d5",
+    "MealMirror.swiftpm/Resources/zh-Hans.lproj/InfoPlist.strings": "2cf656bd69657723a6703121e75f0185ab8d2109ab79f813a187bb46712f47bd",
+    "MealMirror.swiftpm/Resources/zh-Hans.lproj/Localizable.strings": "2237dd9003e2d1a69d496db25c6594f664e7f3fdc8293e9f644359cb28484e08",
+    "MealMirror.swiftpm/Theme.swift": "b362cd8893732d3d219e2de6eb11df1c672f48253473b4d9502f38f2cdfb2f07"
+  },
+  "distribution": {
+    "build26Uploaded": false,
+    "lastConfirmedInternalTestingBuild": "25",
+    "testingOnly": true,
+    "publicAppRelease": false
+  },
+  "remaining": [
+    "Large text/dark/RTL and whole-app VoiceOver/Reduce Motion/compact/iPad verification.",
+    "Physical offline, camera and release-build device testing.",
+    "Multiple distinct real meal views with actual analysis; lawful independent recognition and intended-user evaluation.",
+    "Label thumbnail fit/inspection; current26 settled transcription visual follow-up.",
+    "Safe recent-meal reuse and local export.",
+    "Applicant review/eligibility/essays and actual-year published Apple rules."
+  ],
+  "submissionReady": false
+}
