@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "build": "21",
+  "protocol": {
+    "sourceMain": "73fea6bd9408018fff98d4a01075a4c22590abdd",
+    "build": "21",
+    "sourceSnapshotsUnchanged": true,
+    "existingBinariesUnchanged": true,
+    "verifierSHA256": "ed93e4e5cf7e7da7bec20ab1495c34e076bef1154f6e7d9457af1793339cc43a",
+    "boundSeconds": 90,
+    "attempts": 1,
+    "changedConditions": "Host load observed about74 instead of769; isolated plutil on built English strings completed0/0.038s with487keys; temporary idle-sleep assertion for whole bounded check. Prior timeout remains retained.",
+    "acceptance": "Exact same full-language verifier, source snapshot and compiled app; no predicate or resource change. No rebuild, upload, Simulator or model operation."
+  },
+  "result": {
+    "exitCode": 0,
+    "timedOut": false,
+    "seconds": 1.611571291,
+    "boundSeconds": 90
+  },
+  "resources": {
+    "build": "21",
+    "languages": [
+      "ar",
+      "bn",
+      "en",
+      "es",
+      "fa",
+      "fil",
+      "fr",
+      "gu",
+      "hi",
+      "hu",
+      "ja",
+      "ko",
+      "pa",
+      "pt",
+      "ta",
+      "ur",
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "languageCount": 18,
+    "englishKeyCount": 487,
+    "sourceCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "builtCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "passed": true,
+    "errors": [],
+    "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+  },
+  "evidenceHashes": {
+    "PROTOCOL.json": "cfdac0b6d609571ff507a96f0ad985cc45008a4bf1fb473cf74841d7b98eac39",
+    "RESULT.json": "0b068e9cbc5fd8603ea5822307e60a401b0c5473c5b7a0344e4f63b994d26237",
+    "locales.json": "a1e13ac7ce2844901c938357a199e06d693c3cc7eedc87c466646cc448a0f4c6",
+    "run.py": "1293b7a6ba762399cc612e2ab2d6bb61fb03d210c4c64eec754bdfc05c03f8b2"
+  },
+  "candidateUnchanged": true,
+  "scope": "Separate later recovery on the same compiled full-resource Simulator app. Earlier path error and timeout remain failures. No rebuild, UI, translation quality, physical offline, archive or upload acceptance."
+}

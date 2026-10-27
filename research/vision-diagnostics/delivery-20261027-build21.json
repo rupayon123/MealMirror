@@ -129,5 +129,14 @@
     "integrityPassed": true,
     "englishCatalogOnly": true,
     "scratchCheckCorrection": "An initial scratch assertion counted directory entries as files and failed. Corrected file-only count is 60; no ZIP bytes, source or required file count changed."
+  },
+  "laterResourceRecovery": {
+    "receipt": "resource-recovery-20261027-build21.json",
+    "exitCode": 0,
+    "seconds": 1.611571291,
+    "languageCount": 18,
+    "englishKeyCount": 487,
+    "passed": true,
+    "historicalFailuresRetained": true
   }
 }
