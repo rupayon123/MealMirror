@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "sourceMain": "aaf01ee65e96da77f17d4e2ddeed6ac89e1fba4c",
+  "superseded": "SF Symbol design/trial withdrawn by applicant; never integrated into main app",
+  "nativeAttempt": {
+    "assignedPreviousQATargetPresent": false,
+    "frontendBuildExit": 74,
+    "appCompilationReached": false,
+    "cause": "Frontend environment denied package/module cache writes and CoreSimulatorService connection",
+    "retry": false,
+    "evidenceHashes": {
+      "buildReceiptSHA256": "85e49bb09b90d790fb4ebc98f4f0aec51996451afbbe245fafb26e4adb1a4a01",
+      "buildLogSHA256": "aafcd6c08bf1022b8ae6aca33e9411571a108928c95042cd2f70857e3eb4f1c6"
+    }
+  },
+  "rootPreflight": {
+    "configuredSeconds": 30,
+    "observationTimedOut": true,
+    "wrapperEventuallyExited": 0,
+    "protectedOriginalPresent": true,
+    "protectedOriginalOperated": false,
+    "signalSent": false,
+    "scope": "Recorded parent/child had exited before signal guard; no service restart or device mutation"
+  },
+  "replacementQATarget": {
+    "createExit": 0,
+    "seconds": 8.865,
+    "timedOut": false,
+    "ownedGroupAbsent": true,
+    "newPlistVerified": true,
+    "bootOrInstallPerformed": false,
+    "scope": "One fresh empty isolated iOS27.1 iPhone Duo target; no clone/reset/user data or current app acceptance"
+  },
+  "selectedDesign": "../../design/pixel-kitchen/README.md",
+  "nativePixelImplementation": "Pending compact assets, source integration and actual app checks.",
+  "appAndCandidateUnchanged": true
+}

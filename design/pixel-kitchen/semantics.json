@@ -1,0 +1,239 @@
+{
+  "title": "MealMirror Pixel Kitchen icon overhaul",
+  "status": "Original design concept; native app not integrated",
+  "master_grid": "48 x 48 pixels",
+  "exports": {
+    "master": "48 x 48 PNG",
+    "retina": "144 x 144 PNG, nearest-neighbor 3x"
+  },
+  "use": {
+    "primary_icon_size": "48 pt in major photo/action cards",
+    "row_icon_size": "32–40 pt when the row remains legible",
+    "small_role_size": "Prefer text-only below 32 pt; make a separate compact variant before use at 24 pt",
+    "minimum_touch_target": "44 x 44 pt",
+    "label_rule": "Visible localized text is required; VoiceOver announces the parent action/status, not the decorative image",
+    "photo_rule": "Images never prove an ingredient, portion, carbohydrate amount, OCR accuracy, or dose"
+  },
+  "icons": {
+    "camera": {
+      "display_label": "Camera",
+      "semantic_role": "Action",
+      "intended_meaning": "Open camera for a meal photo",
+      "suggested_accessibility_label": "Take a meal photo with the camera",
+      "visual_object": "Camera body and blue lens",
+      "placement": "photo source",
+      "asset_3x": "icons/camera-144.png",
+      "asset_master": "icons/camera-48.png",
+      "accessible_label_required": true
+    },
+    "photos": {
+      "display_label": "Library",
+      "semantic_role": "Action",
+      "intended_meaning": "Open photo library for a meal photo",
+      "suggested_accessibility_label": "Choose a meal photo from the library",
+      "visual_object": "Overlapping landscape photos",
+      "placement": "photo source",
+      "asset_3x": "icons/photos-144.png",
+      "asset_master": "icons/photos-48.png",
+      "accessible_label_required": true
+    },
+    "history": {
+      "display_label": "Local history",
+      "semantic_role": "Navigation",
+      "intended_meaning": "Open saved local reviews",
+      "suggested_accessibility_label": "Open local review history",
+      "visual_object": "Yellow clock face",
+      "placement": "home and history",
+      "asset_3x": "icons/history-144.png",
+      "asset_master": "icons/history-48.png",
+      "accessible_label_required": true
+    },
+    "info": {
+      "display_label": "How it works",
+      "semantic_role": "Navigation",
+      "intended_meaning": "Open how-it-works guide",
+      "suggested_accessibility_label": "How MealMirror works",
+      "visual_object": "Information mark in cream disc",
+      "placement": "home and settings",
+      "asset_3x": "icons/info-144.png",
+      "asset_master": "icons/info-48.png",
+      "accessible_label_required": true
+    },
+    "settings": {
+      "display_label": "Settings",
+      "semantic_role": "Navigation",
+      "intended_meaning": "Open settings",
+      "suggested_accessibility_label": "Open settings",
+      "visual_object": "Gear with a warm centre",
+      "placement": "home header",
+      "asset_3x": "icons/settings-144.png",
+      "asset_master": "icons/settings-48.png",
+      "accessible_label_required": true
+    },
+    "check": {
+      "display_label": "Confirmed choice",
+      "semantic_role": "Explanatory step",
+      "intended_meaning": "Illustrate a person keeping final judgment; never claim automatic validation",
+      "suggested_accessibility_label": "Keep your judgment",
+      "visual_object": "Check inside a cream disc",
+      "placement": "how-it-works step only unless user has confirmed",
+      "asset_3x": "icons/check-144.png",
+      "asset_master": "icons/check-48.png",
+      "accessible_label_required": true
+    },
+    "adjust": {
+      "display_label": "Adjust ingredients",
+      "semantic_role": "Action",
+      "intended_meaning": "Edit items and checked values",
+      "suggested_accessibility_label": "Adjust ingredients",
+      "visual_object": "Clipboard with a yellow pencil",
+      "placement": "review and item editor",
+      "asset_3x": "icons/adjust-144.png",
+      "asset_master": "icons/adjust-48.png",
+      "accessible_label_required": true
+    },
+    "review": {
+      "display_label": "Review details",
+      "semantic_role": "Action",
+      "intended_meaning": "Open review of possible clues",
+      "suggested_accessibility_label": "Review possible food clues",
+      "visual_object": "Paper with a blue magnifier",
+      "placement": "review",
+      "asset_3x": "icons/review-144.png",
+      "asset_master": "icons/review-48.png",
+      "accessible_label_required": true
+    },
+    "replay": {
+      "display_label": "Start another",
+      "semantic_role": "Action",
+      "intended_meaning": "Start again or replay guide",
+      "suggested_accessibility_label": "Use the control-specific label: Estimate another meal or Replay the welcome guide",
+      "visual_object": "Circular arrow with arrowhead",
+      "placement": "review and settings",
+      "asset_3x": "icons/replay-144.png",
+      "asset_master": "icons/replay-48.png",
+      "accessible_label_required": true
+    },
+    "privacy": {
+      "display_label": "Privacy",
+      "semantic_role": "Navigation",
+      "intended_meaning": "Open local privacy information",
+      "suggested_accessibility_label": "Open privacy information",
+      "visual_object": "Shield with a lock",
+      "placement": "welcome and settings",
+      "asset_3x": "icons/privacy-144.png",
+      "asset_master": "icons/privacy-48.png",
+      "accessible_label_required": true
+    },
+    "medical": {
+      "display_label": "Medical safety",
+      "semantic_role": "Navigation",
+      "intended_meaning": "Open medical safety information",
+      "suggested_accessibility_label": "Open medical safety information",
+      "visual_object": "First-aid case with red cross",
+      "placement": "settings",
+      "asset_3x": "icons/medical-144.png",
+      "asset_master": "icons/medical-48.png",
+      "accessible_label_required": true
+    },
+    "details": {
+      "display_label": "View details",
+      "semantic_role": "Action",
+      "intended_meaning": "Open a saved review detail",
+      "suggested_accessibility_label": "View review details",
+      "visual_object": "Paper with magnifier",
+      "placement": "history",
+      "asset_3x": "icons/details-144.png",
+      "asset_master": "icons/details-48.png",
+      "accessible_label_required": true
+    },
+    "delete": {
+      "display_label": "Delete review",
+      "semantic_role": "Destructive action",
+      "intended_meaning": "Delete selected local review after confirmation",
+      "suggested_accessibility_label": "Delete review",
+      "visual_object": "Red-lidded trash bin",
+      "placement": "history",
+      "asset_3x": "icons/delete-144.png",
+      "asset_master": "icons/delete-48.png",
+      "accessible_label_required": true
+    },
+    "save": {
+      "display_label": "Save review",
+      "semantic_role": "Action",
+      "intended_meaning": "Save the reviewed record locally",
+      "suggested_accessibility_label": "Save this local review",
+      "visual_object": "Pink storage disk",
+      "placement": "review",
+      "asset_3x": "icons/save-144.png",
+      "asset_master": "icons/save-48.png",
+      "accessible_label_required": true
+    },
+    "foodView": {
+      "display_label": "Food view",
+      "semantic_role": "Content role",
+      "intended_meaning": "Identify a selected food-view photo",
+      "suggested_accessibility_label": "Food view photo",
+      "visual_object": "Food on a cream plate",
+      "placement": "selected photo role",
+      "asset_3x": "icons/foodView-144.png",
+      "asset_master": "icons/foodView-48.png",
+      "accessible_label_required": true
+    },
+    "nutritionLabel": {
+      "display_label": "Nutrition label",
+      "semantic_role": "Content role",
+      "intended_meaning": "Identify a selected label photo",
+      "suggested_accessibility_label": "Nutrition label photo",
+      "visual_object": "Label paper with lines and barcode",
+      "placement": "selected photo role",
+      "asset_3x": "icons/nutritionLabel-144.png",
+      "asset_master": "icons/nutritionLabel-48.png",
+      "accessible_label_required": true
+    },
+    "addPhoto": {
+      "display_label": "Add photo",
+      "semantic_role": "Action",
+      "intended_meaning": "Add a food-view photo slot",
+      "suggested_accessibility_label": "Add food photo",
+      "visual_object": "Photo stack with plus badge",
+      "placement": "photo tray",
+      "asset_3x": "icons/addPhoto-144.png",
+      "asset_master": "icons/addPhoto-48.png",
+      "accessible_label_required": true
+    },
+    "removePhoto": {
+      "display_label": "Remove photo",
+      "semantic_role": "Destructive action",
+      "intended_meaning": "Remove selected photo from the current review",
+      "suggested_accessibility_label": "Remove photo",
+      "visual_object": "Photo stack with minus badge",
+      "placement": "selected photo",
+      "asset_3x": "icons/removePhoto-144.png",
+      "asset_master": "icons/removePhoto-48.png",
+      "accessible_label_required": true
+    },
+    "reviewPendingRecord": {
+      "display_label": "Not saved",
+      "semantic_role": "Status",
+      "intended_meaning": "Review has not been saved",
+      "suggested_accessibility_label": "Review not saved",
+      "visual_object": "Paper with magnifier and yellow pending badge",
+      "placement": "review status",
+      "asset_3x": "icons/reviewPendingRecord-144.png",
+      "asset_master": "icons/reviewPendingRecord-48.png",
+      "accessible_label_required": true
+    },
+    "reviewSavedRecord": {
+      "display_label": "Saved locally",
+      "semantic_role": "Status",
+      "intended_meaning": "Review is saved on this device",
+      "suggested_accessibility_label": "Review saved locally",
+      "visual_object": "Paper with magnifier and check badge",
+      "placement": "review status",
+      "asset_3x": "icons/reviewSavedRecord-144.png",
+      "asset_master": "icons/reviewSavedRecord-48.png",
+      "accessible_label_required": true
+    }
+  }
+}

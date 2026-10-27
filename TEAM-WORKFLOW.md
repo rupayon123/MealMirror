@@ -51,3 +51,7 @@ Do not run another heavy batch while the Mac remains severely overloaded. The fr
 ## Visual design and competitive research, October 27
 
 The dedicated UI designs role supplies original assets; Front end owns actual SwiftUI layout, Theme and placement. It must coordinate shared files, preserve the selected emblem and Pixel Kitchen, and label historical frames/static review separately from current runtime evidence. Root reviews integration, disclosure, final ZIP size and native verification. No worker pushes main or starts heavy tests without resource handoff. The [expanded RxFood breakdown](replica/RXFOOD-DEEP-DIVE.md) and [fix plan](replica/fixes.md) guide product gaps, without copying branding or claiming unmeasured superiority.
+
+## Selected pixel direction and QA recovery, October 27
+
+The applicant superseded the SF Symbol trial with the [original 20-role dimensional pixel family](design/pixel-kitchen/README.md). Exact masters/exports and portable drawing source are preserved outside the app/Challenge ZIP. Compact inline art remains pending; neither rejected trial nor new art is integrated. The frontend native attempt failed before compilation with cache/service access errors and its former QA target is absent. Root retained that failure, confirmed the protected original exists without operating it, and created one fresh empty isolated QA target. No boot/install/native visual pass is claimed. [Scoped handoff evidence](research/vision-diagnostics/pixel-ui-handoff-20261027.json).
