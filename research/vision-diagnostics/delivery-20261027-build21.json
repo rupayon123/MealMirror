@@ -138,5 +138,12 @@
     "englishKeyCount": 487,
     "passed": true,
     "historicalFailuresRetained": true
+  },
+  "laterSignedArchive": {
+    "receipt": "archive-20261027-build21.json",
+    "passed": true,
+    "uploadExitCode": 70,
+    "latestConfirmedInternalGroupTestingBuild": "19",
+    "scope": "Separate later archive; original failed/interrupted stages remain historical evidence."
   }
 }

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "sourceMain": "c12d954cf00bb5a44f2141f537c1e5e9c2fd2181",
+  "build": "21",
+  "firstControllerLaunch": {
+    "exitCode": 1,
+    "python": "3.9.6",
+    "error": "Unsupported union type annotation during controller import",
+    "xcodeInvoked": false
+  },
+  "interpreterRecovery": {
+    "python": "3.12.14",
+    "archiveAttempts": 1,
+    "sourceAndAcceptanceUnchanged": true
+  },
+  "stages": {
+    "archive": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 295.31,
+      "limitSeconds": 600,
+      "leaderReaped": true,
+      "orphanedAtReturn": false,
+      "ownedGroupPresentAtReturn": false
+    },
+    "codesign": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.178,
+      "limitSeconds": 30,
+      "leaderReaped": true,
+      "orphanedAtReturn": false,
+      "ownedGroupPresentAtReturn": false
+    },
+    "locales": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.829,
+      "limitSeconds": 90,
+      "leaderReaped": true,
+      "orphanedAtReturn": false,
+      "ownedGroupPresentAtReturn": false
+    },
+    "metadata": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.172,
+      "limitSeconds": 30,
+      "leaderReaped": true,
+      "orphanedAtReturn": false,
+      "ownedGroupPresentAtReturn": false
+    },
+    "upload": {
+      "exitCode": 70,
+      "timedOut": false,
+      "hostSeconds": 6.974,
+      "limitSeconds": 300,
+      "leaderReaped": true,
+      "orphanedAtReturn": false,
+      "ownedGroupPresentAtReturn": false
+    }
+  },
+  "archive": {
+    "passed": true,
+    "build": "21",
+    "sdk": "iphoneos27.1",
+    "minimumOS": "17.0",
+    "binarySHA256": "e176a366716456a1f299a0e1723535fa46815281a32bbef40caee04a872fa08b",
+    "sourceFiles": 94,
+    "scope": "Signed full-resource device archive only; no upload or UI/device run."
+  },
+  "resources": {
+    "build": "21",
+    "languages": [
+      "ar",
+      "bn",
+      "en",
+      "es",
+      "fa",
+      "fil",
+      "fr",
+      "gu",
+      "hi",
+      "hu",
+      "ja",
+      "ko",
+      "pa",
+      "pt",
+      "ta",
+      "ur",
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "languageCount": 18,
+    "englishKeyCount": 487,
+    "sourceCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "builtCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "passed": true,
+    "errors": [],
+    "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+  },
+  "evidenceHashes": {
+    "PROTOCOL.json": "0cb7d914aede1cb5a89d799dd8cc7ca61d2d49a959d15c0098e347ec5ead94ca",
+    "run.py": "c4763f30b7f885f584b14de33eb8753df9e45dee10bf8e0175f4d9e22291cbcf",
+    "RESULT.json": "e28a38a48637b33b677b75bf92bb63aa6ab6ae3d3c89992c3de917a40c6e98d5",
+    "archive.json": "c8b8df996ad2fe638f618225351c88ef6141660a5f8a09bd875e650dcca29906",
+    "codesign.json": "78890bd9c5326fd127705ecf968b6ad0811681c6813261e43b0901a64f6bce5a",
+    "locales.json": "5100394387781f6ad03a91af05a765c4681c1fd21930ebfa20b890513d57d094",
+    "locales-report.json": "a1e13ac7ce2844901c938357a199e06d693c3cc7eedc87c466646cc448a0f4c6",
+    "metadata.json": "971aef36c6d26d0c66880c55b638ecc3dbd3334846b9a1d5b7a61adab97cbd1c",
+    "metadata.stdout": "6c82acf2166b4a652c93220168c6e6ac6247b56cd0d07f7109e20178349b6603",
+    "upload.json": "9b3bb110e8e772e58fdae7d1b53ba8fc198e405f0be34b7cba0edc0839d6d708",
+    "FIRST-LAUNCH-FAILURE.json": "da88d7e6a0216bfd17ed8e0a59028a59a76dc1fb723304a9a3a3128b2c1901d3",
+    "INTERPRETER-RECOVERY.json": "a908f7c954ed5586436cae1cd32fa0e682b9bc27c79665031cdc3a31c74ba93b"
+  },
+  "upload": {
+    "internalTestingOnly": true,
+    "manageAppVersionAndBuildNumber": false,
+    "exitCode": 70,
+    "reason": "Xcode requires App Store Connect account access; browser sign-in does not establish Xcode credentials.",
+    "confirmedUploaded": false
+  },
+  "serverObservation": {
+    "latestConfirmedInternalGroupTestingBuild": "19",
+    "olderBuild2Preserved": true,
+    "existingGroupBuildCount": 2,
+    "existingTesterCount": 1,
+    "newGroupsOrTesters": 0,
+    "scope": "Observed browser state after assigning already-uploaded build19 to the existing internal group. No device install or fresh build19 journey established."
+  },
+  "candidateUnchangedSHA256": "8690e3a64f3f8fdefd4f764490709c6af7defcc368571d8b8135b7ed681181d6",
+  "limits": [
+    "Full-language signed archive differs in resources/binary from English-only Challenge ZIP; all18Swift sources match frozen variants.",
+    "No current native UI, physical offline, broad recognition quality or translation quality acceptance.",
+    "No App Store review/release, external group, public beta or binary release."
+  ]
+}

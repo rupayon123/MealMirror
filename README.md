@@ -11,11 +11,11 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 | [English Challenge source ZIP](candidate/MealMirror-SSC2027.zip) | 12,208,090 bytes; 60 files; two byte-identical repacks |
 | ZIP SHA-256 | `8690e3a64f3f8fdefd4f764490709c6af7defcc368571d8b8135b7ed681181d6` |
 | Simulator builds | English and full-language variants passed for arm64, including executable and debug library |
-| Internal archive | Build 21 unrun after language-verifier timeout; build 20 remains the last verified signed archive |
-| Internal TestFlight upload | Build 21 not attempted; build 20 failed because Xcode requires App Store Connect account access |
-| Latest previously uploaded build | 19; build 2 remains the last independently verified existing-group Testing state |
+| Internal archive | Build 21 signed full-language archive passed; codesign, all 18 catalogs, actual SDK 27.1/minimum iOS 17 verified |
+| Internal TestFlight upload | Build 21 internal-only attempt failed with exit 70 because Xcode requires App Store Connect account access |
+| Latest previously uploaded build | Build 19 is confirmed Testing in the existing internal group; older build 2 preserved |
 
-Build 21 delivers the local-model gate's chosen result before asynchronously requesting worker/timer cancellation, including late registration. The same 15 controlled checks pass after four baseline ordering failures. The first cold build was interrupted; a distinct incremental recovery passed. A verifier path mistake was corrected, then full-language verification timed out. These failures remain retained; no build-21 archive, upload, fresh UI or physical acceptance is claimed. [Delivery evidence](research/vision-diagnostics/delivery-20261027-build21.json) · [Controlled comparison](research/vision-diagnostics/photo-ai-cancellation-20261027.json).
+Build 21 delivers the local-model gate's chosen result before asynchronously requesting worker/timer cancellation, including late registration. The same 15 controlled checks pass after four baseline ordering failures. The first cold build was interrupted; a distinct incremental recovery passed. A verifier path mistake was corrected, then full-language verification timed out. These failures remain retained. Separate later resource and signed-archive checks passed; the internal upload failed70. Fresh UI and physical acceptance remain open. [Delivery evidence](research/vision-diagnostics/delivery-20261027-build21.json) · [Controlled comparison](research/vision-diagnostics/photo-ai-cancellation-20261027.json).
 
 The internal testing resource variant retains 18 languages; build 21's complete language verifier remains open. The separate Challenge ZIP is English-only; all 18 Swift source files match between variants. These are different resource variants, not identical binaries. Catalog parity does not establish translation or layout quality.
 
@@ -57,3 +57,5 @@ Remaining gates include dependable food naming/abstention on qualified independe
 | [AI and asset disclosure](MealMirror.swiftpm/AI-AND-ASSET-DISCLOSURE.md) | Working assistance/provenance record for applicant reconciliation |
 
 Historical build results remain in the readiness records and linked research receipts. The applicant must reconcile the final package against the published rules for the actual submission year and personally review the code and write the Challenge answers.
+
+Latest [signed archive and internal testing evidence](research/vision-diagnostics/archive-20261027-build21.json) retains the earlier controller/interpreter and verifier failures. The full-language internal archive is distinct from the English Challenge ZIP.
