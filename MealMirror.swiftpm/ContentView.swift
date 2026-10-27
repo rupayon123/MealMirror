@@ -230,13 +230,6 @@ private struct HomeView: View {
 
     private var homeHero: some View {
         VStack(spacing: 10) {
-            if !dynamicTypeSize.isAccessibilitySize {
-                MealMirrorBadge()
-                    .frame(width: horizontalSizeClass == .regular ? 250 : 205,
-                           height: horizontalSizeClass == .regular ? 250 : 205)
-                    .padding(.top, 6)
-            }
-
             VStack(alignment: .leading, spacing: 6) {
                 Text("What’s on your plate?")
                     .font(CarbInTheme.display(.title1, size: 25))
@@ -265,15 +258,15 @@ private struct HomeView: View {
     private var quickActions: some View {
         VStack(alignment: .leading, spacing: 10) {
             if dynamicTypeSize.isAccessibilitySize {
+                quickAction("Camera", icon: .camera, enabled: CameraAccess.isAvailable, action: onCamera)
+                    .accessibilityIdentifier("carbin.home.camera")
+                quickAction("Library", icon: .photos, enabled: true, action: onLibrary)
+                    .accessibilityIdentifier("carbin.home.library")
                 Button(action: onStart) {
                     Label("Start a meal review", systemImage: "plus")
                 }
                 .buttonStyle(PrimaryActionStyle())
                 .accessibilityIdentifier("carbin.home.estimate")
-                quickAction("Camera", icon: .camera, enabled: CameraAccess.isAvailable, action: onCamera)
-                    .accessibilityIdentifier("carbin.home.camera")
-                quickAction("Library", icon: .photos, enabled: true, action: onLibrary)
-                    .accessibilityIdentifier("carbin.home.library")
             } else {
                 HStack(spacing: 10) {
                     quickAction("Camera", icon: .camera, enabled: CameraAccess.isAvailable, action: onCamera)

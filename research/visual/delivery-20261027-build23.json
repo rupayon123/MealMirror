@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "baselineMain": "41dee36b82e23c563596e9a44d3a3ee9ab064f9f",
+  "build": "23",
+  "candidate": {
+    "build": "23",
+    "zipBytes": 12269257,
+    "zipSHA256": "d9652e772972ca238976bd76bdf436f23b201c4bd5cd551997a1d61784c949f6",
+    "twoRepacksIdentical": true,
+    "identities": {
+      "challenge": {
+        "build": "23",
+        "binaries": {
+          "MealMirror": "be5355088ef6f4e11ca6e4a9a89b8386729aede08fbaf4d9357b299d888d501b",
+          "MealMirror.debug.dylib": "e09a804cb66af844e7fd3a59d961b7fbc36026857dca9b7985202950fc5c0473",
+          "Assets.car": "e7c6fa8ef2a61f6a971636ea5300697d42bbc2f0c4a9381b687292ce6f6d9baa"
+        }
+      },
+      "internal": {
+        "build": "23",
+        "binaries": {
+          "MealMirror": "209941fbbaa1cd357f9da4643c64bb8e62c90806798b523f74a96dd3655d7ae9",
+          "MealMirror.debug.dylib": "dedecc5a09ae14928acb9ea4dcab1a2e95b9f8efa88959f07f369e105a4844d5",
+          "Assets.car": "a52e4c5cf0c02c36979b62209911310891127c82370f0c4dc53b5ac2636eb72e"
+        }
+      }
+    }
+  },
+  "changes": [
+    "Removed duplicate large Home emblem; header emblem remains.",
+    "Home guidance uses shared stepped inset shape; removed single-use smooth speech-bubble shape.",
+    "Dark checkerboard opacity reduced from0.22 to0.06.",
+    "Welcome photo action uses24pt compact original Photos object with center-aligned icon and leading multiline text.",
+    "Accessibility-size Home places Camera and Photos before the generic review action."
+  ],
+  "sourceReview": {
+    "passed": true,
+    "packagedFiles": 138,
+    "matchingSwiftSources": 18,
+    "literalAccessibilityIDsUnchanged": true,
+    "engineAIPolicyStorageLocalizationUnchanged": true,
+    "earlierProbeFailure": "Initial probe used nonexistent Engine.swift and exited1. Corrected probe then expected138 total ZIP entries and failed because ZIP has138 files plus41 directory entries. Final predicate counts files and verifies all bytes/transforms; no product change to pass. V2 first retained source-order equality and failed after the intentional AX photo-first reorder. Final predicate preserves the identifier multiset; An initial checker edit then had an unmatched-parenthesis syntax error before execution; corrected. Callbacks remain unchanged in reviewed diff."
+  },
+  "resources": {
+    "build": "23",
+    "languages": [
+      "ar",
+      "bn",
+      "en",
+      "es",
+      "fa",
+      "fil",
+      "fr",
+      "gu",
+      "hi",
+      "hu",
+      "ja",
+      "ko",
+      "pa",
+      "pt",
+      "ta",
+      "ur",
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "languageCount": 18,
+    "englishKeyCount": 487,
+    "sourceCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "builtCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "passed": true,
+    "errors": [],
+    "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+  },
+  "archive": {
+    "passed": true,
+    "build": "23",
+    "sdk": "iphoneos27.1",
+    "minimumOS": "17.0",
+    "binarySHA256": "e1a2c2ae660ff8d8a6e2ece3a6bd9e45c77a867771629b5b91f90e2907b52582"
+  },
+  "stages": {
+    "appearance-before": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.469,
+      "orphanedAtReturn": false
+    },
+    "archive-locales23": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.345,
+      "orphanedAtReturn": false
+    },
+    "archive-metadata23": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.133,
+      "orphanedAtReturn": false
+    },
+    "archive23": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 42.917,
+      "orphanedAtReturn": false
+    },
+    "challenge-build": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 28.755,
+      "orphanedAtReturn": false
+    },
+    "codesign23": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.133,
+      "orphanedAtReturn": false
+    },
+    "content-size-before": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.244,
+      "orphanedAtReturn": false
+    },
+    "dark23-request": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.127,
+      "orphanedAtReturn": false
+    },
+    "home23-dark-screenshot": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 1.202,
+      "orphanedAtReturn": false
+    },
+    "home23-large-screenshot": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.458,
+      "orphanedAtReturn": false
+    },
+    "home23-launch": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 1.337,
+      "orphanedAtReturn": false
+    },
+    "home23-screenshot": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.568,
+      "orphanedAtReturn": false
+    },
+    "home23-terminate": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.369,
+      "orphanedAtReturn": false
+    },
+    "install23": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 2.13,
+      "orphanedAtReturn": false
+    },
+    "internal-build": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 30.607,
+      "orphanedAtReturn": false
+    },
+    "large23-request": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.39,
+      "orphanedAtReturn": false
+    },
+    "launch23": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 2.799,
+      "orphanedAtReturn": false
+    },
+    "light23": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.712,
+      "orphanedAtReturn": false
+    },
+    "package": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.459,
+      "orphanedAtReturn": false
+    },
+    "repack": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.346,
+      "orphanedAtReturn": false
+    },
+    "terminate23-v1": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 1.039,
+      "orphanedAtReturn": false
+    },
+    "welcome23-large-launch": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 2.447,
+      "orphanedAtReturn": false
+    },
+    "welcome23-large-screenshot": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.674,
+      "orphanedAtReturn": false
+    },
+    "welcome23-large-terminate": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.454,
+      "orphanedAtReturn": false
+    },
+    "welcome23-screenshot": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.688,
+      "orphanedAtReturn": false
+    },
+    "restore23-light": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.483,
+      "orphanedAtReturn": false
+    },
+    "restore23-content": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.385,
+      "orphanedAtReturn": false
+    },
+    "restore23-terminate": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.699,
+      "orphanedAtReturn": false
+    },
+    "restore23-launch": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 1.711,
+      "orphanedAtReturn": false
+    }
+  },
+  "screenshots": {
+    "home23-dark.png": {
+      "sha256": "a1e22df364b0c5ac1c7b36471080e9c7bfca30fc407ae6c4c4ca11480e9962a8"
+    },
+    "home23-large.png": {
+      "sha256": "67340b7d15294e5f29b05e8d25f93be45684b28af256bbf0fb5cffb34659d4e5"
+    },
+    "home23.png": {
+      "sha256": "b0170212e2562cef1db9822dba9bb03efe5df745282bde38cbfecf8911766b75"
+    },
+    "welcome23-large.png": {
+      "sha256": "7321095ccb8a14abb67b5184a02635e4e4a94e90024dd7407f2c2c6bac1816bc"
+    },
+    "welcome23.png": {
+      "sha256": "fac776e4855fe826d1a1957638cba6389bc46777c2e09808f74e9408cf096535"
+    },
+    "organizer-upload23-complete.png": {
+      "sha256": "fa8487c4e1d231dc2e527e5550e5f969f726f5887d6a2d817e78870823b46bf6"
+    },
+    "testflight23-processing.png": {
+      "sha256": "f95fc094d1ad3337b5ee37a94c2a0cdfb09e6283e5c9d36bdc7d0015a681e9e5"
+    }
+  },
+  "distribution": {
+    "method": "TestFlight Internal Only",
+    "observedState": "Xcode Organizer upload complete; App Store Connect Build Uploads shows Version1.0 Build23 Processing, Oct27 2026 5:53AM. Not yet in existing internal group.",
+    "latestConfirmedInternalTestingBuild": "22",
+    "appStoreReviewOrRelease": false,
+    "serverProcessingObserved": true,
+    "build23TestingVerified": false
+  },
+  "limits": [
+    "Home is a process-launch-argument fixture, not a completed onboarding or interaction journey. No persistent onboarding preference write.",
+    "Native captures: initial Welcome, Home light/dark and maximum accessibility-size initial viewports on isolated iPhone Duo/iOS27.1 only.",
+    "No current full photo/OCR/model/save/delete journey, VoiceOver/focus, scrolling, animations, iPad, physical offline or recognition acceptance.",
+    "English source ZIP and full-language internal archive have matching18Swift sources but different resources/binaries.",
+    "Both source builds and signed archive use incremental derived data; not clean builds.",
+    "Previous Device Hub inspection timeouts remain unresolved; no permission expansion or service reset."
+  ],
+  "reviewHistory": [
+    "V1 build23 passed source builds and signed archive but was not uploaded. Peer screenshot review requested multiline Welcome alignment and AX photo-first ordering. Final v2 recompiled and reverified after both changes.",
+    "Two V1 checker assumptions failed: wrong Engine.swift filename and counting all ZIP entries as files. ZIP has138files and41directory entries.",
+    "V2 retained order equality and failed after intentional AX reorder; corrected invariant compares identifier multisets, with callbacks checked in diff. A checker edit syntax error was corrected before final passing probe. No production change was made to bypass these failures."
+  ],
+  "references": {
+    "design": "../../design/pixel-kitchen/README.md",
+    "previousRuntime": "runtime-20261027-build22.json",
+    "UIReferenceConsulted": "https://21st.dev",
+    "UIReferenceScope": "Current library consulted; no React component, asset, dependency or service imported into SwiftUI."
+  },
+  "warnings": [
+    "Xcode skips duplicate Brand.xcassets Compile Sources entry.",
+    "AppIntents metadata extraction skipped because no AppIntents.framework dependency."
+  ],
+  "remainingVisualFindings": [
+    "At maximum accessibility size, Welcome visible primary action retains legacy short label Photo. Complete accessibility label specifies library, but visible caption should become clearer in a later verified build.",
+    "Solid black circle appears in upper-right system-area of some Welcome captures; origin unverified. Not attributed to app source and not used as evidence of defect-free full-screen Welcome."
+  ],
+  "reusedEvidence": {
+    "receipt": "delivery-20261027-build22.json",
+    "scope": "52 shipped icon PNGs and shared PixelRoundedRectangle geometry source unchanged; prior reproduction/243 geometry checks are historical evidence, not rerun for23."
+  },
+  "graphify": {
+    "exitCode": 0,
+    "nodes": 1724,
+    "edges": 3060,
+    "communities": 186,
+    "scope": "Local generated index; no LLM or new API key.136asset/source files produced no nodes; warning retained."
+  },
+  "peerVisualReview": "Companion UI chat inspected all final v2 captures: hierarchy, dark decoration, multiline Welcome alignment and AX photo-first order visibly improved. Remaining Photo wording and unidentified system-area circle are listed below. No full journey/accessibility acceptance."
+}

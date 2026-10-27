@@ -1,5 +1,7 @@
 # Pixel UI source verification
 
+Build23 refines the actual build22 screenshot findings: removes the repeated Home mark, shares stepped helper geometry, quiets dark decoration, aligns Welcome artwork and puts photo choices first at accessibility sizes. [Current evidence and limits](delivery-20261027-build23.json). Both resource builds and signed archive passed; native screenshot review is limited to initial viewports.
+
 Build 22 integrates 20 full floating-object roles and six separate compact roles, with 52 light/dark PNGs, grouped Home/Settings rows and shared stepped surfaces. See the [delivery receipt](delivery-20261027-build22.json), [asset source/provenance](../../design/pixel-kitchen/README.md), and current readiness.
 
 An unpublished outline prototype compiled but failed 20 of 243 source-derived geometry checks. Path inspection showed that `addLines` replaced the intended initial move; closing the path cut across its top. Explicit `addLine` calls fixed it, and the same 243 checks passed. [Rejected prototype](PixelSurfaceAddLinesBaseline.swift) and [fixed probe](PixelSurfaceGeometryChecks.swift) are standalone macOS SwiftUI checks; compile one at a time with `xcrun swiftc -swift-version 6 -parse-as-library FILE.swift -o /absolute/new/probe`, then run it. The prototype intentionally exits 1. Neither file is part of the app/ZIP.

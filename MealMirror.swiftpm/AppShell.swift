@@ -357,10 +357,18 @@ private struct OnboardingView: View {
                 }
             }
         } label: {
-            Label(
-                localization.text(photoAction && dynamicTypeSize.isAccessibilitySize ? "Photo" : photoAction ? "Choose a meal photo from your library" : "Continue"),
-                systemImage: photoAction ? "photo.on.rectangle" : continueSymbol
-            )
+            HStack(alignment: .center, spacing: 10) {
+                if photoAction {
+                    PixelKitchenIcon(kind: .photos)
+                        .frame(width: 24, height: 24)
+                } else {
+                    Image(systemName: continueSymbol)
+                        .accessibilityHidden(true)
+                }
+                Text(localization.text(photoAction && dynamicTypeSize.isAccessibilitySize ? "Photo" : photoAction ? "Choose a meal photo from your library" : "Continue"))
+                    .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
         }
         .accessibilityLabel(localization.text(photoAction ? "Choose a meal photo from your library" : "Continue"))
         .buttonStyle(PrimaryActionStyle())

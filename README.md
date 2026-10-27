@@ -4,20 +4,20 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 
 **Testing only. Not submission-ready or clinically validated.** No Android version, required account, server or cloud-model endpoint.
 
-## Current source candidate: 1.0 (22)
+## Current source candidate: 1.0 (23)
 
 | Artifact or check | Result |
 | --- | --- |
-| [English Challenge source ZIP](candidate/MealMirror-SSC2027.zip) | 12,269,540 bytes; 138 files; two byte-identical repacks |
-| ZIP SHA-256 | `5ed5aad7ac090b4623172e171487c0bce95bd62ba3e17fbe9be149aeafbbbc2d` |
+| [English Challenge source ZIP](candidate/MealMirror-SSC2027.zip) | 12,269,257 bytes; 138 files; two byte-identical repacks |
+| ZIP SHA-256 | `d9652e772972ca238976bd76bdf436f23b201c4bd5cd551997a1d61784c949f6` |
 | Pixel UI | 20 full roles + six compact roles; 52 light/dark PNGs; stepped surfaces and grouped Home/Settings rows |
 | Simulator source builds | English and full-language variants passed for arm64; incremental builds, not clean/universal |
 | Full-language integrity | All 18 catalogs/native strings match source; 487 English keys; translation/layout quality still open |
 | Outline geometry | Same 243 macOS SwiftUI checks pass after 20 failures in an unpublished prototype; not native app visual proof |
-| Internal archive/upload | Build 22 signed archive/upload passed; confirmed Testing in existing internal group |
+| Internal archive/upload | Build23 signed archive and internal-only upload passed; Apple shows Processing; not yet group Testing. Build22 confirmed Testing |
 | Existing internal TestFlight group | Build 22 Testing; builds 19 and 2 preserved; one tester |
 
-Build 22 integrates the revised floating pixel family and shared surfaces while preserving the pot/MM emblem, fonts, photos, local AI, storage and numeric boundaries. The original artwork sources and provenance are [reviewable here](design/pixel-kitchen/README.md). Source parse/build, exact package, asset reproduction and geometry evidence are in the [delivery receipt](research/visual/delivery-20261027-build22.json). The exact English Simulator app installed and launched on an isolated iPhone Duo; initial Welcome and controlled Home light/dark rendering were inspected. [Native evidence and fixture limits](research/visual/runtime-20261027-build22.json). Full interactive/accessibility, human comprehension and physical offline checks remain open.
+Build23 refines Home hierarchy, shared stepped surfaces, dark decoration and photo-first large-text order while preserving the pot/MM emblem, fonts, photos, local AI, storage and numeric boundaries. The original artwork sources and provenance are [reviewable here](design/pixel-kitchen/README.md). Current builds/package checks and references to unchanged artwork/geometry evidence are in the [delivery receipt](research/visual/delivery-20261027-build23.json). The exact English Simulator app installed and launched on an isolated iPhone Duo; initial Welcome and controlled Home light/dark/max-text rendering were inspected. [Native evidence and fixture limits](research/visual/delivery-20261027-build23.json). Full interactive/accessibility, human comprehension and physical offline checks remain open.
 
 The internal resource variant retains 18 languages, while the judging ZIP is English-only. All 18 Swift source bytes match; resources and binaries differ. Catalog integrity does not establish translation or native layout quality.
 

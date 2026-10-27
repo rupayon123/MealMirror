@@ -164,6 +164,8 @@ struct CountertopBackdrop: View {
 }
 
 struct CheckerboardSurface: View {
+    @Environment(\.colorScheme) private var colorScheme
+
     var body: some View {
         Canvas { context, size in
             let tile: CGFloat = 23
@@ -171,7 +173,7 @@ struct CheckerboardSurface: View {
                 for row in 0...Int(ceil(size.height / tile)) where (column + row).isMultiple(of: 2) {
                     context.fill(
                         Path(CGRect(x: CGFloat(column) * tile, y: CGFloat(row) * tile, width: tile, height: tile)),
-                        with: .color(CarbInTheme.butter.opacity(0.22))
+                        with: .color(CarbInTheme.butter.opacity(colorScheme == .dark ? 0.06 : 0.22))
                     )
                 }
             }
@@ -615,52 +617,19 @@ private struct TicketEdge: View {
     }
 }
 
-private struct KitchenBubbleShape: Shape {
-    let tailOnTrailing: Bool
-
-    func path(in rect: CGRect) -> Path {
-        let left = rect.minX + 2
-        let right = rect.maxX - 2
-        let top = rect.minY + 2
-        let bottom = rect.maxY - 16
-        let radius = min(10, (right - left) / 8, (bottom - top) / 8)
-        let center = tailOnTrailing ? right - 43 : left + 43
-        let tailLeft = center - 14
-        let tailRight = center + 14
-
-        return Path { path in
-            path.move(to: CGPoint(x: left + radius, y: top))
-            path.addLine(to: CGPoint(x: right - radius, y: top))
-            path.addQuadCurve(to: CGPoint(x: right, y: top + radius), control: CGPoint(x: right, y: top))
-            path.addLine(to: CGPoint(x: right, y: bottom - radius))
-            path.addQuadCurve(to: CGPoint(x: right - radius, y: bottom), control: CGPoint(x: right, y: bottom))
-            path.addLine(to: CGPoint(x: tailRight, y: bottom))
-            path.addLine(to: CGPoint(x: center, y: rect.maxY - 2))
-            path.addLine(to: CGPoint(x: tailLeft, y: bottom))
-            path.addLine(to: CGPoint(x: left + radius, y: bottom))
-            path.addQuadCurve(to: CGPoint(x: left, y: bottom - radius), control: CGPoint(x: left, y: bottom))
-            path.addLine(to: CGPoint(x: left, y: top + radius))
-            path.addQuadCurve(to: CGPoint(x: left + radius, y: top), control: CGPoint(x: left, y: top))
-            path.closeSubpath()
-        }
-    }
-}
-
 private struct KitchenBubbleSurface: ViewModifier {
     let inset: CGFloat
 
     func body(content: Content) -> some View {
-        // SwiftUI mirrors Shape paths for right-to-left layout automatically.
-        let shape = KitchenBubbleShape(tailOnTrailing: false)
+        let shape = PixelRoundedRectangle(cornerRadius: 10)
         content
             .padding(.horizontal, inset)
-            .padding(.top, inset)
-            .padding(.bottom, inset + 14)
+            .padding(.vertical, inset)
             .background {
                 shape.fill(CarbInTheme.surface)
                     .shadow(color: CarbInTheme.ink.opacity(0.16), radius: 0, x: 0, y: 4)
             }
-            .overlay { shape.stroke(CarbInTheme.line, lineWidth: 3) }
+            .overlay { shape.strokeBorder(CarbInTheme.line, lineWidth: 3) }
     }
 }
 
