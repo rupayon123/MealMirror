@@ -208,6 +208,17 @@
     "Build22 has no signed device archive, upload, installation, rendered native UI or physical offline validation.",
     "Full-language source build is separate from English-only Challenge ZIP;18Swift source bytes match, resources/binaries differ.",
     "Actual recognition, OCR recovery, translation quality, VoiceOver, RTL, large-text layouts and human comprehension remain open.",
-    "Build21 signed archive remains historical; its internal upload failed70. Build19 remains last confirmed existing-group Testing. No App Store/public beta/release action."
+    "Build21 signed archive remains historical; its internal upload failed70. Build19 remains last confirmed existing-group Testing. No App Store/public beta/release action.",
+    "Build success and asset reproduction do not establish small-icon readability or absence of layout defects; warnings above remain recorded."
+  ],
+  "localGraphUpdate": {
+    "exitCode": 0,
+    "timedOut": false,
+    "hostSeconds": 16.73,
+    "orphanedAtReturn": false
+  },
+  "buildWarnings": [
+    "Xcode skipped a duplicate Brand.xcassets Compile Sources entry.",
+    "App Intents metadata extraction skipped because no AppIntents.framework dependency is declared."
   ]
 }
