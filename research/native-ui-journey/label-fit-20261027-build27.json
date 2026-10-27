@@ -530,10 +530,29 @@
     "MealMirror.swiftpm/Theme.swift": "2170016ef80a9ea30af88136f48685c46d2b2554ae80b53ea5edf44f2c688f34"
   },
   "distribution": {
-    "build27Uploaded": false,
-    "lastConfirmedInternalTestingBuild": "25",
+    "build27Uploaded": true,
+    "lastConfirmedInternalTestingBuild": "27",
     "testingOnly": true,
-    "publicAppRelease": false
+    "publicAppRelease": false,
+    "method": "TestFlight Internal Only",
+    "organizerResult": "App upload complete",
+    "warnings": [],
+    "serverStatus": "Testing",
+    "group27TestingConfirmed": true,
+    "organizerProofSHA256": "05cfcd6147503b03871f5c19cc4f08b5bbdbefff692958095635ce7138451f42",
+    "processingProofSHA256": "9b2bc7808df8ccd1313c42ebc47ad2a863ce8427dd3919d75e1bfd3db865285d",
+    "internalGroup": "MealMirror Internal",
+    "internalTesterCount": 1,
+    "internalGroupBuilds": [
+      "27",
+      "25",
+      "24",
+      "23",
+      "22",
+      "19",
+      "2"
+    ],
+    "testingProofSHA256": "78242bb80aad340cdb89e0a51575738f8896bc0d4670c43fed49becadf803320"
   },
   "scope": [
     "Full18-language arm64 Simulator app in English; English judgingZIP separately built with18identical Swift source files. Resources/binaries differ. Incremental builds, not clean/universal.",
