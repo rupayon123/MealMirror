@@ -96,13 +96,21 @@ enum CarbInTheme {
     }
 }
 
+// The same three-step silhouette at four visible sizes across the journey.
+enum PixelSurfaceTier {
+    static let panel: CGFloat = 30
+    static let card: CGFloat = 24
+    static let field: CGFloat = 18
+    static let chip: CGFloat = 15
+}
+
 // A continuous stepped outline shared by cards, controls and photo frames.
 // Insets move every edge together so strokeBorder stays closed at each corner.
 struct PixelRoundedRectangle: InsettableShape {
-    var cornerRadius: CGFloat = 12
+    var cornerRadius: CGFloat = PixelSurfaceTier.panel
     private var insetAmount: CGFloat = 0
 
-    init(cornerRadius: CGFloat = 12) { self.cornerRadius = cornerRadius }
+    init(cornerRadius: CGFloat = PixelSurfaceTier.panel) { self.cornerRadius = cornerRadius }
 
     func inset(by amount: CGFloat) -> Self {
         var copy = self
@@ -191,17 +199,19 @@ struct PrimaryActionStyle: ButtonStyle {
         configuration.label
             .font(CarbInTheme.display(.headline, size: 17))
             .foregroundStyle(isEnabled ? CarbInTheme.actionInk : CarbInTheme.mutedInk)
+            .fixedSize(horizontal: false, vertical: true)
+            .padding(.vertical, 12)
             .frame(maxWidth: .infinity)
             .frame(minHeight: 54)
             .padding(.horizontal, 18)
             .background {
-                PixelRoundedRectangle(cornerRadius: 9)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card)
                     .fill(isEnabled ? CarbInTheme.tomatoAction : CarbInTheme.inset)
                     .shadow(color: CarbInTheme.ink.opacity(isEnabled ? 0.35 : 0.16), radius: 0, x: 0, y: configuration.isPressed ? 1 : 4)
             }
             .overlay {
-                PixelRoundedRectangle(cornerRadius: 9)
-                    .stroke(CarbInTheme.line, lineWidth: 3)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card)
+                    .strokeBorder(CarbInTheme.line, lineWidth: 3)
             }
             .offset(y: configuration.isPressed ? 3 : 0)
             .opacity(configuration.isPressed ? 0.92 : 1)
@@ -217,13 +227,13 @@ struct SecondaryActionStyle: ButtonStyle {
             .frame(minHeight: 52)
             .padding(.horizontal, 18)
             .background {
-                PixelRoundedRectangle(cornerRadius: 9)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card)
                     .fill(CarbInTheme.surface)
                     .shadow(color: CarbInTheme.ink.opacity(0.22), radius: 0, x: 0, y: configuration.isPressed ? 1 : 3)
             }
             .overlay {
-                PixelRoundedRectangle(cornerRadius: 9)
-                    .stroke(CarbInTheme.line, lineWidth: 3)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card)
+                    .strokeBorder(CarbInTheme.line, lineWidth: 3)
             }
             .offset(y: configuration.isPressed ? 2 : 0)
             .opacity(configuration.isPressed ? 0.74 : 1)
@@ -239,15 +249,98 @@ struct CompactActionStyle: ButtonStyle {
             .frame(minHeight: 46)
             .padding(.horizontal, 12)
             .background {
-                PixelRoundedRectangle(cornerRadius: 8)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card)
                     .fill(CarbInTheme.ticket)
                     .shadow(color: CarbInTheme.ink.opacity(0.16), radius: 0, x: 0, y: configuration.isPressed ? 0 : 2)
             }
             .overlay {
-                PixelRoundedRectangle(cornerRadius: 8)
-                    .stroke(CarbInTheme.line.opacity(0.90), lineWidth: 1.5)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card)
+                    .strokeBorder(CarbInTheme.line.opacity(0.90), lineWidth: 1.5)
             }
             .opacity(configuration.isPressed ? 0.70 : 1)
+    }
+}
+
+// Two independently accessible controls share one surface. The separator
+// belongs to the tray, never to either icon or its tappable label.
+struct PixelPhotoSourceTray<First: View, Second: View>: View {
+    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    let first: First
+    let second: Second
+
+    init(@ViewBuilder first: () -> First, @ViewBuilder second: () -> Second) {
+        self.first = first()
+        self.second = second()
+    }
+
+    var body: some View {
+        Group {
+            if dynamicTypeSize.isAccessibilitySize {
+                verticalChoices
+            } else {
+                ViewThatFits(in: .horizontal) {
+                    horizontalChoices
+                    verticalChoices
+                }
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .background {
+            PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.panel)
+                .fill(CarbInTheme.surface)
+                .shadow(color: CarbInTheme.line.opacity(0.35), radius: 0, x: 3, y: 4)
+        }
+        .overlay {
+            PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.panel)
+                .strokeBorder(CarbInTheme.line, lineWidth: 3)
+        }
+    }
+
+    private var horizontalChoices: some View {
+        HStack(spacing: 0) {
+            first.frame(maxWidth: .infinity)
+            second.frame(maxWidth: .infinity)
+        }
+        .overlay {
+            CarbInTheme.line.opacity(0.35)
+                .frame(width: 1)
+                .padding(.vertical, 12)
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
+        }
+    }
+
+    private var verticalChoices: some View {
+        VStack(spacing: 0) {
+            first.frame(maxWidth: .infinity)
+            second.frame(maxWidth: .infinity)
+        }
+        .overlay {
+            CarbInTheme.line.opacity(0.35)
+                .frame(height: 1)
+                .padding(.horizontal, 14)
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
+        }
+    }
+}
+
+struct PixelPhotoChoiceLabel: View {
+    let title: LocalizedStringKey
+    let kind: PixelKitchenIconKind
+
+    var body: some View {
+        HStack(spacing: 8) {
+            PixelKitchenIcon(kind: kind)
+                .frame(width: 32, height: 32)
+            Text(title)
+                .font(CarbInTheme.display(.subheadline, size: 16))
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .foregroundStyle(CarbInTheme.ink)
+        .frame(maxWidth: .infinity, minHeight: 56)
+        .padding(.horizontal, 8)
+        .contentShape(Rectangle())
     }
 }
 
@@ -591,45 +684,12 @@ struct SafetyRail: View {
         }
         .padding(.vertical, 12)
         .padding(.trailing, 12)
-        .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: 12))
-        .clipShape(PixelRoundedRectangle(cornerRadius: 12))
+        .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
+        .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
         .overlay {
-            PixelRoundedRectangle(cornerRadius: 12)
+            PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card)
                 .strokeBorder(CarbInTheme.ink.opacity(0.78), lineWidth: 2)
         }
-    }
-}
-
-private struct TicketEdge: View {
-    var body: some View {
-        HStack(spacing: 0) {
-            ForEach(0..<42, id: \.self) { index in
-                Rectangle()
-                    .fill(index % 3 == 0 ? CarbInTheme.tomatoAction :
-                          (index % 3 == 1 ? CarbInTheme.butter : CarbInTheme.basilAction))
-                    .frame(maxWidth: .infinity, minHeight: 4, maxHeight: 4)
-            }
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.horizontal, 10)
-        .clipped()
-        .accessibilityHidden(true)
-    }
-}
-
-private struct KitchenBubbleSurface: ViewModifier {
-    let inset: CGFloat
-
-    func body(content: Content) -> some View {
-        let shape = PixelRoundedRectangle(cornerRadius: 10)
-        content
-            .padding(.horizontal, inset)
-            .padding(.vertical, inset)
-            .background {
-                shape.fill(CarbInTheme.surface)
-                    .shadow(color: CarbInTheme.ink.opacity(0.16), radius: 0, x: 0, y: 4)
-            }
-            .overlay { shape.strokeBorder(CarbInTheme.line, lineWidth: 3) }
     }
 }
 
@@ -664,43 +724,49 @@ extension View {
         modifier(KitchenNavigationTitle(title: title))
     }
 
-    func kitchenBubble(inset: CGFloat = 18) -> some View {
-        modifier(KitchenBubbleSurface(inset: inset))
-    }
-
     func workbenchSurface(inset: CGFloat = 18, fill: Color = CarbInTheme.surface) -> some View {
         self.padding(inset)
             .background {
-                PixelRoundedRectangle(cornerRadius: 8)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.panel)
                     .fill(fill)
                     .shadow(color: CarbInTheme.line.opacity(0.48), radius: 0, x: 4, y: 5)
             }
             .overlay {
-                PixelRoundedRectangle(cornerRadius: 8)
-                    .stroke(CarbInTheme.line, lineWidth: 3)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.panel)
+                    .strokeBorder(CarbInTheme.line, lineWidth: 3)
             }
     }
 
     func mealTicket(inset: CGFloat = 18) -> some View {
         self.padding(inset)
             .background {
-                PixelRoundedRectangle(cornerRadius: 9)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.panel)
                     .fill(CarbInTheme.surface)
                     .shadow(color: CarbInTheme.line.opacity(0.48), radius: 0, x: 4, y: 5)
             }
-            .overlay(alignment: .top) { TicketEdge() }
             .overlay {
-                PixelRoundedRectangle(cornerRadius: 9)
-                    .stroke(CarbInTheme.line, lineWidth: 3)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.panel)
+                    .strokeBorder(CarbInTheme.line, lineWidth: 3)
             }
     }
 
     func insetControlGroup(inset: CGFloat = 14) -> some View {
         self.padding(inset)
-            .background(CarbInTheme.butter.opacity(0.20), in: PixelRoundedRectangle(cornerRadius: 9))
+            .background(CarbInTheme.butter.opacity(0.20), in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.field))
             .overlay {
-                PixelRoundedRectangle(cornerRadius: 9)
-                    .stroke(CarbInTheme.line.opacity(0.72), lineWidth: 1.5)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.field)
+                    .strokeBorder(CarbInTheme.line.opacity(0.72), lineWidth: 1.5)
+            }
+    }
+
+    func pixelInputField() -> some View {
+        self.padding(.horizontal, 12)
+            .padding(.vertical, 12)
+            .frame(minHeight: 52)
+            .background(CarbInTheme.surface, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.field))
+            .overlay {
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.field)
+                    .strokeBorder(CarbInTheme.line, lineWidth: 2)
             }
     }
 

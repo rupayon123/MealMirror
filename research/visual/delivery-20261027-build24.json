@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "build": "24",
+  "baselineMain": "81715b34493550a03edf02c9ad58786658ccab29",
+  "candidate": {
+    "build": "24",
+    "zipBytes": 12269942,
+    "zipSHA256": "760ac1ecb07b718a34e72e782e8499fcdd4195be714299e8d578875b1e179dbb",
+    "twoRepacksIdentical": true,
+    "identities": {
+      "challenge": {
+        "build": "24",
+        "binaries": {
+          "MealMirror": "be5355088ef6f4e11ca6e4a9a89b8386729aede08fbaf4d9357b299d888d501b",
+          "MealMirror.debug.dylib": "a319cee1d599ec2729c0cd83e3b9e181d7d8bf3a79bd4cc27aec6e562cec233b",
+          "Assets.car": "d460f4c0b6b0fa6e116ae080f6af7bbe6dec7e0769934715b54fb03673bef33b"
+        }
+      },
+      "internal": {
+        "build": "24",
+        "binaries": {
+          "MealMirror": "209941fbbaa1cd357f9da4643c64bb8e62c90806798b523f74a96dd3655d7ae9",
+          "MealMirror.debug.dylib": "b184d38d22a48af5db260ec75fcf18b120045d53b4abf1eaa0eac178b7e97a8f",
+          "Assets.car": "0b42e9366d8546cb89d6ad70f13702318d3928af147a0714d8f6bf5586982618"
+        }
+      }
+    }
+  },
+  "sourceReview": {
+    "passed": true,
+    "packagedFiles": 138,
+    "matchingSwiftSources": 18,
+    "accessibilityIdentifierSetsUnchanged": true,
+    "engineAIPolicyStorageSourcesUnchanged": true,
+    "catalogDelta": "One new nonempty Choose from Photos entry in all18languages; all previous entries preserved.",
+    "baselineMain": "81715b34493550a03edf02c9ad58786658ccab29"
+  },
+  "changes": [
+    "Integrated four-file UI chat patch with shared panel/card/field/chip stepped corner tiers.",
+    "Camera and Photos remain separate controls inside one adaptive tray; divider overlays do not determine height.",
+    "Reduced nested borders; manual-entry fields have their own borders; Settings word appears where space permits.",
+    "Regular eight-tooth Settings gear; other57full-family PNG exports unchanged.",
+    "Welcome accessibility caption Choose from Photos added to18catalogs; previous Tamil clipping fixed with intrinsic height/padding. Translations remain drafts."
+  ],
+  "builds": {
+    "challenge": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 24.972
+    },
+    "internal": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 21.269
+    }
+  },
+  "localization": {
+    "build": "24",
+    "languages": [
+      "ar",
+      "bn",
+      "en",
+      "es",
+      "fa",
+      "fil",
+      "fr",
+      "gu",
+      "hi",
+      "hu",
+      "ja",
+      "ko",
+      "pa",
+      "pt",
+      "ta",
+      "ur",
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "languageCount": 18,
+    "englishKeyCount": 488,
+    "sourceCatalogSHA256": "e39f8a6330e53c47d788d835997d582b43e95319ff7417494e4ca95b31db7d8f",
+    "builtCatalogSHA256": "e39f8a6330e53c47d788d835997d582b43e95319ff7417494e4ca95b31db7d8f",
+    "passed": true,
+    "errors": [],
+    "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+  },
+  "shapeGeometry": {
+    "checks": 363,
+    "failures": [],
+    "passed": true,
+    "scope": "Exact extracted SwiftUI shape geometry on macOS; no iOS visual, text/layout, accessibility or human comprehension acceptance."
+  },
+  "gearReproduction": {
+    "passed": true,
+    "changedFullFamilyPNGs": [
+      "settings-144.png",
+      "settings-48.png",
+      "settings-dark-144.png"
+    ],
+    "unchangedFullFamilyPNGs": 57,
+    "handoffExact": true,
+    "nativeAcceptance": false
+  },
+  "native": {
+    "device": "Owned isolated iPhone Duo Simulator iOS27.1",
+    "appVariant": "exact English Challenge Simulator app",
+    "captures": {
+      "welcome24": {
+        "sha256": "8437c90e3e159be740c749c1fbf4eafa6a96e5a9d8526aaf0dcb3a6389609955",
+        "privateEvidence": "welcome24.png"
+      },
+      "home24": {
+        "sha256": "780f4420ff5621cc934eeacd1767072b24d57fd9fea1c1c6d3eeddb95fe4dcdf",
+        "privateEvidence": "home24.png"
+      },
+      "home24-dark": {
+        "sha256": "ed868308b56500f0e6459ce0a0eb213d7cbd8d58a3faeffdb949b4b730fc9dd5",
+        "privateEvidence": "home24-dark.png"
+      },
+      "home24-large": {
+        "sha256": "5ac34b4a2934facbee99961f45022cd0faec8d45c51e8bfeffabfb7650c1fd8a",
+        "privateEvidence": "home24-large.png"
+      }
+    },
+    "scope": "Initial Welcome; Home via temporary onboarding-completed launch argument in light/dark and max accessibility text. Not an actual onboarding or tap journey.",
+    "observations": [
+      "Stepped borders and content-sized Camera/Photos tray render in inspected Home viewports.",
+      "Regular gear and Settings word visible at standard text; max AX uses icon fallback.",
+      "At max AX the two photo actions precede the generic review action; all visible action text clears borders.",
+      "Safety content partly below pinned bottom action at standard size; scrolling/reachability not verified."
+    ],
+    "peerReview": "UI design chat independently inspected initial Welcome and standard Home light/dark. No clipping observed in visible text; requested actual scrolling of safety card.",
+    "restored": "light/large text and ordinary app launch; commands exited0"
+  },
+  "failuresRetained": [
+    {
+      "scope": "earlier caption24-v1 maxAX Tamil",
+      "result": "Fourth CTA line clipped; sizing corrected and V3 CTA capture inspected. Integrated final full UI Tamil still pending."
+    },
+    {
+      "scope": "shape controller first launch",
+      "result": "Python3.9 import error before child start; corrected to bundled3.12; compile/363checks pass."
+    }
+  ],
+  "distribution": {
+    "build24Archived": false,
+    "build24Uploaded": false,
+    "lastVerifiedInternalTestingBuild": "23",
+    "publicAppRelease": false
+  },
+  "remaining": [
+    "Current full native meal-photo/label/manual-correction/confirmation/save/relaunch/history/delete journey.",
+    "Native Settings/forms/review/other screens, compact phone/iPad, RTL and final maxAX Tamil.",
+    "Actual scrolling, keyboard, VoiceOver, Reduce Motion, camera permission-denial and full-slot behavior.",
+    "Human visual/comprehension and translation review.",
+    "Signed build24 archive/internal upload.",
+    "Independent recognition and physical offline evaluation; applicant eligibility/authorship/essays and actual-year Apple rules."
+  ],
+  "submissionReady": false
+}

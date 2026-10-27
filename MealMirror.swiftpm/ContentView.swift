@@ -229,51 +229,37 @@ private struct HomeView: View {
     }
 
     private var homeHero: some View {
-        VStack(spacing: 10) {
-            VStack(alignment: .leading, spacing: 6) {
-                Text("What’s on your plate?")
-                    .font(CarbInTheme.display(.title1, size: 25))
-                    .foregroundStyle(CarbInTheme.ink)
+        VStack(alignment: .leading, spacing: 6) {
+            Text("What’s on your plate?")
+                .font(CarbInTheme.display(.title1, size: 25))
+                .foregroundStyle(CarbInTheme.ink)
+                .fixedSize(horizontal: false, vertical: true)
+            if !dynamicTypeSize.isAccessibilitySize {
+                Text("Start with a photo or a few words. Add context when a picture leaves questions.")
+                    .font(CarbInTheme.reading(.body, size: 16, weight: .semibold))
+                    .foregroundStyle(CarbInTheme.mutedInk)
                     .fixedSize(horizontal: false, vertical: true)
-                if !dynamicTypeSize.isAccessibilitySize {
-                    Text("Start with a photo or a few words. Add context when a picture leaves questions.")
-                        .font(CarbInTheme.reading(.body, size: 16, weight: .semibold))
-                        .foregroundStyle(CarbInTheme.mutedInk)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .kitchenBubble(inset: 14)
         }
-        .padding(14)
-        .background { CheckerboardSurface() }
-        .clipShape(PixelRoundedRectangle(cornerRadius: 10))
-        .overlay {
-            PixelRoundedRectangle(cornerRadius: 10)
-                .stroke(CarbInTheme.line, lineWidth: 3)
-        }
-        .shadow(color: CarbInTheme.line.opacity(0.38), radius: 0, x: 4, y: 5)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .workbenchSurface(inset: 18, fill: CarbInTheme.ticket)
     }
 
     private var quickActions: some View {
         VStack(alignment: .leading, spacing: 10) {
-            if dynamicTypeSize.isAccessibilitySize {
+            PixelPhotoSourceTray {
                 quickAction("Camera", icon: .camera, enabled: CameraAccess.isAvailable, action: onCamera)
                     .accessibilityIdentifier("carbin.home.camera")
+            } second: {
                 quickAction("Library", icon: .photos, enabled: true, action: onLibrary)
                     .accessibilityIdentifier("carbin.home.library")
+            }
+            if dynamicTypeSize.isAccessibilitySize {
                 Button(action: onStart) {
                     Label("Start a meal review", systemImage: "plus")
                 }
                 .buttonStyle(PrimaryActionStyle())
                 .accessibilityIdentifier("carbin.home.estimate")
-            } else {
-                HStack(spacing: 10) {
-                    quickAction("Camera", icon: .camera, enabled: CameraAccess.isAvailable, action: onCamera)
-                        .accessibilityIdentifier("carbin.home.camera")
-                    quickAction("Library", icon: .photos, enabled: true, action: onLibrary)
-                        .accessibilityIdentifier("carbin.home.library")
-                }
             }
         }
         .frame(maxWidth: .infinity)
@@ -289,7 +275,7 @@ private struct HomeView: View {
                     .fixedSize(horizontal: false, vertical: true)
             }
             .frame(maxWidth: .infinity, minHeight: 78)
-            .workbenchSurface(inset: 12)
+            .padding(12)
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -402,8 +388,17 @@ private struct AppHeader: View {
 
     private var settingsButton: some View {
         Button(action: onSettings) {
-            PixelKitchenIconBadge(kind: .settings)
-                .frame(width: 44, height: 44)
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 6) {
+                    PixelKitchenIconBadge(kind: .settings, size: 32)
+                    Text("Settings")
+                        .font(CarbInTheme.display(.subheadline, size: 15))
+                }
+                PixelKitchenIconBadge(kind: .settings)
+                    .frame(width: 44, height: 44)
+            }
+            .frame(minHeight: 44)
+            .contentShape(Rectangle())
         }
         .foregroundStyle(CarbInTheme.moss)
         .accessibilityLabel(localization.text("Settings, language, privacy, and safety"))
@@ -665,10 +660,10 @@ private struct AddMealView: View {
             inputTab("Photo", isSelected: showsPhotoInput) { showsPhotoInput = true }
         }
         .padding(4)
-        .background(CarbInTheme.inset, in: PixelRoundedRectangle(cornerRadius: 8))
+        .background(CarbInTheme.inset, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.field))
         .overlay {
-            PixelRoundedRectangle(cornerRadius: 8)
-                .stroke(CarbInTheme.line, lineWidth: 2)
+            PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.field)
+                .strokeBorder(CarbInTheme.line, lineWidth: 2)
         }
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.18), value: showsPhotoInput)
     }
@@ -683,10 +678,10 @@ private struct AddMealView: View {
         }
         .buttonStyle(.plain)
         .padding(.horizontal, 4)
-        .background(isSelected ? CarbInTheme.surface : Color.clear, in: PixelRoundedRectangle(cornerRadius: 6))
+        .background(isSelected ? CarbInTheme.surface : Color.clear, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.chip))
         .overlay {
-            PixelRoundedRectangle(cornerRadius: 6)
-                .stroke(isSelected ? CarbInTheme.line : Color.clear, lineWidth: 2)
+            PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.chip)
+                .strokeBorder(isSelected ? CarbInTheme.line : Color.clear, lineWidth: 2)
         }
         .accessibilityAddTraits(isSelected ? [.isSelected] : [])
     }
@@ -714,10 +709,10 @@ private struct AddMealView: View {
                 .frame(minHeight: 150)
                 .padding(10)
                 .scrollContentBackground(.hidden)
-                .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: 10))
+                .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.field))
                 .overlay {
-                    PixelRoundedRectangle(cornerRadius: 10)
-                        .stroke(CarbInTheme.basil, lineWidth: isMealDescriptionFocused ? 2 : 1)
+                    PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.field)
+                        .strokeBorder(CarbInTheme.basil, lineWidth: isMealDescriptionFocused ? 2 : 1)
                 }
                 .accessibilityLabel("Meal description")
                 .accessibilityHint("Describe ingredients and any details the photo does not show.")
@@ -754,10 +749,7 @@ private struct AddMealView: View {
                 .foregroundStyle(CarbInTheme.mutedInk)
                 .fixedSize(horizontal: false, vertical: true)
 
-            ViewThatFits(in: .horizontal) {
-                HStack(spacing: 10) { mealPhotoActions }
-                VStack(spacing: 8) { mealPhotoActions }
-            }
+            mealPhotoActions
 
             if inputSource != .demo {
                 photoSlotSummary
@@ -803,10 +795,7 @@ private struct AddMealView: View {
             }
 
             if labelPhoto == nil {
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 10) { labelPhotoActions }
-                    VStack(spacing: 8) { labelPhotoActions }
-                }
+                labelPhotoActions
             } else {
                 Text("Label text will be shown for your review. It will not set carbohydrate grams automatically.")
                     .font(CarbInTheme.reading(.footnote, size: 13))
@@ -893,7 +882,7 @@ private struct AddMealView: View {
                     .clipped()
             }
             .frame(height: dynamicTypeSize.isAccessibilitySize ? 144 : 104)
-            .clipShape(PixelRoundedRectangle(cornerRadius: 8))
+            .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
             .accessibilityHidden(true)
 
             Label {
@@ -1145,69 +1134,62 @@ private struct AddMealView: View {
         isAnalyzing = false
     }
 
-    @ViewBuilder
     private var mealPhotoActions: some View {
-        let hasFoodPhotos = !foodPhotos.isEmpty
-        Button { openCamera(for: .food) } label: {
-            Label {
-                Text("Camera")
-                    .fixedSize(horizontal: false, vertical: true)
-            } icon: {
-                PixelKitchenIcon(kind: .camera)
-                    .frame(width: 24, height: 24)
-            }
+        PixelPhotoSourceTray {
+            mealCameraAction
+        } second: {
+            mealLibraryAction
         }
-        .buttonStyle(CompactActionStyle())
+    }
+
+    private var mealCameraAction: some View {
+        Button { openCamera(for: .food) } label: {
+            PixelPhotoChoiceLabel(title: "Camera", kind: .camera)
+        }
+        .buttonStyle(.plain)
         .disabled(isPreparingPhoto || !CameraAccess.isAvailable || remainingFoodSlots == 0)
         .opacity(!isPreparingPhoto && CameraAccess.isAvailable && remainingFoodSlots > 0 ? 1 : 0.5)
         .accessibilityHint(Text(LocalizedStringKey(CameraAccess.isAvailable ? "Opens the camera after you grant access." : "Camera is available when this app is run on an iPhone or iPad with a camera.")))
         .accessibilityIdentifier("carbin.meal.camera")
+    }
 
+    private var mealLibraryAction: some View {
         PhotosPicker(
             selection: $foodPickerItems,
             maxSelectionCount: max(1, remainingFoodSlots),
             selectionBehavior: .ordered,
             matching: .images
         ) {
-            Label {
-                Text(LocalizedStringKey(hasFoodPhotos ? "Add food photos" : "Library"))
-                    .fixedSize(horizontal: false, vertical: true)
-            } icon: {
-                PixelKitchenIcon(kind: .photos)
-                    .frame(width: 24, height: 24)
-            }
+            PixelPhotoChoiceLabel(title: LocalizedStringKey(foodPhotos.isEmpty ? "Library" : "Add food photos"), kind: .photos)
         }
-        .buttonStyle(CompactActionStyle())
+        .buttonStyle(.plain)
         .disabled(isPreparingPhoto || remainingFoodSlots == 0)
         .accessibilityLabel(Text(LocalizedStringKey("Choose a meal photo from your library")))
         .accessibilityIdentifier("carbin.meal.library")
     }
 
-    @ViewBuilder
     private var labelPhotoActions: some View {
-        Button { openCamera(for: .label) } label: {
-            Label {
-                Text("Label camera")
-                    .fixedSize(horizontal: false, vertical: true)
-            } icon: {
-                PixelKitchenIcon(kind: .camera)
-                    .frame(width: 24, height: 24)
-            }
+        PixelPhotoSourceTray {
+            labelCameraAction
+        } second: {
+            labelLibraryAction
         }
-        .buttonStyle(CompactActionStyle())
+    }
+
+    private var labelCameraAction: some View {
+        Button { openCamera(for: .label) } label: {
+            PixelPhotoChoiceLabel(title: "Label camera", kind: .camera)
+        }
+        .buttonStyle(.plain)
         .disabled(isPreparingPhoto || !CameraAccess.isAvailable)
         .accessibilityIdentifier("carbin.meal.labelCamera")
+    }
 
+    private var labelLibraryAction: some View {
         PhotosPicker(selection: $labelPickerItems, maxSelectionCount: 1, matching: .images) {
-            Label {
-                Text("Add label photo")
-                    .fixedSize(horizontal: false, vertical: true)
-            } icon: {
-                PixelKitchenIcon(kind: .photos)
-                    .frame(width: 24, height: 24)
-            }
+            PixelPhotoChoiceLabel(title: "Add label photo", kind: .photos)
         }
-        .buttonStyle(CompactActionStyle())
+        .buttonStyle(.plain)
         .disabled(isPreparingPhoto)
         .accessibilityIdentifier("carbin.meal.labelLibrary")
     }
@@ -1413,7 +1395,7 @@ private struct EstimateView: View {
                     .foregroundStyle(CarbInTheme.basil)
                     .padding(.horizontal, 9)
                     .padding(.vertical, 6)
-                    .background(CarbInTheme.basilSoft, in: PixelRoundedRectangle(cornerRadius: 5))
+                    .background(CarbInTheme.basilSoft, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.chip))
             }
             Text(localization.carbohydrateRange(range))
                 .font(CarbInTheme.display(.largeTitle, size: dynamicTypeSize.isAccessibilitySize ? 36 : 48))
@@ -1463,7 +1445,7 @@ private struct EstimateView: View {
                 .foregroundStyle(CarbInTheme.surface)
                 .padding(.horizontal, 9)
                 .padding(.vertical, 6)
-                .background(CarbInTheme.tomato, in: PixelRoundedRectangle(cornerRadius: 5))
+                .background(CarbInTheme.tomato, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.chip))
                 .padding(10)
                 .accessibilityLabel(Text(LocalizedStringKey(analysis.source == .demo ? "Practice meal review" : "On-device photo inspection")))
         }
@@ -1491,7 +1473,7 @@ private struct EstimateView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: 250, maxHeight: 250)
-                    .clipShape(PixelRoundedRectangle(cornerRadius: 8))
+                    .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
                     .accessibilityLabel("Selected nutrition label photo")
             }
             switch analysis.labelTextStatus {
@@ -1809,7 +1791,7 @@ private struct ReviewView: View {
                                     .foregroundStyle(CarbInTheme.basil)
                                     .padding(.horizontal, 9)
                                     .padding(.vertical, 6)
-                                    .background(CarbInTheme.basilSoft, in: PixelRoundedRectangle(cornerRadius: 5))
+                                    .background(CarbInTheme.basilSoft, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.chip))
                             }
                             Text(LocalizedStringKey(analysis.source == .demo ? analysis.title : "Your meal review"))
                                 .font(CarbInTheme.display(.headline, size: 16))
@@ -1984,19 +1966,19 @@ private struct ManualCarbEntrySheet: View {
                             .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                         TextField("For example, packaged drink", text: $name)
                             .textInputAutocapitalization(.words)
+                            .pixelInputField()
                             .accessibilityLabel("Item name")
                             .accessibilityIdentifier("carbin.ingredient.name")
                     }
-                    .workbenchSurface()
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Carbohydrates in whole grams")
                             .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
                         TextField("For example, 18", text: $grams)
                             .keyboardType(.numberPad)
+                            .pixelInputField()
                             .accessibilityLabel("Carbohydrates in whole grams")
                             .accessibilityIdentifier("carbin.ingredient.grams")
                     }
-                    .workbenchSurface()
 
                     if !grams.isEmpty && !isValidGrams {
                         Label("Enter a whole number from 0 to 500.", systemImage: "exclamationmark.circle")
@@ -2007,7 +1989,7 @@ private struct ManualCarbEntrySheet: View {
                     Text("Use a package label or another trusted source. This field records carbohydrates only; it never calculates insulin.")
                         .font(CarbInTheme.reading(.footnote, size: 13))
                         .foregroundStyle(CarbInTheme.mutedInk)
-                        .workbenchSurface()
+                        .fixedSize(horizontal: false, vertical: true)
                     }
                     .frame(maxWidth: 720, alignment: .leading)
                     .padding(20)
@@ -2313,10 +2295,10 @@ private struct SavedReviewRow: View {
             }
         }
         .padding(12)
-        .background(CarbInTheme.elevatedSurface, in: PixelRoundedRectangle(cornerRadius: 16))
+        .background(CarbInTheme.elevatedSurface, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
         .overlay {
-            PixelRoundedRectangle(cornerRadius: 16)
-                .stroke(CarbInTheme.line.opacity(0.7), lineWidth: 1)
+            PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card)
+                .strokeBorder(CarbInTheme.line.opacity(0.7), lineWidth: 1)
         }
     }
 
@@ -2568,7 +2550,7 @@ private struct MealChoiceCard: View {
                 DemoMealImage(meal: meal)
                     .frame(width: cardWidth - 20, height: dynamicTypeSize.isAccessibilitySize ? 128 : 108)
                     .clipped()
-                    .clipShape(PixelRoundedRectangle(cornerRadius: 7))
+                    .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
                     .accessibilityHidden(true)
 
                 Text(localization.text(meal.name))
@@ -2583,10 +2565,10 @@ private struct MealChoiceCard: View {
             .frame(width: cardWidth, alignment: .topLeading)
             .frame(minHeight: dynamicTypeSize.isAccessibilitySize ? 260 : 205, alignment: .topLeading)
             .padding(10)
-            .background(isSelected ? CarbInTheme.basilSoft : CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: 8))
+            .background(isSelected ? CarbInTheme.basilSoft : CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
             .overlay {
-                PixelRoundedRectangle(cornerRadius: 8)
-                    .stroke(isSelected ? CarbInTheme.tomato : CarbInTheme.line, lineWidth: isSelected ? 3 : 1)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card)
+                    .strokeBorder(isSelected ? CarbInTheme.tomato : CarbInTheme.line, lineWidth: isSelected ? 3 : 1)
             }
         }
         .buttonStyle(.plain)
@@ -2673,7 +2655,7 @@ private struct PhotoPreview: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .clipShape(PixelRoundedRectangle(cornerRadius: 12))
+        .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
         .pixelCorners(color: selectedPhoto == nil ? CarbInTheme.basil : CarbInTheme.tomato, inset: 10)
         .accessibilityLabel(
             selectedPhoto != nil

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "date": "2026-10-27",
-  "revision": "Floating objects plus separately drawn compact family",
-  "sourceIntegrationBuild": "22",
+  "revision": "Floating objects, compact family and regular eight-tooth Settings gear",
+  "sourceIntegrationBuild": "24",
   "nativeAcceptance": false,
   "files": {
     "icons/reviewSavedRecord-144.png": {
@@ -14,8 +14,8 @@
       ]
     },
     "icons/settings-48.png": {
-      "sha256": "4f7dee9b53717c232856aadad9d928895ccf0d8b05ab59faf849bf569f869a43",
-      "bytes": 611,
+      "sha256": "5fb6dfb77bfbe4f99922256dda67cb4e74c9b1f47b679da499078b79ae0996f1",
+      "bytes": 472,
       "pixels": [
         48,
         48
@@ -358,8 +358,8 @@
       ]
     },
     "icons/settings-144.png": {
-      "sha256": "9ceb350fc1ae6fbaa5d64e0d4933044e4652cfc4ddee8b091261dac103d00e6b",
-      "bytes": 966,
+      "sha256": "a8a6065a6cfe7a039e12bb42b2e463084a3cd6e0a7a7d654cd222791de4169da",
+      "bytes": 813,
       "pixels": [
         144,
         144
@@ -414,8 +414,8 @@
       ]
     },
     "icons/settings-dark-144.png": {
-      "sha256": "0719d6a8f0ceac8b8b1b73ec195950ba9d30eb819ad285bdaf830d782b165b8e",
-      "bytes": 1179,
+      "sha256": "033df4120f60534ca91a3d2ec17df2fd932b78e1a0d573a34e03096825a97919",
+      "bytes": 911,
       "pixels": [
         144,
         144
@@ -633,8 +633,9 @@
   "scripts": {
     "generate_icons.py": {
       "originalSHA256": "f84f4d4d7a6e18b7058b47a5825ba28df1ab4f1c77fe7cb2427af4daa4f862b6",
-      "portableSHA256": "556eab04004949ae7b6802736d6106f0078a81df9ca36f892b901f40c68e9250",
-      "changes": "Output/font paths made portable; compact script adds environment override. Drawing/export logic unchanged."
+      "portableSHA256": "655aabcbacab86436fdc70aeef6674ac307c747023067d227caf996da9927167",
+      "changes": "Portable paths preserved. Settings drawing replaced by original regular eight-tooth gear from UI chat; 57 other full-family PNG exports reproduced byte for byte.",
+      "previousPortableSHA256": "556eab04004949ae7b6802736d6106f0078a81df9ca36f892b901f40c68e9250"
     },
     "generate_compact.py": {
       "originalSHA256": "846141edbbfce11a731a1640615f80cf21a6fa7c6a653ca7fa3d5e487294a3be",
@@ -642,5 +643,5 @@
       "changes": "Output/font paths made portable; compact script adds environment override. Drawing/export logic unchanged."
     }
   },
-  "scope": "Exact copied original PNG bytes, current generator provenance and portable path changes. Native rendering/human comprehension remain open; older square proposal remains in Git history."
+  "scope": "Original procedural art; Settings v2 reproduced byte for byte from UI handoff. Other full-family and compact assets unchanged. Native rendering and human comprehension remain open."
 }

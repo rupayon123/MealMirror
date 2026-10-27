@@ -4,20 +4,20 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 
 **Testing only. Not submission-ready or clinically validated.** No Android version, required account, server or cloud-model endpoint.
 
-## Current source candidate: 1.0 (23)
+## Current source candidate: 1.0 (24)
 
 | Artifact or check | Result |
 | --- | --- |
-| [English Challenge source ZIP](candidate/MealMirror-SSC2027.zip) | 12,269,257 bytes; 138 files; two byte-identical repacks |
-| ZIP SHA-256 | `d9652e772972ca238976bd76bdf436f23b201c4bd5cd551997a1d61784c949f6` |
+| [English Challenge source ZIP](candidate/MealMirror-SSC2027.zip) | 12,269,942 bytes; 138 files; two byte-identical repacks |
+| ZIP SHA-256 | `760ac1ecb07b718a34e72e782e8499fcdd4195be714299e8d578875b1e179dbb` |
 | Pixel UI | 20 full roles + six compact roles; 52 light/dark PNGs; stepped surfaces and grouped Home/Settings rows |
 | Simulator source builds | English and full-language variants passed for arm64; incremental builds, not clean/universal |
-| Full-language integrity | All 18 catalogs/native strings match source; 487 English keys; translation/layout quality still open |
-| Outline geometry | Same 243 macOS SwiftUI checks pass after 20 failures in an unpublished prototype; not native app visual proof |
-| Internal archive/upload | Build23 signed archive and internal-only upload passed; confirmed Testing in existing group |
+| Full-language integrity | All 18 catalogs/native strings match source; 488 English keys; translation/layout quality still open |
+| Outline geometry | 363 macOS SwiftUI checks pass, including the new corner tiers; not native app visual proof |
+| Internal archive/upload | Build24 not archived/uploaded;23 remains verified Testing |
 | Existing internal TestFlight group | Build23 Testing; builds22,19,2 preserved; one tester |
 
-Build23 refines Home hierarchy, shared stepped surfaces, dark decoration and photo-first large-text order while preserving the pot/MM emblem, fonts, photos, local AI, storage and numeric boundaries. The original artwork sources and provenance are [reviewable here](design/pixel-kitchen/README.md). Current builds/package checks and references to unchanged artwork/geometry evidence are in the [delivery receipt](research/visual/delivery-20261027-build23.json). The exact English Simulator app installed and launched on an isolated iPhone Duo; initial Welcome and controlled Home light/dark/max-text rendering were inspected. [Native evidence and fixture limits](research/visual/delivery-20261027-build23.json). Full interactive/accessibility, human comprehension and physical offline checks remain open.
+**Current source candidate 1.0 (24):** Integrated the UI chat’s app-wide shared stepped corner tiers, adaptive Camera/Photos trays, clearer manual-entry fields, reduced nested borders and regular-tooth Settings gear. Added a draft “Choose from Photos” caption in18catalogs and preserved the max-text sizing fix. English ZIP **12,269,942 bytes**,138files, SHA-256 `760ac1ecb07b718a34e72e782e8499fcdd4195be714299e8d578875b1e179dbb`; two byte-identical packs and18matchingSwift sources. Both incremental arm64 Simulator builds,18catalog/488key resource checks and363macOS shape checks passed. Initial native Welcome and controlled Home light/dark/max-text captures were inspected on isolated iPhone Duo. These are viewport checks, not a full interactive journey; safety-card scrolling, remaining screens, accessibility, physical offline and human review remain open. Build24 is **not archived or uploaded**;23 is the last verified internal Testing build. Engine, AI and storage sources are unchanged. **Not submission-ready.** [Build24 receipt](research/visual/delivery-20261027-build24.json).
 
 The internal resource variant retains 18 languages, while the judging ZIP is English-only. All 18 Swift source bytes match; resources and binaries differ. Catalog integrity does not establish translation or native layout quality.
 

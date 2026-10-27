@@ -74,8 +74,8 @@ private struct LaunchExperienceView: View {
                     }
                     .frame(maxWidth: 300)
                     .padding(14)
-                    .background(CarbInTheme.surface, in: PixelRoundedRectangle(cornerRadius: 9))
-                    .overlay { PixelRoundedRectangle(cornerRadius: 9).stroke(CarbInTheme.line, lineWidth: 3) }
+                    .background(CarbInTheme.surface, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
+                    .overlay { PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card).strokeBorder(CarbInTheme.line, lineWidth: 3) }
                     .shadow(color: CarbInTheme.line.opacity(0.55), radius: 0, x: 0, y: 4)
                 }
                 .padding(.horizontal, 24)
@@ -120,11 +120,11 @@ private struct OnboardingIllustration: View {
     var body: some View {
         ZStack {
             if page != 0 {
-                PixelRoundedRectangle(cornerRadius: 18)
+                PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.panel)
                     .fill(CarbInTheme.surface)
                     .overlay {
-                        PixelRoundedRectangle(cornerRadius: 18)
-                            .stroke(CarbInTheme.basil, lineWidth: 3)
+                        PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.panel)
+                            .strokeBorder(CarbInTheme.basil, lineWidth: 3)
                     }
             }
 
@@ -152,7 +152,7 @@ private struct OnboardingIllustration: View {
                     .font(CarbInTheme.display(.title2, size: 22))
                     .foregroundStyle(CarbInTheme.surface)
                     .frame(width: 54, height: 54)
-                    .background(CarbInTheme.tomato, in: PixelRoundedRectangle(cornerRadius: 9))
+                    .background(CarbInTheme.tomato, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
                     .offset(x: 68, y: 65)
             }
 
@@ -168,10 +168,10 @@ private struct OnboardingIllustration: View {
             Rectangle().fill(CarbInTheme.basil).frame(width: width * 0.72, height: 3)
         }
         .padding(7)
-        .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: 5))
+        .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.chip))
         .overlay {
-            PixelRoundedRectangle(cornerRadius: 5)
-                .stroke(CarbInTheme.line.opacity(0.7), lineWidth: 1)
+            PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.chip)
+                .strokeBorder(CarbInTheme.line.opacity(0.7), lineWidth: 1)
         }
     }
 }
@@ -223,6 +223,8 @@ private struct OnboardingView: View {
                             }
                         }
                         continueButton
+                            .fixedSize(horizontal: false, vertical: true)
+                            .layoutPriority(1)
                     }
                 } else {
                     VStack(spacing: 0) {
@@ -365,7 +367,7 @@ private struct OnboardingView: View {
                     Image(systemName: continueSymbol)
                         .accessibilityHidden(true)
                 }
-                Text(localization.text(photoAction && dynamicTypeSize.isAccessibilitySize ? "Photo" : photoAction ? "Choose a meal photo from your library" : "Continue"))
+                Text(localization.text(photoAction && dynamicTypeSize.isAccessibilitySize ? "Choose from Photos" : photoAction ? "Choose a meal photo from your library" : "Continue"))
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
             }

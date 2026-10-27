@@ -1,5 +1,7 @@
 # Pixel Kitchen icon direction
 
+**Build24 work in progress.** The regular eight-tooth Settings gear replaces the pointed version. The portable renderer reproduces all three handoff Settings exports exactly; the other 57 full-family PNG exports remain byte-identical. Native Settings-header inspection remains open.
+
 **Floating pixel-object family, October 27, 2026.** Build23 refines the native Home hierarchy, stepped helper surface, dark decoration and photo-first accessibility-size order. Initial native viewports were inspected; full interactive/accessibility acceptance remains open. [Build23 evidence](../../research/visual/delivery-20261027-build23.json). Build23 is confirmed Testing in the existing internal group;22,19,2 remain.
 
 **Historical integration, build22.** The applicant rejected the monochrome SF Symbol trial. This original dimensional pixel family replaces that proposed direction; neither rejected trial is in the app. Build 22 source uses the new object family and shared stepped surfaces; existing TestFlight build 19 still has its earlier appearance.
