@@ -490,8 +490,12 @@ private final class VisionContinuationGate<Result: Sendable>: @unchecked Sendabl
         continuation = nil
         request = nil
         lock.unlock()
-        currentRequest?.cancel()
         currentContinuation?.resume(returning: fallback)
+        if let currentRequest {
+            // Returning the fallback must not wait for request cancellation.
+            // Cancellation is a request; the underlying work may finish later.
+            DispatchQueue.global(qos: .utility).async { currentRequest.cancel() }
+        }
         return currentContinuation != nil
     }
 }

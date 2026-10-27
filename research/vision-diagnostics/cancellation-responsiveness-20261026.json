@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-26",
+  "scope": "Exact Vision continuation gate with a Foundation blocking VNRequest spy; no actual Apple Vision request or UIKit",
+  "baseline": {
+    "protocol": {
+      "scope": "Foundation-only exact gate with explicitly held request-cancellation spy. Does not establish actual Apple cancellation behavior or explain prior OCR failure.",
+      "engineSHA256": "fbe69bc341635cbe4aef2daffd8a24d1cc36337283df78deb9898e4fc45b9d99",
+      "gateSHA256": "a1c66edcd366c2889b3d676b38c577cd021a137ec4502e42b12c04f3ceb3fbf6",
+      "assembledGateSHA256": "4c9fa165715cae0d60d66d4ef5ad837f14d5b82a1d8e2d97fa222e6d9736426d",
+      "fixtureSHA256": "668a8ee18c10df3c6ae36dfd46f0f4b104c479ef22e0f8faea4a21dc9d3220d9",
+      "expectedChecks": 6,
+      "criteria": "Fallback result and cancel caller return within two-second observer bounds while cancellation handler remains held; cleanup, fallback and single-terminal properties preserved.",
+      "compileBound": 45,
+      "executeBound": 20,
+      "retries": 0,
+      "assembledSHA256": "96eda5a3611af4637ba72fcae7ebb5c064239540d7f8641b2fcdb9d5a74162ef",
+      "preparationNote": "v1 never compiled or executed; v2 keeps private gate and adapter in same source file and marks adapter/shared types private for Swift access control. No criteria changed."
+    },
+    "compile": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 9.087513625
+    },
+    "execute": {
+      "exitCode": 1,
+      "timedOut": false,
+      "seconds": 4.454947707999999
+    },
+    "result": {
+      "checks": {
+        "callerReturnsBeforeCancellationRelease": false,
+        "fallbackBeforeCancellationRelease": false,
+        "fallbackValue": true,
+        "handlerReleased": true,
+        "lateResultRejected": true,
+        "secondCancellationRejected": true
+      },
+      "passed": false,
+      "scope": "Exact gate with declared blocking VNRequest spy. No real Vision, UIKit, app, Apple cancellation latency, OCR cause or OS stop proof."
+    }
+  },
+  "fixed": {
+    "protocol": {
+      "scope": "Foundation-only exact gate with explicitly held request-cancellation spy. Does not establish actual Apple cancellation behavior or explain prior OCR failure.",
+      "engineSHA256": "cc98672ad35ae928c8419157567488125e8fbd83b57aa5bf2e1dcdd5af3835da",
+      "gateSHA256": "b76e4f29bf4780a13e3864e22755be4a432bdc3ce3a5a2a1f72c6843acc03270",
+      "assembledGateSHA256": "e04f908a9fb6234c7f5fe8995198974700554cbac41abbddb00152acc8a8a212",
+      "fixtureSHA256": "668a8ee18c10df3c6ae36dfd46f0f4b104c479ef22e0f8faea4a21dc9d3220d9",
+      "expectedChecks": 6,
+      "criteria": "Fallback result and cancel caller return within two-second observer bounds while cancellation handler remains held; cleanup, fallback and single-terminal properties preserved.",
+      "compileBound": 45,
+      "executeBound": 20,
+      "retries": 0,
+      "assembledSHA256": "95665fca206eabd6c52372c35dcd3c64e3690252ee0c4cdd6c353a96fbefee52",
+      "preparationNote": "v1 never compiled or executed; v2 keeps private gate and adapter in same source file and marks adapter/shared types private for Swift access control. No criteria changed.",
+      "comparison": "Same exact fixture and six unchanged assertions as failing baseline v2. Only gate production bytes changed."
+    },
+    "compile": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 2.487195416
+    },
+    "execute": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.5135525840000001
+    },
+    "result": {
+      "checks": {
+        "callerReturnsBeforeCancellationRelease": true,
+        "fallbackBeforeCancellationRelease": true,
+        "fallbackValue": true,
+        "handlerReleased": true,
+        "lateResultRejected": true,
+        "secondCancellationRejected": true
+      },
+      "passed": true,
+      "scope": "Exact gate with declared blocking VNRequest spy. No real Vision, UIKit, app, Apple cancellation latency, OCR cause or OS stop proof."
+    }
+  },
+  "comparison": "Byte-identical fixture and six unchanged assertions. Two baseline responsiveness failures become passes; four original cleanup/fallback/single-terminal checks remain passing.",
+  "change": "Claim terminal state under existing lock, release lock, resume fallback, enqueue captured request cancellation on global utility queue. Late request registration path unchanged.",
+  "limitations": [
+    "Does not establish Apple cancel latency or explain command-line OCR failures",
+    "Cancellation is requested asynchronously and may be delayed; no underlying OS-stop claim",
+    "Swift5 observer semaphore waits in async context emit warnings; not a Swift6 test-harness acceptance",
+    "Actual SDK, UI and physical evidence are separate",
+    "Initial v1 fixture preparation never compiled; v2 access visibility/assembly corrected before actual baseline; no criteria relaxed"
+  ],
+  "productionBuild": 20,
+  "independentReview": {
+    "result": "No material issue found in gate diff, exact baseline/fixed fixture comparison or retained results",
+    "verified": "Same six assertion bodies and criteria; source, gate, probe, fixture, controller and protocol bindings; Swift5 warnings retained",
+    "sdkStatus": "Both resource variants passed arm64 Simulator builds; signed device archive/codesign/locale/actualSDK checks passed. Internal upload failed70 requiring account access; see separate build20 delivery receipt."
+  }
+}

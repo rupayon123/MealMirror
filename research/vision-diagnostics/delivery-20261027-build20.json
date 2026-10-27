@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "preparedDate": "2026-10-26",
+  "completedDate": "2026-10-27",
+  "build": "20",
+  "scope": "English Challenge ZIP source verification; both resource variants arm64 Simulator builds; full-language signed device archive. Upload failed before confirmation. No UI/physical/accuracy/submission acceptance.",
+  "candidate": {
+    "oldSHA256": "3c55b1bf656815eaf6a34c52398bfd0a09b989523411d3895811155c093a0e16",
+    "newSHA256": "b9daf26bea860e94bbca27a139dc18658f40fc75495bb135383f517a0ebc1269",
+    "bytes": 12207766,
+    "changed": [
+      "MealMirror.swiftpm/AI-AND-ASSET-DISCLOSURE.md",
+      "MealMirror.swiftpm/MealAnalysisEngine.swift",
+      "MealMirror.swiftpm/Package.swift"
+    ],
+    "byteIdenticalRepacks": true,
+    "swiftFilesIdenticalAcrossVariants": 18
+  },
+  "sourceManifestSHA256": "dc636e8c8e4f915260e93147428b0fc9d5b78eb0234441f5656df492dd3f0a14",
+  "sourceFileCounts": {
+    "challenge": 60,
+    "internal": 94
+  },
+  "sourceVariantsSwiftIdentical": 18,
+  "change": "Vision fallback resumes before utility-worker request cancellation. Only engine gate, version and scoped disclosure differ from candidate19.",
+  "gateEvidence": "cancellation-responsiveness-20261026.json",
+  "stages": {
+    "challenge-sim-build": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 345.51840933299997
+    },
+    "internal-sim-build": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 397.85954425
+    },
+    "internal-sim-locales": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 1.7747377499999857
+    },
+    "internal-archive": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 332.15035883400003
+    },
+    "codesign": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.052398708000055194
+    },
+    "internal-archive-locales": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.35715712500018526
+    },
+    "archive-build-metadata": {
+      "exitCode": 0,
+      "timedOut": false,
+      "seconds": 0.012368041999934576
+    },
+    "internal-upload": {
+      "exitCode": 70,
+      "timedOut": false,
+      "seconds": 8.518696041000112
+    }
+  },
+  "simulatorBinaries": {
+    "challenge": {
+      "MealMirror": {
+        "architectures": [
+          "arm64"
+        ],
+        "sha256": "8b809113eebb3faab708071e3a6b420a4dbe18e0717961df1afa3fe1588ad0ce"
+      },
+      "MealMirror.debug.dylib": {
+        "architectures": [
+          "arm64"
+        ],
+        "sha256": "ff6905fd4079ef9ea73c6ecf424343151bec102939e06765dd844de5cea7d783"
+      }
+    },
+    "internal": {
+      "MealMirror": {
+        "architectures": [
+          "arm64"
+        ],
+        "sha256": "06e8aff2af9b702864c153c026a66b445d5fb9a011c2f94086b1b97b32b6474b"
+      },
+      "MealMirror.debug.dylib": {
+        "architectures": [
+          "arm64"
+        ],
+        "sha256": "c4d82e6fcde20bfcbc41a1ae5c7b72f9eaf6845d5c8cf690ba596b9514c1345c"
+      }
+    }
+  },
+  "internalSimLanguages": {
+    "build": "20",
+    "languages": [
+      "ar",
+      "bn",
+      "en",
+      "es",
+      "fa",
+      "fil",
+      "fr",
+      "gu",
+      "hi",
+      "hu",
+      "ja",
+      "ko",
+      "pa",
+      "pt",
+      "ta",
+      "ur",
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "languageCount": 18,
+    "englishKeyCount": 487,
+    "sourceCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "builtCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "passed": true,
+    "errors": [],
+    "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+  },
+  "archive": {
+    "build": "20",
+    "sdk": "iphoneos27.1",
+    "minimumOS": "17.0",
+    "binarySHA256": "5459388574aea930587c81620a268a81fa48b366c31466ea381fd58e57d67592",
+    "internalLocales": 18,
+    "sourceVariantsSwiftIdentical": 18,
+    "signedCodesignExit": 0,
+    "sourceSnapshotsUnchanged": true
+  },
+  "archiveLanguages": {
+    "build": "20",
+    "languages": [
+      "ar",
+      "bn",
+      "en",
+      "es",
+      "fa",
+      "fil",
+      "fr",
+      "gu",
+      "hi",
+      "hu",
+      "ja",
+      "ko",
+      "pa",
+      "pt",
+      "ta",
+      "ur",
+      "yue-Hant",
+      "zh-Hans"
+    ],
+    "languageCount": 18,
+    "englishKeyCount": 487,
+    "sourceCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "builtCatalogSHA256": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "passed": true,
+    "errors": [],
+    "scope": "Full-resource internal test app integrity only; no translation accuracy, fallback-free copy, rendered UI or device acceptance."
+  },
+  "actualMachO": {
+    "platform": "IOS",
+    "sdk": "27.1",
+    "minimumOS": "17.0"
+  },
+  "upload": {
+    "exitCode": 70,
+    "confirmedUploaded": false,
+    "reason": "App Store Connect account access required in Xcode Accounts settings.",
+    "retryAttempted": false,
+    "latestPreviouslyUploadedBuild": "19",
+    "lastVerifiedInternalGroupTestingBuild": "2"
+  },
+  "retainedFailure": {
+    "exitCode": -15,
+    "timedOut": true,
+    "seconds": 600.0769820419999
+  },
+  "changedBuildConditions": [
+    "arm64-only Simulator instead of universal",
+    "900-second Simulator bound instead of600",
+    "fresh output and DerivedData",
+    "historical generated caches reclaimed; source/previous delivered artifacts preserved"
+  ],
+  "notClaimed": [
+    "Cause/fix of retained dual-architecture timeout",
+    "x86_64 build20 acceptance",
+    "Actual Apple cancellation latency, OS computation stop or OCR fix",
+    "Fresh build20 UI journey or physical airplane-mode acceptance",
+    "Recognition accuracy, worldwide coverage, clinical validation or submission readiness",
+    "Upload, AppStore release, external/public beta or public binary distribution"
+  ],
+  "independentReview": {
+    "result": "No material artifact, signing, locale, scope or privacy overclaim found; stale current-version wording corrected before push",
+    "verified": [
+      "60/94 frozen files and current full source",
+      "Exact candidate, two repacks and final repack",
+      "18 identical Swift files across variants",
+      "Actual arm64 executable/debug-library bytes",
+      "Archive MachO SDK/minimum/build and retained codesign0",
+      "18-language compiled JSON/native strings",
+      "Actual upload70 with no success",
+      "Public fixed-probe identity and absence of private paths/account identifiers"
+    ]
+  }
+}
