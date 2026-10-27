@@ -276,15 +276,28 @@
     },
     "testflight23-processing.png": {
       "sha256": "f95fc094d1ad3337b5ee37a94c2a0cdfb09e6283e5c9d36bdc7d0015a681e9e5"
+    },
+    "testflight23-testing.png": {
+      "sha256": "cb918f41662da76a905bfc03dad779c742291b8cf944eb918665ed3724022261"
     }
   },
   "distribution": {
     "method": "TestFlight Internal Only",
-    "observedState": "Xcode Organizer upload complete; App Store Connect Build Uploads shows Version1.0 Build23 Processing, Oct27 2026 5:53AM. Not yet in existing internal group.",
-    "latestConfirmedInternalTestingBuild": "22",
+    "observedState": "App Store Connect: Build1.0(23) Internal, Testing in MealMirror Internal. One tester and four builds:23,22,19,2.",
+    "latestConfirmedInternalTestingBuild": "23",
     "appStoreReviewOrRelease": false,
     "serverProcessingObserved": true,
-    "build23TestingVerified": false
+    "build23TestingVerified": true,
+    "group": {
+      "name": "MealMirror Internal",
+      "testers": 1,
+      "builds": [
+        "23",
+        "22",
+        "19",
+        "2"
+      ]
+    }
   },
   "limits": [
     "Home is a process-launch-argument fixture, not a completed onboarding or interaction journey. No persistent onboarding preference write.",

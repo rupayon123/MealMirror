@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "sourceMain": "215a184383fb1c0bd6b6dfdd81af4760f49062dd",
+  "appSourceChanged": false,
+  "candidateBuild": "23",
+  "candidateSHA256": "d9652e772972ca238976bd76bdf436f23b201c4bd5cd551997a1d61784c949f6",
+  "target": "arm64-apple-ios27.0-macabi",
+  "macOS": "27.0.1",
+  "completed": true,
+  "modelAvailability": "available",
+  "capabilitiesObserved": [
+    "vision",
+    "guidedGeneration",
+    "toolCalling"
+  ],
+  "exactSourceSHA256": {
+    "LocalPhotoAI.swift": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "MealCore/MealModels.swift": "4a37e11824d122728ef4798482cd44c3d61c78b1321345a8c83b93099b303493",
+    "MealCore/PhotoNamePolicy.swift": "e905f098a2e56eead569aee895dc3c75d323379e83ae77c704208cf49188a4c4",
+    "Assets/grain-bowl-demo.png": "c0646bb5f28542891de42e5cb1ac3bdf698a7481028dd35444c58b090805c3eb"
+  },
+  "preparationBlockSHA256": "e414af75ad2efc02d097c4a0f96f2372237a75a583178ad2267d854281d8a3bd",
+  "orientationExtensionSHA256": "b836fc12d4c1a83d0888bb434889e320fecac0ab22247fa224a0590d4f865661",
+  "engineSourceSHA256": "cc98672ad35ae928c8419157567488125e8fbd83b57aa5bf2e1dcdd5af3835da",
+  "firstActualRun": {
+    "rows": [
+      {
+        "id": "empty",
+        "imageCount": 0,
+        "names": [],
+        "reason": "failed",
+        "seconds": 0.002293291734531522,
+        "status": "unavailable"
+      },
+      {
+        "id": "fourViewsRejected",
+        "imageCount": 4,
+        "names": [],
+        "reason": "failed",
+        "seconds": 2.2249994799494743e-05,
+        "status": "unavailable"
+      },
+      {
+        "id": "exposedDemo",
+        "imageCount": 1,
+        "names": [
+          "quinoa",
+          "broccoli",
+          "lentils",
+          "tomatoes",
+          "sweet potatoes"
+        ],
+        "reason": "",
+        "seconds": 9.27794395829551,
+        "status": "inspected"
+      },
+      {
+        "id": "syntheticBlank",
+        "imageCount": 1,
+        "names": [],
+        "reason": "",
+        "seconds": 1.7100146666634828,
+        "status": "inspected"
+      }
+    ]
+  },
+  "extendedActualRun": {
+    "rows": [
+      {
+        "id": "empty",
+        "imageCount": 0,
+        "names": [],
+        "reason": "failed",
+        "seconds": 0.002062458312138915,
+        "status": "unavailable"
+      },
+      {
+        "id": "fourViewsRejected",
+        "imageCount": 4,
+        "names": [],
+        "reason": "failed",
+        "seconds": 1.837499439716339e-05,
+        "status": "unavailable"
+      },
+      {
+        "id": "exposedDemo",
+        "imageCount": 1,
+        "names": [
+          "quinoa",
+          "broccoli",
+          "lentils",
+          "tomatoes",
+          "sweet potatoes"
+        ],
+        "reason": "",
+        "seconds": 4.114372249925509,
+        "status": "inspected"
+      },
+      {
+        "id": "syntheticBlank",
+        "imageCount": 1,
+        "names": [],
+        "reason": "",
+        "seconds": 1.5710279166232795,
+        "status": "inspected"
+      }
+    ],
+    "threeDuplicateViews": {
+      "input": "Three identical exposed demo images, not different camera views",
+      "names": [
+        "quinoa",
+        "lentils",
+        "broccoli",
+        "tomatoes",
+        "sweet potatoes"
+      ],
+      "seconds": 2.6230946665164083,
+      "status": "inspected(names: [\"quinoa\", \"lentils\", \"broccoli\", \"tomatoes\", \"sweet potatoes\"], photoCount: 3)"
+    },
+    "cancellation": {
+      "beforeCancelSeconds": 0.21156179159879684,
+      "cancelToReturnSeconds": 0.00010249996557831764,
+      "names": [],
+      "requestPendingAtCancellation": true,
+      "scope": "Caller return only; underlying Apple worker termination is not observed.",
+      "status": "unavailable(probe.PhotoAIUnavailableReason.cancelled)"
+    }
+  },
+  "stages": {
+    "initialMissingDependency": {
+      "core-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 3.774,
+        "orphanedAtReturn": false
+      },
+      "probe-compile": {
+        "exitCode": 1,
+        "timedOut": false,
+        "hostSeconds": 5.396,
+        "orphanedAtReturn": false
+      }
+    },
+    "firstActualRun": {
+      "core-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 1.297,
+        "orphanedAtReturn": false
+      },
+      "probe-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 1.807,
+        "orphanedAtReturn": false
+      },
+      "execute": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 11.99,
+        "orphanedAtReturn": false
+      }
+    },
+    "extendedActualRun": {
+      "core-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 2.116,
+        "orphanedAtReturn": false
+      },
+      "probe-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 1.9,
+        "orphanedAtReturn": false
+      },
+      "execute": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 9.274,
+        "orphanedAtReturn": false
+      }
+    }
+  },
+  "evidenceHashes": {
+    "v1/probe-compile.stderr": "b048988de1bdbcf1b504198c1ea54bf5f210a81ed7d9efef660c7bdb0abaad59",
+    "v1/run.py": "f1cf22484e66a7c3504dd6d10627710a2c8e5f6e604f50eda61c5f1958275089",
+    "v1/Preparation.swift": "2e2004f11fb846b0009b565a6d3ad250ca2e9bc799aa1f3db7226985980389ec",
+    "v1/Probe.swift": "48c3c37bb5ecd18205391a29fdda85f91f4c59d372513b8794bdd052489ad69d",
+    "v1/core-compile.json": "05b356e6c8a5fa6de45e65f43bf0e0bf6d7a089c20af1fbde89874eb98c55582",
+    "v1/core-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v1/PROTOCOL.json": "0346240e89c1c711b7abdeb012ade74eafb75f7d09f09f13246a08836b526512",
+    "v1/probe-compile.json": "09b863bfcd572f96a0abf2ea8167f4afd493999895a9144045e17eaf23e2e5ee",
+    "v1/LocalPhotoAI.swift": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "v1/MealCore.abi.json": "4277ac6b49f8511196028a5ac20f5b1b1dfa754c24615d34068089f0b1739728",
+    "v2/probe-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/run.py": "a6e357216e86e9ee0674af021d4d8b4cc72e76329cbbc45265b3613ee8227f2f",
+    "v2/Preparation.swift": "da617a8061c053b9239b105cd39d235c7b1f63a23bb848f90177e3a4f6a6f286",
+    "v2/execute.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/results.json": "b91966e2129d83a02315f520e8d59d102ef9f6920b78b53ca81620ecffe456df",
+    "v2/Probe.swift": "48c3c37bb5ecd18205391a29fdda85f91f4c59d372513b8794bdd052489ad69d",
+    "v2/core-compile.json": "3de551a9cdcd9f6d76b3f826fd67686ef9f1c1d93caeee88f1c68c69b9b60af6",
+    "v2/core-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v2/execute.json": "3de42bb2bc4a4f3c2f76d8de1e4012e47ed53e87f8992b5bdd3bf366177a51f8",
+    "v2/PROTOCOL.json": "0bb9b0dad9dd4c21db365980a746fa9678c582225ff710af2eb3ce6eeb45ca7f",
+    "v2/probe-compile.json": "c624ad4028b64f3922fd3ab5a0136882637d5bd518c16c3555ea025245f5601f",
+    "v2/LocalPhotoAI.swift": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "v2/MealCore.abi.json": "4277ac6b49f8511196028a5ac20f5b1b1dfa754c24615d34068089f0b1739728",
+    "v3/probe-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v3/run.py": "a6e357216e86e9ee0674af021d4d8b4cc72e76329cbbc45265b3613ee8227f2f",
+    "v3/Preparation.swift": "da617a8061c053b9239b105cd39d235c7b1f63a23bb848f90177e3a4f6a6f286",
+    "v3/execute.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v3/results.json": "d9a35a731bfee9fbc1ec58df852669b902c91ba54820f8afd5ca0a9fea51434f",
+    "v3/Probe.swift": "9af28060c59252e3db64a47800bd03dc5d897e202fd8ad1ebfaf7fb43cc44230",
+    "v3/core-compile.json": "6be561f969c84aae4590fb3ac943cca7d23cf354dc3b2d3ae6de938edc0e5624",
+    "v3/core-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v3/execute.json": "3961932ba33513f301fef610b937f29e8a473738e845ba42dcdd053d17c6bd61",
+    "v3/PROTOCOL.json": "0bb9b0dad9dd4c21db365980a746fa9678c582225ff710af2eb3ce6eeb45ca7f",
+    "v3/probe-compile.json": "4939c132cef30bd2969609ea72a1e4d1d4c9922df14dd51f9f9f11f831c734e6",
+    "v3/LocalPhotoAI.swift": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "v3/MealCore.abi.json": "4277ac6b49f8511196028a5ac20f5b1b1dfa754c24615d34068089f0b1739728"
+  },
+  "limits": [
+    "Mac Catalyst command-line process; not MealMirror app-host, iOS Simulator or physical iPhone evidence.",
+    "No network isolation or airplane-mode test. Production code explicitly selects default on-device model; this run does not prove physical offline operation.",
+    "Exposed bundled image and synthetic blank only. No independent, held-out, worldwide-food or clinical accuracy acceptance. Returned names are untrusted clues; not certified ingredient labels.",
+    "Three images are duplicates, not different camera viewpoints. One case does not establish general deduplication, serving or multiview accuracy.",
+    "Cancellation measures caller return while request was pending; underlying Apple worker termination is not observed. No general latency SLA.",
+    "The first probe omitted the production UIImage orientation extension and failed compilation. V2 included the exact existing extension; production app code was unchanged.",
+    "No amounts, glucose, insulin ratios or doses enter the model prompt or were produced as structured fields.",
+    "Host model was already available. No Apple settings, model selection, permissions, account, download or security changes."
+  ]
+}

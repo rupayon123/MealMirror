@@ -14,12 +14,14 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 | Simulator source builds | English and full-language variants passed for arm64; incremental builds, not clean/universal |
 | Full-language integrity | All 18 catalogs/native strings match source; 487 English keys; translation/layout quality still open |
 | Outline geometry | Same 243 macOS SwiftUI checks pass after 20 failures in an unpublished prototype; not native app visual proof |
-| Internal archive/upload | Build23 signed archive and internal-only upload passed; Apple shows Processing; not yet group Testing. Build22 confirmed Testing |
-| Existing internal TestFlight group | Build 22 Testing; builds 19 and 2 preserved; one tester |
+| Internal archive/upload | Build23 signed archive and internal-only upload passed; confirmed Testing in existing group |
+| Existing internal TestFlight group | Build23 Testing; builds22,19,2 preserved; one tester |
 
 Build23 refines Home hierarchy, shared stepped surfaces, dark decoration and photo-first large-text order while preserving the pot/MM emblem, fonts, photos, local AI, storage and numeric boundaries. The original artwork sources and provenance are [reviewable here](design/pixel-kitchen/README.md). Current builds/package checks and references to unchanged artwork/geometry evidence are in the [delivery receipt](research/visual/delivery-20261027-build23.json). The exact English Simulator app installed and launched on an isolated iPhone Duo; initial Welcome and controlled Home light/dark/max-text rendering were inspected. [Native evidence and fixture limits](research/visual/delivery-20261027-build23.json). Full interactive/accessibility, human comprehension and physical offline checks remain open.
 
 The internal resource variant retains 18 languages, while the judging ZIP is English-only. All 18 Swift source bytes match; resources and binaries differ. Catalog integrity does not establish translation or native layout quality.
+
+Current exact-source runtime checks exercised real Foundation Models and separate-label OCR in an isolated iOS test host; all eight narrow coordinator checks passed. The Mac command-line OCR case failed and remains recorded. [Results and limits](research/foundation-models/coordinator-host-20261027.json). Full MealMirror UI and physical offline gates remain open.
 
 ## What the app does
 

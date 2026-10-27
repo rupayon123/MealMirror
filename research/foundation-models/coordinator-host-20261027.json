@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "sourceMain": "215a184383fb1c0bd6b6dfdd81af4760f49062dd",
+  "productionAppChanged": false,
+  "candidateBuild": "23",
+  "candidateSHA256": "d9652e772972ca238976bd76bdf436f23b201c4bd5cd551997a1d61784c949f6",
+  "platform": "iOS27.1 iPhone Duo Simulator, isolated QA; SwiftUI test host",
+  "hostIdentifier": "com.mealmirror.qa.engine20261027v2",
+  "sourceBindings": {
+    "MealAnalysisEngine.swift": "cc98672ad35ae928c8419157567488125e8fbd83b57aa5bf2e1dcdd5af3835da",
+    "LocalPhotoAI.swift": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "Models.swift": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e",
+    "PhotoCluePolicy.swift": "644110f7872461dc27e2c458d594a5b0cd9a64935063522db26c2c9ca7b1a959",
+    "MealCore/MealModels.swift": "4a37e11824d122728ef4798482cd44c3d61c78b1321345a8c83b93099b303493",
+    "MealCore/PhotoNamePolicy.swift": "e905f098a2e56eead569aee895dc3c75d323379e83ae77c704208cf49188a4c4"
+  },
+  "languageCorePrefixSHA256": "c8c8949274f5ac3fff013fc7e1f0c1dd571367d090b3c32e5cd97ae05a48d1d4",
+  "hostBinarySHA256": "b7288bfc88d61476c211ac2e1f2c3c6a2fdc0555e9d7bf6adf0af5526be1b6e6",
+  "hostSourceSHA256": "298097062230169216c014e3e57912f66523870166d5030e9d6b8cfb1c028254",
+  "actualIOSHostOutcome": {
+    "allChecksPassed": true,
+    "appHosted": true,
+    "checks": {
+      "actualLocalModelUsed": true,
+      "descriptionMatchedExcludedReference": true,
+      "englishCatalogLoaded": true,
+      "nameCluesWithinLimit": true,
+      "noAutomaticCarbohydrateTotal": true,
+      "nothingAutomaticallyIncluded": true,
+      "separateLabelExactOCR": true,
+      "sourceIsPersonalPhoto": true
+    },
+    "componentNames": [
+      "Rice"
+    ],
+    "hasTotal": false,
+    "includedCount": 0,
+    "iOSSimulator": true,
+    "labelStatus": "read(lines: [\"NUTRITION FACTS\", \"Total Carbohydrate 37 g\", \"per serving\"])",
+    "labelText": [
+      "NUTRITION FACTS",
+      "Total Carbohydrate 37 g",
+      "per serving"
+    ],
+    "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+    "names": [
+      "quinoa",
+      "roasted squash",
+      "broccoli",
+      "lentils",
+      "cherry tomatoes",
+      "dressing"
+    ],
+    "photoStatus": "inspected(names: [\"quinoa\", \"roasted squash\", \"broccoli\", \"lentils\", \"cherry tomatoes\", \"dressing\"], photoCount: 3)",
+    "scope": "Actual coordinator/model/OCR; exposed repeated demo and procedural label. Not UI, camera/picker, independent accuracy, physical offline or dose validation.",
+    "seconds": 16.652756499825045,
+    "visionStatus": "notRun"
+  },
+  "catalystCombinedOutcome": {
+    "allChecksPassed": false,
+    "appHosted": false,
+    "checks": {
+      "actualLocalModelUsed": true,
+      "descriptionMatchedExcludedReference": true,
+      "englishCatalogLoaded": true,
+      "nameCluesWithinLimit": true,
+      "noAutomaticCarbohydrateTotal": true,
+      "nothingAutomaticallyIncluded": true,
+      "separateLabelExactOCR": false,
+      "sourceIsPersonalPhoto": true
+    },
+    "componentNames": [
+      "Rice"
+    ],
+    "hasTotal": false,
+    "includedCount": 0,
+    "labelText": [],
+    "macCatalyst": true,
+    "methodNote": "Food names only. Check each name against your photo; no carbohydrate amount comes from these clues.",
+    "names": [
+      "quinoa",
+      "roasted squash",
+      "broccoli",
+      "cherry tomatoes",
+      "lentils",
+      "dressing"
+    ],
+    "scope": "Actual coordinator/model/OCR; exposed repeated demo and procedural label. Not UI, camera/picker, independent accuracy, physical offline or dose validation.",
+    "seconds": 19.79648962500505
+  },
+  "stages": {
+    "catalystCombined": {
+      "core-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 1.937,
+        "orphanedAtReturn": false
+      },
+      "execute": {
+        "exitCode": 1,
+        "timedOut": false,
+        "hostSeconds": 20.871,
+        "orphanedAtReturn": false
+      },
+      "probe-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 9.545,
+        "orphanedAtReturn": false
+      }
+    },
+    "firstHostBuildNotRun": {
+      "core-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 2.922,
+        "orphanedAtReturn": false
+      },
+      "host-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 6.943,
+        "orphanedAtReturn": false
+      },
+      "sign-core": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 0.147,
+        "orphanedAtReturn": false
+      },
+      "sign-host": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 0.144,
+        "orphanedAtReturn": false
+      }
+    },
+    "verifiedIOSHost": {
+      "container": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 1.059,
+        "orphanedAtReturn": false
+      },
+      "core-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 3.227,
+        "orphanedAtReturn": false
+      },
+      "host-compile": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 4.49,
+        "orphanedAtReturn": false
+      },
+      "host-metadata": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 0.159,
+        "orphanedAtReturn": false
+      },
+      "install": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 2.437,
+        "orphanedAtReturn": false
+      },
+      "launch": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 1.276,
+        "orphanedAtReturn": false
+      },
+      "restore-mealmirror": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 0.712,
+        "orphanedAtReturn": false
+      },
+      "sign-core": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 0.163,
+        "orphanedAtReturn": false
+      },
+      "sign-host": {
+        "exitCode": 0,
+        "timedOut": false,
+        "hostSeconds": 0.155,
+        "orphanedAtReturn": false
+      }
+    }
+  },
+  "process": {
+    "pid": 42692,
+    "psExit": 1,
+    "observed": ""
+  },
+  "labelInputs": {
+    "macCatalystPNG": "2956f196c17cf7922e91c905217dd03cbeb08599ef4b4fad4cc8c2b444c32a1e",
+    "iOSHostPNG": "3e888ef9514152a8fd0107a6bd3ccc3c9a83f71ca4152892c41bdb80b01aac97",
+    "inspection": "Both generated1100x320white-background synthetic labels viewed; all three lines are clearly rendered.37g is procedural test content only."
+  },
+  "scope": [
+    "Exact production engine, AI, models, photo policy and MealCore files; exact AppLanguage/LocalizationCatalog prefix excludes unused preference/UI store.",
+    "Actual Foundation Models image call plus actual Vision OCR through production analyze coordinator.",
+    "One exposed bundled grain-bowl image repeated3times plus separately rendered label; description rice creates one excluded reference component.",
+    "No camera, PhotosUI, MealMirror navigation, save/delete/history, language choice, accessibility, animation or full app journey was exercised.",
+    "No physical iPhone, network isolation/airplane-mode, independent recognition, worldwide-food, nutrient or clinical validation.",
+    "Returned names vary across exposed runs. They remain uncertain clues and never establish verified ingredients or portions.",
+    "Separate Mac Catalyst command-line combined attempt failed exact OCR assertion; seven other checks passed. Its label terminal enum was not logged, so empty text alone does not distinguish read[] from unavailable.",
+    "Previous Catalyst deadline traces remain relevant; successful iOS host does not identify the cause of the command-line failure or establish a causal fix.",
+    "First host build linked SDK27.0 despite selected27.1and warned about sysroot. It was never installed or run. V2 supplied explicit Darwin isysroot link flags; vtool records IOSSIMULATOR, min27.0,SDK27.1.",
+    "Test host completed and its PID was absent in the final snapshot. Ordinary MealMirror launch on isolated QA restored; protected original QA was not operated.",
+    "No source, model prompt, timeout, app distribution rule or user data was changed."
+  ],
+  "evidenceHashes": {
+    "catalyst/probe-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "catalyst/run.py": "51365f309b545114b1f94cbe09d019a7088b1c69ff891d4b82603ee1dea9a78d",
+    "catalyst/execute.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "catalyst/results.json": "0ee7acb4328bf4f7adbc326d85befe2829ec1aad863c9b3c3377d308a8c4d7eb",
+    "catalyst/Probe.swift": "2b9133916beb24c6f68736a779c46739412adeb30992a032c88c2232bdf1c4f5",
+    "catalyst/LanguageCore.swift": "c8c8949274f5ac3fff013fc7e1f0c1dd571367d090b3c32e5cd97ae05a48d1d4",
+    "catalyst/core-compile.json": "1605acff301b6c19b7eae1a3e660d9fde53fc2b2a83bbfcd89fd5da8d343b9b7",
+    "catalyst/core-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "catalyst/execute.json": "b1e109990227980a3c13ddd1301c73787dd77343a137093d11fd23bb70614cbf",
+    "catalyst/Models.swift": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e",
+    "catalyst/app_strings.json": "95d5f9995537ea5d8240ce82ed86bde323b5868d899e63066c26ec48f6fdbc43",
+    "catalyst/PROTOCOL.json": "70dec31eb7c4f96ad188dc9f4405f034dd9246d41936121775ca357e6aa68d36",
+    "catalyst/probe-compile.json": "2b759a45b3c300d781efc744a9e54ef775a05494f4a0aaccb9e7a0002f0e2a43",
+    "catalyst/MealAnalysisEngine.swift": "cc98672ad35ae928c8419157567488125e8fbd83b57aa5bf2e1dcdd5af3835da",
+    "catalyst/PhotoCluePolicy.swift": "644110f7872461dc27e2c458d594a5b0cd9a64935063522db26c2c9ca7b1a959",
+    "catalyst/LocalPhotoAI.swift": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "catalyst/MealCore.abi.json": "4277ac6b49f8511196028a5ac20f5b1b1dfa754c24615d34068089f0b1739728",
+    "hostV1/build.py": "79d1c02fd2b4a8350f0bed6cb400075a0f2e442ce3f91f483d1f2f8354d20b4b",
+    "hostV1/sign-host.stderr": "04948567aae9de5ab2dee340aed4530a31f468b20620ac1b424e3b09c91f5992",
+    "hostV1/host-compile.stderr": "2ee56c18850e1a073477efac3672630521915c2f40bd06ccc9b8e16a4a0de869",
+    "hostV1/sign-host.json": "66470ac3b746931691e90276a65a1a119081066cfb230e39a386c0e46193b588",
+    "hostV1/LanguageCore.swift": "c8c8949274f5ac3fff013fc7e1f0c1dd571367d090b3c32e5cd97ae05a48d1d4",
+    "hostV1/core-compile.json": "31e647540269d74e08a50da5c1cf4ef7bf33fd526025a154f4c87e69a0fdb5e6",
+    "hostV1/core-compile.stderr": "2ee56c18850e1a073477efac3672630521915c2f40bd06ccc9b8e16a4a0de869",
+    "hostV1/Models.swift": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e",
+    "hostV1/host-compile.json": "b4d7fa6d634be0ca3732378f338076416171a5520239f17e30ced829c8d3fcf2",
+    "hostV1/PROTOCOL.json": "9a72d693863f1f394342d2e3461508db97364e837547cb9eb30f053f5c82941a",
+    "hostV1/sign-core.stderr": "5b75f742fbc7c7e7a4398848a8376652296ea5b61e89be6269a29caaa8978783",
+    "hostV1/MealAnalysisEngine.swift": "cc98672ad35ae928c8419157567488125e8fbd83b57aa5bf2e1dcdd5af3835da",
+    "hostV1/sign-core.json": "1f9183211144d05965b828a02b0d91805c8439471220e63a5b41628e571039b8",
+    "hostV1/PhotoCluePolicy.swift": "644110f7872461dc27e2c458d594a5b0cd9a64935063522db26c2c9ca7b1a959",
+    "hostV1/LocalPhotoAI.swift": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "hostV1/Host.swift": "298097062230169216c014e3e57912f66523870166d5030e9d6b8cfb1c028254",
+    "hostV1/MealCore.abi.json": "4277ac6b49f8511196028a5ac20f5b1b1dfa754c24615d34068089f0b1739728",
+    "hostV2/build.py": "a2449a6e44405f988be24660f5d4797adef301aa91c648ea4b8c7275616f5647",
+    "hostV2/container.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hostV2/sign-host.stderr": "e5505bef037a9984d6b05c393c4d4ac84ee499ce7177f0793097a97651ef49ef",
+    "hostV2/host-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hostV2/OBSERVATION.json": "6f118d7dc56556c92e336089f8f4c7167918fcb4702bede99ff067922c57fde2",
+    "hostV2/restore-mealmirror.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hostV2/sign-host.json": "944c0b7c4a744539bcc3b6d5e11afcdac70977dc307bda617eddd83d01864349",
+    "hostV2/execute.py": "056ade51888902978e263a331cdcb0555255ffd3d1e8a3eb379a06c89725551f",
+    "hostV2/results.json": "44f306fae5375949efaa47e5dfed60039976b964743f3e75e41afb196d3cda20",
+    "hostV2/LanguageCore.swift": "c8c8949274f5ac3fff013fc7e1f0c1dd571367d090b3c32e5cd97ae05a48d1d4",
+    "hostV2/core-compile.json": "79bf048d9768df49b2191af312366035da1cb92d568ffb7b4db67551b48c6793",
+    "hostV2/restore-mealmirror.json": "f37ecb0fbb9908e047aa764bbec12bb72a95ea67a1818380a8f026b5be1eefe9",
+    "hostV2/core-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hostV2/container.json": "9c43a9056afbce84ee5b434c793bd6211e5fe6fddc25a32a42e774c6dcaf563a",
+    "hostV2/launch.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hostV2/Models.swift": "2e912ec18f39df1aeeec3aa216fbf52d92907b02710fb07c0de52c41cc9be77e",
+    "hostV2/FINAL-PROCESS.json": "9da4ab7854b4f165321845290791ffa97fb760a472bb672e43fd8c8ec7adc8b2",
+    "hostV2/host-metadata.json": "6346ab832b9b7a5ee7bc6705e007e89a0efe16aadfdc06dbcef198cdc0402a4e",
+    "hostV2/host-compile.json": "4a807a1225a5cc14a9d1b6e23ec74308666f570e388ec1ef98016eb0d72552af",
+    "hostV2/PROTOCOL.json": "27211e78165a261f26518ff4b715bb8375029aba99073e960b601cdca4b2bf18",
+    "hostV2/sign-core.stderr": "3c1a65d80b952b52dc701b8075a1ef0efc7977ac01cee1e7c28d56f8675514b0",
+    "hostV2/launch.json": "0ee02a5c843d30bd76b72d4aa59d0d0f4337ea3f7c02a0dc924237fafb156a35",
+    "hostV2/install.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hostV2/host-metadata.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hostV2/MealAnalysisEngine.swift": "cc98672ad35ae928c8419157567488125e8fbd83b57aa5bf2e1dcdd5af3835da",
+    "hostV2/sign-core.json": "a0bffe928d5bc88d737f4f6b850b90a0e3fe0e67ccdd3e841eb19a1346bfe03c",
+    "hostV2/PhotoCluePolicy.swift": "644110f7872461dc27e2c458d594a5b0cd9a64935063522db26c2c9ca7b1a959",
+    "hostV2/LocalPhotoAI.swift": "714e16fd8d7b8a31e70549431adccaf5c5c6ecb21357d27b5905e3037dc1908e",
+    "hostV2/Host.swift": "298097062230169216c014e3e57912f66523870166d5030e9d6b8cfb1c028254",
+    "hostV2/MealCore.abi.json": "4277ac6b49f8511196028a5ac20f5b1b1dfa754c24615d34068089f0b1739728",
+    "hostV2/install.json": "3d944e66d99149745ff3c4e77063cd08e6a6215fa30f9a846a5180b4cbe30041",
+    "hostV2/RUNTIME-PID.json": "78653c4ff637425ca07a11007f3dd87072a5e30e6a3e4596d6dbbf727d926ad8"
+  },
+  "actualHostMetadata": {
+    "platform": "IOSSIMULATOR",
+    "minimumOS": "27.0",
+    "sdk": "27.1",
+    "rawOutputSHA256": "861789f91693c31058fc8535b96a7a38d24c9fb2527969ff610fe5a78f4d2b7c"
+  }
+}

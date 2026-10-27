@@ -1,8 +1,14 @@
 # Foundation Models research evidence
 
+## October 27 current production runtime
+
+The unchanged build23 photo-AI path ran with real Foundation Models on this Mac: the exposed demo returned name clues, a synthetic blank returned none, three duplicate images produced one bounded list, and a pending request returned its cancelled fallback. These are local runtime observations, with no independent recognition or physical offline acceptance. [Exact-source Catalyst receipt and harness](current-catalyst-20261027.json).
+
+A separate **iOS SwiftUI app host passed all eight coordinator checks**: actual local image model + actual separate-label OCR, excluded description reference and no automatic carbohydrate total. The Mac Catalyst command-line combined attempt failed OCR and remains a failed result. [Both outcomes and test-host source](coordinator-host-20261027.json). This does not replace the current MealMirror UI or hardware gates.
+
 Reviewed October 24, 2026. This records native Mac probes and source-derived iOS Simulator integration, development-photo and fixed-prompt scope runs. Separate QA apps use real UIKit preparation; each report identifies its source and prompt hash rather than treating all revisions as the current ZIP. It is **not** an exact-app UI/full-journey, physical-device, airplane-mode or accuracy pass. Limited synthetic mechanics and small purposive real-photo checks do not establish independent acceptance performance.
 
-Raw logs and harness sources remain in local output folders outside the repository and Challenge ZIP. The links below resolve in this Mac workspace; they are not publicly distributed artifacts. No images, model weights or executables are added here.
+Raw logs and executables remain in local output folders. The two October27 harness sources are reviewable here, outside the Challenge ZIP; older harnesses remain in their recorded local folders. The links below resolve in this Mac workspace; they are not publicly distributed artifacts. No images, model weights or executables are added here.
 
 ## Earlier prompt-only proposal: neutral wording rejected
 
