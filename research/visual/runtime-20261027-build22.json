@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "sourceMain": "5c624ed6fb5d92e3ff8b87071d0bbdc88f50a6db",
+  "build": "22",
+  "candidateSHA256": "5ed5aad7ac090b4623172e171487c0bce95bd62ba3e17fbe9be149aeafbbbc2d",
+  "scope": "Exact English source-ZIP arm64 Simulator app, isolated iPhone Duo iOS27.1; initial Welcome and launch-argument Home rendering only",
+  "identitiesVerifiedBeforeInstall": {
+    "binaries": {
+      "MealMirror": {
+        "architectures": [
+          "arm64"
+        ],
+        "sha256": "be5355088ef6f4e11ca6e4a9a89b8386729aede08fbaf4d9357b299d888d501b"
+      },
+      "MealMirror.debug.dylib": {
+        "architectures": [
+          "arm64"
+        ],
+        "sha256": "bb409feb1cd3a3f07274fa0ead3e9c627a3c6e039feff4d80f2c39631af1677d"
+      }
+    },
+    "assetCatalogSHA256": "e7c6fa8ef2a61f6a971636ea5300697d42bbc2f0c4a9381b687292ce6f6d9baa",
+    "build": "22"
+  },
+  "stages": {
+    "list-devices": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.897,
+      "orphanedAtReturn": false
+    },
+    "install": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 14.433,
+      "orphanedAtReturn": false
+    },
+    "launch": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 4.021,
+      "orphanedAtReturn": false
+    },
+    "screenshot": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.969,
+      "orphanedAtReturn": false
+    },
+    "appearance-dark": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.354,
+      "orphanedAtReturn": false
+    },
+    "dark-screenshot": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.588,
+      "orphanedAtReturn": false
+    },
+    "appearance-light": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.482,
+      "orphanedAtReturn": false
+    },
+    "fixture-terminate": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.474,
+      "orphanedAtReturn": false
+    },
+    "fixture-launch": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 1.926,
+      "orphanedAtReturn": false
+    },
+    "home-fixture-screenshot": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.549,
+      "orphanedAtReturn": false
+    },
+    "home-dark-request": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.239,
+      "orphanedAtReturn": false
+    },
+    "home-dark-screenshot": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.45,
+      "orphanedAtReturn": false
+    },
+    "restore-light": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.418,
+      "orphanedAtReturn": false
+    },
+    "restore-terminate": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.462,
+      "orphanedAtReturn": false
+    },
+    "ordinary-relaunch": {
+      "exitCode": 0,
+      "timedOut": false,
+      "hostSeconds": 0.468,
+      "orphanedAtReturn": false
+    }
+  },
+  "screenshots": {
+    "build22-first-launch-dark.png": {
+      "sha256": "4515fff650a561e82056142c6609d56d174daf91e8442a3714fa7a2cca883532"
+    },
+    "build22-first-launch.png": {
+      "sha256": "f23e1a8b53451da937d5500351f08531b4d2019d77ce9dfd59e7680746f0f68b"
+    },
+    "build22-home-fixture-dark.png": {
+      "sha256": "39212daabf35627bdab3faf5a770bccbb127471922653cc6af7b9946b2762696"
+    },
+    "build22-home-fixture.png": {
+      "sha256": "f52ac1344fb23ff1bab5fb0117c732e3117787e625704a9ecad05d81708403d9"
+    }
+  },
+  "observations": [
+    "Read-only simctl list recovered in0.897s; isolated QA and protected original both reported Booted. Only isolated QA was operated.",
+    "Install and ordinary launch passed. Initial Welcome visibly rendered its emblem, safety card, links and primary library action.",
+    "Home fixture used process launch arguments -carbin.onboarding.completed YES, without a persistent preference write. This does not test onboarding completion or navigation.",
+    "Settled Home light and dark screenshots visibly show the Camera, Photos and Settings pixel objects and shared stepped surfaces. No initial-viewport clipping of those labels was observed.",
+    "Immediate dark Welcome capture remained light and is retained as inconclusive; it does not establish a dark appearance failure or pass. Later settled dark Home visibly rendered dark.",
+    "Device Hub native inspection timed out twice while process remained running. No restart, permissions expansion, native interaction success or accessibility acceptance claimed.",
+    "Light appearance restored; fixture process terminated and ordinary app relaunched without test arguments."
+  ],
+  "limits": [
+    "No taps, scrolling, photo picker, model inference, label OCR, save/delete or full current-build journey.",
+    "No animation timing, Dynamic Type, VoiceOver, iPad, physical offline or recognition accuracy acceptance.",
+    "Earlier readiness and shutdown timeouts remain in historical receipts; success here does not erase them.",
+    "Public source ZIP unchanged; no new app release or external testing group."
+  ]
+}

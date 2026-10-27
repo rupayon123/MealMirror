@@ -14,10 +14,10 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 | Simulator source builds | English and full-language variants passed for arm64; incremental builds, not clean/universal |
 | Full-language integrity | All 18 catalogs/native strings match source; 487 English keys; translation/layout quality still open |
 | Outline geometry | Same 243 macOS SwiftUI checks pass after 20 failures in an unpublished prototype; not native app visual proof |
-| Internal archive/upload | Build 22 signed archive and Organizer internal-only upload passed; server processing/group availability unverified |
-| Existing internal TestFlight group | Build 19 confirmed Testing; this has the earlier appearance |
+| Internal archive/upload | Build 22 signed archive/upload passed; confirmed Testing in existing internal group |
+| Existing internal TestFlight group | Build 22 Testing; builds 19 and 2 preserved; one tester |
 
-Build 22 integrates the revised floating pixel family and shared surfaces while preserving the pot/MM emblem, fonts, photos, local AI, storage and numeric boundaries. The original artwork sources and provenance are [reviewable here](design/pixel-kitchen/README.md). Source parse/build, exact package, asset reproduction and geometry evidence are in the [delivery receipt](research/visual/delivery-20261027-build22.json). Native rendering, accessibility, human comprehension and physical offline operation remain open after the recorded Simulator readiness failure; no installation/launch of build 22 is claimed.
+Build 22 integrates the revised floating pixel family and shared surfaces while preserving the pot/MM emblem, fonts, photos, local AI, storage and numeric boundaries. The original artwork sources and provenance are [reviewable here](design/pixel-kitchen/README.md). Source parse/build, exact package, asset reproduction and geometry evidence are in the [delivery receipt](research/visual/delivery-20261027-build22.json). The exact English Simulator app installed and launched on an isolated iPhone Duo; initial Welcome and controlled Home light/dark rendering were inspected. [Native evidence and fixture limits](research/visual/runtime-20261027-build22.json). Full interactive/accessibility, human comprehension and physical offline checks remain open.
 
 The internal resource variant retains 18 languages, while the judging ZIP is English-only. All 18 Swift source bytes match; resources and binaries differ. Catalog integrity does not establish translation or native layout quality.
 

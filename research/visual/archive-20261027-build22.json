@@ -86,16 +86,28 @@
     "locales-report.json": "d4a7a076c3dd4fed9c1f73954bbcc5ce0644976546ee5fa43245672466874433",
     "metadata.json": "18566e2cb844a1dfeffec4b95d59b490f92ff9148f8b5876ad3e2d26dce2d2c2",
     "metadata.stdout": "b8251a889fcfe9f457048b6f8cb25d27ba6aa7119d3e8319774bd7d453c27dcf",
-    "organizer-upload-complete.png": "6e1837a2e5ec326d5169f7fb4aa4eafb173cc46df9408e85e7207956ec7c2a57"
+    "organizer-upload-complete.png": "6e1837a2e5ec326d5169f7fb4aa4eafb173cc46df9408e85e7207956ec7c2a57",
+    "testflight-build22-testing.png": "3fae525042b6e9543010729ad37443b8e9cd6297e6975fb7679a9b2306e4480a"
   },
   "distribution": {
     "route": "Xcode Organizer",
     "selectedMethod": "TestFlight Internal Only",
-    "observedState": "Xcode Organizer: MealMirror 1.0 (22) uploaded; App upload complete",
+    "observedState": "App Store Connect: Build 1.0 (22) Internal, Testing in MealMirror Internal",
     "appStoreReviewOrRelease": false,
-    "serverProcessingVerified": false,
-    "existingInternalGroupBuild22Verified": false,
-    "serverVerificationBlocker": "Existing MealMirror App Store Connect tab was discovered, but two attempts to connect timed out before page inspection. No browser-side mutation or group assignment was attempted."
+    "serverProcessingVerified": true,
+    "existingInternalGroupBuild22Verified": true,
+    "serverVerificationBlocker": "Earlier two CDP connection timeouts retained. Recovered through native Brave UI: selected existing MealMirror tab, reloaded stalled page, observed Ready to Test, selected22 and Add, then observed Testing.",
+    "group": {
+      "name": "MealMirror Internal",
+      "testers": 1,
+      "builds": [
+        "22",
+        "19",
+        "2"
+      ],
+      "build22Status": "Testing"
+    },
+    "installationOnPhysicalDeviceVerified": false
   },
   "limits": [
     "Signed full-language archive differs from English-only submission ZIP;18Swift source hashes match frozen variants.",
