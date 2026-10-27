@@ -480,7 +480,7 @@
   },
   "distribution": {
     "build25Uploaded": true,
-    "lastConfirmedInternalTestingBuild": "24",
+    "lastConfirmedInternalTestingBuild": "25",
     "testingOnly": true,
     "publicAppRelease": false,
     "uploadMethod": "TestFlight Internal Only",
@@ -489,10 +489,22 @@
       "A non-validation error occurred during validation. Skipping validation.",
       "Account credentials have expired."
     ],
-    "serverStatus": "Processing",
-    "internalGroup25TestingConfirmed": false,
+    "serverStatus": "Testing",
+    "internalGroup25TestingConfirmed": true,
     "organizerProofSHA256": "494f0115e2b9c04abc245b7a11f97d1319845fb40c3817de75753063118c92da",
-    "processingProofSHA256": "fe73790224dcb9bb344ad75f46ffc8a8445170f1d4e2288c4061e6431e5af0db"
+    "processingProofSHA256": "fe73790224dcb9bb344ad75f46ffc8a8445170f1d4e2288c4061e6431e5af0db",
+    "binaryState": "Validated",
+    "existingGroup": "MealMirror Internal",
+    "testerCount": 1,
+    "groupBuildCount": 6,
+    "preservedBuilds": [
+      "24",
+      "23",
+      "22",
+      "19",
+      "2"
+    ],
+    "testingProofSHA256": "a0c4a5b993eb73b5b7001a127ec05d346b3c432bd5ba1d7b2a8ff5e489854ede"
   },
   "scope": [
     "Full18-language arm64 Simulator app in English; judging ZIP English-only.18Swift sources match; resources/binaries differ.",
