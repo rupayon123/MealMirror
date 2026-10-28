@@ -4,9 +4,19 @@ An offline SwiftUI meal-review app for iPhone and iPad. Start with a photo of th
 
 **Testing only. Not submission-ready or clinically validated.** No Android version, required account, server or cloud-model endpoint.
 
-## Current source candidate: 1.0 (28)
+## Current source candidate: 1.0 (29)
 
-**Current source candidate 1.0 (28):** Selected nutrition labels can open in a full-screen local viewer from Add Meal or Estimate. Pinch or the Larger/Smaller controls zoom from 1× to 4×; the image pans in both directions. A fixed Close header stays outside the scrolling image and stacks at accessibility text sizes. Food previews, removal, analysis, calculations and storage are unchanged.
+**Current source candidate 1.0 (29):** Review now places each included item's adjusted carbohydrate amount and own source before a compact current meal photo. Practice sources are marked separately. The image appears only before Save for a current personal-photo review; it is not added to history. The full care-plan explanation remains, with a concise no-dose boundary beside the total.
+
+- **Package:** English ZIP **12,272,391 bytes**, 138 files, SHA-256 `83690978f342f707680a02204d3392c1011d0da3183ca154e4f36dacf25daeae`; two identical packs and 18 matching Swift sources. Catalogs, engine, calculations, storage and assets are unchanged; assistance disclosure is updated.
+- **Verified:** Both incremental arm64 Simulator builds, signed archive, strict signing and 18-language resource integrity passed. The focused normal/light photo + label journey passed actual local model/OCR, separate checked amount/confirmation, first-source visibility, current-photo hiding after Save, relaunch/detail and guarded QA deletion. Root inspected the new Review capture. All nine media files, installed app files and original absent history were preserved.
+- **Accessibility gap:** The dark/maximum-text Practice case reached Estimate but could not pass the test's whole-element visibility guard for an 831 pt compound confirmation switch in a 678 pt app viewport. Review assertions did not run. This is not proof that the real control cannot be activated. Settings were restored; earlier harness failures and the V1 visual finding are retained. No whole-app accessibility acceptance is claimed.
+- **Internal testing:** Xcode confirms build 29 uploaded through TestFlight Internal Only. App Store Connect redirected to sign-in, so server processing and tester availability are not verified. Build 28 remains the latest confirmed Testing build. No public app release or physical installation is claimed.
+- **Open:** Physical offline/camera, broader viewport/accessibility/language acceptance, independent recognition, meal reuse/export, current-year rules and applicant gates. **Not submission-ready.**
+
+[Exact build 29 package, native scope and retained failures](research/native-ui-journey/review-provenance-20261028-build29.json).
+
+**Previous source candidate 1.0 (28):** Selected nutrition labels can open in a full-screen local viewer from Add Meal or Estimate. Pinch or the Larger/Smaller controls zoom from 1× to 4×; the image pans in both directions. A fixed Close header stays outside the scrolling image and stacks at accessibility text sizes. Food previews, removal, analysis, calculations and storage are unchanged.
 
 - **Package:** English ZIP **12,271,696 bytes**, 138 files, SHA-256 `a7551a36fd26c2be73bd6b3f6658b254f2e2c509bc4d1472c69254fd6534ac53`; two byte-identical packs and 18 matching Swift sources across English/full-language snapshots.
 - **Verified:** Both incremental arm64 Simulator builds, signed archive, strict signing and 18-language resource integrity passed. Native tall-label inspection passed in maximum-text/dark settings. The normal/light full photo/label journey passed both viewer entry points, pinch, zoom limits, pan, Close, separate checked amount, Save, relaunch/detail and guarded deletion. Root inspected the relevant native frames. All nine media files, installed app files and original absent history were preserved; display settings were restored. Prior app and harness failures are retained in the evidence.

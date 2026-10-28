@@ -83,6 +83,7 @@ struct ContentView: View {
                 case .review:
                     ReviewView(
                         analysis: $analysis,
+                        selectedPhoto: mealPhotos.first(where: { $0.role == .food })?.image,
                         onStartAnother: resetExperience
                     )
                 case .howItWorks:
@@ -1816,11 +1817,11 @@ private struct EstimateView: View {
 
 private struct ReviewView: View {
     @Binding var analysis: MealAnalysis
+    let selectedPhoto: UIImage?
     let onStartAnother: () -> Void
 
     @State private var saved = false
     @State private var showSaveError = false
-    @Environment(\.locale) private var locale
     @EnvironmentObject private var localization: LocalizationStore
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
@@ -1873,12 +1874,67 @@ private struct ReviewView: View {
                 }
             }
 
-            PixelDivider(color: saved ? CarbInTheme.basil : CarbInTheme.tomato)
+            if !analysis.includedComponents.isEmpty {
+                Text("Meal items")
+                    .font(CarbInTheme.display(.headline, size: 17))
+                    .foregroundStyle(CarbInTheme.ink)
 
-            SafetyRail(
-                title: "No insulin recommendation",
-                detail: "This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on."
-            )
+                VStack(alignment: .leading, spacing: 0) {
+                    ForEach(analysis.includedComponents.indices, id: \.self) { index in
+                        let component = analysis.includedComponents[index]
+                        if index > 0 {
+                            Rectangle()
+                                .fill(CarbInTheme.line.opacity(0.30))
+                                .frame(height: 1)
+                                .padding(.vertical, 11)
+                        }
+                        VStack(alignment: .leading, spacing: 5) {
+                            ViewThatFits(in: .horizontal) {
+                                HStack(alignment: .firstTextBaseline, spacing: 10) {
+                                    reviewItemName(component)
+                                    Spacer(minLength: 6)
+                                    reviewItemAmount(component)
+                                }
+                                VStack(alignment: .leading, spacing: 2) {
+                                    reviewItemName(component)
+                                    reviewItemAmount(component)
+                                }
+                            }
+                            Text(componentSource(component))
+                                .font(CarbInTheme.reading(.footnote, size: 13))
+                                .foregroundStyle(CarbInTheme.mutedInk)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                        .accessibilityElement(children: .combine)
+                    }
+                }
+                .padding(14)
+                .background(CarbInTheme.ticket, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
+            }
+
+            if !saved, analysis.source == .personalPhoto, let selectedPhoto {
+                Image(uiImage: selectedPhoto)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 96)
+                    .clipShape(PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
+                    .accessibilityLabel("Selected meal photo")
+            }
+
+            VStack(alignment: .leading, spacing: 5) {
+                Text("No insulin recommendation")
+                    .font(CarbInTheme.display(.subheadline, size: 15))
+                    .foregroundStyle(CarbInTheme.terracotta)
+                Text("This estimate is not a dose calculator. Use the approach and care plan you and your diabetes team have agreed on.")
+                    .font(CarbInTheme.reading(.footnote, size: 13))
+                    .foregroundStyle(CarbInTheme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(14)
+            .background(CarbInTheme.tomatoSoft, in: PixelRoundedRectangle(cornerRadius: PixelSurfaceTier.card))
+
+            PixelDivider(color: saved ? CarbInTheme.basil : CarbInTheme.tomato)
 
             ReviewFact(
                 symbol: "text.alignleft",
@@ -1891,14 +1947,30 @@ private struct ReviewView: View {
                 title: "Reference note",
                 value: analysis.referenceItemPresent ? "Recorded only; it does not alter this carbohydrate range" : "No reference item recorded"
             )
-            ReviewFact(
-                symbol: "list.bullet",
-                title: "Included components",
-                value: analysis.includedComponents.count.formatted(.number.locale(localization.language.locale)),
-                valueTreatment: .formattedLocalized
-            )
         }
         .mealTicket(inset: 20)
+    }
+
+    private func reviewItemName(_ component: MealComponent) -> some View {
+        Text(MealTextResolver.resolve(component.name, treatment: component.nameTreatment, localize: { localization.text($0) }))
+            .font(CarbInTheme.reading(.subheadline, size: 15, weight: .semibold))
+            .foregroundStyle(CarbInTheme.ink)
+            .fixedSize(horizontal: false, vertical: true)
+    }
+
+    private func reviewItemAmount(_ component: MealComponent) -> some View {
+        Text(localization.carbohydrateRange(component.carbohydrates))
+            .font(CarbInTheme.reading(.subheadline, size: 15, weight: .bold).monospacedDigit())
+            .foregroundStyle(CarbInTheme.basil)
+            .fixedSize(horizontal: false, vertical: true)
+    }
+
+    private func componentSource(_ component: MealComponent) -> String {
+        let signal = component.signal.trimmingCharacters(in: .whitespacesAndNewlines)
+        let source = signal.isEmpty
+            ? localization.text("Source not recorded")
+            : MealTextResolver.resolve(signal, treatment: component.signalTreatment, localize: { localization.text($0) })
+        return analysis.source == .demo ? localization.text("Practice meal") + " · " + source : source
     }
 
     private var reviewAction: some View {
@@ -1944,6 +2016,9 @@ private struct ReviewView: View {
                             ))
                                 .font(CarbInTheme.display(.title3, size: 19))
                                 .foregroundStyle(CarbInTheme.moss)
+                            Text("No insulin recommendation")
+                                .font(CarbInTheme.reading(.caption1, size: 13, weight: .semibold))
+                                .foregroundStyle(CarbInTheme.terracotta)
                         }
     }
 

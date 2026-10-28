@@ -2,6 +2,8 @@
 
 Reviewed October 27, 2026 against MealMirror main `05340bf`, source candidate 21. This is a public-source product investigation, not an authenticated RxFood walkthrough, clinical assessment or comparative accuracy test. The detailed [capability matrix](rxfood-capabilities.csv), [recon](recon.md), [review sample](reviews.csv) and [fix plan](fixes.md) make the gaps inspectable. No RxFood code, model, private endpoint, account or traffic was examined.
 
+**October28 Review follow-up:** [Build29](../research/native-ui-journey/review-provenance-20261028-build29.json) puts each item’s own amount/source before a compact current food photo and retains the no-dose boundary. The focused normal/light native journey passed first-source visibility, separate manual entry/confirmation, Save/relaunch and photo hiding. The maxtext/dark Practice Review gate remains unrun after a compound-control test limitation in Estimate. This is scoped MealMirror evidence, not RxFood parity or superiority evidence. Recent-review reuse remains private.
+
 ## Current delivery update: builds 27–28
 
 The original investigation below retains its candidate-21 baseline. This update ties subsequent MealMirror progress to source commit `27c24885223d09eab5c18c27870935d328cb97e4` and the [exact build-27 receipt](../research/native-ui-journey/label-fit-20261027-build27.json); it does not silently turn the historical matrix into current parity evidence.

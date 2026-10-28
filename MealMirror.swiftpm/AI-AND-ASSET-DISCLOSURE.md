@@ -49,3 +49,7 @@ Build27 applies two AI-assisted visual fixes reviewed with the UI/front-end chat
 ## Build 28 label inspection
 
 AI assistance prepared the local label-viewing SwiftUI changes and initial translations of “Nutrition label,” “View full label,” and “Selected nutrition label photo” interface keys. The coordinator reviewed and adjusted image fitting and retained the existing selected-photo accessibility role. The non-English additions are draft translations, not qualified language-review evidence. This change does not infer an amount or dose from the label. Native build and interaction evidence must be checked separately.
+
+## Build 29 Review hierarchy
+
+Codex integrated the companion design workflow’s Review changes: each included item shows its adjusted amount and own source before a current food-photo preview; Practice sources are marked separately. The current in-memory food image appears only before Save for a personal-photo review and is not added to history. The existing care-plan explanation remains below the items, with a concise no-dose boundary beside the total. No model, nutrient calculation, network endpoint or saved-data format was added. Native review and verification are recorded separately; this is AI-assisted interface work for the applicant to inspect and understand.
