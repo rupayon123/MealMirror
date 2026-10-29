@@ -4,11 +4,65 @@
 
 - **Package:** English ZIP **12,272,391 bytes**, 138 files, SHA-256 `83690978f342f707680a02204d3392c1011d0da3183ca154e4f36dacf25daeae`; two identical packs and 18 matching Swift sources. Catalogs, engine, calculations, storage and assets are unchanged; assistance disclosure is updated.
 - **Verified:** Both incremental arm64 Simulator builds, signed archive, strict signing and 18-language resource integrity passed. The focused normal/light photo + label journey passed actual local model/OCR, separate checked amount/confirmation, first-source visibility, current-photo hiding after Save, relaunch/detail and guarded QA deletion. Root inspected the new Review capture. All nine media files, installed app files and original absent history were preserved.
-- **Accessibility gap:** The dark/maximum-text Practice case reached Estimate but could not pass the test's whole-element visibility guard for an 831 pt compound confirmation switch in a 678 pt app viewport. Review assertions did not run. This is not proof that the real control cannot be activated. Settings were restored; earlier harness failures and the V1 visual finding are retained. No whole-app accessibility acceptance is claimed.
+- **Focused accessibility evidence:** The later dark/maximum-text Practice case passed (117.843 seconds; host 145.780 seconds) after correcting the test helper for the oversized compound switch. Native activation changed its value and enabled Review; Practice amount/source were inspected without saving. Display settings and original app/history files were preserved. Earlier failed attempts remain recorded. Actual VoiceOver, broader layouts and long-text polish remain open; no whole-app accessibility acceptance is claimed.
 - **Internal testing:** Xcode confirms build 29 uploaded through TestFlight Internal Only. App Store Connect redirected to sign-in, so server processing and tester availability are not verified. Build 28 remains the latest confirmed Testing build. No public app release or physical installation is claimed.
 - **Open:** Physical offline/camera, broader viewport/accessibility/language acceptance, independent recognition, meal reuse/export, current-year rules and applicant gates. **Not submission-ready.**
 
 [Exact build 29 package, native scope and retained failures](research/native-ui-journey/review-provenance-20261028-build29.json).
+
+## Remaining work — reviewed October 28, 2026
+
+This is the current actionable checklist; historical build entries below retain their original scope. Automation remains paused. Manual work is authorized. No completion date or award is promised.
+
+### Established baseline
+
+- [x] Native SwiftUI app with the approved Pixel Kitchen theme; no Android or required server/sign-in.
+- [x] Up to three food photos plus a separate nutrition label, description and camera route implemented.
+- [x] On-device model path, Vision fallback and local label OCR implemented; narrow actual runtime checks passed.
+- [x] Correctable food clues, separately checked carbohydrate entries, explicit confirmation and per-item source on Review.
+- [x] Local save/history/relaunch/delete; current photos are not persisted into history.
+- [x] Three Practice meals; internal testing resources contain 18 languages. Resource integrity is verified, translation quality is not.
+- [x] Build 29 English candidate ZIP: 12,272,391 bytes; matching Swift sources, incremental builds, signed internal archive and internal-only upload verified.
+- [x] Focused photo/label Review journey and maximum-text/dark Practice Review passed in Simulator. This is limited coverage.
+
+### Priority 1 — trustworthy offline core
+
+- [ ] Define and execute an independent, lawfully sourced evaluation across diverse cuisines, mixed meals, poor lighting, ambiguous foods and non-food images. Record wrong clues and abstentions; do not present exposed demo checks as accuracy.
+- [ ] Verify cold launch, photo import, model-ready and model-unavailable behavior, correction, checked amounts, Save and relaunch with networking unavailable. Simulator coverage first; physical iPhone camera/airplane-mode acceptance remains applicant-deferred.
+- [ ] Audit cancellation, repeated requests, corrupt/unsupported media, permission denial, memory pressure and recoverable storage failures against current source. Reuse existing evidence where unchanged; close only the uncovered cases.
+- [ ] Preserve the boundary: photos do not establish portions, carbohydrate quantities or insulin doses. Keep manual correction and useful fallback available.
+
+### Priority 2 — accessible, coherent experience
+
+- [ ] Repair demonstrated maximum-text wrapping and excessive scrolling while preserving the selected theme; capture before/after native evidence.
+- [ ] Verify actual VoiceOver announcements, focus order and gestures; keyboard behavior, Reduce Motion, contrast and empty/loading/error states.
+- [ ] Exercise compact/large iPhone and iPad layouts, dark/light, long translations and RTL. Obtain human translation review; catalog parity alone is insufficient.
+- [ ] Review original icons/illustrations screen by screen, with provenance and meaningful labels. Additional decoration is optional and must not delay core usability.
+- [ ] Run a fresh-person, approximately three-minute offline demonstration: choose meal, inspect uncertain clues, check amount/source, review and save. Record friction and timing; automated test duration is not this evidence.
+
+### Priority 3 — final submission artifact
+
+- [ ] Recheck Apple's intended-year eligibility, dates, policy and toolchain requirements once published. Existing 2026 baseline is provisional for 2027.
+- [ ] Extract the final English ZIP into a fresh directory, clean-build and run that exact package through the judging journey; compare hashes and included local resources.
+- [ ] Finish licence/asset attribution and AI-assistance disclosure audit; exclude secrets, private QA data, remote dependencies and judge tracking.
+- [ ] Reconcile readiness, technology briefing and evidence against the final artifact; distinguish internal multilingual archive from English judging ZIP.
+- [ ] Applicant confirms student/age/employment/award eligibility, supplies required enrollment evidence, reviews and meaningfully contributes to code, understands the implementation and writes the final application answers.
+
+### Internal testing delivery — separate gate
+
+- [ ] After applicant restores App Store Connect access, verify build 29 processing and assignment to the existing internal group. Upload is confirmed; tester availability is not. Build 28 is the last confirmed Testing build.
+- [ ] Verify the update actually installs on the applicant's phone when available. No repeated sign-in or phone request is needed now.
+- [ ] Keep App Store review/release, external testing and public beta/release artifacts disabled. Source backup remains separately authorized.
+
+### Product backlog — not required merely to enter
+
+- [ ] Recent-meal reuse: private prototype only. Finish localized names, provenance invalidation, prior-portion context, strict localized input, model checks and native acceptance before integration.
+- [ ] Selective export: define privacy, included fields and user-controlled sharing; implement and test only after core gates.
+- [ ] Dexcom/Libre: official vendor access, regional availability and connected-mode constraints remain unresolved. No live CGM integration is shipped. Offline judging must remain independent of these services.
+- [ ] Insulin calculation: no dose feature shipped or authorized for unvalidated clinical use. Any future work needs an individualized clinical protocol and validation; there is no universal dose formula for all users.
+- [ ] RxFood comparison: public research exists, but feature parity and superiority are unproven. Prioritize documented user needs over duplicating every feature.
+
+Next implementation batch: reproduce and repair the current maximum-text Review wrapping, then verify affected native layouts and regenerate the exact ZIP if app source changes. Independent recognition evaluation remains a separate essential gate.
 
 **Previous source candidate 1.0 (28):** Selected nutrition labels can open in a full-screen local viewer from Add Meal or Estimate. Pinch or the Larger/Smaller controls zoom from 1× to 4×; the image pans in both directions. A fixed Close header stays outside the scrolling image and stacks at accessibility text sizes. Food previews, removal, analysis, calculations and storage are unchanged.
 

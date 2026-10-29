@@ -108,11 +108,13 @@
     },
     "maxTextDark": {
       "test": "testExact29PracticeReviewSource",
-      "exitCode": 65,
-      "hostSeconds": 188.325,
-      "result": "Incomplete: reached Practice Estimate; whole-element exposure guard could not fit831pt compound confirmation switch in678pt app viewport. Review assertions did not run. This does not establish that the real switch cannot be activated.",
+      "exitCode": 0,
+      "caseSeconds": 117.843,
+      "hostSeconds": 145.78,
+      "result": "Practice confirmation changed from off to on using a visible, hittable native control midpoint; Review enabled, Practice item amount/source inspected. No Save tapped.",
       "savedOrDeleted": false,
-      "displaySettingsRestored": true
+      "displaySettingsRestored": true,
+      "scope": "Maximum Dynamic Type and dark appearance on isolated Simulator; not VoiceOver, whole-app accessibility or physical-device acceptance."
     },
     "preservation": {
       "installedFilesUnchangedAfterCases": true,
@@ -124,7 +126,8 @@
       "First Practice runner compile failed from duplicate helper; zero cases executed.",
       "PracticeV2 stopped before selection because offscreen AX-hittable control collapsed test gesture bounds; diagnostic video retained.",
       "PracticeV3 reached Estimate then expected an obsolete Analyze step; selectDemo directly invokes analysis.",
-      "PracticeV4 retained bounded whole-compound-control limitation; no automatic retry or budget extension."
+      "PracticeV4 retained bounded whole-compound-control limitation; no automatic retry or budget extension.",
+      "PracticeV4 exit65 retained: Incomplete: reached Practice Estimate; whole-element exposure guard could not fit831pt compound confirmation switch in678pt app viewport. Review assertions did not run. This does not establish that the real switch cannot be activated."
     ]
   },
   "distribution": {
